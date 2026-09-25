@@ -1,0 +1,34 @@
+# Where to find the bad debt and provision lines
+
+**None of this is in the extract.** I was only given Note 12 (p.388–390), so I can't give you the exact note number or page. Below is where these lines usually appear in an Ind AS consolidated annual report, and how to find them quickly.
+
+## 1. Where to look in the PDF
+
+| Where to look | What to search for | What it gives you |
+|---|---|---|
+| **"Other expenses" note** (in the P&L notes, usually after finance costs and depreciation) | "Bad debts", "written off", "doubtful debts", "expected credit loss" | P&L charge for the provision and actual write-offs |
+| **"Other income" note** | "written back", "no longer required", "reversal" | **Releases** of the allowance. These are often shown here rather than netted in expenses. |
+| **Financial instruments / financial risk management note** (credit risk section) | "Movement in", "loss allowance", "reconciliation" | The full roll-forward (opening, charge, utilised, FX, closing), if the company discloses one |
+| **Consolidated cash flow statement** (non-cash adjustments to profit before tax) | "Allowance", "provision for doubtful", "bad debts" | A cross-check on the P&L charge or release |
+
+**Placement clues:**
+- This extract refers to Note 18 (Borrowings) and Note 48 (Related parties).
+- P&L notes normally sit between the balance sheet notes and the disclosure notes. So "Other expenses" is likely numbered somewhere between these two, after p.390.
+- This is a typical layout, not something I have confirmed for this report.
+
+## 2. Common line-item wording
+
+- "Provision for doubtful debts and advances (net)" or "Allowance for expected credit loss"
+- "Bad debts / advances written off"
+- "Less: provision held / utilised". Write-offs are sometimes shown net of the provision already held.
+- "Provision for doubtful debts no longer required, written back". This line usually appears in **Other income**.
+
+## 3. Pitfalls to watch
+
+- **Use the consolidated notes, not the standalone ones.** The annual report contains both sets with similar note numbers. Note 12 here is consolidated (p.388), so use the consolidated section.
+- **Receivables may be combined with advances.** Lines often cover "debts and advances" together, so the receivables share may not be separable.
+- **Write-offs may be netted.** A small "bad debts written off" figure after deducting the provision utilised can hide a larger gross write-off.
+- **Releases may be split out.** Check both the Other expenses and Other income notes before concluding there was a net charge or a net release.
+- **The roll-forward may not reconcile exactly.** P&L figures include FX and advances, so they won't tie precisely to the ₹25.24 Mn net fall (592.32 → 567.08, Note 12, p.389).
+
+If you paste the Other expenses, Other income or credit risk note, I can complete the roll-forward and test whether the ₹25.24 Mn fall was a release or a write-off.

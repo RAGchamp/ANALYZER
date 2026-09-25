@@ -1,0 +1,17 @@
+An analyst asked this question about a company's annual report:
+
+QUESTION: {{QUESTION}}
+
+Scope already decided: {{SCOPE}} financial statements. Do not change it.
+
+Below are the notes to the financial statements in that scope. IDs starting with C are Consolidated notes and IDs starting with S are Standalone notes.
+
+{{NOTES_LIST}}
+
+Choose the notes whose content is needed to answer the question thoroughly.
+- Choose the primary note(s) first.
+- Also choose a closely related note if it materially adds to the answer (for example, tax disputes are often disclosed under Contingent Liabilities).
+- Choose at most {{MAX_NOTES}} notes, and prefer fewer. Do not choose accounting-policy notes unless the question is about accounting policies.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["C21"], "reason": "one or two sentences explaining the choice"}

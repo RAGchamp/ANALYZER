@@ -1,0 +1,1084 @@
+Annual report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Statements: Consolidated
+Notes provided: Consolidated Note 3 – PROPERTY, PLANT AND EQUIPMENT (PDF p.377–379), Consolidated Note 30 – DEPRECIATION AND AMORTISATION EXPENSE (PDF p.413), Consolidated Note 19 – OTHER FINANCIAL LIABILITIES (PDF p.402–403), Consolidated Note 14 – OTHER ASSETS (PDF p.391–392), Consolidated Note 5 – INTANGIBLE ASSETS AND GOODWILL (PDF p.381–383)
+Primary financial statements provided: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Consolidated Statement of Profit and Loss (Consolidated) ===
+--- PDF page 342 (printed page 339) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+INCOME
+Revenue from operations | 24 | 168,116.53 | 151,228.03
+Other income | 25 | 1,986.83 | 2,137.64
+Total income [i] | 170,103.36 | 153,365.67
+EXPENSES
+Cost of raw materials and components consumed | 26 | 77,779.31 | 64,396.23
+Purchase of stock in trade | 788.71 | 2,318.22
+(Increase) in inventories of finished goods, work-in-progress, stock in trade, dies | 27 | (2,672.21) | (771.05)
+and scrap
+Employee benefits expenses | 28 | 21,034.18 | 18,698.95
+Finance costs | 29 | 3,233.46 | 4,174.93
+Depreciation and amortisation expenses | 30 | 9,709.24 | 8,736.19
+Other expenses | 31 | 41,919.81 | 39,646.23
+Total expenses [ii] | 151,792.50 | 137,199.70
+Profit before share of profit/(loss) of associates and joint ventures, exceptional | 18,310.86 | 16,165.97
+items and tax [i-ii]
+Share of profit/(loss) of associates and joint ventures | (76.50) | (24.52)
+Income tax expense | 18.21 | 12.55
+Share of profit/(loss) of associates and joint ventures, net of tax | (94.71) | (37.07)
+Profit before exceptional items and tax | 18,216.15 | 16,128.90
+Exceptional items (loss) | 32 | (1,544.43) | (1,570.65)
+Profit before tax | 16,671.72 | 14,558.25
+Income tax expense | 21
+Current tax | 5,606.07 | 5,848.54
+Deferred tax charge/(credit) | 171.67 | (423.04)
+5,777.74 | 5,425.50
+Profit for the year | 10,893.98 | 9,132.75
+OTHER COMPREHENSIVE INCOME
+Other comprehensive income/(loss) not to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Re-measurement gain/(loss) on defined benefit plans | 33 | 237.27 | (185.37)
+- Net (loss)on FVTOCI equity investments | 33 | (1,869.02) | (51.09)
+- Share of other comprehensive (loss) of associates and joint ventures | 33 | - | (0.61)
+(1,631.75) | (237.07)
+Income tax effect | 33 | (11.73) | 41.24
+[A] | (1,643.48) | (195.83)
+
+--- PDF page 343 (printed page 340) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026 (Contd.)
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Other comprehensive income/(loss) to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Net movement on cash flow hedges | 33 | (5,312.67) | (1,060.36)
+- Exchange differences on translating financial statements of foreign operations | 33 | 2,205.34 | 432.60
+(3,107.33) | (627.76)
+Income tax effect | 33 | 1,338.69 | 267.78
+[B] | (1,768.64) | (359.98)
+Other comprehensive (loss) for the year (net of tax) [A+B] | (3,412.12) | (555.81)
+Total comprehensive income for the year | 7,481.86 | 8,576.94
+Of the total comprehensive income above,
+Attributable to:
+Owners of the parent company | 7,384.49 | 8,855.72
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Profit for the year
+Attributable to:
+Owners of the parent company | 10,796.61 | 9,411.53
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Other comprehensive (loss) for the year
+Attributable to:
+Equityholders of the parent company | (3,412.12) | (555.81)
+Non-controlling interests | 0.00 | -
+Earnings per equity share [nominal value per share ₹2/- | 34
+(March 31, 2025: ₹2/-)
+Basic (in ₹) | 22.58 | 20.05
+Diluted (in ₹) | 22.58 | 20.05
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Balance Sheet (Consolidated) ===
+--- PDF page 341 (printed page 338) ---
+Consolidated Balance Sheet
+as at March 31, 2026
+In ₹Million
+Notes | As at | As at
+March 31, 2026 | March 31, 2025
+ASSETS
+I. | Non-current assets
+(a) Property, plant and equipment | 3 | 72,575.52 | 58,473.77
+(b) Capital work-in-progress | 3 | 12,513.26 | 17,253.49
+(c) Investment property | 4 | 281.63 | 281.63
+(d) Goodwill | 5 | 3,902.53 | 2,627.83
+(e) Other intangible assets | 5 | 605.97 | 413.00
+(f) Intangible assets under development | 5 | 470.45 | 63.70
+(g) Right-of-use asset | 43 | 4,784.26 | 4,472.93
+(h) Investments accounted for using the equity method | 6 | 614.14 | 905.08
+(i) Financial assets
+(i) Investments | 7 | 5,031.65 | 6,192.36
+(ii) Trade receivables | 12 | 168.68 | 135.48
+(iii) Loans | 8 | 37.67 | 58.54
+(iv) Derivative instruments | 9 | - | 289.02
+(v) Other financial assets | 10 | 3,040.67 | 1,616.22
+(j) Deferred tax assets (net) | 21 | 2,121.99 | 1,901.43
+(k) Income tax assets (net) | 505.35 | 408.37
+(l) Other non-current assets | 14 | 3,917.22 | 3,466.92
+110,570.99 | 98,559.77
+II. | Current assets
+(a) Inventories | 11 | 40,527.83 | 35,784.36
+(b) Financial assets
+(i) Investments | 7 | 11,739.22 | 13,529.59
+(ii) Trade receivables | 12 | 39,097.99 | 28,996.06
+(iii) Cash and cash equivalents | 13 | 8,478.85 | 6,210.35
+(iv) Other bank balances | 13 | 1,420.57 | 6,703.41
+(v) Loans | 8 | 176.32 | 166.14
+(vi) Derivative instruments | 9 | - | 600.57
+(vii) Other financial assets | 10 | 3,780.92 | 1,036.38
+(c) Other current assets | 14 | 6,806.86 | 9,296.58
+112,028.56 | 102,323.44
+Total assets | 222,599.55 | 200,883.21
+EQUITY AND LIABILITIES
+EQUITY
+(a) Equity share capital | 15 | 956.27 | 956.27
+(b) Other equity | 16 | 94,842.13 | 91,577.07
+Equity attributable to owners of the parent company | 95,798.40 | 92,533.34
+Non-controlling interests | 37 | (230.16) | (327.53)
+Total equity | 95,568.24 | 92,205.81
+LIABILITIES
+I. | Non-current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 18,123.55 | 13,193.66
+(ii) Lease liabilities | 43 | 3,699.19 | 3,623.98
+(iii) Derivative instruments | 19a | 1,582.36 | 67.45
+(iv) Other financial liabilities | 19 | 3,357.24 | 195.38
+(b) Provisions | 20 | 2,906.62 | 2,192.25
+(c) Deferred tax liabilities (net) | 21 | 215.24 | 1,198.28
+(d) Other non-current liabilities | 23 | 1,332.71 | 1,176.32
+31,216.91 | 21,647.32
+II. | Current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 50,622.63 | 49,690.21
+(ii) Lease liabilities | 43 | 640.78 | 474.74
+(iii) Trade payables | 22
+Dues to micro enterprises and small enterprises | 839.98 | 770.13
+Dues to other than micro enterprises and small enterprises | 29,116.63 | 22,671.99
+(iv) Derivative instruments | 19a | 3,102.11 | 137.57
+(v) Other financial liabilities | 19 | 2,124.13 | 1,654.03
+(b) Other current liabilities | 23 | 6,871.51 | 9,289.48
+(c) Provisions | 20 | 2,103.47 | 1,945.86
+(d) Current tax liabilities (net) | 393.16 | 396.07
+95,814.40 | 87,030.08
+Total liabilities | 127,031.31 | 108,677.40
+Total equity and liabilities | 222,599.55 | 200,883.21
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Cash Flow Statement (Consolidated) ===
+--- PDF page 346 (printed page 343) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+OPERATING ACTIvITIES
+Profit after exceptional items & before tax | 16,671.72 | 14,558.25
+(Less): Share of (loss) of associates and joint ventures (net of tax) | (94.71) | (37.07)
+16,766.43 | 14,595.32
+Adjustment to reconcile profit before tax to net cash flows
+Depreciation and amortisation expenses | 9,709.24 | 8,736.19
+Unrealised foreign exchange (gain)/loss MTM (net) | 635.77 | (363.50)
+Interest income | (633.42) | (691.49)
+Liabilities/provision no longer required written back | (94.82) | (59.44)
+Provision for doubtful debts and advances written back | 125.94 | 68.52
+Bad debts/advances written off | 17.18 | 79.91
+Finance costs | 3,233.46 | 4,174.93
+(Gain)/loss on sale of property, plant and equipment (net) | (185.34) | 14.87
+Dividend income from equity securities | (9.04) | (8.34)
+Net (gain) on sale of financial instruments | (595.05) | (1,415.32)
+Net loss on fair valuation of financial instruments (FVTPL) | 174.64 | 768.55
+Non-cash exceptional items | 404.99 | 1,570.65
+Operating profit before working capital changes | 29,549.98 | 27,470.85
+Working capital adjustments
+(Increase)/Decrease in trade receivables | (7,090.42) | 2,510.11
+(Increase) in inventories | (3,878.56) | (3,837.66)
+(Increase)/decrease in other financial assets | (2,724.71) | 57.40
+Decrease/(Increase) in other assets | 1,566.07 | (2,279.99)
+Increase in provisions | 923.11 | 614.19
+Increase in trade payables | 4,419.60 | 910.48
+Increase in other financial liabilities | 62.18 | 153.00
+(Decrease) in other liabilities | (2,314.58) | (1,584.88)
+Cash generated from operations | 20,512.67 | 24,013.50
+Income taxes paid (net of refunds) | (5,646.25) | (6,050.07)
+Net cash flows from operating activities (I) | 14,866.42 | 17,963.43
+INvESTING ACTIvITIES
+Purchase of property, plant and equipment, investment property and intangible assets | (11,404.96) | (14,504.59)
+(including capital work-in-progress, capital creditors and capital advances)
+Proceeds from sale of property, plant and equipment and intangible assets | 274.32 | 65.40
+Investments in joint venture/associates | - | (303.49)
+Acquisition of a subsidiary (net of cash of ₹1,933.28 million) | (4,986.23) | -
+Repayment of loan given to joint venture/associates | - | 42.47
+Investments in mutual funds, fixed deposits and other deposits | (125,407.36) | (142,382.36)
+Proceeds from sale of financial instruments including fixed deposits | 130,905.57 | 136,896.77
+Interest received | 279.32 | 534.13
+Dividend received | 9.04 | 8.34
+Net cash flows (used in) investing activities (II) | (10,330.30) | (19,643.33)
+
+--- PDF page 347 (printed page 344) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026 (contd.)
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+FINANCING ACTIvITIES
+Dividend paid on equity shares | (3,796.55) | (4,220.93)
+Proceeds from issue of compulsorily convertible preference shares by the subsidiary | 3,000.00 | -
+company
+Interest paid on lease liabilities | (341.87) | (330.76)
+Interest paid on borrowing and other liabilities | (3,410.41) | (4,398.40)
+Proceeds from Issuance of Equity share capital under Qualified Institutional Placement (QIP) | - | 16,500.00
+Transaction cost related to Qualified Institutional Placement (QIP) | - | (302.67)
+Payment of principal portion of lease liabilities | (654.56) | (515.71)
+Proceeds from borrowings including bill discounting | 142,833.45 | 88,513.79
+Repayment of borrowings including bill discounting | (142,049.91) | (100,942.28)
+Net cash flows (used in) financing activities (III) | (4,419.85) | (5,696.96)
+Net increase/(decrease) in cash and cash equivalents (I + II + III) | 116.27 | (7,376.86)
+Net foreign exchange difference | (53.11) | 1.51
+Cash and cash equivalents at the beginning of the year* | 6,210.35 | 13,153.10
+Cash and cash equivalents at the end of the year* | 6,273.51 | 5,777.75
+Foreign currency translation reserve movement | 2,205.34 | 432.60
+Cash and cash equivalents at the end of the year* | 8,478.85 | 6,210.35
+* Excluding earmarked balances
+CASH AND CASH EQUIVALENTS FOR THE PURPOSE OF CASH FLOW STATEMENT
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+BANk BALANCES
+In cash credit and current accounts | 8,182.10 | 5,204.60
+Deposits with original maturity of less than three months | 294.32 | 1,003.06
+CASH ON HAND | 2.43 | 2.69
+Total | 8,478.85 | 6,210.35
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Statement of Changes in Equity (Consolidated) ===
+--- PDF page 344 (printed page 341) (printed sideways; rotated 90° clockwise before extraction) ---
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026
+A. EQUITY SHARE CAPITAL:
+Equity shares of ₹2/- each issued, subscribed and fully paid
+Particulars | No.
+As at March 31, 2026 | 478,088,632
+Changes in equity share capital during the year | -
+As at March 31, 2025 | 478,088,632
+Changes in equity share capital during the year | 12,500,000
+As at April 1, 2024 | 465,588,632
+(1) For the year ended March 31, 2026 | In ₹Million
+Balance as on April 1, 2025 | Changes in equity share capital Balance as on March 31, 2026
+during the year
+956.27 | - | 956.27
+(2) For the year ended March 31, 2025 | In ₹Million
+Balance as on April 1, 2024 | Changes in equity share capital Balance as on March 31, 2025
+during the current year
+931.27 | 25.00 | 956.27
+B. OTHER EQUITY
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2025 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+- Profit/(Loss) for the year | - | - | - | - | 10,796.61 | - | - | - | - | 10,796.61 | 97.37 | 10,893.98
+- Other Comprehensive Income/ | - | - | - | - | 170.69 | 2,205.34 | (1,814.17) | - | (3,973.98) | (3,412.12) | 0.00 | (3,412.12)
+(Loss)
+- Change in fair value of gross | - | - | (294.72) | - | - | - | - | (294.72) | - | (294.72)
+liability on written put options
+- | - | - | - | 10,672.58 | 2,205.34 | (1,814.17) | - | (3,973.98) | 7,089.77 | 97.37 | 7,187.14
+Transaction with owners in their
+capacity as owners
+- Final equity dividend | - | - | - | - | (2,868.53) | - | - | - | - | (2,868.53) | - | (2,868.53)
+- Interim equity dividend | - | - | - | - | (956.18) | - | - | - | - | (956.18) | - | (956.18)
+Balance as at March 31, 2026 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 68,659.35 | 4,213.27 | (944.15) | (148.19) | (3,414.71) | 94,842.13 | (230.16) | 94,611.97
+
+--- PDF page 345 (printed page 342) (printed sideways; rotated 90° clockwise before extraction) ---
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026 (Contd.)
+B. OTHER EQUITY (CONTD.)
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2024 | 6,930.89 | 15.50 | 127.36 | 3,230.48 | 56,757.59 | 1,575.33 | 929.76 | (148.19) | 1,351.85 | 70,770.57 | (48.75) | 70,721.82
+- Profit/(Loss) for the year | - | - | - | - | 9,411.53 | - | - | - | 9,411.53 | (278.78) | 9,132.75
+- Other Comprehensive | - | - | - | - | (136.09) | 432.60 | (59.74) | - | (792.58) | (555.81) | - | (555.81)
+Income/(Loss)
+- Premium on allotment of | 16,475.00 | - | - | - | - | - | - | - | - | 16,475.00 | - | 16,475.00
+equity shares
+- Expenses on allotment of equity | (302.67) | - | - | - | - | - | - | - | - | (302.67) | - | (302.67)
+shares
+16,172.33 | - | - | - | 9,275.44 | 432.60 | (59.74) | - | (792.58) | 25,028.05 | (278.78) | 24,749.27
+Transaction with owners in
+their capacity as owners
+- Final equity dividend | - | - | - | - | (3,026.33) | - | - | - | - | (3,026.33) | - | (3,026.33)
+- Interim equity dividend | - | - | - | - | (1,195.22) | - | - | - | - | (1,195.22) | - | (1,195.22)
+Balance as at March 31, 2025 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Note 3 — PROPERTY, PLANT AND EQUIPMENT (Consolidated) ===
+--- PDF page 377 (printed page 374) ---
+3. PROPERTY, PLANT AND EQUIPMENT
+In ₹Million
+Freehold | Buildings | Plant and | Railway | Office | Electrical | Factory Sub Total (A)
+land | (Note e | machinery | sidings equipments installations | equipment
+and f) | (Note b)
+Cost
+As at April 1, 2024 | 1,125.06 | 15,465.53 | 75,987.59 | 0.02 | 359.50 | 376.43 | 4,825.25 | 98,139.39
+Foreign Currency Translation | 12.91 | 255.57 | 950.62 | - | 1.66 | - | 87.84 | 1,308.60
+Reserve
+Additions | 983.15 | 3,843.53 | 5,728.30 | - | 22.22 | 58.00 | 350.37 | 10,985.57
+Disposals/Capitalised | - | (2.77) | (73.25) | - | (0.05) | (0.28) | (30.08) | (106.43)
+Other adjustments
+- Others | - | - | (4.28) | - | - | - | - | (4.28)
+- Borrowing cost (Refer note a) | - | - | - | - | - | - | - | -
+As at March 31, 2025 | 2,121.12 | 19,561.86 | 82,588.98 | 0.02 | 383.33 | 434.15 | 5,233.38 | 110,322.85
+Foreign Currency Translation | 74.03 | 1,626.93 | 6,333.28 | - | 68.97 | 140.88 | 644.70 | 8,888.79
+Reserve
+Additions | 764.88 | 1,044.57 | 13,454.82 | - | 91.91 | 44.09 | 558.46 | 15,958.73
+Disposals/Capitalised | (9.10) | (16.31) | (1,067.05) | - | (2.58) | (1.28) | (206.00) | (1,302.32)
+Additions on acquisition of | 388.13 | 1,274.59 | 3,723.71 | - | 3.12 | - | - | 5,389.55
+subsidiary
+Other adjustments
+- Others | - | - | - | - | - | - | - | -
+- Borrowing cost (Refer note a) | - | - | - | - | - | - | - | -
+As at March 31, 2026 | 3,339.06 | 23,491.64 | 105,033.74 | 0.02 | 544.75 | 617.84 | 6,230.54 | 139,257.60
+Depreciation and impairment
+As at April 1, 2024 | - | 3,720.44 | 37,865.65 | - | 170.34 | 190.29 | 2,995.81 | 44,942.53
+Foreign Currency Translation | - | 61.30 | 471.25 | - | 1.43 | - | 61.90 | 595.87
+Reserve
+Additions on acquisition of | - | - | - | - | - | - | - | -
+subsidiary
+Charge for the year | - | 569.17 | 6,627.14 | - | 57.24 | 18.30 | 445.38 | 7,717.23
+Disposals | - | (1.28) | (54.99) | - | (0.03) | - | (30.08) | (86.38)
+Impairment | - | 59.41 | 300.07 | - | 13.26 | - | - | 372.74
+As at March 31, 2025 | - | 4,409.04 | 45,209.12 | - | 242.24 | 208.59 | 3,473.01 | 53,541.99
+Foreign Currency Translation | 3.42 | 489.38 | 3,780.75 | - | 53.56 | 96.17 | 541.61 | 4,964.89
+Reserve
+Additions on acquisition of | - | 340.29 | 2,378.31 | - | 2.54 | - | - | 2,721.14
+subsidiary
+Charge for the year | 2.96 | 741.06 | 7,278.79 | - | 71.60 | 73.99 | 335.46 | 8,503.86
+Disposals | - | (10.60) | (1,010.08) | - | (2.58) | (1.28) | (201.08) | (1,225.62)
+As at March 31, 2026 | 6.38 | 5,969.17 | 57,636.89 | - | 367.36 | 377.47 | 4,149.00 | 68,506.26
+Net block
+As at March 31, 2025 | 2,121.12 | 15,152.83 | 37,379.87 | 0.02 | 141.09 | 225.56 | 1,760.37 | 56,780.86
+As at March 31, 2026 | 3,332.68 | 17,522.48 | 47,396.86 | 0.02 | 177.39 | 240.37 | 2,081.54 | 70,751.34
+
+--- PDF page 378 (printed page 375) ---
+In ₹Million
+Furniture and | vehicles and | Power line | Sub Total (B) Grand Total (A+B) Capital work-in-
+fixtures | aircraft | progress
+Cost
+As at April 1, 2024 | 430.70 | 1,953.59 | 16.17 | 2,400.46 | 100,539.85 | 9,780.84
+Foreign Currency Translation Reserve | - | 0.61 | - | 0.61 | 1,309.21 | 12.70
+Additions | 93.26 | 397.06 | - | 490.32 | 11,475.89 | 11,564.63
+Additions on acquisition of subsidiary | - | - | - | - | - | -
+Disposals/Capitalised | (8.30) | (6.57) | - | (14.87) | (121.30) | (4,397.41)
+Other adjustments
+- Others | - | 4.28 | - | 4.28 | - | -
+- Borrowing cost (Refer note a) | - | - | - | - | - | 304.96
+As at March 31, 2025 | 515.66 | 2,348.97 | 16.17 | 2,880.80 | 113,203.65 | 17,265.72
+Foreign Currency Translation Reserve | 8.47 | 10.06 | - | 18.53 | 8,907.32 | 598.98
+Additions | 57.65 | 327.17 | - | 384.82 | 16,343.55 | 6,776.15
+Additions on acquisition of subsidiary | 43.40 | - | - | 43.40 | 5,432.95 | 275.40
+Disposals/Capitalised | (6.35) | (13.14) | - | (19.49) | (1,321.81) | (12,646.53)
+Other adjustments
+- Others | - | - | - | - | - | (135.54)
+- Borrowing cost (Refer note a) | - | - | - | - | - | 391.33
+As at March 31, 2026 | 618.83 | 2,673.06 | 16.17 | 3,308.06 | 142,565.66 | 12,525.49
+Depreciation and impairment
+As at April 1, 2024 | 209.72 | 693.96 | 10.93 | 914.61 | 45,857.13 | 12.23
+Foreign Currency Translation Reserve | - | 0.47 | - | 0.47 | 596.34 | -
+Additions on acquisition of subsidiary | - | - | - | - | - | -
+Charge for the year | 37.25 | 199.05 | 1.43 | 237.73 | 7,954.96 | -
+Disposals | (6.02) | (5.54) | - | (11.56) | (97.94) | -
+Impairment | 32.31 | 14.37 | - | 46.68 | 419.42 | -
+Other adjustments | - | - | - | - | - | -
+As at March 31, 2025 | 273.26 | 902.31 | 12.36 | 1,187.93 | 54,729.91 | 12.23
+Foreign Currency Translation Reserve | 5.08 | 8.70 | - | 13.78 | 4,978.67 | -
+Additions on acquisition of subsidiary | 36.12 | - | - | 36.12 | 2,757.26 | -
+Charge for the year | 46.89 | 218.29 | 1.43 | 266.61 | 8,770.47 | -
+Disposals | (3.39) | (17.18) | - | (20.57) | (1,246.19) | -
+As at March 31, 2026 | 357.96 | 1,112.12 | 13.79 | 1,483.87 | 69,990.14 | 12.23
+Net block
+As at March 31, 2025 | 242.40 | 1,446.66 | 3.81 | 1,692.86 | 58,473.74 | 17,253.49
+As at March 31, 2026 | 260.87 | 1,560.94 | 2.38 | 1,824.19 | 72,575.52 | 12,513.26
+(a) Capitalised borrowing costs:
+The Group capitalises these borrowing costs in the capital work-in-progress (CWIP) first. The amount of borrowing
+costs capitalised as other adjustments in the above note reflects the amount of borrowing cost transferred from Capital
+work-in-progress (CWIP) balances. The borrowing costs capitalised during the year ended March 31, 2026 were ₹391.36
+million (March 31, 2025: ₹304.96 million). The capitalisation rate ranges from LIBOR + 60 bps to LIBOR + 100 bps p.a.
+and EURIBOR + 60 bps to EURIBOR + 95 bps p.a. and SOFR + 60 bps to SOFR + 116 bps, refer to note 18.
+(b) Assets include assets lying with third parties amounting to ₹989.51 Million (March 31, 2025: ₹332.30 Million).
+(c) Other adjustments are related to reclassification within block of assets.
+(d) None of the components in the Group have revalued any property, plant and equipment during the year.
+(e) Buildings include cost of hangar jointly owned with other companies ₹0.07 million (March 31, 2025: ₹0.07 million).
+
+--- PDF page 379 (printed page 376) ---
+(f) The title deeds of immovable properties (other than properties where the Holding Company is the lessee and the lease
+agreements are duly executed in favour of the lessee) are held in the name of the Holding Company except:
+a. Flat at Kalyani Nagar in possession of the Holding Company since April 01, 1987, whose title deed is in the name of
+Shri Anajwala Khozema F & Smt. Anajwala Amina aggregating gross block ₹0.31 million and net block ₹0.13 million
+for which the exchange deed is registered at the authority; however, a certified true copy and Index II are awaited.
+b. Hanger at Lohegoan in possession of the Holding Company since April 01, 1977, aggregating gross block of ₹0.12
+million and net block of ₹0.04 million and Tenements at Kharadi-Vimannagar in possession of the Holding Company
+since April 01, 1981, aggregating gross block of ₹0.16 million and net block of ₹0.01 million for which title deeds
+are not available with the Holding Company.
+(g) During the previous year, two subsidiaries which were engaged in the manufacturing of electric bikes, which are part of
+a separate cash generating unit (CGU), have recorded a provision for impairment of ₹419.42 million in property, plant &
+equipment. [Also refer Note 32(e)]
+(h) Capital work in progress (CWIP), including Intangible asset under development ageing schedule:
+In ₹Million
+Particulars | Less than 1 | 1-2 years | 2-3 years | More than 3 | Total
+year | years
+March 31, 2026
+Projects in progress | 8,367.68 | 3,584.92 | 500.32 | 457.60 | 12,910.53
+Projects temporarily suspended | 73.19 | 73.19
+Total | 8,367.68 | 3,584.92 | 500.32 | 530.79 | 12,983.71
+March 31, 2025
+Projects in progress | 9,243.52 | 7,443.64 | 207.25 | 349.59 | 17,244.00
+Projects temporarily suspended | - | - | 32.65 | 40.54 | 73.19
+Total | 9,243.52 | 7,443.64 | 239.90 | 390.13 | 17,317.19
+There are no projects whose completion is overdue or that have exceeded their cost compared to the original plan.
+
+=== Note 30 — DEPRECIATION AND AMORTISATION EXPENSE (Consolidated) ===
+--- PDF page 413 (printed page 410) ---
+30. DEPRECIATION AND AMORTISATION EXPENSE
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Depreciation on property, plant and equipment [Refer note 3] | 8,770.47 | 7,954.96
+Amortisation on intangible assets [Refer note 5] | 193.75 | 152.72
+Depreciation on right of use asset [Refer note 43] | 745.02 | 628.51
+Total | 9,709.24 | 8,736.19
+
+=== Note 19 — OTHER FINANCIAL LIABILITIES (Consolidated) ===
+--- PDF page 402 (printed page 399) ---
+19. OTHER FINANCIAL LIABILITIES
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Other non-current financial liabilities at amortised cost
+Voluntary retirement scheme compensation | 7.03 | 31.05
+Derivative liability | 32.50 | 32.50
+Gross liability on written put option # | 3,294.72 | -
+Security deposits | 22.99 | 131.83
+Total | 3,357.24 | 195.38
+Other current financial liabilities at amortised cost
+Payables for capital goods | 1,158.51 | 855.03
+Security deposits | 212.42 | 211.71
+Directors commission | 29.20 | 31.00
+Investor Education and Protection Fund (as and when due)*
+- Unpaid dividend | 40.69 | 109.45
+- Unpaid matured deposits | 0.04 | 0.04
+Voluntary retirement scheme compensation | 24.02 | 84.50
+Payable to Customers | 304.29 | 211.15
+Others*** | 354.96 | 151.15
+Total | 2,124.13 | 1,654.03
+* | The Holding Company has declared interim as well as final dividends in past years. Though a large portion of this dividend has been paid
+to members of the Company, an amount of ₹0.13 million (March 31, 2025: ₹0.13 million) has been pending over the period. Pursuant
+to the provisions of the Investor Education and Protection Fund Authority (Accounting, Audit, Transfer and Refund) Rules, 2016, the
+unclaimed dividend shall be remitted online to the Investor Education and Protection Fund (‘IEPF’) along with a statement in the relevant
+form, containing details of shareholders. Considering that all the particulars required for filing are unavailable, the holding company
+has not transferred the unclaimed dividend to IEPF and the relevant funds are available in separate bank accounts (Refer Other Bank
+Balances in note 13).
+# | During the year, JS Auto Cast Foundry India Private Limited has issued 14,25,795 compulsory convertible preference shares (“CCPS”) to
+PI OPPORTUNITIES FUND I SCHEME II, at an issue price of 2,104.09 per share, which amounts to ₹3,000 million. The CCPS are issued
+for a tenor of 20 years, carry a conversion option at any time during the tenor at the option of the investor. The holder of each CCPS is
+entitled to a preferential dividend at the rate of 0.001% per year on a non-cumulative basis for all the CCPS till such time that the CCPS
+are outstanding. Under the above arrangement, the Group will be required to provide various options to enable the Investor to exit over
+a period of time. In the event that such exit events do not occur, the Investor may require the parent company to buy them out at fair
+value as on the date of exit. Such an obligation to provide exit to the Investors required the Group to record a financial liability towards
+
+--- PDF page 403 (printed page 400) ---
+gross obligation in the consolidated financial statements in accordance with the Indian Accounting Standards (Ind AS). The Group has
+elected an accounting policy choice to follow an anticipated acquisition method on initial recognition which requires recognition of a
+gross obligation liability with a corresponding derecognition of non-controlling interest balance in its consolidated financial statements.
+Further, in accordance with the generally accepted accounting principles, the Group has made an accounting policy choice to present any
+subsequent change in the fair value of gross obligation liability in other equity. The fair value of the gross obligation is computed using
+the underlying share price of the unlisted subsidiary which is determined based on the discounted cash flow approach and other factors.
+*** Other include commission payable and other liabilities.
+19 (A). DERIVATIVE INSTRUMENTS
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Non-current
+Cash flow hedges (FVTOCI)
+Foreign currency forward contracts | 848.92 | 67.45
+Cross currency swap | 733.44
+Total | 1,582.36 | 67.45
+Current
+Cash flow hedges (FVTOCI)
+Foreign currency forward contracts | 2,608.57 | 48.00
+Cross currency swap | 493.54 | -
+Derivatives not designated as hedge (FVTPL)
+Cross currency swap | - | 89.57
+Total | 3,102.11 | 137.57
+Derivative instruments at fair value through OCI reflect the negative change in fair value of foreign exchange forward contracts,
+designated as cash flow hedges to hedge highly probable forecast sales in US Dollars (USD) and Euro (EUR) and the negative
+change in cross-currency swaps through which the Company has converted one of its long-term INR Non-Convertible
+Debentures and two of its term loans into a Euro.
+
+=== Note 14 — OTHER ASSETS (Consolidated) ===
+--- PDF page 391 (printed page 388) ---
+14. OTHER ASSETS
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Non-current (Unsecured, considered good)
+Capital advances | 1,813.03 | 2,126.30
+Balances with government authorities | 1,915.96 | 1,140.14
+Government grants $ | 67.56 | 82.59
+Advances to suppliers | 120.67 | 117.89
+Total | 3,917.22 | 3,466.92
+Current (Unsecured, considered good)
+Balances with government authorities | 3,295.80 | 5,486.58
+Government grant $ | 79.07 | 220.16
+Advance to suppliers | 1,966.22 | 1,888.71
+Others* | 1,465.77 | 1,701.13
+Total | 6,806.86 | 9,296.58
+* | Includes prepaid expenses, sundry debit balances etc.
+$ | Includes receivables against various schemes of export incentives. There are no unfulfilled conditions or other contingencies attached to
+the said government grants.
+No advances are due from directors or other officers of the Group, firms in which a director is a partner or private companies
+in which a director is a director or a member either severally or jointly with any other person except as disclosed in note 45.
+For terms and conditions relating to related party receivables, refer note 48.
+Break up of financial assets carried at amortised cost
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Investments [Refer note 7] | 3,278.79 | 3,995.44
+Loans [Refer note 8] | 213.99 | 224.68
+Other financial assets [Refer note 10] | 6,821.59 | 2,652.60
+Trade receivables [Refer note 12] | 39,266.67 | 29,131.54
+Cash and cash equivalents [Refer note 13] | 8,478.85 | 6,210.35
+Other bank balances [Refer note 13] | 1,420.57 | 6,703.41
+Total | 59,480.46 | 48,918.02
+Break up of financial assets carried at fair value through OCI
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Investments [Refer note 7] | 2,693.67 | 4,314.17
+Derivative instruments [Refer note 9] | - | 872.96
+Total | 2,693.67 | 5,187.13
+
+--- PDF page 392 (printed page 389) ---
+Break up of financial assets carried at fair value through profit and loss
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Investments [Refer note 7] | 10,798.41 | 11,359.75
+Derivative instruments [Refer note 9] | - | 16.63
+Total | 10,798.41 | 11,376.38
+
+=== Note 5 — INTANGIBLE ASSETS AND GOODWILL (Consolidated) ===
+--- PDF page 381 (printed page 378) ---
+5 | INTANGIBLE ASSETS AND GOODWILL
+In ₹Million
+Particulars | Computer Customer | Technical Development | Patents Technology | Total | Goodwill # | Intangible
+and contracts | know-how | cost | Licence | assets under
+Software | development
+Cost
+As at April 1, 2024 | 514.03 | 7.84 | 8.65 | 416.27 | 11.96 | 856.89 | 1,815.64 | 3,306.14 | 143.82
+Foreign Currency | 7.53 | - | - | (0.01) | - | - | 7.52 | 12.48
+Translation Reserve
+Additions | 172.76 | - | - | 149.05 | - | - | 321.81 | - | 319.14
+Disposals | (69.31) | - | - | (9.49) | - | - | (78.80) | - | (399.26)
+Other adjustments
+- Others | - | - | - | - | - | - | - | - | -
+As at March 31, 2025 | 625.01 | 7.84 | 8.65 | 555.82 | 11.96 | 856.89 | 2,066.17 | 3,318.62 | 63.70
+Foreign Currency | 72.27 | - | - | 22.14 | - | 4.68 | 99.09 | 98.80 | -
+Translation Reserve
+Additions | 77.58 | - | - | 7.79 | - | - | 85.37 | - | 418.92
+Additions on acquisition | 4.92 | - | 289.67 | - | - | - | 294.59 | 1,224.24 | -
+of subsidiary
+Disposals | (33.45) | - | - | (1.03) | - | - | (34.48) | - | (12.17)
+As at March 31, 2026 | 746.33 | 7.84 | 298.32 | 584.72 | 11.96 | 861.57 | 2,510.74 | 4,641.66 | 470.45
+Amortisation/Impairment
+As at April 1, 2024 | 336.71 | 7.84 | 7.87 | 258.71 | 4.38 | 492.24 | 1,107.75 | 346.29 | -
+Foreign Currency | 5.94 | - | - | - | - | - | 5.94 | 8.08 | -
+Translation Reserve
+Charge for the year | 104.73 | - | - | 30.47 | - | 17.52 | 152.72 | - | -
+Disposals | (60.50) | - | - | - | - | - | (60.50) | -
+Impairment* | 0.13 | - | - | 100.00 | - | 347.13 | 447.26 | - | -
+Other adjustments | -
+- Others | - | - | - | - | - | - | - | 336.42
+As at March 31, 2025 | 387.01 | 7.84 | 7.87 | 389.18 | 4.38 | 856.89 | 1,653.17 | 690.79 | -
+Foreign Currency | 64.00 | - | - | 22.04 | - | 1.48 | 87.52 | 48.34 | -
+Translation Reserve
+Additions on acquisition | 2.93 | - | - | - | - | - | 2.93 | - | -
+of subsidiary
+Charge for the year | 123.24 | - | 26.70 | 40.61 | - | 3.20 | 193.75 | - | -
+Disposals | (32.60) | - | - | - | - | - | (32.60) | - | -
+As at March 31, 2026 | 544.58 | 7.84 | 34.57 | 451.83 | 4.38 | 861.57 | 1,904.77 | 739.13 | -
+Net Block
+As at March 31, 2025 | 238.00 | - | 0.78 | 166.64 | 7.58 | - | 413.00 | 2,627.83 | 63.70
+As at March 31, 2026 | 201.75 | - | 263.75 | 132.89 | 7.58 | - | 605.97 | 3,902.53 | 470.45
+(a) The Group has identified the Company Mécanique Générale Langroise (MGL) as the CGU, to which goodwill has been
+allocated. MGL is involved in the machining of Oil & Gas and other industrial sector components. The goodwill generated
+through the business combination has been entirely allocated to CGU ‘MGL’ which pertains to the forging segment.
+The carrying amount of goodwill as at March 31, 2026 is ₹329.58 million (March 31, 2025: ₹192.31 million) net of
+impairment.
+
+--- PDF page 382 (printed page 379) ---
+(b) In earlier years, the Group had acquired JS Auto Cast Foundry India Private Limited which is engaged in the business of
+ductile iron foundry manufacturing raw and machined castings. Accordingly, as part of the overall business combination,
+the group recognised the goodwill amounting to ₹2,433.34 million based on the valuation reports obtained as part of the
+purchase price allocation.
+(c) During the previous year, two subsidiaries which were engaged in the manufacturing of electric bikes, which are part of
+a separate cash generating unit (CGU), have recorded a provision for impairment of ₹447.26 million in intangible assets.
+[Also refer Note 32(e)]
+(d) In the current years, the Group has acquired K Drive Mobility Solutions Private Limited which is engaged in the business
+of design, manufacture & supply of driveline systems. Accordingly, as part of the overall business combination, the group
+recognised the goodwill amounting to ₹1,224.23 million based on the valuation reports obtained as part of the purchase
+price allocation.
+# Impairment of Goodwill:
+1. Kalyani Strategic Systems Limited
+As a part of business restructuring, the goodwill of BF Infrastructure Limited (on the acquisition of the KPIT unit) was
+transferred to Kalyani Strategic Systems Limited. The Group had performed its annual impairment test for the year ending
+March 31, 2025. The Group had considered the discounted cash flows, among other factors, when reviewing for indicators
+of impairment. The calculations use post-tax cash flow projections based on financial budgets/forecasts approved by the
+management.
+Key assumptions used for value in use calculations
+Weighted Average Cost of Capital % (WACC) before tax (discount rate): Nil (March 31, 2025: 42.12%)
+Terminal growth rate: Nil (March 31, 2025: 2.00%)
+The discount rate is calculated as follows: WACC = Cost of equity x (1- gearing) + Cost of debt x (1- tax rate) x gearing.
+The terminal growth rate used is in line with the long-term inflation rate.
+The Group has performed sensitivity analysis around the base assumptions and has concluded that no reasonable changes
+in key assumptions would cause the recoverable amount of the CGU to be less than the carrying value.
+Based on the above assessment, there is no need for impairment of goodwill on March 31, 2026 (March 31, 2025: ₹53.00 million).
+2. Mécanique Générale Langroise (MGL)
+The Group performed its annual impairment test for the year ending March 31, 2026. The Group considers the discounted
+cash flows, among other factors, when reviewing for indicators of impairment. The calculations use pre-tax cash flow
+projections based on financial budgets/forecasts approved by the management.
+Key assumptions used for value in use calculations
+Weighted Average Cost of Capital % (WACC) before tax (discount rate): 12.60% (March 31, 2025: 12.40%)
+Terminal growth rate: 1.90% (March 31, 2025: 1.80%)
+The discount rate is calculated as follows: WACC = Cost of equity x (1- gearing) + Cost of debt x (1- tax rate) x gearing.
+The terminal growth rate used is in line with the long-term inflation rate.
+The Group has performed sensitivity analysis around the base assumptions and has concluded that no reasonable changes
+in key assumptions would cause the recoverable amount of the CGU to be less than the carrying value after impairment.
+Based on the above assessment, there is no need for impairment of goodwill on March 31, 2026 (March 31, 2025: Nil).
+
+--- PDF page 383 (printed page 380) ---
+3. JS Autocast Foundry India Private Limited
+The Group performed its annual impairment test for the year ending March 31, 2026. The Group considers the discounted
+cash flows, among other factors, when reviewing for indicators of impairment. The calculations use pre-tax cash flow
+projections based on financial budgets/forecasts approved by the management.
+Key assumptions used for value in use calculations
+Weighted Average Cost of Capital % (WACC) before tax (discount rate): 13.28% (March 31, 2025: 14.38%)
+Terminal growth rate: 5.00% (March 31, 2025: 1.00%)
+The discount rate is calculated as follows: WACC = Cost of equity x (1- gearing) + Cost of debt x (1- tax rate) x gearing.
+The terminal growth rate used is in line with the long-term inflation rate.
+The Group has performed sensitivity analysis around the base assumptions and has concluded that no reasonable changes
+in key assumptions would cause the recoverable amount of the CGU to be less than the carrying value after impairment.
+Based on the above assessment, there is no need for impairment of goodwill on March 31, 2026 (March 31, 2025: Nil).
+4. Electric Bike CGU
+During the previous year, two subsidiaries engaged in the manufacturing of electric bikes, which are part of a separate cash
+generating unit (CGU), had recorded a provision for impairment of ₹283.42 million in goodwill. [Also refer Note 32(d)]
+----- END OF NOTES -----
+
+Conversation so far in this analysis thread:
+
+User asked: analyze property plant and equipment
+You answered: ## Summary
+
+- **Net PPE grew strongly.** It rose 24.1% to ₹72,575.52m (Balance Sheet, p.341). About 47% of the ₹14,101.75m increase came from two non-organic sources: foreign-currency translation (net ₹3,928.65m) and the acquisition of a subsidiary (net ₹2,675.69m). Organic net growth was about ₹7,497m (+12.8%).
+- **Capex has shifted from building to commissioning.** CWIP fell 27.5% to ₹12,513.26m as ₹12,646.53m was capitalised, against ₹4,397.41m in FY25. Accrued PPE capex fell to about ₹10,473m (FY25: about ₹18,643m). Capex/depreciation dropped from 2.34x to 1.19x.
+- **Depreciation is growing in line with revenue.** PPE depreciation rose 10.3% to ₹8,770.47m, and total D&A of ₹9,709.24m ties exactly to the P&L (Note 30, p.413). D&A/revenue was flat at about 5.78%. There was no PPE impairment in FY26 (FY25: ₹419.42m on the e-bike CGU).
+- **The note ties to the statements, with small rounding gaps.** FY26 net PPE and CWIP agree to the Balance Sheet exactly. The FY25 net PPE differs by ₹0.03m, and the capitalised borrowing cost differs by ₹0.03m between the table and the narrative.
+- **Several items need follow-up.** These are:
+  - depreciation charged on freehold land;
+  - an unusual translation movement on electrical installations;
+  - an unexplained ₹135.54m CWIP "other adjustment";
+  - acquired assets brought in at gross cost with accumulated depreciation;
+  - ₹530.79m of CWIP/IAUD older than 3 years (including ₹73.19m suspended);
+  - stale LIBOR references in the borrowing-cost disclosure.
+
+## Key figures
+
+₹ million
+
+| Item | Current year (FY26) | Prior year (FY25) | Change | % change | Source |
+|---|---|---|---|---|---|
+| Net PPE | 72,575.52 | 58,473.77 | +14,101.75 | +24.1% | Balance Sheet, p.341; Note 3, p.378 |
+| Capital work-in-progress (net) | 12,513.26 | 17,253.49 | (4,740.23) | (27.5%) | Balance Sheet, p.341; Note 3, p.378 |
+| PPE + CWIP | 85,088.78 | 75,727.26 | +9,361.52 | +12.4% | Calc. |
+| Gross cost of PPE | 142,565.66 | 113,203.65 | +29,362.01 | +25.9% | Note 3, p.378 |
+| Accumulated depreciation & impairment | 69,990.14 | 54,729.91 | +15,260.23 | +27.9% | Note 3, p.378 |
+| PPE additions (gross) | 16,343.55 | 11,475.89 | +4,867.66 | +42.4% | Note 3, p.378 |
+| – of which plant & machinery | 13,454.82 | 5,728.30 | +7,726.52 | +134.9% | Note 3, p.377 |
+| CWIP additions | 6,776.15 | 11,564.63 | (4,788.48) | (41.4%) | Note 3, p.378 |
+| CWIP capitalised/transferred | 12,646.53 | 4,397.41 | +8,249.12 | +187.6% | Note 3, p.378 |
+| Additions on acquisition – PPE (net: 5,432.95 − 2,757.26) | 2,675.69 | – | +2,675.69 | n/a | Note 3, p.378 |
+| Additions on acquisition – CWIP | 275.40 | – | +275.40 | n/a | Note 3, p.378 |
+| FCTR on PPE, net (cost − acc. dep.) | 3,928.65 (8,907.32 − 4,978.67) | 712.87 (1,309.21 − 596.34) | +3,215.78 | +451% | Note 3, p.378 |
+| FCTR on CWIP | 598.98 | 12.70 | +586.28 | n/m | Note 3, p.378 |
+| PPE depreciation charge | 8,770.47 | 7,954.96 | +815.51 | +10.3% | Note 3, p.378; Note 30, p.413 |
+| PPE impairment | – | 419.42 | (419.42) | (100%) | Note 3, p.378–379 |
+| Total D&A | 9,709.24 | 8,736.19 | +973.05 | +11.1% | Note 30, p.413; P&L, p.342 |
+| Borrowing cost capitalised (table) | 391.33 | 304.96 | +86.37 | +28.3% | Note 3, p.378 |
+| Disposals – net book value (cost − acc. dep.) | 75.62 (1,321.81 − 1,246.19) | 23.36 (121.30 − 97.94) | +52.26 | +223.7% | Note 3, p.378 |
+| Sale proceeds (PPE & intangibles) | 274.32 | 65.40 | +208.92 | +319.4% | Cash Flow, p.346 |
+| (Gain)/loss on sale of PPE | (185.34) gain | 14.87 loss | – | n/m | Cash Flow, p.346 |
+| Cash capex (PPE, investment property, intangibles) | 11,404.96 | 14,504.59 | (3,099.63) | (21.4%) | Cash Flow, p.346 |
+| Assets lying with third parties | 989.51 | 332.30 | +657.21 | +197.8% | Note 3(b), p.378 |
+| CWIP + intangible assets under development (ageing) | 12,983.71 | 17,317.19 | (4,333.48) | (25.0%) | Note 3(h), p.379 |
+
+## Detailed analysis
+
+### 1. Net PPE bridge (FY26)
+
+| ₹m | Amount |
+|---|---|
+| Opening net block (Note 3, p.378) | 58,473.74 |
+| + Additions | 16,343.55 |
+| + Acquisition of subsidiary (5,432.95 − 2,757.26) | 2,675.69 |
+| + Translation (8,907.32 − 4,978.67) | 3,928.65 |
+| − Depreciation | (8,770.47) |
+| − Disposals at NBV (1,321.81 − 1,246.19) | (75.62) |
+| **= Calculated closing** | **72,575.54** |
+| Reported closing (Note 3; Balance Sheet) | 72,575.52 |
+
+The ₹0.02m difference is rounding.
+
+Arithmetic checks:
+- **Gross cost roll-forward agrees:** 113,203.65 + 8,907.32 + 16,343.55 + 5,432.95 − 1,321.81 = 142,565.66.
+- **Accumulated depreciation roll-forward is ₹0.02m off:** 54,729.91 + 4,978.67 + 2,757.26 + 8,770.47 − 1,246.19 = 69,990.12, against 69,990.14 reported. The sub-totals (A) 68,506.26 + (B) 1,483.87 = 69,990.13. This is rounding only.
+- **The FY25 bridge also works:** 54,682.72 + 11,475.89 + 712.87 − 7,954.96 − 419.42 − 23.36 = 58,473.74.
+
+### 2. Organic vs. inorganic growth
+
+- **Reported net PPE growth** was ₹14,101.75m (+24.1%).
+- **Less FX translation** of ₹3,928.65m. This is 27.9% of the growth and reflects rupee depreciation against the currencies of foreign subsidiaries. Translation on cost was 7.9% of opening gross cost (8,907.32 / 113,203.65), against 1.3% in FY25.
+- **Less the acquisition** of ₹2,675.69m (19.0% of the growth).
+- **Organic net growth** is therefore about ₹7,497.41m (+12.8%). That is broadly in line with revenue growth of 11.2% (168,116.53 vs 151,228.03, P&L p.342).
+
+### 3. Capex cycle: CWIP converting into PPE
+
+**Accrued PPE capex**
+- FY26: 6,776.15 into CWIP + direct PPE additions of (16,343.55 − 12,646.53) = 3,697.02, giving **≈ ₹10,473.17m**.
+- FY25: 11,564.63 + (11,475.89 − 4,397.41) = **≈ ₹18,643.11m**.
+
+**Capex/depreciation**
+- FY26: 10,473.17 / 8,770.47 = **1.19x**.
+- FY25: 18,643.11 / 7,954.96 = **2.34x**.
+
+The heavy FY24–25 build-out is now being commissioned. Of FY26 PPE additions, 82.3% is plant & machinery (13,454.82 / 16,343.55). Capex has slowed towards roughly maintenance-plus levels.
+
+**CWIP roll-forward (FY26)**
+- 17,265.72 + 598.98 + 6,776.15 + 275.40 − 12,646.53 − 135.54 + 391.33 = 12,525.51, against 12,525.49 reported. The ₹0.02m gap is rounding.
+- Accumulated impairment of ₹12.23m on CWIP is unchanged.
+
+**CWIP ageing (Note 3(h), p.379)**
+- The 1–2 year bucket fell from 7,443.64 to 3,584.92.
+- Balances older than 3 years rose from 390.13 to 530.79. This includes ₹73.19m of suspended projects, all now older than 3 years (FY25: 32.65 at 2–3 years plus 40.54 at more than 3 years).
+- Management states that no project is overdue or over budget.
+
+### 4. Depreciation intensity and asset age
+
+**Implied depreciation rate on depreciable gross cost (excluding land)**
+- FY26: 8,770.47 / avg(139,226.60; 111,082.53) = 8,770.47 / 125,154.57 = **7.0%**, an implied average life of about 14 years.
+- FY25: 7,954.96 / avg(99,414.79; 111,082.53) = **7.6%**.
+- The lower FY26 rate is partly mechanical. Year-end FX restatement and the mid-year acquisition inflate the closing gross cost, and assets capitalised during the year carry only part-year depreciation.
+
+**Accumulated depreciation / gross cost**
+- 45.6% (FY24), 48.3% (FY25) and 49.1% (FY26).
+- For plant & machinery, the ratio is 54.9%, against 54.7% in FY25.
+- The asset base is ageing slightly despite heavy capitalisation. This is partly because the acquired assets arrive about 51% depreciated (2,757.26 / 5,432.95).
+
+**D&A / revenue**
+- FY26: 9,709.24 / 168,116.53 = 5.78%.
+- FY25: 8,736.19 / 151,228.03 = 5.78%. The ratio is flat.
+
+### 5. Asset efficiency
+
+**Revenue / average net PPE**
+- FY26: 168,116.53 / 65,524.65 = **2.57x**.
+- FY25: 151,228.03 / 56,578.25 = **2.67x**. The FY24 net block used here is 100,539.85 − 45,857.13 = 54,682.72.
+
+**PPE + CWIP as a share of total assets**
+- FY26: 85,088.78 / 222,599.55 = 38.2%.
+- FY25: 75,727.26 / 200,883.21 = 37.7%.
+
+The slight dip in turnover reflects newly commissioned capacity that has not yet reached full revenue run-rate, plus FX inflation of the asset base.
+
+### 6. Disposals
+
+- Gross disposals were ₹1,321.81m at cost, 94% depreciated (1,246.19). This points to retirement or sale of old plant & machinery.
+- The resulting gain of ₹185.34m is plausible: proceeds 274.32 − NBV 75.62 = 198.70. The ₹13.36m gap is likely explained by intangibles or disposal costs.
+
+### 7. Borrowing costs
+
+- Borrowing costs capitalised were ₹391.33m, against P&L finance costs of ₹3,233.46m. Gross interest cost is therefore 3,624.79, and the capitalised share is 10.8% (FY25: 304.96 / 4,479.89 = 6.8%).
+- The share rose even though CWIP fell. Its mid-year average of about ₹14,896m implies an approximate capitalisation yield of 2.6%, consistent with the low-spread foreign-currency loans cited in note (a).
+
+## Impact on the financial statements
+
+### Statement of Profit and Loss
+
+| Line item | FY26 | FY25 | Link to notes |
+|---|---|---|---|
+| Depreciation and amortisation expenses (Note 30) | 9,709.24 | 8,736.19 | P&L, p.342 |
+| – PPE depreciation | 8,770.47 | 7,954.96 | Note 3 charge (A 8,503.86 + B 266.61) = Note 30 |
+| – Intangibles amortisation | 193.75 | 152.72 | Note 5 (not provided) |
+| – Right-of-use depreciation | 745.02 | 628.51 | Note 43 (not provided) |
+| Exceptional items (Note 32) | (1,544.43) | (1,570.65) | FY25 included ₹419.42m PPE impairment (Note 3(g)); nil in FY26 |
+| Finance costs | 3,233.46 | 4,174.93 | Net of ₹391.33m (FY25: ₹304.96m) capitalised into CWIP |
+
+- **Note 30 casts and ties:** 8,770.47 + 193.75 + 745.02 = 9,709.24. The FY25 components (7,954.96 + 152.72 + 628.51) sum to 8,736.19, which also ties.
+- **Depreciation growth:** PPE depreciation grew by ₹815.51m, reducing pre-tax profit (PBT ₹16,671.72m vs ₹14,558.25m).
+- **Impairment:** the FY25 impairment of ₹419.42m accounted for 26.7% of that year's exceptional loss. None recurs in FY26 within PPE.
+- **Gain on disposal:** the ₹185.34m gain is presumably within other income (Note 25, not provided).
+- **Borrowing-cost capitalisation:** capitalising borrowing costs reduced P&L finance costs by ₹391.33m. That amount will instead be depreciated over the assets' lives.
+
+### Balance Sheet
+
+| Line item | 31-Mar-26 | 31-Mar-25 | Note 3 figure | Agrees? |
+|---|---|---|---|---|
+| Property, plant and equipment | 72,575.52 | 58,473.77 | 72,575.52 / 58,473.74 | FY26 yes; FY25 ₹0.03m difference |
+| Capital work-in-progress | 12,513.26 | 17,253.49 | 12,525.49 − 12.23 = 12,513.26; 17,265.72 − 12.23 = 17,253.49 | Yes |
+| Intangible assets under development | 470.45 | 63.70 | CWIP + IAUD = 12,983.71 / 17,317.19 in ageing table | Yes |
+
+Source: Balance Sheet, p.341.
+
+- **Share of non-current assets:** PPE + CWIP is 77.0% of non-current assets (85,088.78 / 110,570.99).
+- **Goodwill:** it rose by ₹1,274.70m (3,902.53 − 2,627.83). This is consistent with the acquisition that added PPE and CWIP of ₹2,951.09m.
+- **Deferred tax:** PPE drives deferred tax balances (Note 21, not provided). There was a deferred tax charge of ₹171.67m against a FY25 credit of ₹423.04m (P&L, p.342), but the PPE component cannot be isolated from the material provided.
+- **Capital creditors and advances** (Notes 19 and 14) are affected by the gap between accrued and cash capex, but those notes are not provided.
+
+### Cash Flow Statement
+
+| Line item | FY26 | FY25 | Link |
+|---|---|---|---|
+| Depreciation and amortisation (add-back) | 9,709.24 | 8,736.19 | = Note 30 |
+| (Gain)/loss on sale of PPE | (185.34) | 14.87 | Disposal NBV 75.62 / 23.36 |
+| Non-cash exceptional items | 404.99 | 1,570.65 | FY25 includes PPE impairment of 419.42 |
+| Purchase of PPE, investment property and intangibles | (11,404.96) | (14,504.59) | Accrued PPE capex ≈ 10,473.17 / 18,643.11 |
+| Proceeds from sale of PPE and intangibles | 274.32 | 65.40 | |
+| Acquisition of a subsidiary (net of cash) | (4,986.23) | – | Includes acquired PPE/CWIP of ₹2,951.09m (non-cash in Note 3) |
+| Interest paid on borrowings | (3,410.41) | (4,398.40) | Likely includes capitalised interest of ₹391.33m, which would then be shown in financing rather than investing |
+
+Source: Cash Flow, p.346–347.
+
+- **Cash vs accrued capex:**
+  - FY26: cash capex exceeded accrued PPE capex by about ₹932m. This probably reflects intangible/IAUD spend (IAUD +₹406.75m) and settlement of capital creditors.
+  - FY25: accrued capex exceeded cash by about ₹4,139m, which suggests capital creditors built up that year.
+- **Non-cash movements:** FX translation (₹3,928.65m on PPE and ₹598.98m on CWIP) and the acquired assets do not pass through investing cash flows.
+- **Free cash flow proxy:** OCF 14,866.42 − capex 11,404.96 + proceeds 274.32 = **₹3,735.78m** (FY25: 17,963.43 − 14,504.59 + 65.40 = ₹3,524.24m).
+
+### Statement of Changes in Equity
+
+- **No revaluation reserve:** no component has revalued PPE (Note 3(d)), so no revaluation reserve exists.
+- **FCTR:** translation of PPE (net ₹3,928.65m) and CWIP (₹598.98m), about ₹4,527.63m in total, feeds the FCTR, which rose by ₹2,205.34m in FY26 (SOCE, p.344). The FCTR movement is smaller than the PPE translation because foreign subsidiaries' net liabilities offset it.
+- **Retained earnings:** depreciation (₹8,770.47m) and, in FY25, impairment (₹419.42m) reduce retained earnings through profit for the year (FY26: ₹10,796.61m attributable to owners). Capitalised borrowing costs defer that reduction into future years.
+
+## Red flags & areas for follow-up
+
+1. **Depreciation on freehold land.** A charge of ₹2.96m plus FCTR of ₹3.42m gives accumulated depreciation of ₹6.38m on freehold land (p.377). Freehold land is normally not depreciated. In addition, the FCTR (3.42) exceeds the cumulative charge (2.96) on a nil opening balance, which is arithmetically odd. Ask management whether this is misclassified land improvements or a leasehold element.
+2. **Electrical installations.** In FY26 this asset class shows FCTR of ₹140.88m on cost (32% of opening cost) and ₹96.17m on accumulated depreciation (46%), despite nil FCTR in FY25 and no acquisition additions. Its depreciation charge also jumped four-fold, from ₹18.30m to ₹73.99m. This suggests a mis-mapped reclassification rather than genuine translation.
+3. **Unexplained CWIP "Other adjustments – Others" of ₹(135.54)m.** There is no matching PPE entry. Note (c) calls it a reclassification "within block of assets". Ask whether it went to intangibles under development, was expensed, or was written off.
+4. **Acquired assets recorded gross with accumulated depreciation** (5,432.95 gross less 2,757.26 accumulated). Under Ind AS 103, acquired assets are recognised at fair value, which becomes their deemed cost. Confirm that the net ₹2,675.69m equals fair value per the purchase price allocation, and ask why goodwill (+₹1,274.70m) is so large relative to the assets acquired.
+5. **Borrowing-cost disclosure issues:**
+   - The table shows ₹391.33m but the narrative says ₹391.36m (₹0.03m difference).
+   - The narrative says amounts are "transferred from CWIP", yet they appear as additions within the CWIP column.
+   - The capitalisation rates still reference LIBOR, which ceased in 2023. The disclosure appears stale.
+6. **FY25 net PPE.** The Balance Sheet shows ₹58,473.77m against ₹58,473.74m in Note 3. This is rounding but should be corrected.
+7. **Ageing CWIP and suspended projects.**
+   - ₹530.79m is older than 3 years.
+   - ₹73.19m of suspended projects has been static for at least two years with no impairment beyond the ₹12.23m legacy provision.
+   - Management states nothing is overdue. Ask about recoverability and the plans for the suspended projects.
+8. **Assets lying with third parties tripled** to ₹989.51m (Note 3(b)). This likely covers dies and tooling at vendors. Ask about physical verification, insurance and the controls in place.
+9. **Title deeds not in the Holding Company's name or unavailable.** The properties concerned have been held since 1977, 1981 and 1987. The amounts are immaterial (about ₹0.18m NBV), but these are long-standing unresolved issues.
+10. **FY25 disposal loss does not reconcile.** NBV of disposals was ₹23.36m against proceeds of ₹65.40m, which implies a gain. The Cash Flow Statement instead shows a loss of ₹14.87m. Ask whether other asset classes or write-offs were netted in.
+11. **Cash vs accrued capex gap.** FY25 accrued capex exceeded cash paid by about ₹4.1bn. Obtain the capital creditors and capital advances movements (Notes 19 and 14, not provided).
+12. **Cash Flow Statement presentation (outside the PPE scope).** The cash reconciliation adds the entire FCTR reserve movement (₹2,205.34m) to reach closing cash (6,273.51 + 2,205.34 = 8,478.85). That movement mostly relates to PPE and other net assets, not cash. It looks like a plug, and the opening cash of FY25 (₹5,777.75m close vs 6,210.35) is similarly bridged.
+13. **Information not provided:** Notes 5 (intangibles), 21 (deferred tax on PPE), 32 (exceptional items), 43 (right-of-use assets), and the acquisition note. Without these, the PPE-related deferred tax, the full exceptional-items breakdown and the purchase price allocation cannot be verified.
+
+## Sources
+
+- Consolidated Note 3 – Property, Plant and Equipment, PDF p.377–379
+- Consolidated Note 30 – Depreciation and Amortisation Expense, PDF p.413
+- Consolidated Balance Sheet, PDF p.341
+- Consolidated Statement of Profit and Loss, PDF p.342–343
+- Consolidated Cash Flow Statement, PDF p.346–347
+- Consolidated Statement of Changes in Equity, PDF p.344–345
+
+User asked: expand on this "Cash vs accrued capex gap. FY25 accrued capex exceeded cash paid by about ₹4.1bn. Obtain the capital creditors and capital advances movements (Notes 19 and 14, not provided)." show exact table where this was found
+You answered: # Cash vs Accrued Capex Gap (FY25 ≈ ₹4.1bn)
+
+## 1. Where the figure came from
+
+**The ₹4.1bn is not disclosed in any single table.** I calculated it from two tables:
+- the Grand Total and CWIP columns of Note 3 (p.378), which give accrued capex;
+- the investing section of the Cash Flow Statement (p.346), which gives cash capex.
+
+The source rows are reproduced below exactly as they appear.
+
+### Table A – Note 3, Property, Plant and Equipment (Note 3, p.378), cost section
+
+| Row (as printed) | Grand Total (A+B) PPE | Capital work-in-progress |
+|---|---|---|
+| As at April 1, 2024 | 100,539.85 | 9,780.84 |
+| Foreign Currency Translation Reserve | 1,309.21 | 12.70 |
+| **Additions** | **11,475.89** | **11,564.63** |
+| Additions on acquisition of subsidiary | - | - |
+| **Disposals/Capitalised** | (121.30) | **(4,397.41)** |
+| Other adjustments – Others | - | - |
+| Other adjustments – Borrowing cost (Refer note a) | - | 304.96 |
+| **As at March 31, 2025** | 113,203.65 | 17,265.72 |
+| Foreign Currency Translation Reserve | 8,907.32 | 598.98 |
+| **Additions** | **16,343.55** | **6,776.15** |
+| Additions on acquisition of subsidiary | 5,432.95 | 275.40 |
+| **Disposals/Capitalised** | (1,321.81) | **(12,646.53)** |
+| Other adjustments – Others | - | (135.54) |
+| Other adjustments – Borrowing cost (Refer note a) | - | 391.33 |
+| **As at March 31, 2026** | 142,565.66 | 12,525.49 |
+
+### Table B – Consolidated Cash Flow Statement, investing activities (Cash Flow, p.346)
+
+| Particulars (as printed) | FY26 | FY25 |
+|---|---|---|
+| Purchase of property, plant and equipment, investment property and intangible assets (including capital work-in-progress, capital creditors and capital advances) | (11,404.96) | (14,504.59) |
+
+The wording "including … capital creditors and capital advances" matters. It confirms that the cash figure has already been adjusted for movements in amounts owed to equipment suppliers and in advances paid to them. Any gap against accrued capex should therefore sit in those balances, or in non-cash additions.
+
+## 2. The calculation
+
+Accrued PPE capex is new money committed to fixed assets. Transfers from CWIP into PPE are removed so they are not counted twice:
+
+**Accrued capex = CWIP additions + (PPE additions − CWIP capitalised into PPE)**
+
+| ₹m | FY25 | FY26 | Source |
+|---|---|---|---|
+| CWIP additions | 11,564.63 | 6,776.15 | Note 3, p.378 |
+| PPE additions | 11,475.89 | 16,343.55 | Note 3, p.378 |
+| Less: CWIP "Disposals/Capitalised" | (4,397.41) | (12,646.53) | Note 3, p.378 |
+| = Direct PPE additions (not via CWIP) | 7,078.48 | 3,697.02 | Calc. |
+| **Accrued PPE capex** | **18,643.11** | **10,473.17** | Calc. |
+| Cash capex | 14,504.59 | 11,404.96 | Cash Flow, p.346 |
+| **Accrued − cash** | **+4,138.52** | **(931.79)** | Calc. |
+| Cash as % of accrued | 77.8% | 108.9% | Calc. |
+
+**Cross-check of the inputs (FY25).** The same accrued figure comes out of the movement in gross cost:
+- Change in gross PPE plus gross CWIP: (113,203.65 − 100,539.85) + (17,265.72 − 9,780.84) = 12,663.80 + 7,484.88 = 20,148.68.
+- Less FX (1,309.21 + 12.70 = 1,321.91) and capitalised borrowing cost (304.96).
+- Add back PPE disposals at cost (121.30).
+- Result: **18,643.11**, which agrees.
+
+**Two-year view.**
+- Accrued capex: 18,643.11 + 10,473.17 = 29,116.28.
+- Cash capex: 14,504.59 + 11,404.96 = 25,909.55.
+- Cumulative gap: **₹3,206.73m still unpaid or funded by non-cash means.**
+
+FY26 cash exceeded accrual by only ₹931.79m, so only about 23% of the FY25 build-up appears to have reversed (931.79 / 4,138.52). Even that FY26 reversal is uncertain. The cash line includes intangibles, and intangibles under development rose by ₹406.75m (470.45 − 63.70, Balance Sheet, p.341), so part of the FY26 excess may simply be intangible spend.
+
+## 3. Assumptions that could change the gap
+
+| # | Assumption | Effect if wrong |
+|---|---|---|
+| 1 | The CWIP "Disposals/Capitalised" line (4,397.41) is entirely transfers into PPE. The label combines capitalisations with disposals and write-offs. | If part was written off, or moved to intangibles, direct PPE additions are larger. **Accrued capex and the gap would both be larger.** |
+| 2 | PPE and CWIP additions are all cash-type purchases. | Non-cash additions would **shrink the true cash gap**. Examples: dies or spares transferred from inventory, decommissioning provisions, government-grant assets, vendor or buyer's credit, and asset swaps. |
+| 3 | The cash line is compared with PPE-only accruals. The cash line also covers intangibles and investment property. | Investment property was flat at 281.63 (Balance Sheet, p.341), so it is not a factor. FY25 intangible additions are unknown because Note 5 was not provided. Any intangible spend makes the like-for-like **PPE gap larger than ₹4.1bn**. |
+| 4 | Capitalised borrowing cost (304.96) is excluded from accrued capex. | Interest paid is shown in financing activities (Cash Flow, p.347), so excluding it is consistent. |
+| 5 | FX has no effect. | Foreign subsidiaries' additions are translated at average rates, while cash is recorded at transaction rates. The effect is likely small. |
+
+## 4. What the Balance Sheet shows, and what is missing
+
+I assumed capital creditors sit in **Other financial liabilities (Note 19)** and capital advances in **Other non-current assets (Note 14)**. This follows the Balance Sheet's Notes column and is the usual Ind AS presentation, but I have not verified it because Notes 14 and 19 were not provided. The face of the Balance Sheet (p.341) shows only totals:
+
+| Balance Sheet line (Note) | 31-Mar-26 | 31-Mar-25 | Change |
+|---|---|---|---|
+| Other non-current assets (14) | 3,917.22 | 3,466.92 | +450.30 |
+| Other current assets (14) | 6,806.86 | 9,296.58 | (2,489.72) |
+| Other financial liabilities – non-current (19) | 3,357.24 | 195.38 | +3,161.86 |
+| Other financial liabilities – current (19) | 2,124.13 | 1,654.03 | +470.10 |
+
+- **The FY25 movement cannot be computed.** The 31-Mar-2024 Balance Sheet is not in the material provided. I therefore cannot tell whether the FY25 gap came from:
+  - higher capital creditors (supplier-funded capex); or
+  - lower capital advances (assets delivered against cash prepaid in FY24 or earlier). This would mean the "gap" is simply cash that was spent in earlier years.
+- **The FY26 jump in non-current other financial liabilities (+₹3,161.86m) should not be assumed to be capital creditors.** The same year shows two other candidates:
+  - ₹3,000.00m of compulsorily convertible preference shares issued by a subsidiary (Cash Flow, p.347);
+  - a "change in fair value of gross liability on written put options" of ₹(294.72)m (SOCE, p.344).
+
+  Together these (3,000 + 294.72 = 3,294.72) are close to the increase. This is only an inference and needs Note 19 to confirm.
+- **The working-capital lines** in the Cash Flow Statement (for example, "Increase in other financial liabilities 62.18 / 153.00", p.346) should exclude capital creditors, since the capex line states it already includes them. This is worth confirming.
+
+## 5. Information to request
+
+1. **Note 19:** opening and closing "payables for capital goods / capital creditors" for FY24, FY25 and FY26, split current and non-current, including any deferred or extended-credit terms.
+2. **Note 14:** opening and closing "capital advances" for the same three years.
+3. **Note 3:** a split of the CWIP "Disposals/Capitalised" line (4,397.41 / 12,646.53) into transfers to PPE, transfers to intangibles, and write-offs.
+4. **Non-cash investing transactions** (Ind AS 7.43 disclosure): vendor-financed assets, dies transferred from inventory, and grants.
+5. **Note 5:** intangible additions for FY25 and FY26, so the cash line can be matched like-for-like.
+6. **The 31-Mar-2024 consolidated Balance Sheet** (prior-year report).
+
+## Impact on the financial statements
+
+- **Profit and Loss:** no direct effect. The timing of payment does not change depreciation, which starts when assets are available for use. If suppliers are granting extended credit, interest may be embedded in the asset cost or unwound through finance costs (3,233.46 / 4,174.93, P&L p.342). This cannot be tested without Note 19.
+- **Balance Sheet:** on the capital-creditor explanation, about ₹4.1bn of FY25 PPE/CWIP was funded by suppliers rather than cash, and would sit in Other financial liabilities (Note 19). About ₹3.2bn of that would still be outstanding at 31-Mar-26 on the two-year view. On the advances explanation, Other non-current assets (Note 14) would have fallen in FY25 instead.
+- **Cash Flow:** FY25 investing outflow (14,504.59) is about ₹4.1bn lower than the accrual-based spend. This flatters FY25 free cash flow, which was about ₹3,524m (17,963.43 − 14,504.59 + 65.40). On an accrued basis it would be roughly (614)m. If creditors are the cause, the unpaid balance of about ₹3.2bn will fall as a future cash outflow.
+- **Changes in Equity:** not affected. Payment timing does not pass through reserves, apart from any FX on foreign-currency capital creditors, which would go to the FCTR and cannot be quantified from the material provided.
+
+Now answer this follow-up question, using the statements, the notes and the conversation above. Keep the same citation style: (Note X, p.N) for notes, (Balance Sheet, p.N) etc. for statements. As always, explain how the matter affects the primary financial statements (Profit and Loss, Balance Sheet, Cash Flow, Changes in Equity), in a short "Impact on the financial statements" section if the answer involves figures. Use headings and tables only where they help; a short answer is fine for a short question.
+
+FOLLOW-UP QUESTION: Get information related to this item as shown below and do additional analysis "Note 19: opening and closing "payables for capital goods / capital creditors" for FY24, FY25 and FY26, split current and non-current, including any deferred or extended-credit terms.
+Note 14: opening and closing "capital advances" for the same three years.
+Note 3: a split of the CWIP "Disposals/Capitalised" line (4,397.41 / 12,646.53) into transfers to PPE, transfers to intangibles, and write-offs.
+Non-cash investing transactions (Ind AS 7.43 disclosure): vendor-financed assets, dies transferred from inventory, and grants.
+Note 5: intangible additions for FY25 and FY26, so the cash line can be matched like-for-like.
+The 31-Mar-2024 consolidated Balance Sheet (prior-year report)."

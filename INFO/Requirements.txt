@@ -1,0 +1,27 @@
+I want to create a python flask based web app called Annual report foot notes analyzer. 
+This is for doing intricate analysis of foot notes of financial statements.
+
+This is how it will work :
+
+STEP-1 :The user will first select the annual report to analyze.
+Example : "C:\Daya\RAGchamp\ANN-RPT-ANALYZER\Annual-reports\Bharat-Forge-IR-2026-conv-single-page.pdf"
+
+STEP-2 : User will type in the question they want answer for and that involves In-depth analysis.
+
+EXAMPLE - Analyze the company's Tax related liablities and comment on it.
+
+STEP-3 : The App should by default identify  the foot notes of consolidated financial statements, unless the question specifically said not 
+         to do that. In this case it is Note#21 spead across 3 pages - 405,406,407.
+
+STEP-4 : Extract content from the identified pages.
+
+STEP-5 : Send the content to Claude code for analysis.
+
+STEP-6 : Receive back the analysis from Claude code and present it to user.
+
+NOTE - This app has design pattern that showcases how to interact with Claude code via an app
+       C:\Daya\RAGchamp\basic-chatbot
+	   This needs to be reused.
+
+Create a plan called ANN-RPT-NOTES-ANALYZER-PLAN.md in C:\Daya\RAGchamp\ANN-RPT-ANALYZER\INFO
+that will have all the steps to develop this web app. 	   

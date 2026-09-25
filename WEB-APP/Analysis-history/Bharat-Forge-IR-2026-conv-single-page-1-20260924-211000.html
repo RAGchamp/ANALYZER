@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Forge Limited — Initial question — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Bharat Forge Limited</h1>
+      <span class="prompt-badge">#1 · Initial question</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> Bharat-Forge-IR-2026-conv-single-page.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 24 Sep 2026, 21:10:00</div>
+      <div class="col-md-6"><strong>Statements:</strong> Consolidated</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> 405–407</div>
+      <div class="col-12"><strong>Notes analyzed:</strong> Consolidated Note 21 – INCOME AND DEFERRED TAXES (PDF p.405–407)</div>
+      
+      <div class="col-12"><strong>Financial statements referenced:</strong> Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)</div>
+      
+    </div>
+    
+    <div class="question-label">Question</div>
+    
+    <p class="question">Analyze the company&#39;s Tax related liablities and comment on it.</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h2>Summary</h2>
+<ul>
+<li><strong>Tax liabilities on the Balance Sheet fell sharply.</strong> Deferred tax liabilities (net) dropped from ₹1,198.28 mn to ₹215.24 mn, down 82.0%. Current tax liabilities (net) were almost flat at ₹393.16 mn (Balance Sheet, p.341). Together, tax liabilities are now only about 0.5% of total liabilities, down from about 1.5%. The fall in deferred tax liabilities was <strong>not driven by the P&amp;L</strong>. It came mainly from a <strong>₹1,338.69 mn deferred tax credit on cash flow hedge losses</strong> taken through OCI (Note 21, p.407).</li>
+<li><strong>The group's net deferred tax position swung further into an asset.</strong> Net deferred tax assets rose from ₹703.15 mn to ₹1,906.75 mn. About ₹1,117.70 mn of this now depends on the reversal of <strong>hedge losses</strong> (Note 21, p.406), which is an accounting-driven asset rather than a structural one.</li>
+<li><strong>The effective tax rate is high: 34.66%</strong> (prior year 37.27%), against a statutory rate of 25.168%. The gap comes mainly from <strong>₹1,426.83 mn of tax on losses for which no deferred tax asset is recognised</strong>. Without it the rate would be about 26.1% in both years. Carried-forward losses grew to ₹29,399.75 mn, led by <strong>Germany (+43.6%)</strong> (Note 21, p.405–407).</li>
+<li><strong>Current tax is backed by cash.</strong> Taxes paid of ₹5,646.25 mn are about 100.7% of the current tax charge of ₹5,606.07 mn (Cash Flow, p.346; P&amp;L, p.342). There is no sign of cash taxes building up as unpaid liabilities.</li>
+<li><strong>The note has several internal inconsistencies:</strong></li>
+<li>The deferred tax components sum to ₹138.67 mn, not the ₹171.67 mn reported. The ₹33.00 mn difference is unexplained.</li>
+<li>The prior-year split of OCI tax is wrong.</li>
+<li>The prior-year tax adjustment in the rate reconciliation has the opposite sign to the P&amp;L figure.</li>
+<li>The gross DTA/DTL presentation is mislabelled.</li>
+</ul>
+<h2>Key figures</h2>
+<p>(₹ million)</p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Item</th>
+<th>Current year (FY26)</th>
+<th>Prior year (FY25)</th>
+<th>Change</th>
+<th>% change</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deferred tax liabilities (net)</td>
+<td class="num">215.24</td>
+<td class="num">1,198.28</td>
+<td class="num">(983.04)</td>
+<td class="num">(82.0%)</td>
+<td>BS p.341; Note 21 p.406</td>
+</tr>
+<tr>
+<td>Current tax liabilities (net)</td>
+<td class="num">393.16</td>
+<td class="num">396.07</td>
+<td class="num">(2.91)</td>
+<td class="num">(0.7%)</td>
+<td>BS p.341</td>
+</tr>
+<tr>
+<td><strong>Total tax liabilities</strong></td>
+<td class="num"><strong>608.40</strong></td>
+<td class="num"><strong>1,594.35</strong></td>
+<td class="num"><strong>(985.95)</strong></td>
+<td class="num"><strong>(61.8%)</strong></td>
+<td>Computed</td>
+</tr>
+<tr>
+<td>Deferred tax assets (net)</td>
+<td class="num">2,121.99</td>
+<td class="num">1,901.43</td>
+<td class="num">220.56</td>
+<td class="num">11.6%</td>
+<td>BS p.341; Note 21 p.406</td>
+</tr>
+<tr>
+<td>Income tax assets (net)</td>
+<td class="num">505.35</td>
+<td class="num">408.37</td>
+<td class="num">96.98</td>
+<td class="num">23.7%</td>
+<td>BS p.341</td>
+</tr>
+<tr>
+<td>Net deferred tax asset (DTA − DTL)</td>
+<td class="num">1,906.75</td>
+<td class="num">703.15</td>
+<td class="num">1,203.60</td>
+<td class="num">171.2%</td>
+<td>Computed</td>
+</tr>
+<tr>
+<td>Net current tax asset (ITA − CTL)</td>
+<td class="num">112.19</td>
+<td class="num">12.30</td>
+<td class="num">99.89</td>
+<td class="num">n.m.</td>
+<td>Computed</td>
+</tr>
+<tr>
+<td>Current income tax charge</td>
+<td class="num">5,701.41</td>
+<td class="num">5,994.80</td>
+<td class="num">(293.39)</td>
+<td class="num">(4.9%)</td>
+<td>Note 21 p.405</td>
+</tr>
+<tr>
+<td>Tax for prior years</td>
+<td class="num">(95.34)</td>
+<td class="num">(146.26)</td>
+<td class="num">50.92</td>
+<td class="num">(34.8%)</td>
+<td>Note 21 p.405</td>
+</tr>
+<tr>
+<td>Current tax (P&amp;L)</td>
+<td class="num">5,606.07</td>
+<td class="num">5,848.54</td>
+<td class="num">(242.47)</td>
+<td class="num">(4.1%)</td>
+<td>P&amp;L p.342</td>
+</tr>
+<tr>
+<td>Deferred tax charge/(credit)</td>
+<td class="num">171.67</td>
+<td class="num">(423.04)</td>
+<td class="num">594.71</td>
+<td class="num">n.m.</td>
+<td>P&amp;L p.342; Note 21 p.405</td>
+</tr>
+<tr>
+<td><strong>Total income tax expense</strong></td>
+<td class="num"><strong>5,777.74</strong></td>
+<td class="num"><strong>5,425.50</strong></td>
+<td class="num"><strong>352.24</strong></td>
+<td class="num"><strong>6.5%</strong></td>
+<td>P&amp;L p.342</td>
+</tr>
+<tr>
+<td>Profit before tax</td>
+<td class="num">16,671.72</td>
+<td class="num">14,558.25</td>
+<td class="num">2,113.47</td>
+<td class="num">14.5%</td>
+<td>P&amp;L p.342</td>
+</tr>
+<tr>
+<td>Effective tax rate</td>
+<td class="num">34.66%</td>
+<td>37.27%*</td>
+<td class="num">(2.61) pp</td>
+<td class="num">–</td>
+<td>Note 21 p.405</td>
+</tr>
+<tr>
+<td>Tax charged/(credited) to OCI</td>
+<td class="num">(1,326.96)</td>
+<td class="num">(309.02)</td>
+<td class="num">(1,017.94)</td>
+<td class="num">329.4%</td>
+<td>Note 21 p.405</td>
+</tr>
+<tr>
+<td>Income taxes paid (net of refunds)</td>
+<td class="num">5,646.25</td>
+<td class="num">6,050.07</td>
+<td class="num">(403.82)</td>
+<td class="num">(6.7%)</td>
+<td>CFS p.346</td>
+</tr>
+<tr>
+<td>Unrecognised-loss tax impact</td>
+<td class="num">1,426.83</td>
+<td class="num">1,622.12</td>
+<td class="num">(195.29)</td>
+<td class="num">(12.0%)</td>
+<td>Note 21 p.405</td>
+</tr>
+<tr>
+<td>Carried-forward tax losses (all jurisdictions)</td>
+<td class="num">29,399.75</td>
+<td class="num">26,831.86</td>
+<td class="num">2,567.89</td>
+<td class="num">9.6%</td>
+<td>Note 21 p.407</td>
+</tr>
+</tbody>
+</table></div>
+<p>*The note states 37.26%. The recomputed figure is 5,425.50 / 14,558.25 = 37.27%.</p>
+<h2>Detailed analysis</h2>
+<h3>1. Composition of tax liabilities</h3>
+<p><strong>Current tax liability</strong></p>
+<ul>
+<li>Current tax liabilities (net) of ₹393.16 mn are small against an annual current tax charge of ₹5,606.07 mn. That is about 7% of the charge, or roughly 25 days' worth.</li>
+<li>Advance tax and withholding broadly cover the charge.</li>
+<li>The group is in a <strong>net current-tax receivable position</strong> of ₹112.19 mn (505.35 − 393.16), up from ₹12.30 mn.</li>
+<li>A simple roll-forward (the operating net current-tax asset, plus taxes paid, minus the current tax charge) is: 12.30 + 5,646.25 − 5,606.07 = <strong>52.48</strong>. That is ₹59.71 mn short of the actual ₹112.19 mn. The gap is probably due to:</li>
+<li>the subsidiary acquired during the year;</li>
+<li>foreign exchange; and</li>
+<li>offsetting between entities.</li>
+<li>These items are not disclosed.</li>
+</ul>
+<p><strong>Deferred tax liability (net) of ₹215.24 mn.</strong> Components (Note 21, p.406):</p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Component</th>
+<th>FY26</th>
+<th>FY25</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPE &amp; intangibles</td>
+<td class="num">1,493.56</td>
+<td class="num">1,602.97</td>
+<td class="num">(109.41)</td>
+</tr>
+<tr>
+<td>Right-of-use assets</td>
+<td class="num">623.31</td>
+<td class="num">689.02</td>
+<td class="num">(65.71)</td>
+</tr>
+<tr>
+<td>Cash flow hedges</td>
+<td class="num">–</td>
+<td class="num">188.01</td>
+<td class="num">(188.01)</td>
+</tr>
+<tr>
+<td>FVTOCI equity</td>
+<td class="num">181.57</td>
+<td class="num">236.42</td>
+<td class="num">(54.85)</td>
+</tr>
+<tr>
+<td>Other temporary differences (Income tax standards)</td>
+<td class="num">(2,083.20)</td>
+<td class="num">(1,518.14)</td>
+<td class="num">(565.06)</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td class="num"><strong>215.24</strong></td>
+<td class="num"><strong>1,198.28</strong></td>
+<td class="num"><strong>(983.04)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>The components foot correctly: 1,493.56 + 623.31 + 181.57 − 2,083.20 = 215.24. The prior year also foots: 2,716.42 − 1,518.14 = 1,198.28.</p>
+<p><strong>Deferred tax asset (net) of ₹2,121.99 mn.</strong> Components (Note 21, p.406):</p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Component</th>
+<th>FY26</th>
+<th>FY25</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPE &amp; intangibles</td>
+<td class="num">75.02</td>
+<td class="num">86.35</td>
+<td class="num">(11.33)</td>
+</tr>
+<tr>
+<td>Lease liabilities</td>
+<td class="num">(752.67)</td>
+<td class="num">(790.23)</td>
+<td class="num">37.56</td>
+</tr>
+<tr>
+<td>Cash flow hedges</td>
+<td class="num">(1,117.70)</td>
+<td class="num">–</td>
+<td class="num">(1,117.70)</td>
+</tr>
+<tr>
+<td>Other temporary differences</td>
+<td class="num">760.56</td>
+<td class="num">114.21</td>
+<td class="num">646.35</td>
+</tr>
+<tr>
+<td>Unrealised profit on inventory</td>
+<td class="num">(1,087.20)</td>
+<td class="num">(1,311.76)</td>
+<td class="num">224.56</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td class="num"><strong>(2,121.99)</strong></td>
+<td class="num"><strong>(1,901.43)</strong></td>
+<td class="num"><strong>(220.56)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>These foot correctly: 835.58 − 2,957.57 = (2,121.99).</p>
+<p><strong>Main driver: cash flow hedges.</strong></p>
+<ul>
+<li>The combined hedge-related deferred tax position swung from a liability of ₹188.01 mn to an asset of ₹1,117.70 mn. That is a move of ₹1,305.71 mn.</li>
+<li>This mirrors the pre-tax hedge loss of ₹5,312.67 mn in OCI.</li>
+<li>The tax on it is ₹1,338.69 mn, which is 25.2% of 5,312.67, broadly the statutory rate.</li>
+<li><strong>The fall in DTL is therefore mainly a mark-to-market effect, not a real reduction in tax exposure.</strong> If the hedges reverse, the balances will swing back.</li>
+</ul>
+<h3>2. Reconciliation of deferred tax balances (Note 21, p.407)</h3>
+<p><strong>Deferred tax liabilities (net):</strong>
+1,198.28 − 143.07 (P&amp;L) − 1,338.69 (hedge, OCI) + 56.87 (business combination) − 26.43 (OCI) + 468.28 (other) = <strong>215.24</strong> ✓</p>
+<p><strong>Deferred tax assets (net):</strong>
+(1,901.43) + 281.74 (P&amp;L) + 38.16 (OCI) − 540.46 (other) = <strong>(2,121.99)</strong> ✓</p>
+<p>Points to note:</p>
+<ul>
+<li>The two "Other adjustments" (+468.28 and −540.46) net to −72.18. They are large and unexplained. They look like reclassifications between the "net DTL" and "net DTA" entity groups, plus foreign exchange.</li>
+<li>The ₹56.87 mn DTL on the business combination relates to the acquisition shown in investing cash flows (₹4,986.23 mn, CFS p.346).</li>
+</ul>
+<h3>3. Tax expense and effective tax rate</h3>
+<p><strong>Rate reconciliation (Note 21, p.405):</strong></p>
+<ul>
+<li>Current year: 4,195.94 + 210.20 + 1,426.83 − 31.07 + 130.06 − 154.21 = 5,777.75, against 5,777.74 reported (₹0.01 rounding).</li>
+<li>Prior year: 5,425.51 against 5,425.50 (₹0.01 rounding).</li>
+<li>Statutory tax check: 16,671.72 × 25.168% = 4,195.94 ✓; 14,558.25 × 25.168% = 3,664.02 ✓.</li>
+</ul>
+<p><strong>Effective rates:</strong></p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Measure</th>
+<th>FY26</th>
+<th>FY25</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reported ETR</td>
+<td class="num">34.66%</td>
+<td class="num">37.27%</td>
+</tr>
+<tr>
+<td>ETR on profit before exceptional items (5,777.74 / 18,216.15; 5,425.50 / 16,128.90)</td>
+<td class="num">31.72%</td>
+<td class="num">33.64%</td>
+</tr>
+<tr>
+<td>ETR excluding unrecognised-loss impact ((5,777.74 − 1,426.83) / 16,671.72; (5,425.50 − 1,622.12) / 14,558.25)</td>
+<td class="num">26.10%</td>
+<td class="num">26.13%</td>
+</tr>
+<tr>
+<td>Unrecognised-loss drag (1,426.83 / 16,671.72; 1,622.12 / 14,558.25)</td>
+<td class="num">8.56 pp</td>
+<td class="num">11.14 pp</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>The core Indian profit base is taxed close to the statutory rate.</li>
+<li>The high reported ETR comes mainly from <strong>loss-making overseas subsidiaries (Germany, USA, Sweden)</strong>. Their losses give no tax relief because no DTA is recognised.</li>
+<li>The DTA tables have no line for tax losses. This is consistent with no DTA being recognised on carried-forward losses at all.</li>
+</ul>
+<p><strong>Exceptional items:</strong></p>
+<ul>
+<li>Exceptional items of ₹1,544.43 mn add ₹210.20 mn of tax for non-deductible items.</li>
+<li>At 25.168%, that implies about ₹835 mn is non-deductible (210.20 / 0.25168).</li>
+<li>In the prior year, exceptional items of ₹1,570.65 mn had no separate reconciling line. They were presumably included in the unrecognised-loss line.</li>
+</ul>
+<h3>4. Carried-forward tax losses (Note 21, p.407)</h3>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>FY26</th>
+<th>FY25</th>
+<th>Change</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>India (8-year life)</td>
+<td class="num">4,398.53</td>
+<td class="num">4,336.78</td>
+<td class="num">61.75</td>
+<td class="num">1.4%</td>
+</tr>
+<tr>
+<td>USA (20-year life)</td>
+<td class="num">2,718.53</td>
+<td class="num">2,457.95</td>
+<td class="num">260.58</td>
+<td class="num">10.6%</td>
+</tr>
+<tr>
+<td>USA (indefinite)</td>
+<td class="num">8,000.24</td>
+<td class="num">7,622.66</td>
+<td class="num">377.58</td>
+<td class="num">5.0%</td>
+</tr>
+<tr>
+<td>Sweden (indefinite)</td>
+<td class="num">353.13</td>
+<td class="num">2,715.96</td>
+<td class="num">(2,362.83)</td>
+<td class="num">(87.0%)</td>
+</tr>
+<tr>
+<td>Germany (indefinite)</td>
+<td class="num">13,929.32</td>
+<td class="num">9,698.51</td>
+<td class="num">4,230.81</td>
+<td class="num">43.6%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td class="num"><strong>29,399.75</strong></td>
+<td class="num"><strong>26,831.86</strong></td>
+<td class="num"><strong>2,567.89</strong></td>
+<td class="num"><strong>9.6%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Germany is the main concern.</strong> Its losses grew by ₹4.23 bn in one year, pointing to continued heavy losses in the European operations.</li>
+<li><strong>India's losses are time-limited (8 years).</strong> It is not disclosed whether DTA has been recognised on them.</li>
+<li><strong>Sweden fell by 87%.</strong> The note does not say whether the losses were used, forfeited or removed through a restructuring or disposal.</li>
+<li>These unrecognised losses are a <strong>contingent tax asset</strong>. They would lower the future ETR if the loss-making subsidiaries become profitable.</li>
+</ul>
+<h3>5. Cash taxes</h3>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Measure</th>
+<th>FY26</th>
+<th>FY25</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taxes paid / current tax (5,646.25 / 5,606.07; 6,050.07 / 5,848.54)</td>
+<td class="num">100.7%</td>
+<td class="num">103.4%</td>
+</tr>
+<tr>
+<td>Taxes paid / PBT</td>
+<td class="num">33.9%</td>
+<td class="num">41.6%</td>
+</tr>
+<tr>
+<td>Taxes paid / cash generated from operations (5,646.25 / 20,512.67; 6,050.07 / 24,013.50)</td>
+<td class="num">27.5%</td>
+<td class="num">25.2%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cash taxes track the accrual closely. The quality of the current tax figures looks sound.</p>
+<h2>Impact on the financial statements</h2>
+<h3>Statement of Profit and Loss</h3>
+<p>Line items affected (P&amp;L, p.342):</p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Line</th>
+<th>FY26</th>
+<th>FY25</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current tax</td>
+<td class="num">5,606.07</td>
+<td class="num">5,848.54</td>
+</tr>
+<tr>
+<td>Deferred tax charge/(credit)</td>
+<td class="num">171.67</td>
+<td class="num">(423.04)</td>
+</tr>
+<tr>
+<td>Total tax expense</td>
+<td class="num">5,777.74</td>
+<td class="num">5,425.50</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>The note reconciles to these lines:</li>
+<li>Current tax: 5,701.41 − 95.34 = 5,606.07 ✓. Prior year: 5,994.80 − 146.26 = 5,848.54 ✓.</li>
+<li>Deferred tax of 171.67 / (423.04) agrees with the note.</li>
+<li>Profit for the year = PBT 16,671.72 − tax 5,777.74 = <strong>10,893.98</strong> ✓ (prior year 14,558.25 − 5,425.50 = 9,132.75 ✓).</li>
+<li><strong>Effect:</strong></li>
+<li>Tax grew by only 6.5%, against 14.5% growth in PBT. This lifted profit after tax by 19.3%.</li>
+<li>The <strong>deferred tax swing</strong> from a ₹423.04 mn credit to a ₹171.67 mn charge offset most of the ₹242.47 mn fall in current tax.</li>
+<li><strong>OCI tax</strong> (P&amp;L, p.342–343):</li>
+<li>Items not reclassified: (11.73) charge. Prior year: 41.24 credit.</li>
+<li>Items reclassified: 1,338.69 credit. Prior year: 267.78 credit.</li>
+<li>Net credit: 1,326.96, which agrees with the note's (1,326.96) ✓. Prior year: 309.02 ✓.</li>
+<li><strong>Associates:</strong> the separate "Income tax expense" of ₹18.21 mn (prior year ₹12.55 mn) belongs to associates and joint ventures. It is netted within the share of loss (₹94.71 mn) and is <strong>not</strong> part of Note 21.</li>
+</ul>
+<h3>Balance Sheet</h3>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Line (BS p.341)</th>
+<th>FY26</th>
+<th>FY25</th>
+<th>Note agreement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deferred tax assets (net), Note 21</td>
+<td class="num">2,121.99</td>
+<td class="num">1,901.43</td>
+<td>✓ Note 21 p.406</td>
+</tr>
+<tr>
+<td>Deferred tax liabilities (net), Note 21</td>
+<td class="num">215.24</td>
+<td class="num">1,198.28</td>
+<td>✓ Note 21 p.406</td>
+</tr>
+<tr>
+<td>Income tax assets (net), no note reference</td>
+<td class="num">505.35</td>
+<td class="num">408.37</td>
+<td>No note provided</td>
+</tr>
+<tr>
+<td>Current tax liabilities (net), no note reference</td>
+<td class="num">393.16</td>
+<td class="num">396.07</td>
+<td>No note provided</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Deferred tax balances are shown net by taxable entity or jurisdiction, as permitted by Note 21(a). That is why both a DTA and a DTL appear.</li>
+<li><strong>Effect:</strong> tax-related liabilities fell by ₹985.95 mn. Tax-related assets rose by ₹317.54 mn (2,627.34 against 2,309.80).</li>
+<li>Both movements come mainly from hedge losses. They reduce reported leverage and liabilities, but only temporarily.</li>
+<li>The DTA on hedges (₹1,117.70 mn) sits alongside large derivative liabilities: ₹1,582.36 mn non-current and ₹3,102.11 mn current, up from ₹67.45 mn and ₹137.57 mn (BS p.341).</li>
+</ul>
+<h3>Cash Flow Statement</h3>
+<ul>
+<li>The statement starts from profit before tax of 16,671.72 (CFS p.346). Neither current nor deferred tax expense appears as an adjustment, so <strong>deferred tax is non-cash and does not affect operating cash flow</strong>.</li>
+<li><strong>Income taxes paid (net of refunds): (5,646.25)</strong>, prior year (6,050.07). This is the only cash tax line. It reduces cash generated from operations of 20,512.67 to net operating cash flow of <strong>14,866.42</strong> (prior year 17,963.43).</li>
+<li>The fall in cash taxes of ₹403.82 mn partly cushioned the fall in operating cash flow, which was driven by working capital.</li>
+<li>The ₹56.87 mn DTL acquired in the business combination is embedded in "Acquisition of a subsidiary (net of cash) (4,986.23)" and is non-cash.</li>
+</ul>
+<h3>Statement of Changes in Equity</h3>
+<ul>
+<li><strong>Retained earnings:</strong></li>
+<li>Receive profit attributable to owners of 10,796.61 (prior year 9,411.53), which is after the tax charge (SOCE p.344–345).</li>
+<li>Also receive re-measurement of defined benefit plans net of tax: <strong>170.69</strong>. The implied tax is a charge of 237.27 − 170.69 = <strong>66.58</strong>.</li>
+<li><strong>Cash flow hedge reserve:</strong> movement of (3,973.98) = gross (5,312.67) + tax 1,338.69 ✓. The reserve went from 559.27 to <strong>(3,414.71)</strong>. Tax absorbed about 25% of the hedge loss.</li>
+<li><strong>FVTOCI reserve:</strong> movement of (1,814.17) = gross (1,869.02) + implied tax credit <strong>54.85</strong>. This equals exactly the fall in the FVTOCI DTL (236.42 − 181.57 = 54.85) ✓.</li>
+<li><strong>FCTR:</strong> +2,205.34 with no tax effect.</li>
+<li><strong>No tax on dividends</strong> passes through equity.</li>
+</ul>
+<h2>Red flags &amp; areas for follow-up</h2>
+<ol>
+<li><strong>The deferred tax components do not foot to the P&amp;L charge.</strong>
+   - The components give 120.74 + 224.55 − 206.62 = <strong>138.67</strong>, against the ₹171.67 mn reported (Note 21, p.406).
+   - The DTL/DTA reconciliation gives the same figure: −143.07 + 281.74 = <strong>138.67</strong> (p.407).
+   - That leaves an <strong>unexplained ₹33.00 mn</strong>. The prior year ties (−423.04).
+   - The gap is close to the ₹32.98 mn difference between the hedge DTA/DTL movement (1,305.71) and the hedge OCI tax (1,338.69). This may be a misclassification.</li>
+<li><strong>The prior-year OCI tax split is wrong.</strong>
+   - The note's prior-year items give −267.78 − 46.81 − 5.57 = −320.16, against the stated total of (309.02).
+   - The prior-year FVTOCI tax should probably be <strong>+5.57</strong>, which would make it tie.
+   - In the current year, the note's split (DBP 59.85 credit, FVTOCI 71.58 charge) conflicts with the SOCE-implied split (DBP 66.58 charge, FVTOCI 54.85 credit). The signs are also illogical: a DBP <em>gain</em> is shown with a tax credit, and an FVTOCI <em>loss</em> with a tax charge. Only the net 11.73 agrees.</li>
+<li><strong>The prior-year tax line in the rate reconciliation has an inconsistent sign.</strong>
+   - The rate reconciliation shows "reversal of tax expenses of earlier years" as <strong>+130.06</strong>.
+   - The P&amp;L component shows prior-year tax as a <strong>credit of (95.34)</strong>.
+   - The prior year is consistent at (146.26) in both places. Management should explain the ₹225.40 mn gap.</li>
+<li><strong>The "Reflected in the balance sheet" table is mislabelled and inconsistent.</strong>
+   - In the DTA group, "Deferred tax liabilities" of <strong>(1,042.68)</strong> is negative, i.e. a debit.
+   - The gross DTL in the DTL group (1,493.56) equals only the PPE line. It excludes ROU (623.31) and FVTOCI (181.57), which total 2,298.44.
+   - The prior-year gross DTL of 1,790.98 does not agree with the components either (2,716.42).</li>
+<li><strong>Some component movements do not match the P&amp;L charge.</strong> PPE deferred tax balances <em>fell</em> by ₹120.74 mn in total, yet the P&amp;L shows a <em>charge</em> of ₹120.74 mn. The "Other temporary differences" and "Other adjustments" (+468.28 / −540.46) lines are large and vague. A detailed breakdown should be requested.</li>
+<li><strong>The DTA depends heavily on hedge outcomes.</strong> About ₹1.12 bn of DTA depends on hedge losses. Management should confirm recoverability and the expected reversal pattern.</li>
+<li><strong>Germany's losses are rising fast.</strong> They grew by ₹4.23 bn, and no DTA is recognised. Ask about the turnaround plan, the risk of goodwill or asset impairment, and whether any DTA is recognised on the Indian 8-year losses (₹4.40 bn) or US losses. Also ask why Swedish losses fell by ₹2.36 bn.</li>
+<li><strong>Income tax assets and current tax liabilities have no supporting note.</strong> Neither line carries a note reference and no breakdown was provided. The current-tax roll-forward leaves ₹59.71 mn unexplained. Uncertain tax positions and contingent tax disputes are not covered in the material provided.</li>
+<li><strong>Typos and rounding:</strong>
+   - Germany's prior-year loss is printed as "₹9.698.51 million".
+   - The prior-year ETR is stated as 37.26%; the computed figure is 37.27%.
+   - The US losses "available for twenty years" are said to expire "between tax years 2026 and 2037", which should be clarified.
+   - The reconciliation label "Tax (expense) during the period" is attached to a credit.</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li>Note 21 – Income and Deferred Taxes (Consolidated), PDF p.405, p.406, p.407</li>
+<li>Consolidated Statement of Profit and Loss, PDF p.342–343</li>
+<li>Consolidated Balance Sheet, PDF p.341</li>
+<li>Consolidated Cash Flow Statement, PDF p.346–347</li>
+<li>Consolidated Statement of Changes in Equity, PDF p.344–345</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in Bharat-Forge-IR-2026-conv-single-page.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

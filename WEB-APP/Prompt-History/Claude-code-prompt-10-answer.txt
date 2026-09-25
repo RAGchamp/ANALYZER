@@ -1,0 +1,114 @@
+# Cash vs Accrued Capex Gap (FY25 ≈ ₹4.1bn)
+
+## 1. Where the figure came from
+
+**The ₹4.1bn is not disclosed in any single table.** I calculated it from two tables:
+- the Grand Total and CWIP columns of Note 3 (p.378), which give accrued capex;
+- the investing section of the Cash Flow Statement (p.346), which gives cash capex.
+
+The source rows are reproduced below exactly as they appear.
+
+### Table A – Note 3, Property, Plant and Equipment (Note 3, p.378), cost section
+
+| Row (as printed) | Grand Total (A+B) PPE | Capital work-in-progress |
+|---|---|---|
+| As at April 1, 2024 | 100,539.85 | 9,780.84 |
+| Foreign Currency Translation Reserve | 1,309.21 | 12.70 |
+| **Additions** | **11,475.89** | **11,564.63** |
+| Additions on acquisition of subsidiary | - | - |
+| **Disposals/Capitalised** | (121.30) | **(4,397.41)** |
+| Other adjustments – Others | - | - |
+| Other adjustments – Borrowing cost (Refer note a) | - | 304.96 |
+| **As at March 31, 2025** | 113,203.65 | 17,265.72 |
+| Foreign Currency Translation Reserve | 8,907.32 | 598.98 |
+| **Additions** | **16,343.55** | **6,776.15** |
+| Additions on acquisition of subsidiary | 5,432.95 | 275.40 |
+| **Disposals/Capitalised** | (1,321.81) | **(12,646.53)** |
+| Other adjustments – Others | - | (135.54) |
+| Other adjustments – Borrowing cost (Refer note a) | - | 391.33 |
+| **As at March 31, 2026** | 142,565.66 | 12,525.49 |
+
+### Table B – Consolidated Cash Flow Statement, investing activities (Cash Flow, p.346)
+
+| Particulars (as printed) | FY26 | FY25 |
+|---|---|---|
+| Purchase of property, plant and equipment, investment property and intangible assets (including capital work-in-progress, capital creditors and capital advances) | (11,404.96) | (14,504.59) |
+
+The wording "including … capital creditors and capital advances" matters. It confirms that the cash figure has already been adjusted for movements in amounts owed to equipment suppliers and in advances paid to them. Any gap against accrued capex should therefore sit in those balances, or in non-cash additions.
+
+## 2. The calculation
+
+Accrued PPE capex is new money committed to fixed assets. Transfers from CWIP into PPE are removed so they are not counted twice:
+
+**Accrued capex = CWIP additions + (PPE additions − CWIP capitalised into PPE)**
+
+| ₹m | FY25 | FY26 | Source |
+|---|---|---|---|
+| CWIP additions | 11,564.63 | 6,776.15 | Note 3, p.378 |
+| PPE additions | 11,475.89 | 16,343.55 | Note 3, p.378 |
+| Less: CWIP "Disposals/Capitalised" | (4,397.41) | (12,646.53) | Note 3, p.378 |
+| = Direct PPE additions (not via CWIP) | 7,078.48 | 3,697.02 | Calc. |
+| **Accrued PPE capex** | **18,643.11** | **10,473.17** | Calc. |
+| Cash capex | 14,504.59 | 11,404.96 | Cash Flow, p.346 |
+| **Accrued − cash** | **+4,138.52** | **(931.79)** | Calc. |
+| Cash as % of accrued | 77.8% | 108.9% | Calc. |
+
+**Cross-check of the inputs (FY25).** The same accrued figure comes out of the movement in gross cost:
+- Change in gross PPE plus gross CWIP: (113,203.65 − 100,539.85) + (17,265.72 − 9,780.84) = 12,663.80 + 7,484.88 = 20,148.68.
+- Less FX (1,309.21 + 12.70 = 1,321.91) and capitalised borrowing cost (304.96).
+- Add back PPE disposals at cost (121.30).
+- Result: **18,643.11**, which agrees.
+
+**Two-year view.**
+- Accrued capex: 18,643.11 + 10,473.17 = 29,116.28.
+- Cash capex: 14,504.59 + 11,404.96 = 25,909.55.
+- Cumulative gap: **₹3,206.73m still unpaid or funded by non-cash means.**
+
+FY26 cash exceeded accrual by only ₹931.79m, so only about 23% of the FY25 build-up appears to have reversed (931.79 / 4,138.52). Even that FY26 reversal is uncertain. The cash line includes intangibles, and intangibles under development rose by ₹406.75m (470.45 − 63.70, Balance Sheet, p.341), so part of the FY26 excess may simply be intangible spend.
+
+## 3. Assumptions that could change the gap
+
+| # | Assumption | Effect if wrong |
+|---|---|---|
+| 1 | The CWIP "Disposals/Capitalised" line (4,397.41) is entirely transfers into PPE. The label combines capitalisations with disposals and write-offs. | If part was written off, or moved to intangibles, direct PPE additions are larger. **Accrued capex and the gap would both be larger.** |
+| 2 | PPE and CWIP additions are all cash-type purchases. | Non-cash additions would **shrink the true cash gap**. Examples: dies or spares transferred from inventory, decommissioning provisions, government-grant assets, vendor or buyer's credit, and asset swaps. |
+| 3 | The cash line is compared with PPE-only accruals. The cash line also covers intangibles and investment property. | Investment property was flat at 281.63 (Balance Sheet, p.341), so it is not a factor. FY25 intangible additions are unknown because Note 5 was not provided. Any intangible spend makes the like-for-like **PPE gap larger than ₹4.1bn**. |
+| 4 | Capitalised borrowing cost (304.96) is excluded from accrued capex. | Interest paid is shown in financing activities (Cash Flow, p.347), so excluding it is consistent. |
+| 5 | FX has no effect. | Foreign subsidiaries' additions are translated at average rates, while cash is recorded at transaction rates. The effect is likely small. |
+
+## 4. What the Balance Sheet shows, and what is missing
+
+I assumed capital creditors sit in **Other financial liabilities (Note 19)** and capital advances in **Other non-current assets (Note 14)**. This follows the Balance Sheet's Notes column and is the usual Ind AS presentation, but I have not verified it because Notes 14 and 19 were not provided. The face of the Balance Sheet (p.341) shows only totals:
+
+| Balance Sheet line (Note) | 31-Mar-26 | 31-Mar-25 | Change |
+|---|---|---|---|
+| Other non-current assets (14) | 3,917.22 | 3,466.92 | +450.30 |
+| Other current assets (14) | 6,806.86 | 9,296.58 | (2,489.72) |
+| Other financial liabilities – non-current (19) | 3,357.24 | 195.38 | +3,161.86 |
+| Other financial liabilities – current (19) | 2,124.13 | 1,654.03 | +470.10 |
+
+- **The FY25 movement cannot be computed.** The 31-Mar-2024 Balance Sheet is not in the material provided. I therefore cannot tell whether the FY25 gap came from:
+  - higher capital creditors (supplier-funded capex); or
+  - lower capital advances (assets delivered against cash prepaid in FY24 or earlier). This would mean the "gap" is simply cash that was spent in earlier years.
+- **The FY26 jump in non-current other financial liabilities (+₹3,161.86m) should not be assumed to be capital creditors.** The same year shows two other candidates:
+  - ₹3,000.00m of compulsorily convertible preference shares issued by a subsidiary (Cash Flow, p.347);
+  - a "change in fair value of gross liability on written put options" of ₹(294.72)m (SOCE, p.344).
+
+  Together these (3,000 + 294.72 = 3,294.72) are close to the increase. This is only an inference and needs Note 19 to confirm.
+- **The working-capital lines** in the Cash Flow Statement (for example, "Increase in other financial liabilities 62.18 / 153.00", p.346) should exclude capital creditors, since the capex line states it already includes them. This is worth confirming.
+
+## 5. Information to request
+
+1. **Note 19:** opening and closing "payables for capital goods / capital creditors" for FY24, FY25 and FY26, split current and non-current, including any deferred or extended-credit terms.
+2. **Note 14:** opening and closing "capital advances" for the same three years.
+3. **Note 3:** a split of the CWIP "Disposals/Capitalised" line (4,397.41 / 12,646.53) into transfers to PPE, transfers to intangibles, and write-offs.
+4. **Non-cash investing transactions** (Ind AS 7.43 disclosure): vendor-financed assets, dies transferred from inventory, and grants.
+5. **Note 5:** intangible additions for FY25 and FY26, so the cash line can be matched like-for-like.
+6. **The 31-Mar-2024 consolidated Balance Sheet** (prior-year report).
+
+## Impact on the financial statements
+
+- **Profit and Loss:** no direct effect. The timing of payment does not change depreciation, which starts when assets are available for use. If suppliers are granting extended credit, interest may be embedded in the asset cost or unwound through finance costs (3,233.46 / 4,174.93, P&L p.342). This cannot be tested without Note 19.
+- **Balance Sheet:** on the capital-creditor explanation, about ₹4.1bn of FY25 PPE/CWIP was funded by suppliers rather than cash, and would sit in Other financial liabilities (Note 19). About ₹3.2bn of that would still be outstanding at 31-Mar-26 on the two-year view. On the advances explanation, Other non-current assets (Note 14) would have fallen in FY25 instead.
+- **Cash Flow:** FY25 investing outflow (14,504.59) is about ₹4.1bn lower than the accrual-based spend. This flatters FY25 free cash flow, which was about ₹3,524m (17,963.43 − 14,504.59 + 65.40). On an accrued basis it would be roughly (614)m. If creditors are the cause, the unpaid balance of about ₹3.2bn will fall as a future cash outflow.
+- **Changes in Equity:** not affected. Payment timing does not pass through reserves, apart from any FX on foreign-currency capital creditors, which would go to the FCTR and cannot be quantified from the material provided.

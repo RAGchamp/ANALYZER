@@ -1,0 +1,114 @@
+# Loss allowance roll-forward: what the extract can and cannot show
+
+**The roll-forward is not in the extract.** Note 12 (p.388–390) gives only the opening and closing allowance. The P&L charge or release, write-offs and FX are not disclosed, so I cannot say for certain whether the ₹25 Mn net fall came from releases or write-offs.
+
+Below is what can be reconstructed, the limits on each figure, and what to ask for.
+
+## 1. The only hard numbers: opening, closing and net movement
+
+| Component | Opening (31-Mar-25) | Closing (31-Mar-26) | Net movement | Source |
+|---|---|---|---|---|
+| Credit-impaired (100% provided) | 154.48 | 164.46 | **+9.98** | Note 12, p.388 |
+| ECL on considered good – current | 437.51 | 402.24 | **−35.27** | Note 12, p.388 |
+| ECL on considered good – non-current | 0.33 | 0.38 | **+0.05** | Note 12, p.388 |
+| **Total allowance** | **592.32** | **567.08** | **−25.24** | Note 12, p.389 |
+
+Check: 9.98 − 35.27 + 0.05 = −25.24 ✓.
+
+**Correction to my earlier answer:** my first summary said the allowance fell by "₹25.25 Mn". The correct figure is **₹25.24 Mn** (592.32 − 567.08). The current-only fall is ₹25.29 Mn (p.388).
+
+**Takeaway:** the entire net fall sits in **ECL on "considered good" balances** (−₹35.22 Mn net). Provisions on credit-impaired balances actually *rose*.
+
+## 2. The roll-forward identity and a break-even test
+
+Closing = Opening + P&L charge/(release) − Write-offs utilised ± FX
+
+Solving for the P&L line:
+
+**P&L charge = −25.24 + Write-offs ∓ FX**
+
+Ignoring FX:
+
+| If write-offs were… | Implied P&L effect | Interpretation |
+|---|---|---|
+| ₹0 | **Release of ₹25.24 Mn** (credit to P&L) | The whole fall is a release that boosted profit |
+| ₹25.24 Mn | Nil | The fall is fully explained by write-offs |
+| More than ₹25.24 Mn (e.g. ₹100 Mn) | **Charge of ₹74.76 Mn** (expense) | The P&L took a hit, and the allowance fell only because it was used up |
+
+**₹25.24 Mn is the break-even level of write-offs.** Whether profit benefited depends entirely on write-offs, which are not disclosed.
+
+## 3. Indirect evidence from the ageing schedule
+
+### (a) Credit-impaired balances: evidence of some exits
+
+Gross credit-impaired balances equal their allowance, so any write-off reduces both by the same amount. The cohort comparison below uses Note 12, p.389.
+
+| Evidence | Calculation | Result |
+|---|---|---|
+| New impairments (minimum) | FY26 impaired in "not yet due" + "<6 m" = 8.04 + 16.14. FY25 had nil impaired in "not yet due", so these must be newly impaired. | **≥ ₹24.18 Mn** |
+| FY25 impaired balances that left (minimum) | FY25 impaired total 154.48 − FY26 impaired aged ≥6 m (15.10 + 7.07 + 22.20 + 95.91 = 140.28) | **≥ ₹14.20 Mn** |
+| Oldest cohort | FY25 2–3 yr + >3 yr impaired: 35.75 + 65.58 = 101.33 → FY26 >3 yr: 95.91 | ≥ ₹5.42 Mn left |
+
+Indicative movement: 154.48 + ≥24.18 new − ≥14.20 exits = 164.46 ✓.
+
+- The ≥₹14.20 Mn of exits could be **write-offs, recoveries or FX**. The extract does not say which.
+- Even if all of it were write-offs, it is **below the ₹25.24 Mn break-even**. Impaired write-offs alone therefore cannot be shown to explain the net fall.
+- Both figures are minimums. The true new impairments and exits could each be larger and still net to +9.98.
+
+### (b) ECL on "considered good" balances: where the ₹35 Mn came out
+
+Movement by bucket (ECL = bucket allowance − impaired gross, Note 12, p.389):
+
+| Bucket | FY25 ECL | FY26 ECL | Change |
+|---|---|---|---|
+| Not yet due | 34.13 | 59.79 | +25.66 |
+| < 6 months | 56.02 | 100.61 | +44.59 |
+| 6–12 months | 173.41 | 13.15 | **−160.26** |
+| 1–2 years | 44.21 | 103.63 | +59.42 |
+| 2–3 years | 34.77 | 40.23 | +5.46 |
+| > 3 years | 95.30 | 85.21 | −10.09 |
+| **Total** | **437.84** | **402.62** | **−35.22** |
+
+- The fall is driven by the **FY25 6–12 month bucket (₹173.41 Mn of ECL)**.
+- Tracking that cohort from FY25 to FY26:
+  - The gross balance fell ₹281.72 Mn (1,116.99 → 835.27).
+  - Its ECL fell ₹69.78 Mn (173.41 → 103.63).
+- There are two possible readings:
+  - **Write-off reading:** some of the ₹281.72 Mn was written off using the ₹69.78 Mn. If more than ₹69.78 Mn was written off, the excess needed a fresh P&L charge.
+  - **Release reading:** the ₹281.72 Mn was collected and ₹69.78 Mn was released to P&L. However, the remaining ₹835.27 Mn then carries a lower rate (12.4% vs 15.5%). That points to a **rate recalibration**, not just release on collected balances.
+- Under a simplified (provision-matrix) approach, balances are usually moved to credit-impaired before being written off. Yet impaired balances grew only ₹9.98 Mn. This makes **large write-offs directly out of "considered good" less likely, though still possible**. On balance, the evidence leans towards **release or recalibration** rather than write-offs as the main driver. This is an inference, not a disclosed fact.
+
+### (c) FX
+
+The group consolidates overseas subsidiaries, so part of the movement may be translation. The extract gives no currency split, so **FX cannot be quantified**. It is also the most likely explanation for the 1–2 yr → 2–3 yr cohort *increasing* by ₹23.89 Mn, which I flagged earlier.
+
+## 4. Indicative roll-forward
+
+₹ Million
+
+| Line | Credit-impaired | ECL on good | Total | Basis |
+|---|---|---|---|---|
+| Opening | 154.48 | 437.84 | 592.32 | Disclosed (p.388–389) |
+| New provisions / charge | ≥24.18 | Not known | Not known | Inferred minimum (impaired only) |
+| Releases | Not known | Not known | Not known | Not disclosed |
+| Write-offs utilised | ≤(14.20) exits* | Not known | Not known | *Exits may also be recoveries or FX |
+| FX translation | Not known | Not known | Not known | Not disclosed |
+| **Closing** | **164.46** | **402.62** | **567.08** | Disclosed (p.388–389) |
+| Net movement | +9.98 | −35.22 | −25.24 | Calculated |
+
+## 5. Conclusion
+
+- **The disclosed data cannot distinguish between release and write-off.**
+- **The indirect evidence points more to a release or rate recalibration** on older "considered good" balances, especially the FY25 6–12 month cohort:
+  - The net fall is entirely in ECL on "considered good" balances.
+  - Credit-impaired balances, the usual route to write-off, increased.
+  - Coverage fell in every ageing cohort.
+- **If it was a release, FY26 profit benefited** by about ₹25 Mn or more while the overdue book grew. That strengthens the concern about under-provisioning (the ₹355–430 Mn shortfall versus FY25 rates from my earlier answer).
+
+## 6. Where to find the actual roll-forward
+
+- **Financial risk management / credit risk note** in the consolidated statements. Ind AS 107 requires a reconciliation of the loss allowance, and it is usually placed there rather than in the receivables note. It is not in this extract.
+- **Other expenses note:** look for "bad debts written off" and "provision for doubtful debts (net)" lines. These give the P&L charge or release and the write-offs.
+- **Cash flow statement:** look for a non-cash adjustment for the allowance or ECL.
+
+If you share any of these sections, I can complete the roll-forward and confirm whether the ₹25.24 Mn was a release or a write-off.

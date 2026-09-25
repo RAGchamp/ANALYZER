@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Forge Limited — Follow-up question 5 — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Bharat Forge Limited</h1>
+      <span class="prompt-badge">#6 · Follow-up question 5</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> Bharat-Forge-IR-2026-conv-single-page.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 24 Sep 2026, 18:33:46</div>
+      <div class="col-md-6"><strong>Statements:</strong> Consolidated</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> 388–390</div>
+      <div class="col-12"><strong>Notes analyzed:</strong> Consolidated Note 12 – TRADE RECEIVABLES (PDF p.388–390)</div>
+    </div>
+    
+    <div class="question-label">Original question</div>
+    <p class="original mb-2">Analyze Trade Receivables</p>
+    <div class="question-label">Follow-up question</div>
+    
+    <p class="question">why is &#34;P&amp;L charge = −25.24 + Write-offs ∓ FX&#34;</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h1>Why "P&amp;L charge = −25.24 + Write-offs ∓ FX"</h1>
+<p>It is the allowance roll-forward rearranged to solve for the one line that goes through profit and loss.</p>
+<h2>1. Start from the roll-forward identity</h2>
+<p>A loss allowance changes in only three ways over a year:</p>
+<p><strong>Closing = Opening + P&amp;L charge (net of releases) − Write-offs utilised + FX translation</strong></p>
+<ul>
+<li><strong>P&amp;L charge</strong> increases the allowance. A release is a negative charge.</li>
+<li><strong>Write-offs</strong> reduce the allowance. The provision is used up against the written-off receivable, with no further P&amp;L effect.</li>
+<li><strong>FX translation</strong> moves overseas subsidiaries' allowances up or down when converted into ₹. It goes through other comprehensive income, not P&amp;L.</li>
+</ul>
+<h2>2. Rearrange for the P&amp;L charge</h2>
+<p>P&amp;L charge = (Closing − Opening) + Write-offs − FX</p>
+<p>Substituting the disclosed totals (Note 12, p.389):</p>
+<ul>
+<li>Closing − Opening = 567.08 − 592.32 = <strong>−25.24</strong></li>
+<li>Therefore: <strong>P&amp;L charge = −25.24 + Write-offs − FX</strong></li>
+</ul>
+<h2>3. Why I wrote "∓" and not "−"</h2>
+<p>The "∓" was shorthand for "the opposite sign to the FX effect":</p>
+<ul>
+<li>If the rupee weakened and translation <strong>increased</strong> the allowance (+FX), part of the closing balance came from FX, not P&amp;L. So you <strong>subtract</strong> it.</li>
+<li>If translation <strong>decreased</strong> the allowance (−FX), you <strong>add</strong> it back.</li>
+</ul>
+<p><strong>Clearer notation:</strong> P&amp;L charge = −25.24 + W − FX, where FX is signed (positive if it increased the allowance). This is equivalent to what I wrote, but less ambiguous.</p>
+<h2>4. Worked examples</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Write-offs (W)</th>
+<th>FX effect</th>
+<th>P&amp;L charge / (release)</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">0</td>
+<td class="num">0</td>
+<td><strong>(25.24)</strong> release</td>
+<td>−25.24 + 0 − 0</td>
+</tr>
+<tr>
+<td class="num">25.24</td>
+<td class="num">0</td>
+<td class="num">0</td>
+<td>−25.24 + 25.24 − 0</td>
+</tr>
+<tr>
+<td class="num">100.00</td>
+<td class="num">0</td>
+<td>74.76 charge</td>
+<td>−25.24 + 100 − 0</td>
+</tr>
+<tr>
+<td class="num">0</td>
+<td class="num">+10.00</td>
+<td><strong>(35.24)</strong> release</td>
+<td>−25.24 + 0 − 10</td>
+</tr>
+<tr>
+<td class="num">0</td>
+<td class="num">−10.00</td>
+<td>(15.24) release</td>
+<td>−25.24 + 0 + 10</td>
+</tr>
+</tbody>
+</table></div>
+<h2>5. Caveats</h2>
+<ul>
+<li><strong>"P&amp;L charge" here is a net figure</strong> (new provisions minus releases). The annual report may show these gross, split between "Other expenses" and "Other income".</li>
+<li><strong>Other reconciling items are ignored.</strong> Examples are allowances acquired or disposed of with subsidiaries, and reclassifications. None are disclosed in Note 12 (p.388–390). If they exist, they would enter the identity the same way as FX.</li>
+<li><strong>W and FX are not in the extract.</strong> So the equation shows only the <em>relationship</em> between the lines. It cannot fix the P&amp;L figure. That is why ₹25.24 Mn is a break-even level of write-offs, not a measured charge or release.</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in Bharat-Forge-IR-2026-conv-single-page.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

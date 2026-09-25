@@ -1,0 +1,9 @@
+Asked at: 2026-09-24 17:46:20
+Kind: analysis
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 12 – TRADE RECEIVABLES (PDF p.388–390)
+PDF pages: 388, 389, 390
+Thread: c4d83b7954de49d082c10d31a371c79a
+
+Analyze Trade Receivables

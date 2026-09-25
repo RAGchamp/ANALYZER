@@ -1,0 +1,529 @@
+Annual report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Statements: Consolidated
+Notes provided: Consolidated Note 3 – PROPERTY, PLANT AND EQUIPMENT (PDF p.377–379), Consolidated Note 30 – DEPRECIATION AND AMORTISATION EXPENSE (PDF p.413)
+Primary financial statements provided: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+
+QUESTION: analyze property plant and equipment
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Impact on the financial statements
+How the matters in the notes flow into and affect each primary statement. Use one sub-heading per statement:
+### Statement of Profit and Loss
+### Balance Sheet
+### Cash Flow Statement
+### Statement of Changes in Equity
+For each one, name the line items affected, give their figures (current and prior year, citing statement and page), show how the note reconciles to them, and explain the effect. For example, how the tax expense in the note drives profit after tax, how deferred tax balances appear on the Balance Sheet, how taxes paid appear in operating cash flow, or how OCI items move reserves in equity.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about, including any note figure that does not agree with the statements.
+## Sources
+The notes, statements and PDF pages you relied on.
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Consolidated Statement of Profit and Loss (Consolidated) ===
+--- PDF page 342 (printed page 339) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+INCOME
+Revenue from operations | 24 | 168,116.53 | 151,228.03
+Other income | 25 | 1,986.83 | 2,137.64
+Total income [i] | 170,103.36 | 153,365.67
+EXPENSES
+Cost of raw materials and components consumed | 26 | 77,779.31 | 64,396.23
+Purchase of stock in trade | 788.71 | 2,318.22
+(Increase) in inventories of finished goods, work-in-progress, stock in trade, dies | 27 | (2,672.21) | (771.05)
+and scrap
+Employee benefits expenses | 28 | 21,034.18 | 18,698.95
+Finance costs | 29 | 3,233.46 | 4,174.93
+Depreciation and amortisation expenses | 30 | 9,709.24 | 8,736.19
+Other expenses | 31 | 41,919.81 | 39,646.23
+Total expenses [ii] | 151,792.50 | 137,199.70
+Profit before share of profit/(loss) of associates and joint ventures, exceptional | 18,310.86 | 16,165.97
+items and tax [i-ii]
+Share of profit/(loss) of associates and joint ventures | (76.50) | (24.52)
+Income tax expense | 18.21 | 12.55
+Share of profit/(loss) of associates and joint ventures, net of tax | (94.71) | (37.07)
+Profit before exceptional items and tax | 18,216.15 | 16,128.90
+Exceptional items (loss) | 32 | (1,544.43) | (1,570.65)
+Profit before tax | 16,671.72 | 14,558.25
+Income tax expense | 21
+Current tax | 5,606.07 | 5,848.54
+Deferred tax charge/(credit) | 171.67 | (423.04)
+5,777.74 | 5,425.50
+Profit for the year | 10,893.98 | 9,132.75
+OTHER COMPREHENSIVE INCOME
+Other comprehensive income/(loss) not to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Re-measurement gain/(loss) on defined benefit plans | 33 | 237.27 | (185.37)
+- Net (loss)on FVTOCI equity investments | 33 | (1,869.02) | (51.09)
+- Share of other comprehensive (loss) of associates and joint ventures | 33 | - | (0.61)
+(1,631.75) | (237.07)
+Income tax effect | 33 | (11.73) | 41.24
+[A] | (1,643.48) | (195.83)
+
+--- PDF page 343 (printed page 340) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026 (Contd.)
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Other comprehensive income/(loss) to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Net movement on cash flow hedges | 33 | (5,312.67) | (1,060.36)
+- Exchange differences on translating financial statements of foreign operations | 33 | 2,205.34 | 432.60
+(3,107.33) | (627.76)
+Income tax effect | 33 | 1,338.69 | 267.78
+[B] | (1,768.64) | (359.98)
+Other comprehensive (loss) for the year (net of tax) [A+B] | (3,412.12) | (555.81)
+Total comprehensive income for the year | 7,481.86 | 8,576.94
+Of the total comprehensive income above,
+Attributable to:
+Owners of the parent company | 7,384.49 | 8,855.72
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Profit for the year
+Attributable to:
+Owners of the parent company | 10,796.61 | 9,411.53
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Other comprehensive (loss) for the year
+Attributable to:
+Equityholders of the parent company | (3,412.12) | (555.81)
+Non-controlling interests | 0.00 | -
+Earnings per equity share [nominal value per share ₹2/- | 34
+(March 31, 2025: ₹2/-)
+Basic (in ₹) | 22.58 | 20.05
+Diluted (in ₹) | 22.58 | 20.05
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Balance Sheet (Consolidated) ===
+--- PDF page 341 (printed page 338) ---
+Consolidated Balance Sheet
+as at March 31, 2026
+In ₹Million
+Notes | As at | As at
+March 31, 2026 | March 31, 2025
+ASSETS
+I. | Non-current assets
+(a) Property, plant and equipment | 3 | 72,575.52 | 58,473.77
+(b) Capital work-in-progress | 3 | 12,513.26 | 17,253.49
+(c) Investment property | 4 | 281.63 | 281.63
+(d) Goodwill | 5 | 3,902.53 | 2,627.83
+(e) Other intangible assets | 5 | 605.97 | 413.00
+(f) Intangible assets under development | 5 | 470.45 | 63.70
+(g) Right-of-use asset | 43 | 4,784.26 | 4,472.93
+(h) Investments accounted for using the equity method | 6 | 614.14 | 905.08
+(i) Financial assets
+(i) Investments | 7 | 5,031.65 | 6,192.36
+(ii) Trade receivables | 12 | 168.68 | 135.48
+(iii) Loans | 8 | 37.67 | 58.54
+(iv) Derivative instruments | 9 | - | 289.02
+(v) Other financial assets | 10 | 3,040.67 | 1,616.22
+(j) Deferred tax assets (net) | 21 | 2,121.99 | 1,901.43
+(k) Income tax assets (net) | 505.35 | 408.37
+(l) Other non-current assets | 14 | 3,917.22 | 3,466.92
+110,570.99 | 98,559.77
+II. | Current assets
+(a) Inventories | 11 | 40,527.83 | 35,784.36
+(b) Financial assets
+(i) Investments | 7 | 11,739.22 | 13,529.59
+(ii) Trade receivables | 12 | 39,097.99 | 28,996.06
+(iii) Cash and cash equivalents | 13 | 8,478.85 | 6,210.35
+(iv) Other bank balances | 13 | 1,420.57 | 6,703.41
+(v) Loans | 8 | 176.32 | 166.14
+(vi) Derivative instruments | 9 | - | 600.57
+(vii) Other financial assets | 10 | 3,780.92 | 1,036.38
+(c) Other current assets | 14 | 6,806.86 | 9,296.58
+112,028.56 | 102,323.44
+Total assets | 222,599.55 | 200,883.21
+EQUITY AND LIABILITIES
+EQUITY
+(a) Equity share capital | 15 | 956.27 | 956.27
+(b) Other equity | 16 | 94,842.13 | 91,577.07
+Equity attributable to owners of the parent company | 95,798.40 | 92,533.34
+Non-controlling interests | 37 | (230.16) | (327.53)
+Total equity | 95,568.24 | 92,205.81
+LIABILITIES
+I. | Non-current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 18,123.55 | 13,193.66
+(ii) Lease liabilities | 43 | 3,699.19 | 3,623.98
+(iii) Derivative instruments | 19a | 1,582.36 | 67.45
+(iv) Other financial liabilities | 19 | 3,357.24 | 195.38
+(b) Provisions | 20 | 2,906.62 | 2,192.25
+(c) Deferred tax liabilities (net) | 21 | 215.24 | 1,198.28
+(d) Other non-current liabilities | 23 | 1,332.71 | 1,176.32
+31,216.91 | 21,647.32
+II. | Current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 50,622.63 | 49,690.21
+(ii) Lease liabilities | 43 | 640.78 | 474.74
+(iii) Trade payables | 22
+Dues to micro enterprises and small enterprises | 839.98 | 770.13
+Dues to other than micro enterprises and small enterprises | 29,116.63 | 22,671.99
+(iv) Derivative instruments | 19a | 3,102.11 | 137.57
+(v) Other financial liabilities | 19 | 2,124.13 | 1,654.03
+(b) Other current liabilities | 23 | 6,871.51 | 9,289.48
+(c) Provisions | 20 | 2,103.47 | 1,945.86
+(d) Current tax liabilities (net) | 393.16 | 396.07
+95,814.40 | 87,030.08
+Total liabilities | 127,031.31 | 108,677.40
+Total equity and liabilities | 222,599.55 | 200,883.21
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Cash Flow Statement (Consolidated) ===
+--- PDF page 346 (printed page 343) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+OPERATING ACTIvITIES
+Profit after exceptional items & before tax | 16,671.72 | 14,558.25
+(Less): Share of (loss) of associates and joint ventures (net of tax) | (94.71) | (37.07)
+16,766.43 | 14,595.32
+Adjustment to reconcile profit before tax to net cash flows
+Depreciation and amortisation expenses | 9,709.24 | 8,736.19
+Unrealised foreign exchange (gain)/loss MTM (net) | 635.77 | (363.50)
+Interest income | (633.42) | (691.49)
+Liabilities/provision no longer required written back | (94.82) | (59.44)
+Provision for doubtful debts and advances written back | 125.94 | 68.52
+Bad debts/advances written off | 17.18 | 79.91
+Finance costs | 3,233.46 | 4,174.93
+(Gain)/loss on sale of property, plant and equipment (net) | (185.34) | 14.87
+Dividend income from equity securities | (9.04) | (8.34)
+Net (gain) on sale of financial instruments | (595.05) | (1,415.32)
+Net loss on fair valuation of financial instruments (FVTPL) | 174.64 | 768.55
+Non-cash exceptional items | 404.99 | 1,570.65
+Operating profit before working capital changes | 29,549.98 | 27,470.85
+Working capital adjustments
+(Increase)/Decrease in trade receivables | (7,090.42) | 2,510.11
+(Increase) in inventories | (3,878.56) | (3,837.66)
+(Increase)/decrease in other financial assets | (2,724.71) | 57.40
+Decrease/(Increase) in other assets | 1,566.07 | (2,279.99)
+Increase in provisions | 923.11 | 614.19
+Increase in trade payables | 4,419.60 | 910.48
+Increase in other financial liabilities | 62.18 | 153.00
+(Decrease) in other liabilities | (2,314.58) | (1,584.88)
+Cash generated from operations | 20,512.67 | 24,013.50
+Income taxes paid (net of refunds) | (5,646.25) | (6,050.07)
+Net cash flows from operating activities (I) | 14,866.42 | 17,963.43
+INvESTING ACTIvITIES
+Purchase of property, plant and equipment, investment property and intangible assets | (11,404.96) | (14,504.59)
+(including capital work-in-progress, capital creditors and capital advances)
+Proceeds from sale of property, plant and equipment and intangible assets | 274.32 | 65.40
+Investments in joint venture/associates | - | (303.49)
+Acquisition of a subsidiary (net of cash of ₹1,933.28 million) | (4,986.23) | -
+Repayment of loan given to joint venture/associates | - | 42.47
+Investments in mutual funds, fixed deposits and other deposits | (125,407.36) | (142,382.36)
+Proceeds from sale of financial instruments including fixed deposits | 130,905.57 | 136,896.77
+Interest received | 279.32 | 534.13
+Dividend received | 9.04 | 8.34
+Net cash flows (used in) investing activities (II) | (10,330.30) | (19,643.33)
+
+--- PDF page 347 (printed page 344) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026 (contd.)
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+FINANCING ACTIvITIES
+Dividend paid on equity shares | (3,796.55) | (4,220.93)
+Proceeds from issue of compulsorily convertible preference shares by the subsidiary | 3,000.00 | -
+company
+Interest paid on lease liabilities | (341.87) | (330.76)
+Interest paid on borrowing and other liabilities | (3,410.41) | (4,398.40)
+Proceeds from Issuance of Equity share capital under Qualified Institutional Placement (QIP) | - | 16,500.00
+Transaction cost related to Qualified Institutional Placement (QIP) | - | (302.67)
+Payment of principal portion of lease liabilities | (654.56) | (515.71)
+Proceeds from borrowings including bill discounting | 142,833.45 | 88,513.79
+Repayment of borrowings including bill discounting | (142,049.91) | (100,942.28)
+Net cash flows (used in) financing activities (III) | (4,419.85) | (5,696.96)
+Net increase/(decrease) in cash and cash equivalents (I + II + III) | 116.27 | (7,376.86)
+Net foreign exchange difference | (53.11) | 1.51
+Cash and cash equivalents at the beginning of the year* | 6,210.35 | 13,153.10
+Cash and cash equivalents at the end of the year* | 6,273.51 | 5,777.75
+Foreign currency translation reserve movement | 2,205.34 | 432.60
+Cash and cash equivalents at the end of the year* | 8,478.85 | 6,210.35
+* Excluding earmarked balances
+CASH AND CASH EQUIVALENTS FOR THE PURPOSE OF CASH FLOW STATEMENT
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+BANk BALANCES
+In cash credit and current accounts | 8,182.10 | 5,204.60
+Deposits with original maturity of less than three months | 294.32 | 1,003.06
+CASH ON HAND | 2.43 | 2.69
+Total | 8,478.85 | 6,210.35
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Statement of Changes in Equity (Consolidated) ===
+--- PDF page 344 (printed page 341) (printed sideways; rotated 90° clockwise before extraction) ---
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026
+A. EQUITY SHARE CAPITAL:
+Equity shares of ₹2/- each issued, subscribed and fully paid
+Particulars | No.
+As at March 31, 2026 | 478,088,632
+Changes in equity share capital during the year | -
+As at March 31, 2025 | 478,088,632
+Changes in equity share capital during the year | 12,500,000
+As at April 1, 2024 | 465,588,632
+(1) For the year ended March 31, 2026 | In ₹Million
+Balance as on April 1, 2025 | Changes in equity share capital Balance as on March 31, 2026
+during the year
+956.27 | - | 956.27
+(2) For the year ended March 31, 2025 | In ₹Million
+Balance as on April 1, 2024 | Changes in equity share capital Balance as on March 31, 2025
+during the current year
+931.27 | 25.00 | 956.27
+B. OTHER EQUITY
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2025 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+- Profit/(Loss) for the year | - | - | - | - | 10,796.61 | - | - | - | - | 10,796.61 | 97.37 | 10,893.98
+- Other Comprehensive Income/ | - | - | - | - | 170.69 | 2,205.34 | (1,814.17) | - | (3,973.98) | (3,412.12) | 0.00 | (3,412.12)
+(Loss)
+- Change in fair value of gross | - | - | (294.72) | - | - | - | - | (294.72) | - | (294.72)
+liability on written put options
+- | - | - | - | 10,672.58 | 2,205.34 | (1,814.17) | - | (3,973.98) | 7,089.77 | 97.37 | 7,187.14
+Transaction with owners in their
+capacity as owners
+- Final equity dividend | - | - | - | - | (2,868.53) | - | - | - | - | (2,868.53) | - | (2,868.53)
+- Interim equity dividend | - | - | - | - | (956.18) | - | - | - | - | (956.18) | - | (956.18)
+Balance as at March 31, 2026 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 68,659.35 | 4,213.27 | (944.15) | (148.19) | (3,414.71) | 94,842.13 | (230.16) | 94,611.97
+
+--- PDF page 345 (printed page 342) (printed sideways; rotated 90° clockwise before extraction) ---
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026 (Contd.)
+B. OTHER EQUITY (CONTD.)
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2024 | 6,930.89 | 15.50 | 127.36 | 3,230.48 | 56,757.59 | 1,575.33 | 929.76 | (148.19) | 1,351.85 | 70,770.57 | (48.75) | 70,721.82
+- Profit/(Loss) for the year | - | - | - | - | 9,411.53 | - | - | - | 9,411.53 | (278.78) | 9,132.75
+- Other Comprehensive | - | - | - | - | (136.09) | 432.60 | (59.74) | - | (792.58) | (555.81) | - | (555.81)
+Income/(Loss)
+- Premium on allotment of | 16,475.00 | - | - | - | - | - | - | - | - | 16,475.00 | - | 16,475.00
+equity shares
+- Expenses on allotment of equity | (302.67) | - | - | - | - | - | - | - | - | (302.67) | - | (302.67)
+shares
+16,172.33 | - | - | - | 9,275.44 | 432.60 | (59.74) | - | (792.58) | 25,028.05 | (278.78) | 24,749.27
+Transaction with owners in
+their capacity as owners
+- Final equity dividend | - | - | - | - | (3,026.33) | - | - | - | - | (3,026.33) | - | (3,026.33)
+- Interim equity dividend | - | - | - | - | (1,195.22) | - | - | - | - | (1,195.22) | - | (1,195.22)
+Balance as at March 31, 2025 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Note 3 — PROPERTY, PLANT AND EQUIPMENT (Consolidated) ===
+--- PDF page 377 (printed page 374) ---
+3. PROPERTY, PLANT AND EQUIPMENT
+In ₹Million
+Freehold | Buildings | Plant and | Railway | Office | Electrical | Factory Sub Total (A)
+land | (Note e | machinery | sidings equipments installations | equipment
+and f) | (Note b)
+Cost
+As at April 1, 2024 | 1,125.06 | 15,465.53 | 75,987.59 | 0.02 | 359.50 | 376.43 | 4,825.25 | 98,139.39
+Foreign Currency Translation | 12.91 | 255.57 | 950.62 | - | 1.66 | - | 87.84 | 1,308.60
+Reserve
+Additions | 983.15 | 3,843.53 | 5,728.30 | - | 22.22 | 58.00 | 350.37 | 10,985.57
+Disposals/Capitalised | - | (2.77) | (73.25) | - | (0.05) | (0.28) | (30.08) | (106.43)
+Other adjustments
+- Others | - | - | (4.28) | - | - | - | - | (4.28)
+- Borrowing cost (Refer note a) | - | - | - | - | - | - | - | -
+As at March 31, 2025 | 2,121.12 | 19,561.86 | 82,588.98 | 0.02 | 383.33 | 434.15 | 5,233.38 | 110,322.85
+Foreign Currency Translation | 74.03 | 1,626.93 | 6,333.28 | - | 68.97 | 140.88 | 644.70 | 8,888.79
+Reserve
+Additions | 764.88 | 1,044.57 | 13,454.82 | - | 91.91 | 44.09 | 558.46 | 15,958.73
+Disposals/Capitalised | (9.10) | (16.31) | (1,067.05) | - | (2.58) | (1.28) | (206.00) | (1,302.32)
+Additions on acquisition of | 388.13 | 1,274.59 | 3,723.71 | - | 3.12 | - | - | 5,389.55
+subsidiary
+Other adjustments
+- Others | - | - | - | - | - | - | - | -
+- Borrowing cost (Refer note a) | - | - | - | - | - | - | - | -
+As at March 31, 2026 | 3,339.06 | 23,491.64 | 105,033.74 | 0.02 | 544.75 | 617.84 | 6,230.54 | 139,257.60
+Depreciation and impairment
+As at April 1, 2024 | - | 3,720.44 | 37,865.65 | - | 170.34 | 190.29 | 2,995.81 | 44,942.53
+Foreign Currency Translation | - | 61.30 | 471.25 | - | 1.43 | - | 61.90 | 595.87
+Reserve
+Additions on acquisition of | - | - | - | - | - | - | - | -
+subsidiary
+Charge for the year | - | 569.17 | 6,627.14 | - | 57.24 | 18.30 | 445.38 | 7,717.23
+Disposals | - | (1.28) | (54.99) | - | (0.03) | - | (30.08) | (86.38)
+Impairment | - | 59.41 | 300.07 | - | 13.26 | - | - | 372.74
+As at March 31, 2025 | - | 4,409.04 | 45,209.12 | - | 242.24 | 208.59 | 3,473.01 | 53,541.99
+Foreign Currency Translation | 3.42 | 489.38 | 3,780.75 | - | 53.56 | 96.17 | 541.61 | 4,964.89
+Reserve
+Additions on acquisition of | - | 340.29 | 2,378.31 | - | 2.54 | - | - | 2,721.14
+subsidiary
+Charge for the year | 2.96 | 741.06 | 7,278.79 | - | 71.60 | 73.99 | 335.46 | 8,503.86
+Disposals | - | (10.60) | (1,010.08) | - | (2.58) | (1.28) | (201.08) | (1,225.62)
+As at March 31, 2026 | 6.38 | 5,969.17 | 57,636.89 | - | 367.36 | 377.47 | 4,149.00 | 68,506.26
+Net block
+As at March 31, 2025 | 2,121.12 | 15,152.83 | 37,379.87 | 0.02 | 141.09 | 225.56 | 1,760.37 | 56,780.86
+As at March 31, 2026 | 3,332.68 | 17,522.48 | 47,396.86 | 0.02 | 177.39 | 240.37 | 2,081.54 | 70,751.34
+
+--- PDF page 378 (printed page 375) ---
+In ₹Million
+Furniture and | vehicles and | Power line | Sub Total (B) Grand Total (A+B) Capital work-in-
+fixtures | aircraft | progress
+Cost
+As at April 1, 2024 | 430.70 | 1,953.59 | 16.17 | 2,400.46 | 100,539.85 | 9,780.84
+Foreign Currency Translation Reserve | - | 0.61 | - | 0.61 | 1,309.21 | 12.70
+Additions | 93.26 | 397.06 | - | 490.32 | 11,475.89 | 11,564.63
+Additions on acquisition of subsidiary | - | - | - | - | - | -
+Disposals/Capitalised | (8.30) | (6.57) | - | (14.87) | (121.30) | (4,397.41)
+Other adjustments
+- Others | - | 4.28 | - | 4.28 | - | -
+- Borrowing cost (Refer note a) | - | - | - | - | - | 304.96
+As at March 31, 2025 | 515.66 | 2,348.97 | 16.17 | 2,880.80 | 113,203.65 | 17,265.72
+Foreign Currency Translation Reserve | 8.47 | 10.06 | - | 18.53 | 8,907.32 | 598.98
+Additions | 57.65 | 327.17 | - | 384.82 | 16,343.55 | 6,776.15
+Additions on acquisition of subsidiary | 43.40 | - | - | 43.40 | 5,432.95 | 275.40
+Disposals/Capitalised | (6.35) | (13.14) | - | (19.49) | (1,321.81) | (12,646.53)
+Other adjustments
+- Others | - | - | - | - | - | (135.54)
+- Borrowing cost (Refer note a) | - | - | - | - | - | 391.33
+As at March 31, 2026 | 618.83 | 2,673.06 | 16.17 | 3,308.06 | 142,565.66 | 12,525.49
+Depreciation and impairment
+As at April 1, 2024 | 209.72 | 693.96 | 10.93 | 914.61 | 45,857.13 | 12.23
+Foreign Currency Translation Reserve | - | 0.47 | - | 0.47 | 596.34 | -
+Additions on acquisition of subsidiary | - | - | - | - | - | -
+Charge for the year | 37.25 | 199.05 | 1.43 | 237.73 | 7,954.96 | -
+Disposals | (6.02) | (5.54) | - | (11.56) | (97.94) | -
+Impairment | 32.31 | 14.37 | - | 46.68 | 419.42 | -
+Other adjustments | - | - | - | - | - | -
+As at March 31, 2025 | 273.26 | 902.31 | 12.36 | 1,187.93 | 54,729.91 | 12.23
+Foreign Currency Translation Reserve | 5.08 | 8.70 | - | 13.78 | 4,978.67 | -
+Additions on acquisition of subsidiary | 36.12 | - | - | 36.12 | 2,757.26 | -
+Charge for the year | 46.89 | 218.29 | 1.43 | 266.61 | 8,770.47 | -
+Disposals | (3.39) | (17.18) | - | (20.57) | (1,246.19) | -
+As at March 31, 2026 | 357.96 | 1,112.12 | 13.79 | 1,483.87 | 69,990.14 | 12.23
+Net block
+As at March 31, 2025 | 242.40 | 1,446.66 | 3.81 | 1,692.86 | 58,473.74 | 17,253.49
+As at March 31, 2026 | 260.87 | 1,560.94 | 2.38 | 1,824.19 | 72,575.52 | 12,513.26
+(a) Capitalised borrowing costs:
+The Group capitalises these borrowing costs in the capital work-in-progress (CWIP) first. The amount of borrowing
+costs capitalised as other adjustments in the above note reflects the amount of borrowing cost transferred from Capital
+work-in-progress (CWIP) balances. The borrowing costs capitalised during the year ended March 31, 2026 were ₹391.36
+million (March 31, 2025: ₹304.96 million). The capitalisation rate ranges from LIBOR + 60 bps to LIBOR + 100 bps p.a.
+and EURIBOR + 60 bps to EURIBOR + 95 bps p.a. and SOFR + 60 bps to SOFR + 116 bps, refer to note 18.
+(b) Assets include assets lying with third parties amounting to ₹989.51 Million (March 31, 2025: ₹332.30 Million).
+(c) Other adjustments are related to reclassification within block of assets.
+(d) None of the components in the Group have revalued any property, plant and equipment during the year.
+(e) Buildings include cost of hangar jointly owned with other companies ₹0.07 million (March 31, 2025: ₹0.07 million).
+
+--- PDF page 379 (printed page 376) ---
+(f) The title deeds of immovable properties (other than properties where the Holding Company is the lessee and the lease
+agreements are duly executed in favour of the lessee) are held in the name of the Holding Company except:
+a. Flat at Kalyani Nagar in possession of the Holding Company since April 01, 1987, whose title deed is in the name of
+Shri Anajwala Khozema F & Smt. Anajwala Amina aggregating gross block ₹0.31 million and net block ₹0.13 million
+for which the exchange deed is registered at the authority; however, a certified true copy and Index II are awaited.
+b. Hanger at Lohegoan in possession of the Holding Company since April 01, 1977, aggregating gross block of ₹0.12
+million and net block of ₹0.04 million and Tenements at Kharadi-Vimannagar in possession of the Holding Company
+since April 01, 1981, aggregating gross block of ₹0.16 million and net block of ₹0.01 million for which title deeds
+are not available with the Holding Company.
+(g) During the previous year, two subsidiaries which were engaged in the manufacturing of electric bikes, which are part of
+a separate cash generating unit (CGU), have recorded a provision for impairment of ₹419.42 million in property, plant &
+equipment. [Also refer Note 32(e)]
+(h) Capital work in progress (CWIP), including Intangible asset under development ageing schedule:
+In ₹Million
+Particulars | Less than 1 | 1-2 years | 2-3 years | More than 3 | Total
+year | years
+March 31, 2026
+Projects in progress | 8,367.68 | 3,584.92 | 500.32 | 457.60 | 12,910.53
+Projects temporarily suspended | 73.19 | 73.19
+Total | 8,367.68 | 3,584.92 | 500.32 | 530.79 | 12,983.71
+March 31, 2025
+Projects in progress | 9,243.52 | 7,443.64 | 207.25 | 349.59 | 17,244.00
+Projects temporarily suspended | - | - | 32.65 | 40.54 | 73.19
+Total | 9,243.52 | 7,443.64 | 239.90 | 390.13 | 17,317.19
+There are no projects whose completion is overdue or that have exceeded their cost compared to the original plan.
+
+=== Note 30 — DEPRECIATION AND AMORTISATION EXPENSE (Consolidated) ===
+--- PDF page 413 (printed page 410) ---
+30. DEPRECIATION AND AMORTISATION EXPENSE
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Depreciation on property, plant and equipment [Refer note 3] | 8,770.47 | 7,954.96
+Amortisation on intangible assets [Refer note 5] | 193.75 | 152.72
+Depreciation on right of use asset [Refer note 43] | 745.02 | 628.51
+Total | 9,709.24 | 8,736.19
+----- END OF NOTES -----

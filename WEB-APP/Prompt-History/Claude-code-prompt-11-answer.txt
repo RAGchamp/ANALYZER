@@ -1,0 +1,203 @@
+# Capital Creditors, Capital Advances and the Capex Gap: Follow-up
+
+## Summary
+
+- **Only some of the requested items are in the material.** Notes 14, 19 and 5 give FY26 and FY25 balances. FY24 balances, the split of the CWIP "Disposals/Capitalised" line, a non-cash investing disclosure and the 31-Mar-2024 Balance Sheet are **not provided**.
+- **This corrects my previous answer.** Capital creditors are only ₹855.03m at 31-Mar-25 and ₹1,158.51m at 31-Mar-26, all current (Note 19, p.402). I previously suggested that about ₹3.2bn of FY25–26 capex was still unpaid to suppliers. That is **not supported**: at most ₹1,158.51m is owed to suppliers of capital goods.
+- **The FY25 gap is still largely unexplained.** Supplier credit can explain at most about ₹0.9bn of it. The rest (at least ₹3.6bn) would have to come from falling capital advances (cash paid in FY24 or earlier), non-cash additions, or other factors. None of these can be verified without FY24 data.
+- **FY26 does not reconcile either.** After adding intangibles and adjusting for creditors and advances, cash capex is about **₹1,056m higher** than the accrual-based figure.
+- **The Note 19 jump is explained.** The ₹3,161.86m rise in non-current other financial liabilities is the ₹3,294.72m **gross liability on a written put option** over subsidiary CCPS. This confirms my earlier inference that it is not capital creditors.
+
+## 1. What was requested vs what is available
+
+| # | Item requested | Available? | Source |
+|---|---|---|---|
+| 1 | Capital creditors FY24/25/26, current and non-current, credit terms | FY26 and FY25 only. All current. **No credit terms disclosed.** FY24 missing. | Note 19, p.402 |
+| 2 | Capital advances FY24/25/26 | FY26 and FY25 only (non-current). FY24 missing. | Note 14, p.391 |
+| 3 | Split of CWIP "Disposals/Capitalised" | **Not disclosed.** Only indirect inference is possible (Section 4). | Note 3, p.378 |
+| 4 | Non-cash investing transactions (Ind AS 7.43) | **Not in the material.** No such note was provided. | – |
+| 5 | Intangible additions FY25/FY26 | Yes | Note 5, p.381 |
+| 6 | 31-Mar-2024 Balance Sheet | **Not provided.** Some FY24 asset balances can be derived from note roll-forwards (Section 6). Creditors and advances cannot. | – |
+
+## 2. Capital creditors (Note 19) and capital advances (Note 14), as printed
+
+**Note 19 – Other financial liabilities (p.402)**
+
+| Particulars (as printed) | 31-Mar-26 | 31-Mar-25 | Change |
+|---|---|---|---|
+| *Other non-current financial liabilities at amortised cost* | | | |
+| Voluntary retirement scheme compensation | 7.03 | 31.05 | (24.02) |
+| Derivative liability | 32.50 | 32.50 | – |
+| Gross liability on written put option # | 3,294.72 | – | +3,294.72 |
+| Security deposits | 22.99 | 131.83 | (108.84) |
+| **Total (= Balance Sheet, p.341)** | **3,357.24** | **195.38** | **+3,161.86** |
+| *Other current financial liabilities at amortised cost* | | | |
+| **Payables for capital goods** | **1,158.51** | **855.03** | **+303.48 (+35.5%)** |
+| Security deposits | 212.42 | 211.71 | +0.71 |
+| Directors commission | 29.20 | 31.00 | (1.80) |
+| Unpaid dividend | 40.69 | 109.45 | (68.76) |
+| Unpaid matured deposits | 0.04 | 0.04 | – |
+| Voluntary retirement scheme compensation | 24.02 | 84.50 | (60.48) |
+| Payable to Customers | 304.29 | 211.15 | +93.14 |
+| Others*** | 354.96 | 151.15 | +203.81 |
+| **Total (= Balance Sheet, p.341)** | **2,124.13** | **1,654.03** | **+470.10** |
+
+Both totals cast and agree to the Balance Sheet.
+
+- **No non-current capital creditors** are shown.
+- **No extended, deferred or vendor-financed payment terms** are disclosed.
+- Capital creditors could also sit inside trade payables (Note 22, not provided). This cannot be ruled out.
+
+**Note 14 – Other assets (p.391)**
+
+| Particulars (as printed) | 31-Mar-26 | 31-Mar-25 | Change |
+|---|---|---|---|
+| **Capital advances** (non-current) | **1,813.03** | **2,126.30** | **(313.27) (−14.7%)** |
+| Balances with government authorities (non-current) | 1,915.96 | 1,140.14 | +775.82 |
+| Government grants $ (non-current) | 67.56 | 82.59 | (15.03) |
+| Advances to suppliers (non-current) | 120.67 | 117.89 | +2.78 |
+| **Total non-current (= Balance Sheet)** | **3,917.22** | **3,466.92** | +450.30 |
+| Government grant $ (current) | 79.07 | 220.16 | (141.09) |
+| **Total current (= Balance Sheet)** | **6,806.86** | **9,296.58** | (2,489.72) |
+
+The $ footnote describes the grants as *"receivables against various schemes of export incentives"*. These are **income grants, not capital grants**, so they do not affect capex.
+
+**Check that these balances sit outside working capital.** Other assets excluding capital advances moved as follows:
+- current: decrease of 2,489.72;
+- non-current: increase of 763.57 (450.30 + 313.27);
+- net decrease: **1,726.15**.
+
+The Cash Flow Statement shows "Decrease in other assets" of 1,566.07 (Cash Flow, p.346). The ₹160m difference is plausibly FX and the acquisition. This supports my assumption that capital advances are excluded from working capital and captured in the capex line, as its caption states.
+
+## 3. Intangible additions (Note 5, p.381)
+
+| ₹m | FY26 | FY25 |
+|---|---|---|
+| Other intangibles – Additions (cost) | 85.37 | 321.81 |
+| Intangible assets under development (IAUD) – Additions | 418.92 | 319.14 |
+| IAUD – "Disposals" | (12.17) | (399.26) |
+| Intangibles acquired with subsidiary (net: 294.59 − 2.93) | 291.66 | – |
+| Goodwill on acquisition | 1,224.24 | – |
+
+All Note 5 roll-forwards cast. For example, IAUD FY26: 63.70 + 418.92 − 12.17 = 470.45, which agrees to the Balance Sheet.
+
+**Estimated accrued intangible capex**, assuming IAUD outflows are transfers into intangibles:
+- **FY26:** 418.92 + (85.37 − 12.17) = **492.12**.
+- **FY25:** the IAUD outflow (399.26) *exceeds* total intangible additions (321.81). So **at least ₹77.45m** of FY25 IAUD was written off or moved elsewhere, not capitalised. This is probably linked to the FY25 e-bike impairments (Note 5(c), p.382). Accrued FY25 intangible capex is therefore at least **319.14**, which assumes all 321.81 of additions came through IAUD.
+
+## 4. CWIP "Disposals/Capitalised" split: not disclosed
+
+Note 3 gives only the combined line: FY26 12,646.53 and FY25 4,397.41 (Note 3, p.378). What can be inferred:
+
+- **IAUD is tracked separately** in Note 5, so the Note 3 CWIP line should not include transfers to intangibles. The combined ageing total confirms this:
+  - FY26: 12,513.26 + 470.45 = 12,983.71.
+  - FY25: 17,253.49 + 63.70 = 17,317.19.
+  - Both agree to the ageing table (Note 3(h), p.379).
+- **PPE additions exceed the CWIP outflow in both years** (16,343.55 > 12,646.53; 11,475.89 > 4,397.41). This is consistent with the whole outflow being transfers to PPE, but does not prove it.
+- **Write-offs are possible but unquantified.** "Non-cash exceptional items" were ₹404.99m in FY26 (Cash Flow, p.346), and CWIP carries a separate unexplained ₹(135.54)m "Other adjustment". Any write-off within the 12,646.53 would raise accrued capex and narrow the FY26 gap below.
+
+## 5. Non-cash investing transactions, dies and grants
+
+- **No Ind AS 7.43 disclosure** is in the material.
+- **Dies** appear in the P&L inventory-change line ("finished goods, work-in-progress, stock in trade, dies and scrap", P&L p.342). This suggests dies are carried as **inventory, not PPE**, so dies moving from inventory into PPE are unlikely, but this is unconfirmed.
+- **Capital grants:** none are visible. A deferred capital-grant liability, if any, would be in Note 23 (not provided).
+
+## 6. FY24 balances: what can be derived
+
+The FY24 Balance Sheet is not provided. The note roll-forwards give some FY24 figures, but **not** capital creditors or capital advances:
+
+| ₹m (1-Apr-2024) | Derivation | Amount |
+|---|---|---|
+| Net PPE | 100,539.85 − 45,857.13 (Note 3, p.378) | 54,682.72 |
+| CWIP (net) | 9,780.84 − 12.23 (Note 3, p.378) | 9,768.61 |
+| Other intangibles | 1,815.64 − 1,107.75 (Note 5, p.381) | 707.89 |
+| Goodwill | 3,306.14 − 346.29 (Note 5, p.381) | 2,959.85 |
+| IAUD | Note 5, p.381 | 143.82 |
+
+## 7. Revised capex reconciliation
+
+### FY26: reconciles to within about ₹1.06bn, with cash higher
+
+| ₹m | FY26 | Source |
+|---|---|---|
+| Accrued PPE capex (from previous answer) | 10,473.17 | Note 3, p.378 |
+| + Accrued intangible capex | 492.12 | Note 5, p.381 |
+| **= Accrued capex, like-for-like with the cash line** | **10,965.29** | |
+| − Increase in capital creditors (855.03 → 1,158.51) | (303.48) | Note 19, p.402 |
+| − Decrease in capital advances (2,126.30 → 1,813.03) | (313.27) | Note 14, p.391 |
+| **= Expected cash capex** | **10,348.54** | |
+| Reported cash capex | 11,404.96 | Cash Flow, p.346 |
+| **Unexplained (cash higher than expected)** | **1,056.42** | |
+
+Possible explanations, none quantifiable from the material:
+- **The acquired subsidiary's capital creditors** would be in the closing 1,158.51. That overstates the "organic" credit increase and understates expected cash.
+- **FX translation** of foreign subsidiaries' creditors and advances.
+- **Capitalised interest (391.33) possibly paid within investing.** The Cash Flow Statement shows interest paid under financing (p.347), so this is unlikely.
+- **CWIP write-offs or other adjustments** (135.54 at least), as discussed in Section 4.
+
+### FY25: mostly unexplained
+
+| ₹m | FY25 | Source |
+|---|---|---|
+| Accrued PPE capex | 18,643.11 | Note 3, p.378 |
+| + Accrued intangible capex (minimum) | 319.14 | Note 5, p.381 |
+| **= Accrued capex (minimum)** | **18,962.25** | |
+| Reported cash capex | 14,504.59 | Cash Flow, p.346 |
+| **Gap (accrued above cash)** | **≥ 4,457.66** | |
+| Maximum explainable by capital creditors (if FY24 balance were nil) | ≤ 855.03 | Note 19, p.402 |
+| **Remaining gap to explain** | **≥ 3,602.63** | |
+
+To close the remaining gap through capital advances alone, **FY24 capital advances would need to have been at least ₹5,728.93m** (2,126.30 + 3,602.63). That would mean a fall of about 63% in FY25. This is plausible at the tail end of a heavy capex cycle: assets delivered in FY25 against cash prepaid in FY24 or earlier. It **needs the FY24 Note 14 to confirm.**
+
+**Implication, which replaces my earlier view.** The FY25 gap most likely reflects **cash spent in earlier years** (via advances) or non-cash additions. It is **not** material deferred payment to suppliers. My earlier comment that FY25 free cash flow was "flattered" by about ₹4.1bn of unpaid capex should be read as a **timing shift from prior years**, not a future cash outflow. The only future outflow evidenced is the ₹1,158.51m of capital creditors.
+
+## 8. Note 19 also resolves the non-current liability jump
+
+- **The liability:** gross liability on a written put option of ₹3,294.72m = CCPS proceeds of ₹3,000.00m (Cash Flow, p.347) + fair-value change of ₹294.72m (SOCE, p.344).
+- **Issue price check:** 14,25,795 CCPS × ₹2,104.09 = ₹3,000.0m (Note 19#, p.402), which agrees.
+- **Accounting:** the Group uses the anticipated acquisition method. The NCI is derecognised and fair-value changes go to **other equity, not the P&L** (Note 19#, p.403).
+- **SOCE check:** retained earnings roll 61,811.48 + 10,796.61 + 170.69 − 294.72 − 2,868.53 − 956.18 = 68,659.35. This agrees to the closing balance (SOCE, p.344), confirming the ₹294.72m was charged to retained earnings.
+
+## 9. Other issues found in the newly provided notes
+
+1. **FY25 IAUD outflow (399.26) exceeds intangible additions (321.81).** At least ₹77.45m left IAUD without being capitalised. Where was it charged?
+2. **Refined disposal-gain check, including intangibles:**
+   - FY26: proceeds 274.32 − PPE NBV 75.62 − intangibles NBV 1.88 (34.48 − 32.60) = 196.82, against a reported gain of 185.34. Difference: 11.48.
+   - FY25: NBV 23.36 + 18.30 (78.80 − 60.50) = 41.66 against proceeds of 65.40, implying a gain of 23.74. The Cash Flow Statement shows a **loss of 14.87**, a difference of 38.61 (Cash Flow, p.346). This is still unreconciled.
+3. **Dividends don't tie to cash.**
+   - Declared: 2,868.53 + 956.18 = 3,824.71 (SOCE, p.344).
+   - Paid: 3,796.55 (Cash Flow, p.347).
+   - That implies unpaid dividend should rise by 28.16, but it **fell** by 68.76 (Note 19, p.402).
+   - Unexplained difference: about ₹96.92m. Possibly dividends on shares held by the group, or TDS timing.
+4. **"Derivative liability" of ₹32.50m is classified at amortised cost** (Note 19, p.402). Derivatives are normally carried at fair value. It is also unchanged for two years.
+5. **Goodwill inconsistencies (Note 5, p.381–383):**
+   - Acquisition goodwill is 1,224.24 in the table but 1,224.23 in note (d), a rounding difference.
+   - MGL goodwill rose by 137.27 (192.31 → 329.58), but total net FX on goodwill was only 50.46 (98.80 − 48.34).
+   - JS Autocast's terminal growth rate jumps from 1.00% to 5.00%, yet it is described as "in line with long-term inflation".
+   - FY25 goodwill impairment (283.42 + 53.00 = 336.42) is shown as "Other adjustments – Others" rather than "Impairment".
+
+## 10. Still to request
+
+- FY24 comparatives from Notes 14 and 19 (prior-year annual report).
+- Ind AS 7.43 non-cash investing disclosure.
+- Split of the CWIP outflow into transfers, write-offs and other.
+- Acquisition note (capital creditors and advances taken over).
+- Note 22 (whether any capital creditors sit in trade payables).
+- Note 32 (composition of the ₹404.99m non-cash exceptional items).
+
+## Impact on the financial statements
+
+- **Profit and Loss:**
+  - Capital creditors and advances have no P&L effect, and **no extended credit terms** (and so no embedded financing cost) are disclosed.
+  - The put-option fair-value change (₹294.72m) bypasses the P&L by policy choice.
+  - Possible CWIP or IAUD write-offs (≥ ₹77.45m IAUD in FY25) would sit in exceptional items or other expenses. The location is unconfirmed.
+- **Balance Sheet:**
+  - Capital creditors of ₹1,158.51m (current other financial liabilities) and capital advances of ₹1,813.03m (other non-current assets) are both reconciled to their Balance Sheet totals (p.341).
+  - The non-current other financial liabilities jump is the put liability, not capex funding.
+- **Cash Flow:**
+  - FY26 cash capex of ₹11,404.96m exceeds the expected ₹10,348.54m by ₹1,056.42m, which is unexplained.
+  - The FY25 cash-versus-accrual gap (≥ ₹4.46bn) is **not** future supplier debt. Supplier credit explains at most ₹0.86bn. The rest most likely reflects earlier-year advances, which would mean FY24 and earlier investing cash flows carried that spend.
+  - Future cash outflow evidenced for capex: ₹1,158.51m.
+- **Changes in Equity:**
+  - Capex timing has no effect.
+  - The CCPS/put arrangement reduced retained earnings by ₹294.72m (SOCE, p.344). The ₹3,000m proceeds did not increase NCI, which stays at ₹(230.16)m.

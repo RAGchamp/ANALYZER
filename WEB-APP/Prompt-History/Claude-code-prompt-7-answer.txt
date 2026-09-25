@@ -1,0 +1,47 @@
+# Why "P&L charge = −25.24 + Write-offs ∓ FX"
+
+It is the allowance roll-forward rearranged to solve for the one line that goes through profit and loss.
+
+## 1. Start from the roll-forward identity
+
+A loss allowance changes in only three ways over a year:
+
+**Closing = Opening + P&L charge (net of releases) − Write-offs utilised + FX translation**
+
+- **P&L charge** increases the allowance. A release is a negative charge.
+- **Write-offs** reduce the allowance. The provision is used up against the written-off receivable, with no further P&L effect.
+- **FX translation** moves overseas subsidiaries' allowances up or down when converted into ₹. It goes through other comprehensive income, not P&L.
+
+## 2. Rearrange for the P&L charge
+
+P&L charge = (Closing − Opening) + Write-offs − FX
+
+Substituting the disclosed totals (Note 12, p.389):
+
+- Closing − Opening = 567.08 − 592.32 = **−25.24**
+- Therefore: **P&L charge = −25.24 + Write-offs − FX**
+
+## 3. Why I wrote "∓" and not "−"
+
+The "∓" was shorthand for "the opposite sign to the FX effect":
+
+- If the rupee weakened and translation **increased** the allowance (+FX), part of the closing balance came from FX, not P&L. So you **subtract** it.
+- If translation **decreased** the allowance (−FX), you **add** it back.
+
+**Clearer notation:** P&L charge = −25.24 + W − FX, where FX is signed (positive if it increased the allowance). This is equivalent to what I wrote, but less ambiguous.
+
+## 4. Worked examples
+
+| Write-offs (W) | FX effect | P&L charge / (release) | Calculation |
+|---|---|---|---|
+| 0 | 0 | **(25.24)** release | −25.24 + 0 − 0 |
+| 25.24 | 0 | 0 | −25.24 + 25.24 − 0 |
+| 100.00 | 0 | 74.76 charge | −25.24 + 100 − 0 |
+| 0 | +10.00 | **(35.24)** release | −25.24 + 0 − 10 |
+| 0 | −10.00 | (15.24) release | −25.24 + 0 + 10 |
+
+## 5. Caveats
+
+- **"P&L charge" here is a net figure** (new provisions minus releases). The annual report may show these gross, split between "Other expenses" and "Other income".
+- **Other reconciling items are ignored.** Examples are allowances acquired or disposed of with subsidiaries, and reclassifications. None are disclosed in Note 12 (p.388–390). If they exist, they would enter the identity the same way as FX.
+- **W and FX are not in the extract.** So the equation shows only the *relationship* between the lines. It cannot fix the P&L figure. That is why ₹25.24 Mn is a break-even level of write-offs, not a measured charge or release.

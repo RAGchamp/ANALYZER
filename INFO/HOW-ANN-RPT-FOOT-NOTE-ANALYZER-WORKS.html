@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Annual Report Foot Note Analyzer Works</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/vs2015.min.css">
+<style>
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-light:#6ea8fe;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-red:#dc3545;
+    --biz-green:#198754;
+    --nav-blue:#04264d;
+    --nav-yellow:#ffd60a;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  /* Sticky top nav */
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand-logo{ height:44px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  section[id]{ scroll-margin-top:84px; }
+  html{ scroll-behavior:smooth; }
+
+  .hero{
+    background:linear-gradient(120deg, var(--biz-blue-dark) 0%, var(--biz-blue) 55%, #3d8bfd 100%);
+    color:#fff;
+  }
+  .accent-blue{ border-left:5px solid var(--biz-blue); }
+  .accent-green{ border-left:5px solid var(--biz-green); }
+  .accent-red{ border-left:5px solid var(--biz-red); }
+  .accent-yellow{ border-left:5px solid var(--biz-yellow); }
+
+  .section-title{
+    display:inline-flex; align-items:center; gap:.6rem;
+    padding-bottom:.4rem; border-bottom:3px solid var(--biz-blue);
+    margin-bottom:1.25rem;
+  }
+  .toc-num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:1.8rem; height:1.8rem; border-radius:50%;
+    background:var(--biz-yellow); color:#2b2b2b; font-weight:700; font-size:.85rem;
+    margin-right:.5rem; flex:none;
+  }
+  .toc-list a{ text-decoration:none; color:#212529; }
+  .toc-list a:hover{ color:var(--biz-blue); text-decoration:underline; }
+  .toc-item{ display:flex; align-items:center; padding:.4rem 0; }
+  .back-to-top{ font-size:.85rem; }
+  .color-key-dot{ width:.9rem; height:.9rem; border-radius:50%; display:inline-block; margin-right:.4rem; }
+  table thead th{ background:#eef3fb; }
+  .glossary-table thead th{ background:#04264d; color:#fff; }
+
+  /* VS Code style dark code windows */
+  .code-window{ background:#084298; border-radius:.5rem; overflow:hidden; margin:1rem 0 1.5rem; box-shadow:0 .25rem .75rem rgba(0,0,0,.3); }
+  .code-window .code-titlebar{
+    background:#323233; color:#cccccc; padding:.45rem .9rem; font-size:.8rem;
+    display:flex; align-items:center; gap:.4rem; font-family:'Segoe UI',Roboto,sans-serif;
+  }
+  .code-window .dot{ width:.7rem; height:.7rem; border-radius:50%; display:inline-block; }
+  .dot-red{ background:#ff5f56; } .dot-yellow{ background:#ffbd2e; } .dot-green{ background:#27c93f; }
+  .code-window .code-filename{ margin-left:.5rem; opacity:.85; }
+  .code-window pre{ margin:0 !important; padding:1rem 1.25rem !important; background:#084298 !important; overflow-x:auto; }
+  .code-window code, .code-window code *{ font-family:'Fira Code',Consolas,Monaco,monospace; font-size:.85rem; background:transparent !important; color:#ffffff !important; font-weight:700 !important; text-shadow:none; }
+
+  .badge-tool{ background:#04264d; color:var(--nav-yellow); }
+
+  /* Step-by-step walkthrough boxes */
+  .step-box{
+    background:#e9ecef;
+    border-radius:.5rem;
+    overflow:hidden;
+    margin:0 0 1.25rem;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.12);
+  }
+  .step-box .step-bar{
+    background:var(--nav-blue);
+    color:#5BF527;
+    font-weight:700;
+    padding:.5rem 1.1rem;
+    font-size:.95rem;
+    letter-spacing:.02em;
+  }
+  .step-box .step-bar .step-title{
+    font-weight:700;
+  }
+  .step-box .step-body{ padding:1rem 1.25rem; }
+  .step-box .step-body p:last-child{ margin-bottom:0; }
+  .step-box .step-file{
+    font-family:'Fira Code',Consolas,Monaco,monospace;
+    font-size:.8rem;
+    margin-bottom:.7rem;
+  }
+  .step-box .step-file mark{
+    background:var(--biz-yellow);
+    color:#2b2b2b;
+    padding:.15rem .5rem;
+    border-radius:.25rem;
+    font-weight:600;
+  }
+  .step-box .step-file .arrow{ color:#6c757d; margin:0 .3rem; font-family:'Segoe UI',Roboto,sans-serif; }
+
+  footer{ background:var(--nav-blue); }
+  footer a{ color:#fff; }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand"><img class="brand-logo" src="logo.svg" alt="RAG Champ"></span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<!-- HERO -->
+<header class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9">
+        <span class="badge rounded-pill bg-warning text-dark mb-3">Annual Report Analyzer · Foot Notes · Flask + Claude Code</span>
+        <h1 class="display-6 fw-bold">How the Annual Report Foot Note Analyzer Works</h1>
+        <p class="lead mb-0">A local Flask web app that answers in-depth questions about the <strong>notes to the financial statements</strong> in an annual report PDF. It does not hand a 508-page PDF to an LLM. It finds the exact note a question needs (e.g. <em>Note 21, PDF pages 405–407</em>) deterministically from the page text and fonts, extracts only that note with its tables intact, and sends that small extract to Claude Code for the analysis. Every question also carries the company's <strong>four primary financial statements</strong> (Profit and Loss, Balance Sheet, Cash Flow, Changes in Equity), loaded when the report is selected, so Claude can explain how each note affects them. This document walks through how each stage works, the real bugs found while building it, and the fix for each.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container my-5">
+
+  <!-- COLOR KEY -->
+  <div class="mb-5">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-3">
+        <div class="row g-2 small text-center text-md-start">
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-blue);"></span>Blue — core mechanism</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-red);"></span>Red — a bug hit / dead end</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-green);"></span>Green — the fix / takeaway</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-yellow);"></span>Yellow — prerequisites &amp; definitions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <section id="toc" class="mb-5">
+    <h2 class="section-title">Table of Contents</h2>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="row toc-list">
+          <div class="col-md-6">
+            <div class="toc-item"><span class="toc-num">1</span><a href="#overview">What the App Does</a></div>
+            <div class="toc-item"><span class="toc-num">2</span><a href="#architecture">Architecture</a></div>
+            <div class="toc-item"><span class="toc-num">3</span><a href="#index">Stage 1: The Notes Index</a></div>
+            <div class="toc-item"><span class="toc-num">4</span><a href="#statements">Stage 2: Loading the Financial Statements</a></div>
+            <div class="toc-item"><span class="toc-num">5</span><a href="#select">Stage 3: Choosing the Notes</a></div>
+            <div class="toc-item"><span class="toc-num">6</span><a href="#extract">Stage 4: Extracting the Note</a></div>
+            <div class="toc-item"><span class="toc-num">7</span><a href="#claude">Stage 5: Talking to Claude Code</a></div>
+            <div class="toc-item"><span class="toc-num">8</span><a href="#jobs">Background Jobs &amp; Follow-up Threads</a></div>
+          </div>
+          <div class="col-md-6">
+            <div class="toc-item"><span class="toc-num">9</span><a href="#present">Stage 6: Presenting &amp; Saving the Analysis</a></div>
+            <div class="toc-item"><span class="toc-num">10</span><a href="#history">History Access</a></div>
+            <div class="toc-item"><span class="toc-num">11</span><a href="#viewer">The "View the Financial Statements" Page</a></div>
+            <div class="toc-item"><span class="toc-num">12</span><a href="#walkthrough">Step-by-Step: "Analyze the Tax Liabilities"</a></div>
+            <div class="toc-item"><span class="toc-num">13</span><a href="#testing">Testing &amp; Verification</a></div>
+            <div class="toc-item"><span class="toc-num">14</span><a href="#limitations">Known Limitations</a></div>
+            <div class="toc-item"><span class="toc-num">15</span><a href="#glossary">Glossary</a></div>
+            <div class="toc-item"><span class="toc-num">16</span><a href="#file-map">File Map</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. OVERVIEW -->
+  <section id="overview" class="mb-5">
+    <h2 class="section-title">1. What the App Does</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>Code: <code>C:\Daya\RAGchamp\ANN-RPT-ANALYZER\WEB-APP</code>. Start it with <code>python app.py</code> and open <code>http://127.0.0.1:5000</code>. The user goes through six steps:</p>
+        <ol>
+          <li><strong>Select</strong> an annual report PDF from <code>ANN-RPT-ANALYZER\Annual-reports\</code>. The app indexes its notes and <strong>loads its primary financial statements</strong> (consolidated and standalone), rotating any sideways pages first. A <strong>View the financial statements</strong> link opens them all as tables in a new tab.</li>
+          <li><strong>Ask</strong> a question, e.g. <em>"Analyze the company's Tax related liabilities and comment on it."</em></li>
+          <li><strong>Identify</strong> the relevant notes. The app uses the <em>consolidated</em> notes by default, unless the question asks for standalone. It then <strong>always pauses</strong> so the user can confirm or edit the choice.</li>
+          <li><strong>Extract</strong> exactly those notes from the PDF.</li>
+          <li><strong>Send</strong> the question, the note extract and the matching primary statements to Claude Code (<code>claude -p</code>).</li>
+          <li><strong>Present</strong> the analysis, including an <strong>Impact on the financial statements</strong> section. The user can then ask follow-up questions on the same notes.</li>
+        </ol>
+        <p class="mb-0">The expensive, non-deterministic part (the LLM) only sees a few tens of thousands of characters of exactly the right content: the selected notes plus the four statements they belong to. Everything before it (finding notes, page ranges and tables) is deterministic Python that gives the same answer every run.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <h5>Decisions confirmed before building</h5>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle mb-0 small">
+            <thead><tr><th>Topic</th><th>Decision</th></tr></thead>
+            <tbody>
+              <tr><td>Note confirmation</td><td>Always pause after identification. The user can remove or add notes, or type PDF pages, then click <strong>Analyze</strong>.</td></tr>
+              <tr><td>Note picking</td><td>A small Claude call reads only the note titles, with keyword matching as a fallback.</td></tr>
+              <tr><td>Report selection</td><td>A dropdown of the PDFs in <code>Annual-reports\</code> (no upload).</td></tr>
+              <tr><td>Model</td><td>The Claude Code CLI default. No <code>--model</code> flag is passed.</td></tr>
+              <tr><td>Follow-ups</td><td>Chat-style threads on the same extracted notes.</td></tr>
+              <tr><td>Content scope</td><td>Footnotes only in v1. <strong>Extended later:</strong> every question now also includes the four primary statements, and the analysis must explain the impact on each (see Section 4).</td></tr>
+              <tr><td>Viewing the statements</td><td>Added later: a <strong>View the financial statements</strong> link below the Step 1 boxes opens a new tab with every statement as a table, consolidated first, then standalone (see Section 11).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-yellow">
+      <div class="card-body">
+        <h5>Design docs vs. this document</h5>
+        <p class="mb-0">The plan is <code>INFO/ANN-RPT-NOTES-ANALYZER-PLAN.md</code>, which covers what to build and why. This document covers how it actually works. Every example below is real, taken from running the app on <code>Bharat-Forge-IR-2026-conv-single-page.pdf</code> (Bharat Forge Integrated Annual Report FY2025-26, 508 pages), not made up for illustration.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 2. ARCHITECTURE -->
+  <section id="architecture" class="mb-5">
+    <h2 class="section-title">2. Architecture</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">the pipeline</span></div>
+          <pre><code class="language-plaintext">Browser (templates/index.html + static/app.js)
+   |
+   |  POST /api/index      --> notes_index.py  (+ pdf_utils.py)  --> cache/&lt;pdf&gt;.notes-index.json
+   |                           statements.py      finds P&amp;L, Balance Sheet, Cash Flow, Changes in Equity,
+   |                                              rotates sideways pages, caches their text in the index
+   |
+   |  GET  /statements     --> statements_view.py --> "View the financial statements" page (new tab)
+   |
+   |  POST /api/identify   --> job: note_selector.py
+   |                              |- detect_scope()        rule-based: consolidated / standalone / both
+   |                              |- Claude call #1        note titles only --&gt; {"notes":["C21",...]}
+   |                              '- keyword_select()      fallback if the call fails
+   |
+   |  (user confirms / edits the notes in the browser)
+   |
+   |  POST /api/analyze    --> job: extractor.py           clipped note text + tables as "a | b | c"
+   |                                statements.py          + the section's 4 primary statements (cached)
+   |                                claude_client.py       Claude call #2: claude -p (stdin, no tools)
+   |                                history.py             Prompt-History/  (question, answer, full prompt)
+   |                                report_html.py         Analysis-history/&lt;pdf&gt;-&lt;n&gt;-&lt;timestamp&gt;.html
+   |
+   |  POST /api/followup   --> job: same notes + statements + conversation so far --&gt; claude -p
+   |
+   '  GET  /api/jobs/&lt;id&gt;  &lt;-- the browser polls every 1.5s until done</code></pre>
+        </div>
+        <p class="mb-0">There are <strong>two Claude calls</strong> per question. A small, fast one picks the notes (it only sees the list of note titles and sub-headings), and a big one does the analysis (it sees the extracted notes plus the primary statements of the same section). Neither call ever sees the whole PDF.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-yellow">
+      <div class="card-body">
+        <h5>Reused from basic-chatbot</h5>
+        <p class="mb-2">The Claude interaction reuses the design from <code>C:\Daya\RAGchamp\basic-chatbot\app.py</code>:</p>
+        <ul class="mb-0">
+          <li>A fresh, stateless <code>claude -p</code> process for every request, using the local Claude Code login (no API key).</li>
+          <li><code>--system-prompt</code> to replace Claude Code's default "software engineering assistant" identity. Here it is a financial analyst.</li>
+          <li>The last prompt goes to <code>claude-prompt-input.txt</code> and the last reply to <code>Claude-prompt-output.txt</code>.</li>
+          <li>Every Q&amp;A is numbered in <code>Prompt-History\</code>, carrying on from the highest number already on disk (<code>next_sno()</code> / <code>save_history()</code>).</li>
+          <li>The same error handling: CLI not found, timeout and non-zero exit each become a readable message.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 3. NOTES INDEX -->
+  <section id="index" class="mb-5">
+    <h2 class="section-title">3. Stage 1: The Notes Index (<code>notes_index.py</code>)</h2>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <h5>What the sample PDF actually looks like</h5>
+        <ul class="mb-0">
+          <li><strong>No bookmarks.</strong> <code>doc.get_toc()</code> returns an empty list, so note locations have to come from the page text.</li>
+          <li><strong>PDF page ≠ printed page.</strong> PDF page 405 has <code>402</code> printed on it, an offset of 3. The app works in PDF page numbers internally and shows both.</li>
+          <li><strong>A running header on every notes page</strong> says which section it belongs to: <code>Notes to Consolidated Financial Statements</code> (PDF pp. 348–503) or <code>Notes to Standalone Financial Statements</code> (PDF pp. 210–327).</li>
+          <li><strong>Note headings share one font:</strong> <code>Lato-Black</code> 10pt at the left margin, e.g. <code>21. INCOME AND DEFERRED TAXES</code>. When a note runs over pages, its heading repeats with <code>(CONTD.)</code>.</li>
+          <li>PyMuPDF must be imported as <code>import pymupdf</code>. A conflicting <code>fitz</code> package installed on this machine breaks <code>import fitz</code>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p><code>build_index()</code> reads every page once. <code>pdf_utils.page_rows()</code> merges text spans that share a baseline into visual <em>rows</em>, each with its position, font, size and bold flag. That merge matters because the heading <code>1. </code> and <code>CORPORATE INFORMATION</code> are separate spans in separate PDF blocks. A row is a note heading when it is:</p>
+        <ol>
+          <li><strong>bold</strong> and within 25pt of the page's left margin,</li>
+          <li>a match for <code>HEADING_RE</code> (number, optional sub-number, optional dot, title),</li>
+          <li>in the <strong>dominant heading font</strong> for that section, so bold table labels in other fonts don't qualify,</li>
+          <li>and <strong>in sequence</strong>: the note number must be 1–4 more than the previous note. This rejects stray bold numbers.</li>
+        </ol>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">notes_index.py (excerpt)</span></div>
+          <pre><code class="language-python">HEADING_RE = re.compile(r"^(\d{1,3})(?:\.(\d{1,2}))?\s*\.?\s+(\S.*)$")
+CONTD_RE = re.compile(r"\(\s*CONT(?:D|INUED)?\.?\s*\)", re.I)
+MAX_NOTE_STEP = 4</code></pre>
+        </div>
+        <p><strong>Where a note ends:</strong> note <em>N</em> ends just before note <em>N+1</em>'s heading. If that heading is the first thing on its page, note <em>N</em> ends on the previous page; otherwise it ends mid-page at the heading's y-position. Note 22's heading is at the top of PDF page 408, so Note 21 runs from page 405 to the bottom of page 407:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">cache/Bharat-Forge-IR-2026-conv-single-page.notes-index.json (excerpt)</span></div>
+          <pre><code class="language-json">{
+  "no": 21,
+  "title": "INCOME AND DEFERRED TAXES",
+  "start_page": 405, "start_y": 169.0,
+  "end_page": 407,   "end_y": null,
+  "printed_pages": "402-404",
+  "subheadings": ["Statement of profit and loss:", "Profit or loss section",
+                  "Reconciliation of tax expenses and the accounting profit ...",
+                  "Deferred tax asset (net)", "Deferred tax expense/(income)", "..."]
+}</code></pre>
+        </div>
+        <p class="mb-0">The index is cached as JSON and rebuilt only when the PDF's size or modified time changes. Building it takes about <strong>6 seconds</strong> for the 508-page report. While reading every page, it also finds the <strong>company name</strong>: first from the auditor's report (<em>"To the Members of Bharat Forge Limited"</em>), then from the most-mentioned "… Limited" name, then from the file name. The same pass also looks for the primary financial statements (next section).</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Bug: sections started 20 pages too early (PDF p.328 instead of 348)</h5>
+        <p class="mb-0">A page counted as a notes page if the header text appeared <em>anywhere</em> on it. The Independent Auditor's Report (p.328) and the corporate governance pages mention "Notes to Consolidated Financial Statements" in their body text, so they were treated as notes pages.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: the header must be the running-header row at the top of the page</h5>
+        <p class="mb-0"><code>pdf_utils.find_header_row()</code> accepts the match only if it is a row in the top 20% of the page. The ranges then came out exactly right: consolidated 348–503, standalone 210–327.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Bug: notes 3, 5, 9, 11, 14 and 18 were missing</h5>
+        <p class="mb-0">To skip the running header, the body was taken to start below any "<em>for the year ended</em> / <em>as at</em>" row in the top 30% of the page. But table column headers also say <code>As at</code>. On pages where a note began with a table, the "header" cut-off moved down to y≈250 and the note heading at y≈169 was thrown away with it.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: only the sub-line directly under the header counts</h5>
+        <p class="mb-0">The "for the year ended…" row now counts as part of the header only when it sits within 30pt below the section header row. The result was <strong>all 59 consolidated notes found, numbered 1 to 59 with no gaps</strong>.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Dead ends: headings that don't look like headings</h5>
+        <ul class="mb-0">
+          <li><code>5 INTANGIBLE ASSETS AND GOODWILL</code> has no dot after the number, so the dot in the regex had to be optional.</li>
+          <li>Note 54 never appears as <code>54.</code>, only as sub-headings <code>54.1 DETAILS OF FUNDS…</code> and <code>54.2 …</code>.</li>
+          <li>Standalone Note 3's heading is on PDF p.233, a <strong>rotated landscape table page</strong>. Its text runs vertically, so no horizontal heading row exists.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green">
+      <div class="card-body">
+        <h5>Fix: sub-numbers and "(CONTD.)" repeats as evidence</h5>
+        <p class="mb-0">A sub-heading <code>N.M</code> whose major number <em>N</em> hasn't been seen yet starts note <em>N</em>. A <code>(CONTD.)</code> repeat of a note that was never seen starting (<code>3. PROPERTY, PLANT AND EQUIPMENT (CONTD.)</code> on p.234) means its real heading was unreadable. The note is then <strong>assumed to start at the top of the previous page</strong> and marked <code>"inferred_start": true</code>. Final result: <strong>59 consolidated + 56 standalone notes, none missing</strong>.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 4. FINANCIAL STATEMENTS -->
+  <section id="statements" class="mb-5">
+    <h2 class="section-title">4. Stage 2: Loading the Financial Statements (<code>statements.py</code>)</h2>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <h5>Why the statements are needed</h5>
+        <p class="mb-0">A note explains a line of a primary statement. Note 21 explains the tax lines of the Profit and Loss, the deferred tax lines of the Balance Sheet, "Income taxes paid" in the Cash Flow Statement, and the tax on OCI items in the Statement of Changes in Equity. To say how a note <em>affects</em> the financial statements, Claude has to see them. So when a report is selected, the app also loads the four primary statements for both the consolidated and the standalone sections, and sends the relevant set with every question.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <h5>Finding the statements</h5>
+        <p>While <code>build_index()</code> reads every page, each page that is <em>not</em> a notes page goes to <code>statements.detect_statement_page()</code>:</p>
+        <ol>
+          <li>A cheap filter first: the page text must mention "balance sheet", "profit and loss", "changes in equity", "cash flow", "income statement" or "financial position".</li>
+          <li>The <strong>title row</strong> is the largest row of at least 14pt in the top 25% of the page. In the sample report the titles are 22pt, e.g. <code>Consolidated Balance Sheet</code>.</li>
+          <li>The title, with "Consolidated"/"Standalone" and "(Contd.)" removed, must <strong>start with</strong> one of four statement names. Common alternative names are accepted too: Income Statement, Statement of Cash Flows, Statement of Financial Position, Statement of Changes in Stockholders' Equity.</li>
+          <li><code>group_statements()</code> gives each notes section the statement pages that sit in the <strong>15 pages before its first notes page</strong>, grouped by type. The section therefore comes from the position of the pages, not from the title's wording (the standalone titles don't say "Standalone").</li>
+        </ol>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle small mb-0">
+            <thead><tr><th>Statement</th><th>Consolidated (PDF pages)</th><th>Standalone (PDF pages)</th></tr></thead>
+            <tbody>
+              <tr><td>Statement of Profit and Loss</td><td>342–343</td><td>206</td></tr>
+              <tr><td>Balance Sheet</td><td>341</td><td>205</td></tr>
+              <tr><td>Cash Flow Statement</td><td>346–347</td><td>208–209</td></tr>
+              <tr><td>Statement of Changes in Equity</td><td><strong>344–345, printed sideways</strong></td><td>207</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Problem: the consolidated Statement of Changes in Equity is printed sideways</h5>
+        <p class="mb-0">On PDF pages 344–345 the wide equity table is printed rotated. The page itself is not rotated (<code>page.rotation == 0</code>), but 189 of its 192 text lines run bottom-to-top (line direction <code>(0, -1)</code>). Read as-is, the title isn't a horizontal row at all and the table's rows come out as columns. The first attempt, <code>page.set_rotation(90)</code>, <strong>did not help</strong>: PyMuPDF still reported the text with direction <code>(0, -1)</code>.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: draw the page onto a new landscape page, turned 90° clockwise</h5>
+        <p><code>dominant_direction()</code> finds the most common line direction. If it is sideways, <code>derotated_page()</code> draws the page onto a new, temporary landscape page with the content turned the other way. The text then really is horizontal (189 lines with direction <code>(1, 0)</code>), and the normal title detection and row extraction work unchanged.</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">statements.py (excerpt)</span></div>
+          <pre><code class="language-python">DERO_ANGLES = {(0, -1): -90, (0, 1): 90, (-1, 0): 180}   # text direction -> turn
+
+def derotated_page(doc, pno, angle):
+    src = doc[pno - 1].rect
+    temp = pymupdf.open()
+    width, height = (src.height, src.width) if angle in (90, -90) else (src.width, src.height)
+    page = temp.new_page(width=width, height=height)
+    page.show_pdf_page(page.rect, doc, pno - 1, rotate=angle)
+    return temp, page</code></pre>
+        </div>
+        <p class="mb-0">The rotation is stored per page (<code>"rotation": -90</code>), and the extract says so: <code>--- PDF page 344 (printed page 341) (printed sideways; rotated 90° clockwise before extraction) ---</code>. On the rotated page, the running header and page number are now sideways and are dropped. The printed page number is read from the original, upright page instead.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Bug: page 345 wasn't found</h5>
+        <p class="mb-0">After rotation, the (now sideways) running header "Integrated Annual Report" on the odd page landed on the same line as the title, so the title row read <code>Consolidated Statement of Changes in Equity Integrated Annual Report</code>. An exact title match rejected it, and only page 344 was loaded.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: match the statement name at the start of the title row</h5>
+        <p class="mb-0">The title patterns are now matched as a prefix (<code>^(?:statement of changes in … equity)\b</code>). Both pages 344 and 345 are found, and all <strong>eight statements</strong> (four consolidated, four standalone) load.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Bug: neighbouring numbers merged into one cell</h5>
+        <p class="mb-0">The equity statement has 12 value columns packed tightly, some less than the 12pt <code>COLUMN_GAP</code> apart. So <code>_rows_to_text()</code> produced <code>127.36 3,230.48</code> and <code>(327.53) 91,249.54</code> as single cells, putting the figures in the wrong columns.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: two numbers side by side are always separate columns</h5>
+        <p>In <code>extractor._rows_to_text()</code>, spans are joined only if they are close together <em>and</em> not both numbers (<code>NUMBER_CELL_RE</code>). The rule applies to the notes as well. Real output from the rotated page 344:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">Consolidated Statement of Changes in Equity, PDF p.344 (excerpt)</span></div>
+          <pre><code class="language-plaintext">Balance as at April 1, 2025 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+- Profit/(Loss) for the year | - | - | - | - | 10,796.61 | - | - | - | - | 10,796.61 | 97.37 | 10,893.98
+Balance as at March 31, 2026 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 68,659.35 | 4,213.27 | (944.15) | (148.19) | (3,414.71) | 94,842.13 | (230.16) | 94,611.97</code></pre>
+        </div>
+        <p class="mb-0">The Balance Sheet and P&amp;L keep their <strong>Notes</strong> column, which is what links a statement line to its note: <code>(c) Deferred tax liabilities (net) | 21 | 215.24 | 1,198.28</code>, <code>Current tax | 5,606.07 | 5,848.54</code> (= Note 21's 5,701.41 − 95.34).</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <h5>"Loaded" when the report is selected</h5>
+        <ul class="mb-0">
+          <li>Each statement's text is extracted once while indexing and <strong>cached inside the notes index</strong> (<code>INDEX_VERSION</code> 7). Every question reuses it without reading the PDF again. The first load of the sample report now takes about <strong>12s</strong> (6s before); after that it is instant.</li>
+          <li>Step 1 of the UI shows a green box per section listing the loaded statements (<em>✓ Consolidated Balance Sheet · PDF p.341</em>). Each can be expanded to show the extracted text, and sideways statements carry a <span class="badge text-bg-warning">rotated</span> tag.</li>
+          <li><strong>Which statements go with a question:</strong> those of the selected notes' section (consolidated notes → consolidated statements, standalone → standalone, both → both). Manually entered pages use the consolidated set. Threads started before this feature get the statements added on their next follow-up.</li>
+          <li>The four consolidated statements add about 18,000 characters to a prompt, and the standalone four about 14,000. The <code>MAX_CONTEXT_CHARS</code> check now counts statements plus notes.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 5. SELECTION -->
+  <section id="select" class="mb-5">
+    <h2 class="section-title">5. Stage 3: Choosing the Notes (<code>note_selector.py</code>)</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p><strong>Scope is decided by rules, not by the LLM.</strong> <code>detect_scope()</code> returns:</p>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle small">
+            <thead><tr><th>Question contains…</th><th>Scope</th></tr></thead>
+            <tbody>
+              <tr><td>nothing special</td><td><code>consolidated</code> (the default)</td></tr>
+              <tr><td>"standalone", "stand-alone", "parent company only", "not consolidated", "do not use consolidated"</td><td><code>standalone</code></td></tr>
+              <tr><td>both "standalone" and "consolidated", or "standalone" with "both"</td><td><code>both</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Claude call #1 picks the notes.</strong> The prompt (<code>prompts/selector_template.txt</code>) lists only the notes in that scope, as IDs with titles and up to 8 sub-headings each. <code>C</code> means Consolidated and <code>S</code> means Standalone:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">selector prompt (excerpt)</span></div>
+          <pre><code class="language-plaintext">QUESTION: Analyze the company's Tax related liablities and comment on it.
+Scope already decided: consolidated financial statements. Do not change it.
+...
+C20: PROVISIONS  [sub-headings: ...]
+C21: INCOME AND DEFERRED TAXES  [sub-headings: Statement of profit and loss:; Profit or loss section; ...]
+C22: TRADE PAYABLES  [sub-headings: ...]
+...
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["C21"], "reason": "one or two sentences explaining the choice"}</code></pre>
+        </div>
+        <p>The reply is parsed by finding the first <code>{...}</code> in it. Unknown IDs are dropped and at most 5 notes are kept. On the real run this call took <strong>6 seconds</strong> and returned C21 (Income and deferred taxes), plus C41 (Contingent liabilities, where tax disputes sit), C23 and C19 as related notes.</p>
+        <ul class="mb-0">
+          <li><strong>Fallback:</strong> if the call fails or returns bad JSON, <code>keyword_select()</code> scores each note title against a synonym table (<code>tax → "tax"</code>, <code>debt → "borrowings"</code>, <code>litigation → "contingent liabilities"</code>, …). The UI then says "Chosen by keyword match" instead of "Chosen by Claude".</li>
+          <li><strong>Explicit references win:</strong> "…and also Note 41" always puts Note 41 first, whatever the selector says.</li>
+          <li>The result goes back to the browser, which <strong>always pauses</strong> on the confirmation card. Each note is a removable chip showing its PDF and printed pages. An "Add note" dropdown lists every note, and there is an option to type PDF pages instead.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 6. EXTRACTION -->
+  <section id="extract" class="mb-5">
+    <h2 class="section-title">6. Stage 4: Extracting the Note (<code>extractor.py</code>)</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>For each page of a note, <code>extract_note()</code> keeps only the text inside the note's exact extent:</p>
+        <ul>
+          <li><strong>First page:</strong> only text below the note's heading (<code>start_y</code>).</li>
+          <li><strong>Last page:</strong> only text above the next note's heading (<code>end_y</code>).</li>
+          <li><strong>Every page:</strong> nothing from the running header (report title, "Notes to…", "for the year ended…") or the footer (printed page number). These limits come from each page's <code>top</code>/<code>bottom</code> stored in the index.</li>
+          <li><code>(CONTD.)</code> heading repeats are dropped. Ligatures such as <code>ﬁ</code> are normalized, and the report's Rupee font, which draws ₹ as a backtick <code>`</code>, is mapped back to <code>₹</code>.</li>
+          <li>Each page is labelled, e.g. <code>--- PDF page 405 (printed page 402) ---</code>, so Claude can cite pages.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Dead end: PyMuPDF's table finder</h5>
+        <p class="mb-0">The notes' tables have <strong>no ruling lines</strong>. <code>page.find_tables(strategy="lines")</code> returned one 3×2 "table" covering the whole page. <code>strategy="text"</code> cut words in half across columns (<code>|Integrated Ann|ual Repor|t 2025-26|</code>, <code>|Partculars|</code>). Plain <code>get_text()</code> wrote every number on its own line, which loses which column (FY26 or FY25) a number belongs to.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: rebuild rows from text spans, and turn wide gaps into columns</h5>
+        <p><code>_rows_to_text()</code> groups spans whose vertical centres are within 3pt into one row and sorts each row left to right. Wherever the horizontal gap between two spans is more than <code>COLUMN_GAP = 12pt</code>, it inserts <code> | </code>. Ordinary prose has only 2–3pt between spans, so paragraphs stay intact. Two numbers next to each other are always split, however close they are (added for the equity statement; see Section 4). The real output for Note 21:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">extracted Note 21 (excerpt, 7,102 chars total)</span></div>
+          <pre><code class="language-plaintext">=== Note 21 — INCOME AND DEFERRED TAXES (Consolidated) ===
+--- PDF page 405 (printed page 402) ---
+21. INCOME AND DEFERRED TAXES
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Current income tax charge | 5,701.41 | 5,994.80
+Tax for prior years | (95.34) | (146.26)
+Income tax expense reported in the statement of profit and loss | 5,777.74 | 5,425.50
+...
+--- PDF page 406 (printed page 403) ---
+Total deferred tax liability | 215.24 | 1,198.28
+...
+--- PDF page 407 (printed page 404) ---
+Opening balance | 1,198.28 | 1,690.49
+...
+Closing balance | 215.24 | 1,198.28</code></pre>
+        </div>
+        <p class="mb-0">Rotated text (landscape pages) is collected separately and appended under <code>[Rotated text on this page:]</code>, so it is never mixed into the horizontal rows. If the combined extract is over <code>MAX_CONTEXT_CHARS</code> (150,000), the analysis is refused with a message asking the user to remove a note.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 7. CLAUDE -->
+  <section id="claude" class="mb-5">
+    <h2 class="section-title">7. Stage 5: Talking to Claude Code (<code>claude_client.py</code>)</h2>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Why basic-chatbot's exact invocation wasn't enough</h5>
+        <p class="mb-0">basic-chatbot places the whole prompt inside a PowerShell <code>-Command</code> string. That works for chat, but a multi-note extract can be tens of thousands of characters, and Windows limits a command line to about <strong>32K characters</strong>. It also needs quote escaping.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: send the prompt on stdin, with every tool disabled</h5>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">claude_client.py + config.py (excerpt)</span></div>
+          <pre><code class="language-python">CLAUDE_EXTRA_FLAGS = ["--tools", "", "--no-session-persistence"]
+
+args = [config.CLAUDE_EXE, "-p", "--system-prompt", system_prompt] + config.CLAUDE_EXTRA_FLAGS
+result = subprocess.run(args, input=prompt, capture_output=True, text=True,
+                        encoding="utf-8", timeout=timeout, cwd=config.BASE_DIR)</code></pre>
+        </div>
+        <ul class="mb-0">
+          <li><code>--tools ""</code> (checked against <code>claude --help</code>, v2.1.282) disables all built-in tools. Claude can therefore only analyze the text it is given; it cannot open files or run commands. A test call confirmed it: <em>"I have no callable tools in this session."</em></li>
+          <li><code>--no-session-persistence</code>: each call is stateless and isn't saved as a resumable session.</li>
+          <li>No <code>--model</code> flag, so the call uses whatever model Claude Code is set to. Set <code>CLAUDE_MODEL</code> to override it.</li>
+          <li>basic-chatbot's PowerShell route is still available with <code>CLAUDE_VIA_POWERSHELL=1</code>. PowerShell 5.1 <strong>drops empty-string arguments</strong>, so <code>--tools ""</code> can't pass through it. That route blocks tools by name with <code>--disallowedTools</code> instead, and refuses prompts over 25,000 characters.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <h5>The analysis prompt</h5>
+        <p><code>prompts/analysis_system.txt</code> makes Claude a senior financial analyst and forensic accountant. It is told it receives two kinds of material: the <strong>primary financial statements</strong> and the <strong>selected notes</strong>. Its rules: base every statement on that material; cite every figure as <em>(Note 21, p.405)</em> or <em>(Balance Sheet, p.341)</em>; <strong>always connect the notes to the statements</strong>, i.e. find the lines each note supports (via the statements' Notes column), check that the figures agree, and explain the effect on each of the four statements; show calculations; flag inconsistencies, including note figures that don't match the statements; say so when information is missing; read <code> | </code> as a column separator; and treat the equity statement's jumbled multi-line column headings with care. <code>prompts/analysis_template.txt</code> fills in the report, scope, notes, question and extract, and asks for this structure:</p>
+        <p class="mb-2"><span class="badge badge-tool">Summary</span> <span class="badge badge-tool">Key figures</span> <span class="badge badge-tool">Detailed analysis</span> <span class="badge badge-tool">Impact on the financial statements</span> <span class="badge badge-tool">Red flags &amp; areas for follow-up</span> <span class="badge badge-tool">Sources</span></p>
+        <p>The <strong>Impact on the financial statements</strong> section has one sub-heading per statement (Profit and Loss, Balance Sheet, Cash Flow, Changes in Equity). For each one, Claude names the lines affected with their current- and prior-year figures, shows how the note reconciles to them, and explains the effect. The template places the statements block (<code>{{STATEMENTS}}</code>, listed in <code>{{STATEMENTS_LIST}}</code>) before the notes block (<code>{{EXTRACT}}</code>). The follow-up template carries both blocks too, and asks for a short impact section whenever figures are involved.</p>
+        <p class="mb-0">Templates use <code>{{KEY}}</code> placeholders, filled in <strong>one pass</strong> by <code>fill_prompt()</code>. Text inside the extract that happens to look like a placeholder is therefore never substituted a second time. All prompts live in <code>prompts/</code> and can be edited without touching the code.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 8. JOBS & THREADS -->
+  <section id="jobs" class="mb-5">
+    <h2 class="section-title">8. Background Jobs &amp; Follow-up Threads</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p><strong>Jobs.</strong> An analysis takes 1–3 minutes, too long to leave a browser request waiting. <code>/api/identify</code>, <code>/api/analyze</code> and <code>/api/followup</code> each start a background thread and return a <code>job_id</code> straight away. The browser polls <code>GET /api/jobs/&lt;id&gt;</code> every 1.5s and shows a spinner with a running "Ns elapsed" counter. Jobs live in memory (<code>JOBS</code> dict), so the app runs with <code>use_reloader=False</code> to keep them alive. The polling requests are filtered out of <code>logs/app.log</code>.</p>
+        <p><strong>Threads.</strong> Every analysis starts a thread saved as <code>cache/threads/&lt;id&gt;.json</code>. It holds the report, the notes, the extracted text and every turn. A follow-up is a new stateless <code>claude -p</code> call whose prompt (<code>prompts/followup_template.txt</code>) includes:</p>
+        <ol>
+          <li>the same extract,</li>
+          <li>"Conversation so far" (the last 10 turns, as <em>User asked / You answered</em>, the same idea as basic-chatbot's <code>session_context()</code>),</li>
+          <li>the new question.</li>
+        </ol>
+        <p class="mb-0">If a follow-up mentions a note that isn't in the thread yet ("<em>Also consider Note 41 tax disputes</em>"), that note is extracted and added to the thread before the call.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>UI issue: the follow-up spinner appeared at the top of the page</h5>
+        <p class="mb-0">There was one shared progress element, placed below Step 3. When a follow-up was asked at the bottom of a long analysis, the "Asking Claude…" spinner showed up far off-screen at the top, so it looked as if nothing was happening.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green">
+      <div class="card-body">
+        <h5>Fix: the spinner moves to where the question was asked</h5>
+        <p class="mb-0"><code>runJob(url, body, label, anchor)</code> moves the progress card and error box to just below <code>anchor</code>, which for follow-ups is the follow-up box, and scrolls to it. The question stays in the box as read-only until the answer arrives. A comment node marks the original position, so <strong>New analysis</strong> can put everything back.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 9. PRESENT & SAVE -->
+  <section id="present" class="mb-5">
+    <h2 class="section-title">9. Stage 6: Presenting &amp; Saving the Analysis</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p><strong>In the app.</strong> <code>render_markdown()</code> first escapes <code>&lt;</code> and <code>&amp;</code>, so nothing in Claude's reply can inject HTML, then converts the Markdown (tables, fenced code and lists) to HTML. Each answer has <strong>Copy</strong>, <strong>.md</strong>, <strong>.html</strong> and <strong>Open saved report ↗</strong> buttons. A collapsible <em>Source sent to Claude (financial statements + notes)</em> panel shows exactly what Claude saw, and the result header lists the statements used.</p>
+        <p class="mb-2"><strong>Every question and follow-up is saved in three places:</strong></p>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle small mb-0">
+            <thead><tr><th style="width:34%">Where</th><th>What</th></tr></thead>
+            <tbody>
+              <tr><td><code>claude-prompt-input.txt</code> / <code>Claude-prompt-output.txt</code></td><td>The last prompt sent and the last reply received (basic-chatbot pattern).</td></tr>
+              <tr><td><code>Prompt-History\Claude-code-prompt-N-*.txt</code></td><td><code>-question.txt</code> (a metadata header with time sent, kind, report, scope, notes, PDF pages, <strong>financial statements</strong>, thread and saved HTML, then the question), <code>-answer.txt</code>, and <code>-prompt.txt</code> (the full prompt including the extract, so any answer can be reproduced). The <strong>History</strong> sidebar reads these and can reopen a whole thread to continue it (see Section 10).</td></tr>
+              <tr><td><code>Analysis-history\&lt;pdf name&gt;-&lt;n&gt;-&lt;YYYYMMDD-HHMMSS&gt;.html</code></td><td>A styled, standalone report. <code>n</code> is 1 for the first question, 2 for the first follow-up, and so on. The timestamp is when the prompt was <em>sent</em>. Example: <code>Bharat-Forge-IR-2026-conv-single-page-1-20260924-173714.html</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <h5>The saved HTML report (<code>report_html.py</code> + <code>templates/analysis_report.html</code>)</h5>
+        <ul class="mb-0">
+          <li>A navy top bar with the <strong>RAG Champ logo</strong> on the left (the SVG is embedded, so the file works on its own anywhere) and <strong>ANNUAL REPORT ANALYZER</strong> on the right.</li>
+          <li>A <strong>light-blue box</strong> with the company name (<em>Bharat Forge Limited</em>), the annual report file, statements, notes, PDF pages analyzed, the <strong>financial statements referenced</strong> (e.g. <em>Consolidated Statement of Changes in Equity (PDF p.344–345)</em>), time sent and the question. Follow-ups also show the original question and a badge such as <em>#2 · Follow-up question 1</em>.</li>
+          <li>The analysis, with tables styled like the reference report (yellow header, alternating blue rows). Numeric cells such as <code>(95.34)</code>, <code>34.66%</code> and <code>(2.60) pp</code> are right-aligned.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Bug: lists merged into one run-on paragraph</h5>
+        <p class="mb-0">Claude often writes a bold label with list items directly under it (<code>**The P&amp;L tax charge ties out:**</code> then <code>- FY26: …</code>). Python-Markdown only starts a list after a blank line, so the page showed <em>"ties out: - FY26: 5,701.41 … - FY25: …"</em> as one paragraph, both in the app and in the saved report.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green">
+      <div class="card-body">
+        <h5>Fix: insert the missing blank line before rendering</h5>
+        <p class="mb-0"><code>_separate_lists()</code> adds a blank line before any list item that directly follows a non-list line. It skips fenced code and table rows. A headless-Edge screenshot of the saved report confirmed that the calculation bullets now render as proper lists.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 10. HISTORY ACCESS -->
+  <section id="history" class="mb-5">
+    <h2 class="section-title">10. History Access (<code>history.py</code> + the History sidebar)</h2>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <h5>What the user sees</h5>
+        <p class="mb-0">When the home page opens, the left sidebar lists past analyses, newest first. Each item shows the question (up to 140 characters, in two lines) and a grey line such as <em>#9 · 2026-09-24 21:47:28 · Bharat-Forge-IR-2026-conv-single-page.pdf</em>. Follow-up questions are marked <strong>↳</strong>. The <strong>☰ History</strong> button in the top bar shows or hides the sidebar, and <strong>↻</strong> reloads the list. Clicking an item shows that analysis in the main area. If its conversation is still on disk, the user can carry on asking follow-ups.</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <h5>Where the information comes from</h5>
+        <p>History has no database. It reads files that every analysis and follow-up already writes (Section 9):</p>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle small">
+            <thead><tr><th style="width:32%">Source</th><th>What History uses it for</th></tr></thead>
+            <tbody>
+              <tr><td><code>Prompt-History\Claude-code-prompt-N-question.txt</code></td><td><strong>The list and the header data.</strong> The file name gives the number <code>N</code>. A metadata block (one <code>Key: value</code> per line) is followed by a blank line and then the question.</td></tr>
+              <tr><td><code>Prompt-History\Claude-code-prompt-N-answer.txt</code></td><td>Claude's reply (Markdown), shown when the item is opened.</td></tr>
+              <tr><td><code>cache\threads\&lt;Thread id&gt;.json</code></td><td>The <strong>whole conversation</strong>: report, notes, extract, statements, statements list, and every turn (<code>sno</code>, question, answer, timestamp, saved HTML). The link between the two is the <code>Thread:</code> line in the question file.</td></tr>
+              <tr><td><code>Analysis-history\&lt;Saved HTML&gt;</code></td><td>The styled report behind the <strong>Open saved report ↗</strong> link (from the <code>Saved HTML:</code> line).</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A real question file (entry #9, a follow-up):</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">Prompt-History/Claude-code-prompt-9-question.txt (excerpt)</span></div>
+          <pre><code class="language-plaintext">Asked at: 2026-09-24 21:47:28
+Kind: follow-up
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 3 – PROPERTY, PLANT AND EQUIPMENT (PDF p.377–379), Consolidated Note 30 – ...
+Financial statements: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet ...
+Thread: b50e6760198a40b49f784472357c8c88
+Saved HTML: Bharat-Forge-IR-2026-conv-single-page-3-20260924-214728.html
+
+Get information related to this item as shown below and do additional analysis "Note 19: ...</code></pre>
+        </div>
+        <p class="mb-0"><code>history.read_entry(N)</code> splits the file at the first blank line. Each header line matching <code>^([A-Za-z ]+): (.*)$</code> becomes a <code>meta</code> field (<code>Asked at</code>, <code>Kind</code>, <code>Report</code>, <code>Scope</code>, <code>Notes</code>, <code>PDF pages</code>, <code>Financial statements</code>, <code>Thread</code>, <code>Saved HTML</code>), and the rest is the question. It also reads the matching <code>-answer.txt</code>. The numbering and file layout are reused from basic-chatbot, which is why numbering carries on across restarts and days (<code>next_sno()</code> takes the highest number on disk plus 1).</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <h5>The flow</h5>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">history: list, then open</span></div>
+          <pre><code class="language-plaintext">page load / ↻ / after every analysis or follow-up
+   app.js loadHistory() ──GET /api/history──► history.list_entries()
+                                               glob Prompt-History/*-question.txt, sort by N (newest first), max 100
+                                               read_entry(N) for each → {sno, asked_at, report, kind, notes, question[:140]}
+   ◄── JSON list ── draws one &lt;li&gt; per entry (↳ for follow-ups), click → openHistory(N)
+
+click an item
+   app.js openHistory(N) ──GET /api/history/N──► read_entry(N) + answer
+                                                  answer_html = render_markdown(answer)
+                                                  thread_available = cache/threads/&lt;Thread&gt;.json exists?
+     ├─ thread_available ──GET /api/threads/&lt;Thread&gt;──► load_thread() + render_markdown() for every turn
+     │     → whole conversation shown, report re-selected if needed, source panel + follow-up box ON
+     └─ not available
+           → just this question + answer, read-only: source panel + follow-up box OFF</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 1 <span class="step-title">— The sidebar list is built</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark><span class="arrow">→</span><mark>WEB-APP/app.py</mark><span class="arrow">→</span><mark>WEB-APP/history.py</mark></div>
+        <p class="mb-0"><code>loadHistory()</code> runs when the page loads, when <strong>↻</strong> is clicked, and after every finished analysis or follow-up (from <code>startThread()</code> and <code>followup()</code>), so a new answer appears at the top straight away. It calls <code>GET /api/history</code>, and <code>history.list_entries()</code> finds every <code>Claude-code-prompt-*-question.txt</code>. It sorts them by number, newest first, keeps the latest 100, and returns a short record for each. The browser builds each list item with <code>textContent</code> (never HTML), so a question can't inject markup into the page. If the call fails, the sidebar just stays as it was, since history is optional.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 2 <span class="step-title">— The user clicks an item; the entry is fetched</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark><span class="arrow">→</span><mark>GET /api/history/&lt;N&gt;</mark></div>
+        <p class="mb-0"><code>openHistory(N)</code> calls <code>GET /api/history/N</code>. The route reads the question and answer files, turns the answer into HTML with <code>render_markdown()</code> (which escapes HTML and fixes lists, as in Section 9), and sets <code>thread_available</code> to true only if the <code>Thread:</code> id is a valid 32-character hex id <em>and</em> <code>cache/threads/&lt;id&gt;.json</code> still exists. An unknown <code>N</code> returns 404, and the error box shows the message.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 3a <span class="step-title">— Thread available: the whole conversation reopens</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>GET /api/threads/&lt;id&gt;</mark><span class="arrow">→</span><mark>cache/threads/&lt;id&gt;.json</mark></div>
+        <p class="mb-2">The browser then calls <code>GET /api/threads/&lt;id&gt;</code>. <code>load_thread()</code> reads the JSON, and every turn's answer is rendered with <code>render_markdown()</code> again. Because answers are rendered <em>at display time</em>, old answers benefit from later rendering fixes such as the list fix. In the main area:</p>
+        <ul class="mb-0">
+          <li>If the thread belongs to another report, or no report is loaded yet, the report dropdown switches to it and <code>selectReport()</code> reloads its index and statements, so Step 1 matches the conversation.</li>
+          <li>The result card is cleared, and <strong>every turn of the thread</strong> is drawn with <code>addTurn()</code>: the question bubble, the rendered answer, <strong>Copy / .md / .html / Open saved report ↗</strong>, and the time and <code>#N</code>. Clicking <em>any</em> item of a thread (the first question or one of its follow-ups) opens the same full conversation.</li>
+          <li>The header line lists the report, notes and statements. <em>Source sent to Claude (financial statements + notes)</em> is filled from the thread's saved <code>statements</code> and <code>extract</code>.</li>
+          <li><code>state.threadId</code> is set and the <strong>follow-up box is shown</strong>, so the next question continues this thread. It is sent with the same notes and statements and the conversation so far (Section 8), becomes the next prompt number, and is saved as the next <code>…-&lt;n&gt;-&lt;time&gt;.html</code> report.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 3b <span class="step-title">— No thread file: a read-only view</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark></div>
+        <p class="mb-0">If the thread file is gone (e.g. <code>cache\</code> was cleared) or the entry pre-dates threads, the page shows just that one question and answer. The time comes from <code>Asked at</code>, the report and notes from the metadata, and <strong>Open saved report ↗</strong> from <code>Saved HTML</code>. The source panel and the follow-up box are hidden, because there is no saved extract to continue from.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 4 <span class="step-title">— The page settles on the result</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark></div>
+        <p class="mb-0">The note-confirmation card (Step 3 of the main flow) is hidden, the result card is shown and scrolled into view, and the buttons are refreshed. From here the user can read, copy or download the answer, open its saved HTML report, ask a follow-up (3a only), or click <strong>New analysis</strong> to go back to asking a fresh question.</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-green mt-4">
+      <div class="card-body">
+        <h5>Design notes</h5>
+        <ul class="mb-0">
+          <li><strong>Files, not a database.</strong> History survives restarts and can be browsed without the app. Any past answer can be reproduced from its <code>-prompt.txt</code>, which holds the exact prompt that was sent.</li>
+          <li><strong>Two levels of storage.</strong> <code>Prompt-History</code> keeps each question and answer forever. <code>cache\threads</code> keeps what is needed to <em>continue</em> a conversation. Deleting <code>cache\</code> removes the ability to continue, but never the history itself (Step 3b).</li>
+          <li><strong>Safety.</strong> Thread ids are checked against <code>[0-9a-f]{32}</code> before any file is opened, list text is inserted as text, and answers go through the escaping <code>render_markdown()</code>.</li>
+          <li>Covered by <code>tests/test_app.py</code>: after an analysis and a follow-up, <code>/api/history</code> returns both (<code>follow-up</code> first), the entry's <code>PDF pages</code>, <code>Financial statements</code> and <code>Saved HTML</code> metadata are correct, <code>thread_available</code> is true, and <code>/api/threads/&lt;id&gt;</code> returns both turns with their saved reports.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 11. VIEW THE FINANCIAL STATEMENTS -->
+  <section id="viewer" class="mb-5">
+    <h2 class="section-title">11. The "View the Financial Statements" Page (<code>statements_view.py</code>)</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>Below the two green "financial statements loaded" boxes in Step 1 there is a <strong><em>View the financial statements ↗</em></strong> link. It points to <code>GET /statements?report=&lt;pdf&gt;</code> with <code>target="_blank"</code>, so it opens in a <strong>new tab</strong>, and it only appears once statements have been loaded. The page is built entirely from the <strong>already-extracted</strong> statement text cached in the index; it does not read the PDF again. It uses the same design as the saved analysis reports:</p>
+        <ul>
+          <li>The navy RAG Champ bar, and a light-blue box with the company name, the report file and a contents list with links to each statement (the equity statement marked <span class="badge text-bg-warning">rotated</span>).</li>
+          <li><strong>Consolidated Financial Statements</strong> first (P&amp;L, Balance Sheet, Cash Flow, Changes in Equity), then <strong>Standalone Financial Statements</strong>.</li>
+          <li>Each statement page is captioned with its PDF and printed page, and rotated pages are tagged <em>printed sideways; rotated 90° clockwise before extraction</em>.</li>
+        </ul>
+        <h5>Turning <code>a | b | c</code> rows back into a table</h5>
+        <p><code>statements_view._parse_page()</code> lays each row out as <strong>label | Notes | value columns</strong>:</p>
+        <ul class="mb-0">
+          <li>Trailing numeric cells are values, and they are <strong>right-aligned into the last columns</strong>, so current- and prior-year figures line up even when a row has no note number (<code>Purchase of stock in trade | 788.71 | 2,318.22</code>).</li>
+          <li>A small integer such as <code>24</code> or <code>19a</code> before the values goes into the <strong>Notes</strong> column. A note-only row such as <code>Income tax expense | 21</code> doesn't slide into a year column.</li>
+          <li>Rows made only of heading words (<code>Notes | Year ended | Year ended</code>, <code>March 31, 2026 | March 31, 2025</code>) become yellow header rows. Upper-case or lettered rows (<code>INCOME</code>, <code>ASSETS</code>, <code>A. EQUITY SHARE CAPITAL:</code>) become section rows. <code>Total…</code>, <code>Profit for/before…</code> and unlabelled subtotal rows are bold totals.</li>
+          <li>Wrapped labels are joined back onto their row (<code>…stock in trade, dies</code> + <code>and scrap</code>), and the signature block from "As per our report of even date" onwards is left out.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mb-4">
+      <div class="card-body">
+        <h5>Bugs found by screenshotting the rendered page</h5>
+        <ul class="mb-0">
+          <li><strong>Part A was squeezed.</strong> In the equity statement, part A (share capital, 3 value columns) and part B (other equity, 12 value columns) were one table, so part A's labels were crushed into a narrow column.</li>
+          <li><strong>A heading was merged into a row of figures.</strong> A line starting with "(" was treated as a wrapped label, so <code>(2) For the year ended March 31, 2025</code> was appended to the <code>956.27 | - | 956.27</code> row above it.</li>
+          <li><strong>A regression from fixing that.</strong> After "(" lines stopped joining rows that have figures, <code>(Loss)</code>, the wrapped end of <code>- Other Comprehensive Income/</code>, showed up as a row of its own.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green">
+      <div class="card-body">
+        <h5>Fixes</h5>
+        <ul class="mb-0">
+          <li>Each lettered part (<code>A. …</code>, <code>B. …</code>) starts <strong>its own table</strong> with its own column count: part A has 3 value columns, part B has 12.</li>
+          <li>A "(…)" line continues the row above only if that row has no figures yet (the EPS heading's <code>(March 31, 2025: ₹2/-)</code>) or the line contains <strong>no digits</strong> (<code>(Loss)</code>). <code>(2) For the year ended …</code> therefore stays a row of its own.</li>
+          <li>Verified by tests in <code>tests/test_statements_view.py</code> and by headless-Edge screenshots of the P&amp;L, the Balance Sheet and the rotated equity statement.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red mt-4 mb-4">
+      <div class="card-body">
+        <h5>Bug: the equity table was missing its column headings</h5>
+        <p class="mb-0">The user's screenshot showed the Statement of Changes in Equity with no real headings. Its 12 columns are headed by <strong>stacked, wrapped words</strong> ("Securities / premium", "Retained / Earnings", "Foreign / currency / translation / reserve / (FCTR)"). The " | " text rows had lost which word sits over which column, so the headings came out as jumbled italic text (<em>"Securities Capital Employee General Retained Foreign Equity Non- Cash flow…"</em>). Some neighbouring heading words are also only 11pt apart ("Employee" / "General"), so the text flattener had merged them into one cell.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>Fix: rebuild every statement table by position</h5>
+        <p>When a report is loaded, <code>extractor._rows_with_positions()</code> now stores each statement row as separate spans with their x-positions (<code>page["rows"]</code> in the index, <code>INDEX_VERSION</code> 7). <code>statements_view.parse_page()</code> then uses the geometry:</p>
+        <ul>
+          <li><strong>Columns</strong> are clusters of the numbers' right edges, since figures are right-aligned. Each figure goes to the nearest column, so every statement's figures now sit in their true columns.</li>
+          <li><strong>Heading words</strong> go to the column they sit over, and all heading rows between two rows of figures are merged per column, top to bottom. "Non-" + "controlling" joins as "Non-controlling". A heading that starts in the label area but is <em>centred</em> over a column ("Notes") or <em>right-aligned</em> to its edge ("Balance as on April 1, 2025") also belongs to that column.</li>
+          <li><strong>Group headings</strong> that cover several columns are printed centred, so their span is widened symmetrically while it stays centred on the text. This gives <em>Attributable to the owners of the parent</em> over 9 columns, <em>Reserves and Surplus (Refer note 16)</em> over 5 and <em>Items of OCI (Refer note 16)</em> over 4.</li>
+          <li>Lettered parts must be all caps ("A. EQUITY SHARE CAPITAL:"), so the Balance Sheet's "I. Non-current assets" no longer splits its table. Wide tables use a compact style so all 12 columns fit.</li>
+        </ul>
+        <p class="mb-2">Result for the consolidated equity statement: <em>Securities premium · Capital reserves · Employee stock option outstanding · General reserve · Retained Earnings · Foreign currency translation reserve (FCTR) · Equity instruments through other comprehensive income · Non-controlling interest reserve · Cash flow hedge reserve · Total attributable to the owners of the Company · Non-controlling interests · Total</em>. The standalone equity statement gets its 7 headings the same way.</p>
+        <p class="mb-0"><strong>Claude benefits too:</strong> for tables with 5 or more columns, the statement text sent to Claude now starts with the rebuilt headings, e.g. <code>[Column headings, left to right: 1) Securities premium | 2) Capital reserves | … | 12) Total]</code>.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 12. WALKTHROUGH -->
+  <section id="walkthrough" class="mb-5">
+    <h2 class="section-title">12. Step-by-Step: "Analyze the Tax Liabilities"</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p class="mb-0">Sections 3–11 explain each mechanism separately. This section follows them in the order they actually run, for the real question used to verify the app: <em>"Analyze the company's Tax related liablities and comment on it."</em> on the Bharat Forge FY2025-26 report.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 1 <span class="step-title">— The page loads and lists the reports</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/app.py</mark><span class="arrow">→</span><mark>WEB-APP/static/app.js</mark></div>
+        <p class="mb-0"><code>GET /</code> serves <code>templates/index.html</code>. <code>loadReports()</code> calls <code>GET /api/reports</code>, which lists every <code>*.pdf</code> in <code>REPORTS_DIR</code>. There is only one, so it is selected automatically. <code>loadHistory()</code> fills the History sidebar from <code>Prompt-History\</code>.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 2 <span class="step-title">— The report is indexed and its financial statements are loaded (or read from cache)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/notes_index.py</mark><span class="arrow">→</span><mark>WEB-APP/pdf_utils.py</mark><span class="arrow">→</span><mark>WEB-APP/statements.py</mark></div>
+        <p class="mb-0"><code>POST /api/index</code> → <code>load_or_build()</code>. On the first run, <code>build_index()</code> reads all 508 pages, finds the two notes sections and their headings, works out every note's extent, and detects the company name. It also finds the eight primary statements, rotates pages 344–345 90° clockwise, and caches each statement's text. It writes <code>cache/Bharat-Forge-IR-2026-conv-single-page.notes-index.json</code> in about 12s. Step 1 of the UI then shows <em>"508 pages · Consolidated notes: 59 (PDF p.348–503) · Standalone notes: 56 (PDF p.210–327)"</em>, the two green boxes of loaded statements, and the <em>View the financial statements ↗</em> link.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 3 <span class="step-title">— The user asks the question; an identify job starts</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark><span class="arrow">→</span><mark>WEB-APP/app.py</mark></div>
+        <p class="mb-0"><strong>Identify notes</strong> → <code>runJob("/api/identify", …)</code>. The route checks that the report is one of the listed PDFs (so the file name can't be used to reach other paths), starts <code>identify_job</code> in a background thread and returns its <code>job_id</code>. The browser shows the spinner and polls.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 4 <span class="step-title">— Scope is decided by rules</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/note_selector.py</mark></div>
+        <p class="mb-0"><code>detect_scope()</code> finds no mention of "standalone", so the scope is <code>consolidated</code>, with the reason <em>"Default: notes to the consolidated financial statements."</em>.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5 <span class="step-title">— Claude call #1 picks the notes</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/note_selector.py</mark><span class="arrow">→</span><mark>WEB-APP/claude_client.py</mark><span class="arrow">→</span><mark>prompts/selector_*.txt</mark></div>
+        <p class="mb-0"><code>select_notes()</code> sends the question and the 59 consolidated titles and sub-headings to <code>claude -p</code>. In 6s it returns <code>C21</code>, <code>C41</code>, <code>C23</code> and <code>C19</code>, with the reason <em>"C21 is the primary note for current and deferred tax liabilities… C41 covers disputed tax demands disclosed as contingent liabilities…"</em>. <code>identify_job</code> also extracts the chosen notes once to estimate their size (18,771 characters) and returns everything.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 6 <span class="step-title">— The app pauses; the user confirms</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark></div>
+        <p class="mb-0"><code>showConfirm()</code> draws the Step 3 card: a <em>Consolidated</em> badge, one chip per note (<em>"Consolidated Note 21 — INCOME AND DEFERRED TAXES · PDF p.405–407 (printed 402–404)"</em>), the reason, and the size estimate. To match the original spec (Note 21 on pages 405–407), the verification run analyzed Note 21 alone. In the UI, that means removing the C41, C23 and C19 chips and clicking <strong>Analyze</strong>.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 7 <span class="step-title">— Note 21 is extracted</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/app.py</mark><span class="arrow">→</span><mark>WEB-APP/extractor.py</mark></div>
+        <p class="mb-0"><code>analyze_job</code> → <code>extract_selection()</code> → <code>extract_note(index, "consolidated", 21)</code>. Pages 405, 406 and 407 are clipped (from the heading at y=169.0 on p.405 to the bottom of p.407), rows are rebuilt as <code>label | FY26 | FY25</code>, and headers and footers are removed. The result is 7,102 characters. Because Note 21 is a consolidated note, <code>statement_sections()</code> picks the consolidated statements, and <code>statements.sections_text()</code> adds their cached text (about 18,000 characters). <code>check_size()</code> checks the total and passes.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 8 <span class="step-title">— The analysis prompt is built and sent</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>prompts/analysis_*.txt</mark><span class="arrow">→</span><mark>WEB-APP/claude_client.py</mark></div>
+        <p class="mb-0"><code>fill_prompt("analysis_template.txt", …)</code> builds the prompt: the question, the required structure (including <em>Impact on the financial statements</em>), then the <strong>primary statements block</strong>, then the notes block. It is written to <code>claude-prompt-input.txt</code>. <code>sent_at</code> is recorded, and <code>run_claude()</code> pipes the prompt to <code>claude -p --system-prompt … --tools "" --no-session-persistence</code>.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 9 <span class="step-title">— Claude Code analyzes, notes and statements together (127 seconds)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>claude.exe</mark></div>
+        <p>The reply (17,084 characters; the first version without statements took 79s and returned 10,347) has the requested structure. On the note itself: the deferred tax liability fell 82% from ₹1,198.28m to ₹215.24m, driven by hedge losses in OCI, and the effective tax rate fell from 37.26% to 34.66%. The new <strong>Impact on the financial statements</strong> section adds:</p>
+        <ul class="mb-0">
+          <li><strong>Profit and Loss (p.342):</strong> current tax 5,701.41 − 95.34 = 5,606.07 ✓ against the P&amp;L line; profit for the year 16,671.72 − 5,777.74 = 10,893.98 ✓. It also notes that the separate "Income tax expense 18.21" belongs to associates and is <em>not</em> part of Note 21.</li>
+          <li><strong>Balance Sheet (p.341):</strong> the deferred tax assets (2,121.99) and liabilities (215.24) agree with Note 21, and are set against the large new derivative liabilities.</li>
+          <li><strong>Cash Flow (p.346):</strong> deferred tax involves no cash; the only cash line is <em>Income taxes paid (5,646.25)</em>.</li>
+          <li><strong>Changes in Equity (p.344–345, the rotated pages):</strong> the cash-flow-hedge reserve moved (3,973.98) = gross (5,312.67) + tax 1,338.69 ✓, and the FVTOCI reserve's implied tax 54.85 equals the fall in the FVTOCI deferred tax liability ✓.</li>
+          <li>New red flags that are only visible across note and statements, e.g. the tax split on OCI items in the equity statement doesn't match the split given in Note 21.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 10 <span class="step-title">— The styled HTML report is saved</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/report_html.py</mark><span class="arrow">→</span><mark>templates/analysis_report.html</mark></div>
+        <p class="mb-0"><code>save_report()</code> renders the answer, adds table classes and right-aligns numeric cells, then writes <code>Analysis-history\Bharat-Forge-IR-2026-conv-single-page-1-20260924-211000.html</code> with the RAG Champ nav bar and the light-blue context box, which now lists the four consolidated statements referenced. A failure here is logged, but it never fails the analysis.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 11 <span class="step-title">— History and the thread are recorded</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/history.py</mark><span class="arrow">→</span><mark>cache/threads/&lt;id&gt;.json</mark></div>
+        <p class="mb-0"><code>save_history()</code> writes <code>Claude-code-prompt-1-question.txt</code> (with the metadata header <code>Notes: Consolidated Note 21 – INCOME AND DEFERRED TAXES (PDF p.405–407)</code>, <code>PDF pages: 405, 406, 407</code>, <code>Financial statements: Consolidated Statement of Profit and Loss (PDF p.342–343); …</code>, <code>Thread: …</code> and <code>Saved HTML: …</code>), <code>-answer.txt</code> and <code>-prompt.txt</code>. The reply also goes to <code>Claude-prompt-output.txt</code>. A new thread is saved holding the notes, the extract, the statements text and the first turn.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 12 <span class="step-title">— The browser shows the analysis</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/static/app.js</mark></div>
+        <p class="mb-0">The job reports <code>done</code>. <code>startThread()</code> shows the result card: the question, the rendered answer, the Copy / .md / .html / Open saved report ↗ buttons and the <em>Source extract</em> panel. The follow-up box appears and the History sidebar refreshes.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 13 <span class="step-title">— A follow-up question (optional)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/app.py</mark><span class="arrow">→</span><mark>prompts/followup_template.txt</mark></div>
+        <p class="mb-0">The user types a follow-up. The spinner appears directly below it, and <code>followup_job</code> sends the same statements and notes, the conversation so far and the new question in a new <code>claude -p</code> call. The answer is added to the thread, and the report is saved as <code>…-2-&lt;sent time&gt;.html</code>, since it is prompt 2 in the thread. Mentioning "Note 41" would have extracted and added Note 41 first.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 14 <span class="step-title">— View the financial statements (any time after Step 2)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>WEB-APP/app.py</mark><span class="arrow">→</span><mark>WEB-APP/statements_view.py</mark><span class="arrow">→</span><mark>templates/statements_view.html</mark></div>
+        <p class="mb-0">Clicking <em>View the financial statements ↗</em> opens <code>/statements?report=Bharat-Forge-IR-2026-conv-single-page.pdf</code> in a new tab. <code>view_statements()</code> loads the cached index, <code>report_view()</code> turns each statement's rows into tables (consolidated first, then standalone), and the template renders them. For example, <em>Revenue from operations · 24 · 168,116.53 · 151,228.03</em>, and the rotated equity statement as two tables with 3 and 12 value columns.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 13. TESTING -->
+  <section id="testing" class="mb-5">
+    <h2 class="section-title">13. Testing &amp; Verification</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p><code>python -m pytest -q</code> in <code>WEB-APP</code> runs <strong>72 tests</strong> against the real Bharat Forge PDF. Claude is mocked, so the tests make no Claude calls.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle small mb-0">
+            <thead><tr><th style="width:26%">Test file</th><th>What it proves</th></tr></thead>
+            <tbody>
+              <tr><td><code>test_notes_index.py</code></td><td>Main test: consolidated Note 21 = PDF 405–407, printed 402–404. Section ranges are 348–503 and 210–327. Notes are numbered 1–59 and 1–56 in order with no overlaps. The dot-less Note 5, the sub-note-only Note 54 and standalone Note 21 (259–260) are all found.</td></tr>
+              <tr><td><code>test_extractor.py</code></td><td>Note 21 contains the tax expense, deferred tax liability and roll-forward rows as <code>a | b | c</code>. It contains nothing from Note 20 or 22, and no running headers, <code>(CONTD.)</code> or backtick rupees. A note that starts mid-page (Note 25) is clipped correctly. Page-range parsing works (<code>"405 – 407"</code>).</td></tr>
+              <tr><td><code>test_selector.py</code></td><td>Scope rules for 6 phrasings. The keyword fallback finds the right note for tax, debt, related party, contingent liabilities, standalone tax and leases. Claude's JSON is validated, a failed call falls back to keywords, and explicit "Note 41" references are always included.</td></tr>
+              <tr><td><code>test_app.py</code></td><td>The full flow through the Flask routes: reports, index, identify, analyze, a follow-up that adds Note 41, and history. Saved reports are named <code>…-1-YYYYMMDD-HHMMSS.html</code> and <code>…-2-…</code>. Also checks that the prompt carries the consolidated statements (and the standalone ones for standalone notes) and asks for <em>Impact on the financial statements</em>, and that the statements are recorded in history and the saved report. Plus the manual-pages route, blocked path traversal, bad input returning 400, and that Claude's HTML is escaped.</td></tr>
+              <tr><td><code>test_statements.py</code></td><td>All eight statements are found on the right pages and listed in order. Pages 344–345 are rotated −90° with printed pages 341–342, their rows read left-to-right with every number in its own column, and no running header gets mixed in. Balance Sheet rows link to Note 21, the P&amp;L tax lines match Note 21 (5,606.07), and the Cash Flow shows "Income taxes paid (5,646.25)". Also covers title matching for 10 wordings and the adjacent-number column split.</td></tr>
+              <tr><td><code>test_statements_view.py</code></td><td>The viewer page: consolidated before standalone, a heading row on every statement page, the 12 rebuilt equity column headings and their group headings (9 / 5 + 4 columns), figures under the right headings, the Notes column, note-only rows, joined wrapped labels, header and total rows, dropped signatures, equity parts A and B as separate tables (3 and 12 columns), the closing equity balances, the route (and its 400 for unknown reports), and the home-page link opening in a new tab.</td></tr>
+              <tr><td><code>test_report_html.py</code></td><td>The file name format, table classes, right-aligned numbers such as <code>(2.60) pp</code>, and lists directly after a paragraph rendering as lists.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-green">
+      <div class="card-body">
+        <h5>Real end-to-end run</h5>
+        <p class="mb-0">With real Claude calls through the running server: identify took 6s and picked C21 first; analyzing C21 alone took 79s and returned the structured answer described in Step 9, citing Note 21 and PDF pp. 405–407. The follow-up flow was then used in the browser, which is where the spinner issue in Section 8 was found. After the statements were added, the same question was re-run for real: 127s, with a full Impact on the financial statements section (Step 9).</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 14. LIMITATIONS -->
+  <section id="limitations" class="mb-5">
+    <h2 class="section-title">14. Known Limitations</h2>
+    <div class="card shadow-sm accent-yellow">
+      <div class="card-body">
+        <ul class="mb-0">
+          <li><strong>Scanned PDFs</strong> are not supported. If under 10% of pages have text, the app says OCR would be required.</li>
+          <li><strong>Other companies' layouts:</strong> heading detection is font-based and generic, but it has only been verified on the Bharat Forge report. Other running-header wordings can be added to <code>NOTES_HEADERS</code> in <code>config.py</code>. If no notes are found, the user can still type PDF pages manually.</li>
+          <li><strong>Finding the statements:</strong> they are expected within the 15 pages before each notes section, with a large title (14pt or more) naming the statement. Verified only on the Bharat Forge report.</li>
+          <li><strong>Longer analyses:</strong> sending the statements adds about 18,000 characters to every prompt. The sample tax analysis went from 79s to 127s.</li>
+          <li><strong>Jobs are in memory:</strong> restarting the server during an analysis loses that job. Threads, history and saved reports are on disk and survive a restart.</li>
+          <li><strong>Local tool:</strong> it binds to <code>127.0.0.1</code> only, the same as basic-chatbot. There is no authentication.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 15. GLOSSARY -->
+  <section id="glossary" class="mb-5">
+    <h2 class="section-title">15. Glossary</h2>
+    <div class="card shadow-sm">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle mb-0 glossary-table">
+            <thead><tr><th style="width:24%">Term</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>Notes to financial statements</td><td>The numbered footnotes after the primary statements that break down each line item (e.g. Note 21, Income and deferred taxes).</td></tr>
+              <tr><td>Consolidated vs. standalone</td><td>Consolidated covers the whole group (parent plus subsidiaries). Standalone covers only the parent company. Each has its own set of notes.</td></tr>
+              <tr><td>PDF page vs. printed page</td><td>The page's position in the PDF file (used by the app) vs. the number printed on the page. In the sample report, printed = PDF − 3.</td></tr>
+              <tr><td>Primary financial statements</td><td>The Statement of Profit and Loss (income statement), Balance Sheet, Cash Flow Statement and Statement of Changes in Equity (stockholders' equity). The app loads them for both sections and sends the relevant set with every question.</td></tr>
+              <tr><td>Sideways (rotated) page</td><td>A page whose content is printed turned 90° (text direction <code>(0, -1)</code>), like the consolidated Statement of Changes in Equity. It is redrawn turned clockwise before extraction.</td></tr>
+              <tr><td>Impact on the financial statements</td><td>The answer section that ties the note to statement line items and explains its effect on the P&amp;L, Balance Sheet, Cash Flow and Changes in Equity.</td></tr>
+              <tr><td>Running header</td><td>The repeated heading at the top of every notes page ("Notes to Consolidated Financial Statements / for the year ended …").</td></tr>
+              <tr><td>Notes Index</td><td>The cached JSON map of every note: number, title, start and end page, y-positions, printed pages and sub-headings.</td></tr>
+              <tr><td>Span / row</td><td>A span is a run of text in one font from PyMuPDF. A row is the spans sharing one baseline, merged by <code>page_rows()</code>.</td></tr>
+              <tr><td>Scope</td><td>Which set of notes a question uses: consolidated (default), standalone or both.</td></tr>
+              <tr><td>Selector call</td><td>Claude call #1, which picks note IDs from titles only.</td></tr>
+              <tr><td>Extract</td><td>The clipped, cleaned text of the selected notes that is sent to Claude.</td></tr>
+              <tr><td>Job</td><td>A background thread running identify, analyze or follow-up, which the browser polls by ID.</td></tr>
+              <tr><td>Thread</td><td>One analysis and its follow-ups, sharing the same extract (<code>cache/threads/&lt;id&gt;.json</code>).</td></tr>
+              <tr><td>History entry</td><td>One numbered question and answer in <code>Prompt-History\</code> (<code>Claude-code-prompt-N-*.txt</code>). The sidebar lists them. Opening one reopens its whole thread when <code>cache\threads\&lt;id&gt;.json</code> still exists (Section 10).</td></tr>
+              <tr><td>Prompt number</td><td>The position within a thread: 1 is the initial question, 2 the first follow-up, and so on. It is used in the saved report's file name.</td></tr>
+              <tr><td><code>claude -p</code></td><td>Claude Code's print mode: one non-interactive request and response, then exit.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 16. FILE MAP -->
+  <section id="file-map" class="mb-5">
+    <h2 class="section-title">16. File Map</h2>
+    <div class="card shadow-sm">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle mb-0">
+            <thead><tr><th style="width:32%">File</th><th>Role</th></tr></thead>
+            <tbody>
+              <tr><td><code>app.py</code></td><td>Flask routes, background jobs, threads, Markdown rendering, history and report saving.</td></tr>
+              <tr><td><code>config.py</code></td><td>Paths, Claude CLI settings (<code>CLAUDE_EXE</code>, flags, timeouts), limits, notes header strings.</td></tr>
+              <tr><td><code>pdf_utils.py</code></td><td>PyMuPDF helpers: opening PDFs, rows from spans, running header and footer detection, text clean-up.</td></tr>
+              <tr><td><code>notes_index.py</code></td><td>Builds and caches the Notes Index. Also detects the company name and, via <code>statements.py</code>, loads the primary statements.</td></tr>
+              <tr><td><code>statements.py</code></td><td>Finds the four primary statements per section, detects and rotates sideways pages, extracts and caches their text, and builds the statements block and list for prompts.</td></tr>
+              <tr><td><code>statements_view.py</code> + <code>templates/statements_view.html</code></td><td>The <em>View the financial statements</em> page (<code>/statements?report=…</code>, new tab): cached rows → tables, consolidated first.</td></tr>
+              <tr><td><code>note_selector.py</code></td><td>Scope rules, the Claude selector call, the keyword fallback and explicit note references.</td></tr>
+              <tr><td><code>extractor.py</code></td><td>Clips each note to its extent and rebuilds table rows as <code>a | b | c</code>. Also handles manual page ranges.</td></tr>
+              <tr><td><code>claude_client.py</code></td><td><code>run_claude()</code> (stdin, no tools), the PowerShell fallback, and <code>fill_prompt()</code> / <code>system_prompt()</code>.</td></tr>
+              <tr><td><code>history.py</code></td><td><code>Prompt-History\</code> numbering, saving and reading back (reused from basic-chatbot).</td></tr>
+              <tr><td><code>report_html.py</code> + <code>templates/analysis_report.html</code></td><td>The styled per-prompt HTML reports in <code>Analysis-history\</code>.</td></tr>
+              <tr><td><code>prompts/*.txt</code></td><td>Selector, analysis and follow-up system prompts and templates. They can be edited without code changes.</td></tr>
+              <tr><td><code>templates/index.html</code>, <code>static/app.js</code>, <code>static/style.css</code>, <code>static/logo.svg</code></td><td>The single-page UI: report picker with the loaded statements and <em>View the financial statements</em> link, question, note confirmation, result thread and History sidebar.</td></tr>
+              <tr><td><code>cache/</code></td><td>Notes indexes (<code>*.notes-index.json</code>) and follow-up threads (<code>threads/*.json</code>).</td></tr>
+              <tr><td><code>Prompt-History/</code>, <code>Analysis-history/</code>, <code>logs/app.log</code></td><td>Text history, HTML reports, and timings, selected notes and prompt sizes.</td></tr>
+              <tr><td><code>tests/</code></td><td>72 pytest tests (Claude mocked) against the real sample report.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer — how the Foot Notes Analyzer web app (<code class="text-white">ANN-RPT-ANALYZER\WEB-APP</code>) finds, extracts and analyzes the notes to the financial statements with Claude Code.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Annual Report Foot Notes Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <nav class="navbar">
+    <button type="button" id="history-toggle" class="ghost" title="Show/hide history">☰ History</button>
+    <h1>Annual Report Foot Notes Analyzer</h1>
+  </nav>
+
+  <div class="layout">
+    <aside id="history-panel" class="history-panel">
+      <div class="history-head">
+        <h2>History</h2>
+        <button type="button" id="history-refresh" class="ghost small" title="Refresh">↻</button>
+      </div>
+      <ul id="history-list" class="history-list"></ul>
+    </aside>
+
+    <main class="main">
+      <!-- STEP 1 -->
+      <section class="card" id="step-report">
+        <h2><span class="step">1</span> Select annual report</h2>
+        <div class="row">
+          <select id="report-select">
+            <option value="">Loading reports…</option>
+          </select>
+          <button type="button" id="report-refresh" class="ghost" title="Reload the list">↻</button>
+        </div>
+        <div id="index-status" class="muted">PDFs are read from <code>{{ reports_dir }}</code></div>
+        <div id="statements-panel" class="statements-panel hidden"></div>
+        <div id="view-statements-row" class="view-statements-row hidden">
+          <a id="view-statements-link" href="#" target="_blank" rel="noopener">View the financial statements ↗</a>
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="card" id="step-question">
+        <h2><span class="step">2</span> Ask your question</h2>
+        <textarea id="question" rows="3"
+          placeholder="e.g. Analyze the company's tax related liabilities and comment on it."></textarea>
+        <div class="row end">
+          <button type="button" id="mic-btn" title="Ask by voice">🎤</button>
+          <button type="button" id="identify-btn" disabled>Identify notes</button>
+        </div>
+        <div class="muted small-text">Uses the notes to the <b>consolidated</b> financial statements unless your question asks for standalone.</div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="card hidden" id="step-confirm">
+        <h2><span class="step">3</span> Confirm the notes to analyze</h2>
+        <div id="scope-line" class="scope-line"></div>
+        <div id="note-chips" class="chips"></div>
+        <div id="select-reason" class="muted"></div>
+        <div class="row">
+          <select id="add-note-select"></select>
+          <button type="button" id="add-note-btn" class="ghost">+ Add note</button>
+        </div>
+        <details class="manual-pages">
+          <summary>Or analyze specific PDF pages instead</summary>
+          <div class="row">
+            <input type="text" id="pages-input" placeholder="e.g. 405-407, 451" />
+          </div>
+          <div class="muted small-text">When pages are entered, they're used instead of the notes above. PDF page numbers, not the printed ones.</div>
+        </details>
+        <div id="size-line" class="muted small-text"></div>
+        <div class="row end">
+          <button type="button" id="cancel-btn" class="ghost">Cancel</button>
+          <button type="button" id="analyze-btn">Analyze</button>
+        </div>
+      </section>
+
+      <!-- progress -->
+      <section class="card hidden" id="progress">
+        <div class="pending">
+          <div class="thinking-ball"></div>
+          <div>
+            <div id="progress-text" class="thinking-text">Working…</div>
+            <div id="progress-time" class="muted small-text"></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="error-box" class="card error hidden"></div>
+
+      <!-- STEPS 4-6: result thread -->
+      <section class="card hidden" id="result">
+        <div class="result-head">
+          <h2>Analysis</h2>
+          <button type="button" id="new-analysis-btn" class="ghost">New analysis</button>
+        </div>
+        <div id="result-meta" class="muted"></div>
+        <div id="turns"></div>
+        <details id="source-panel" class="source-panel">
+          <summary>Source sent to Claude (financial statements + notes)</summary>
+          <pre id="source-text"></pre>
+        </details>
+        <div id="followup-box" class="followup">
+          <textarea id="followup-input" rows="2"
+            placeholder="Ask a follow-up about these notes… (mention “Note 41” to add a note)"></textarea>
+          <div class="row end">
+            <button type="button" id="followup-btn">Ask follow-up</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

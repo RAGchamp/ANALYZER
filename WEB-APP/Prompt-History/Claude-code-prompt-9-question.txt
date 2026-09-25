@@ -1,0 +1,11 @@
+Asked at: 2026-09-24 21:16:43
+Kind: analysis
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 3 – PROPERTY, PLANT AND EQUIPMENT (PDF p.377–379), Consolidated Note 30 – DEPRECIATION AND AMORTISATION EXPENSE (PDF p.413)
+PDF pages: 377, 378, 379, 413
+Financial statements: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+Thread: b50e6760198a40b49f784472357c8c88
+Saved HTML: Bharat-Forge-IR-2026-conv-single-page-1-20260924-211643.html
+
+analyze property plant and equipment

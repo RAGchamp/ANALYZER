@@ -1,0 +1,241 @@
+## Summary
+
+- **Tax liabilities on the Balance Sheet fell sharply.** Deferred tax liabilities (net) dropped from ₹1,198.28 mn to ₹215.24 mn, down 82.0%. Current tax liabilities (net) were almost flat at ₹393.16 mn (Balance Sheet, p.341). Together, tax liabilities are now only about 0.5% of total liabilities, down from about 1.5%. The fall in deferred tax liabilities was **not driven by the P&L**. It came mainly from a **₹1,338.69 mn deferred tax credit on cash flow hedge losses** taken through OCI (Note 21, p.407).
+- **The group's net deferred tax position swung further into an asset.** Net deferred tax assets rose from ₹703.15 mn to ₹1,906.75 mn. About ₹1,117.70 mn of this now depends on the reversal of **hedge losses** (Note 21, p.406), which is an accounting-driven asset rather than a structural one.
+- **The effective tax rate is high: 34.66%** (prior year 37.27%), against a statutory rate of 25.168%. The gap comes mainly from **₹1,426.83 mn of tax on losses for which no deferred tax asset is recognised**. Without it the rate would be about 26.1% in both years. Carried-forward losses grew to ₹29,399.75 mn, led by **Germany (+43.6%)** (Note 21, p.405–407).
+- **Current tax is backed by cash.** Taxes paid of ₹5,646.25 mn are about 100.7% of the current tax charge of ₹5,606.07 mn (Cash Flow, p.346; P&L, p.342). There is no sign of cash taxes building up as unpaid liabilities.
+- **The note has several internal inconsistencies:**
+  - The deferred tax components sum to ₹138.67 mn, not the ₹171.67 mn reported. The ₹33.00 mn difference is unexplained.
+  - The prior-year split of OCI tax is wrong.
+  - The prior-year tax adjustment in the rate reconciliation has the opposite sign to the P&L figure.
+  - The gross DTA/DTL presentation is mislabelled.
+
+## Key figures
+
+(₹ million)
+
+| Item | Current year (FY26) | Prior year (FY25) | Change | % change | Source |
+|---|---|---|---|---|---|
+| Deferred tax liabilities (net) | 215.24 | 1,198.28 | (983.04) | (82.0%) | BS p.341; Note 21 p.406 |
+| Current tax liabilities (net) | 393.16 | 396.07 | (2.91) | (0.7%) | BS p.341 |
+| **Total tax liabilities** | **608.40** | **1,594.35** | **(985.95)** | **(61.8%)** | Computed |
+| Deferred tax assets (net) | 2,121.99 | 1,901.43 | 220.56 | 11.6% | BS p.341; Note 21 p.406 |
+| Income tax assets (net) | 505.35 | 408.37 | 96.98 | 23.7% | BS p.341 |
+| Net deferred tax asset (DTA − DTL) | 1,906.75 | 703.15 | 1,203.60 | 171.2% | Computed |
+| Net current tax asset (ITA − CTL) | 112.19 | 12.30 | 99.89 | n.m. | Computed |
+| Current income tax charge | 5,701.41 | 5,994.80 | (293.39) | (4.9%) | Note 21 p.405 |
+| Tax for prior years | (95.34) | (146.26) | 50.92 | (34.8%) | Note 21 p.405 |
+| Current tax (P&L) | 5,606.07 | 5,848.54 | (242.47) | (4.1%) | P&L p.342 |
+| Deferred tax charge/(credit) | 171.67 | (423.04) | 594.71 | n.m. | P&L p.342; Note 21 p.405 |
+| **Total income tax expense** | **5,777.74** | **5,425.50** | **352.24** | **6.5%** | P&L p.342 |
+| Profit before tax | 16,671.72 | 14,558.25 | 2,113.47 | 14.5% | P&L p.342 |
+| Effective tax rate | 34.66% | 37.27%* | (2.61) pp | – | Note 21 p.405 |
+| Tax charged/(credited) to OCI | (1,326.96) | (309.02) | (1,017.94) | 329.4% | Note 21 p.405 |
+| Income taxes paid (net of refunds) | 5,646.25 | 6,050.07 | (403.82) | (6.7%) | CFS p.346 |
+| Unrecognised-loss tax impact | 1,426.83 | 1,622.12 | (195.29) | (12.0%) | Note 21 p.405 |
+| Carried-forward tax losses (all jurisdictions) | 29,399.75 | 26,831.86 | 2,567.89 | 9.6% | Note 21 p.407 |
+
+*The note states 37.26%. The recomputed figure is 5,425.50 / 14,558.25 = 37.27%.
+
+## Detailed analysis
+
+### 1. Composition of tax liabilities
+
+**Current tax liability**
+- Current tax liabilities (net) of ₹393.16 mn are small against an annual current tax charge of ₹5,606.07 mn. That is about 7% of the charge, or roughly 25 days' worth.
+- Advance tax and withholding broadly cover the charge.
+- The group is in a **net current-tax receivable position** of ₹112.19 mn (505.35 − 393.16), up from ₹12.30 mn.
+- A simple roll-forward (the operating net current-tax asset, plus taxes paid, minus the current tax charge) is: 12.30 + 5,646.25 − 5,606.07 = **52.48**. That is ₹59.71 mn short of the actual ₹112.19 mn. The gap is probably due to:
+  - the subsidiary acquired during the year;
+  - foreign exchange; and
+  - offsetting between entities.
+- These items are not disclosed.
+
+**Deferred tax liability (net) of ₹215.24 mn.** Components (Note 21, p.406):
+
+| Component | FY26 | FY25 | Change |
+|---|---|---|---|
+| PPE & intangibles | 1,493.56 | 1,602.97 | (109.41) |
+| Right-of-use assets | 623.31 | 689.02 | (65.71) |
+| Cash flow hedges | – | 188.01 | (188.01) |
+| FVTOCI equity | 181.57 | 236.42 | (54.85) |
+| Other temporary differences (Income tax standards) | (2,083.20) | (1,518.14) | (565.06) |
+| **Total** | **215.24** | **1,198.28** | **(983.04)** |
+
+The components foot correctly: 1,493.56 + 623.31 + 181.57 − 2,083.20 = 215.24. The prior year also foots: 2,716.42 − 1,518.14 = 1,198.28.
+
+**Deferred tax asset (net) of ₹2,121.99 mn.** Components (Note 21, p.406):
+
+| Component | FY26 | FY25 | Change |
+|---|---|---|---|
+| PPE & intangibles | 75.02 | 86.35 | (11.33) |
+| Lease liabilities | (752.67) | (790.23) | 37.56 |
+| Cash flow hedges | (1,117.70) | – | (1,117.70) |
+| Other temporary differences | 760.56 | 114.21 | 646.35 |
+| Unrealised profit on inventory | (1,087.20) | (1,311.76) | 224.56 |
+| **Total** | **(2,121.99)** | **(1,901.43)** | **(220.56)** |
+
+These foot correctly: 835.58 − 2,957.57 = (2,121.99).
+
+**Main driver: cash flow hedges.**
+- The combined hedge-related deferred tax position swung from a liability of ₹188.01 mn to an asset of ₹1,117.70 mn. That is a move of ₹1,305.71 mn.
+- This mirrors the pre-tax hedge loss of ₹5,312.67 mn in OCI.
+- The tax on it is ₹1,338.69 mn, which is 25.2% of 5,312.67, broadly the statutory rate.
+- **The fall in DTL is therefore mainly a mark-to-market effect, not a real reduction in tax exposure.** If the hedges reverse, the balances will swing back.
+
+### 2. Reconciliation of deferred tax balances (Note 21, p.407)
+
+**Deferred tax liabilities (net):**
+1,198.28 − 143.07 (P&L) − 1,338.69 (hedge, OCI) + 56.87 (business combination) − 26.43 (OCI) + 468.28 (other) = **215.24** ✓
+
+**Deferred tax assets (net):**
+(1,901.43) + 281.74 (P&L) + 38.16 (OCI) − 540.46 (other) = **(2,121.99)** ✓
+
+Points to note:
+- The two "Other adjustments" (+468.28 and −540.46) net to −72.18. They are large and unexplained. They look like reclassifications between the "net DTL" and "net DTA" entity groups, plus foreign exchange.
+- The ₹56.87 mn DTL on the business combination relates to the acquisition shown in investing cash flows (₹4,986.23 mn, CFS p.346).
+
+### 3. Tax expense and effective tax rate
+
+**Rate reconciliation (Note 21, p.405):**
+- Current year: 4,195.94 + 210.20 + 1,426.83 − 31.07 + 130.06 − 154.21 = 5,777.75, against 5,777.74 reported (₹0.01 rounding).
+- Prior year: 5,425.51 against 5,425.50 (₹0.01 rounding).
+- Statutory tax check: 16,671.72 × 25.168% = 4,195.94 ✓; 14,558.25 × 25.168% = 3,664.02 ✓.
+
+**Effective rates:**
+
+| Measure | FY26 | FY25 |
+|---|---|---|
+| Reported ETR | 34.66% | 37.27% |
+| ETR on profit before exceptional items (5,777.74 / 18,216.15; 5,425.50 / 16,128.90) | 31.72% | 33.64% |
+| ETR excluding unrecognised-loss impact ((5,777.74 − 1,426.83) / 16,671.72; (5,425.50 − 1,622.12) / 14,558.25) | 26.10% | 26.13% |
+| Unrecognised-loss drag (1,426.83 / 16,671.72; 1,622.12 / 14,558.25) | 8.56 pp | 11.14 pp |
+
+**Interpretation:**
+- The core Indian profit base is taxed close to the statutory rate.
+- The high reported ETR comes mainly from **loss-making overseas subsidiaries (Germany, USA, Sweden)**. Their losses give no tax relief because no DTA is recognised.
+- The DTA tables have no line for tax losses. This is consistent with no DTA being recognised on carried-forward losses at all.
+
+**Exceptional items:**
+- Exceptional items of ₹1,544.43 mn add ₹210.20 mn of tax for non-deductible items.
+- At 25.168%, that implies about ₹835 mn is non-deductible (210.20 / 0.25168).
+- In the prior year, exceptional items of ₹1,570.65 mn had no separate reconciling line. They were presumably included in the unrecognised-loss line.
+
+### 4. Carried-forward tax losses (Note 21, p.407)
+
+| Jurisdiction | FY26 | FY25 | Change | % |
+|---|---|---|---|---|
+| India (8-year life) | 4,398.53 | 4,336.78 | 61.75 | 1.4% |
+| USA (20-year life) | 2,718.53 | 2,457.95 | 260.58 | 10.6% |
+| USA (indefinite) | 8,000.24 | 7,622.66 | 377.58 | 5.0% |
+| Sweden (indefinite) | 353.13 | 2,715.96 | (2,362.83) | (87.0%) |
+| Germany (indefinite) | 13,929.32 | 9,698.51 | 4,230.81 | 43.6% |
+| **Total** | **29,399.75** | **26,831.86** | **2,567.89** | **9.6%** |
+
+- **Germany is the main concern.** Its losses grew by ₹4.23 bn in one year, pointing to continued heavy losses in the European operations.
+- **India's losses are time-limited (8 years).** It is not disclosed whether DTA has been recognised on them.
+- **Sweden fell by 87%.** The note does not say whether the losses were used, forfeited or removed through a restructuring or disposal.
+- These unrecognised losses are a **contingent tax asset**. They would lower the future ETR if the loss-making subsidiaries become profitable.
+
+### 5. Cash taxes
+
+| Measure | FY26 | FY25 |
+|---|---|---|
+| Taxes paid / current tax (5,646.25 / 5,606.07; 6,050.07 / 5,848.54) | 100.7% | 103.4% |
+| Taxes paid / PBT | 33.9% | 41.6% |
+| Taxes paid / cash generated from operations (5,646.25 / 20,512.67; 6,050.07 / 24,013.50) | 27.5% | 25.2% |
+
+Cash taxes track the accrual closely. The quality of the current tax figures looks sound.
+
+## Impact on the financial statements
+
+### Statement of Profit and Loss
+
+Line items affected (P&L, p.342):
+
+| Line | FY26 | FY25 |
+|---|---|---|
+| Current tax | 5,606.07 | 5,848.54 |
+| Deferred tax charge/(credit) | 171.67 | (423.04) |
+| Total tax expense | 5,777.74 | 5,425.50 |
+
+- The note reconciles to these lines:
+  - Current tax: 5,701.41 − 95.34 = 5,606.07 ✓. Prior year: 5,994.80 − 146.26 = 5,848.54 ✓.
+  - Deferred tax of 171.67 / (423.04) agrees with the note.
+- Profit for the year = PBT 16,671.72 − tax 5,777.74 = **10,893.98** ✓ (prior year 14,558.25 − 5,425.50 = 9,132.75 ✓).
+- **Effect:**
+  - Tax grew by only 6.5%, against 14.5% growth in PBT. This lifted profit after tax by 19.3%.
+  - The **deferred tax swing** from a ₹423.04 mn credit to a ₹171.67 mn charge offset most of the ₹242.47 mn fall in current tax.
+- **OCI tax** (P&L, p.342–343):
+  - Items not reclassified: (11.73) charge. Prior year: 41.24 credit.
+  - Items reclassified: 1,338.69 credit. Prior year: 267.78 credit.
+  - Net credit: 1,326.96, which agrees with the note's (1,326.96) ✓. Prior year: 309.02 ✓.
+- **Associates:** the separate "Income tax expense" of ₹18.21 mn (prior year ₹12.55 mn) belongs to associates and joint ventures. It is netted within the share of loss (₹94.71 mn) and is **not** part of Note 21.
+
+### Balance Sheet
+
+| Line (BS p.341) | FY26 | FY25 | Note agreement |
+|---|---|---|---|
+| Deferred tax assets (net), Note 21 | 2,121.99 | 1,901.43 | ✓ Note 21 p.406 |
+| Deferred tax liabilities (net), Note 21 | 215.24 | 1,198.28 | ✓ Note 21 p.406 |
+| Income tax assets (net), no note reference | 505.35 | 408.37 | No note provided |
+| Current tax liabilities (net), no note reference | 393.16 | 396.07 | No note provided |
+
+- Deferred tax balances are shown net by taxable entity or jurisdiction, as permitted by Note 21(a). That is why both a DTA and a DTL appear.
+- **Effect:** tax-related liabilities fell by ₹985.95 mn. Tax-related assets rose by ₹317.54 mn (2,627.34 against 2,309.80).
+- Both movements come mainly from hedge losses. They reduce reported leverage and liabilities, but only temporarily.
+- The DTA on hedges (₹1,117.70 mn) sits alongside large derivative liabilities: ₹1,582.36 mn non-current and ₹3,102.11 mn current, up from ₹67.45 mn and ₹137.57 mn (BS p.341).
+
+### Cash Flow Statement
+
+- The statement starts from profit before tax of 16,671.72 (CFS p.346). Neither current nor deferred tax expense appears as an adjustment, so **deferred tax is non-cash and does not affect operating cash flow**.
+- **Income taxes paid (net of refunds): (5,646.25)**, prior year (6,050.07). This is the only cash tax line. It reduces cash generated from operations of 20,512.67 to net operating cash flow of **14,866.42** (prior year 17,963.43).
+- The fall in cash taxes of ₹403.82 mn partly cushioned the fall in operating cash flow, which was driven by working capital.
+- The ₹56.87 mn DTL acquired in the business combination is embedded in "Acquisition of a subsidiary (net of cash) (4,986.23)" and is non-cash.
+
+### Statement of Changes in Equity
+
+- **Retained earnings:**
+  - Receive profit attributable to owners of 10,796.61 (prior year 9,411.53), which is after the tax charge (SOCE p.344–345).
+  - Also receive re-measurement of defined benefit plans net of tax: **170.69**. The implied tax is a charge of 237.27 − 170.69 = **66.58**.
+- **Cash flow hedge reserve:** movement of (3,973.98) = gross (5,312.67) + tax 1,338.69 ✓. The reserve went from 559.27 to **(3,414.71)**. Tax absorbed about 25% of the hedge loss.
+- **FVTOCI reserve:** movement of (1,814.17) = gross (1,869.02) + implied tax credit **54.85**. This equals exactly the fall in the FVTOCI DTL (236.42 − 181.57 = 54.85) ✓.
+- **FCTR:** +2,205.34 with no tax effect.
+- **No tax on dividends** passes through equity.
+
+## Red flags & areas for follow-up
+
+1. **The deferred tax components do not foot to the P&L charge.**
+   - The components give 120.74 + 224.55 − 206.62 = **138.67**, against the ₹171.67 mn reported (Note 21, p.406).
+   - The DTL/DTA reconciliation gives the same figure: −143.07 + 281.74 = **138.67** (p.407).
+   - That leaves an **unexplained ₹33.00 mn**. The prior year ties (−423.04).
+   - The gap is close to the ₹32.98 mn difference between the hedge DTA/DTL movement (1,305.71) and the hedge OCI tax (1,338.69). This may be a misclassification.
+2. **The prior-year OCI tax split is wrong.**
+   - The note's prior-year items give −267.78 − 46.81 − 5.57 = −320.16, against the stated total of (309.02).
+   - The prior-year FVTOCI tax should probably be **+5.57**, which would make it tie.
+   - In the current year, the note's split (DBP 59.85 credit, FVTOCI 71.58 charge) conflicts with the SOCE-implied split (DBP 66.58 charge, FVTOCI 54.85 credit). The signs are also illogical: a DBP *gain* is shown with a tax credit, and an FVTOCI *loss* with a tax charge. Only the net 11.73 agrees.
+3. **The prior-year tax line in the rate reconciliation has an inconsistent sign.**
+   - The rate reconciliation shows "reversal of tax expenses of earlier years" as **+130.06**.
+   - The P&L component shows prior-year tax as a **credit of (95.34)**.
+   - The prior year is consistent at (146.26) in both places. Management should explain the ₹225.40 mn gap.
+4. **The "Reflected in the balance sheet" table is mislabelled and inconsistent.**
+   - In the DTA group, "Deferred tax liabilities" of **(1,042.68)** is negative, i.e. a debit.
+   - The gross DTL in the DTL group (1,493.56) equals only the PPE line. It excludes ROU (623.31) and FVTOCI (181.57), which total 2,298.44.
+   - The prior-year gross DTL of 1,790.98 does not agree with the components either (2,716.42).
+5. **Some component movements do not match the P&L charge.** PPE deferred tax balances *fell* by ₹120.74 mn in total, yet the P&L shows a *charge* of ₹120.74 mn. The "Other temporary differences" and "Other adjustments" (+468.28 / −540.46) lines are large and vague. A detailed breakdown should be requested.
+6. **The DTA depends heavily on hedge outcomes.** About ₹1.12 bn of DTA depends on hedge losses. Management should confirm recoverability and the expected reversal pattern.
+7. **Germany's losses are rising fast.** They grew by ₹4.23 bn, and no DTA is recognised. Ask about the turnaround plan, the risk of goodwill or asset impairment, and whether any DTA is recognised on the Indian 8-year losses (₹4.40 bn) or US losses. Also ask why Swedish losses fell by ₹2.36 bn.
+8. **Income tax assets and current tax liabilities have no supporting note.** Neither line carries a note reference and no breakdown was provided. The current-tax roll-forward leaves ₹59.71 mn unexplained. Uncertain tax positions and contingent tax disputes are not covered in the material provided.
+9. **Typos and rounding:**
+   - Germany's prior-year loss is printed as "₹9.698.51 million".
+   - The prior-year ETR is stated as 37.26%; the computed figure is 37.27%.
+   - The US losses "available for twenty years" are said to expire "between tax years 2026 and 2037", which should be clarified.
+   - The reconciliation label "Tax (expense) during the period" is attached to a credit.
+
+## Sources
+
+- Note 21 – Income and Deferred Taxes (Consolidated), PDF p.405, p.406, p.407
+- Consolidated Statement of Profit and Loss, PDF p.342–343
+- Consolidated Balance Sheet, PDF p.341
+- Consolidated Cash Flow Statement, PDF p.346–347
+- Consolidated Statement of Changes in Equity, PDF p.344–345

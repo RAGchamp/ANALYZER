@@ -1,0 +1,20 @@
+Annual report: {{REPORT}}
+Statements: {{SCOPE}}
+Notes provided: {{NOTES}}
+Primary financial statements provided: {{STATEMENTS_LIST}}
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+{{STATEMENTS}}
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+{{EXTRACT}}
+----- END OF NOTES -----
+
+Conversation so far in this analysis thread:
+
+{{CONVERSATION}}
+
+Now answer this follow-up question, using the statements, the notes and the conversation above. Keep the same citation style: (Note X, p.N) for notes, (Balance Sheet, p.N) etc. for statements. As always, explain how the matter affects the primary financial statements (Profit and Loss, Balance Sheet, Cash Flow, Changes in Equity), in a short "Impact on the financial statements" section if the answer involves figures. Use headings and tables only where they help; a short answer is fine for a short question.
+
+FOLLOW-UP QUESTION: {{QUESTION}}

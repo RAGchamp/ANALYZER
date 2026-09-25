@@ -1,0 +1,146 @@
+Annual report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Statements: Consolidated
+Notes provided: Consolidated Note 21 – INCOME AND DEFERRED TAXES (PDF p.405–407)
+
+QUESTION: Analyze the company's Tax related liablities and comment on it.
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about.
+## Sources
+The notes and PDF pages you relied on.
+
+----- EXTRACT FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Note 21 — INCOME AND DEFERRED TAXES (Consolidated) ===
+--- PDF page 405 (printed page 402) ---
+21. INCOME AND DEFERRED TAXES
+The major components of income tax expense/(income) recognised for the year ended March 31, 2026 and March 31, 2025 are:
+Statement of profit and loss:
+Profit or loss section
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Current income tax:
+Current income tax charge | 5,701.41 | 5,994.80
+Tax for prior years | (95.34) | (146.26)
+Deferred tax
+Relating to origination and reversal of temporary differences | 171.67 | (423.04)
+Income tax expense reported in the statement of profit and loss | 5,777.74 | 5,425.50
+OCI section
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Deferred tax related to items recognised in OCI:
+Net movement on cash flow hedges | (1,338.69) | (267.78)
+Net loss on re-measurement of defined benefit plans | (59.85) | (46.81)
+Net (loss)/gain on FVTOCI equity securities | 71.58 | (5.57)
+Tax charged/(credit) to OCI | (1,326.96) | (309.02)
+Reconciliation of tax expenses and the accounting profit multiplied by India's domestic tax rate for March 31, 2026 and
+March 31, 2025
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Accounting profit before tax from operations | 16,671.72 | 14,558.25
+Accounting profit before income tax
+At India’s statutory income tax rate of 25.168% (March 31, 2025: 25.168%) | 4,195.94 | 3,664.02
+Exceptional items not deductible | 210.20 | -
+Tax impact of losses on which deferred tax asset is not recognised | 1,426.83 | 1,622.12
+Effect of differential rates | (31.07) | 68.37
+Adjustments in respect of reversal of tax expenses of earlier years | 130.06 | (146.26)
+Other disallowances (including consolidation adjustments) | (154.21) | 217.26
+At the effective income tax rate of 34.66% (March 31, 2025: 37.26%) | 5,777.74 | 5,425.50
+Income tax expense reported in the statement of profit and loss | 5,777.74 | 5,425.50
+
+--- PDF page 406 (printed page 403) ---
+Major components of deferred tax as at March 31, 2026 and March 31, 2025:
+Deferred tax liability (net)
+In ₹Million
+Particulars | Balance Sheet
+As at | As at
+March 31, 2026 | March 31, 2025
+Deferred tax relates to the following:
+Property, plant and equipment and intangible assets | 1,493.56 | 1,602.97
+Right-of-use Assets related | 623.31 | 689.02
+Fair valuation of cash flow hedges | - | 188.01
+Fair valuation of FVTOCI equity securities | 181.57 | 236.42
+Temporary differences in accounting treatment as required by Income tax standards | (2,083.20) | (1,518.14)
+Total deferred tax liability | 215.24 | 1,198.28
+Deferred tax asset (net)
+In ₹Million
+Particulars | Balance Sheet
+As at | As at
+March 31, 2026 | March 31, 2025
+Deferred tax relates to the following:
+Property, plant and equipment and intangible assets | 75.02 | 86.35
+Lease liabilities related | (752.67) | (790.23)
+Fair valuation of cash flow hedges | (1,117.70) | -
+Temporary differences in accounting treatment as required by Income tax standards | 760.56 | 114.21
+Unrealised profit on inventory | (1,087.20) | (1,311.76)
+Total deferred tax asset | (2,121.99) | (1,901.43)
+Major components of deferred tax for the year ended March 31, 2026 and March 31, 2025:
+Deferred tax expense/(income)
+In ₹Million
+Particulars | Statement of Profit and Loss
+Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Deferred tax relates to the following:
+Property, plant and equipment and intangible assets | 120.74 | 247.91
+Unrealised profit on inventory | 224.55 | 0.90
+Temporary differences in accounting treatment as required by Income tax standards | (206.62) | (671.85)
+Deferred tax expense/(credit) | 171.67 | (423.04)
+Reflected in the balance sheet as follows
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Deferred tax assets | (1,278.32) | (592.70)
+Deferred tax liabilities | 1,493.56 | 1,790.98
+Deferred tax liabilities (net) | 215.24 | 1,198.28
+Deferred tax assets | (1,079.31) | (1,987.78)
+Deferred tax liabilities | (1,042.68) | 86.35
+Deferred tax assets (net)* | (2,121.99) | (1,901.43)
+
+--- PDF page 407 (printed page 404) ---
+Reconciliation of deferred tax liabilities and assets
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Reconciliation of deferred tax liabilities (net)
+Opening balance | 1,198.28 | 1,690.49
+Tax (expense) during the period recognised in profit or loss | (143.07) | (195.97)
+Deferred tax liabilities on hedge | (1,338.69) | (267.78)
+Deferred tax liabilities on business combination | 56.87 | -
+Tax income during the period recognised in OCI | (26.43) | (28.46)
+Other adjustments | 468.28 | -
+Closing balance | 215.24 | 1,198.28
+Reconciliation of deferred tax assets (net)
+Opening balance | (1,901.43) | (1,651.64)
+Tax income/(expense) during the period recognised in profit or loss | 281.74 | (227.07)
+Tax (expense)/income during the period recognised in OCI | 38.16 | (12.78)
+Other adjustments | (540.46) | (9.94)
+Closing balance | (2,121.99) | (1,901.43)
+(a) The Group offsets tax assets and liabilities if and only if it has a legally enforceable right to set off current tax assets and
+current tax liabilities and the deferred tax assets and deferred tax liabilities relate to income taxes levied by the same tax
+authority.
+(b) The Group has tax losses which arose due to carried forward business losses in India ₹4,398.53 million (March 31, 2025:
+₹4,336.78 million) that are available for offsetting for eight years against future taxable profits of the Group under the
+head income from business. This loss will expire in eight years from the end of the respective year to which it pertains.
+(c) The Group has tax losses which arose due to carried forward business losses in the USA of ₹2,718.53 million (March 31,
+2025: ₹2,457.95 million) that are available for offsetting for twenty years and ₹8,000.24 million (March 31, 2025:
+₹7,622.66 million) that are available for offsetting indefinitely against future taxable profits under relevant heads of income
+of the companies in which the losses arose. These losses will expire in various years between tax years 2026 and 2037.
+(d) The Group has tax losses which arose due to carried forward business losses in Sweden of ₹353.13 million (March 31,
+2025: ₹2,715.96 million) that are available for offsetting for an indefinite period against future taxable profits under
+relevant heads of income of the subsidiary in which the losses arose. Also the Group has tax losses which arose due to
+carried forward business losses in Germany of ₹13,929.32 million (March 31, 2025: ₹9.698.51 million) that are available
+for offsetting for an indefinite period against future taxable profits under relevant heads of income of the subsidiaries in
+which the losses arose.
+(e) During the years ended March 31, 2026 and March 31, 2025, the group entities incorporated in India have not surrendered
+any transaction or disclosed as income in the tax assessments under the Income Tax Act, 1961, (such as, search or survey
+or any other relevant provisions of the Income Tax Act, 1961).
+----- END OF EXTRACT -----

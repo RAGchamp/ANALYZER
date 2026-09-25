@@ -1,0 +1,121 @@
+# Falling provisions against an ageing book: is there write-off risk?
+
+**Short answer: yes, this is a real concern, though a moderate one relative to the size of the book.** Tracking each cohort of overdue debt from FY25 to FY26 shows that **every cohort's provision rate fell as it aged**, which is the opposite of normal credit-loss behaviour. Had the FY25 provision rates been kept, the allowance would be about **₹355 Mn higher** (+63%). About **₹867 Mn of balances more than 1 year overdue are still classed as "considered good" and are unprovided**. If these prove uncollectable, write-offs or catch-up ECL charges would follow.
+
+The extract has no profit, revenue or allowance roll-forward. So I **cannot measure the impact against earnings**, and cannot tell whether the lower allowance reflects write-offs, recoveries or changed assumptions.
+
+## 1. Separating "considered good" ECL from credit-impaired provisions
+
+Credit-impaired balances are 100% provided in both years: ₹164.46 Mn and ₹154.48 Mn (Note 12, p.388). Removing them from each ageing bucket isolates the ECL rate on balances still classed as "considered good":
+
+**Method:** ECL = bucket loss allowance − credit-impaired gross; rate = ECL ÷ "considered good" gross (Note 12, p.389)
+
+| Bucket | FY26 good gross | FY26 ECL | FY26 rate | FY25 good gross | FY25 ECL | FY25 rate |
+|---|---|---|---|---|---|---|
+| Not yet due | 20,103.00 | 67.83 − 8.04 = 59.79 | 0.30% | 18,963.63 | 34.13 − 0 = 34.13 | 0.18% |
+| < 6 months | 17,800.41 | 116.75 − 16.14 = 100.61 | 0.57% | 9,217.55 | 62.48 − 6.46 = 56.02 | 0.61% |
+| 6–12 months | 670.14 | 28.25 − 15.10 = 13.15 | **1.96%** | 1,116.99 | 197.96 − 24.55 = 173.41 | **15.52%** |
+| 1–2 years | 835.27 | 110.70 − 7.07 = 103.63 | **12.41%** | 131.42 | 66.35 − 22.14 = 44.21 | **33.64%** |
+| 2–3 years | 155.31 | 62.43 − 22.20 = 40.23 | **25.90%** | 43.78 | 70.52 − 35.75 = 34.77 | **79.42%** |
+| > 3 years | 105.16 | 181.12 − 95.91 = 85.21 | **81.03%** | 96.01 | 160.88 − 65.58 = 95.30 | **99.26%** |
+| **Total** | **39,669.29** | **402.62** | **1.01%** | **29,569.38** | **437.84** | **1.48%** |
+
+Totals reconcile to p.388: 402.62 = 402.24 + 0.38; 437.84 = 437.51 + 0.33 ✓.
+
+**What this shows:**
+- **Not-yet-due and <6 month rates are broadly stable.** The not-yet-due rate even rose.
+- **The rates for balances overdue more than 6 months were cut by roughly half to seven-eighths.** These buckets are where losses actually occur.
+- In a provision-matrix approach, loss rates are normally recalibrated from historical loss experience. A cut of this size is unusual unless loss history improved materially or balances were reassessed individually. That needs to be explained.
+
+## 2. Cohort tracking: the same debts, one year older, with less provision
+
+A balance in FY25's bucket X should appear one year later in FY26's next-older bucket, unless it was collected or written off. The comparison is approximate: FX translation, reclassification and partial receipts all affect it.
+
+**"Considered good" balances only** (Note 12, p.389)
+
+| FY25 cohort → FY26 position | Gross FY25 → FY26 | Change | ECL FY25 → FY26 | ECL rate FY25 → FY26 |
+|---|---|---|---|---|
+| 6–12 m → 1–2 yrs | 1,116.99 → 835.27 | −281.72 (−25.2%) | 173.41 → 103.63 | 15.5% → **12.4%** |
+| 1–2 yrs → 2–3 yrs | 131.42 → 155.31 | **+23.89 (+18.2%)** | 44.21 → 40.23 | 33.6% → **25.9%** |
+| 2–3 yrs + >3 yrs → >3 yrs | 43.78 + 96.01 = 139.79 → 105.16 | −34.63 (−24.8%) | 34.77 + 95.30 = 130.07 → 85.21 | 93.0% → **81.0%** |
+
+**Key observations:**
+- **Coverage fell in every cohort as it aged.** A debt one year further overdue is normally *less* likely to be collected, so its provision rate should rise.
+- **Most of the FY25 6–12 month cohort was not collected.** About 75% (835.27 / 1,116.99) is still outstanding a year later. Its provision was cut by ₹69.78 Mn (−40.2%), while the gross fell by only 25.2%.
+  - If the ₹281.72 Mn that left the cohort was **collected**, the related ECL release would be justified. But the remaining balance should then carry a *higher* rate, not a lower one.
+  - If it was **written off**, the allowance was used against actual losses. That would mean the FY25 provision proved roughly correct. It would also mean the remaining ₹835 Mn is under-provided on the same basis.
+- **The 1–2 year → 2–3 year cohort grew** by ₹23.89 Mn. The same invoices cannot increase in value. Possible causes:
+  - FX translation of overseas subsidiaries' receivables.
+  - Reclassification between buckets.
+  - A change in how "due date" is determined.
+  
+  **This is an inconsistency to raise**, because it undermines how reliable the ageing is.
+
+## 3. How big is the potential shortfall?
+
+### (a) Re-applying FY25 ECL rates to FY26 "considered good" balances
+
+| Bucket | FY26 good gross | FY25 rate | Implied ECL |
+|---|---|---|---|
+| Not yet due | 20,103.00 | 0.180% | 36.18 |
+| < 6 months | 17,800.41 | 0.608% | 108.18 |
+| 6–12 months | 670.14 | 15.525% | 104.04 |
+| 1–2 years | 835.27 | 33.640% | 280.99 |
+| 2–3 years | 155.31 | 79.420% | 123.35 |
+| > 3 years | 105.16 | 99.261% | 104.38 |
+| **Implied ECL on good balances** | | | **757.12** |
+| Add: credit-impaired (100%) | | | 164.46 |
+| **Implied total allowance** | | | **921.58** |
+| Reported allowance (Note 12, p.389) | | | 567.08 |
+| **Shortfall vs FY25 basis** | | | **354.50** |
+
+- **Cross-check using total bucket rates** (including impaired balances): 997.26 implied, a shortfall of **₹430.18 Mn**.
+- **The shortfall range is therefore about ₹355–430 Mn**, or 63–76% of the reported allowance and 0.9–1.1% of gross receivables.
+
+### (b) Stress scenarios on the unprovided overdue book
+
+| Scenario | Unprovided exposure | Basis |
+|---|---|---|
+| All "good" balances > 1 yr prove uncollectable | 1,095.74 − 229.07 = **866.67** | (835.27 + 155.31 + 105.16) less ECL (103.63 + 40.23 + 85.21) |
+| Plus all 6–12 m "good" balances | 866.67 + (670.14 − 13.15) = **1,523.66** | Extreme case |
+| Every 1% of the < 6 m "good" bucket that proves bad | **≈178** | 1% × 17,800.41 (only 0.57% provided) |
+
+**The <6 month bucket is the larger latent risk.** It nearly doubled to ₹17,800 Mn and carries only a 0.57% provision. If even a small share ages the way FY25's 6–12 month cohort did, provisions would need to be increased materially.
+
+- **Illustration:** suppose 5% of the bucket (≈₹890 Mn) slips into 6–12 months and attracts FY25's 15.5% rate. That would require about ₹138 Mn of additional ECL.
+
+## 4. Factors that could make the lower coverage legitimate
+
+These should be tested, not assumed:
+- **Collections or recoveries after year-end** on the older balances. This is the best evidence either way.
+- **Security or credit insurance.** Secured receivables rose to ₹131.30 Mn (Note 12, p.388), but that is far too small to explain the change. Letters of credit or insurance are not disclosed.
+- **Change in customer mix.** Examples are government or large-OEM counterparties that pay slowly but carry low default risk. This could justify lower rates if the company documents a segmented matrix. No segmentation is disclosed.
+- **Write-offs of the worst accounts.** These would reduce both gross balances and the allowance, leaving a "cleaner" residual. However, the cohort analysis shows the residual getting *older*, not cleaner.
+
+**Points in the company's favour:**
+- Credit-impaired balances are stable (+6.5%) and fully provided.
+- No disputed balances or "significant increase in credit risk" balances are reported (Note 12, p.389).
+
+## 5. Conclusion
+
+**Yes, there is a credible risk of future write-offs or catch-up provisions:**
+
+1. **Aged balances are building up.** Balances overdue more than 1 year roughly tripled.
+2. **Coverage fell in every cohort as it aged.** Balances overdue more than 6 months carry markedly lower provision rates than in FY25.
+3. **The shortfall versus the FY25 basis is about ₹355–430 Mn.** The worst-case unprovided exposure on balances overdue more than 1 year is about ₹867 Mn.
+4. **The <6 month overdue bucket nearly doubled** and has thin coverage, which is a leading indicator for next year.
+
+**What cannot be judged from this extract:**
+- **Materiality versus profit.** No PBT or revenue is provided.
+- **The cause of the lower allowance.** There is no movement schedule showing charge, write-off, release and FX.
+
+## 6. Recommended follow-up
+
+1. **Allowance roll-forward:** opening balance, P&L charge or (release), utilised write-offs, FX, closing balance. This shows whether ₹25 Mn net came out through releases or write-offs.
+2. **Provision matrix for FY25 and FY26:** rates by bucket and by segment or geography, plus the basis for any recalibration.
+3. **Top 10 overdue debtors > 6 months:** identity, related-party status (Note 48), security held, and collections after year-end.
+4. **Explanation of the 1–2 yr → 2–3 yr cohort increase (+₹23.89 Mn):** FX, reclassification or a change in the ageing method.
+5. **Subsequent-events evidence:** cash collected on the ₹19,723 Mn overdue book by the date the accounts were approved.
+6. **Obtain revenue and PBT** to calculate DSO and express the ₹355–867 Mn exposure as a share of earnings.
+
+*Sources: Note 12, p.388 (balances and allowance); Note 12, p.389 (ageing and loss allowance by bucket). Notes 18 and 48 and the Statement of Profit and Loss were not provided.*

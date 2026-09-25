@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Forge Limited — Follow-up question 2 — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Bharat Forge Limited</h1>
+      <span class="prompt-badge">#3 · Follow-up question 2</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> Bharat-Forge-IR-2026-conv-single-page.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 24 Sep 2026, 21:47:28</div>
+      <div class="col-md-6"><strong>Statements:</strong> Consolidated</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> 377–379, 413, 402–403, 391–392, 381–383</div>
+      <div class="col-12"><strong>Notes analyzed:</strong> Consolidated Note 3 – PROPERTY, PLANT AND EQUIPMENT (PDF p.377–379), Consolidated Note 30 – DEPRECIATION AND AMORTISATION EXPENSE (PDF p.413), Consolidated Note 19 – OTHER FINANCIAL LIABILITIES (PDF p.402–403), Consolidated Note 14 – OTHER ASSETS (PDF p.391–392), Consolidated Note 5 – INTANGIBLE ASSETS AND GOODWILL (PDF p.381–383)</div>
+      
+      <div class="col-12"><strong>Financial statements referenced:</strong> Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)</div>
+      
+    </div>
+    
+    <div class="question-label">Original question</div>
+    <p class="original mb-2">analyze property plant and equipment</p>
+    <div class="question-label">Follow-up question</div>
+    
+    <p class="question">Get information related to this item as shown below and do additional analysis &#34;Note 19: opening and closing &#34;payables for capital goods / capital creditors&#34; for FY24, FY25 and FY26, split current and non-current, including any deferred or extended-credit terms.
+Note 14: opening and closing &#34;capital advances&#34; for the same three years.
+Note 3: a split of the CWIP &#34;Disposals/Capitalised&#34; line (4,397.41 / 12,646.53) into transfers to PPE, transfers to intangibles, and write-offs.
+Non-cash investing transactions (Ind AS 7.43 disclosure): vendor-financed assets, dies transferred from inventory, and grants.
+Note 5: intangible additions for FY25 and FY26, so the cash line can be matched like-for-like.
+The 31-Mar-2024 consolidated Balance Sheet (prior-year report).&#34;</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h1>Capital Creditors, Capital Advances and the Capex Gap: Follow-up</h1>
+<h2>Summary</h2>
+<ul>
+<li><strong>Only some of the requested items are in the material.</strong> Notes 14, 19 and 5 give FY26 and FY25 balances. FY24 balances, the split of the CWIP "Disposals/Capitalised" line, a non-cash investing disclosure and the 31-Mar-2024 Balance Sheet are <strong>not provided</strong>.</li>
+<li><strong>This corrects my previous answer.</strong> Capital creditors are only ₹855.03m at 31-Mar-25 and ₹1,158.51m at 31-Mar-26, all current (Note 19, p.402). I previously suggested that about ₹3.2bn of FY25–26 capex was still unpaid to suppliers. That is <strong>not supported</strong>: at most ₹1,158.51m is owed to suppliers of capital goods.</li>
+<li><strong>The FY25 gap is still largely unexplained.</strong> Supplier credit can explain at most about ₹0.9bn of it. The rest (at least ₹3.6bn) would have to come from falling capital advances (cash paid in FY24 or earlier), non-cash additions, or other factors. None of these can be verified without FY24 data.</li>
+<li><strong>FY26 does not reconcile either.</strong> After adding intangibles and adjusting for creditors and advances, cash capex is about <strong>₹1,056m higher</strong> than the accrual-based figure.</li>
+<li><strong>The Note 19 jump is explained.</strong> The ₹3,161.86m rise in non-current other financial liabilities is the ₹3,294.72m <strong>gross liability on a written put option</strong> over subsidiary CCPS. This confirms my earlier inference that it is not capital creditors.</li>
+</ul>
+<h2>1. What was requested vs what is available</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>#</th>
+<th>Item requested</th>
+<th>Available?</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">1</td>
+<td>Capital creditors FY24/25/26, current and non-current, credit terms</td>
+<td>FY26 and FY25 only. All current. <strong>No credit terms disclosed.</strong> FY24 missing.</td>
+<td>Note 19, p.402</td>
+</tr>
+<tr>
+<td class="num">2</td>
+<td>Capital advances FY24/25/26</td>
+<td>FY26 and FY25 only (non-current). FY24 missing.</td>
+<td>Note 14, p.391</td>
+</tr>
+<tr>
+<td class="num">3</td>
+<td>Split of CWIP "Disposals/Capitalised"</td>
+<td><strong>Not disclosed.</strong> Only indirect inference is possible (Section 4).</td>
+<td>Note 3, p.378</td>
+</tr>
+<tr>
+<td class="num">4</td>
+<td>Non-cash investing transactions (Ind AS 7.43)</td>
+<td><strong>Not in the material.</strong> No such note was provided.</td>
+<td class="num">–</td>
+</tr>
+<tr>
+<td class="num">5</td>
+<td>Intangible additions FY25/FY26</td>
+<td>Yes</td>
+<td>Note 5, p.381</td>
+</tr>
+<tr>
+<td class="num">6</td>
+<td>31-Mar-2024 Balance Sheet</td>
+<td><strong>Not provided.</strong> Some FY24 asset balances can be derived from note roll-forwards (Section 6). Creditors and advances cannot.</td>
+<td class="num">–</td>
+</tr>
+</tbody>
+</table></div>
+<h2>2. Capital creditors (Note 19) and capital advances (Note 14), as printed</h2>
+<p><strong>Note 19 – Other financial liabilities (p.402)</strong></p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Particulars (as printed)</th>
+<th>31-Mar-26</th>
+<th>31-Mar-25</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Other non-current financial liabilities at amortised cost</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Voluntary retirement scheme compensation</td>
+<td class="num">7.03</td>
+<td class="num">31.05</td>
+<td class="num">(24.02)</td>
+</tr>
+<tr>
+<td>Derivative liability</td>
+<td class="num">32.50</td>
+<td class="num">32.50</td>
+<td class="num">–</td>
+</tr>
+<tr>
+<td>Gross liability on written put option #</td>
+<td class="num">3,294.72</td>
+<td class="num">–</td>
+<td class="num">+3,294.72</td>
+</tr>
+<tr>
+<td>Security deposits</td>
+<td class="num">22.99</td>
+<td class="num">131.83</td>
+<td class="num">(108.84)</td>
+</tr>
+<tr>
+<td><strong>Total (= Balance Sheet, p.341)</strong></td>
+<td class="num"><strong>3,357.24</strong></td>
+<td class="num"><strong>195.38</strong></td>
+<td class="num"><strong>+3,161.86</strong></td>
+</tr>
+<tr>
+<td><em>Other current financial liabilities at amortised cost</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Payables for capital goods</strong></td>
+<td class="num"><strong>1,158.51</strong></td>
+<td class="num"><strong>855.03</strong></td>
+<td><strong>+303.48 (+35.5%)</strong></td>
+</tr>
+<tr>
+<td>Security deposits</td>
+<td class="num">212.42</td>
+<td class="num">211.71</td>
+<td class="num">+0.71</td>
+</tr>
+<tr>
+<td>Directors commission</td>
+<td class="num">29.20</td>
+<td class="num">31.00</td>
+<td class="num">(1.80)</td>
+</tr>
+<tr>
+<td>Unpaid dividend</td>
+<td class="num">40.69</td>
+<td class="num">109.45</td>
+<td class="num">(68.76)</td>
+</tr>
+<tr>
+<td>Unpaid matured deposits</td>
+<td class="num">0.04</td>
+<td class="num">0.04</td>
+<td class="num">–</td>
+</tr>
+<tr>
+<td>Voluntary retirement scheme compensation</td>
+<td class="num">24.02</td>
+<td class="num">84.50</td>
+<td class="num">(60.48)</td>
+</tr>
+<tr>
+<td>Payable to Customers</td>
+<td class="num">304.29</td>
+<td class="num">211.15</td>
+<td class="num">+93.14</td>
+</tr>
+<tr>
+<td>Others***</td>
+<td class="num">354.96</td>
+<td class="num">151.15</td>
+<td class="num">+203.81</td>
+</tr>
+<tr>
+<td><strong>Total (= Balance Sheet, p.341)</strong></td>
+<td class="num"><strong>2,124.13</strong></td>
+<td class="num"><strong>1,654.03</strong></td>
+<td class="num"><strong>+470.10</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Both totals cast and agree to the Balance Sheet.</p>
+<ul>
+<li><strong>No non-current capital creditors</strong> are shown.</li>
+<li><strong>No extended, deferred or vendor-financed payment terms</strong> are disclosed.</li>
+<li>Capital creditors could also sit inside trade payables (Note 22, not provided). This cannot be ruled out.</li>
+</ul>
+<p><strong>Note 14 – Other assets (p.391)</strong></p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Particulars (as printed)</th>
+<th>31-Mar-26</th>
+<th>31-Mar-25</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Capital advances</strong> (non-current)</td>
+<td class="num"><strong>1,813.03</strong></td>
+<td class="num"><strong>2,126.30</strong></td>
+<td><strong>(313.27) (−14.7%)</strong></td>
+</tr>
+<tr>
+<td>Balances with government authorities (non-current)</td>
+<td class="num">1,915.96</td>
+<td class="num">1,140.14</td>
+<td class="num">+775.82</td>
+</tr>
+<tr>
+<td>Government grants $ (non-current)</td>
+<td class="num">67.56</td>
+<td class="num">82.59</td>
+<td class="num">(15.03)</td>
+</tr>
+<tr>
+<td>Advances to suppliers (non-current)</td>
+<td class="num">120.67</td>
+<td class="num">117.89</td>
+<td class="num">+2.78</td>
+</tr>
+<tr>
+<td><strong>Total non-current (= Balance Sheet)</strong></td>
+<td class="num"><strong>3,917.22</strong></td>
+<td class="num"><strong>3,466.92</strong></td>
+<td class="num">+450.30</td>
+</tr>
+<tr>
+<td>Government grant $ (current)</td>
+<td class="num">79.07</td>
+<td class="num">220.16</td>
+<td class="num">(141.09)</td>
+</tr>
+<tr>
+<td><strong>Total current (= Balance Sheet)</strong></td>
+<td class="num"><strong>6,806.86</strong></td>
+<td class="num"><strong>9,296.58</strong></td>
+<td class="num">(2,489.72)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The $ footnote describes the grants as <em>"receivables against various schemes of export incentives"</em>. These are <strong>income grants, not capital grants</strong>, so they do not affect capex.</p>
+<p><strong>Check that these balances sit outside working capital.</strong> Other assets excluding capital advances moved as follows:</p>
+<ul>
+<li>current: decrease of 2,489.72;</li>
+<li>non-current: increase of 763.57 (450.30 + 313.27);</li>
+<li>net decrease: <strong>1,726.15</strong>.</li>
+</ul>
+<p>The Cash Flow Statement shows "Decrease in other assets" of 1,566.07 (Cash Flow, p.346). The ₹160m difference is plausibly FX and the acquisition. This supports my assumption that capital advances are excluded from working capital and captured in the capex line, as its caption states.</p>
+<h2>3. Intangible additions (Note 5, p.381)</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>₹m</th>
+<th>FY26</th>
+<th>FY25</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Other intangibles – Additions (cost)</td>
+<td class="num">85.37</td>
+<td class="num">321.81</td>
+</tr>
+<tr>
+<td>Intangible assets under development (IAUD) – Additions</td>
+<td class="num">418.92</td>
+<td class="num">319.14</td>
+</tr>
+<tr>
+<td>IAUD – "Disposals"</td>
+<td class="num">(12.17)</td>
+<td class="num">(399.26)</td>
+</tr>
+<tr>
+<td>Intangibles acquired with subsidiary (net: 294.59 − 2.93)</td>
+<td class="num">291.66</td>
+<td class="num">–</td>
+</tr>
+<tr>
+<td>Goodwill on acquisition</td>
+<td class="num">1,224.24</td>
+<td class="num">–</td>
+</tr>
+</tbody>
+</table></div>
+<p>All Note 5 roll-forwards cast. For example, IAUD FY26: 63.70 + 418.92 − 12.17 = 470.45, which agrees to the Balance Sheet.</p>
+<p><strong>Estimated accrued intangible capex</strong>, assuming IAUD outflows are transfers into intangibles:</p>
+<ul>
+<li><strong>FY26:</strong> 418.92 + (85.37 − 12.17) = <strong>492.12</strong>.</li>
+<li><strong>FY25:</strong> the IAUD outflow (399.26) <em>exceeds</em> total intangible additions (321.81). So <strong>at least ₹77.45m</strong> of FY25 IAUD was written off or moved elsewhere, not capitalised. This is probably linked to the FY25 e-bike impairments (Note 5(c), p.382). Accrued FY25 intangible capex is therefore at least <strong>319.14</strong>, which assumes all 321.81 of additions came through IAUD.</li>
+</ul>
+<h2>4. CWIP "Disposals/Capitalised" split: not disclosed</h2>
+<p>Note 3 gives only the combined line: FY26 12,646.53 and FY25 4,397.41 (Note 3, p.378). What can be inferred:</p>
+<ul>
+<li><strong>IAUD is tracked separately</strong> in Note 5, so the Note 3 CWIP line should not include transfers to intangibles. The combined ageing total confirms this:</li>
+<li>FY26: 12,513.26 + 470.45 = 12,983.71.</li>
+<li>FY25: 17,253.49 + 63.70 = 17,317.19.</li>
+<li>Both agree to the ageing table (Note 3(h), p.379).</li>
+<li><strong>PPE additions exceed the CWIP outflow in both years</strong> (16,343.55 &gt; 12,646.53; 11,475.89 &gt; 4,397.41). This is consistent with the whole outflow being transfers to PPE, but does not prove it.</li>
+<li><strong>Write-offs are possible but unquantified.</strong> "Non-cash exceptional items" were ₹404.99m in FY26 (Cash Flow, p.346), and CWIP carries a separate unexplained ₹(135.54)m "Other adjustment". Any write-off within the 12,646.53 would raise accrued capex and narrow the FY26 gap below.</li>
+</ul>
+<h2>5. Non-cash investing transactions, dies and grants</h2>
+<ul>
+<li><strong>No Ind AS 7.43 disclosure</strong> is in the material.</li>
+<li><strong>Dies</strong> appear in the P&amp;L inventory-change line ("finished goods, work-in-progress, stock in trade, dies and scrap", P&amp;L p.342). This suggests dies are carried as <strong>inventory, not PPE</strong>, so dies moving from inventory into PPE are unlikely, but this is unconfirmed.</li>
+<li><strong>Capital grants:</strong> none are visible. A deferred capital-grant liability, if any, would be in Note 23 (not provided).</li>
+</ul>
+<h2>6. FY24 balances: what can be derived</h2>
+<p>The FY24 Balance Sheet is not provided. The note roll-forwards give some FY24 figures, but <strong>not</strong> capital creditors or capital advances:</p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>₹m (1-Apr-2024)</th>
+<th>Derivation</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Net PPE</td>
+<td>100,539.85 − 45,857.13 (Note 3, p.378)</td>
+<td class="num">54,682.72</td>
+</tr>
+<tr>
+<td>CWIP (net)</td>
+<td>9,780.84 − 12.23 (Note 3, p.378)</td>
+<td class="num">9,768.61</td>
+</tr>
+<tr>
+<td>Other intangibles</td>
+<td>1,815.64 − 1,107.75 (Note 5, p.381)</td>
+<td class="num">707.89</td>
+</tr>
+<tr>
+<td>Goodwill</td>
+<td>3,306.14 − 346.29 (Note 5, p.381)</td>
+<td class="num">2,959.85</td>
+</tr>
+<tr>
+<td>IAUD</td>
+<td>Note 5, p.381</td>
+<td class="num">143.82</td>
+</tr>
+</tbody>
+</table></div>
+<h2>7. Revised capex reconciliation</h2>
+<h3>FY26: reconciles to within about ₹1.06bn, with cash higher</h3>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>₹m</th>
+<th>FY26</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accrued PPE capex (from previous answer)</td>
+<td class="num">10,473.17</td>
+<td>Note 3, p.378</td>
+</tr>
+<tr>
+<td>+ Accrued intangible capex</td>
+<td class="num">492.12</td>
+<td>Note 5, p.381</td>
+</tr>
+<tr>
+<td><strong>= Accrued capex, like-for-like with the cash line</strong></td>
+<td class="num"><strong>10,965.29</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>− Increase in capital creditors (855.03 → 1,158.51)</td>
+<td class="num">(303.48)</td>
+<td>Note 19, p.402</td>
+</tr>
+<tr>
+<td>− Decrease in capital advances (2,126.30 → 1,813.03)</td>
+<td class="num">(313.27)</td>
+<td>Note 14, p.391</td>
+</tr>
+<tr>
+<td><strong>= Expected cash capex</strong></td>
+<td class="num"><strong>10,348.54</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Reported cash capex</td>
+<td class="num">11,404.96</td>
+<td>Cash Flow, p.346</td>
+</tr>
+<tr>
+<td><strong>Unexplained (cash higher than expected)</strong></td>
+<td class="num"><strong>1,056.42</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Possible explanations, none quantifiable from the material:</p>
+<ul>
+<li><strong>The acquired subsidiary's capital creditors</strong> would be in the closing 1,158.51. That overstates the "organic" credit increase and understates expected cash.</li>
+<li><strong>FX translation</strong> of foreign subsidiaries' creditors and advances.</li>
+<li><strong>Capitalised interest (391.33) possibly paid within investing.</strong> The Cash Flow Statement shows interest paid under financing (p.347), so this is unlikely.</li>
+<li><strong>CWIP write-offs or other adjustments</strong> (135.54 at least), as discussed in Section 4.</li>
+</ul>
+<h3>FY25: mostly unexplained</h3>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>₹m</th>
+<th>FY25</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accrued PPE capex</td>
+<td class="num">18,643.11</td>
+<td>Note 3, p.378</td>
+</tr>
+<tr>
+<td>+ Accrued intangible capex (minimum)</td>
+<td class="num">319.14</td>
+<td>Note 5, p.381</td>
+</tr>
+<tr>
+<td><strong>= Accrued capex (minimum)</strong></td>
+<td class="num"><strong>18,962.25</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Reported cash capex</td>
+<td class="num">14,504.59</td>
+<td>Cash Flow, p.346</td>
+</tr>
+<tr>
+<td><strong>Gap (accrued above cash)</strong></td>
+<td><strong>≥ 4,457.66</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum explainable by capital creditors (if FY24 balance were nil)</td>
+<td>≤ 855.03</td>
+<td>Note 19, p.402</td>
+</tr>
+<tr>
+<td><strong>Remaining gap to explain</strong></td>
+<td><strong>≥ 3,602.63</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>To close the remaining gap through capital advances alone, <strong>FY24 capital advances would need to have been at least ₹5,728.93m</strong> (2,126.30 + 3,602.63). That would mean a fall of about 63% in FY25. This is plausible at the tail end of a heavy capex cycle: assets delivered in FY25 against cash prepaid in FY24 or earlier. It <strong>needs the FY24 Note 14 to confirm.</strong></p>
+<p><strong>Implication, which replaces my earlier view.</strong> The FY25 gap most likely reflects <strong>cash spent in earlier years</strong> (via advances) or non-cash additions. It is <strong>not</strong> material deferred payment to suppliers. My earlier comment that FY25 free cash flow was "flattered" by about ₹4.1bn of unpaid capex should be read as a <strong>timing shift from prior years</strong>, not a future cash outflow. The only future outflow evidenced is the ₹1,158.51m of capital creditors.</p>
+<h2>8. Note 19 also resolves the non-current liability jump</h2>
+<ul>
+<li><strong>The liability:</strong> gross liability on a written put option of ₹3,294.72m = CCPS proceeds of ₹3,000.00m (Cash Flow, p.347) + fair-value change of ₹294.72m (SOCE, p.344).</li>
+<li><strong>Issue price check:</strong> 14,25,795 CCPS × ₹2,104.09 = ₹3,000.0m (Note 19#, p.402), which agrees.</li>
+<li><strong>Accounting:</strong> the Group uses the anticipated acquisition method. The NCI is derecognised and fair-value changes go to <strong>other equity, not the P&amp;L</strong> (Note 19#, p.403).</li>
+<li><strong>SOCE check:</strong> retained earnings roll 61,811.48 + 10,796.61 + 170.69 − 294.72 − 2,868.53 − 956.18 = 68,659.35. This agrees to the closing balance (SOCE, p.344), confirming the ₹294.72m was charged to retained earnings.</li>
+</ul>
+<h2>9. Other issues found in the newly provided notes</h2>
+<ol>
+<li><strong>FY25 IAUD outflow (399.26) exceeds intangible additions (321.81).</strong> At least ₹77.45m left IAUD without being capitalised. Where was it charged?</li>
+<li><strong>Refined disposal-gain check, including intangibles:</strong>
+   - FY26: proceeds 274.32 − PPE NBV 75.62 − intangibles NBV 1.88 (34.48 − 32.60) = 196.82, against a reported gain of 185.34. Difference: 11.48.
+   - FY25: NBV 23.36 + 18.30 (78.80 − 60.50) = 41.66 against proceeds of 65.40, implying a gain of 23.74. The Cash Flow Statement shows a <strong>loss of 14.87</strong>, a difference of 38.61 (Cash Flow, p.346). This is still unreconciled.</li>
+<li><strong>Dividends don't tie to cash.</strong>
+   - Declared: 2,868.53 + 956.18 = 3,824.71 (SOCE, p.344).
+   - Paid: 3,796.55 (Cash Flow, p.347).
+   - That implies unpaid dividend should rise by 28.16, but it <strong>fell</strong> by 68.76 (Note 19, p.402).
+   - Unexplained difference: about ₹96.92m. Possibly dividends on shares held by the group, or TDS timing.</li>
+<li><strong>"Derivative liability" of ₹32.50m is classified at amortised cost</strong> (Note 19, p.402). Derivatives are normally carried at fair value. It is also unchanged for two years.</li>
+<li><strong>Goodwill inconsistencies (Note 5, p.381–383):</strong>
+   - Acquisition goodwill is 1,224.24 in the table but 1,224.23 in note (d), a rounding difference.
+   - MGL goodwill rose by 137.27 (192.31 → 329.58), but total net FX on goodwill was only 50.46 (98.80 − 48.34).
+   - JS Autocast's terminal growth rate jumps from 1.00% to 5.00%, yet it is described as "in line with long-term inflation".
+   - FY25 goodwill impairment (283.42 + 53.00 = 336.42) is shown as "Other adjustments – Others" rather than "Impairment".</li>
+</ol>
+<h2>10. Still to request</h2>
+<ul>
+<li>FY24 comparatives from Notes 14 and 19 (prior-year annual report).</li>
+<li>Ind AS 7.43 non-cash investing disclosure.</li>
+<li>Split of the CWIP outflow into transfers, write-offs and other.</li>
+<li>Acquisition note (capital creditors and advances taken over).</li>
+<li>Note 22 (whether any capital creditors sit in trade payables).</li>
+<li>Note 32 (composition of the ₹404.99m non-cash exceptional items).</li>
+</ul>
+<h2>Impact on the financial statements</h2>
+<ul>
+<li><strong>Profit and Loss:</strong></li>
+<li>Capital creditors and advances have no P&amp;L effect, and <strong>no extended credit terms</strong> (and so no embedded financing cost) are disclosed.</li>
+<li>The put-option fair-value change (₹294.72m) bypasses the P&amp;L by policy choice.</li>
+<li>Possible CWIP or IAUD write-offs (≥ ₹77.45m IAUD in FY25) would sit in exceptional items or other expenses. The location is unconfirmed.</li>
+<li><strong>Balance Sheet:</strong></li>
+<li>Capital creditors of ₹1,158.51m (current other financial liabilities) and capital advances of ₹1,813.03m (other non-current assets) are both reconciled to their Balance Sheet totals (p.341).</li>
+<li>The non-current other financial liabilities jump is the put liability, not capex funding.</li>
+<li><strong>Cash Flow:</strong></li>
+<li>FY26 cash capex of ₹11,404.96m exceeds the expected ₹10,348.54m by ₹1,056.42m, which is unexplained.</li>
+<li>The FY25 cash-versus-accrual gap (≥ ₹4.46bn) is <strong>not</strong> future supplier debt. Supplier credit explains at most ₹0.86bn. The rest most likely reflects earlier-year advances, which would mean FY24 and earlier investing cash flows carried that spend.</li>
+<li>Future cash outflow evidenced for capex: ₹1,158.51m.</li>
+<li><strong>Changes in Equity:</strong></li>
+<li>Capex timing has no effect.</li>
+<li>The CCPS/put arrangement reduced retained earnings by ₹294.72m (SOCE, p.344). The ₹3,000m proceeds did not increase NCI, which stays at ₹(230.16)m.</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in Bharat-Forge-IR-2026-conv-single-page.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

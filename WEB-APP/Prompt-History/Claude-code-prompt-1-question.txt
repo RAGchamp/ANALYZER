@@ -1,0 +1,9 @@
+Asked at: 2026-09-24 17:38:33
+Kind: analysis
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 21 – INCOME AND DEFERRED TAXES (PDF p.405–407)
+PDF pages: 405, 406, 407
+Thread: 64ac78ccf01d4e3d91c1c21fa853d6fe
+
+Analyze the company's Tax related liablities and comment on it.

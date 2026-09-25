@@ -1,0 +1,22 @@
+# Source of the "subsequent-events evidence" recommendation
+
+**The extract is not the source.** This item was my own recommended follow-up, not a disclosure in the annual report. Only the ₹19,723 Mn figure comes from the extract.
+
+| Element of the statement | Source | Status |
+|---|---|---|
+| "₹19,723 Mn overdue book" | Derived from Note 12, p.389: total gross 39,833.75 − not yet due 20,111.04 = **19,722.71**, rounded to ₹19,723 Mn | ✓ From extract (calculated) |
+| "Cash collected … after year-end" | Not disclosed in Note 12 (p.388–390) | ✗ Not in extract |
+| "Date the accounts were approved" | Not in the extract. It is usually stated in the board approval note or the auditor's report signature. | ✗ Not in extract |
+
+## Why I recommended it
+Cash collected after the reporting date is standard audit and analyst evidence of whether overdue receivables are recoverable. It is the most direct test of whether the lower loss allowance (₹567.08 Mn vs ₹592.32 Mn, Note 12, p.389) is adequate. That makes it a **request to make**, not a figure I have.
+
+## Where it might be found (unverified)
+These are the usual places to look. I have not seen any of them, so I cannot confirm they contain this information for Bharat Forge:
+- **Management / investor relations:** the most likely source. Ask directly for collections on overdue balances after 31 March 2026.
+- **Independent auditor's report:** check any key audit matter on receivables or ECL, which may describe the audit procedures used, including testing of subsequent receipts.
+- **Events after the reporting period note** in the consolidated financial statements.
+- **Management Discussion & Analysis:** comments on working capital or collections.
+- **Q1 FY27 results or earnings call:** trade receivables at 30 June 2026 compared with 31 March 2026.
+
+If you provide any of these sections, I can check them for post-year-end collection data.

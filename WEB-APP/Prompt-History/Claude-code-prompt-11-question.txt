@@ -1,0 +1,15 @@
+Asked at: 2026-09-24 21:47:28
+Kind: follow-up
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 3 – PROPERTY, PLANT AND EQUIPMENT (PDF p.377–379), Consolidated Note 30 – DEPRECIATION AND AMORTISATION EXPENSE (PDF p.413), Consolidated Note 19 – OTHER FINANCIAL LIABILITIES (PDF p.402–403), Consolidated Note 14 – OTHER ASSETS (PDF p.391–392), Consolidated Note 5 – INTANGIBLE ASSETS AND GOODWILL (PDF p.381–383)
+Financial statements: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+Thread: b50e6760198a40b49f784472357c8c88
+Saved HTML: Bharat-Forge-IR-2026-conv-single-page-3-20260924-214728.html
+
+Get information related to this item as shown below and do additional analysis "Note 19: opening and closing "payables for capital goods / capital creditors" for FY24, FY25 and FY26, split current and non-current, including any deferred or extended-credit terms.
+Note 14: opening and closing "capital advances" for the same three years.
+Note 3: a split of the CWIP "Disposals/Capitalised" line (4,397.41 / 12,646.53) into transfers to PPE, transfers to intangibles, and write-offs.
+Non-cash investing transactions (Ind AS 7.43 disclosure): vendor-financed assets, dies transferred from inventory, and grants.
+Note 5: intangible additions for FY25 and FY26, so the cash line can be matched like-for-like.
+The 31-Mar-2024 consolidated Balance Sheet (prior-year report)."

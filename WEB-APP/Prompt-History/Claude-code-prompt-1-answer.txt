@@ -1,0 +1,138 @@
+## Summary
+- **The balance-sheet deferred tax liability fell 82%**, from ₹1,198.28m to ₹215.24m. The main cause is the tax effect of cash flow hedge losses booked in OCI (a ₹1,338.69m credit). The Group's net deferred tax position moved from a **net asset of ₹703.15m to a net asset of ₹1,906.75m**.
+- **The total tax charge rose 6.5% to ₹5,777.74m while profit before tax rose 14.5%.** The effective tax rate (ETR) fell from 37.26% to 34.66%, but it is still about 9.5 percentage points above the 25.168% Indian statutory rate.
+- **The biggest reason the ETR is high is losses on which no deferred tax asset is recognised.** This line added ₹1,426.83m in FY26, or 8.6 points of ETR. Carried-forward tax losses grew to about **₹29,400m**, and German losses alone rose 43.6% to ₹13,929.32m.
+- **Several internal inconsistencies need management's explanation.** These include a ₹33.00m gap in the deferred tax P&L charge, the prior-year tax line showing different signs in two places, OCI components that do not add up for FY25, and mislabelled balance-sheet lines.
+- **Current tax payable, advance tax and contingent tax demands are not in this extract.** The liability analysis below therefore covers only deferred tax and the P&L tax charge.
+
+## Key figures
+₹ million
+
+| Item | FY26 | FY25 | Change | % change | Source |
+|---|---|---|---|---|---|
+| Profit before tax | 16,671.72 | 14,558.25 | 2,113.47 | 14.52% | Note 21, p.405 |
+| Current income tax charge | 5,701.41 | 5,994.80 | (293.39) | (4.89%) | Note 21, p.405 |
+| Tax for prior years | (95.34) | (146.26) | 50.92 | (34.8%) | Note 21, p.405 |
+| Deferred tax expense/(credit) | 171.67 | (423.04) | 594.71 | n.m. | Note 21, p.405 |
+| **Total tax expense (P&L)** | **5,777.74** | **5,425.50** | **352.24** | **6.49%** | Note 21, p.405 |
+| Effective tax rate (as reported) | 34.66% | 37.26% | (2.60) pp | – | Note 21, p.405 |
+| Deferred tax credit to OCI | (1,326.96) | (309.02) | (1,017.94) | 329.4% | Note 21, p.405 |
+| Tax on losses with no deferred tax asset recognised | 1,426.83 | 1,622.12 | (195.29) | (12.04%) | Note 21, p.405 |
+| **Deferred tax liability (net)** | **215.24** | **1,198.28** | **(983.04)** | **(82.04%)** | Note 21, p.406 |
+| Deferred tax asset (net) | (2,121.99) | (1,901.43) | (220.56) | 11.60% | Note 21, p.406 |
+| Net deferred tax position (asset) | (1,906.75) | (703.15) | (1,203.60) | 171.2% | Calculated |
+| Carried-forward tax losses (all jurisdictions) | 29,399.75 | 26,831.86 | 2,567.89 | 9.57% | Note 21, p.407 |
+
+## Detailed analysis
+
+### 1. P&L tax charge and effective tax rate
+
+**The P&L tax charge ties out:**
+- FY26: 5,701.41 − 95.34 + 171.67 = 5,777.74
+- FY25: 5,994.80 − 146.26 − 423.04 = 5,425.50
+
+**The reported ETR checks out:**
+- FY26: 5,777.74 ÷ 16,671.72 = 34.66%
+- FY25: 5,425.50 ÷ 14,558.25 = 37.27%. The report shows 37.26%, which is a minor rounding difference.
+
+**Current tax as a share of profit before tax fell sharply:**
+- FY26: 5,701.41 ÷ 16,671.72 = 34.20%
+- FY25: 5,994.80 ÷ 14,558.25 = 41.18%
+
+So the "cash-type" tax burden eased. The total charge still rose because deferred tax swung from a ₹423.04m credit to a ₹171.67m expense.
+
+**Rate reconciliation (Note 21, p.405):**
+
+| Driver | FY26 | % of PBT | FY25 | % of PBT |
+|---|---|---|---|---|
+| Statutory tax at 25.168% | 4,195.94 | 25.17% | 3,664.02 | 25.17% |
+| Losses with no deferred tax asset recognised | 1,426.83 | 8.56% | 1,622.12 | 11.14% |
+| Exceptional items not deductible | 210.20 | 1.26% | – | – |
+| Differential tax rates | (31.07) | (0.19%) | 68.37 | 0.47% |
+| Prior-year adjustments | 130.06 | 0.78% | (146.26) | (1.00%) |
+| Other disallowances / consolidation | (154.21) | (0.92%) | 217.26 | 1.49% |
+| **Total** | **5,777.75** | **34.66%** | **5,425.51** | **37.27%** |
+
+The totals differ from the reported figures by ₹0.01m, which is rounding.
+
+- **Main driver of the high ETR:** loss-making subsidiaries whose losses give no tax benefit. From the loss disclosures, these are mainly overseas (Germany and USA).
+- **Why the ETR improved:** this drag shrank relative to a larger profit base, and other disallowances turned negative.
+- **Exceptional items:** the ₹210.20m non-deductible amount implies roughly ₹835m of exceptional items, if the Indian rate applies (210.20 ÷ 25.168%). This is an estimate only; the note does not give the amount.
+
+### 2. Deferred tax liability: composition and movement
+
+The deferred tax liability components (Note 21, p.406) sum correctly to 215.24 for FY26 and 1,198.28 for FY25.
+
+| Component | FY26 | FY25 | Change |
+|---|---|---|---|
+| Property, plant & equipment and intangibles | 1,493.56 | 1,602.97 | (109.41) |
+| Right-of-use assets | 623.31 | 689.02 | (65.71) |
+| Cash flow hedges | – | 188.01 | (188.01) |
+| FVTOCI equity securities | 181.57 | 236.42 | (54.85) |
+| Tax-standard timing differences | (2,083.20) | (1,518.14) | (565.06) |
+| **Net deferred tax liability** | **215.24** | **1,198.28** | **(983.04)** |
+
+The roll-forward (p.407) also ties out: 1,198.28 − 143.07 − 1,338.69 + 56.87 − 26.43 + 468.28 = 215.24. The main movements are:
+- **Hedge deferred tax of ₹(1,338.69)m.** This is the biggest single driver. The hedge position flipped from a ₹188.01m liability to a ₹1,117.70m deferred tax asset.
+- **"Other adjustments" of +₹468.28m.** This is not explained.
+- **A business combination adding ₹56.87m.** The extract gives no detail on the acquisition.
+
+**Interpretation.** The fall in the deferred tax liability does not reflect better tax planning. It is mostly an accounting mirror of **unrealised hedge losses** in OCI. Those balances will reverse through P&L as the hedged transactions happen. The underlying liability from depreciation and asset timing differences is steady at around ₹1.5–2.1bn gross.
+
+### 3. Deferred tax asset side
+- The net asset grew by ₹220.56m (11.6%). This is driven by the new hedge asset of ₹1,117.70m.
+- These increases were partly offset by:
+  - lower unrealised-profit-on-inventory assets (1,311.76 → 1,087.20, down ₹224.56m, which matches the P&L line of 224.55);
+  - timing differences under tax standards swinging to a liability of 760.56 (FY25: 114.21).
+- The roll-forward ties out: −1,901.43 + 281.74 + 38.16 − 540.46 = −2,121.99.
+
+### 4. Tax losses carried forward (Note 21, p.407)
+
+| Jurisdiction | FY26 | FY25 | Change | % |
+|---|---|---|---|---|
+| India (8-year expiry) | 4,398.53 | 4,336.78 | 61.75 | 1.42% |
+| USA (20-year expiry) | 2,718.53 | 2,457.95 | 260.58 | 10.60% |
+| USA (indefinite) | 8,000.24 | 7,622.66 | 377.58 | 4.95% |
+| Sweden (indefinite) | 353.13 | 2,715.96 | (2,362.83) | (87.00%) |
+| Germany (indefinite) | 13,929.32 | 9,698.51 | 4,230.81 | 43.62% |
+| **Total** | **29,399.75** | **26,831.86** | **2,567.89** | **9.57%** |
+
+- **Germany is the concern.** Losses rose by ₹4.2bn in a single year, which points to continuing heavy losses in the European operations.
+- **Potential tax value is large.** At a rough 30% rate, ₹29.4bn of losses would be worth about ₹8–9bn of unrecognised tax assets. This is an illustration only; the note does not disclose the unrecognised deferred tax asset amount.
+- **Upside:** if the German or US businesses turn profitable, these losses could be used and the ETR would fall.
+- **Downside risk:** the Indian and US 20-year losses expire over time.
+
+## Red flags & areas for follow-up
+
+1. **The deferred tax P&L charge does not add up by ₹33.00m (p.406–407).**
+   - The components sum to 120.74 + 224.55 − 206.62 = **138.67**, but the stated total is **171.67**.
+   - The roll-forwards give the same 138.67 (DTA 281.74 − DTL 143.07).
+   - The P&L and ETR reconciliation use 171.67.
+   - FY25 ties exactly (−423.04).
+   - The hedge balance swing (188.01 + 1,117.70 = 1,305.71) is also ₹32.98m below the OCI hedge credit of 1,338.69. This suggests a reclassification between P&L and OCI.
+   - **Ask management to reconcile.**
+2. **The prior-year tax line is inconsistent.** The P&L shows **(95.34)**, a credit, but the rate reconciliation shows **+130.06**, a charge. That is a ₹225.40m gap and a sign reversal. The FY25 figures agree (146.26 in both places).
+3. **The FY25 OCI components do not tie.** −267.78 − 46.81 − 5.57 = **(320.16)** versus the stated total of **(309.02)**, a ₹11.14m difference. FY26 ties.
+4. **Unexplained "Other adjustments".** These are +468.28 on the liability side and (540.46) on the asset side (net −72.18). Possible causes are currency translation, reclassification between entities, or offsetting. **Management should disclose what they are.**
+5. **The balance-sheet presentation table is mislabelled (p.406).**
+   - For FY26, "Deferred tax liabilities" within the asset group is shown as **(1,042.68)**, a negative liability.
+   - Its FY25 counterpart (86.35) equals the PPE line.
+   - Presentation needs to be clarified.
+6. **The PPE deferred tax sign looks wrong.** The PPE balances fell by ₹120.74m in total (109.41 + 11.33), which implies a *credit*. The component table shows a +120.74 *expense*. This needs confirmation.
+7. **US losses are described inconsistently.** Some are said to be available "indefinitely", yet the note also says the losses "will expire between tax years 2026 and 2037". Some US losses may be expiring right now.
+8. **Typo:** Germany's FY25 figure is printed as "₹9.698.51 million" and should be 9,698.51.
+9. **Sweden's losses fell by ₹2,362.83m (87%).** Were they used against profits, forfeited, or removed through a restructuring or disposal? If used, why was there no visible benefit in the rate reconciliation?
+10. **Recoverability of the hedge deferred tax asset (₹1,117.70m).** It depends on the entity generating taxable profits when the hedges settle. This is also worth asking about.
+11. **Information not in the extract:**
+    - current tax liabilities or provisions, and advance tax / tax receivable balances;
+    - contingent liabilities for disputed tax demands;
+    - the amount of unrecognised deferred tax assets;
+    - the exceptional items themselves.
+
+    Obtain the balance sheet, the current tax note and the contingent liabilities note to complete the view of tax liabilities.
+
+## Sources
+- Consolidated Note 21 – Income and Deferred Taxes:
+  - PDF p.405 (P&L tax, OCI tax, rate reconciliation)
+  - PDF p.406 (deferred tax components and balance-sheet presentation)
+  - PDF p.407 (roll-forwards and tax losses carried forward)

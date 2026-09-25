@@ -1,0 +1,11 @@
+Asked at: 2026-09-24 21:10:00
+Kind: analysis
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 21 – INCOME AND DEFERRED TAXES (PDF p.405–407)
+PDF pages: 405, 406, 407
+Financial statements: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+Thread: 20516f20e75d40c594c24223809c2210
+Saved HTML: Bharat-Forge-IR-2026-conv-single-page-1-20260924-211000.html
+
+Analyze the company's Tax related liablities and comment on it.

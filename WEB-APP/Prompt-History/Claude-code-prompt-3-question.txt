@@ -1,0 +1,8 @@
+Asked at: 2026-09-24 17:51:25
+Kind: follow-up
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 12 – TRADE RECEIVABLES (PDF p.388–390)
+Thread: c4d83b7954de49d082c10d31a371c79a
+
+Expand on this point "Falling provisions against an ageing book. Total allowance fell 4.3% while gross receivables rose 34%, and balances >1 year tripled. Coverage fell sharply in every bucket older than 6 months (e.g., 1–2 years: 43.2% → 13.1%). Request: - The ECL provision matrix and any changes in assumptions. - Whether specific customers were reassessed or balances written off. - Whether FY25's 17.3% coverage on 6–12 month balances was released." Is it a matter of concern that the company might see bigger write offs if customers are not able to pay

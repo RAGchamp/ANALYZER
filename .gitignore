@@ -1,0 +1,26 @@
+# Not part of the published project
+OLD-STUFF/
+S-PAD/
+WEB-APP-v1/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# App runtime files (recreated automatically)
+WEB-APP/cache/
+WEB-APP/logs/
+WEB-APP/claude-prompt-input.txt
+WEB-APP/Claude-prompt-output.txt
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
