@@ -1,0 +1,26 @@
+{
+ "printed_page": "1",
+ "page_type": "narrative",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "April 23, 1969",
+ "schedule": null,
+ "headings": [
+  "BERKSHIRE HATHAWAY INC.",
+  "FORM 10-K",
+  "APRIL 23, 1969",
+  "Item 1. Number of Equity Security Holders",
+  "Item 2. Increases and [?]creases in Outstanding Equity Securities",
+  "Item 3. Parents and Subsidiaries of Registrant"
+ ],
+ "currency": "$",
+ "unreadable": 1,
+ "pdf_page": 2,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

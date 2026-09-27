@@ -181,11 +181,13 @@
             <div class="toc-item"><span class="toc-num">9</span><a href="#present">Stage 6: Presenting &amp; Saving the Analysis</a></div>
             <div class="toc-item"><span class="toc-num">10</span><a href="#history">History Access</a></div>
             <div class="toc-item"><span class="toc-num">11</span><a href="#viewer">The "View the Financial Statements" Page</a></div>
-            <div class="toc-item"><span class="toc-num">12</span><a href="#walkthrough">Step-by-Step: "Analyze the Tax Liabilities"</a></div>
-            <div class="toc-item"><span class="toc-num">13</span><a href="#testing">Testing &amp; Verification</a></div>
-            <div class="toc-item"><span class="toc-num">14</span><a href="#limitations">Known Limitations</a></div>
-            <div class="toc-item"><span class="toc-num">15</span><a href="#glossary">Glossary</a></div>
-            <div class="toc-item"><span class="toc-num">16</span><a href="#file-map">File Map</a></div>
+            <div class="toc-item"><span class="toc-num">12</span><a href="#old-reports">Old Annual Reports (Companies Act 1956)</a></div>
+            <div class="toc-item"><span class="toc-num">13</span><a href="#scanned">Scanned Reports (OCR)</a></div>
+            <div class="toc-item"><span class="toc-num">14</span><a href="#walkthrough">Step-by-Step: "Analyze the Tax Liabilities"</a></div>
+            <div class="toc-item"><span class="toc-num">15</span><a href="#testing">Testing &amp; Verification</a></div>
+            <div class="toc-item"><span class="toc-num">16</span><a href="#limitations">Known Limitations</a></div>
+            <div class="toc-item"><span class="toc-num">17</span><a href="#glossary">Glossary</a></div>
+            <div class="toc-item"><span class="toc-num">18</span><a href="#file-map">File Map</a></div>
           </div>
         </div>
       </div>
@@ -874,9 +876,81 @@ click an item
     <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
   </section>
 
-  <!-- 12. WALKTHROUGH -->
+    <!-- 12. OLD REPORTS -->
+  <section id="old-reports" class="mb-5">
+    <h2 class="section-title">12. Old Annual Reports (Companies Act 1956)</h2>
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <p>Reports from before about 2011 (old Schedule VI) have no "Notes to … Financial Statements" running headers. The 1976-77 Reliance Textile Industries report, for example, has:</p>
+        <ul>
+          <li>a <strong>Balance Sheet</strong> and a <strong>Profit and Loss Account</strong>; there is no Cash Flow Statement or Statement of Changes in Equity</li>
+          <li><strong>Schedules 'A'–'N'</strong> "forming part of" them, cited in a <em>Schedule</em> column</li>
+          <li><strong>Schedule 'O'</strong> with 34 numbered, mostly untitled notes</li>
+          <li>a Financial Summary, a Directors' Report and an Auditors' Report</li>
+        </ul>
+        <p><code>report_format.py</code> counts cheap text signals on every page, such as SCHEDULE headings and "forming part of the Balance Sheet". Modern reports win ties. If a report is <em>legacy</em>, <code>legacy_index.py</code> builds the index:</p>
+        <ol>
+          <li><strong>Pages:</strong> pages printed sideways are turned first. The running header, including the repeated "SCHEDULE FORMING PART OF THE BALANCE SHEET" line, and the page number are cut off.</li>
+          <li><strong>Markers:</strong> statement titles, SCHEDULE headings, report-section titles, signature blocks ("As per our Report…") and divider pages. Each unit runs to the next marker, so schedules that share a page are split exactly.</li>
+          <li><strong>Units:</strong> they go into the section's <code>notes</code> list with ids <code>SCH-E</code>, <code>N25</code>, <code>DIR</code>/<code>AUD</code>/<code>SUM</code>. Numbered notes are the <code>n.</code> lines at the left margin of the notes schedule, in sequence. Untitled notes use their first words as the title.</li>
+          <li><strong>Text:</strong> quote marks around schedule letters (<code>‘A’</code>, <code>`L'</code>, <code>�C�</code>) become <code>'A'</code>, and lost dashes become "–". <strong>Figures are never corrected.</strong></li>
+        </ol>
+        <p>The prompts get a <strong>REPORT PROFILE</strong> (format, year end, Rs. and lakhs, which statements exist and which don't), impact sections for the existing statements only, and <code>prompts/analysis_system_legacy.txt</code>. That file tells Claude to:</p>
+        <ul class="mb-0">
+          <li>state amounts in Rs. lakhs/crores</li>
+          <li>flag figures that don't add up as possible transcription errors</li>
+          <li>annualise a prior period that isn't 12 months</li>
+          <li>derive a funds-flow when cash matters</li>
+          <li>use the law of the era</li>
+        </ul>
+        <p class="mt-2 mb-0">Modern-report prompts are unchanged, byte for byte. Design and decisions: <code>INFO/ANALYZE-OLD-REPORTS-FUNC-PLAN.md</code>.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 13. SCANNED REPORTS -->
+  <section id="scanned" class="mb-5">
+    <h2 class="section-title">13. Scanned Reports (OCR)</h2>
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <p>A PDF with text on fewer than 10% of its pages is a <strong>scanned report</strong>, e.g. <code>BRK-1968.pdf</code>: 39 microfilm images of Berkshire Hathaway's 1968 Form 10-K. It is <strong>transcribed once</strong> by <code>ocr_transcribe.py</code>:</p>
+        <ol>
+          <li><strong>Page image:</strong> each page is rendered to a 150 dpi greyscale PNG in <code>cache/&lt;report&gt;.ocr/</code>.</li>
+          <li><strong>Claude call:</strong> <code>claude -p --tools Read</code> runs with that folder as its working folder and <code>prompts/transcribe_page.txt</code>. It returns a JSON page description (page type, company, statement title, schedule, headings, printed page) and the page as Markdown, with tables kept, figures copied exactly, and <code>[?]</code> for unreadable characters.</li>
+          <li><strong>Parallel and resumable:</strong> 4 pages at a time; pages already done are skipped. A page with 5 or more <code>[?]</code> is read again at 200 dpi.</li>
+          <li><strong>Checks</strong> (<code>ocr_quality.py</code>):
+            <ul>
+              <li>totals that equal the figures above them "tie" (sums, differences, subtotals in another column)</li>
+              <li>"Total" or unlabelled rows that don't tie are flagged</li>
+              <li>if Tesseract is installed, figures that neither it nor a tie confirms are flagged</li>
+            </ul>
+            On BRK-1968: 137 totals tie and 1 doesn't. That one is p.23, where the scan's 405,5?1 was read as 405,531 but 405,581 makes the column add up.</li>
+        </ol>
+        <p><code>transcribed_index.py</code> then builds the index from the page descriptions:</p>
+        <ul>
+          <li><strong>One section per company:</strong> Berkshire Hathaway (consolidated), National Indemnity, National Fire &amp; Marine.</li>
+          <li><strong>Statements</strong> are grouped by title.</li>
+          <li><strong>Notes</strong> are split at their <code>### (n)</code> headings.</li>
+          <li><strong>Schedules</strong> are grouped by label (I, III, V…).</li>
+          <li><strong>Reports:</strong> each company's auditors' report and the filing text.</li>
+          <li><strong>Ids</strong> carry a company code: <code>BH-N5</code>, <code>NI-N6</code>.</li>
+          <li><strong>Extracts</strong> are line ranges of the cached Markdown.</li>
+        </ul>
+        <p>Selection:</p>
+        <ul>
+          <li>The scope is the company the question names; the default is the registrant, and "subsidiaries" means all the others.</li>
+          <li>The prompt adds a REPORT PROFILE, the TRANSCRIPTION CHECKS for the pages used, and <code>analysis_system_transcribed.txt</code>: treat <code>[?]</code> as unknown, verify figures against totals, and cite pages.</li>
+        </ul>
+        <p class="mb-0">The <strong>Review transcription</strong> page (<code>/ocr-review</code>) shows each page image next to its transcription and flags, with a <em>Re-transcribe this page</em> button. Design and decisions: <code>INFO/OCR-CAPABILITY-PLAN.md</code>.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+<!-- 12. WALKTHROUGH -->
   <section id="walkthrough" class="mb-5">
-    <h2 class="section-title">12. Step-by-Step: "Analyze the Tax Liabilities"</h2>
+    <h2 class="section-title">14. Step-by-Step: "Analyze the Tax Liabilities"</h2>
     <div class="card shadow-sm accent-blue mb-4">
       <div class="card-body">
         <p class="mb-0">Sections 3–11 explain each mechanism separately. This section follows them in the order they actually run, for the real question used to verify the app: <em>"Analyze the company's Tax related liablities and comment on it."</em> on the Bharat Forge FY2025-26 report.</p>
@@ -1006,7 +1080,7 @@ click an item
 
   <!-- 13. TESTING -->
   <section id="testing" class="mb-5">
-    <h2 class="section-title">13. Testing &amp; Verification</h2>
+    <h2 class="section-title">15. Testing &amp; Verification</h2>
     <div class="card shadow-sm accent-blue mb-4">
       <div class="card-body">
         <p><code>python -m pytest -q</code> in <code>WEB-APP</code> runs <strong>72 tests</strong> against the real Bharat Forge PDF. Claude is mocked, so the tests make no Claude calls.</p>
@@ -1037,11 +1111,12 @@ click an item
 
   <!-- 14. LIMITATIONS -->
   <section id="limitations" class="mb-5">
-    <h2 class="section-title">14. Known Limitations</h2>
+    <h2 class="section-title">16. Known Limitations</h2>
     <div class="card shadow-sm accent-yellow">
       <div class="card-body">
         <ul class="mb-0">
-          <li><strong>Scanned PDFs</strong> are not supported. If under 10% of pages have text, the app says OCR would be required.</li>
+          <li><strong>Old reports</strong> (§12) have been verified on one sample only, the re-typeset Reliance 1976-77 report. Other old layouts, such as numbered schedules or a separate "Notes on Accounts" section, are handled by the same patterns but not yet tested.</li>
+          <li><strong>Scanned PDFs</strong> (§13) need a one-time transcription: about $0.14 and 9 s per page, with 4 pages in parallel. Figures can be misread, so check the flagged ones on the Review page.</li>
           <li><strong>Other companies' layouts:</strong> heading detection is font-based and generic, but it has only been verified on the Bharat Forge report. Other running-header wordings can be added to <code>NOTES_HEADERS</code> in <code>config.py</code>. If no notes are found, the user can still type PDF pages manually.</li>
           <li><strong>Finding the statements:</strong> they are expected within the 15 pages before each notes section, with a large title (14pt or more) naming the statement. Verified only on the Bharat Forge report.</li>
           <li><strong>Longer analyses:</strong> sending the statements adds about 18,000 characters to every prompt. The sample tax analysis went from 79s to 127s.</li>
@@ -1055,7 +1130,7 @@ click an item
 
   <!-- 15. GLOSSARY -->
   <section id="glossary" class="mb-5">
-    <h2 class="section-title">15. Glossary</h2>
+    <h2 class="section-title">17. Glossary</h2>
     <div class="card shadow-sm">
       <div class="card-body p-0">
         <div class="table-responsive">
@@ -1089,7 +1164,7 @@ click an item
 
   <!-- 16. FILE MAP -->
   <section id="file-map" class="mb-5">
-    <h2 class="section-title">16. File Map</h2>
+    <h2 class="section-title">18. File Map</h2>
     <div class="card shadow-sm">
       <div class="card-body p-0">
         <div class="table-responsive">

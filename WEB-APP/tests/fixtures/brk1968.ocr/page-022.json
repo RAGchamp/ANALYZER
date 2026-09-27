@@ -1,0 +1,22 @@
+{
+ "printed_page": "25",
+ "page_type": "auditors_report",
+ "entity": "National Indemnity Company",
+ "statement_title": null,
+ "period": "Year ended December 31, 1968",
+ "schedule": null,
+ "headings": [
+  "PEAT, MARWICK, MITCHELL & CO.",
+  "CERTIFIED PUBLIC ACCOUNTANTS"
+ ],
+ "currency": null,
+ "unreadable": 0,
+ "pdf_page": 22,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

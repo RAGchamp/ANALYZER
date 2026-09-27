@@ -1,0 +1,27 @@
+{
+ "printed_page": "12",
+ "page_type": "notes",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "December 28, 1968",
+ "schedule": null,
+ "headings": [
+  "Notes to Consolidated Financial Statements, Continued",
+  "(7) 7 1/2% Subordinated Debentures",
+  "(8) Reduction in Federal Income Taxes",
+  "(9) Pension Plan",
+  "(10) Treatment of Realized Gains of Insurance Company Subsidiaries",
+  "(11) Long-Term Leases and Stock Options",
+  "(12) Commitments"
+ ],
+ "currency": "$",
+ "unreadable": 3,
+ "pdf_page": 11,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

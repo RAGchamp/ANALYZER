@@ -1,0 +1,44 @@
+{
+ "printed_page": "30",
+ "page_type": "statement",
+ "entity": "National Indemnity Company",
+ "statement_title": "Statement of Adjusted Stockholders' Equity",
+ "period": "December 31, 1968 with comparative figures for 1967",
+ "schedule": null,
+ "headings": [
+  "NATIONAL INDEMNITY COMPANY",
+  "Statement of Adjusted Stockholders' Equity",
+  "December 31, 1968 with comparative figures for 1967"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 27,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "2,515,638"
+  },
+  {
+   "label": "Adjusted stockholders' equity",
+   "figure": "$ 12,549,372"
+  },
+  {
+   "label": "(total)",
+   "figure": "2,632,193"
+  },
+  {
+   "label": "Adjusted equity before income taxes applicable to equity in unearned premiums and unrealized appreciation on investements",
+   "figure": "10,190,057"
+  },
+  {
+   "label": "Adjusted stockholders' equity",
+   "figure": "9,138,416"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

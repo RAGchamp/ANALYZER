@@ -6,6 +6,16 @@
    that scope (never page content) and returns JSON note ids.
 3. Keyword/synonym matching against titles if the Claude call fails.
 Notes named explicitly in the question ("Note 41") are always included.
+
+Old-format reports (index "format" == "legacy") have standalone accounts
+only, and their choices are schedules (SCH-E), numbered notes (N25) and
+report sections (DIR, AUD, SUM, CHR) - see legacy_index. They get their own
+selector prompt and extra keyword synonyms for the old terminology.
+
+Scanned reports (format "transcribed") have one section per entity (e.g. a
+registrant plus subsidiaries with their own statements). The scope is the
+entities the question names (default: the registrant); unit ids carry an
+entity code (BH-N5, NI-SCH-V, NFMI-AUD) when there is more than one entity.
 """
 
 import json
@@ -13,6 +23,7 @@ import logging
 import re
 
 import config
+import legacy_index
 from claude_client import ClaudeError, fill_prompt, run_claude, system_prompt
 
 log = logging.getLogger(__name__)
@@ -27,6 +38,14 @@ NEGATED_CONSOLIDATED_RE = re.compile(
 CONSOLIDATED_RE = re.compile(r"\bconsolidated\b", re.I)
 BOTH_RE = re.compile(r"\bboth\b", re.I)
 NOTE_REF_RE = re.compile(r"\bnote\s*(?:no\.?|number|#)?\s*(\d{1,3})\b", re.I)
+SCHEDULE_REF_RE = re.compile(
+    r"\bsch(?:edule)?\.?\s*[‘’'`\"]?\s*([A-Za-z]{1,2}|\d{1,2})\b[‘’'`\"]?", re.I)
+NARRATIVE_REF_RES = {
+    "DIR": re.compile(r"\b(?:directors'?|directors’) report\b|\breport of the directors\b", re.I),
+    "AUD": re.compile(r"\bauditors?'?’? report\b|\breport of the auditors?\b", re.I),
+    "SUM": re.compile(r"\b(?:financial summary|ten[- ]year|10[- ]year)\b", re.I),
+    "CHR": re.compile(r"\bchairman'?’?s (?:statement|speech|address)\b", re.I),
+}
 
 SECTION_PREFIX = {"consolidated": "C", "standalone": "S"}
 PREFIX_SECTION = {v: k for k, v in SECTION_PREFIX.items()}
@@ -66,6 +85,29 @@ SYNONYMS = {
     "estimate": ["judgements"], "expense": ["other expenses"],
     "raw material": ["raw materials"], "capital management": ["capital management"],
 }
+# Old-format reports: question word -> words in schedule / note titles,
+# sub-headings or the first words of untitled notes.
+LEGACY_SYNONYMS = {
+    "fixed asset": ["fixed assets"], "ppe": ["fixed assets"], "property": ["fixed assets"],
+    "capex": ["fixed assets", "expansion", "capital expenditure"],
+    "expansion": ["expansion", "fixed assets"], "depreciation": ["depreciation", "fixed assets"],
+    "reserve": ["reserves"], "surplus": ["reserves"], "equity": ["share capital", "reserves"],
+    "debtor": ["current assets", "sundry debtors"], "receivable": ["current assets", "sundry debtors"],
+    "creditor": ["current liabilities", "sundry creditors"], "payable": ["current liabilities"],
+    "inventor": ["current assets", "stocks"], "stock": ["stocks", "current assets"],
+    "borrow": ["secured loans", "unsecured loans", "loan"], "debt": ["secured loans", "unsecured loans"],
+    "loan": ["secured loans", "unsecured loans", "loans & advances"],
+    "interest": ["interest"], "tax": ["taxation", "tax"], "contingen": ["contingent"],
+    "guarantee": ["contingent", "guarantee"], "dispute": ["contingent", "assessment"],
+    "sales": ["sales", "turnover"], "revenue": ["sales", "other income"], "income": ["other income"],
+    "expense": ["expenses", "expenditure"], "cost": ["expenses", "raw materials"],
+    "raw material": ["raw materials"], "import": ["imports", "c.i.f"], "export": ["export"],
+    "foreign": ["foreign"], "employee": ["employees", "gratuity"], "gratuity": ["gratuity"],
+    "dividend": ["dividend"], "profit": ["financial results", "profit"],
+    "trend": ["financial summary"], "history": ["financial summary"], "year": ["financial summary"],
+    "director": ["directors' report"], "auditor": ["auditors' report"], "qualif": ["auditors' report"],
+    "amalgamat": ["amalgamat"], "capacity": ["capacity"], "production": ["production"],
+}
 STOPWORDS = set(
     "analyze analyse analysis comment company company's companys what which how the "
     "and for with this that from their its about into over note notes report annual "
@@ -87,22 +129,69 @@ def detect_scope(question):
     return "consolidated", "Default: notes to the consolidated financial statements."
 
 
+def is_legacy(index):
+    return index.get("format") == "legacy"
+
+
+def is_transcribed(index):
+    return index.get("format") == "transcribed"
+
+
+def max_units(index):
+    return config.MAX_UNITS_LEGACY if (is_legacy(index) or is_transcribed(index)) else config.MAX_NOTES
+
+
+def entity_scope(index, question):
+    """(section keys, reason) for a transcribed report: the entities the
+    question names, "subsidiaries" = all but the registrant, else the registrant."""
+    keys = list(index["sections"])
+    q = question.lower()
+    words = {k: {w for w in k.split("-") if len(w) > 2} for k in keys}
+    counts = {}
+    for ws in words.values():
+        for w in ws:
+            counts[w] = counts.get(w, 0) + 1
+    named = [k for k in keys
+             if words[k] and (all(w in q for w in words[k])
+                              or any(counts[w] == 1 and re.search(rf"\b{re.escape(w)}", q) for w in words[k]))]
+    if len(keys) > 1 and re.search(r"\bsubsidiar(y|ies)\b", q):
+        named += [k for k in keys[1:] if k not in named]
+    if named:
+        labels = ", ".join(index["sections"][k]["label"] for k in named)
+        return named, f"Question names: {labels}."
+    return keys[:1], (f"Default: {index['sections'][keys[0]]['label']} (the registrant)."
+                      if keys else "No statements found.")
+
+
 def _scope_sections(index, scope):
+    if isinstance(scope, (list, tuple)):
+        return [s for s in scope if s in index["sections"]]
+    if scope == "both" and is_transcribed(index):
+        return list(index["sections"])
     wanted = ["consolidated", "standalone"] if scope == "both" else [scope]
     return [s for s in wanted if s in index["sections"]]
 
 
-def _note_id(section, number):
-    return f"{SECTION_PREFIX[section]}{number}"
+def _note_id(section, note):
+    """C21 / S21 for modern notes; old-format units carry their own id (SCH-E, N25, DIR)."""
+    if isinstance(note, dict):
+        return note.get("id") or f"{SECTION_PREFIX[section]}{note['no']}"
+    return f"{SECTION_PREFIX[section]}{note}"
 
 
 def _note_choice(index, section, note):
+    section_label = (index["sections"].get(section, {}).get("label")
+                     or config.SECTION_LABELS.get(section, section))
     return {
-        "id": _note_id(section, note["no"]),
+        "id": _note_id(section, note),
         "section": section,
-        "section_label": config.SECTION_LABELS[section],
+        "section_label": section_label,
         "no": note["no"],
         "title": note["title"],
+        "kind": note.get("kind", "note"),
+        "label": note.get("label") or f"{section_label} Note {note['no']} — {note['title']}",
+        "title_is_excerpt": note.get("title_is_excerpt", False),
+        "parent": note.get("parent"),
         "start_page": note["start_page"],
         "end_page": note["end_page"],
         "printed_pages": note.get("printed_pages"),
@@ -123,21 +212,118 @@ def _by_id(index, scope):
 
 def _explicit_refs(question, index, scope):
     choices = _by_id(index, scope)
-    found = []
-    for match in NOTE_REF_RE.finditer(question):
+    wanted = []
+    if is_transcribed(index):
+        multi = len(index["sections"]) > 1
         for section in _scope_sections(index, scope):
-            note_id = _note_id(section, int(match.group(1)))
-            if note_id in choices and note_id not in found:
-                found.append(note_id)
+            prefix = f"{index['sections'][section]['code']}-" if multi else ""
+            wanted += [f"{prefix}N{int(m.group(1))}" for m in NOTE_REF_RE.finditer(question)]
+            wanted += [f"{prefix}SCH-{m.group(1).upper()}" for m in SCHEDULE_REF_RE.finditer(question)]
+            if NARRATIVE_REF_RES["AUD"].search(question) or re.search(r"accountants'?’? report", question, re.I):
+                wanted.append(f"{prefix}AUD")
+    elif is_legacy(index):
+        wanted += [f"N{int(m.group(1))}" for m in NOTE_REF_RE.finditer(question)]
+        wanted += [f"SCH-{m.group(1).upper()}" for m in SCHEDULE_REF_RE.finditer(question)]
+        wanted += [key for key, pattern in NARRATIVE_REF_RES.items() if pattern.search(question)]
+    else:
+        for match in NOTE_REF_RE.finditer(question):
+            wanted += [_note_id(section, int(match.group(1))) for section in _scope_sections(index, scope)]
+    found = []
+    for unit_id in wanted:
+        if unit_id in choices and unit_id not in found:
+            found.append(unit_id)
     return found
 
 
+def explicit_unit_ids(question, index, sections):
+    """Ids of the notes / schedules / report sections a follow-up names explicitly."""
+    if is_transcribed(index):
+        return _explicit_refs(question, index, list(sections) or list(index["sections"])[:1])
+    scope = "both" if len(sections) > 1 else (sections[0] if sections else "consolidated")
+    return _explicit_refs(question, index, scope)
+
+
+def drop_covered(choices):
+    """A whole notes schedule already contains its numbered notes: when both
+    are confirmed, send the schedule once."""
+    ids = {c["id"] for c in choices}
+    return [c for c in choices if not (c.get("parent") and c["parent"] in ids)]
+
+
+def prefer_specific(choices):
+    """When the selector picks a whole notes schedule and some of its notes,
+    keep the specific notes - they are what the question is about."""
+    parents = {c["parent"] for c in choices if c.get("parent")}
+    return [c for c in choices if c["id"] not in parents]
+
+
+def _legacy_selector_prompt(index, question):
+    section = index["sections"][legacy_index.SECTION]
+    groups = {"schedule": [], "note": [], "narrative": []}
+    for unit in section["notes"]:
+        subs = "; ".join(unit.get("subheadings", [])[:8])
+        if unit["kind"] == "schedule":
+            line = f"{unit['id']}: {unit['title']}"
+            if unit.get("part_of"):
+                line += f" (part of the {unit['part_of']})"
+        elif unit["kind"] == "note":
+            line = f"{unit['id']}: " + (f"— {unit['digest']}" if unit.get("title_is_excerpt")
+                                        else f"{unit['title']} — {unit.get('digest', '')}")
+        else:
+            line = f"{unit['id']}: {unit['title']}"
+        if subs:
+            line += f"  [sub-headings: {subs}]"
+        groups[unit["kind"]].append(line)
+    notes_list = "\n\n".join(
+        f"{heading}\n" + "\n".join(lines)
+        for heading, lines in (("SCHEDULES:", groups["schedule"]),
+                               ("NUMBERED NOTES:", groups["note"]),
+                               ("REPORT SECTIONS:", groups["narrative"]))
+        if lines)
+    period = (f"year ended {index['fiscal_year_end_label']}"
+              if index.get("fiscal_year_end_label") else "an old report")
+    return fill_prompt(
+        "selector_template_legacy.txt",
+        PERIOD=period,
+        STATEMENTS=", ".join(index.get("statements_present") or []) or "none found",
+        MAX_NOTES=config.MAX_UNITS_LEGACY,
+        NOTES_LIST=notes_list,
+        QUESTION=question,
+    )
+
+
+def _transcribed_selector_prompt(index, question, scope):
+    blocks = []
+    for key in _scope_sections(index, scope):
+        section = index["sections"][key]
+        statements = "; ".join(s["title"] for s in section["statements"]) or "none"
+        lines = [f"== {section['label']} (statements always provided: {statements})"]
+        for unit in section["notes"]:
+            line = f"{unit['id']}: {unit['label']}"
+            if unit.get("digest"):
+                line += f" — {unit['digest'][:140]}"
+            lines.append(line)
+        blocks.append("\n".join(lines))
+    return fill_prompt(
+        "selector_template_transcribed.txt",
+        DOCUMENT=index.get("document_type") or "report",
+        PERIOD=index.get("fiscal_year_end_label") or "unknown period",
+        MAX_NOTES=max_units(index),
+        NOTES_LIST="\n\n".join(blocks),
+        QUESTION=question,
+    )
+
+
 def _selector_prompt(index, question, scope):
+    if is_transcribed(index):
+        return _transcribed_selector_prompt(index, question, scope)
+    if is_legacy(index):
+        return _legacy_selector_prompt(index, question)
     lines = []
     for section in _scope_sections(index, scope):
         for note in index["sections"][section]["notes"]:
             subs = "; ".join(note["subheadings"][:8])
-            line = f"{_note_id(section, note['no'])}: {note['title']}"
+            line = f"{_note_id(section, note)}: {note['title']}"
             if subs:
                 line += f"  [sub-headings: {subs}]"
             lines.append(line)
@@ -150,7 +336,7 @@ def _selector_prompt(index, question, scope):
     )
 
 
-def _parse_selector_reply(reply, valid_ids):
+def _parse_selector_reply(reply, valid_ids, limit=None):
     match = re.search(r"\{.*\}", reply, re.S)
     if not match:
         raise ValueError("no JSON object in selector reply")
@@ -159,33 +345,40 @@ def _parse_selector_reply(reply, valid_ids):
     ids = [i for i in ids if i in valid_ids]
     if not ids:
         raise ValueError("selector returned no valid note ids")
-    return ids[:config.MAX_NOTES], str(data.get("reason", "")).strip()
+    return ids[:limit or config.MAX_NOTES], str(data.get("reason", "")).strip()
 
 
 def keyword_select(index, question, scope):
     """Fallback: score notes by synonym and word overlap with the question."""
     q = question.lower()
-    phrases = [p for key, ps in SYNONYMS.items() if key in q for p in ps]
+    synonyms = {**SYNONYMS, **LEGACY_SYNONYMS} if is_legacy(index) else SYNONYMS
+    phrases = [p for key, ps in synonyms.items() if key in q for p in ps]
     words = {w for w in re.findall(r"[a-z][a-z\-]{3,}", q) if w not in STOPWORDS}
     scored = []
     for section in _scope_sections(index, scope):
         for note in index["sections"][section]["notes"]:
             title = note["title"].lower()
             subs = " ".join(note["subheadings"]).lower()
+            digest = note.get("digest", "").lower()
             score = sum(3 for p in phrases if p in title)
-            score += sum(1 for p in phrases if p in subs)
+            score += sum(1 for p in phrases if p in subs or p in digest)
             score += sum(2 for w in words if w.rstrip("s") in title)
             if score:
-                scored.append((score, _note_id(section, note["no"])))
+                scored.append((score, _note_id(section, note)))
     if not scored:
         return []
     scored.sort(reverse=True)
     best = scored[0][0]
-    return [nid for score, nid in scored if score >= best * 0.5][:config.MAX_NOTES]
+    return [nid for score, nid in scored if score >= best * 0.5][:max_units(index)]
 
 
 def select_notes(index, question):
     scope, scope_reason = detect_scope(question)
+    if is_legacy(index):
+        scope = legacy_index.SECTION
+        scope_reason = "Old-format report: it has standalone accounts only (no consolidated accounts)."
+    if is_transcribed(index):
+        scope, scope_reason = entity_scope(index, question)
     if not _scope_sections(index, scope):
         available = list(index["sections"])
         if not available:
@@ -196,13 +389,16 @@ def select_notes(index, question):
     choices = _by_id(index, scope)
     explicit = _explicit_refs(question, index, scope)
     method, reason = "claude", ""
+    limit = max_units(index)
+    system_file = ("selector_system_transcribed.txt" if is_transcribed(index)
+                   else "selector_system_legacy.txt" if is_legacy(index) else "selector_system.txt")
     try:
         reply = run_claude(
             _selector_prompt(index, question, scope),
-            system_prompt("selector_system.txt"),
+            system_prompt(system_file),
             config.SELECTOR_TIMEOUT,
         )
-        ids, reason = _parse_selector_reply(reply, set(choices))
+        ids, reason = _parse_selector_reply(reply, set(choices), limit)
     except (ClaudeError, ValueError, json.JSONDecodeError) as exc:
         log.warning("Selector call failed (%s); using keyword fallback", exc)
         method = "keywords"
@@ -211,10 +407,17 @@ def select_notes(index, question):
                   f"(Claude selector unavailable: {str(exc)[:200]}).")
 
     ids = explicit + [i for i in ids if i not in explicit]
+    if isinstance(scope, list):
+        scope_label = " + ".join(index["sections"][k]["label"] for k in scope)
+        scope = "entities"
+    else:
+        scope_label = {"consolidated": "Consolidated", "standalone": "Standalone",
+                       "both": "Consolidated + Standalone"}.get(scope, scope)
     return {
         "scope": scope,
+        "scope_label": scope_label,
         "scope_reason": scope_reason,
         "method": method,
         "reason": reason,
-        "notes": [choices[i] for i in ids[:config.MAX_NOTES]],
+        "notes": prefer_specific([choices[i] for i in ids[:limit]]),
     }

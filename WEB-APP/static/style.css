@@ -283,6 +283,20 @@ code { background: var(--chip-bg); padding: 1px 5px; border-radius: 4px; font-si
 .report-link:hover { background: var(--chip-bg); }
 
 .markdown { overflow-wrap: anywhere; }
+/* Report format line (old-format reports can be overridden by hand). */
+.format-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 6px; font-size: 0.9rem; }
+.format-row select { padding: 2px 6px; font-size: 0.85rem; }
+/* Scanned report: the "Transcribe" panel. */
+.ocr-panel { margin-top: 10px; padding: 10px 12px; border: 1px solid var(--border); border-left: 4px solid var(--yellow);
+  border-radius: 6px; background: #fffdf2; }
+.ocr-panel .row { margin: 8px 0 4px; }
+.ocr-panel input { max-width: 200px; }
+/* Untitled old-format notes show their first words instead of a title. */
+.chip .excerpt { font-style: italic; font-weight: 500; }
+/* Answer streamed in while Claude is still writing. */
+.live-answer { margin-top: 12px; padding: 4px 0 0 14px; border-left: 3px solid var(--yellow); }
+.live-answer::after { content: "▍"; color: var(--navy); animation: live-caret 1s steps(1) infinite; }
+@keyframes live-caret { 50% { opacity: 0; } }
 .markdown h1, .markdown h2, .markdown h3 { color: var(--navy); margin: 1.1em 0 0.4em; }
 .markdown h2 { font-size: 1.15rem; border-bottom: 2px solid var(--yellow); padding-bottom: 3px; }
 .markdown h3 { font-size: 1rem; }

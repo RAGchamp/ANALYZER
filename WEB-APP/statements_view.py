@@ -25,7 +25,8 @@ import config
 ROTATION_WORDS = {-90: "90° clockwise", 90: "90° counter-clockwise", 180: "180°"}
 
 VALUE_RE = re.compile(r"^\(?[-–−]?\s*₹?\s*[\d,]+(\.\d+)?\)?%?$|^[-–—]$")
-NOTE_REF_RE = re.compile(r"^\d{1,2}[a-z]?$")
+# Notes column: "21", "5a"; old-format reports cite schedules instead: 'A', 'E'.
+NOTE_REF_RE = re.compile(r"^\d{1,2}[a-z]?$|^'[A-Z]{1,2}'$")
 PAGE_RE = re.compile(r"^--- (PDF page (\d+)(?: \(printed page (\w+)\))?)(.*?) ---$")
 SIGNATURE_RE = re.compile(r"^As per our report", re.I)
 UNIT_RE = re.compile(r"In\s*₹\s*Million|₹\s*in\s*Million", re.I)
@@ -286,7 +287,7 @@ def _build_table(block, columns, label_limit):
     for i in range(width):
         heads = [r["cells"][i].lower() for r in header_rows]
         values = [r["cells"][i] for r in out if r["kind"] in ("data", "total") and r["cells"][i]]
-        if "notes" in heads or (values and all(NOTE_REF_RE.match(v) for v in values)):
+        if "notes" in heads or "schedule" in heads or (values and all(NOTE_REF_RE.match(v) for v in values)):
             notes_col = i
             break
     return {"rows": out, "width": width, "notes_col": notes_col}
@@ -350,15 +351,145 @@ def statement_view(statement):
     }
 
 
-def report_view(index):
-    """Consolidated first, then standalone."""
-    sections = []
-    for key in ("consolidated", "standalone"):
-        section = index["sections"].get(key)
-        if not section:
+# ------------------------------------------------------------------ scanned reports
+# Transcribed statements are Markdown (ocr_transcribe). Their tables are turned
+# into the same rows as parse_page() builds - header / section / data / total /
+# text - so the page styles them exactly like the text-based reports.
+
+MD_ROW_RE = re.compile(r"^\s*\|(.*)\|\s*$")
+MD_SEPARATOR_RE = re.compile(r"^:?-{2,}:?$")
+MD_TOTAL_RE = re.compile(r"^total\b", re.I)
+PERIOD_LINE_RE = re.compile(
+    r"^(year|years|period|six months|as of|as at|at|with comparative|for the|"
+    r"(january|february|march|april|may|june|july|august|september|october|november|december)\b)", re.I)
+PAGE_NO_RE = re.compile(r"^[-–\s]*\d{1,3}[-–\s]*$")
+
+
+def _md_cells(line):
+    return [c.strip() for c in MD_ROW_RE.match(line).group(1).split("|")]
+
+
+def _plain_label(text):
+    return text.replace("**", "").strip()
+
+
+def _is_bold(text):
+    text = text.strip()
+    return text.startswith("**") and text.endswith("**") and len(text) > 4
+
+
+def _md_table(lines, tied):
+    """One Markdown table -> {"rows", "width", "notes_col"} (the parse_page shape)."""
+    rows = [_md_cells(line) for line in lines]
+    rows = [r for r in rows if not (any(r) and all(MD_SEPARATOR_RE.match(c) for c in r if c))]
+    width = max(len(r) for r in rows) - 1
+    out = []
+    header, body = rows[0], rows[1:]
+    if any(c for c in header):
+        out.append({"kind": "header", "label": _plain_label(header[0]),
+                    "cells": [_plain_label(c) for c in (header[1:] + [""] * width)[:width]]})
+    for row in body:
+        label, cells = row[0], (row[1:] + [""] * width)[:width]
+        plain = _plain_label(label)
+        if not any(c.strip() for c in cells):
+            if plain:
+                kind = "section" if (_is_bold(label) or plain.endswith(":")) else "text"
+                out.append({"kind": kind, "label": plain})
             continue
-        views = [statement_view(s) for s in section.get("statements", [])]
-        for v in views:
-            v["anchor"] = f"{key}-{v['id']}"
-        sections.append({"key": key, "label": config.SECTION_LABELS[key], "statements": views})
+        is_total = (not plain or bool(MD_TOTAL_RE.match(plain))
+                    or any(_plain_label(c) in tied for c in cells if c.strip()))
+        out.append({"kind": "total" if is_total else "data", "label": plain,
+                    "cells": [_plain_label(c) for c in cells]})
+    notes_col = None
+    header_rows = [r for r in out if r["kind"] == "header"]
+    for i in range(width):
+        heads = [r["cells"][i].lower() for r in header_rows]
+        values = [r["cells"][i] for r in out if r["kind"] in ("data", "total") and r["cells"][i]]
+        if "notes" in heads or "note" in heads or "schedule" in heads or (
+                values and all(NOTE_REF_RE.match(v) for v in values)):
+            notes_col = i
+            break
+    return {"rows": out, "width": width, "notes_col": notes_col}
+
+
+def _text_block(rows):
+    return {"rows": rows, "width": 1, "notes_col": None}
+
+
+def markdown_tables(markdown, statement_title="", entity=""):
+    """A transcribed page -> list of tables for the template.
+
+    The page's own heading lines (company name, statement title, period) are
+    dropped - the view already shows them - and so is the printed page number.
+    Other lines become text rows; "### ..." headings between tables become
+    section bands."""
+    tied = {item["figure"].replace("**", "").strip() for item in _tie_outs(markdown)}
+    lines = markdown.splitlines()
+    tables, pending, block = [], [], []
+    seen_table = False
+    title_plain = _norm(statement_title)
+    entity_plain = _norm(entity)
+
+    def flush_text():
+        if pending:
+            tables.append(_text_block(list(pending)))
+            pending.clear()
+
+    for line in lines + [""]:
+        if MD_ROW_RE.match(line):
+            block.append(line)
+            continue
+        if block:
+            flush_text()
+            tables.append(_md_table(block, tied))
+            block = []
+            seen_table = True
+        text = line.strip()
+        if not text:
+            continue
+        heading = text.startswith("#")
+        plain = _plain_label(text.lstrip("#").strip())
+        norm = _norm(plain)
+        if not seen_table and (heading or norm in (title_plain, entity_plain)
+                               or (plain.isupper() and len(plain.split()) <= 8)
+                               or PERIOD_LINE_RE.match(plain)):
+            continue            # the page's own title block
+        if PAGE_NO_RE.match(plain) or norm == title_plain:
+            continue
+        pending.append({"kind": "section" if heading or plain.endswith(":") else "text", "label": plain})
+    flush_text()
+    return tables
+
+
+def _tie_outs(markdown):
+    import ocr_quality  # local import: only needed for scanned reports
+    return ocr_quality.tie_outs(markdown)["tied"]
+
+
+def transcribed_statement_view(statement, entity=""):
+    body = statement["text"].split("\n", 1)[1] if "\n" in statement["text"] else ""
+    chunks = re.split(r"^--- PDF page \d+.*? ---$", body, flags=re.M)[1:]
+    pages = []
+    for page, chunk in zip(statement["pages"], chunks):
+        pages.append({"pdf_page": page["pdf_page"], "printed": page["printed"],
+                      "note": "transcribed from the page image",
+                      "tables": markdown_tables(chunk, statement["title"], entity)})
+    return {"id": statement["type"], "title": statement["title"], "label": statement["label"],
+            "pages": pages, "rotated": False}
+
+
+def report_view(index):
+    """In index order: consolidated first, then standalone (scanned reports:
+    the registrant first, then the other companies)."""
+    sections = []
+    transcribed = index.get("format") == "transcribed"
+    for key, section in index["sections"].items():
+        views = [transcribed_statement_view(s, section.get("entity", "")) if transcribed else statement_view(s)
+                 for s in section.get("statements", [])]
+        for n, v in enumerate(views):
+            # scanned reports can have two statements of one type (e.g. income
+            # and adjusted income), so their anchors are numbered
+            v["anchor"] = f"{key}-{v['id']}-{n}" if transcribed else f"{key}-{v['id']}"
+        label = section.get("label") or config.SECTION_LABELS.get(key, key)
+        sections.append({"key": key, "label": label, "statements": views})
     return sections

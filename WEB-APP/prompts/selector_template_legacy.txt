@@ -1,0 +1,19 @@
+An analyst asked this question about an old company annual report ({{PERIOD}}):
+
+QUESTION: {{QUESTION}}
+
+The report has standalone accounts only. Its primary statements ({{STATEMENTS}}) are always provided with the answer, so don't choose them. Choose from these other parts:
+- SCH-x: schedules forming part of the Balance Sheet or the Profit and Loss Account
+- Nn: numbered notes to the accounts. Many have no title; the text after the dash is their first words.
+- DIR / AUD / SUM / CHR: the Directors' Report, Auditors' Report, Financial Summary and Chairman's Statement
+
+{{NOTES_LIST}}
+
+Choose the parts whose content is needed to answer the question thoroughly.
+- Choose the primary schedule(s) and note(s) first.
+- Add the Directors' Report or the Auditors' Report when they are likely to discuss the matter (for example tax disputes, expansion plans, borrowings, audit qualifications), and the Financial Summary for multi-year trends.
+- Choose a whole notes schedule only when the question needs most of its notes; otherwise choose individual notes.
+- Choose at most {{MAX_NOTES}} items, and prefer fewer.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["SCH-E", "N25"], "reason": "one or two sentences explaining the choice"}

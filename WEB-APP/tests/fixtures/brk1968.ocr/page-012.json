@@ -1,0 +1,38 @@
+{
+ "printed_page": "13",
+ "page_type": "notes",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": null,
+ "schedule": null,
+ "headings": [
+  "Notes to Consolidated Financial Statements, Continued",
+  "(13) Subsequent Event",
+  "(14) Supplementary Profit and Loss Information"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 12,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "$ 870,422"
+  },
+  {
+   "label": "(total)",
+   "figure": "85,583"
+  },
+  {
+   "label": "(total)",
+   "figure": "956,005"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [
+  "63.825"
+ ],
+ "tesseract": true
+}

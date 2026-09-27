@@ -1,0 +1,24 @@
+{
+ "printed_page": "24",
+ "page_type": "exhibit_cover",
+ "entity": "National Indemnity Company",
+ "statement_title": null,
+ "period": "December 31, 1968",
+ "schedule": null,
+ "headings": [
+  "EXHIBIT 1",
+  "NATIONAL INDEMNITY COMPANY",
+  "Accountants' Report",
+  "Financial Statements - December 31, 1968"
+ ],
+ "currency": null,
+ "unreadable": 0,
+ "pdf_page": 21,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

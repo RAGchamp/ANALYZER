@@ -1,0 +1,18 @@
+An analyst asked this question about a scanned {{DOCUMENT}} ({{PERIOD}}), transcribed from page images:
+
+QUESTION: {{QUESTION}}
+
+Below are the parts of the report you can choose from, grouped by company. Each company's primary statements are always provided with the answer, so don't choose them.
+- xx-Nn: numbered notes to that company's financial statements
+- xx-SCH-x: supporting schedules
+- xx-AUD: the accountants' / auditors' report; xx-TXT: filing text (cover, items, index, letters)
+
+{{NOTES_LIST}}
+
+Choose the parts whose content is needed to answer the question thoroughly.
+- Choose the primary note(s) and schedule(s) first.
+- Add the auditors' report or the filing text only when they are likely to discuss the matter.
+- Choose at most {{MAX_NOTES}} items, and prefer fewer.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["BH-N5", "BH-SCH-I"], "reason": "one or two sentences explaining the choice"}

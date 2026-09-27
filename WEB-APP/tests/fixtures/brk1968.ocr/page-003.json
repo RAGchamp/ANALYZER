@@ -1,0 +1,22 @@
+{
+ "printed_page": "-2-",
+ "page_type": "narrative",
+ "entity": null,
+ "statement_title": null,
+ "period": "Fiscal year ended December 28, 1968",
+ "schedule": null,
+ "headings": [
+  "Items 4 to 9 inclusive",
+  "Item 10. Financial Statements and Exhibits"
+ ],
+ "currency": null,
+ "unreadable": 0,
+ "pdf_page": 3,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

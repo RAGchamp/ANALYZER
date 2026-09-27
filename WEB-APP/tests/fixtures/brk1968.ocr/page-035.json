@@ -1,0 +1,63 @@
+{
+ "printed_page": "38",
+ "page_type": "statement",
+ "entity": "National Fire & Marine Insurance Company",
+ "statement_title": "Statement of Adjusted Income",
+ "period": "Year ended December 31, 1968 with comparative figures for 1967",
+ "schedule": null,
+ "headings": [
+  "National Fire & Marine Insurance Company",
+  "Statement of Adjusted Income",
+  "Year ended December 31, 1968 with comparative figures for 1967",
+  "Adjustments to net income:",
+  "Investment gains:"
+ ],
+ "currency": "$",
+ "unreadable": 2,
+ "pdf_page": 35,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "(80,692)"
+  },
+  {
+   "label": "Net earnings, as adjusted (excluding investment gains)",
+   "figure": "$ 216,137"
+  },
+  {
+   "label": "(total)",
+   "figure": "129,554"
+  },
+  {
+   "label": "(total)",
+   "figure": "161,727"
+  },
+  {
+   "label": "Net investment gain",
+   "figure": "$ 291,281"
+  },
+  {
+   "label": "(total)",
+   "figure": "198,597"
+  },
+  {
+   "label": "(total)",
+   "figure": "(49,456)"
+  },
+  {
+   "label": "Net investment gain",
+   "figure": "149,141"
+  }
+ ],
+ "untied": [],
+ "unchecked": [
+  {
+   "label": "(total)",
+   "figure": "(156,524)"
+  }
+ ],
+ "figures_to_check": [],
+ "tesseract": true
+}

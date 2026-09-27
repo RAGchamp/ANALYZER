@@ -1,0 +1,114 @@
+{
+ "printed_page": "36",
+ "page_type": "statement",
+ "entity": "National Fire & Marine Insurance Company",
+ "statement_title": "Statement of Income",
+ "period": "Year ended December 31, 1968 with comparative figures for 1967",
+ "schedule": null,
+ "headings": [
+  "National Fire & Marine Insurance Company",
+  "Statement of Income",
+  "Underwriting income:",
+  "Underwriting expenses:",
+  "Investment income:"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 33,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "Premiums earned",
+   "figure": "2,275,655"
+  },
+  {
+   "label": "(total)",
+   "figure": "820,329"
+  },
+  {
+   "label": "(total)",
+   "figure": "823,614"
+  },
+  {
+   "label": "Net underwriting gain (loss)",
+   "figure": "(3,285)"
+  },
+  {
+   "label": "(total)",
+   "figure": "182,245"
+  },
+  {
+   "label": "(total)",
+   "figure": "176,473"
+  },
+  {
+   "label": "Profit from underwriting and investments",
+   "figure": "173,188"
+  },
+  {
+   "label": "Income before Federal income taxes and realized gains on investments",
+   "figure": "173,188"
+  },
+  {
+   "label": "Net income before realized gains on investments",
+   "figure": "167,275"
+  },
+  {
+   "label": "(total)",
+   "figure": "129,554"
+  },
+  {
+   "label": "Net income",
+   "figure": "$ 296,829"
+  },
+  {
+   "label": "Premiums earned",
+   "figure": "3,646,011"
+  },
+  {
+   "label": "(total)",
+   "figure": "1,437,482"
+  },
+  {
+   "label": "(total)",
+   "figure": "1,345,045"
+  },
+  {
+   "label": "Net underwriting gain (loss)",
+   "figure": "92,437"
+  },
+  {
+   "label": "(total)",
+   "figure": "131,504"
+  },
+  {
+   "label": "(total)",
+   "figure": "123,923"
+  },
+  {
+   "label": "Profit from underwriting and investments",
+   "figure": "216,360"
+  },
+  {
+   "label": "Income before Federal income taxes and realized gains on investments",
+   "figure": "216,288"
+  },
+  {
+   "label": "Net income before realized gains on investments",
+   "figure": "164,199"
+  },
+  {
+   "label": "(total)",
+   "figure": "198,597"
+  },
+  {
+   "label": "Net income",
+   "figure": "362,796"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

@@ -1,0 +1,24 @@
+{
+ "printed_page": null,
+ "page_type": "blank",
+ "entity": null,
+ "statement_title": null,
+ "period": null,
+ "schedule": null,
+ "headings": [
+  "END",
+  "DATE FILMED",
+  "MAY 7 1969",
+  "DISCLOSURE"
+ ],
+ "currency": null,
+ "unreadable": 0,
+ "pdf_page": 39,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": false
+}

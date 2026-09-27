@@ -1,0 +1,33 @@
+{
+ "printed_page": "28",
+ "page_type": "statement",
+ "entity": "National Indemnity Company",
+ "statement_title": "Statements of Paid-In and Unassigned Surplus",
+ "period": "Year ended December 31, 1968 with comparative figures for 1967",
+ "schedule": null,
+ "headings": [
+  "NATIONAL INDEMNITY COMPANY",
+  "Statements of Paid-In and Unassigned Surplus",
+  "Paid-In Surplus",
+  "Unassigned Surplus"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 25,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "End of year",
+   "figure": "$ 9,207,670"
+  },
+  {
+   "label": "End of year",
+   "figure": "5,856,614"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

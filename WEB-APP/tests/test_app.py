@@ -26,8 +26,9 @@ def client(index, tmp_path, monkeypatch):
 
     sent = []
 
-    def fake_claude(prompt, system, timeout):
+    def fake_claude(prompt, system, timeout, **kwargs):
         sent.append(prompt)
+        client.claude_kwargs.append(kwargs)
         if "Reply with ONLY this JSON" in prompt:
             return '{"notes": ["C21"], "reason": "Income tax note"}'
         return "## Summary\n- Effective tax rate fell to 34.66%\n\n| a | b |\n|---|---|\n| 1 | 2 |"
@@ -37,6 +38,7 @@ def client(index, tmp_path, monkeypatch):
     app_module.app.config["TESTING"] = True
     client = app_module.app.test_client()
     client.sent = sent
+    client.claude_kwargs = []
     return client
 
 
@@ -149,7 +151,7 @@ def test_manual_pages_and_errors(client):
 
 def test_claude_reply_html_is_escaped(client, monkeypatch):
     monkeypatch.setattr(app_module, "run_claude",
-                        lambda *a: "Hello <script>alert(1)</script> **bold**")
+                        lambda *a, **k: "Hello <script>alert(1)</script> **bold**")
     job = wait_job(client, client.post("/api/analyze", json={
         "report": REPORT, "question": "x", "notes": ["C21"]}).get_json()["job_id"])
     html = job["result"]["answer_html"]
@@ -164,3 +166,39 @@ def test_standalone_notes_get_standalone_statements(client):
     prompt = client.sent[-1]
     assert "=== Balance Sheet (Standalone) ===" in prompt
     assert "=== Consolidated Balance Sheet (Consolidated) ===" not in prompt
+
+
+def test_analysis_uses_configured_effort(client, monkeypatch):
+    monkeypatch.setattr(config, "CLAUDE_EFFORT", "low")
+    job = wait_job(client, client.post("/api/analyze", json={
+        "report": REPORT, "question": "x", "notes": ["C21"]}).get_json()["job_id"])
+    assert job["status"] == "done"
+    assert client.claude_kwargs[-1]["effort"] == "low"
+    assert callable(client.claude_kwargs[-1]["on_progress"])
+
+
+def test_running_job_shows_answer_so_far(client, monkeypatch):
+    import threading
+    release = threading.Event()
+
+    def slow_claude(prompt, system, timeout, effort=None, on_progress=None):
+        on_progress("thinking", "")
+        on_progress("writing", "## Summary\n- Tax <b>rate</b> fell")
+        assert release.wait(5)
+        return "## Summary\n- Tax rate fell to 34.66%"
+
+    monkeypatch.setattr(app_module, "run_claude", slow_claude)
+    job_id = client.post("/api/analyze", json={
+        "report": REPORT, "question": "x", "notes": ["C21"]}).get_json()["job_id"]
+    for _ in range(100):
+        job = client.get(f"/api/jobs/{job_id}").get_json()
+        if job.get("partial_html"):
+            break
+        time.sleep(0.05)
+    assert job["status"] == "running" and job["phase"] == "writing"
+    assert "<h2>Summary</h2>" in job["partial_html"]
+    assert "&lt;b&gt;" in job["partial_html"]          # escaped like the final answer
+    release.set()
+    job = wait_job(client, job_id)
+    assert job["status"] == "done" and "partial_html" not in job
+    assert "34.66%" in job["result"]["answer"]

@@ -1,0 +1,28 @@
+{
+ "printed_page": "32",
+ "page_type": "notes",
+ "entity": "National Indemnity Company",
+ "statement_title": null,
+ "period": "December 31, 1968",
+ "schedule": null,
+ "headings": [
+  "NATIONAL INDEMNITY COMPANY",
+  "Notes to Financial Statements, Continued",
+  "(3) Bonds and Stocks:",
+  "(4) Real Estate:",
+  "(5) Unearned Premiums:",
+  "(6) Unpaid Losses and Loss expenses:",
+  "(7) Federal Income Taxes:",
+  "(8) Stock Dividend:"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 29,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

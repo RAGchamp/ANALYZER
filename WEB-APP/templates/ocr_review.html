@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ report }} — Transcription review, page {{ page }}</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root{ --nav-blue:#0a1128; --nav-yellow:#f2b400; }
+  body{ background:#f7f8fa; margin:0; }
+  .topnav{ position:sticky; top:0; z-index:1030; background:var(--nav-blue); color:var(--nav-yellow);
+    padding:.7rem 1.5rem; display:flex; justify-content:space-between; align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25); }
+  .topnav .brand svg{ height:36px; width:auto; display:block; }
+  .topnav .tagline{ font-weight:600; letter-spacing:.15em; font-style:italic; }
+  .layout{ display:grid; grid-template-columns:180px 1fr 1fr; gap:14px; padding:14px; }
+  .pages{ max-height:calc(100vh - 90px); overflow:auto; background:#fff; border:1px solid #dde1ea; border-radius:8px; }
+  .pages a{ display:flex; justify-content:space-between; padding:4px 10px; text-decoration:none; color:#222;
+    font-size:.85rem; border-bottom:1px solid #f0f2f6; }
+  .pages a.current{ background:#fff3cd; font-weight:600; }
+  .pages .type{ color:#6b7280; font-size:.75rem; }
+  .pages .flag{ color:#b45309; font-weight:600; }
+  .pages .todo{ color:#9ca3af; }
+  .pane{ background:#fff; border:1px solid #dde1ea; border-radius:8px; padding:12px;
+    max-height:calc(100vh - 90px); overflow:auto; }
+  .pane img{ width:100%; height:auto; border:1px solid #e5e7eb; }
+  .transcription table{ border-collapse:collapse; font-size:.85rem; margin:8px 0; }
+  .transcription td, .transcription th{ border:1px solid #dde1ea; padding:3px 8px; }
+  .transcription td:not(:first-child){ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  mark{ background:#ffe08a; padding:0 2px; }
+  mark.unreadable{ background:#fca5a5; }
+  .checks li{ font-size:.88rem; }
+  @media (max-width: 1000px){ .layout{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="topnav">
+  <span class="brand">{{ logo_svg | safe }}</span>
+  <div class="tagline">TRANSCRIPTION REVIEW</div>
+</div>
+
+<div class="layout">
+  <nav class="pages" aria-label="Pages">
+    {% for p in pages %}
+    <a href="?report={{ report|urlencode }}&page={{ p.no }}" class="{{ 'current' if p.no == page else '' }}">
+      <span>p.{{ p.no }} <span class="type">{{ p.type }}</span></span>
+      {% if p.status != 'done' %}<span class="todo" title="{{ p.status }}">–</span>
+      {% elif p.flags %}<span class="flag" title="{{ p.flags }} flag(s)">{{ p.flags }}</span>{% endif %}
+    </a>
+    {% endfor %}
+  </nav>
+
+  <section class="pane">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <strong>{{ report }} · PDF page {{ page }} of {{ page_count }}</strong>
+      <span>
+        {% if page > 1 %}<a class="btn btn-sm btn-outline-secondary" href="?report={{ report|urlencode }}&page={{ page - 1 }}">← Prev</a>{% endif %}
+        {% if page < page_count %}<a class="btn btn-sm btn-outline-secondary" href="?report={{ report|urlencode }}&page={{ page + 1 }}">Next →</a>{% endif %}
+      </span>
+    </div>
+    <img src="/ocr-image?report={{ report|urlencode }}&page={{ page }}" alt="Scanned page {{ page }}">
+  </section>
+
+  <section class="pane">
+    {% if record.status == 'done' %}
+    <div class="mb-2 small text-muted">
+      {{ header.page_type }}{% if header.entity %} · {{ header.entity }}{% endif %}
+      {% if header.statement_title %} · {{ header.statement_title }}{% endif %}
+      {% if header.schedule %} · {{ header.schedule }}{% endif %}
+      {% if header.printed_page %} · printed page {{ header.printed_page }}{% endif %}
+      · read at {{ record.dpi }} dpi in {{ record.seconds }}s
+    </div>
+    <ul class="checks mb-2">
+      <li>Unreadable characters: <strong>{{ header.unreadable or 0 }}</strong> (shown in red)</li>
+      <li>Totals that add up: {{ (header.tied or [])|length }}
+        {% if header.untied %} · <strong class="text-danger">don't add up: {% for t in header.untied %}{{ t.figure }}{% if t.label != '(total)' %} ({{ t.label }}){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</strong>{% endif %}
+        {% if header.unchecked %} · can't be checked (unreadable figure above): {% for t in header.unchecked %}{{ t.figure }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+      </li>
+      <li>Figure cross-check (Tesseract):
+        {% if header.tesseract %}{{ (header.figures_to_check or [])|length }} figure(s) not confirmed (shown in yellow)
+        {% else %}not run{% if not tesseract %} (Tesseract is not installed){% endif %}{% endif %}</li>
+    </ul>
+    {% elif record.status == 'failed' %}
+    <div class="alert alert-danger">This page could not be transcribed: {{ record.error }}</div>
+    {% else %}
+    <div class="alert alert-secondary">This page has not been transcribed yet.</div>
+    {% endif %}
+    <div class="mb-3">
+      <button class="btn btn-sm btn-primary" id="retranscribe" data-dpi="">Re-transcribe this page</button>
+      <button class="btn btn-sm btn-outline-primary" id="retranscribe-hi" data-dpi="200">Re-transcribe at 200 dpi</button>
+      <span id="retranscribe-status" class="small text-muted ms-2"></span>
+    </div>
+    <div class="transcription">{{ transcription_html | safe }}</div>
+  </section>
+</div>
+
+<script>
+  // Re-transcribe this page, wait for the job, then reload to show the new text.
+  async function retranscribe(dpi) {
+    const status = document.getElementById("retranscribe-status");
+    document.querySelectorAll("#retranscribe, #retranscribe-hi").forEach((b) => (b.disabled = true));
+    status.textContent = "Claude is reading the page…";
+    try {
+      const res = await fetch("/api/ocr/page", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ report: {{ report|tojson }}, page: {{ page }}, dpi: dpi || null }),
+      });
+      const { job_id, error } = await res.json();
+      if (!job_id) throw new Error(error || "Could not start");
+      for (;;) {
+        await new Promise((r) => setTimeout(r, 1500));
+        const job = await (await fetch(`/api/jobs/${job_id}`)).json();
+        if (job.status === "done") { location.reload(); return; }
+        if (job.status === "error") throw new Error(job.error);
+      }
+    } catch (err) {
+      status.textContent = err.message;
+      document.querySelectorAll("#retranscribe, #retranscribe-hi").forEach((b) => (b.disabled = false));
+    }
+  }
+  document.getElementById("retranscribe").addEventListener("click", () => retranscribe(null));
+  document.getElementById("retranscribe-hi").addEventListener("click", () => retranscribe(200));
+</script>
+</body>
+</html>

@@ -32,6 +32,28 @@
           <button type="button" id="report-refresh" class="ghost" title="Reload the list">↻</button>
         </div>
         <div id="index-status" class="muted">PDFs are read from <code>{{ reports_dir }}</code></div>
+        <div id="format-row" class="format-row hidden">
+          <span id="format-text"></span>
+          <a id="format-review" class="hidden" href="#" target="_blank" rel="noopener">Review transcription ↗</a>
+          <label id="format-choice" class="muted small-text">Report format:
+            <select id="format-select" title="Change only if the format was detected wrongly">
+              <option value="auto">Detect automatically</option>
+              <option value="modern">Modern (notes to financial statements)</option>
+              <option value="legacy">Old (schedules, Companies Act 1956)</option>
+            </select>
+          </label>
+        </div>
+        <!-- scanned report: transcribe it with Claude first -->
+        <div id="ocr-panel" class="ocr-panel hidden">
+          <div id="ocr-text"></div>
+          <div class="row">
+            <button type="button" id="ocr-start">Transcribe</button>
+            <input type="text" id="ocr-pages" placeholder="or only pages, e.g. 7-12" />
+            <button type="button" id="ocr-start-pages" class="ghost">Transcribe these pages</button>
+          </div>
+          <div class="muted small-text"><span id="ocr-note"></span>
+            <a id="ocr-review" href="#" target="_blank" rel="noopener">Review pages ↗</a></div>
+        </div>
         <div id="statements-panel" class="statements-panel hidden"></div>
         <div id="view-statements-row" class="view-statements-row hidden">
           <a id="view-statements-link" href="#" target="_blank" rel="noopener">View the financial statements ↗</a>
@@ -47,7 +69,7 @@
           <button type="button" id="mic-btn" title="Ask by voice">🎤</button>
           <button type="button" id="identify-btn" disabled>Identify notes</button>
         </div>
-        <div class="muted small-text">Uses the notes to the <b>consolidated</b> financial statements unless your question asks for standalone.</div>
+        <div id="scope-hint" class="muted small-text">Uses the notes to the <b>consolidated</b> financial statements unless your question asks for standalone.</div>
       </section>
 
       <!-- STEP 3 -->
@@ -81,8 +103,11 @@
           <div>
             <div id="progress-text" class="thinking-text">Working…</div>
             <div id="progress-time" class="muted small-text"></div>
+            <button type="button" id="progress-cancel" class="ghost small hidden">Cancel</button>
           </div>
         </div>
+        <!-- Claude's answer as it is being written (streamed) -->
+        <div id="live-answer" class="answer markdown live-answer hidden"></div>
       </section>
 
       <div id="error-box" class="card error hidden"></div>

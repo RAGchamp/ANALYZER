@@ -1,0 +1,30 @@
+Read the image file {{IMAGE}} in the current folder. It is one scanned page of a company annual report or annual filing (for example a Form 10-K). It may be decades old, typewritten and noisy.
+
+Transcribe the page faithfully, then describe it. Reply with exactly two parts and nothing else.
+
+PART 1 - a JSON object in a ```json fenced block, with these keys:
+  "printed_page": the page number printed on the page, as a string, or null
+  "page_type": one of "statement", "notes", "schedule", "auditors_report", "narrative", "cover", "index", "exhibit_cover", "blank", "other"
+     statement = a primary financial statement: balance sheet, statement of assets and liabilities, statement of income or earnings, retained earnings, surplus, stockholders' equity, source and application of funds
+     notes = notes to financial statements
+     schedule = a supporting schedule, e.g. "Schedule V" or "Schedule 'E'"
+     auditors_report = an accountants' or auditors' report or opinion
+     narrative = a letter to shareholders, directors' report, report text or filing items
+     cover / index = a filing cover page, contents page or index of financial statements
+     exhibit_cover = a page that only introduces an exhibit or another company's statements
+     blank = a blank page, filler, microfilm target or end card
+  "entity": the company whose accounts or text this page belongs to, as printed (e.g. "Berkshire Hathaway Inc."), or null
+  "statement_title": the statement's full title if page_type is "statement", else null
+  "period": the period or date the page reports (e.g. "Year ended December 28, 1968"), or null
+  "schedule": the schedule's label if page_type is "schedule" (e.g. "Schedule V"), else null
+  "headings": the headings printed on the page, in order (include note headings such as "(1) Basis of Consolidation")
+  "currency": the currency symbol or unit used, e.g. "$" or "Rs.", or null
+  "unreadable": how many characters you marked [?]
+
+PART 2 - the page as GitHub-flavoured Markdown, starting on the line after the JSON block:
+  - Keep the reading order. Start every statement title, note heading and schedule title line with "### ".
+  - Transcribe every table as a Markdown table, one column per printed column. Keep subtotal and total rows; use an empty label cell for an unlabelled total.
+  - Copy figures exactly as printed: keep commas, $ signs, parentheses, dashes and even obvious misprints. Never correct, round or recompute anything.
+  - Replace each character you cannot read with [?]. Don't guess.
+  - Ignore scan noise, punch holes and stamps. Write [signature] where a signature is.
+  - No commentary.

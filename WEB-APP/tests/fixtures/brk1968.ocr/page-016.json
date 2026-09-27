@@ -1,0 +1,41 @@
+{
+ "printed_page": "18",
+ "page_type": "schedule",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "Year ended December 28, 1968",
+ "schedule": "Schedule VI",
+ "headings": [
+  "BERKSHIRE HATHAWAY INC.",
+  "Accumulated Depreciation of Properties, Plants and Equipment",
+  "Year ended December 28, 1968",
+  "Schedule VI"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 16,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "$ 19,238,314"
+  },
+  {
+   "label": "(total)",
+   "figure": "662,061"
+  },
+  {
+   "label": "(total)",
+   "figure": "3,764,306"
+  },
+  {
+   "label": "(total)",
+   "figure": "16,136,069"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

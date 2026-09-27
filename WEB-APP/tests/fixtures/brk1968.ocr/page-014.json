@@ -1,0 +1,46 @@
+{
+ "printed_page": "15-16",
+ "page_type": "schedule",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "Year ended December 28, 1968",
+ "schedule": "Schedule III",
+ "headings": [
+  "BERKSHIRE HATHAWAY INC.",
+  "Investments in Securities of Affiliates",
+  "Year ended December 28, 1968",
+  "Schedule III",
+  "Subsidiary consolidated",
+  "Subsidiaries not consolidated"
+ ],
+ "currency": "$",
+ "unreadable": 1,
+ "pdf_page": 14,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "$ 10,259,079"
+  },
+  {
+   "label": "(total)",
+   "figure": "1,789,402"
+  },
+  {
+   "label": "(total)",
+   "figure": "706,504"
+  }
+ ],
+ "untied": [],
+ "unchecked": [
+  {
+   "label": "(total)",
+   "figure": "12,754,985"
+  }
+ ],
+ "figures_to_check": [
+  "10,468,947"
+ ],
+ "tesseract": true
+}

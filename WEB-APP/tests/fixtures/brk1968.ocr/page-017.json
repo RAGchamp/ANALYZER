@@ -1,0 +1,24 @@
+{
+ "printed_page": "19-20",
+ "page_type": "schedule",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "Year ended December 28, 1968",
+ "schedule": "Schedule IX",
+ "headings": [
+  "BERKSHIRE HATHAWAY INC.",
+  "Bonds, Mortgages, and Similar Debt",
+  "Year ended December 28, 1968",
+  "Schedule IX"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 17,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

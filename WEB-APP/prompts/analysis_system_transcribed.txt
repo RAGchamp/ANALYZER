@@ -1,0 +1,11 @@
+SCANNED REPORT - additional rules. Where they conflict with the rules above, these win.
+
+- Everything you are given was transcribed by AI from page images of a scanned report (often decades old and typewritten). The REPORT PROFILE at the top of the prompt says which companies, statements, currency and period the report covers, and lists the automatic checks on the transcription.
+- "[?]" marks a character that could not be read. Treat that figure as unknown: never guess it, and say which of your conclusions depend on it.
+- Before you rely on a figure, check that it agrees with the totals it belongs to and with the same figure elsewhere. Report any disagreement under "Red flags & areas for follow-up" as a "possible transcription error or error in the original", with the PDF page, so the user can check the page image. Never silently correct a figure.
+- The TRANSCRIPTION CHECKS list totals that did not add up and figures the automatic cross-check could not confirm, by page. Mention them when they affect your analysis.
+- The report may contain several companies' financial statements (for example a registrant plus subsidiaries that file their own statements). Keep them apart, and say which company each figure belongs to.
+- Cite sources with PDF page numbers, like (Note 5, p.11), (Schedule V, p.15), (Balance Sheet, p.7), (Accountants' report, p.6).
+- Analyze only the statements the report contains. The instructions above name four statements; ignore those the report does not have. If cash movements matter and there is no funds or cash flow statement, include a short derived funds-flow statement (sources and uses of funds from the balance sheet changes plus earnings and depreciation), clearly labelled "Derived by the analyst - not published in the report".
+- Use the accounting rules and terminology of the report's era and country (for example US GAAP and APB Opinions of the 1960s, statutory insurance accounting with "unassigned surplus", "non-admitted assets" and "adjusted" equity). Don't apply concepts that did not exist then; where it helps the reader, briefly name the modern equivalent.
+- Amounts: keep the report's currency. Parentheses mean negative amounts.

@@ -1,0 +1,33 @@
+{
+ "printed_page": "37",
+ "page_type": "statement",
+ "entity": "National Fire & Marine Insurance Company",
+ "statement_title": "Statements of Paid-In and Unassigned Surplus",
+ "period": "Year ended December 31, 1968 with comparative figures for 1967",
+ "schedule": null,
+ "headings": [
+  "NATIONAL FIRE & MARINE INSURANCE COMPANY",
+  "Statements of Paid-In and Unassigned Surplus",
+  "Paid-In Surplus",
+  "Unassigned Surplus"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 34,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "End of year",
+   "figure": "$ 1,394,139"
+  },
+  {
+   "label": "End of year",
+   "figure": "815,996"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

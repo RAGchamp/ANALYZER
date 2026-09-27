@@ -1,0 +1,25 @@
+{
+ "printed_page": "1",
+ "page_type": "cover",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "Fiscal year beginning December 31, 1967 and ended December 28, 1968",
+ "schedule": null,
+ "headings": [
+  "SECURITIES AND EXCHANGE COMMISSION",
+  "FORM 10-K",
+  "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 1,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [
+  "1934"
+ ],
+ "tesseract": true
+}

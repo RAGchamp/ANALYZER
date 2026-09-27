@@ -8,6 +8,20 @@ const els = {
   reportSelect: $("report-select"),
   reportRefresh: $("report-refresh"),
   indexStatus: $("index-status"),
+  formatRow: $("format-row"),
+  formatReview: $("format-review"),
+  formatChoice: $("format-choice"),
+  ocrPanel: $("ocr-panel"),
+  ocrText: $("ocr-text"),
+  ocrNote: $("ocr-note"),
+  ocrReview: $("ocr-review"),
+  ocrStart: $("ocr-start"),
+  ocrPages: $("ocr-pages"),
+  ocrStartPages: $("ocr-start-pages"),
+  progressCancel: $("progress-cancel"),
+  formatText: $("format-text"),
+  formatSelect: $("format-select"),
+  scopeHint: $("scope-hint"),
   statementsPanel: $("statements-panel"),
   viewStatementsRow: $("view-statements-row"),
   viewStatementsLink: $("view-statements-link"),
@@ -27,6 +41,7 @@ const els = {
   progress: $("progress"),
   progressText: $("progress-text"),
   progressTime: $("progress-time"),
+  liveAnswer: $("live-answer"),
   errorBox: $("error-box"),
   result: $("result"),
   resultMeta: $("result-meta"),
@@ -46,7 +61,9 @@ const els = {
 const state = {
   report: "",
   indexed: false,
-  allNotes: [],       // every note in the report (both sections)
+  allNotes: [],       // every note in the report (both sections); old reports: schedules, notes, report sections
+  format: "modern",   // "legacy" for old reports (Companies Act 1956 schedules), "transcribed" for scans
+  jobId: null,        // the running background job (for Cancel)
   selected: [],       // note choice objects chosen for analysis
   question: "",
   threadId: null,
@@ -85,6 +102,8 @@ function refreshButtons() {
   els.analyzeBtn.disabled = state.busy || (!state.selected.length && !els.pagesInput.value.trim());
   els.followupBtn.disabled = state.busy || !state.threadId || !els.followupInput.value.trim();
   els.reportSelect.disabled = state.busy;
+  els.ocrStart.disabled = state.busy;
+  els.ocrStartPages.disabled = state.busy;
 }
 
 function pageRange(n) {
@@ -94,7 +113,34 @@ function pageRange(n) {
 }
 
 function noteLabel(n) {
-  return `${n.section_label} Note ${n.no} — ${n.title}`;
+  return n.label || `${n.section_label} Note ${n.no} — ${n.title}`;
+}
+
+const SCOPE_HINTS = {
+  modern: "Uses the notes to the <b>consolidated</b> financial statements unless your question asks for standalone.",
+  legacy: "Old-format report: uses its <b>schedules, notes and report sections</b> (standalone accounts only).",
+  transcribed: "Scanned report: uses the notes and schedules of the <b>company your question names</b> (default: the registrant).",
+};
+
+// The detected (or manually chosen) report format, with a way to override it.
+function showFormat(data) {
+  state.format = data.format;
+  const how = data.format_source === "manual" ? "set manually" : "detected";
+  const scanned = data.format === "transcribed";
+  if (scanned) {
+    const o = data.ocr || {};
+    els.formatText.textContent = `Format: Scanned — transcribed by Claude (${o.pages} pages; ` +
+      `${o.unreadable} unreadable characters, ${o.to_check} figures to check, ` +
+      `${o.untied} total${o.untied === 1 ? "" : "s"} that ${o.untied === 1 ? "doesn't" : "don't"} add up)`;
+    els.formatReview.href = data.review_url;
+  } else {
+    els.formatText.textContent = `Format: ${data.format_label} (${how})`;
+  }
+  show(els.formatReview, scanned);
+  show(els.formatChoice, !scanned);
+  els.formatSelect.value = data.format_source === "manual" ? data.format : "auto";
+  els.scopeHint.innerHTML = SCOPE_HINTS[data.format] || SCOPE_HINTS.modern;
+  show(els.formatRow, true);
 }
 
 // The spinner and error box normally sit near the top of the page (below
@@ -112,8 +158,10 @@ function placeStatus(anchor) {
 }
 
 // Start a background job and poll it until it finishes. With `anchor`,
-// progress and errors are shown right below that element.
-async function runJob(url, body, label, anchor = null) {
+// progress and errors are shown right below that element. While Claude is
+// writing, the job carries the answer so far (partial_html), shown below the
+// spinner; the finished answer then replaces it.
+async function runJob(url, body, label, anchor = null, opts = {}) {
   placeStatus(anchor);
   setBusy(true, label);
   if (anchor) els.progress.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -125,14 +173,32 @@ async function runJob(url, body, label, anchor = null) {
   els.progressTime.textContent = "0s elapsed";
   try {
     const { job_id } = await api(url, body);
+    state.jobId = job_id;
+    show(els.progressCancel, !!opts.cancellable);
     for (;;) {
-      await new Promise((r) => setTimeout(r, 1500));
+      await new Promise((r) => setTimeout(r, 1000));
       const job = await api(`/api/jobs/${job_id}`);
       if (job.status === "done") return job.result;
       if (job.status === "error") throw new Error(job.error);
+      if (job.progress) {
+        els.progressText.textContent = `${label} ${job.progress}`;
+      }
+      if (job.phase === "writing") {
+        els.progressText.textContent = "Claude is writing the answer — you can start reading below…";
+      } else if (job.phase === "thinking") {
+        els.progressText.textContent = "Claude is thinking about your question…";
+      }
+      if (job.partial_html) {
+        els.liveAnswer.innerHTML = job.partial_html; // rendered + HTML-escaped server-side
+        show(els.liveAnswer, true);
+      }
     }
   } finally {
     clearInterval(timer);
+    state.jobId = null;
+    show(els.progressCancel, false);
+    els.liveAnswer.innerHTML = "";
+    show(els.liveAnswer, false);
     setBusy(false);
   }
 }
@@ -165,11 +231,12 @@ async function loadReports() {
   }
 }
 
-async function selectReport(name) {
+async function selectReport(name, format = null) {
   state.report = name;
   state.indexed = false;
   state.allNotes = [];
   refreshButtons();
+  show(els.formatRow, false);
   if (!name) {
     els.indexStatus.textContent = "";
     return;
@@ -179,10 +246,18 @@ async function selectReport(name) {
   show(els.statementsPanel, false);
   show(els.viewStatementsRow, false);
   try {
-    const data = await api("/api/index", { report: name });
+    const body = format ? { report: name, format } : { report: name };
+    const data = await api("/api/index", body);
+    show(els.ocrPanel, false);
+    if (data.needs_transcription) {
+      showOcrPanel(data);
+      refreshButtons();
+      return;
+    }
     state.allNotes = data.notes;
     state.indexed = true;
     els.indexStatus.textContent = `${data.page_count} pages · ${data.summary}`;
+    showFormat(data);
     fillAddNoteSelect();
     renderStatements(data.sections);
   } catch (err) {
@@ -190,6 +265,37 @@ async function selectReport(name) {
     showError(err.message);
   }
   refreshButtons();
+}
+
+// A scanned report must be transcribed (once) before it can be analyzed.
+function showOcrPanel(data) {
+  const est = data.estimate;
+  const st = data.status || {};
+  els.indexStatus.textContent = `${data.page_count} pages · scanned report (no text layer)`;
+  els.ocrText.innerHTML = "";
+  const line = document.createElement("div");
+  line.textContent = `This report is scanned. Transcribe it with Claude to analyze it: ${est.pages} page(s) to go, ` +
+    `about ${est.minutes} min, ≈ $${est.usd.toFixed(2)} at API rates (uses your Claude Code plan). ` +
+    "Pages are cached, so this is needed only once.";
+  els.ocrText.appendChild(line);
+  const notes = [];
+  if (st.done) notes.push(`${st.done} page(s) already transcribed.`);
+  if (st.failed && st.failed.length) notes.push(`Failed pages: ${st.failed.join(", ")} (click Transcribe to retry).`);
+  notes.push(data.tesseract ? "Figures are cross-checked with Tesseract." : "Tesseract isn't installed, so figures are checked by totals only.");
+  els.ocrNote.textContent = notes.join(" ") + " ";
+  els.ocrReview.href = data.review_url;
+  show(els.ocrPanel, true);
+}
+
+async function transcribe(pages) {
+  showError("");
+  try {
+    await runJob("/api/ocr/start", { report: state.report, pages },
+      "Transcribing the scanned pages with Claude…", null, { cancellable: true });
+  } catch (err) {
+    showError(err.message);
+  }
+  await selectReport(state.report);
 }
 
 // The primary statements loaded with the report, per section. Each one can
@@ -228,6 +334,12 @@ function renderStatements(sections) {
       details.append(summary, pre);
       group.appendChild(details);
     }
+    if (section.missing_statements && section.missing_statements.length) {
+      const missing = document.createElement("div");
+      missing.className = "muted small-text";
+      missing.textContent = `Not in this report: ${section.missing_statements.join(", ")} (not required at the time).`;
+      group.appendChild(missing);
+    }
     els.statementsPanel.appendChild(group);
   }
   show(els.statementsPanel, any || Object.keys(sections).length > 0);
@@ -236,17 +348,22 @@ function renderStatements(sections) {
   show(els.viewStatementsRow, any);
 }
 
+const KIND_GROUPS = { schedule: "Schedules", note: "Numbered notes", narrative: "Report sections" };
+
 function fillAddNoteSelect() {
   els.addNoteSelect.innerHTML = "";
   const groups = {};
+  const legacy = state.format === "legacy";
   for (const n of state.allNotes) {
-    if (!groups[n.section_label]) {
-      groups[n.section_label] = document.createElement("optgroup");
-      groups[n.section_label].label = `${n.section_label} notes`;
-      els.addNoteSelect.appendChild(groups[n.section_label]);
+    const scanned = state.format === "transcribed";
+    const key = legacy ? n.kind : n.section_label;
+    if (!groups[key]) {
+      groups[key] = document.createElement("optgroup");
+      groups[key].label = legacy ? (KIND_GROUPS[n.kind] || n.kind) : (scanned ? n.section_label : `${n.section_label} notes`);
+      els.addNoteSelect.appendChild(groups[key]);
     }
-    const opt = new Option(`Note ${n.no} — ${n.title} (${pageRange(n)})`, n.id);
-    groups[n.section_label].appendChild(opt);
+    const text = legacy || scanned ? `${n.label} (${pageRange(n)})` : `Note ${n.no} — ${n.title} (${pageRange(n)})`;
+    groups[key].appendChild(new Option(text, n.id));
   }
 }
 
@@ -273,7 +390,7 @@ function showConfirm(sel) {
   els.scopeLine.innerHTML = "";
   const badge = document.createElement("span");
   badge.className = "badge";
-  badge.textContent = scopeName;
+  badge.textContent = sel.scope_label || scopeName;
   els.scopeLine.append(badge, ` ${sel.scope_reason}`);
 
   const how = sel.method === "claude" ? "Chosen by Claude" : "Chosen by keyword match";
@@ -285,7 +402,8 @@ function showConfirm(sel) {
     : "";
   els.pagesInput.value = "";
   // Pre-select the add-note dropdown on the scope's section.
-  const first = state.allNotes.find((n) => sel.scope === "standalone" ? n.section === "standalone" : n.section === "consolidated");
+  const first = state.allNotes.find((n) => sel.scope === "standalone" ? n.section === "standalone" : n.section === "consolidated")
+    || state.allNotes[0];
   if (first) els.addNoteSelect.value = first.id;
   renderChips();
   show(els.stepConfirm, true);
@@ -307,6 +425,10 @@ function renderChips() {
     label.innerHTML = "";
     const strong = document.createElement("b");
     strong.textContent = noteLabel(n);
+    if (n.title_is_excerpt) {
+      strong.classList.add("excerpt");
+      strong.title = "This note has no title; these are its first words.";
+    }
     const pages = document.createElement("span");
     pages.className = "chip-pages";
     pages.textContent = ` · ${pageRange(n)}`;
@@ -577,6 +699,18 @@ async function openHistory(sno) {
 
 // ------------------------------------------------------------ wiring
 
+els.ocrStart.addEventListener("click", () => transcribe(""));
+els.ocrStartPages.addEventListener("click", () => {
+  const pages = els.ocrPages.value.trim();
+  if (pages) transcribe(pages);
+});
+els.progressCancel.addEventListener("click", () => {
+  if (state.jobId) api(`/api/jobs/${state.jobId}/cancel`, {}).catch(() => {});
+  els.progressText.textContent = "Cancelling… (pages already being read will finish)";
+});
+els.formatSelect.addEventListener("change", () => {
+  if (state.report) selectReport(state.report, els.formatSelect.value);
+});
 els.reportSelect.addEventListener("change", () => selectReport(els.reportSelect.value));
 els.reportRefresh.addEventListener("click", loadReports);
 els.question.addEventListener("input", refreshButtons);

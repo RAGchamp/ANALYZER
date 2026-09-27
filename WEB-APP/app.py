@@ -22,19 +22,24 @@ import re
 import threading
 import uuid
 from datetime import datetime
+from pathlib import Path
 
 import markdown
-from flask import Flask, abort, jsonify, render_template, request, send_from_directory
+from flask import Flask, abort, jsonify, render_template, request, send_file, send_from_directory
 
 import config
 import history
+import note_selector
 import notes_index
+import ocr_quality
+import ocr_transcribe
+import report_format
 import report_html
 import statements
 import statements_view
 from claude_client import ClaudeError, fill_prompt, run_claude, system_prompt
 from extractor import extract_note, extract_selection, parse_page_spec
-from note_selector import NOTE_REF_RE, all_note_choices, select_notes
+from note_selector import all_note_choices, select_notes
 from pdf_utils import PdfError
 
 logging.basicConfig(
@@ -54,6 +59,9 @@ app = Flask(__name__)
 
 JOBS = {}
 JOBS_LOCK = threading.Lock()
+# Which job the current worker thread is running, so call_claude can publish
+# the answer-so-far to it (see _job_progress).
+CURRENT_JOB = threading.local()
 THREAD_LOCK = threading.Lock()
 
 
@@ -103,19 +111,148 @@ def resolve_report(name):
     raise UserError(f"Report not found in {config.REPORTS_DIR}: {name}")
 
 
-def load_index(report_name):
+def load_index(report_name, format_choice=None):
     try:
-        return notes_index.load_or_build(resolve_report(report_name))
+        return notes_index.load_or_build(resolve_report(report_name), format_choice)
     except PdfError as exc:
         raise UserError(str(exc))
 
 
 def notes_label(notes):
+    def name(n):
+        if n.get("kind", "note") == "note" and isinstance(n["no"], int):
+            return f"{n['section_label']} Note {n['no']} – {n['title']}"
+        return n["label"]  # old-format schedule / note / report section
     return ", ".join(
-        f"{n['section_label']} Note {n['no']} – {n['title']} (PDF p.{n['start_page']}"
+        f"{name(n)} (PDF p.{n['start_page']}"
         + (f"–{n['end_page']}" if n["end_page"] != n["start_page"] else "") + ")"
         for n in notes
     )
+
+
+# ---------------------------------------------------------------- old-format reports
+# The prompts carry a REPORT PROFILE and name only the statements the report
+# has. For modern reports these render exactly the text used before.
+
+MODERN_STATEMENT_SECTIONS = ("### Statement of Profit and Loss\n### Balance Sheet\n"
+                             "### Cash Flow Statement\n### Statement of Changes in Equity")
+MODERN_STATEMENT_NAMES = "Profit and Loss, Balance Sheet, Cash Flow, Changes in Equity"
+
+
+def is_legacy(index):
+    return index.get("format") == "legacy"
+
+
+def is_transcribed(index):
+    return index.get("format") == "transcribed"
+
+
+def _section_statements(index, sections):
+    keys = sections or list(index["sections"])[:1]
+    return [st for k in keys for st in index["sections"].get(k, {}).get("statements", [])]
+
+
+def ocr_checks_text(index, sections):
+    """TRANSCRIPTION CHECKS for the pages of these sections: totals that don't
+    add up and figures nothing confirmed (ocr_transcribe / ocr_quality)."""
+    pages = sorted({p for k in sections or list(index["sections"])[:1]
+                    for u in index["sections"].get(k, {}).get("notes", []) + [
+                        {"start_page": st["pages"][0]["pdf_page"], "end_page": st["pages"][-1]["pdf_page"]}
+                        for st in index["sections"].get(k, {}).get("statements", [])]
+                    for p in range(u["start_page"], u["end_page"] + 1)})
+    lines = []
+    for pno in pages:
+        header = ocr_transcribe.page_header(Path(index["pdf"]), pno)
+        bits = []
+        if header.get("unreadable"):
+            bits.append(f"{header['unreadable']} unreadable character(s) [?]")
+        for item in header.get("untied", []):
+            label = "" if item["label"] == "(total)" else f" ({item['label']})"
+            bits.append(f"total {item['figure']}{label} does not equal the figures above it")
+        for item in header.get("unchecked", []):
+            bits.append(f"total {item['figure']} can't be checked (a figure above it is unreadable)")
+        if header.get("figures_to_check"):
+            bits.append("figures not confirmed by the cross-check: " + ", ".join(header["figures_to_check"][:12]))
+        if bits:
+            lines.append(f"- p.{pno}: " + "; ".join(bits))
+    return "TRANSCRIPTION CHECKS (automatic)\n" + ("\n".join(lines) if lines else "- no issues found")
+
+
+def report_profile(index, sections=None):
+    if is_transcribed(index):
+        statements_here = _section_statements(index, sections)
+        missing = sorted({m for k in (sections or list(index["sections"])[:1])
+                          for m in index["sections"].get(k, {}).get("statements_missing", [])})
+        ocr = index.get("ocr", {})
+        lines = [
+            "REPORT PROFILE",
+            f"Format: Scanned report, transcribed by AI from page images ({index.get('document_type') or 'report'})",
+            "Companies in this report: " + "; ".join(index.get("entities") or []),
+            f"Period: {index.get('fiscal_year_end_label') or 'see the statements'}"
+            " (each company's statements give its own date)",
+            f"Currency: {index.get('currency') or 'see the statements'}",
+            "Statements provided: " + ("; ".join(st["title"] for st in statements_here) or "none found"),
+        ]
+        if missing:
+            lines.append(f"Statement types NOT in the report for these companies: {', '.join(missing)}")
+        lines.append(f"Source quality: AI transcription of {ocr.get('pages', '?')} scanned pages; [?] marks "
+                     f"unreadable characters ({ocr.get('unreadable', 0)} in the report)")
+        return "\n".join(lines) + "\n\n" + ocr_checks_text(index, sections) + "\n\n"
+    if not is_legacy(index):
+        return ""
+    present = index.get("statements_present") or []
+    missing = index.get("statements_missing") or []
+    lines = [
+        "REPORT PROFILE",
+        "Format: Old Indian GAAP (Companies Act 1956, old Schedule VI) - standalone accounts only",
+        f"Year ended: {index.get('fiscal_year_end_label') or 'see the statements'}"
+        " (check the notes for the length of the previous period)",
+        "Currency/units: Rs. with Indian digit grouping (1,00,000 = 1 lakh; 1,00,00,000 = 1 crore)",
+        f"Statements in this report: {', '.join(present) or 'none found'}",
+    ]
+    if missing:
+        lines.append(f"Statements NOT in this report: {', '.join(missing)} (not required at the time)")
+    lines.append("Source quality: may be re-typed from the printed report; figures may contain "
+                 "transcription errors")
+    return "\n".join(lines) + "\n\n"
+
+
+def statement_sections_text(index, sections=None):
+    if is_transcribed(index):
+        titles = list(dict.fromkeys(st["title"] for st in _section_statements(index, sections)))
+        text = "\n".join(f"### {t}" for t in titles) or "### (no statements found)"
+        if not any(st["type"] == "cash_flow" for st in _section_statements(index, sections)):
+            text += ("\n(This report has no funds or cash flow statement. If cash movements matter to "
+                     "the question, add a short derived funds-flow statement, clearly labelled as derived "
+                     "by the analyst and not published.)")
+        return text
+    if not is_legacy(index):
+        return MODERN_STATEMENT_SECTIONS
+    present = index.get("statements_present") or ["Profit and Loss Account", "Balance Sheet"]
+    text = "\n".join(f"### {name}" for name in present)
+    if "Cash Flow Statement" not in present:
+        text += ("\n(This report has no Cash Flow Statement. If cash movements matter to the "
+                 "question, add a short derived funds-flow statement, clearly labelled as "
+                 "derived by the analyst and not published.)")
+    return text
+
+
+def statement_names(index, sections=None):
+    if is_transcribed(index):
+        return "; ".join(dict.fromkeys(st["title"] for st in _section_statements(index, sections))) \
+            or "the statements provided"
+    if not is_legacy(index):
+        return MODERN_STATEMENT_NAMES
+    return ", ".join(index.get("statements_present") or []) or "the statements provided"
+
+
+def analysis_system(index):
+    text = system_prompt("analysis_system.txt")
+    if is_legacy(index):
+        text += "\n\n" + system_prompt("analysis_system_legacy.txt")
+    if is_transcribed(index):
+        text += "\n\n" + system_prompt("analysis_system_transcribed.txt")
+    return text
 
 
 def scope_label(notes, pages):
@@ -179,11 +316,23 @@ def check_size(extract_text):
         )
 
 
+def _job_progress(phase, text):
+    """Stream callback: the browser's job poll shows `text` while Claude writes."""
+    job_id = getattr(CURRENT_JOB, "id", None)
+    with JOBS_LOCK:
+        job = JOBS.get(job_id)
+        if job and job["status"] == "running":
+            job["phase"] = phase
+            job["partial"] = text
+
+
 def call_claude(prompt, system, timeout):
-    """basic-chatbot pattern: prompt to the input file, reply to the output file."""
+    """basic-chatbot pattern: prompt to the input file, reply to the output file.
+    The analysis/follow-up reply is streamed into the running job as it arrives."""
     config.INPUT_FILE.write_text(prompt, encoding="utf-8")
     try:
-        reply = run_claude(prompt, system, timeout)
+        reply = run_claude(prompt, system, timeout, effort=config.CLAUDE_EFFORT,
+                           on_progress=_job_progress)
     except ClaudeError as exc:
         config.OUTPUT_FILE.write_text(f"ERROR: {exc}", encoding="utf-8")
         raise
@@ -217,6 +366,7 @@ def start_job(kind, func, *args):
                         "started": datetime.now().isoformat(timespec="seconds")}
 
     def runner():
+        CURRENT_JOB.id = job_id
         try:
             result = func(*args)
             update = {"status": "done", "result": result}
@@ -226,6 +376,7 @@ def start_job(kind, func, *args):
             log.exception("Job %s (%s) failed", job_id, kind)
             update = {"status": "error", "error": f"Unexpected error: {exc}"}
         with JOBS_LOCK:
+            JOBS[job_id].pop("partial", None)
             JOBS[job_id].update(update)
 
     threading.Thread(target=runner, daemon=True).start()
@@ -262,6 +413,7 @@ def analyze_job(report_name, question, note_ids, page_spec):
         notes = [choices[i] for i in note_ids if i in choices]
         if not notes:
             raise UserError("Select at least one note (or enter PDF pages) to analyze.")
+        notes = note_selector.drop_covered(notes)
     extracts, extract_text = extract_selection(index, notes=notes, page_numbers=pages)
     # The primary statements (loaded with the report) always go with the notes.
     sections = statement_sections(index, notes)
@@ -272,6 +424,8 @@ def analyze_job(report_name, question, note_ids, page_spec):
     notes_text = notes_label(notes) if notes else f"PDF pages {page_spec}"
     prompt = fill_prompt(
         "analysis_template.txt",
+        PROFILE=report_profile(index, sections),
+        STATEMENT_SECTIONS=statement_sections_text(index, sections),
         REPORT=report_name,
         SCOPE=scope_label(notes, pages),
         NOTES=notes_text,
@@ -281,8 +435,7 @@ def analyze_job(report_name, question, note_ids, page_spec):
         EXTRACT=extract_text,
     )
     sent_at = datetime.now()
-    answer = call_claude(prompt, system_prompt("analysis_system.txt"),
-                         config.ANALYSIS_TIMEOUT)
+    answer = call_claude(prompt, analysis_system(index), config.ANALYSIS_TIMEOUT)
     saved_html = save_report(index, question=question, answer=answer, prompt_no=1,
                              sent_at=sent_at, notes=notes, page_spec=page_spec,
                              statements_list=statements_list)
@@ -344,15 +497,15 @@ def followup_job(thread_id, question):
         sections = sorted({n["section"] for n in thread["notes"]}) or ["consolidated"]
         have = {n["id"] for n in thread["notes"]}
         choices = {c["id"]: c for c in all_note_choices(index, "both")}
-        for match in NOTE_REF_RE.finditer(question):
-            for section in sections:
-                note_id = ("C" if section == "consolidated" else "S") + match.group(1)
-                if note_id in choices and note_id not in have:
-                    extra = extract_note(index, section, int(match.group(1)))
-                    thread["notes"].append(choices[note_id])
-                    thread["extract"] += "\n\n" + extra["text"]
-                    have.add(note_id)
-                    added.append(choices[note_id])
+        for unit_id in note_selector.explicit_unit_ids(question, index, sections):
+            choice = choices[unit_id]
+            if unit_id in have or (choice.get("parent") and choice["parent"] in have):
+                continue
+            extra = extract_note(index, choice["section"], choice["no"])
+            thread["notes"].append(choice)
+            thread["extract"] += "\n\n" + extra["text"]
+            have.add(unit_id)
+            added.append(choice)
     # Threads started before statements were added don't carry them yet.
     if "statements" not in thread:
         sections = statement_sections(index, thread["notes"])
@@ -368,6 +521,8 @@ def followup_job(thread_id, question):
                   else f"PDF pages {thread['page_spec']}")
     prompt = fill_prompt(
         "followup_template.txt",
+        PROFILE=report_profile(index, thread.get("statement_sections")),
+        STATEMENT_NAMES=statement_names(index, thread.get("statement_sections")),
         REPORT=thread["report"],
         SCOPE=scope_label(thread["notes"], thread.get("page_spec")),
         NOTES=notes_text,
@@ -378,8 +533,7 @@ def followup_job(thread_id, question):
         QUESTION=question,
     )
     sent_at = datetime.now()
-    answer = call_claude(prompt, system_prompt("analysis_system.txt"),
-                         config.ANALYSIS_TIMEOUT)
+    answer = call_claude(prompt, analysis_system(index), config.ANALYSIS_TIMEOUT)
     # Prompt 1 is the thread's first question, 2 its first follow-up, ...
     prompt_no = len(thread["turns"]) + 1
     saved_html = save_report(
@@ -446,7 +600,23 @@ def api_reports():
 @app.route("/api/index", methods=["POST"])
 def api_index():
     data = request.get_json(silent=True) or {}
-    idx = load_index(data.get("report", ""))
+    format_choice = data.get("format") or None
+    if format_choice not in (None, "auto", *report_format.FORMATS):
+        raise UserError(f"Unknown report format: {format_choice}")
+    path = resolve_report(data.get("report", ""))
+    try:
+        idx = notes_index.load_or_build(path, format_choice)
+    except notes_index.NeedsTranscription as exc:
+        pages = list(range(1, exc.page_count + 1))
+        minutes, usd, todo = ocr_transcribe.estimate(path, pages)
+        return jsonify({
+            "report": path.name, "page_count": exc.page_count, "needs_transcription": True,
+            "status": exc.status, "tesseract": bool(ocr_quality.tesseract_path()),
+            "estimate": {"minutes": minutes, "usd": usd, "pages": todo},
+            "review_url": f"/ocr-review?report={path.name}",
+        })
+    except PdfError as exc:
+        raise UserError(str(exc))
     sections = {
         key: {"label": s["label"], "first_page": s["first_page"],
               "last_page": s["last_page"], "count": len(s["notes"]),
@@ -457,13 +627,19 @@ def api_index():
                    "rotated": any(p["rotation"] for p in st["pages"]),
                    "text": st["text"]}
                   for st in s.get("statements", [])
-              ]}
+              ],
+              "missing_statements": idx.get("statements_missing", []) if is_legacy(idx) else []}
         for key, s in idx["sections"].items()
     }
     return jsonify({
         "report": idx["pdf_name"],
         "page_count": idx["page_count"],
         "summary": notes_index.summary(idx),
+        "format": idx.get("format", "modern"),
+        "format_label": report_format.FORMAT_LABELS.get(idx.get("format", "modern"), idx.get("format")),
+        "format_source": idx.get("format_source", "detected"),
+        "ocr": idx.get("ocr"),
+        "review_url": f"/ocr-review?report={idx['pdf_name']}" if is_transcribed(idx) else None,
         "sections": sections,
         "notes": all_note_choices(idx, "both"),
     })
@@ -525,12 +701,123 @@ def api_followup():
     return jsonify({"job_id": start_job("followup", followup_job, thread_id, question)})
 
 
+# ---------------------------------------------------------------- scanned reports (OCR)
+
+def ocr_job(report_name, page_spec, force, dpi=None):
+    """Transcribe a scanned report (or some of its pages) with Claude."""
+    path = resolve_report(report_name)
+    pages = parse_page_spec(page_spec) if page_spec else None
+    job_id = CURRENT_JOB.id
+
+    def progress(done, total, text):
+        with JOBS_LOCK:
+            JOBS[job_id].update(progress=text, done=done, total=total)
+
+    def cancelled():
+        with JOBS_LOCK:
+            return bool(JOBS.get(job_id, {}).get("cancel"))
+
+    try:
+        status = ocr_transcribe.run(path, pages, progress=progress, cancel=cancelled, force=force, dpi=dpi)
+    except ocr_transcribe.Cancelled:
+        raise UserError("Transcription cancelled. Pages already transcribed are kept: "
+                        "click Transcribe to continue where it stopped.")
+    log.info("Transcribed %s: %s", report_name, status)
+    return status
+
+
+@app.route("/api/ocr/start", methods=["POST"])
+def api_ocr_start():
+    data = request.get_json(silent=True) or {}
+    report = data.get("report", "")
+    resolve_report(report)
+    pages = (data.get("pages") or "").strip()
+    if pages:
+        parse_page_spec(pages)   # validate now, not in the job
+    return jsonify({"job_id": start_job("ocr", ocr_job, report, pages, False)})
+
+
+@app.route("/api/ocr/page", methods=["POST"])
+def api_ocr_page():
+    """Re-transcribe one page (the review page's button)."""
+    data = request.get_json(silent=True) or {}
+    report = data.get("report", "")
+    resolve_report(report)
+    page = int(data.get("page") or 0)
+    dpi = int(data["dpi"]) if data.get("dpi") else None
+    return jsonify({"job_id": start_job("ocr", ocr_job, report, str(page), True, dpi)})
+
+
+@app.route("/api/jobs/<job_id>/cancel", methods=["POST"])
+def api_job_cancel(job_id):
+    with JOBS_LOCK:
+        job = JOBS.get(job_id)
+        if not job:
+            return jsonify({"error": "Unknown job."}), 404
+        job["cancel"] = True
+    return jsonify({"ok": True})
+
+
+@app.route("/ocr-image")
+def ocr_image():
+    """The page image Claude read (rendered now if the page isn't transcribed yet)."""
+    path = resolve_report(request.args.get("report", ""))
+    page = int(request.args.get("page", "1"))
+    image = ocr_transcribe.page_file(path, page, "png")
+    if not image.exists():
+        image = ocr_transcribe.render_page(path, page, config.OCR_DPI)
+    return send_file(image, mimetype="image/png")
+
+
+def _highlight(html, figures):
+    for figure in figures:
+        escaped = figure.replace("&", "&amp;").replace("<", "&lt;")
+        html = html.replace(escaped, f'<mark title="Not confirmed by the cross-check">{escaped}</mark>')
+    return html.replace("[?]", '<mark class="unreadable" title="Unreadable in the scan">[?]</mark>')
+
+
+@app.route("/ocr-review")
+def ocr_review():
+    """A scanned page next to its transcription, with the automatic checks."""
+    path = resolve_report(request.args.get("report", ""))
+    manifest = ocr_transcribe.load_manifest(path)
+    page_count = manifest.get("page_count")
+    if not page_count:
+        with ocr_transcribe._pdf_lock:
+            doc = notes_index.open_pdf(path)
+            page_count = doc.page_count
+            doc.close()
+    page = max(1, min(int(request.args.get("page", "1")), page_count))
+    record = manifest["pages"].get(str(page), {})
+    header = ocr_transcribe.page_header(path, page)
+    markdown_text = ocr_transcribe.page_markdown(path, page)
+    pages = []
+    for pno in range(1, page_count + 1):
+        rec = manifest["pages"].get(str(pno), {})
+        flags = (rec.get("unreadable", 0) + len(rec.get("figures_to_check", []))
+                 + len(rec.get("untied", [])))
+        pages.append({"no": pno, "status": rec.get("status", "not transcribed"),
+                      "type": rec.get("page_type", ""), "flags": flags})
+    logo_svg = config.LOGO_FILE.read_text(encoding="utf-8") if config.LOGO_FILE.exists() else ""
+    return render_template(
+        "ocr_review.html", report=path.name, page=page, page_count=page_count, pages=pages,
+        record=record, header=header, logo_svg=logo_svg,
+        transcription_html=_highlight(render_markdown(markdown_text), header.get("figures_to_check", []))
+        if markdown_text else "",
+        tesseract=bool(ocr_quality.tesseract_path()),
+    )
+
+
 @app.route("/api/jobs/<job_id>")
 def api_job(job_id):
     with JOBS_LOCK:
         job = dict(JOBS.get(job_id) or {})
     if not job:
         return jsonify({"error": "Unknown job (the server may have restarted)."}), 404
+    partial = job.pop("partial", None)
+    if partial:
+        # Rendered (and HTML-escaped) exactly like the final answer.
+        job["partial_html"] = render_markdown(partial)
     return jsonify(job)
 
 

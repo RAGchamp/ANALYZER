@@ -1,0 +1,24 @@
+{
+ "printed_page": "11",
+ "page_type": "notes",
+ "entity": "Berkshire Hathaway Inc.",
+ "statement_title": null,
+ "period": "Year ended December 28, 1968",
+ "schedule": null,
+ "headings": [
+  "Notes to Consolidated Financial Statements, Continued",
+  "(4) Properties, Plants and Equipment",
+  "(5) Unconsolidated Subsidiaries",
+  "(6) Taxes on Income"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 10,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

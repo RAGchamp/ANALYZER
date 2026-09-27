@@ -1,0 +1,30 @@
+{
+ "printed_page": "31",
+ "page_type": "notes",
+ "entity": "National Indemnity Company",
+ "statement_title": null,
+ "period": "December 31, 1968",
+ "schedule": null,
+ "headings": [
+  "NATIONAL INDEMNITY COMPANY",
+  "Notes to Financial Statements",
+  "December 31, 1968",
+  "(1) Basis of Presentation:",
+  "(2) Nonadmitted Assets:"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 28,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "$ 165,562"
+  }
+ ],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [],
+ "tesseract": true
+}

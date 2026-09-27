@@ -1,0 +1,70 @@
+{
+ "printed_page": "26",
+ "page_type": "statement",
+ "entity": "National Indemnity Company",
+ "statement_title": "Statement of Assets and Liabilities",
+ "period": "December 31, 1968 with comparative figures for 1967",
+ "schedule": null,
+ "headings": [
+  "National Indemnity Company",
+  "Statement of Assets and Liabilities",
+  "Assets",
+  "Liabilities and Capital Stock"
+ ],
+ "currency": "$",
+ "unreadable": 0,
+ "pdf_page": 23,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [
+  {
+   "label": "(total)",
+   "figure": "8,086,686"
+  },
+  {
+   "label": "(total)",
+   "figure": "$ 39,797,552"
+  },
+  {
+   "label": "(total)",
+   "figure": "6,394,167"
+  },
+  {
+   "label": "(total)",
+   "figure": "32,660,558"
+  },
+  {
+   "label": "(total)",
+   "figure": "11,508,920"
+  },
+  {
+   "label": "(total)",
+   "figure": "$ 39,797,552"
+  },
+  {
+   "label": "(total)",
+   "figure": "25,102,694"
+  },
+  {
+   "label": "(total)",
+   "figure": "7,557,864"
+  },
+  {
+   "label": "(total)",
+   "figure": "32,660,558"
+  }
+ ],
+ "untied": [
+  {
+   "label": "(total)",
+   "figure": "28,288,632"
+  }
+ ],
+ "unchecked": [],
+ "figures_to_check": [
+  "17,324,317",
+  "525,786",
+  "405,531"
+ ],
+ "tesseract": true
+}

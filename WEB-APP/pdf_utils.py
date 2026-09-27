@@ -40,18 +40,23 @@ def is_bold(span):
     return bool(span["flags"] & 16) or any(h in span["font"] for h in BOLD_FONT_HINTS)
 
 
-def page_rows(page, y_tolerance=2.0):
+def page_rows(page, y_tolerance=2.0, horizontal_only=False):
     """Visual text rows on a page, built from spans.
 
     Spans that share a baseline are merged even when PyMuPDF put them in
     different blocks - headings like "1. " + "CORPORATE INFORMATION" are
     split that way in this report.
 
+    horizontal_only drops sideways text, e.g. the running header of a page
+    that was de-rotated to read a landscape table.
+
     Returns dicts: {x0, y0, x1, y1, text, font, size, bold}, where the font
     info comes from the row's first non-blank span."""
     spans = []
     for block in page.get_text("dict")["blocks"]:
         for line in block.get("lines", []):
+            if horizontal_only and abs(line["dir"][0]) < 0.99:
+                continue
             for span in line["spans"]:
                 if span["text"].strip():
                     spans.append(span)

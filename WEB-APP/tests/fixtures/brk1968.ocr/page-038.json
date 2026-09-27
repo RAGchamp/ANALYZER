@@ -1,0 +1,26 @@
+{
+ "printed_page": "41",
+ "page_type": "notes",
+ "entity": "National Fire & Marine Insurance Company",
+ "statement_title": null,
+ "period": null,
+ "schedule": null,
+ "headings": [
+  "Notes to Financial Statements, Continued",
+  "(3) Unearned Premiums:",
+  "(4) Unpaid Losses and Loss Adjustment Expenses:",
+  "(5) Federal Income Taxes:"
+ ],
+ "currency": "$",
+ "unreadable": 2,
+ "pdf_page": 38,
+ "dpi": 150,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [
+  "$308,977"
+ ],
+ "tesseract": true
+}

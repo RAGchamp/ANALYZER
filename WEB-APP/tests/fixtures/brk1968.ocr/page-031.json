@@ -1,0 +1,24 @@
+{
+ "printed_page": "34",
+ "page_type": "auditors_report",
+ "entity": "National Fire & Marine Insurance Company",
+ "statement_title": null,
+ "period": "Year ended December 31, 1968",
+ "schedule": null,
+ "headings": [
+  "PEAT, MARWICK, MITCHELL & CO.",
+  "CERTIFIED PUBLIC ACCOUNTANTS"
+ ],
+ "currency": null,
+ "unreadable": 0,
+ "pdf_page": 31,
+ "dpi": 200,
+ "model": "claude-opus-5-5",
+ "tied": [],
+ "untied": [],
+ "unchecked": [],
+ "figures_to_check": [
+  "68131"
+ ],
+ "tesseract": true
+}

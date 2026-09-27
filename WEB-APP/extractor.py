@@ -9,6 +9,13 @@ read them. Instead, each visual row is rebuilt from text spans, and a wide
 horizontal gap between spans becomes a column break written as " | ":
 
     Current income tax charge | 5,701.41 | 5,994.80
+
+Scanned reports (format "transcribed") have no PDF text: their units are
+line ranges of the cached Claude page transcriptions (transcribed_index).
+
+Old-format reports (legacy_index) use the same extents. Their "notes" are
+schedules, numbered notes and report sections; a page printed sideways (a
+landscape Fixed Assets schedule) is turned first, exactly as when indexing.
 """
 
 import re
@@ -17,12 +24,16 @@ from pathlib import Path
 import pymupdf
 
 import config
+import legacy_index
+import ocr_transcribe
+import statements
+import transcribed_index
 from notes_index import CONTD_RE, find_note
 from pdf_utils import clean_text, open_pdf, page_layout, page_rows
 
 COLUMN_GAP = 12.0      # points of empty space that separate table columns
 ROW_TOLERANCE = 3.0    # spans whose vertical centers are this close share a row
-NUMBER_CELL_RE = re.compile(r"^\(?[-–]?[\d,]+(\.\d+)?\)?%?$|^[-–]$")
+NUMBER_CELL_RE = re.compile(r"^\(?[-–]?[\d,]+(\.\d+)?\)?%?$|^[-–—]{1,2}$")
 CONTD_HEADING_RE = re.compile(r"^\d{1,3}(\.\d{1,2})?\s*\.?\s+.*\(\s*CONT", re.I)
 
 
@@ -110,14 +121,56 @@ def _page_bounds(index, doc, pno):
     return layout["top"], layout["bottom"], layout["printed"]
 
 
+def _work_page(index, doc, pno):
+    """(page to read, temp doc or None). Old-format pages printed sideways
+    are turned so their text reads left to right, as when they were indexed."""
+    info = index["pages"].get(str(pno)) or {}
+    if index.get("format") == "legacy" and info.get("rotation"):
+        temp, page = statements.derotated_page(doc, pno, info["rotation"])
+        return page, temp
+    return doc[pno - 1], None
+
+
+def _finish_text(index, text):
+    return legacy_index.legacy_clean(text) if index.get("format") == "legacy" else text
+
+
+def _page_text(index, doc, pno, y_from, y_to):
+    page, temp = _work_page(index, doc, pno)
+    try:
+        horizontal, rotated = _spans_in(page, y_from, y_to)
+        text = _rows_to_text(horizontal)
+        # On a turned page, the sideways text is just the running header.
+        if rotated and temp is None:
+            text += "\n[Rotated text on this page:]\n" + clean_text(
+                " ".join(s["text"].strip() for s in rotated))
+    finally:
+        if temp is not None:
+            temp.close()
+    return _finish_text(index, text)
+
+
 def _page_label(pno, printed):
     return f"PDF page {pno}" + (f" (printed page {printed})" if printed else "")
+
+
+def section_label(index, section):
+    return index["sections"].get(section, {}).get("label") or config.SECTION_LABELS.get(section, section)
 
 
 def extract_note(index, section, number, doc=None):
     note = find_note(index, section, number)
     if not note:
         raise ValueError(f"Note {number} not found in {section} notes")
+    if index.get("format") == "transcribed":
+        text = transcribed_index.unit_text(Path(index["pdf"]), index, note)
+        pages = [{"pdf_page": p, "printed": (index["pages"].get(str(p)) or {}).get("printed")}
+                 for p in range(note["start_page"], note["end_page"] + 1)
+                 if (index["pages"].get(str(p)) or {}).get("page_type") != "blank"]
+        return {
+            "section": section, "no": number, "title": note["title"], "pages": pages,
+            "text": f"=== {note['entity']} — {note['label']} ===\n{text}",
+        }
     own_doc = doc is None
     doc = doc or open_pdf(Path(index["pdf"]))
     try:
@@ -129,19 +182,18 @@ def extract_note(index, section, number, doc=None):
             y_to = (note["end_y"] - 1
                     if pno == note["end_page"] and note["end_y"] is not None
                     else bottom)
-            horizontal, rotated = _spans_in(doc[pno - 1], y_from, y_to)
-            text = _rows_to_text(horizontal)
-            if rotated:
-                text += "\n[Rotated text on this page:]\n" + clean_text(
-                    " ".join(s["text"].strip() for s in rotated))
+            text = _page_text(index, doc, pno, y_from, y_to)
             pages.append({"pdf_page": pno, "printed": printed})
             parts.append(f"--- {_page_label(pno, printed)} ---\n{text.strip()}")
     finally:
         if own_doc:
             doc.close()
 
-    label = config.SECTION_LABELS[section]
-    header = f"=== Note {number} — {note['title']} ({label}) ==="
+    label = section_label(index, section)
+    if note.get("kind", "note") == "note" and isinstance(note["no"], int):
+        header = f"=== Note {number} — {note['title']} ({label}) ==="
+    else:
+        header = f"=== {legacy_index.unit_heading(note)} ==="
     return {
         "section": section,
         "no": number,
@@ -153,6 +205,17 @@ def extract_note(index, section, number, doc=None):
 
 def extract_pages(index, page_numbers, doc=None):
     """Manual override: whole pages (minus running header/footer)."""
+    if index.get("format") == "transcribed":
+        parts, pages = [], []
+        for pno in page_numbers:
+            if not 1 <= pno <= index["page_count"]:
+                raise ValueError(f"PDF page {pno} is out of range (1–{index['page_count']})")
+            printed = (index["pages"].get(str(pno)) or {}).get("printed")
+            text = ocr_transcribe.page_markdown(Path(index["pdf"]), pno).strip() or "(not transcribed)"
+            pages.append({"pdf_page": pno, "printed": printed})
+            parts.append(f"--- {_page_label(pno, printed)} ---\n{text}")
+        return {"section": None, "no": None, "title": "Manually selected pages", "pages": pages,
+                "text": "=== Manually selected pages ===\n" + "\n\n".join(parts)}
     own_doc = doc is None
     doc = doc or open_pdf(Path(index["pdf"]))
     try:
@@ -161,11 +224,7 @@ def extract_pages(index, page_numbers, doc=None):
             if not 1 <= pno <= doc.page_count:
                 raise ValueError(f"PDF page {pno} is out of range (1–{doc.page_count})")
             top, bottom, printed = _page_bounds(index, doc, pno)
-            horizontal, rotated = _spans_in(doc[pno - 1], top + 0.5, bottom)
-            text = _rows_to_text(horizontal)
-            if rotated:
-                text += "\n[Rotated text on this page:]\n" + clean_text(
-                    " ".join(s["text"].strip() for s in rotated))
+            text = _page_text(index, doc, pno, top + 0.5, bottom)
             pages.append({"pdf_page": pno, "printed": printed})
             parts.append(f"--- {_page_label(pno, printed)} ---\n{text.strip()}")
     finally:
