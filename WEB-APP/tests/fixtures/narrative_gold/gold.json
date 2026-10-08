@@ -1,0 +1,196 @@
+{
+  "about": "Hand-checked reading order of pages outside the notes and statements (INFO/ANNUAL-REPORT-NON-FIN-STMTS-NOTES-EXTRACTION-PLAN.md §9). Each 'order' item is [block kind or '*', text the block starts with or contains]; the items must be found in this order. Checked against the page images on 2026-09-28. Panels of cards are read column by column (the plan's default panel order).",
+  "pages": [
+    {
+      "doc": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf", "page": 22, "section": "Value Creation Model",
+      "layout_kind": "designed",
+      "order": [
+        ["heading", "Strategy"],
+        ["list", "S1 Focusing on the Indian market"],
+        ["list", "S2 Scaling high-growth verticals"],
+        ["list", "S3 Adding layer of products to the core forging business"],
+        ["list", "S4 Scaling the Indian subsidiaries"],
+        ["list", "S5 Financial prudence and operational focus"],
+        ["list", "S6 Digitalization and organizational capability"],
+        ["heading", "Value created through"],
+        ["heading", "Sources utilized"],
+        ["list", "Rich culture of research and engineering and product differentiation"],
+        ["list", "Deep and nurtured relationships"],
+        ["list", "Technical know-how of people"],
+        ["list", "Robust forging competence supported by Industry 4.0 excellence"],
+        ["list", "Vertically integrated model with end-to-end capabilities"],
+        ["diagram", "Principal Activities"],
+        ["*", "Key Segments and Products"],
+        ["*", "Automotive"],
+        ["*", "Commercial | Passenger"],
+        ["*", "Industrial"],
+        ["*", "Power and Oil & Gas"],
+        ["heading", "Output generated"],
+        ["metric", "238,355 tons — Total tonnage"]
+      ]
+    },
+    {
+      "doc": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf", "page": 12, "section": "About the Report",
+      "order": [
+        ["*", "Stakeholder expectations and concerns"],
+        ["*", "Employees"], ["*", "Government"], ["*", "Shareholders"], ["*", "Customers"],
+        ["*", "Communities"], ["*", "Business Partners"],
+        ["*", "Material issues impacting business"],
+        ["list", "M1 Sustained performance"], ["list", "M5 Innovation"], ["list", "M6 IT, data centre"],
+        ["list", "M11 Customer satisfaction"], ["list", "M14 Corporate governance"],
+        ["*", "Resources and relationships (Capitals)"],
+        ["*", "Financial capital"], ["*", "Natural capital"],
+        ["*", "With a positive societal and environmental impact"]
+      ]
+    },
+    {
+      "doc": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf", "page": 90, "section": "Board’s Report",
+      "layout_kind": "prose",
+      "order": [
+        ["heading", "8. INTERNAL FINANCIAL CONTROLS"],
+        ["paragraph", "Your Company has established an Assurance Office"],
+        ["heading", "9. RISK MANAGEMENT"],
+        ["paragraph", "The Company has a robust Enterprise Risk Management"],
+        ["heading", "10. MATERIAL CHANGES AND COMMITMENTS"],
+        ["heading", "11. SIGNIFICANT AND MATERIAL ORDERS"],
+        ["heading", "12. STATE OF COMPANY’S AFFAIRS"],
+        ["heading", "13. SHARE CAPITAL"],
+        ["paragraph", "The paid-up equity share capital"]
+      ]
+    },
+    {
+      "doc": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf", "page": 120, "section": "Report on Corporate Governance",
+      "order": [
+        ["heading", "IV. BOARD COMMITTEES"],
+        ["paragraph", "In compliance with the provisions of the Act"],
+        ["*", "BOARD COMMITTEES AS ON 31"],
+        ["*", "Audit Committee"], ["list", "Mr. K. B. S. Anand"], ["list", "Mr. Ashish Bharat Ram"],
+        ["*", "Stakeholders Relationship"], ["list", "Mr. Anand Pathak"],
+        ["*", "Nomination & Remuneration"], ["list", "Mr. Dipak Mane"],
+        ["*", "Risk Management Committee"],
+        ["*", "Corporate Social Responsibility"],
+        ["*", "Environmental, Social & Governance"],
+        ["heading", "1. Audit Committee"],
+        ["paragraph", "The primary roles/responsibilities of the Audit Committee are"],
+        ["list", "a. Oversight of the Company"],
+        ["list", "b. Recommendation for appointment"],
+        ["list", "f. Approval or any subsequent modification"],
+        ["paragraph", "The detailed terms of reference"]
+      ]
+    },
+    {
+      "doc": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf", "page": 150,
+      "section": "Business Responsibility and Sustainability Reporting", "layout_kind": "table",
+      "order": [
+        ["table", "Material issue identified"],
+        ["table", "Climate Change"],
+        ["table", "Resource Efficiency"],
+        ["table", "Health, Safety & Environment"]
+      ]
+    },
+    {
+      "doc": "TYPE-3-USA-10-K-2025-Chubb.pdf", "page": 4, "section": "ITEM 1. Business", "layout_kind": "prose",
+      "order": [
+        ["heading", "ITEM 1. Business"],
+        ["heading", "General"],
+        ["paragraph", "Chubb Limited is the Swiss-incorporated holding company"],
+        ["paragraph", "We have grown our business"],
+        ["paragraph", "Our product and geographic diversification"]
+      ]
+    },
+    {
+      "doc": "TYPE-7-INDIA-20-F-2025-Infosys.pdf", "page": 70,
+      "section": "Item 5. Operating and Financial Review and Prospects", "layout_kind": "prose",
+      "order": [
+        ["paragraph", "Further, our digital skilling programs"],
+        ["paragraph", "We will continue to bring the interests of all stakeholders"],
+        ["heading", "Industry structure and developments"],
+        ["paragraph", "Fiscal 2026 saw lower interest rates"],
+        ["paragraph", "This was a year of subdued growth"],
+        ["paragraph", "Global GDP growth remained flat at 3.3%"],
+        ["paragraph", "We saw AI reshaping the industry"],
+        ["*", "NASSCOM Annual Strategic review, 2026"]
+      ]
+    },
+    {
+      "doc": "TYPE-8-AUSTRALIA-20-F-2025-BHP.pdf", "page": 41, "section": "5.3 Financial results",
+      "layout_kind": "table",
+      "order": [
+        ["heading", "Principal factors that affect Underlying EBITDA"],
+        ["paragraph", "The following table and commentary describe the impact"],
+        ["table", "Change in sales prices"],
+        ["table", "Price-linked costs | (399) | Higher copper, iron ore and coal royalties"],
+        ["table", "Change in volumes | (1,167)"],
+        ["table", "Exchange rates"],
+        ["table", "Inflation on costs | (675)"],
+        ["*", "For information on the method of calculation"]
+      ]
+    },
+    {
+      "doc": "TYPE-8-AUSTRALIA-20-F-2025-BHP.pdf", "page": 19, "section": "2. Why BHP", "layout_kind": "designed",
+      "order": [
+        ["heading", "2. Why BHP A stronger, more resilient BHP"],
+        ["figure", ""]
+      ]
+    },
+    {
+      "doc": "TYPE-6-CANADA-40-F-2025-Magna.pdf", "page": 2,
+      "section": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM", "layout_kind": "prose",
+      "order": [
+        ["heading", "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM"],
+        ["heading", "Opinion on the Financial Statements"],
+        ["paragraph", "We have audited the accompanying consolidated balance sheets"],
+        ["heading", "Basis for Opinion"],
+        ["heading", "Critical Audit Matter"],
+        ["heading", "Impairment Assessment – Power & Vision Segment"],
+        ["heading", "Critical Audit Matter Description"]
+      ]
+    },
+    {
+      "doc": "TYPE-2-INDIA-Ann-rpt-1977-Reliance.pdf", "page": 2, "section": "Front matter", "layout_kind": "contents",
+      "order": [
+        ["heading", "B0ARD OF DIRECTORS"],
+        ["paragraph", "DHIRUBHAI H. AMBANI"],
+        ["heading", "BANKERS"],
+        ["heading", "AUDITORS"],
+        ["heading", "REGISTERED OFFICE"],
+        ["*", "CONTENTS"],
+        ["*", "Directors' Report"]
+      ]
+    },
+    {
+      "doc": "TYPE-4-USA-Ann-rpt-1994-Berkshire.pdf", "page": 12, "section": "Management Discussion",
+      "layout_kind": "table",
+      "order": [
+        ["*", "ITEM 5. MARKET FOR REGISTRANT'S COMMON STOCK"],
+        ["paragraph", "The Company's Common Stock is listed for trading on the New York Stock Exchange"],
+        ["table", "First Quarter"],
+        ["table", "Fourth Quarter"],
+        ["heading", "SHAREHOLDERS"],
+        ["paragraph", "The Company had approximately 8,400 record holders"],
+        ["heading", "DIVIDENDS"],
+        ["paragraph", "Berkshire has not declared a cash dividend since 1967."],
+        ["heading", "ITEM 6. SELECTED FINANCIAL DATA"],
+        ["table", "Sales and service revenues"],
+        ["table", "Total revenues"],
+        ["heading", "EARNINGS PER SHARE"],
+        ["*", "Includes a charge of $172,579"]
+      ]
+    },
+    {
+      "doc": "TYPE-3-USA-10-K-2025-Chubb.pdf", "page": 60,
+      "section": "ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+      "order": [
+        ["heading", "Net Premiums Written by Region"],
+        ["table", "Europe, Middle East, and Africa"],
+        ["table", "% of Total"],
+        ["*", "Includes the consolidated results of Huatai"],
+        ["heading", "Premiums"],
+        ["paragraph", "Overall, net premiums written increased"],
+        ["paragraph", "Net premiums earned increased"],
+        ["heading", "Combined Ratio"],
+        ["paragraph", "The combined ratio decreased in 2025"]
+      ]
+    }
+  ]
+}

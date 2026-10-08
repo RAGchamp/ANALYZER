@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gap report — {{ report }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <nav class="navbar">
+    <a class="ghost nav-link" href="/ingest">← Ingest screen</a>
+    <h1>New model document</h1>
+  </nav>
+  <main class="ingest-main">
+    <section class="card answer markdown gap-report">{{ body | safe }}</section>
+  </main>
+</body>
+</html>

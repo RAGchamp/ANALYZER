@@ -7,7 +7,8 @@ import pytest
 
 import app as app_module
 import config
-import note_selector
+from analyzer import jobs as analyzer_jobs
+from analyzer import note_selector
 
 REPORT = "Bharat-Forge-IR-2026-conv-single-page.pdf"
 
@@ -33,7 +34,7 @@ def client(index, tmp_path, monkeypatch):
             return '{"notes": ["C21"], "reason": "Income tax note"}'
         return "## Summary\n- Effective tax rate fell to 34.66%\n\n| a | b |\n|---|---|\n| 1 | 2 |"
 
-    monkeypatch.setattr(app_module, "run_claude", fake_claude)
+    monkeypatch.setattr(analyzer_jobs, "run_claude", fake_claude)
     monkeypatch.setattr(note_selector, "run_claude", fake_claude)
     app_module.app.config["TESTING"] = True
     client = app_module.app.test_client()
@@ -134,6 +135,40 @@ def test_full_flow(client):
     assert [t["saved_html"] for t in thread["turns"]] == [first, second]
 
 
+def test_followup_searches_the_report_again(client, monkeypatch):
+    """A follow-up runs the note selector again (with the thread's first question for context) and
+    adds the notes it picks that the thread lacks; the earlier notes stay."""
+    job = wait_job(client, client.post("/api/analyze", json={
+        "report": REPORT, "question": "Analyze the tax liabilities", "notes": ["C21"]}).get_json()["job_id"])
+    thread_id = job["result"]["thread_id"]
+    seen = []
+
+    def selector(prompt, system, timeout, **kwargs):
+        seen.append(prompt)
+        return '{"notes": ["C21", "C12"], "reason": "tax and borrowings"}'
+
+    monkeypatch.setattr(note_selector, "run_claude", selector)
+    job = wait_job(client, client.post("/api/followup", json={
+        "thread_id": thread_id, "question": "How are the borrowings secured?"}).get_json()["job_id"])
+    assert job["status"] == "done", job
+    res = job["result"]
+    assert [n["id"] for n in res["added_notes"]] == ["C12"] and res["rescanned"]
+    assert [n["id"] for n in res["notes"]] == ["C21", "C12"]
+    assert "How are the borrowings secured?" in seen[0] and "Analyze the tax liabilities" in seen[0]
+    prompt = client.sent[-1]
+    assert "Total deferred tax liability" in prompt              # the first note is still sent
+
+    # the selector unavailable: keyword guesses add nothing to a thread
+    def broken(prompt, system, timeout, **kwargs):
+        raise analyzer_jobs.ClaudeError("offline")
+
+    monkeypatch.setattr(note_selector, "run_claude", broken)
+    job = wait_job(client, client.post("/api/followup", json={
+        "thread_id": thread_id, "question": "What about inventories?"}).get_json()["job_id"])
+    assert job["status"] == "done", job
+    assert job["result"]["added_notes"] == [] and len(job["result"]["notes"]) == 2
+
+
 def test_manual_pages_and_errors(client):
     job = wait_job(client, client.post("/api/analyze", json={
         "report": REPORT, "question": "What is on these pages?", "pages": "405"}).get_json()["job_id"])
@@ -150,7 +185,7 @@ def test_manual_pages_and_errors(client):
 
 
 def test_claude_reply_html_is_escaped(client, monkeypatch):
-    monkeypatch.setattr(app_module, "run_claude",
+    monkeypatch.setattr(analyzer_jobs, "run_claude",
                         lambda *a, **k: "Hello <script>alert(1)</script> **bold**")
     job = wait_job(client, client.post("/api/analyze", json={
         "report": REPORT, "question": "x", "notes": ["C21"]}).get_json()["job_id"])
@@ -187,7 +222,7 @@ def test_running_job_shows_answer_so_far(client, monkeypatch):
         assert release.wait(5)
         return "## Summary\n- Tax rate fell to 34.66%"
 
-    monkeypatch.setattr(app_module, "run_claude", slow_claude)
+    monkeypatch.setattr(analyzer_jobs, "run_claude", slow_claude)
     job_id = client.post("/api/analyze", json={
         "report": REPORT, "question": "x", "notes": ["C21"]}).get_json()["job_id"]
     for _ in range(100):

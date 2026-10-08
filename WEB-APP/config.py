@@ -12,6 +12,11 @@ BASE_DIR = Path(__file__).resolve().parent
 REPORTS_DIR = Path(os.environ.get(
     "REPORTS_DIR", r"C:\Daya\RAGchamp\ANN-RPT-ANALYZER\Annual-reports"
 ))
+# The model documents: one PDF per report format the app can read
+# (INFO/MODEL-DOCS-FUNCTIONALITY-PLAN.md). Not shipped in the exe.
+MODEL_DOCS_DIR = Path(os.environ.get(
+    "MODEL_DOCS_DIR", r"C:\Daya\RAGchamp\ANN-RPT-ANALYZER\MODEL-DOCS"
+))
 CACHE_DIR = BASE_DIR / "cache"
 THREADS_DIR = CACHE_DIR / "threads"
 HISTORY_DIR = BASE_DIR / "Prompt-History"
@@ -23,7 +28,15 @@ PROMPTS_DIR = BASE_DIR / "prompts"
 INPUT_FILE = BASE_DIR / "claude-prompt-input.txt"
 OUTPUT_FILE = BASE_DIR / "Claude-prompt-output.txt"
 
-for _d in (CACHE_DIR, THREADS_DIR, HISTORY_DIR, ANALYSIS_HISTORY_DIR, LOG_DIR):
+# Model testing (INFO/MODEL-FEEDBACK-FUNCTIONALITY-PLAN.md): the feedback files
+# and their audit trail (feedback-status.json), and the page images saved with them.
+MODEL_FEEDBACK_DIR = Path(os.environ.get("MODEL_FEEDBACK_DIR", BASE_DIR / "Model-Feedback"))
+MODEL_TESTING_DIR = Path(os.environ.get("MODEL_TESTING_DIR", BASE_DIR / "Model-Testing"))
+FEEDBACK_MAX_CHARS = 400
+MODEL_TEST_DPI = 150
+
+for _d in (CACHE_DIR, THREADS_DIR, HISTORY_DIR, ANALYSIS_HISTORY_DIR, LOG_DIR,
+           MODEL_FEEDBACK_DIR, MODEL_TESTING_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
 # --- Claude Code CLI (same pattern as basic-chatbot) ---
@@ -72,6 +85,18 @@ MAX_NOTES = 5
 MAX_UNITS_LEGACY = 6
 MAX_CONTEXT_CHARS = 150_000
 MAX_FOLLOWUP_TURNS = 10
+# Report passages (MD&A, Board's report, risk factors …) per question (INFO/ANALYZE-NON-FIN-DATA-PLAN.md Q3):
+# the selector picks at most MAX_PASSAGES; the ones sent may total PASSAGE_BUDGET characters by default
+# (more when the user adds them in step 3, within MAX_CONTEXT_CHARS).
+MAX_PASSAGES = 4
+PASSAGE_BUDGET = 32_000
+PASSAGE_CANDIDATES = 30
+# "Analyze non notes": at most this many notes, chosen only to confirm the passages' figures
+MAX_BUSINESS_NOTES = 2
+# A follow-up searches the whole report again and adds what its question needs to the thread
+# (at most this many new notes / passages per follow-up, within MAX_CONTEXT_CHARS)
+MAX_FOLLOWUP_NEW_NOTES = 3
+MAX_FOLLOWUP_NEW_PASSAGES = 2
 
 # --- Notes detection ---
 # Running headers that mark a page as belonging to a notes section. Other

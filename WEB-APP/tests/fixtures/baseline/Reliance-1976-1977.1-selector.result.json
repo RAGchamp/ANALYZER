@@ -1,0 +1,61 @@
+{
+ "chars": 13459,
+ "hints": [
+  {
+   "id": "SCH-E",
+   "lines": [
+    "6. FIXED ASSETS (Balance Sheet)"
+   ]
+  }
+ ],
+ "max_chars": 150000,
+ "method": "claude",
+ "notes": [
+  {
+   "end_page": 18,
+   "id": "SCH-E",
+   "kind": "schedule",
+   "label": "Schedule 'E' — Fixed Assets",
+   "no": "SCH-E",
+   "parent": null,
+   "printed_pages": "21",
+   "section": "standalone",
+   "section_label": "Standalone",
+   "start_page": 18,
+   "title": "Fixed Assets",
+   "title_is_excerpt": false
+  },
+  {
+   "end_page": 30,
+   "id": "N25",
+   "kind": "note",
+   "label": "Note 25 — Contingent Liabilities",
+   "no": "N25",
+   "parent": "SCH-O",
+   "printed_pages": "33",
+   "section": "standalone",
+   "section_label": "Standalone",
+   "start_page": 30,
+   "title": "Contingent Liabilities",
+   "title_is_excerpt": false
+  },
+  {
+   "end_page": 8,
+   "id": "DIR",
+   "kind": "narrative",
+   "label": "Directors' Report",
+   "no": "DIR",
+   "parent": null,
+   "printed_pages": "5-8",
+   "section": "standalone",
+   "section_label": "Standalone",
+   "start_page": 5,
+   "title": "Directors' Report",
+   "title_is_excerpt": false
+  }
+ ],
+ "reason": "fixed assets",
+ "scope": "standalone",
+ "scope_label": "Standalone",
+ "scope_reason": "Old-format report: it has standalone accounts only (no consolidated accounts)."
+}

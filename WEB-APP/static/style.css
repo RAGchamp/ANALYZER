@@ -175,6 +175,13 @@ button.ghost {
   border-color: #b8c0d6;
 }
 
+/* "Analyze non notes": the report's own sections, beside "Identify notes" */
+button.secondary {
+  background: #fff;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
 button.small { padding: 3px 10px; font-size: 0.8rem; }
 
 #mic-btn { background: var(--green); border-color: var(--green); padding: 9px 14px; }
@@ -382,3 +389,101 @@ code { background: var(--chip-bg); padding: 1px 5px; border-radius: 4px; font-si
 }
 
 .view-statements-row a:hover { color: #084298; }
+
+/* ---------- report package: quality report (step 1), statement hints (step 3) ---------- */
+.navbar .nav-link {
+  text-decoration: none;
+  border: 1px solid rgba(255, 230, 0, 0.5);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.quality-panel {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.quality-panel li.warning { color: #8a5a00; }
+.hint-line { margin: 6px 0 2px; font-size: 0.85rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.hint-line .hint { font-size: 0.8rem; padding: 2px 8px; }
+.hint-line .hint.chosen { color: var(--green); border-color: var(--green); opacity: 0.8; }
+
+/* ---------- Ingest screen ---------- */
+.ingest-main { max-width: 1100px; margin: 20px auto; padding: 0 16px; display: flex; flex-direction: column; gap: 16px; }
+.report-list { display: flex; flex-direction: column; gap: 12px; }
+.ingest-report { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.ingest-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.ingest-report .row { margin-top: 8px; align-items: center; flex-wrap: wrap; }
+.ingest-report .row a { font-size: 0.9rem; }
+.status-badge { border-radius: 999px; padding: 1px 9px; font-size: 0.75rem; font-weight: 600; border: 1px solid; }
+.status-up-to-date { color: var(--green); border-color: var(--green); }
+.status-stale, .status-needs-transcription { color: #8a5a00; border-color: #d4a017; }
+.status-not-ingested { color: var(--muted); border-color: var(--border); }
+.small-select { max-width: 260px; font-size: 0.85rem; }
+.page-number { width: 90px; }
+.job-status:empty { display: none; }
+
+/* ---------- model documents: "New model document" (step 1, Ingest screen) ---------- */
+.model-panel { margin: 10px 0; padding: 10px 12px; border: 1px solid #d4a017; background: #fff8e1;
+  border-radius: 8px; font-size: 0.9rem; }
+.model-panel .model-title { font-weight: 700; color: #8a5a00; margin-bottom: 4px; }
+.model-panel ul { margin: 6px 0; padding-left: 18px; color: var(--muted); font-size: 0.85rem; }
+.status-new-model-document { color: #8a5a00; border-color: #d4a017; background: #fff8e1; }
+.gap-report table { font-size: 0.8rem; border-collapse: collapse; }
+.gap-report td, .gap-report th { border: 1px solid var(--border); padding: 2px 6px; }
+.models-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.models-table td, .models-table th { border-bottom: 1px solid var(--border); padding: 4px 6px; text-align: left; }
+
+/* ---------- Model testing (INFO/MODEL-FEEDBACK-FUNCTIONALITY-PLAN.md) ---------- */
+.navbar .nav-link.active { background: var(--yellow); color: var(--navy); border-color: var(--yellow); font-weight: 600; }
+.mt-field { display: flex; gap: 10px; align-items: center; margin: 10px 0 2px; flex-wrap: wrap; }
+.mt-field label { width: 130px; font-weight: 600; color: var(--navy); }
+.mt-field select { max-width: 520px; }
+.mt-field .page-number { flex: 0 0 110px; }
+.mt-facts { margin-left: 140px; min-height: 1.2em; }
+.page-number.invalid { border-color: #d9534f; background: #fff5f5; }
+.field-error { color: var(--error-text); }
+#page-message { margin-left: 140px; }
+.page-frame { margin: 10px 0; border: 1px solid var(--border); border-radius: 6px; background: #f6f8fa;
+              padding: 8px; text-align: center; overflow: auto; }
+.page-frame img { max-width: 100%; height: auto; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); background: #fff; }
+.mt-subhead { margin-top: 14px; }
+.mt-subhead h3 { margin: 0; color: var(--navy); font-size: 1rem; }
+.extracted-box { max-height: 520px; overflow: auto; background: #f6f8fa; border: 1px solid var(--border);
+                 border-radius: 6px; padding: 10px; font-size: 0.8rem; white-space: pre-wrap; margin: 8px 0 12px; }
+.notice { margin: 8px 0; padding: 8px 12px; border: 1px solid #d4a017; background: #fff8e1; border-radius: 6px;
+          color: #8a5a00; font-size: 0.88rem; }
+.mt-check { display: inline-flex; gap: 8px; align-items: center; font-weight: 600; cursor: pointer; }
+.feedback-form { margin-top: 10px; padding: 10px 12px; border: 1px solid var(--border); border-left: 4px solid var(--yellow);
+                 border-radius: 6px; }
+.feedback-form label { display: block; margin-bottom: 4px; color: var(--muted); }
+#char-count.over { color: var(--error-text); font-weight: 600; }
+#submit-status.saved { color: var(--green); font-weight: 600; }
+.status-reported { color: #8a5a00; border-color: #d4a017; background: #fff8e1; }
+.status-fixed { color: var(--green); border-color: var(--green); }
+#feedback-list-panel summary { cursor: pointer; color: var(--navy); }
+#feedback-list { margin-top: 8px; }
+@media (max-width: 640px) {
+  .mt-field label { width: auto; }
+  .mt-facts, #page-message { margin-left: 0; }
+}
+
+/* step 3: report passages (INFO/ANALYZE-NON-FIN-DATA-PLAN.md §5) */
+.passage-box { margin: 12px 0 6px; padding: 10px 12px; border: 1px solid #d7e3f4; border-left: 4px solid #b8860b;
+  border-radius: 8px; background: #fbfcfe; }
+.passage-head { margin-bottom: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.passage-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; padding: 3px 0;
+  border-bottom: 1px dashed #e3e8f0; font-size: 0.88rem; }
+.passage-row label { flex: 1 1 320px; cursor: pointer; }
+.passage-row input[type="checkbox"] { margin-right: 4px; }
+.passage-path { overflow-wrap: anywhere; }
+.passage-text { flex-basis: 100%; max-height: 260px; overflow: auto; white-space: pre-wrap; font-size: 0.78rem;
+  background: #f6f8fb; border: 1px solid #e3e8f0; border-radius: 6px; padding: 6px 8px; margin: 4px 0; }
+.passage-snippet { flex-basis: 100%; margin: 0 0 2px 22px; font-size: 0.8rem; font-style: italic; color: #4b5563;
+  overflow-wrap: anywhere; }
+.passage-snippet mark, .passage-text mark { background: #fff3a3; color: inherit; padding: 0 1px; border-radius: 2px; }
+.passage-results { margin-top: 4px; }
+.passage-box .row input[type="text"] { flex: 1 1 260px; }
+.link-btn { background: none; border: none; color: var(--blue, #0d6efd); cursor: pointer; padding: 0 4px; }

@@ -7,7 +7,7 @@ Primary financial statements provided: {{STATEMENTS_LIST}}
 {{STATEMENTS}}
 ----- END OF PRIMARY FINANCIAL STATEMENTS -----
 
------ NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+{{LINKED}}----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
 {{EXTRACT}}
 ----- END OF NOTES -----
 

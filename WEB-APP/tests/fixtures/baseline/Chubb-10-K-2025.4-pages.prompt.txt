@@ -1,0 +1,301 @@
+REPORT PROFILE
+Format: US annual report on Form 10-K (US GAAP)
+Periods in the statements: FY2025, FY2024, FY2023 (years ended December 31)
+Units: (in millions of U.S. dollars, except per share data)
+The statements have no Notes column; LINKED FIGURES shows how the app linked statement lines to the notes.
+
+Annual report: Chubb-10-K-2025.pdf
+Statements: Manually selected pages
+Notes provided: PDF pages 108
+Primary financial statements provided: CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)
+
+QUESTION: What is on these pages?
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Impact on the financial statements
+How the matters in the notes flow into and affect each primary statement. Use one sub-heading per statement:
+### Income Statement (Statement of Operations)
+### Balance Sheet
+### Cash Flow Statement
+### Statement of Shareholders' Equity
+For each one, name the line items affected, give their figures (current and prior year, citing statement and page), show how the note reconciles to them, and explain the effect. For example, how the tax expense in the note drives profit after tax, how deferred tax balances appear on the Balance Sheet, how taxes paid appear in operating cash flow, or how OCI items move reserves in equity.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about, including any note figure that does not agree with the statements.
+## Sources
+The notes, statements and PDF pages you relied on.
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (Consolidated) ===
+--- PDF page 108 (printed page F-7) ---
+CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars, except per share data) | 2025 | 2024 | 2023
+Revenues
+Net premiums written | $54,842 | $51,468 | $47,361
+Increase in unearned premiums | (1,828) | (1,622) | (1,649)
+Net premiums earned | 53,014 | 49,846 | 45,712
+Net investment income | 6,465 | 5,930 | 4,937
+Net realized gains (losses) | 211 | 117 | (607)
+Market risk benefits gains (losses) | (288) | (140) | (307)
+Total revenues | 59,402 | 55,753 | 49,735
+Expenses
+Losses and loss expenses | 26,700 | 26,022 | 24,100
+Policy benefits (includes remeasurement gains (losses) of $59, $(2), and $19) | 5,460 | 4,714 | 3,628
+Policy acquisition costs | 9,847 | 9,102 | 8,259
+Administrative expenses | 4,504 | 4,380 | 4,007
+Interest expense | 764 | 741 | 672
+Other (income) expense | (1,297) | (1,023) | (836)
+Amortization of purchased intangibles | 301 | 323 | 310
+Integration expenses and severance | 79 | 39 | 69
+Total expenses | 46,358 | 44,298 | 40,209
+Income before income tax | 13,044 | 11,455 | 9,526
+Income tax expense | 2,422 | 1,815 | 511
+Net income | $10,622 | $9,640 | $9,015
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Net income attributable to Chubb | $10,310 | $9,272 | $9,028
+Other comprehensive income (loss)
+Change in:
+Unrealized appreciation (depreciation) | $2,655 | $(251) | $3,448
+Current discount rate on future policy benefits | 235 | (701) | 84
+Instrument-specific credit risk on market risk benefits | (8) | 7 | 2
+Cumulative foreign currency translation adjustment | 1,047 | (1,177) | (13)
+Other, including postretirement benefit liability adjustment | 49 | 257 | 157
+Other comprehensive income (loss), before income tax | 3,978 | (1,865) | 3,678
+Income tax expense related to OCI items | (149) | (117) | (317)
+Other comprehensive income (loss) | 3,829 | (1,982) | 3,361
+Comprehensive income | 14,451 | 7,658 | 12,376
+Comprehensive income (loss) attributable to noncontrolling interests | 472 | 221 | (28)
+Comprehensive income attributable to Chubb | $13,979 | $7,437 | $12,404
+Earnings per share
+Basic earnings per share attributable to Chubb | $25.93 | $22.94 | $21.97
+Diluted earnings per share attributable to Chubb | $25.68 | $22.70 | $21.80
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED BALANCE SHEETS (Consolidated) ===
+--- PDF page 107 (printed page F-6) ---
+CONSOLIDATED BALANCE SHEETS
+Chubb Limited and Subsidiaries
+(in millions of U.S. dollars, except share and per share data) | December 31, 2025 | December 31, 2024
+Assets
+Investments
+Short-term investments, at fair value (amortized cost – $4,840 and $5,143) (includes variable interest entities (VIE) balances of $105 and $57) | $4,840 | $5,142
+Fixed maturities available-for-sale, at fair value, net of valuation allowance – $52 and $70 (amortized cost – $124,726 and $115,083) | 122,680 | 110,363
+Private debt held-for-investment, at amortized cost, net of valuation allowance – $3 and $4 | 2,411 | 2,628
+Equity securities, at fair value (includes VIE balances of $2,275 and $1,289) | 10,801 | 9,151
+Private equities (includes VIE balances of $22 and $22) | 17,239 | 14,769
+Other investments (includes VIE balances of $5,818 and $4,538) | 10,749 | 8,597
+Total investments | 168,720 | 150,650
+Cash, including restricted cash $198 and $261 (includes VIE balances of $168 and $114) | 2,470 | 2,549
+Securities lending collateral | 2,500 | 1,445
+Accrued investment income | 1,305 | 1,160
+Insurance and reinsurance balances receivable, net of valuation allowance – $62 and $59 | 15,944 | 14,426
+Reinsurance recoverable on losses and loss expenses, net of valuation allowance – $320 and $310 | 20,338 | 19,777
+Reinsurance recoverable on policy benefits | 286 | 289
+Deferred policy acquisition costs | 10,008 | 8,358
+Value of business acquired | 2,975 | 3,223
+Goodwill | 20,207 | 19,579
+Other intangible assets | 6,241 | 6,377
+Deferred tax assets | 1,312 | 1,603
+Prepaid reinsurance premiums | 3,874 | 3,378
+Separate account assets | 6,925 | 6,231
+Other assets (includes VIE balances of $58 and $26) | 9,222 | 7,503
+Total assets | $272,327 | $246,548
+Liabilities
+Unpaid losses and loss expenses | $88,018 | $84,004
+Unearned premiums | 26,279 | 23,504
+Future policy benefits | 18,420 | 16,121
+Market risk benefits | 659 | 607
+Policyholders' account balances | 8,576 | 8,016
+Separate account liabilities | 6,925 | 6,231
+Insurance and reinsurance balances payable | 8,349 | 8,121
+Repurchase agreements (includes VIE balances of $956 and $815) | 3,324 | 2,731
+Securities lending payable | 2,500 | 1,445
+Accounts payable, accrued expenses, and other liabilities (includes VIE balances of $159 and $183) | 10,108 | 10,192
+Deferred tax liabilities | 1,741 | 1,584
+Short-term debt | 1,499 | 800
+Long-term debt | 15,728 | 14,379
+Hybrid debt | 422 | 419
+Total liabilities | 192,548 | 178,154
+Commitments and contingencies (refer to Note 14)
+Shareholders’ equity
+Common Shares (CHF 0.50 par value; 412,107,421 and 419,625,986 shares issued; 391,101,227 and 400,703,663 shares outstanding) | 231 | 235
+Common Shares in treasury (21,006,194 and 18,922,323 shares) | (4,699) | (3,524)
+Additional paid-in capital | 13,250 | 14,393
+Retained earnings | 69,950 | 61,561
+Accumulated other comprehensive income (loss) (AOCI) | (4,975) | (8,644)
+Total Chubb shareholders' equity | 73,757 | 64,021
+Noncontrolling interests (includes VIE balances of $5,133 and $3,459) | 6,022 | 4,373
+Total shareholders’ equity | 79,779 | 68,394
+Total liabilities and shareholders’ equity | $272,327 | $246,548
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED STATEMENTS OF CASH FLOWS (Consolidated) ===
+--- PDF page 110 (printed page F-9) ---
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Cash flows from operating activities
+Net income | $10,622 | $9,640 | $9,015
+Adjustments to reconcile net income to net cash flows from operating activities
+Net realized (gains) losses | (211) | (117) | 607
+Market risk benefits (gains) losses | 288 | 140 | 307
+Amortization of premiums (discounts) on fixed maturities | (409) | (367) | (148)
+Amortization of purchased intangibles | 301 | 323 | 310
+Equity in net income of partially-owned entities | (1,143) | (967) | (867)
+Deferred income taxes | 330 | 96 | (1,124)
+Unpaid losses and loss expenses | 2,706 | 4,567 | 3,470
+Unearned premiums | 2,098 | 1,805 | 1,377
+Future policy benefits | 2,186 | 1,841 | 848
+Insurance and reinsurance balances payable | 131 | (105) | (155)
+Accounts payable, accrued expenses, and other liabilities | 53 | 342 | (735)
+Income taxes | (160) | 69 | 128
+Insurance and reinsurance balances receivable | (1,167) | (1,278) | (1,072)
+Reinsurance recoverable | (169) | (30) | (498)
+Deferred policy acquisition costs | (1,566) | (1,429) | (1,100)
+Net sales (purchases) of investments by consolidated investment products | (1,090) | 278 | 450
+Other | 16 | 1,374 | 1,819
+Net cash flows from operating activities | 12,816 | 16,182 | 12,632
+Cash flows from investing activities
+Purchases of fixed maturities available-for-sale | (34,157) | (33,759) | (28,672)
+Purchases of fixed maturities held-to-maturity | — | — | (208)
+Purchases of equity securities | (2,799) | (4,333) | (1,395)
+Sales of fixed maturities available-for-sale | 12,231 | 12,815 | 14,593
+Sales of equity securities | 2,807 | 2,996 | 1,084
+Maturities and redemptions of fixed maturities available-for-sale | 12,675 | 10,810 | 7,026
+Maturities and redemptions of fixed maturities held-to-maturity | — | — | 708
+Net change in short-term investments | 462 | (763) | 1,169
+Net derivative instruments settlements | (185) | (93) | (153)
+Private equity contributions | (3,014) | (1,070) | (2,024)
+Private equity distributions | 1,721 | 1,397 | 1,164
+Acquisition of subsidiaries (net of cash acquired of $32, nil, and $560) | (289) | (538) | (34)
+Net consolidations (deconsolidations) of consolidated investment products | — | 27 | (17)
+Other | (712) | (1,412) | (889)
+Net cash flows used for investing activities | (11,260) | (13,923) | (7,648)
+Cash flows from financing activities
+Dividends paid on Common Shares | (1,505) | (1,436) | (1,394)
+Common Shares repurchased | (3,694) | (1,801) | (2,411)
+Proceeds from issuance of long-term debt | 2,424 | 2,408 | —
+Repayment of long-term debt | (800) | (1,437) | (475)
+Proceeds from share-based compensation plans | 327 | 356 | 212
+Policyholder contract deposits | 853 | 1,024 | 645
+Policyholder contract withdrawals | (594) | (709) | (458)
+Third-party capital invested into consolidated investment products | 2,556 | 1,614 | 126
+Third-party capital distributed by consolidated investment products | (1,753) | (1,621) | (745)
+Proceeds from issuance of repurchase agreements | 6,297 | 4,505 | 4,984
+Repayment of repurchase agreements | (5,693) | (4,822) | (4,728)
+Other | (268) | (262) | (245)
+Net cash flows used for financing activities | (1,850) | (2,181) | (4,489)
+Effect of foreign currency rate changes on cash and restricted cash | 215 | (150) | (1)
+Net increase (decrease) in cash and restricted cash | (79) | (72) | 494
+Cash and restricted cash – beginning of year | 2,549 | 2,621 | 2,127
+Cash and restricted cash – end of year | $2,470 | $2,549 | $2,621
+Supplemental cash flow information
+Interest paid | $650 | $599 | $553
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Consolidated) ===
+--- PDF page 109 (printed page F-8) ---
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Common Shares
+Balance – beginning of year | $235 | $241 | $10,346
+Par value reduction | — | — | (9,759)
+Cancellation of treasury shares | (4) | (6) | (346)
+Balance – end of year | 231 | 235 | 241
+Common Shares in treasury
+Balance – beginning of year | (3,524) | (4,400) | (5,113)
+Common Shares repurchased | (3,387) | (2,024) | (2,478)
+Cancellation of treasury shares | 1,923 | 2,527 | 2,869
+Net shares issued under employee share-based compensation plans | 289 | 373 | 322
+Balance – end of year | (4,699) | (3,524) | (4,400)
+Additional paid-in capital
+Balance – beginning of year | 14,393 | 15,665 | 7,166
+Net shares issued under employee share-based compensation plans | (92) | (124) | (192)
+Exercise of stock options | — | (23) | (20)
+Share-based compensation expense | 400 | 361 | 322
+Par value reduction | — | — | 9,759
+Net increase (decrease) due to acquisitions | 69 | (31) | 31
+Funding of dividends declared to Retained earnings | (1,520) | (1,455) | (1,401)
+Balance – end of year | 13,250 | 14,393 | 15,665
+Retained earnings
+Balance – beginning of year | 61,561 | 54,810 | 48,305
+Net income attributable to Chubb | 10,310 | 9,272 | 9,028
+Cancellation of treasury shares and other | (1,921) | (2,521) | (2,523)
+Funding of dividends declared from Additional paid-in capital | 1,520 | 1,455 | 1,401
+Dividends declared on Common Shares | (1,520) | (1,455) | (1,401)
+Balance – end of year | 69,950 | 61,561 | 54,810
+Accumulated other comprehensive income (loss) (AOCI)
+Balance – beginning of year | (8,644) | (6,809) | (10,185)
+Other comprehensive income (loss) | 3,669 | (1,835) | 3,376
+Balance – end of year | (4,975) | (8,644) | (6,809)
+Total Chubb shareholders’ equity | $73,757 | $64,021 | $59,507
+Noncontrolling interests
+Balance – beginning of year | $4,373 | $4,184 | $—
+Net increase (decrease) due to consolidation, deconsolidation, and other transactions | 1,177 | (26) | 4,212
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Other comprehensive income (loss) attributable to noncontrolling interests | 160 | (147) | (15)
+Other | — | (6) | —
+Balance – end of year | $6,022 | $4,373 | $4,184
+Total shareholders' equity | $79,779 | $68,394 | $63,691
+See accompanying notes to the Consolidated Financial Statements
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Manually selected pages ===
+--- PDF page 108 (printed page F-7) ---
+Table of Contents
+CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars, except per share data) | 2025 | 2024 | 2023
+Revenues
+Net premiums written | $54,842 | $51,468 | $47,361
+Increase in unearned premiums | (1,828) | (1,622) | (1,649)
+Net premiums earned | 53,014 | 49,846 | 45,712
+Net investment income | 6,465 | 5,930 | 4,937
+Net realized gains (losses) | 211 | 117 | (607)
+Market risk benefits gains (losses) | (288) | (140) | (307)
+Total revenues | 59,402 | 55,753 | 49,735
+Expenses
+Losses and loss expenses | 26,700 | 26,022 | 24,100
+Policy benefits (includes remeasurement gains (losses) of $59, $(2), and $19) | 5,460 | 4,714 | 3,628
+Policy acquisition costs | 9,847 | 9,102 | 8,259
+Administrative expenses | 4,504 | 4,380 | 4,007
+Interest expense | 764 | 741 | 672
+Other (income) expense | (1,297) | (1,023) | (836)
+Amortization of purchased intangibles | 301 | 323 | 310
+Integration expenses and severance | 79 | 39 | 69
+Total expenses | 46,358 | 44,298 | 40,209
+Income before income tax | 13,044 | 11,455 | 9,526
+Income tax expense | 2,422 | 1,815 | 511
+Net income | $10,622 | $9,640 | $9,015
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Net income attributable to Chubb | $10,310 | $9,272 | $9,028
+Other comprehensive income (loss)
+Change in:
+Unrealized appreciation (depreciation) | $2,655 | $(251) | $3,448
+Current discount rate on future policy benefits | 235 | (701) | 84
+Instrument-specific credit risk on market risk benefits | (8) | 7 | 2
+Cumulative foreign currency translation adjustment | 1,047 | (1,177) | (13)
+Other, including postretirement benefit liability adjustment | 49 | 257 | 157
+Other comprehensive income (loss), before income tax | 3,978 | (1,865) | 3,678
+Income tax expense related to OCI items | (149) | (117) | (317)
+Other comprehensive income (loss) | 3,829 | (1,982) | 3,361
+Comprehensive income | 14,451 | 7,658 | 12,376
+Comprehensive income (loss) attributable to noncontrolling interests | 472 | 221 | (28)
+Comprehensive income attributable to Chubb | $13,979 | $7,437 | $12,404
+Earnings per share
+Basic earnings per share attributable to Chubb | $25.93 | $22.94 | $21.97
+Diluted earnings per share attributable to Chubb | $25.68 | $22.70 | $21.80
+See accompanying notes to the Consolidated Financial Statements
+----- END OF NOTES -----

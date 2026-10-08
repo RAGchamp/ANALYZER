@@ -1,0 +1,45 @@
+An analyst asked this question about a scanned SEC Form 10-K (December 28, 1968), transcribed from page images:
+
+QUESTION: Analyze the marketable securities
+
+Below are the parts of the report you can choose from, grouped by company. Each company's primary statements are always provided with the answer, so don't choose them.
+- xx-Nn: numbered notes to that company's financial statements
+- xx-SCH-x: supporting schedules
+- xx-AUD: the accountants' / auditors' report; xx-TXT: filing text (cover, items, index, letters)
+
+== Berkshire Hathaway Inc. (consolidated) (statements always provided: Consolidated Statement of Earnings and Retained Earnings; Consolidated Balance Sheet)
+BH-TXT: Filing text (cover, items, index, letters) — Washington, D. C. 20549 FORM 10-K ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year b
+BH-AUD: Accountants' / auditors' report — CERTIFIED PUBLIC ACCOUNTANTS ### ACCOUNTANTS' REPORT The Board of Directors Berkshire Hathaway Inc.: We have examined the consolidated finan
+BH-N1: Note 1 — Basis of Consolidation — The accompanying financial statements consolidate the accounts of Berkshire Hathaway Inc. with its wholly-owned noninsurance Canadian subsid
+BH-N2: Note 2 — Marketable Securities — The market value of the securities portfolio, primarily marketable common stocks, was $11,824,000 at December 28, 1968.
+BH-N3: Note 3 — Inventories — The inventories used in the computation of cost of sales were as follows: --- --- December 30, 1967 $ 11,585,598 December 28, 1968 12,332,94
+BH-N4: Note 4 — Properties, Plants and Equipment — The Company's general policy is to provide for depreciation over the estimated useful lives as allowed by taxing authorities. Except for new
+BH-N5: Note 5 — Unconsolidated Subsidiaries — The combined adjusted equity of unconsolidated insurance subsidiaries at December 31, 1968 was $14,677,000. Such figure includes $1,523,000 
+BH-N6: Note 6 — Taxes on Income — The Company and its subsidiaries file separate income tax returns. Equity in earnings of unconsolidated subsidiary insurance companies, and 
+BH-N7: Note 7 — 7 1/2% Subordinated Debentures — Debentures bear interest at the rate of 7 1/2%, payable February 1 and August 1, and will be due on August 1, 1987. The debentures are not s
+BH-N8: Note 8 — Reduction in Federal Income Taxes — The reduction in Federal income taxes of $166,000 represents carryover of investment tax credits from prior periods. There are no unused ope
+BH-N9: Note 9 — Pension Plan — The Company has a noncontributory pension plan for salaried employees. Benefits are funded through the medium of an independently trusteed f
+BH-N10: Note 10 — Treatment of Realized Gains of Insurance Company Subsidiaries — Realized gains of insurance company subsidiaries in prior periods had been classified as extraordinary items. For the year ended December 28
+BH-N11: Note 11 — Long-Term Leases and Stock Options — The Company occupies office and warehouse space under long-term leases which call for total annual payments of $10[?],000 and aggregate rent
+BH-N12: Note 12 — Commitments — Additional subsidiaries were formed in December f[?]r the purpose of acquiring certain printing and publishing operations. Commitments for s
+BH-N13: Note 13 — Subsequent Event — On April 3, 1969, Berkshire Hathaway Inc. acquired 81,989 shares, out of a total of 100,000 shares outstanding, of the common stock of the I
+BH-N14: Note 14 — Supplementary Profit and Loss Information — Charged directly to profit and loss: To cost of sales Other Total --- --- --- --- Maintenance and repairs $ 165,675 22,763 188,438 Depreciat
+BH-SCH-I: Schedule I — Marketable Securities — ### Marketable Securities Year ended December 28, 1968 ### Schedule I Security Number of shares or face value Amount at which carried on bal
+BH-SCH-III: Schedule III — Investments in Securities of Affiliates — Investments in Securities of Affiliates Year ended December 28, 1968 ### Schedule III Name of issue and title of issue Balance at beginning 
+BH-SCH-V: Schedule V — Properties, Plants and Equipment — ### Properties, Plants and Equipment Year ended December 28, 1968 ### Schedule V Classification Balance at beginning of period Additions at 
+BH-SCH-VI: Schedule VI — Accumulated Depreciation of Properties, Plants and Equipment — ### Accumulated Depreciation of Properties, Plants and Equipment Year ended December 28, 1968 ### Schedule VI Classification Balance at begi
+BH-SCH-IX: Schedule IX — Bonds, Mortgages, and Similar Debt — ### Bonds, Mortgages, and Similar Debt Year ended December 28, 1968 ### Schedule IX Name of issuer and Title of each issue Amount authorized
+BH-SCH-XII: Schedule XII — Reserves — ### Reserves Year ended December 28, 1968 ### Schedule XII Balance at beginning of period Additions charged to profit and loss or income Ded
+BH-SCH-XVII: Schedule XVII — Equity in Net Profit and Loss of Affiliates — ### Equity in Net Profit and Loss of Affiliates ### Year ended December 28, 1968 ### Schedule XVII Name of Issuer and Title of Issue Amount 
+
+SUGGESTED BY THE FINANCIAL STATEMENTS - the statement lines your question is about are linked to these notes (a hint only; choose on the notes' content):
+- BH-N2: Marketable securities, at cost (note 2) (Schedule I) (Balance Sheet)
+- BH-SCH-I: Marketable securities, at cost (note 2) (Schedule I) (Balance Sheet)
+
+Choose the parts whose content is needed to answer the question thoroughly.
+- Choose the primary note(s) and schedule(s) first.
+- Add the auditors' report or the filing text only when they are likely to discuss the matter.
+- Choose at most 6 items, and prefer fewer.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["BH-N5", "BH-SCH-I"], "reason": "one or two sentences explaining the choice"}

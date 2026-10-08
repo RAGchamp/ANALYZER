@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chubb Limited — Initial question — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Chubb Limited</h1>
+      <span class="prompt-badge">#1 · Initial question</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> Chubb-10-K-2025.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 29 Sep 2026, 21:19:33</div>
+      <div class="col-md-6"><strong>Statements:</strong> Consolidated</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> 204–209</div>
+      <div class="col-12"><strong>Notes analyzed:</strong> Consolidated Note 19 – Segment information (PDF p.204–209)</div>
+      
+      <div class="col-12"><strong>Report sections analyzed</strong> (management's commentary, not audited): ITEM 1. Business › Competitive Environment · North America Agricultural Insurance (5 percent of 2025 Consolidated NPE) · Overview · Products and Distribution (PDF 7–8); ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Crop Insurance (PDF 78–79); ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Net Catastrophe Losses and Prior Period Development · 2025 1,721 403 · 2024 622 305 · Premiums · Combined Ratio · North America Agricultural Insurance (PDF 57); ITEM 1. Business › Competitive Environment · Overseas General Insurance (27 percent of 2025 Consolidated NPE) · Overview (PDF 8)</div>
+      
+      
+      <div class="col-12"><strong>Financial statements referenced:</strong> CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)</div>
+      
+    </div>
+    
+    <div class="question-label">Question</div>
+    
+    <p class="question">analyze the agriculture insurance business</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h2>Summary</h2>
+<ul>
+<li><strong>What it is.</strong> North America Agricultural Insurance is Chubb's smallest P&amp;C segment, at about 5% of 2025 consolidated net premiums earned (NPE) (Business, p.7). The audited numbers agree: 2,919 / 53,014 = 5.5% (Note 19, p.206). It has two parts: Rain and Hail, which writes federally subsidized multiple-peril crop insurance (MPCI) and private crop-hail cover, and Chubb Agribusiness, which writes farm, ranch and commercial agriculture P&amp;C (Business, p.7–8).</li>
+<li><strong>Profit improved sharply.</strong> Underwriting income rose from $146m (2023) to $354m (2024) to $517m (2025). Segment income rose from $183m to $412m to $577m (Note 19, pp.206–208).</li>
+<li><strong>Premiums recovered in 2025 but are still below 2023.</strong> Net premiums written (NPW) were $2,926m, up 8.3% on 2024, against $3,188m in 2023 (Note 19).</li>
+<li><strong>This is a catastrophe-like business.</strong> Results depend on weather, crop yields and commodity prices set in February and October. Management states that it usually cannot estimate the year's result until the fourth quarter (MD&amp;A, p.78–79).</li>
+<li><strong>The MD&amp;A extract gives no results commentary for this segment.</strong> The $492m and $575m figures on p.57 belong to the <strong>Personal P&amp;C</strong> segment, not agriculture (see below).</li>
+</ul>
+<h2>What management says</h2>
+<ul>
+<li><strong>Products.</strong></li>
+<li>MPCI covers revenue (price and yield), yield, margin, prevented planting and replant. It is run with the USDA's Risk Management Agency (RMA), under a Standard Reinsurance Agreement (SRA) with the Federal Crop Insurance Corporation (Business, p.7; MD&amp;A, p.78).</li>
+<li>Crop-hail is a private product written acre by acre in the U.S. and parts of Canada. Chubb sets its own rates for it using industry data (MD&amp;A, p.79).</li>
+<li>Agribusiness covers commercial agricultural processors and distributors, and farm and ranch operations from hobby farms to corporate farms, including equine (Business, p.8).</li>
+<li><strong>Market position.</strong> Management states that Chubb has been "one of the leading writers of crop insurance in the U.S." since the 1980s and is diversified across U.S. regions (MD&amp;A, p.78).</li>
+<li><strong>Competition.</strong> In MPCI, all approved providers sell the same forms at the same rates. Chubb therefore competes on service and digital tools. Agribusiness competes with national and regional carriers (Business, p.8).</li>
+<li><strong>Risk controls.</strong> Management lists:</li>
+<li>the SRA's pro-rata and state stop-loss protections</li>
+<li>third-party proportional and stop-loss reinsurance</li>
+<li>crop derivatives</li>
+<li>township liability limits on crop-hail (MD&amp;A, p.78–79).</li>
+</ul>
+<h2>Performance and drivers</h2>
+<p>All figures are in $m, from Note 19, pp.206–208.</p>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th></th>
+<th>2023</th>
+<th>2024</th>
+<th>2025</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPW</td>
+<td class="num">3,188</td>
+<td class="num">2,703</td>
+<td class="num">2,926</td>
+</tr>
+<tr>
+<td>NPE</td>
+<td class="num">3,169</td>
+<td class="num">2,705</td>
+<td class="num">2,919</td>
+</tr>
+<tr>
+<td>Losses and loss expenses</td>
+<td class="num">2,874</td>
+<td class="num">2,170</td>
+<td class="num">2,239</td>
+</tr>
+<tr>
+<td>Underwriting income</td>
+<td class="num">146</td>
+<td class="num">354</td>
+<td class="num">517</td>
+</tr>
+<tr>
+<td>Segment income</td>
+<td class="num">183</td>
+<td class="num">412</td>
+<td class="num">577</td>
+</tr>
+</tbody>
+</table></div>
+<p>My calculations:</p>
+<ul>
+<li><strong>Premium growth.</strong></li>
+<li>NPW: 2,926 / 2,703 − 1 = <strong>+8.3%</strong>.</li>
+<li>NPE: 2,919 / 2,705 − 1 = <strong>+7.9%</strong>.</li>
+<li>2024 NPW fell 15.2% (2,703 / 3,188 − 1).</li>
+<li><strong>Loss ratio.</strong> 2,239 / 2,919 = <strong>76.7%</strong>, against 80.2% in 2024 and 90.7% in 2023.</li>
+<li><strong>Combined ratio.</strong> (2,239 + 169 − 6) / 2,919 = <strong>82.3%</strong>, against 86.9% in 2024 and 95.4% in 2023.</li>
+<li><strong>Segment income</strong> grew 40% (577 / 412 − 1). Net investment income adds only $86m, so the gain comes from underwriting.</li>
+</ul>
+<p>What drove it, per management: pricing moves with February commodity prices and their volatility, and losses depend on October harvest prices and yields (MD&amp;A, p.79). That fits the 2024 premium drop and the better loss ratios. However, <strong>the report sections provided do not explain either year's result for this segment</strong>.</p>
+<p><strong>Administrative expenses are negative</strong> in every year: (6), (10) and (1). The reason is not disclosed in the material provided.</p>
+<h2>Outlook and risks</h2>
+<ul>
+<li><strong>Expectation.</strong> Management states that the 2026 SRA (covering July 2025 to June 2026) has no significant changes, so it "does not impact Chubb's outlook on the crop program" (MD&amp;A, p.78).</li>
+<li><strong>Risks named or implied:</strong></li>
+<li>drought, moisture, hail and more severe storms linked to climate change</li>
+<li>commodity prices falling between February and October</li>
+<li>lower commodity prices or volatility shrinking premiums</li>
+<li>regulatory dependence on the RMA and SRA terms</li>
+<li>premiums and earnings concentrated in Q2–Q3, with the year's result known only in Q4 (MD&amp;A, p.78–79).</li>
+</ul>
+<h2>How it shows in the audited numbers</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Figure (report section, page)</th>
+<th>Where in the notes or statements</th>
+<th>Ties?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Segment ≈ 5% of 2025 consolidated NPE (Business, p.7)</td>
+<td>Note 19: 2,919 / 53,014 = 5.5% (p.206, p.209)</td>
+<td>yes (rounded)</td>
+</tr>
+<tr>
+<td>NPW +$492m, +7.5% (MD&amp;A, p.57)</td>
+<td>Note 19 Personal P&amp;C: 7,024 − 6,532 = 492 (p.206–207)</td>
+<td>no: not agriculture</td>
+</tr>
+<tr>
+<td>NPE +$575m, +9.3% (MD&amp;A, p.57)</td>
+<td>Note 19 Personal P&amp;C: 6,763 − 6,188 = 575</td>
+<td>no: not agriculture</td>
+</tr>
+<tr>
+<td>$50m California wildfire reinstatement premiums (MD&amp;A, p.57)</td>
+<td>Not in Note 19</td>
+<td>not disclosed</td>
+</tr>
+<tr>
+<td>Crop derivative gains and losses (MD&amp;A, p.78)</td>
+<td>Note 19 moves them into losses and loss expenses (p.205), amount not shown</td>
+<td>not disclosed</td>
+</tr>
+</tbody>
+</table></div>
+<p>Note 19 confirms the segment's size and its three-year recovery in profit. The p.57 premium figures sit next to the agriculture heading in the extract but tie exactly to Personal P&amp;C, so they must not be read as agricultural growth. The audited notes provided do not split MPCI, crop-hail and Agribusiness, and do not show the effect of reinsurance or the SRA on the segment.</p>
+<h2>Questions for management</h2>
+<ol>
+<li>How much of 2025 underwriting income came from MPCI, crop-hail and Agribusiness respectively?</li>
+<li>How much of the fall in the loss ratio from 90.7% to 76.7% came from better yields or prices, and how much from reinsurance or derivatives?</li>
+<li>What caused the 15% drop in NPW in 2024, and how much of the 2025 rebound came from commodity prices rather than growth in insured acres?</li>
+<li>Why are administrative expenses negative? Are they offset by federal administrative and operating reimbursements?</li>
+<li>What were the realized gains or losses on crop derivatives in 2025?</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li><strong>Business:</strong> North America Agricultural Insurance, Products and Distribution, Competitive Environment (PDF 7–8).</li>
+<li><strong>MD&amp;A:</strong> Crop Insurance (PDF 78–79); Premiums, Combined Ratio, North America Agricultural Insurance (PDF 57).</li>
+<li><strong>Note 19:</strong> Segment information (PDF 204–209).</li>
+<li><strong>Consolidated Statement of Operations</strong> (PDF 108).</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in Chubb-10-K-2025.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ Below are the parts of the report you can choose from, grouped by company. Each 
 - xx-AUD: the accountants' / auditors' report; xx-TXT: filing text (cover, items, index, letters)
 
 {{NOTES_LIST}}
-
+{{HINTS}}
 Choose the parts whose content is needed to answer the question thoroughly.
 - Choose the primary note(s) and schedule(s) first.
 - Add the auditors' report or the filing text only when they are likely to discuss the matter.

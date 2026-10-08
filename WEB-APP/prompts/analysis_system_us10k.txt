@@ -1,0 +1,5 @@
+US FORM 10-K REPORT. This is a US company's annual report on Form 10-K, prepared under US GAAP:
+- The income statement is usually called the Statement of Operations (often combined with comprehensive income), and changes in equity the Statement of Shareholders' (or Stockholders') Equity. Treat them as the Profit and Loss statement and the Statement of Changes in Equity.
+- The income, cash flow and equity statements usually show three years; the balance sheet shows the two latest year-ends.
+- The statements have no Notes column. Connect lines to notes by their captions and figures; LINKED FIGURES shows the links the app found.
+- Figures are usually in millions of US dollars (see the heading); negative amounts are in parentheses and "—" means nil. Printed page numbers look like "F-8".

@@ -1,0 +1,250 @@
+REPORT PROFILE
+Format: Scanned report, transcribed by AI from page images (SEC Form 10-K)
+Companies in this report: Berkshire Hathaway Inc. (consolidated); National Indemnity Company; National Fire & Marine Insurance Company
+Period: December 28, 1968 (each company's statements give its own date)
+Currency: $
+Statements provided: Consolidated Statement of Earnings and Retained Earnings; Consolidated Balance Sheet
+Statement types NOT in the report for these companies: Funds statement, Statement of surplus / equity
+Source quality: AI transcription of 39 scanned pages; [?] marks unreadable characters (29 in the report)
+
+TRANSCRIPTION CHECKS (automatic)
+- p.1: figures not confirmed by the cross-check: 1934
+- p.2: 1 unreadable character(s) [?]
+- p.4: figures not confirmed by the cross-check: 1969
+- p.7: figures not confirmed by the cross-check: 16,136,069
+- p.8: 1 unreadable character(s) [?]; total 45,526,458 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 45,526,458, $372,000
+- p.11: 3 unreadable character(s) [?]
+- p.12: figures not confirmed by the cross-check: 63.825
+- p.13: 2 unreadable character(s) [?]
+- p.14: 1 unreadable character(s) [?]; total 12,754,985 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 10,468,947
+- p.18: figures not confirmed by the cross-check: 281,418
+- p.20: 2 unreadable character(s) [?]; figures not confirmed by the cross-check: 9,870, (102,642), 18,966)
+
+Annual report: BRK-1968.pdf
+Statements: Berkshire Hathaway Inc. (consolidated)
+Notes provided: Note 10 — Treatment of Realized Gains of Insurance Company Subsidiaries (PDF p.11), Note 5 — Unconsolidated Subsidiaries (PDF p.10), Note 6 — Taxes on Income (PDF p.10–11), Note 2 — Marketable Securities (PDF p.9), Schedule I — Marketable Securities (PDF p.13)
+Primary financial statements provided: Consolidated Statement of Earnings and Retained Earnings (PDF p.8); Consolidated Balance Sheet (PDF p.7)
+
+QUESTION: what was berkshire's realized gains from stocks
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Impact on the financial statements
+How the matters in the notes flow into and affect each primary statement. Use one sub-heading per statement:
+### Consolidated Statement of Earnings and Retained Earnings
+### Consolidated Balance Sheet
+(This report has no funds or cash flow statement. If cash movements matter to the question, add a short derived funds-flow statement, clearly labelled as derived by the analyst and not published.)
+For each one, name the line items affected, give their figures (current and prior year, citing statement and page), show how the note reconciles to them, and explain the effect. For example, how the tax expense in the note drives profit after tax, how deferred tax balances appear on the Balance Sheet, how taxes paid appear in operating cash flow, or how OCI items move reserves in equity.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about, including any note figure that does not agree with the statements.
+## Sources
+The notes, statements and PDF pages you relied on.
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Consolidated Statement of Earnings and Retained Earnings (Berkshire Hathaway Inc.) ===
+--- PDF page 8 (printed page 9) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Statement of Earnings and Retained Earnings
+
+Year ended December 28, 1968
+
+| | |
+|---|---:|
+| **Operating income:** | |
+| Net sales of textile products | $ 46,002,417 |
+| Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII) | 1,789,402 |
+| Dividends from marketable securities | 223,024 |
+| Interest from marketable securities | 131,558 |
+| Interest - other | 34.456 |
+| | 48,180,857 |
+| **Operating costs:** | |
+| Cost of sales (note 3) | 41,321,747 |
+| Administrative and selling expenses | 3,110,628 |
+| Interest on long-term debt | 47,746 |
+| Interest on note payable - bank | 254,106 |
+| Amortization of bond discount | 3,196 |
+| Other interest | 61,035 |
+| Federal income taxes (note 6) | 728,00[?] |
+| | 45,526,458 |
+| Earnings from operations | 2,654,399 |
+| **Investment gains, net of taxes on gains (note 6):** | |
+| Gains realized by Parent Company (first-in, first-out) | 1,467,752 |
+| Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6) | 706,504 |
+| Total investment gains | 2,174,256 |
+| Earnings before extraordinary items | 4,828,655 |
+| **Extraordinary items:** | |
+| Loss on liquidation of mill properties, net of $372,000 income tax benefit | (332,319) |
+| Reduction in Federal income taxes (note 8) | 166,000 |
+| | (166,319) |
+| Net earnings | 4,662,336 |
+| Retained earnings, beginning | 27,032,370 |
+| Retained earnings, ending | $ 31,694,706 |
+| **Per share of outstanding common stock:** | |
+| Earnings from operations | 2.69 |
+| Investment gains | 2.21 |
+| Extraordinary items | (.17) |
+| Net earnings | $ 4.73 |
+
+See accompanying notes to financial statements.
+
+9
+
+=== Consolidated Balance Sheet (Berkshire Hathaway Inc.) ===
+--- PDF page 7 (printed page 7-8) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Balance Sheet
+
+December 28, 1968
+
+### Assets
+
+| | | |
+|---|---|---|
+| Current assets: | | |
+| Cash | | $ 1,605,600 |
+| Marketable securities, at cost (note 2) (Schedule I) | | 5,421,384 |
+| Accounts receivable - trade, including $1,029 due from officers, net of allowance for doubtful accounts ($281,418) (Schedule XII) | | 7,563,123 |
+| Inventories, at the lower of cost (first-in, first-out) or market (note 3) | | 12,332,943 |
+| Prepaid and deferred charges (including mortgage note of approximately $15,200 due from officer) | | 199,501 |
+| Total current assets | | 27,122,551 |
+| Properties, plants and equipment, at cost (note 4) (Schedule V): | | |
+| Land | $ 106,555 | |
+| Buildings | 3,715,838 | |
+| Machinery and equipment | 15,651,551 | |
+| Furniture and fixtures | 428,094 | |
+| Leasehold improvements | 94,232 | |
+| Motor vehicle | 2,423 | |
+| | 19,998,693 | |
+| Less accumulated depreciation and amortization (Schedule VI) | 16,136,069 | |
+| Net properties, plants and equipment | | 3,862,624 |
+| Investment in unconsolidated subsidiaries (note 5) (Schedule III) | | 12,754,985 |
+| | | $ 43,740,160 |
+
+### Liabilities and Stockholders' Equity
+
+| | | |
+|---|---|---|
+| Current liabilities: | | |
+| Note payable - bank, unsecured | | $ 2,000,000 |
+| Accounts payable and accrued expenses | | 3,717,188 |
+| Accrued payroll | | 319,260 |
+| Accrued interest | | 32,536 |
+| Accrued payroll taxes | | 187,546 |
+| Accrued Federal, State, and local taxes (note 6) | | 637,059 |
+| Total current liabilities | | 6,893,589 |
+| Long-term debt: | | |
+| 7 1/2% subordinated debentures (note 7) (Schedule IX) | | 641,300 |
+| Stockholders; equity: | | |
+| Common stock, $5 par value. Authorized 1,722,983 shares; issued 1,017,547 shares | $ 5,087,735 | |
+| Retained earnings | 31,694,706 | |
+| | 36,782,441 | |
+| Less 32,065 shares of common stock in treasury, at cost | 577,170 | |
+| Total stockholders' equity | | 36,205,271 |
+| Commitments and contingencies (notes 9, 11, 12, and 13) | | |
+| | | $ 43,740,160 |
+
+See accompanying notes to financial statements.
+
+7 8
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- LINKED FIGURES (statement lines the app linked to the notes provided; found automatically - check them against the statements and notes) -----
+- Marketable securities, at cost (note 2) (Schedule I) (Consolidated Balance Sheet, PDF p.7) | column 2 5,421,384 -> Note 2 — Marketable Securities (cited in the line); Schedule I — Marketable Securities (cited in the line, same figure in the note)
+- Investment in unconsolidated subsidiaries (note 5) (Schedule III) (Consolidated Balance Sheet, PDF p.7) | column 2 12,754,985 -> Note 5 — Unconsolidated Subsidiaries (cited in the line)
+- Accrued Federal, State, and local taxes (note 6) (Consolidated Balance Sheet, PDF p.7) | column 2 637,059 -> Note 6 — Taxes on Income (cited in the line)
+- Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII) (Consolidated Statement of Earnings and Retained Earnings, PDF p.8) | FY1968 1,789,402 -> Note 5 — Unconsolidated Subsidiaries (cited in the line); Note 6 — Taxes on Income (cited in the line)
+- Dividends from marketable securities (Consolidated Statement of Earnings and Retained Earnings, PDF p.8) | FY1968 223,024 -> Note 2 — Marketable Securities (title match); Schedule I — Marketable Securities (title match)
+- Interest from marketable securities (Consolidated Statement of Earnings and Retained Earnings, PDF p.8) | FY1968 131,558 -> Note 2 — Marketable Securities (title match); Schedule I — Marketable Securities (title match)
+- Federal income taxes (note 6) (Consolidated Statement of Earnings and Retained Earnings, PDF p.8) | FY1968 728,00[?] -> Note 6 — Taxes on Income (cited in the line)
+- Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6) (Consolidated Statement of Earnings and Retained Earnings, PDF p.8) | FY1968 706,504 -> Note 5 — Unconsolidated Subsidiaries (cited in the line); Note 6 — Taxes on Income (cited in the line)
+- Loss on liquidation of mill properties, net of $372,000 income tax benefit (Consolidated Statement of Earnings and Retained Earnings, PDF p.8) | FY1968 (332,319) -> Note 6 — Taxes on Income (title match)
+CHECKS (automatic)
+- warn: 'Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII)' cites BH-N5, but none of its figures (1,789,402) is printed there
+- warn: 'Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII)' cites BH-N6, but none of its figures (1,789,402) is printed there
+- warn: 'Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6)' cites BH-N5, but none of its figures (706,504) is printed there
+- warn: 'Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6)' cites BH-N6, but none of its figures (706,504) is printed there
+- warn: 'Marketable securities, at cost (note 2) (Schedule I)' cites BH-N2, but none of its figures (5,421,384) is printed there
+- warn: 'Investment in unconsolidated subsidiaries (note 5) (Schedule III)' cites BH-N5, but none of its figures (12,754,985) is printed there
+- warn: 'Accrued Federal, State, and local taxes (note 6)' cites BH-N6, but none of its figures (637,059) is printed there
+----- END OF LINKED FIGURES -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Berkshire Hathaway Inc. — Note 10 — Treatment of Realized Gains of Insurance Company Subsidiaries ===
+--- PDF page 11 (printed page 12) ---
+### (10) Treatment of Realized Gains of Insurance Company Subsidiaries
+
+Realized gains of insurance company subsidiaries in prior periods had been classified as extraordinary items. For the year ended December 28, 1968, these gains have been classified under the caption "Investment Gains" to reflect management's opinion that they are a part of the determination of earnings before extraordinary items.
+
+=== Berkshire Hathaway Inc. — Note 5 — Unconsolidated Subsidiaries ===
+--- PDF page 10 (printed page 11) ---
+### (5) Unconsolidated Subsidiaries
+
+The combined adjusted equity of unconsolidated insurance subsidiaries at December 31, 1968 was $14,677,000. Such figure includes $1,523,000 of unrealized appreciation of investments, net of applicable income taxes.
+
+=== Berkshire Hathaway Inc. — Note 6 — Taxes on Income ===
+--- PDF page 10 (printed page 11) ---
+### (6) Taxes on Income
+
+The Company and its subsidiaries file separate income tax returns. Equity in earnings of unconsolidated subsidiary insurance companies, and investment gains of the parent and subsidiaries for the year ended December 28, 1968 are reflected net of income taxes of the following amounts:
+
+| | |
+|---|---|
+| Taxes on income, other than investment gains, of unconsolidated subsidiary insurance companies | $ 384,248 |
+| Taxes on investment gains (parent company) | 575,000 |
+| Taxes on investment gains of unconsolidated subsidiary insurance companies | 267,984 |
+
+11
+
+--- PDF page 11 (printed page 12) ---
+BERKSHIRE HATHAWAY INC.
+
+Notes to Consolidated Financial Statements, Continued
+
+=== Berkshire Hathaway Inc. — Note 2 — Marketable Securities ===
+--- PDF page 9 (printed page 10) ---
+### (2) Marketable Securities
+
+The market value of the securities portfolio, primarily marketable common stocks, was $11,824,000 at December 28, 1968.
+
+=== Berkshire Hathaway Inc. — Schedule I — Marketable Securities ===
+--- PDF page 13 (printed page 14) ---
+BERKSHIRE HATHAWAY INC.
+
+### Marketable Securities
+
+Year ended December 28, 1968
+
+### Schedule I
+
+| Security | Number of shares or face value | Amount at which carried on balance sheet (cost) | Value based on current market quotations at balance sheet date |
+|---|---|---|---|
+| Common stocks: | | | |
+| American Express Co. | 45,000 | $ 1,065,000 | 3,454,000 |
+| John Blair & Co. | 13,400 | 227,880 | 683,000 |
+| Crompton Company | 800 | 23,203 | 26,000 |
+| Disney Productions | 14,498.28 | 290,669 | 1,247,000 |
+| Florida Gas Company | 500 | 6,504 | 10,000 |
+| Investors Diversified Services A | 40,676 | 1,162,456 | 2,191,000 |
+| Investors Diversified Services B | 2,100 | 14,962 | 29,000 |
+| Massachusetts Indemnity & Life Insurance Co. | 2,200 | 55,462 | 99,000 |
+| Rank Organization Ltd. | 11,175 | 37,977 | 137,000 |
+| Sperry & Hutchinson Co. | 57,500 | 1,036,209 | 2,429,000 |
+| Wm. Wrigley, Jr. | 1,6[?]0 | 165,902 | 184,000 |
+| | | 4,086,224 | 10,48[?],000 |
+| Commercial paper: | | | |
+| General Motors Acceptance Corporation Notes: | | | |
+| 6% due February 21, 1969 | $ 1,100,000 | 1,087,717 | 1,088,000 |
+| 6 1/8% due February 21, 1969 | 100,000 | 98,928 | 99,000 |
+| 6 1/4% due February 21, 1969 | 150,000 | 148,515 | 148,000 |
+| | | 1,335,160 | 1,335,000 |
+| | | $ 5,421,384 | 11,824,000 |
+
+14
+----- END OF NOTES -----

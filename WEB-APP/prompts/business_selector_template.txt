@@ -1,0 +1,17 @@
+An analyst asked this question about the company's business, to be answered from its annual report:
+
+QUESTION: {{QUESTION}}
+
+The answer will be written from the annual report's own sections (management's discussion and analysis, letters to shareholders, the board's report, the business description, risk factors …), not from the notes to the financial statements. These are the passages the app found as most related to the question; the text after each id is its section and heading, its PDF pages, and its first words.
+
+{{PASSAGE_LIST}}
+
+Choose the passages needed to answer the question, the most relevant first: at most {{MAX_PASSAGES}}, and prefer fewer if they cover it.
+
+Also choose at most {{MAX_NOTES}} notes to the financial statements, only ones whose figures confirm or contradict what the passages say about this business (for example segment information, or revenue from operations). Choose no note if none helps.
+{{HINTS}}
+NOTES:
+{{NOTES_LIST}}
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"passages": ["{{EXAMPLE_ID}}"], "notes": [], "reason": "one or two sentences explaining the choice"}

@@ -1,0 +1,77 @@
+## Summary
+- **What it is.** North America Agricultural Insurance is Chubb's smallest P&C segment, at about 5% of 2025 consolidated net premiums earned (NPE) (Business, p.7). The audited numbers agree: 2,919 / 53,014 = 5.5% (Note 19, p.206). It has two parts: Rain and Hail, which writes federally subsidized multiple-peril crop insurance (MPCI) and private crop-hail cover, and Chubb Agribusiness, which writes farm, ranch and commercial agriculture P&C (Business, p.7–8).
+- **Profit improved sharply.** Underwriting income rose from $146m (2023) to $354m (2024) to $517m (2025). Segment income rose from $183m to $412m to $577m (Note 19, pp.206–208).
+- **Premiums recovered in 2025 but are still below 2023.** Net premiums written (NPW) were $2,926m, up 8.3% on 2024, against $3,188m in 2023 (Note 19).
+- **This is a catastrophe-like business.** Results depend on weather, crop yields and commodity prices set in February and October. Management states that it usually cannot estimate the year's result until the fourth quarter (MD&A, p.78–79).
+- **The MD&A extract gives no results commentary for this segment.** The $492m and $575m figures on p.57 belong to the **Personal P&C** segment, not agriculture (see below).
+
+## What management says
+- **Products.**
+  - MPCI covers revenue (price and yield), yield, margin, prevented planting and replant. It is run with the USDA's Risk Management Agency (RMA), under a Standard Reinsurance Agreement (SRA) with the Federal Crop Insurance Corporation (Business, p.7; MD&A, p.78).
+  - Crop-hail is a private product written acre by acre in the U.S. and parts of Canada. Chubb sets its own rates for it using industry data (MD&A, p.79).
+  - Agribusiness covers commercial agricultural processors and distributors, and farm and ranch operations from hobby farms to corporate farms, including equine (Business, p.8).
+- **Market position.** Management states that Chubb has been "one of the leading writers of crop insurance in the U.S." since the 1980s and is diversified across U.S. regions (MD&A, p.78).
+- **Competition.** In MPCI, all approved providers sell the same forms at the same rates. Chubb therefore competes on service and digital tools. Agribusiness competes with national and regional carriers (Business, p.8).
+- **Risk controls.** Management lists:
+  - the SRA's pro-rata and state stop-loss protections
+  - third-party proportional and stop-loss reinsurance
+  - crop derivatives
+  - township liability limits on crop-hail (MD&A, p.78–79).
+
+## Performance and drivers
+All figures are in $m, from Note 19, pp.206–208.
+
+| | 2023 | 2024 | 2025 |
+|---|---|---|---|
+| NPW | 3,188 | 2,703 | 2,926 |
+| NPE | 3,169 | 2,705 | 2,919 |
+| Losses and loss expenses | 2,874 | 2,170 | 2,239 |
+| Underwriting income | 146 | 354 | 517 |
+| Segment income | 183 | 412 | 577 |
+
+My calculations:
+- **Premium growth.**
+  - NPW: 2,926 / 2,703 − 1 = **+8.3%**.
+  - NPE: 2,919 / 2,705 − 1 = **+7.9%**.
+  - 2024 NPW fell 15.2% (2,703 / 3,188 − 1).
+- **Loss ratio.** 2,239 / 2,919 = **76.7%**, against 80.2% in 2024 and 90.7% in 2023.
+- **Combined ratio.** (2,239 + 169 − 6) / 2,919 = **82.3%**, against 86.9% in 2024 and 95.4% in 2023.
+- **Segment income** grew 40% (577 / 412 − 1). Net investment income adds only $86m, so the gain comes from underwriting.
+
+What drove it, per management: pricing moves with February commodity prices and their volatility, and losses depend on October harvest prices and yields (MD&A, p.79). That fits the 2024 premium drop and the better loss ratios. However, **the report sections provided do not explain either year's result for this segment**.
+
+**Administrative expenses are negative** in every year: (6), (10) and (1). The reason is not disclosed in the material provided.
+
+## Outlook and risks
+- **Expectation.** Management states that the 2026 SRA (covering July 2025 to June 2026) has no significant changes, so it "does not impact Chubb's outlook on the crop program" (MD&A, p.78).
+- **Risks named or implied:**
+  - drought, moisture, hail and more severe storms linked to climate change
+  - commodity prices falling between February and October
+  - lower commodity prices or volatility shrinking premiums
+  - regulatory dependence on the RMA and SRA terms
+  - premiums and earnings concentrated in Q2–Q3, with the year's result known only in Q4 (MD&A, p.78–79).
+
+## How it shows in the audited numbers
+
+| Figure (report section, page) | Where in the notes or statements | Ties? |
+|---|---|---|
+| Segment ≈ 5% of 2025 consolidated NPE (Business, p.7) | Note 19: 2,919 / 53,014 = 5.5% (p.206, p.209) | yes (rounded) |
+| NPW +$492m, +7.5% (MD&A, p.57) | Note 19 Personal P&C: 7,024 − 6,532 = 492 (p.206–207) | no: not agriculture |
+| NPE +$575m, +9.3% (MD&A, p.57) | Note 19 Personal P&C: 6,763 − 6,188 = 575 | no: not agriculture |
+| $50m California wildfire reinstatement premiums (MD&A, p.57) | Not in Note 19 | not disclosed |
+| Crop derivative gains and losses (MD&A, p.78) | Note 19 moves them into losses and loss expenses (p.205), amount not shown | not disclosed |
+
+Note 19 confirms the segment's size and its three-year recovery in profit. The p.57 premium figures sit next to the agriculture heading in the extract but tie exactly to Personal P&C, so they must not be read as agricultural growth. The audited notes provided do not split MPCI, crop-hail and Agribusiness, and do not show the effect of reinsurance or the SRA on the segment.
+
+## Questions for management
+1. How much of 2025 underwriting income came from MPCI, crop-hail and Agribusiness respectively?
+2. How much of the fall in the loss ratio from 90.7% to 76.7% came from better yields or prices, and how much from reinsurance or derivatives?
+3. What caused the 15% drop in NPW in 2024, and how much of the 2025 rebound came from commodity prices rather than growth in insured acres?
+4. Why are administrative expenses negative? Are they offset by federal administrative and operating reimbursements?
+5. What were the realized gains or losses on crop derivatives in 2025?
+
+## Sources
+- **Business:** North America Agricultural Insurance, Products and Distribution, Competitive Environment (PDF 7–8).
+- **MD&A:** Crop Insurance (PDF 78–79); Premiums, Combined Ratio, North America Agricultural Insurance (PDF 57).
+- **Note 19:** Segment information (PDF 204–209).
+- **Consolidated Statement of Operations** (PDF 108).

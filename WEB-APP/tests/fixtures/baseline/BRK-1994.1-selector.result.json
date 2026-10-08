@@ -1,0 +1,46 @@
+{
+ "chars": 3580,
+ "hints": [
+  {
+   "id": "C10",
+   "lines": [
+    "Income taxes (Balance Sheet)",
+    "Effect of change in income tax rate on deferred taxes (Cash Flow)",
+    "Income taxes (Cash Flow)",
+    "Other than effect of change in income tax rate on deferred taxes applicable to unrealized appreciation (P&L)",
+    "Effect of change in income tax rate on deferred taxes applicable to unrealized appreciation (P&L)",
+    "Cumulative effect of change in accounting for income taxes (P&L)"
+   ]
+  },
+  {
+   "id": "C16",
+   "lines": [
+    "Effect of change in income tax rate on deferred taxes (Cash Flow)",
+    "Effect of change in income tax rate on deferred taxes applicable to unrealized appreciation (P&L)",
+    "Cumulative effect of change in accounting for income taxes (P&L)"
+   ]
+  }
+ ],
+ "max_chars": 150000,
+ "method": "claude",
+ "notes": [
+  {
+   "end_page": 38,
+   "id": "C10",
+   "kind": "note",
+   "label": "Consolidated Note 10 — INCOME TAXES",
+   "no": 10,
+   "parent": null,
+   "printed_pages": null,
+   "section": "consolidated",
+   "section_label": "Consolidated",
+   "start_page": 37,
+   "title": "INCOME TAXES",
+   "title_is_excerpt": false
+  }
+ ],
+ "reason": "taxes",
+ "scope": "consolidated",
+ "scope_label": "Consolidated",
+ "scope_reason": "Default: notes to the consolidated financial statements."
+}

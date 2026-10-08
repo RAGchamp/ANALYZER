@@ -1,0 +1,35 @@
+## What the auditors said
+
+Peat, Marwick, Mitchell & Co., Certified Public Accountants of Omaha, gave **two separate clean opinions** on National Indemnity Company's 1968 statements. Each opinion covers a different accounting basis (Accountants' report, p.22). The report is dated **February 17, 1969** and addressed to National Indemnity's Board of Directors (p.22). Exhibit 1 presents it as the "Accountants' Report" ahead of the company's financial statements for December 31, 1968 (Exhibit 1, p.21).
+
+### Scope of the examination
+- The auditors examined the **statutory statement of assets and liabilities** at December 31, 1968. They also examined the related **statements of income and of paid-in and unassigned surplus** for the year (p.22).
+- They separately examined the **supplemental statements of adjusted income and stockholders' equity** (p.22).
+- The work followed generally accepted auditing standards, "including such tests… and other auditing procedures as we considered necessary" (p.22).
+
+### The two opinions
+
+| Statements | Accounting basis | Opinion (p.22) |
+|---|---|---|
+| Statutory balance sheet, income, and paid-in and unassigned surplus | Insurance accounting principles prescribed or permitted by statutory authority | Present fairly the statutory financial position and the income and surplus changes, on a basis consistent with the prior year |
+| Supplemental adjusted income and stockholders' equity | Generally accepted accounting principles (GAAP) | Present fairly net income for 1968 and stockholders' equity at year-end, on a basis consistent with the prior year |
+
+- **No qualifications.** Neither opinion has an exception or a going-concern paragraph. Both confirm the accounting was applied consistently with the preceding year (p.22).
+- **An explanatory reference.** The auditors say statutory principles "vary in some respects" from GAAP, and they point readers to note 1 (p.22).
+
+### What Note 1 explains
+Note 1 lists the statutory practices that differ from GAAP (Note 1, p.28):
+- Bonds are carried at amortized cost. Stocks are carried at NAIC market values, with no tax provision on unrealized appreciation.
+- Premiums are earned pro rata over the policy period, but acquisition and commission costs are expensed when incurred.
+- Statutory loss reserves above case-basis losses are required on certain lines.
+- "Nonadmitted assets" are excluded from the balance sheet.
+- A provision is made for business reinsured with unlicensed reinsurers.
+
+According to Note 1, the effect of these differences is shown in the supplemental adjusted statements. That is why the auditors gave the second, GAAP-basis opinion (Note 1, p.28).
+
+### Why it matters for Berkshire
+- National Indemnity was not consolidated. Berkshire carries it within "Investment in unconsolidated subsidiaries" of **$12,754,985** (Balance Sheet, p.7) and records "Equity in earnings of unconsolidated subsidiary insurance companies" of **$1,789,402** (P&L, p.8). The transcription flags that the $12,754,985 total cannot be checked because a figure above it is unreadable.
+- Because of the GAAP-basis opinion, the adjusted equity and net income are the audited figures closest to how Berkshire would reflect the subsidiary. However, the material provided does not include National Indemnity's own figures, so I can't tie any National Indemnity amount to Berkshire's equity-method lines.
+- One date gap: the insurer's statements are as of **December 31, 1968**, while Berkshire's year ended **December 28, 1968** (p.22; Balance Sheet, p.7). The report does not explain how the two dates are aligned.
+
+**Not in the material:** the National Indemnity statements themselves and the auditors' report on National Fire & Marine were not provided. I have not assumed what they say.

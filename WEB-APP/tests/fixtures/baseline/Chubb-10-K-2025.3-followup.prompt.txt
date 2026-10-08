@@ -1,0 +1,522 @@
+REPORT PROFILE
+Format: US annual report on Form 10-K (US GAAP)
+Periods in the statements: FY2025, FY2024, FY2023 (years ended December 31)
+Units: (in millions of U.S. dollars, except per share data)
+The statements have no Notes column; LINKED FIGURES shows how the app linked statement lines to the notes.
+
+Annual report: Chubb-10-K-2025.pdf
+Statements: Consolidated
+Notes provided: Consolidated Note 12 – Taxation (PDF p.175–180), Consolidated Note 13 – Debt (PDF p.181–182)
+Primary financial statements provided: CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (Consolidated) ===
+--- PDF page 108 (printed page F-7) ---
+CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars, except per share data) | 2025 | 2024 | 2023
+Revenues
+Net premiums written | $54,842 | $51,468 | $47,361
+Increase in unearned premiums | (1,828) | (1,622) | (1,649)
+Net premiums earned | 53,014 | 49,846 | 45,712
+Net investment income | 6,465 | 5,930 | 4,937
+Net realized gains (losses) | 211 | 117 | (607)
+Market risk benefits gains (losses) | (288) | (140) | (307)
+Total revenues | 59,402 | 55,753 | 49,735
+Expenses
+Losses and loss expenses | 26,700 | 26,022 | 24,100
+Policy benefits (includes remeasurement gains (losses) of $59, $(2), and $19) | 5,460 | 4,714 | 3,628
+Policy acquisition costs | 9,847 | 9,102 | 8,259
+Administrative expenses | 4,504 | 4,380 | 4,007
+Interest expense | 764 | 741 | 672
+Other (income) expense | (1,297) | (1,023) | (836)
+Amortization of purchased intangibles | 301 | 323 | 310
+Integration expenses and severance | 79 | 39 | 69
+Total expenses | 46,358 | 44,298 | 40,209
+Income before income tax | 13,044 | 11,455 | 9,526
+Income tax expense | 2,422 | 1,815 | 511
+Net income | $10,622 | $9,640 | $9,015
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Net income attributable to Chubb | $10,310 | $9,272 | $9,028
+Other comprehensive income (loss)
+Change in:
+Unrealized appreciation (depreciation) | $2,655 | $(251) | $3,448
+Current discount rate on future policy benefits | 235 | (701) | 84
+Instrument-specific credit risk on market risk benefits | (8) | 7 | 2
+Cumulative foreign currency translation adjustment | 1,047 | (1,177) | (13)
+Other, including postretirement benefit liability adjustment | 49 | 257 | 157
+Other comprehensive income (loss), before income tax | 3,978 | (1,865) | 3,678
+Income tax expense related to OCI items | (149) | (117) | (317)
+Other comprehensive income (loss) | 3,829 | (1,982) | 3,361
+Comprehensive income | 14,451 | 7,658 | 12,376
+Comprehensive income (loss) attributable to noncontrolling interests | 472 | 221 | (28)
+Comprehensive income attributable to Chubb | $13,979 | $7,437 | $12,404
+Earnings per share
+Basic earnings per share attributable to Chubb | $25.93 | $22.94 | $21.97
+Diluted earnings per share attributable to Chubb | $25.68 | $22.70 | $21.80
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED BALANCE SHEETS (Consolidated) ===
+--- PDF page 107 (printed page F-6) ---
+CONSOLIDATED BALANCE SHEETS
+Chubb Limited and Subsidiaries
+(in millions of U.S. dollars, except share and per share data) | December 31, 2025 | December 31, 2024
+Assets
+Investments
+Short-term investments, at fair value (amortized cost – $4,840 and $5,143) (includes variable interest entities (VIE) balances of $105 and $57) | $4,840 | $5,142
+Fixed maturities available-for-sale, at fair value, net of valuation allowance – $52 and $70 (amortized cost – $124,726 and $115,083) | 122,680 | 110,363
+Private debt held-for-investment, at amortized cost, net of valuation allowance – $3 and $4 | 2,411 | 2,628
+Equity securities, at fair value (includes VIE balances of $2,275 and $1,289) | 10,801 | 9,151
+Private equities (includes VIE balances of $22 and $22) | 17,239 | 14,769
+Other investments (includes VIE balances of $5,818 and $4,538) | 10,749 | 8,597
+Total investments | 168,720 | 150,650
+Cash, including restricted cash $198 and $261 (includes VIE balances of $168 and $114) | 2,470 | 2,549
+Securities lending collateral | 2,500 | 1,445
+Accrued investment income | 1,305 | 1,160
+Insurance and reinsurance balances receivable, net of valuation allowance – $62 and $59 | 15,944 | 14,426
+Reinsurance recoverable on losses and loss expenses, net of valuation allowance – $320 and $310 | 20,338 | 19,777
+Reinsurance recoverable on policy benefits | 286 | 289
+Deferred policy acquisition costs | 10,008 | 8,358
+Value of business acquired | 2,975 | 3,223
+Goodwill | 20,207 | 19,579
+Other intangible assets | 6,241 | 6,377
+Deferred tax assets | 1,312 | 1,603
+Prepaid reinsurance premiums | 3,874 | 3,378
+Separate account assets | 6,925 | 6,231
+Other assets (includes VIE balances of $58 and $26) | 9,222 | 7,503
+Total assets | $272,327 | $246,548
+Liabilities
+Unpaid losses and loss expenses | $88,018 | $84,004
+Unearned premiums | 26,279 | 23,504
+Future policy benefits | 18,420 | 16,121
+Market risk benefits | 659 | 607
+Policyholders' account balances | 8,576 | 8,016
+Separate account liabilities | 6,925 | 6,231
+Insurance and reinsurance balances payable | 8,349 | 8,121
+Repurchase agreements (includes VIE balances of $956 and $815) | 3,324 | 2,731
+Securities lending payable | 2,500 | 1,445
+Accounts payable, accrued expenses, and other liabilities (includes VIE balances of $159 and $183) | 10,108 | 10,192
+Deferred tax liabilities | 1,741 | 1,584
+Short-term debt | 1,499 | 800
+Long-term debt | 15,728 | 14,379
+Hybrid debt | 422 | 419
+Total liabilities | 192,548 | 178,154
+Commitments and contingencies (refer to Note 14)
+Shareholders’ equity
+Common Shares (CHF 0.50 par value; 412,107,421 and 419,625,986 shares issued; 391,101,227 and 400,703,663 shares outstanding) | 231 | 235
+Common Shares in treasury (21,006,194 and 18,922,323 shares) | (4,699) | (3,524)
+Additional paid-in capital | 13,250 | 14,393
+Retained earnings | 69,950 | 61,561
+Accumulated other comprehensive income (loss) (AOCI) | (4,975) | (8,644)
+Total Chubb shareholders' equity | 73,757 | 64,021
+Noncontrolling interests (includes VIE balances of $5,133 and $3,459) | 6,022 | 4,373
+Total shareholders’ equity | 79,779 | 68,394
+Total liabilities and shareholders’ equity | $272,327 | $246,548
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED STATEMENTS OF CASH FLOWS (Consolidated) ===
+--- PDF page 110 (printed page F-9) ---
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Cash flows from operating activities
+Net income | $10,622 | $9,640 | $9,015
+Adjustments to reconcile net income to net cash flows from operating activities
+Net realized (gains) losses | (211) | (117) | 607
+Market risk benefits (gains) losses | 288 | 140 | 307
+Amortization of premiums (discounts) on fixed maturities | (409) | (367) | (148)
+Amortization of purchased intangibles | 301 | 323 | 310
+Equity in net income of partially-owned entities | (1,143) | (967) | (867)
+Deferred income taxes | 330 | 96 | (1,124)
+Unpaid losses and loss expenses | 2,706 | 4,567 | 3,470
+Unearned premiums | 2,098 | 1,805 | 1,377
+Future policy benefits | 2,186 | 1,841 | 848
+Insurance and reinsurance balances payable | 131 | (105) | (155)
+Accounts payable, accrued expenses, and other liabilities | 53 | 342 | (735)
+Income taxes | (160) | 69 | 128
+Insurance and reinsurance balances receivable | (1,167) | (1,278) | (1,072)
+Reinsurance recoverable | (169) | (30) | (498)
+Deferred policy acquisition costs | (1,566) | (1,429) | (1,100)
+Net sales (purchases) of investments by consolidated investment products | (1,090) | 278 | 450
+Other | 16 | 1,374 | 1,819
+Net cash flows from operating activities | 12,816 | 16,182 | 12,632
+Cash flows from investing activities
+Purchases of fixed maturities available-for-sale | (34,157) | (33,759) | (28,672)
+Purchases of fixed maturities held-to-maturity | — | — | (208)
+Purchases of equity securities | (2,799) | (4,333) | (1,395)
+Sales of fixed maturities available-for-sale | 12,231 | 12,815 | 14,593
+Sales of equity securities | 2,807 | 2,996 | 1,084
+Maturities and redemptions of fixed maturities available-for-sale | 12,675 | 10,810 | 7,026
+Maturities and redemptions of fixed maturities held-to-maturity | — | — | 708
+Net change in short-term investments | 462 | (763) | 1,169
+Net derivative instruments settlements | (185) | (93) | (153)
+Private equity contributions | (3,014) | (1,070) | (2,024)
+Private equity distributions | 1,721 | 1,397 | 1,164
+Acquisition of subsidiaries (net of cash acquired of $32, nil, and $560) | (289) | (538) | (34)
+Net consolidations (deconsolidations) of consolidated investment products | — | 27 | (17)
+Other | (712) | (1,412) | (889)
+Net cash flows used for investing activities | (11,260) | (13,923) | (7,648)
+Cash flows from financing activities
+Dividends paid on Common Shares | (1,505) | (1,436) | (1,394)
+Common Shares repurchased | (3,694) | (1,801) | (2,411)
+Proceeds from issuance of long-term debt | 2,424 | 2,408 | —
+Repayment of long-term debt | (800) | (1,437) | (475)
+Proceeds from share-based compensation plans | 327 | 356 | 212
+Policyholder contract deposits | 853 | 1,024 | 645
+Policyholder contract withdrawals | (594) | (709) | (458)
+Third-party capital invested into consolidated investment products | 2,556 | 1,614 | 126
+Third-party capital distributed by consolidated investment products | (1,753) | (1,621) | (745)
+Proceeds from issuance of repurchase agreements | 6,297 | 4,505 | 4,984
+Repayment of repurchase agreements | (5,693) | (4,822) | (4,728)
+Other | (268) | (262) | (245)
+Net cash flows used for financing activities | (1,850) | (2,181) | (4,489)
+Effect of foreign currency rate changes on cash and restricted cash | 215 | (150) | (1)
+Net increase (decrease) in cash and restricted cash | (79) | (72) | 494
+Cash and restricted cash – beginning of year | 2,549 | 2,621 | 2,127
+Cash and restricted cash – end of year | $2,470 | $2,549 | $2,621
+Supplemental cash flow information
+Interest paid | $650 | $599 | $553
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Consolidated) ===
+--- PDF page 109 (printed page F-8) ---
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Common Shares
+Balance – beginning of year | $235 | $241 | $10,346
+Par value reduction | — | — | (9,759)
+Cancellation of treasury shares | (4) | (6) | (346)
+Balance – end of year | 231 | 235 | 241
+Common Shares in treasury
+Balance – beginning of year | (3,524) | (4,400) | (5,113)
+Common Shares repurchased | (3,387) | (2,024) | (2,478)
+Cancellation of treasury shares | 1,923 | 2,527 | 2,869
+Net shares issued under employee share-based compensation plans | 289 | 373 | 322
+Balance – end of year | (4,699) | (3,524) | (4,400)
+Additional paid-in capital
+Balance – beginning of year | 14,393 | 15,665 | 7,166
+Net shares issued under employee share-based compensation plans | (92) | (124) | (192)
+Exercise of stock options | — | (23) | (20)
+Share-based compensation expense | 400 | 361 | 322
+Par value reduction | — | — | 9,759
+Net increase (decrease) due to acquisitions | 69 | (31) | 31
+Funding of dividends declared to Retained earnings | (1,520) | (1,455) | (1,401)
+Balance – end of year | 13,250 | 14,393 | 15,665
+Retained earnings
+Balance – beginning of year | 61,561 | 54,810 | 48,305
+Net income attributable to Chubb | 10,310 | 9,272 | 9,028
+Cancellation of treasury shares and other | (1,921) | (2,521) | (2,523)
+Funding of dividends declared from Additional paid-in capital | 1,520 | 1,455 | 1,401
+Dividends declared on Common Shares | (1,520) | (1,455) | (1,401)
+Balance – end of year | 69,950 | 61,561 | 54,810
+Accumulated other comprehensive income (loss) (AOCI)
+Balance – beginning of year | (8,644) | (6,809) | (10,185)
+Other comprehensive income (loss) | 3,669 | (1,835) | 3,376
+Balance – end of year | (4,975) | (8,644) | (6,809)
+Total Chubb shareholders’ equity | $73,757 | $64,021 | $59,507
+Noncontrolling interests
+Balance – beginning of year | $4,373 | $4,184 | $—
+Net increase (decrease) due to consolidation, deconsolidation, and other transactions | 1,177 | (26) | 4,212
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Other comprehensive income (loss) attributable to noncontrolling interests | 160 | (147) | (15)
+Other | — | (6) | —
+Balance – end of year | $6,022 | $4,373 | $4,184
+Total shareholders' equity | $79,779 | $68,394 | $63,691
+See accompanying notes to the Consolidated Financial Statements
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- LINKED FIGURES (statement lines the app linked to the notes provided; found automatically - check them against the statements and notes) -----
+- Private debt held-for-investment, at amortized cost, net of valuation allowance – $3 and $4 (CONSOLIDATED BALANCE SHEETS, PDF p.107) | FY2025 2,411 | FY2024 2,628 -> Note 13 (title match)
+- Deferred tax assets (CONSOLIDATED BALANCE SHEETS, PDF p.107) | FY2025 1,312 | FY2024 1,603 -> Note 12 (title match)
+- Deferred tax liabilities (CONSOLIDATED BALANCE SHEETS, PDF p.107) | FY2025 1,741 | FY2024 1,584 -> Note 12 (title match)
+- Short-term debt (CONSOLIDATED BALANCE SHEETS, PDF p.107) | FY2025 1,499 | FY2024 800 -> Note 13 (title match)
+- Long-term debt (CONSOLIDATED BALANCE SHEETS, PDF p.107) | FY2025 15,728 | FY2024 14,379 -> Note 13 (same figure in the note, title match)
+- Hybrid debt (CONSOLIDATED BALANCE SHEETS, PDF p.107) | FY2025 422 | FY2024 419 -> Note 13 (title match)
+- Deferred income taxes (CONSOLIDATED STATEMENTS OF CASH FLOWS, PDF p.110) | FY2025 330 | FY2024 96 | FY2023 (1,124) -> Note 12 (title match)
+- Income taxes (CONSOLIDATED STATEMENTS OF CASH FLOWS, PDF p.110) | FY2025 (160) | FY2024 69 | FY2023 128 -> Note 12 (title match)
+- Proceeds from issuance of long-term debt (CONSOLIDATED STATEMENTS OF CASH FLOWS, PDF p.110) | FY2025 2,424 | FY2024 2,408 | FY2023 — -> Note 13 (title match)
+- Repayment of long-term debt (CONSOLIDATED STATEMENTS OF CASH FLOWS, PDF p.110) | FY2025 (800) | FY2024 (1,437) | FY2023 (475) -> Note 13 (title match)
+- Income before income tax (CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME, PDF p.108) | FY2025 13,044 | FY2024 11,455 | FY2023 9,526 -> Note 12 (same figure in the note, title match)
+- Income tax expense (CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME, PDF p.108) | FY2025 2,422 | FY2024 1,815 | FY2023 511 -> Note 12 (same figure in the note, title match)
+- Other comprehensive income (loss), before income tax (CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME, PDF p.108) | FY2025 3,978 | FY2024 (1,865) | FY2023 3,678 -> Note 12 (title match)
+- Income tax expense related to OCI items (CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME, PDF p.108) | FY2025 (149) | FY2024 (117) | FY2023 (317) -> Note 12 (title match)
+CHECKS (automatic)
+- ok: Total assets 272,327 vs 'Total liabilities and shareholders’ equity' 272,327 (FY2025)
+- ok: Total assets 246,548 vs 'Total liabilities and shareholders’ equity' 246,548 (FY2024)
+----- END OF LINKED FIGURES -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Note 12 — Taxation (Consolidated) ===
+--- PDF page 175 (printed page F-74) ---
+12. Taxation
+Under Swiss law a resident company is subject to income tax at the federal, cantonal, and communal levels that is levied on net worldwide income. Income attributable to
+permanent establishments or real estate located abroad is excluded from the Swiss tax base. Furthermore, participation relief (i.e., tax relief) is granted to Chubb Limited at the
+federal, cantonal, and communal level for qualifying dividend income. Chubb Limited is subject to an annual cantonal and communal capital tax on the taxable equity of Chubb
+Limited in Switzerland.
+Chubb has two Swiss operating subsidiaries, an insurance company, Chubb Insurance (Switzerland) Limited and a reinsurance company, Chubb Reinsurance (Switzerland)
+Limited. Both are subject to federal, cantonal, and communal income tax and to annual cantonal and communal capital tax.
+Under Bermuda law prior to 2025, Chubb Limited and its Bermuda subsidiaries were not required to pay any taxes on income or capital gains. However, on December 27,
+2023, the Government of Bermuda enacted the Corporate Income Tax Act of 2023 which established a 15 percent income tax on net taxable income of Bermuda entities
+effective January 1, 2025.
+Income from Chubb's operations at Lloyd's is subject to United Kingdom (U.K.) corporation income taxes. Lloyd's is required to pay U.S. income tax on U.S. connected income
+written by Lloyd's syndicates. Lloyd's has a closing agreement with the Internal Revenue Service (IRS) whereby the amount of tax due on this business is calculated by Lloyd's
+and remitted directly to the IRS. These amounts are then charged to the accounts of Chubb's Corporate Members in proportion to their participation in the
+
+--- PDF page 176 (printed page F-75) ---
+relevant syndicates. Chubb's Corporate Members are subject to this arrangement but, as U.K. domiciled companies, will receive U.K. corporation tax credits for any U.S.
+income tax incurred up to the value of the equivalent U.K. corporation income tax charge on this income.
+Chubb Group Holdings and its respective subsidiaries are subject to income taxes imposed by U.S. authorities and file a consolidated U.S. Federal income tax return. Should
+Chubb Group Holdings pay a dividend to Chubb Limited, withholding taxes would apply. Currently, however, no withholding taxes are accrued with respect to such un-remitted
+earnings as management has no intention of remitting these earnings. Similarly, no taxes have been provided on the un-remitted earnings of certain foreign subsidiaries
+(Chubb Life Insurance Hong Kong and Chubb Life Insurance Korea Company Ltd.) as management has no intention of remitting these earnings. Finally, we have made a
+partial reinvestment assertion on historical earnings for LINA Life Insurance Company of Korea and Huatai Insurance Group Co., Ltd. The cumulative amount that would be
+subject to withholding tax, if distributed, as well as the determination of the associated tax liability are not practicable to compute; however, such amount would be material.
+Certain international operations of Chubb are also subject to income taxes imposed by the jurisdictions in which they operate. Chubb's domestic operations are in Switzerland,
+the jurisdiction where we are legally organized, incorporated, and registered.
+The following table presents pre-tax income and the related provision for income taxes:
+Year Ended December 31
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Pre-tax income:
+Domestic | $185 | $121 | $44
+Foreign | 12,859 | 11,334 | 9,482
+Total pre-tax income | $13,044 | $11,455 | $9,526
+Provision for income taxes
+Current tax expense:
+Federal, cantonal and communal | $85 | $29 | $25
+Foreign | 2,000 | 1,700 | 1,570
+Total current tax expense | 2,085 | 1,729 | 1,595
+Deferred tax expense (benefit):
+Federal, cantonal and communal | (14) | 14 | (63)
+Foreign | 351 | 72 | (1,021)
+Total deferred tax expense (benefit) | 337 | 86 | (1,084)
+Provision for income taxes | $2,422 | $1,815 | $511
+
+--- PDF page 177 (printed page F-76) ---
+The following tables present a reconciliation of the difference between the provision for income taxes and the expected tax provision at the Swiss statutory income tax rate:
+Year Ended December 31, 2025
+(in millions of U.S. dollars) | Amount | Percent
+Expected tax provision at Swiss statutory tax rate (1) | $1,021 | 7.8 %
+Foreign tax effects
+Bermuda:
+Statutory tax rate difference between Bermuda and Switzerland | 327 | 2.5 %
+Tax credits:
+Credits for taxes paid to foreign jurisdictions | (157) | (1.2)%
+Nontaxable or nondeductible items:
+Excluded dividends, gains and losses | (196) | (1.5)%
+Other nontaxable or nondeductible items | 5 | —
+Other | 9 | 0.1 %
+United States:
+Statutory tax rate difference between United States and Switzerland | 553 | 4.2 %
+Other | 5 | 0.1 %
+Other foreign jurisdictions | 796 | 6.1 %
+Other adjustments | 59 | 0.5 %
+Provision for income taxes | $2,422 | 18.6 %
+Year Ended December 31
+(in millions of U.S. dollars) | 2024 | 2023
+Expected tax provision at Swiss statutory tax rate (1) | $2,251 | $1,872
+Permanent differences:
+Taxes on earnings subject to rate other than Swiss statutory rate | (510) | (389)
+Bermuda tax law enactment | (55) | (1,135)
+Net withholding taxes | 145 | 15
+Other | (16) | 148
+Provision for income taxes | $1,815 | $511
+(1) 2025 reflects the Swiss federal corporate income tax at a flat rate of 8.5 percent on profit after tax, resulting in an effective rate of approximately 7.8 percent on profit before tax, with no federal corporate capital tax. 2024 and 2023 reflect
+the combined Swiss federal and cantonal rate.
+
+--- PDF page 178 (printed page F-77) ---
+The following table presents supplemental cash flow information on Swiss federal, cantonal and communal, and foreign income taxes paid, including jurisdictions where
+income taxes paid exceeded five percent of total income taxes paid (net of refunds):
+Year Ended December 31
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Income taxes paid:
+Federal, cantonal and communal | $34
+Foreign | 2,177
+Total income taxes paid (net of refunds) | $2,211 | $1,662 | $1,465
+Income taxes paid (net of refunds) in jurisdictions exceeding five percent of total:
+Foreign
+Bermuda | $250
+Korea | 257
+United Kingdom | 289
+United States | 614
+Current income tax receivable of $419 million and $246 million at December 31, 2025 and 2024, respectively, was recorded in Other assets on the Consolidated balance
+sheets. Current income tax payable of $377 million and $376 million at December 31, 2025 and 2024, respectively, was recorded in Accounts payable, accrued expenses, and
+other liabilities on the Consolidated balance sheets.
+The following table presents the components of net deferred tax assets and liabilities:
+December 31
+(in millions of U.S. dollars) | 2025 | 2024
+Deferred tax assets:
+Loss reserve discount | $2,073 | $1,746
+Unearned premiums reserve | 713 | 753
+Foreign tax credits | 5 | 18
+Loss carry-forwards | 162 | 146
+Investments (1) | — | 512
+Depreciation | — | 26
+Future policy benefits | 103 | 176
+Other | 498 | 268
+Total deferred tax assets | 3,554 | 3,645
+Valuation allowance | 637 | 1,081
+Deferred tax assets, net of valuation allowance | 2,917 | 2,564
+Deferred tax liabilities:
+Deferred policy acquisition costs | 1,650 | 1,005
+Other intangible assets, including VOBA | 1,154 | 1,289
+Investments (1) | 127 | —
+Depreciation | 112 | —
+Un-remitted foreign earnings | 303 | 251
+Total deferred tax liabilities | 3,346 | 2,545
+Net deferred tax assets (liabilities) | $(429) | $19
+(1) Included in Investments are deferred tax assets on unrealized depreciation of $234 million and $787 million at December 31, 2025 and 2024, respectively.
+
+--- PDF page 179 (printed page F-78) ---
+The valuation allowance of $637 million and $1,081 million at December 31, 2025 and 2024, respectively, reflects management's assessment, based on available information,
+that it is more likely than not that a portion of the deferred tax assets will not be realized due to the inability of certain subsidiaries to generate sufficient taxable income.
+Adjustments to the valuation allowance are made when there is a change in management's assessment of the amount of deferred tax assets that are realizable.
+For the year ended December 31, 2025, the tax benefit on certain unrealized capital losses in our investment portfolio was reduced by a valuation allowance of $179 million
+necessary due to limitations on the utilization of these losses for tax purposes. As part of evaluating whether it was more likely than not that we could record a tax benefit on
+these losses, we considered realized gains, carryback capacity and available tax planning strategies.
+At December 31, 2025, Chubb has net operating loss carry-forwards of $579 million which, if unused, will expire starting in 2026, and a U.S. capital loss carry-forward of $52
+million which, if unused, will expire starting in 2028.
+The following table presents a reconciliation of the beginning and ending amount of gross unrecognized tax benefits:
+Year Ended December 31
+(in millions of U.S. dollars) | 2025 | 2024
+Balance, beginning of year | $130 | $73
+Additions based on tax positions related to the current year | 5 | 1
+Additions based on tax positions related to prior years | 20 | 58
+Reductions based on tax positions related to prior years | (26) | (1)
+Reductions for the lapse of the applicable statutes of limitations | — | (1)
+Reductions for settlements with taxing authorities | (50) | —
+Balance, end of year | $79 | $130
+At December 31, 2025 and 2024, the gross unrecognized tax benefits of $79 million and $130 million, respectively, can be reduced by $5 million and $18 million, respectively,
+associated with foreign tax credits. The net amounts of $74 million and $112 million at December 31, 2025 and 2024, respectively, if recognized, would favorably affect the
+effective tax rate.
+Chubb recognizes accruals for interest income, expense and penalties, if any, related to tax refunds and unrecognized tax benefits, respectively, in Income tax expense in the
+Consolidated statements of operations. Tax-related net interest (income) expense and penalties reported in the Consolidated statements of operations were $(23) million, $6
+million, and $7 million at December 31, 2025, 2024, and 2023, respectively. Liabilities for tax-related interest and penalties in our Consolidated balance sheets were $24 million
+and $30 million at December 31, 2025 and 2024, respectively.
+The IRS is in the process of finalizing its examination of Chubb Group Holdings' tax returns for years 2014 through 2017. No material adjustments have been proposed related
+to these years. The tax return for 2018 remains under examination by the IRS.
+In January 2026, the IRS commenced its examination of Chubb Group Holdings’ tax returns for years 2019 through 2023. As a multinational company, we also have
+examinations under way in various US states and non-US jurisdictions. With few exceptions, Chubb is no longer subject to income tax examinations for years prior to 2014.
+
+--- PDF page 180 (printed page F-79) ---
+The following table summarizes tax years open for examination by major income tax jurisdiction:
+At December 31, 2025
+Australia | 2019 | - | 2025
+Brazil | 2019 | - | 2025
+Canada | 2018 | - | 2025
+China | 2022 | - | 2025
+France | 2023 | - | 2025
+Germany | 2016 | - | 2025
+Italy | 2020 | - | 2025
+Korea | 2020 | - | 2025
+Mexico | 2016 | - | 2025
+Spain | 2012 | - | 2025
+Switzerland | 2022 | - | 2025
+United Kingdom | 2015 | - | 2025
+United States | 2014 | - | 2025
+
+=== Note 13 — Debt (Consolidated) ===
+--- PDF page 181 (printed page F-80) ---
+13. Debt
+December 31 | December 31
+(in millions of U.S. dollars) | 2025 | 2024 | Early Redemption Option
+Short-term debt
+Chubb INA:
+$800 million 3.15% senior notes due March 2025 | $— | $800 | Make-whole premium plus 15 bps
+$1,500 million 3.35% senior notes due May 2026 | 1,499 | — | Make-whole premium plus 20 bps
+Total short-term debt | $1,499 | $800
+Long-term debt
+Chubb INA:
+$1,500 million 3.35% senior notes due May 2026 | $— | $1,498 | Make-whole premium plus 20 bps
+€575 million 0.875% senior notes due June 2027 | 671 | 604 | Make-whole premium plus 20 bps
+€900 million 1.55% senior notes due March 2028 | 1,050 | 944 | Make-whole premium plus 15 bps
+CNH1,830 million 2.85% term loan due April 2028 | 259 | — | Make-whole premium, no add'l bps
+CNH2,145 million 2.75% term loan due July 2028 | 304 | — | Make-whole premium, no add'l bps
+$100 million 8.875% debentures due August 2029 | 100 | 100 | None
+$700 million 4.65% senior notes due August 2029 | 696 | 695 | Make-whole premium plus 15 bps
+€700 million 0.875% senior notes due December 2029 | 816 | 734 | Make-whole premium plus 20 bps
+CNH1,000 million 2.5% bonds due August 2030 | 140 | — | Make-whole premium plus 15 bps
+$1,000 million 1.375% senior notes due September 2030 | 996 | 995 | Make-whole premium plus 15 bps
+€575 million 1.4% senior notes due June 2031 | 669 | 601 | Make-whole premium plus 25 bps
+$200 million 6.8% debentures due November 2031 | 223 | 227 | Make-whole premium plus 25 bps
+$1,600 million 5.0% senior notes due March 2034 | 1,589 | 1,588 | Make-whole premium plus 15 bps
+CNH1,500 million 2.75% bonds due August 2035 | 211 | — | Make-whole premium plus 15 bps
+$1,250 million 4.9% senior notes due August 2035 | 1,241 | — | Make-whole premium plus 15 bps
+$300 million 6.7% senior notes due May 2036 | 298 | 298 | Make-whole premium plus 20 bps
+$800 million 6.0% senior notes due May 2037 | 900 | 909 | Make-whole premium plus 20 bps
+€900 million 2.5% senior notes due March 2038 | 1,045 | 940 | Make-whole premium plus 25 bps
+$600 million 6.5% senior notes due May 2038 | 702 | 710 | Make-whole premium plus 30 bps
+$475 million 4.15% senior notes due March 2043 | 471 | 471 | Make-whole premium plus 15 bps
+$1,500 million 4.35% senior notes due November 2045 | 1,487 | 1,487 | Make-whole premium plus 25 bps
+$600 million 2.85% senior notes due December 2051 | 594 | 594 | Make-whole premium plus 15 bps
+CNH2,000 million 3.05% bonds due August 2055 | 281 | — | Make-whole premium plus 15 bps
+$1,000 million 3.05% senior notes due December 2061 | 985 | 984 | Make-whole premium plus 20 bps
+Total long-term debt | $15,728 | $14,379
+Hybrid debt
+Chubb INA capital securities due April 2030 | $309 | $309 | Redemption prices (1)
+Huatai Life CNY800 million 2.9% capital supplementary bonds due November
+2034 | 113 | 110 | Redeemable at par in 2029
+Total hybrid debt | $422 | $419
+(1) Redemption prices are equal to accrued and unpaid interest to the redemption date plus the greater of (i) 100 percent of the principal amount thereof, or (ii) sum of present value of scheduled payments of principal and interest on the
+capital securities from the redemption date to April 1, 2030.
+a) Short-term debt
+Short-term debt comprises the current maturities of our long-term debt instruments described below. These short-term debt instruments were reclassified from long-term debt
+and are reflected in the table above.
+
+--- PDF page 182 (printed page F-81) ---
+In the second quarter of 2025, Chubb established a commercial paper program, under which Chubb INA may issue short-term,
+unsecured commercial paper notes (commercial paper) on a private placement basis. Payment of the commercial paper is
+guaranteed on an unsecured and unsubordinated basis by Chubb Limited, and the commercial paper and guarantee rank
+equally with all other unsecured and unsubordinated indebtedness.
+We have the ability to borrow a total of $2.0 billion, supported by our $3.0 billion group syndicated credit facility which expires
+in December 2030. Commercial paper is recorded in Short-term debt in the Consolidated balance sheets. As of December 31, 2025, there was no commercial paper
+outstanding.
+b) Long-term debt
+(i) Chubb INA senior notes and debentures
+With the exception of the $100 million of 8.875 percent debentures due August 2029, which do not have an early redemption option, the senior notes and debentures in the
+table above are redeemable at any time at Chubb INA's option subject to a “make-whole” premium plus additional basis points as defined in the table above. A "make-whole"
+premium is the present value of the remaining principal and interest discounted at the applicable U.S. Treasury rate. These debt securities are also redeemable at par plus
+accrued and unpaid interest in the event of certain changes in tax law.
+The senior notes and debentures do not have the benefit of any sinking fund, are guaranteed on a senior basis by Chubb Limited, and rank equally with all of Chubb's other
+senior obligations. They also contain customary limitations on lien provisions as well as customary events of default provisions which, if breached, could result in the
+accelerated maturity of such senior debt.
+(ii) Chubb INA Chinese yuan renminbi bonds and term loans
+The CNH bonds are redeemable at any time prior to the par call date at Chubb INA's option subject to a "make-whole" premium. The "make-whole" premium for the bonds is
+the present value of the remaining principal and interest discounted at the applicable offshore China Government Bond yield plus additional basis points as defined in the table
+above. The CNH term loans are subject to a "make-whole" premium up to one year prior to maturity. The "make-whole" premium for the term loans is the present value of the
+remaining principal and interest discounted at the applicable U.S. Treasury rate. The bonds and term loans are guaranteed on a senior basis by Chubb Limited.
+c) Hybrid debt
+(i) Trust preferred securities
+In March 2000, ACE Capital Trust II, a Delaware statutory business trust, publicly issued $300 million of 9.7 percent Capital Securities (the Capital Securities) due to mature in
+April 2030. At the same time, Chubb INA purchased $9.2 million of common securities of ACE Capital Trust II. The sole assets of ACE Capital Trust II consist of $309 million
+principal amount of 9.7 percent Junior Subordinated Deferrable Interest Debentures (the Subordinated Debentures) issued by Chubb INA due to mature in April 2030.
+Distributions on the Capital Securities are payable semi-annually and may be deferred for up to ten consecutive semi-annual periods (but no later than April 1, 2030). Any
+deferred payments would accrue interest compounded semi-annually if Chubb INA defers interest on the Subordinated Debentures. Interest on the Subordinated Debentures is
+payable semi-annually. Chubb INA may defer such interest payments (but no later than April 1, 2030), with such deferred payments accruing interest compounded semi-
+annually. The Capital Securities and the ACE Capital Trust II Common Securities will be redeemed upon repayment of the Subordinated Debentures.
+Chubb Limited has guaranteed, on a subordinated basis, Chubb INA's obligations under the Subordinated Debentures, and distributions and other payments due on the
+Capital Securities. These guarantees, when taken together with Chubb's obligations under expense agreements entered into with ACE Capital Trust II, provide a full and
+unconditional guarantee of amounts due on the Capital Securities.
+(ii) Huatai Life capital supplementary bonds
+In November 2024, Huatai Life issued 800 million Chinese yuan renminbi ($111 million based on the foreign exchange rate at the date of issuance) of 2.90 percent capital
+supplementary bonds (Bonds), due November 2034. The Bonds are subordinated to Huatai Life’s policy and general liabilities, are redeemable in November 2029, if certain
+conditions are met, and are guaranteed by Huatai Group. Principal or interest payments on the Bonds may be deferred if such payments would reduce Huatai Life's solvency
+adequacy ratio below a required minimum.
+----- END OF NOTES -----
+
+Conversation so far in this analysis thread:
+
+User asked: Analyze the company's tax position and comment on it.
+You answered: ## Summary
+- Effective tax rate fell to 34.66%
+
+| a | b |
+|---|---|
+| 1 | 2 |
+
+Now answer this follow-up question, using the statements, the notes and the conversation above. Keep the same citation style: (Note X, p.N) for notes, (Balance Sheet, p.N) etc. for statements. As always, explain how the matter affects the primary financial statements (Income Statement, Balance Sheet, Cash Flow, Shareholders' Equity), in a short "Impact on the financial statements" section if the answer involves figures. Use headings and tables only where they help; a short answer is fine for a short question.
+
+FOLLOW-UP QUESTION: What about Note 13?

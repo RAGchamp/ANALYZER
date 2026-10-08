@@ -1,0 +1,596 @@
+Annual report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Statements: Consolidated
+Notes provided: Consolidated Note 21 – INCOME AND DEFERRED TAXES (PDF p.405–407), Consolidated Note 41 – CONTINGENT LIABILITIES (PDF p.451–452)
+Primary financial statements provided: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Consolidated Statement of Profit and Loss (Consolidated) ===
+--- PDF page 342 (printed page 339) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+INCOME
+Revenue from operations | 24 | 168,116.53 | 151,228.03
+Other income | 25 | 1,986.83 | 2,137.64
+Total income [i] | 170,103.36 | 153,365.67
+EXPENSES
+Cost of raw materials and components consumed | 26 | 77,779.31 | 64,396.23
+Purchase of stock in trade | 788.71 | 2,318.22
+(Increase) in inventories of finished goods, work-in-progress, stock in trade, dies | 27 | (2,672.21) | (771.05)
+and scrap
+Employee benefits expenses | 28 | 21,034.18 | 18,698.95
+Finance costs | 29 | 3,233.46 | 4,174.93
+Depreciation and amortisation expenses | 30 | 9,709.24 | 8,736.19
+Other expenses | 31 | 41,919.81 | 39,646.23
+Total expenses [ii] | 151,792.50 | 137,199.70
+Profit before share of profit/(loss) of associates and joint ventures, exceptional | 18,310.86 | 16,165.97
+items and tax [i-ii]
+Share of profit/(loss) of associates and joint ventures | (76.50) | (24.52)
+Income tax expense | 18.21 | 12.55
+Share of profit/(loss) of associates and joint ventures, net of tax | (94.71) | (37.07)
+Profit before exceptional items and tax | 18,216.15 | 16,128.90
+Exceptional items (loss) | 32 | (1,544.43) | (1,570.65)
+Profit before tax | 16,671.72 | 14,558.25
+Income tax expense | 21
+Current tax | 5,606.07 | 5,848.54
+Deferred tax charge/(credit) | 171.67 | (423.04)
+5,777.74 | 5,425.50
+Profit for the year | 10,893.98 | 9,132.75
+OTHER COMPREHENSIVE INCOME
+Other comprehensive income/(loss) not to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Re-measurement gain/(loss) on defined benefit plans | 33 | 237.27 | (185.37)
+- Net (loss)on FVTOCI equity investments | 33 | (1,869.02) | (51.09)
+- Share of other comprehensive (loss) of associates and joint ventures | 33 | - | (0.61)
+(1,631.75) | (237.07)
+Income tax effect | 33 | (11.73) | 41.24
+[A] | (1,643.48) | (195.83)
+
+--- PDF page 343 (printed page 340) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026 (Contd.)
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Other comprehensive income/(loss) to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Net movement on cash flow hedges | 33 | (5,312.67) | (1,060.36)
+- Exchange differences on translating financial statements of foreign operations | 33 | 2,205.34 | 432.60
+(3,107.33) | (627.76)
+Income tax effect | 33 | 1,338.69 | 267.78
+[B] | (1,768.64) | (359.98)
+Other comprehensive (loss) for the year (net of tax) [A+B] | (3,412.12) | (555.81)
+Total comprehensive income for the year | 7,481.86 | 8,576.94
+Of the total comprehensive income above,
+Attributable to:
+Owners of the parent company | 7,384.49 | 8,855.72
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Profit for the year
+Attributable to:
+Owners of the parent company | 10,796.61 | 9,411.53
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Other comprehensive (loss) for the year
+Attributable to:
+Equityholders of the parent company | (3,412.12) | (555.81)
+Non-controlling interests | 0.00 | -
+Earnings per equity share [nominal value per share ₹2/- | 34
+(March 31, 2025: ₹2/-)
+Basic (in ₹) | 22.58 | 20.05
+Diluted (in ₹) | 22.58 | 20.05
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Balance Sheet (Consolidated) ===
+--- PDF page 341 (printed page 338) ---
+Consolidated Balance Sheet
+as at March 31, 2026
+In ₹Million
+Notes | As at | As at
+March 31, 2026 | March 31, 2025
+ASSETS
+I. | Non-current assets
+(a) Property, plant and equipment | 3 | 72,575.52 | 58,473.77
+(b) Capital work-in-progress | 3 | 12,513.26 | 17,253.49
+(c) Investment property | 4 | 281.63 | 281.63
+(d) Goodwill | 5 | 3,902.53 | 2,627.83
+(e) Other intangible assets | 5 | 605.97 | 413.00
+(f) Intangible assets under development | 5 | 470.45 | 63.70
+(g) Right-of-use asset | 43 | 4,784.26 | 4,472.93
+(h) Investments accounted for using the equity method | 6 | 614.14 | 905.08
+(i) Financial assets
+(i) Investments | 7 | 5,031.65 | 6,192.36
+(ii) Trade receivables | 12 | 168.68 | 135.48
+(iii) Loans | 8 | 37.67 | 58.54
+(iv) Derivative instruments | 9 | - | 289.02
+(v) Other financial assets | 10 | 3,040.67 | 1,616.22
+(j) Deferred tax assets (net) | 21 | 2,121.99 | 1,901.43
+(k) Income tax assets (net) | 505.35 | 408.37
+(l) Other non-current assets | 14 | 3,917.22 | 3,466.92
+110,570.99 | 98,559.77
+II. | Current assets
+(a) Inventories | 11 | 40,527.83 | 35,784.36
+(b) Financial assets
+(i) Investments | 7 | 11,739.22 | 13,529.59
+(ii) Trade receivables | 12 | 39,097.99 | 28,996.06
+(iii) Cash and cash equivalents | 13 | 8,478.85 | 6,210.35
+(iv) Other bank balances | 13 | 1,420.57 | 6,703.41
+(v) Loans | 8 | 176.32 | 166.14
+(vi) Derivative instruments | 9 | - | 600.57
+(vii) Other financial assets | 10 | 3,780.92 | 1,036.38
+(c) Other current assets | 14 | 6,806.86 | 9,296.58
+112,028.56 | 102,323.44
+Total assets | 222,599.55 | 200,883.21
+EQUITY AND LIABILITIES
+EQUITY
+(a) Equity share capital | 15 | 956.27 | 956.27
+(b) Other equity | 16 | 94,842.13 | 91,577.07
+Equity attributable to owners of the parent company | 95,798.40 | 92,533.34
+Non-controlling interests | 37 | (230.16) | (327.53)
+Total equity | 95,568.24 | 92,205.81
+LIABILITIES
+I. | Non-current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 18,123.55 | 13,193.66
+(ii) Lease liabilities | 43 | 3,699.19 | 3,623.98
+(iii) Derivative instruments | 19a | 1,582.36 | 67.45
+(iv) Other financial liabilities | 19 | 3,357.24 | 195.38
+(b) Provisions | 20 | 2,906.62 | 2,192.25
+(c) Deferred tax liabilities (net) | 21 | 215.24 | 1,198.28
+(d) Other non-current liabilities | 23 | 1,332.71 | 1,176.32
+31,216.91 | 21,647.32
+II. | Current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 50,622.63 | 49,690.21
+(ii) Lease liabilities | 43 | 640.78 | 474.74
+(iii) Trade payables | 22
+Dues to micro enterprises and small enterprises | 839.98 | 770.13
+Dues to other than micro enterprises and small enterprises | 29,116.63 | 22,671.99
+(iv) Derivative instruments | 19a | 3,102.11 | 137.57
+(v) Other financial liabilities | 19 | 2,124.13 | 1,654.03
+(b) Other current liabilities | 23 | 6,871.51 | 9,289.48
+(c) Provisions | 20 | 2,103.47 | 1,945.86
+(d) Current tax liabilities (net) | 393.16 | 396.07
+95,814.40 | 87,030.08
+Total liabilities | 127,031.31 | 108,677.40
+Total equity and liabilities | 222,599.55 | 200,883.21
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Cash Flow Statement (Consolidated) ===
+--- PDF page 346 (printed page 343) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+OPERATING ACTIvITIES
+Profit after exceptional items & before tax | 16,671.72 | 14,558.25
+(Less): Share of (loss) of associates and joint ventures (net of tax) | (94.71) | (37.07)
+16,766.43 | 14,595.32
+Adjustment to reconcile profit before tax to net cash flows
+Depreciation and amortisation expenses | 9,709.24 | 8,736.19
+Unrealised foreign exchange (gain)/loss MTM (net) | 635.77 | (363.50)
+Interest income | (633.42) | (691.49)
+Liabilities/provision no longer required written back | (94.82) | (59.44)
+Provision for doubtful debts and advances written back | 125.94 | 68.52
+Bad debts/advances written off | 17.18 | 79.91
+Finance costs | 3,233.46 | 4,174.93
+(Gain)/loss on sale of property, plant and equipment (net) | (185.34) | 14.87
+Dividend income from equity securities | (9.04) | (8.34)
+Net (gain) on sale of financial instruments | (595.05) | (1,415.32)
+Net loss on fair valuation of financial instruments (FVTPL) | 174.64 | 768.55
+Non-cash exceptional items | 404.99 | 1,570.65
+Operating profit before working capital changes | 29,549.98 | 27,470.85
+Working capital adjustments
+(Increase)/Decrease in trade receivables | (7,090.42) | 2,510.11
+(Increase) in inventories | (3,878.56) | (3,837.66)
+(Increase)/decrease in other financial assets | (2,724.71) | 57.40
+Decrease/(Increase) in other assets | 1,566.07 | (2,279.99)
+Increase in provisions | 923.11 | 614.19
+Increase in trade payables | 4,419.60 | 910.48
+Increase in other financial liabilities | 62.18 | 153.00
+(Decrease) in other liabilities | (2,314.58) | (1,584.88)
+Cash generated from operations | 20,512.67 | 24,013.50
+Income taxes paid (net of refunds) | (5,646.25) | (6,050.07)
+Net cash flows from operating activities (I) | 14,866.42 | 17,963.43
+INvESTING ACTIvITIES
+Purchase of property, plant and equipment, investment property and intangible assets | (11,404.96) | (14,504.59)
+(including capital work-in-progress, capital creditors and capital advances)
+Proceeds from sale of property, plant and equipment and intangible assets | 274.32 | 65.40
+Investments in joint venture/associates | - | (303.49)
+Acquisition of a subsidiary (net of cash of ₹1,933.28 million) | (4,986.23) | -
+Repayment of loan given to joint venture/associates | - | 42.47
+Investments in mutual funds, fixed deposits and other deposits | (125,407.36) | (142,382.36)
+Proceeds from sale of financial instruments including fixed deposits | 130,905.57 | 136,896.77
+Interest received | 279.32 | 534.13
+Dividend received | 9.04 | 8.34
+Net cash flows (used in) investing activities (II) | (10,330.30) | (19,643.33)
+
+--- PDF page 347 (printed page 344) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026 (contd.)
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+FINANCING ACTIvITIES
+Dividend paid on equity shares | (3,796.55) | (4,220.93)
+Proceeds from issue of compulsorily convertible preference shares by the subsidiary | 3,000.00 | -
+company
+Interest paid on lease liabilities | (341.87) | (330.76)
+Interest paid on borrowing and other liabilities | (3,410.41) | (4,398.40)
+Proceeds from Issuance of Equity share capital under Qualified Institutional Placement (QIP) | - | 16,500.00
+Transaction cost related to Qualified Institutional Placement (QIP) | - | (302.67)
+Payment of principal portion of lease liabilities | (654.56) | (515.71)
+Proceeds from borrowings including bill discounting | 142,833.45 | 88,513.79
+Repayment of borrowings including bill discounting | (142,049.91) | (100,942.28)
+Net cash flows (used in) financing activities (III) | (4,419.85) | (5,696.96)
+Net increase/(decrease) in cash and cash equivalents (I + II + III) | 116.27 | (7,376.86)
+Net foreign exchange difference | (53.11) | 1.51
+Cash and cash equivalents at the beginning of the year* | 6,210.35 | 13,153.10
+Cash and cash equivalents at the end of the year* | 6,273.51 | 5,777.75
+Foreign currency translation reserve movement | 2,205.34 | 432.60
+Cash and cash equivalents at the end of the year* | 8,478.85 | 6,210.35
+* Excluding earmarked balances
+CASH AND CASH EQUIVALENTS FOR THE PURPOSE OF CASH FLOW STATEMENT
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+BANk BALANCES
+In cash credit and current accounts | 8,182.10 | 5,204.60
+Deposits with original maturity of less than three months | 294.32 | 1,003.06
+CASH ON HAND | 2.43 | 2.69
+Total | 8,478.85 | 6,210.35
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Statement of Changes in Equity (Consolidated) ===
+--- PDF page 344 (printed page 341) (printed sideways; rotated 90° clockwise before extraction) ---
+[Column groups, left to right: Attributable to the owners of the parent (columns spanned: 9)]
+[Column groups, left to right: Reserves and Surplus (Refer note 16) (columns spanned: 5); Items of OCI (Refer note 16) (columns spanned: 4)]
+[Column headings, left to right: 1) Securities premium | 2) Capital reserves | 3) Employee stock option outstanding | 4) General reserve | 5) Retained Earnings | 6) Foreign currency translation reserve (FCTR) | 7) Equity instruments through other comprehensive income | 8) Non-controlling interest reserve | 9) Cash flow hedge reserve | 10) Total attributable to the owners of the Company | 11) Non-controlling interests | 12) Total]
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026
+A. EQUITY SHARE CAPITAL:
+Equity shares of ₹2/- each issued, subscribed and fully paid
+Particulars | No.
+As at March 31, 2026 | 478,088,632
+Changes in equity share capital during the year | -
+As at March 31, 2025 | 478,088,632
+Changes in equity share capital during the year | 12,500,000
+As at April 1, 2024 | 465,588,632
+(1) For the year ended March 31, 2026 | In ₹Million
+Balance as on April 1, 2025 | Changes in equity share capital Balance as on March 31, 2026
+during the year
+956.27 | - | 956.27
+(2) For the year ended March 31, 2025 | In ₹Million
+Balance as on April 1, 2024 | Changes in equity share capital Balance as on March 31, 2025
+during the current year
+931.27 | 25.00 | 956.27
+B. OTHER EQUITY
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2025 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+- Profit/(Loss) for the year | - | - | - | - | 10,796.61 | - | - | - | - | 10,796.61 | 97.37 | 10,893.98
+- Other Comprehensive Income/ | - | - | - | - | 170.69 | 2,205.34 | (1,814.17) | - | (3,973.98) | (3,412.12) | 0.00 | (3,412.12)
+(Loss)
+- Change in fair value of gross | - | - | (294.72) | - | - | - | - | (294.72) | - | (294.72)
+liability on written put options
+- | - | - | - | 10,672.58 | 2,205.34 | (1,814.17) | - | (3,973.98) | 7,089.77 | 97.37 | 7,187.14
+Transaction with owners in their
+capacity as owners
+- Final equity dividend | - | - | - | - | (2,868.53) | - | - | - | - | (2,868.53) | - | (2,868.53)
+- Interim equity dividend | - | - | - | - | (956.18) | - | - | - | - | (956.18) | - | (956.18)
+Balance as at March 31, 2026 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 68,659.35 | 4,213.27 | (944.15) | (148.19) | (3,414.71) | 94,842.13 | (230.16) | 94,611.97
+
+--- PDF page 345 (printed page 342) (printed sideways; rotated 90° clockwise before extraction) ---
+[Column groups, left to right: Attributable to the owners of the parent (columns spanned: 9)]
+[Column groups, left to right: Reserves and Surplus (Refer note 16) (columns spanned: 5); Items of OCI (Refer note 16) (columns spanned: 4)]
+[Column headings, left to right: 1) Securities premium | 2) Capital reserves | 3) Employee stock option outstanding | 4) General reserve | 5) Retained Earnings | 6) Foreign currency translation reserve (FCTR) | 7) Equity instruments through other comprehensive income | 8) Non-controlling interest reserve | 9) Cash flow hedge reserve | 10) Total attributable to the owners of the Company | 11) Non-controlling interests | 12) Total]
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026 (Contd.)
+B. OTHER EQUITY (CONTD.)
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2024 | 6,930.89 | 15.50 | 127.36 | 3,230.48 | 56,757.59 | 1,575.33 | 929.76 | (148.19) | 1,351.85 | 70,770.57 | (48.75) | 70,721.82
+- Profit/(Loss) for the year | - | - | - | - | 9,411.53 | - | - | - | 9,411.53 | (278.78) | 9,132.75
+- Other Comprehensive | - | - | - | - | (136.09) | 432.60 | (59.74) | - | (792.58) | (555.81) | - | (555.81)
+Income/(Loss)
+- Premium on allotment of | 16,475.00 | - | - | - | - | - | - | - | - | 16,475.00 | - | 16,475.00
+equity shares
+- Expenses on allotment of equity | (302.67) | - | - | - | - | - | - | - | - | (302.67) | - | (302.67)
+shares
+16,172.33 | - | - | - | 9,275.44 | 432.60 | (59.74) | - | (792.58) | 25,028.05 | (278.78) | 24,749.27
+Transaction with owners in
+their capacity as owners
+- Final equity dividend | - | - | - | - | (3,026.33) | - | - | - | - | (3,026.33) | - | (3,026.33)
+- Interim equity dividend | - | - | - | - | (1,195.22) | - | - | - | - | (1,195.22) | - | (1,195.22)
+Balance as at March 31, 2025 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- LINKED FIGURES (statement lines the app linked to the notes provided; found automatically - check them against the statements and notes) -----
+- (j) Deferred tax assets (net) (Consolidated Balance Sheet, PDF p.341) | FY2026 2,121.99 | FY2025 1,901.43 -> Note 21 (cited in the Notes column, same figure in the note)
+- (k) Income tax assets (net) (Consolidated Balance Sheet, PDF p.341) | FY2026 505.35 | FY2025 408.37 -> Note 21 (title match)
+- (c) Deferred tax liabilities (net) (Consolidated Balance Sheet, PDF p.341) | FY2026 215.24 | FY2025 1,198.28 -> Note 21 (cited in the Notes column, same figure in the note)
+- (d) Current tax liabilities (net) (Consolidated Balance Sheet, PDF p.341) | FY2026 393.16 | FY2025 396.07 -> Note 21 (title match)
+- Profit after exceptional items & before tax (Consolidated Cash Flow Statement, PDF p.346) | FY2026 16,671.72 | FY2025 14,558.25 -> Note 21 (same figure in the note)
+- Income tax expense (Consolidated Statement of Profit and Loss, PDF p.342) | FY2026 18.21 | FY2025 12.55 -> Note 21 (title match)
+- Profit before tax (Consolidated Statement of Profit and Loss, PDF p.342) | FY2026 16,671.72 | FY2025 14,558.25 -> Note 21 (same figure in the note)
+- Current tax (Consolidated Statement of Profit and Loss, PDF p.342) | FY2026 5,606.07 | FY2025 5,848.54 -> Note 21 (title match)
+- Deferred tax charge/(credit) (Consolidated Statement of Profit and Loss, PDF p.342) | FY2026 171.67 | FY2025 (423.04) -> Note 21 (same figure in the note, title match)
+- (total) (Consolidated Statement of Profit and Loss, PDF p.342) | FY2026 5,777.74 | FY2025 5,425.50 -> Note 21 (same figure in the note)
+- Income tax effect (Consolidated Statement of Profit and Loss, PDF p.343) | FY2026 1,338.69 | FY2025 267.78 -> Note 21 (same figure in the note)
+CHECKS (automatic)
+- ok: Total assets 222,599.55 vs 'Total equity and liabilities' 222,599.55 (FY2026)
+- ok: Total assets 200,883.21 vs 'Total equity and liabilities' 200,883.21 (FY2025)
+- warn: 'Income tax effect' cites C33, but none of its figures (1,338.69, 267.78) is printed there
+----- END OF LINKED FIGURES -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Note 21 — INCOME AND DEFERRED TAXES (Consolidated) ===
+--- PDF page 405 (printed page 402) ---
+21. INCOME AND DEFERRED TAXES
+The major components of income tax expense/(income) recognised for the year ended March 31, 2026 and March 31, 2025 are:
+Statement of profit and loss:
+Profit or loss section
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Current income tax:
+Current income tax charge | 5,701.41 | 5,994.80
+Tax for prior years | (95.34) | (146.26)
+Deferred tax
+Relating to origination and reversal of temporary differences | 171.67 | (423.04)
+Income tax expense reported in the statement of profit and loss | 5,777.74 | 5,425.50
+OCI section
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Deferred tax related to items recognised in OCI:
+Net movement on cash flow hedges | (1,338.69) | (267.78)
+Net loss on re-measurement of defined benefit plans | (59.85) | (46.81)
+Net (loss)/gain on FVTOCI equity securities | 71.58 | (5.57)
+Tax charged/(credit) to OCI | (1,326.96) | (309.02)
+Reconciliation of tax expenses and the accounting profit multiplied by India's domestic tax rate for March 31, 2026 and
+March 31, 2025
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Accounting profit before tax from operations | 16,671.72 | 14,558.25
+Accounting profit before income tax
+At India’s statutory income tax rate of 25.168% (March 31, 2025: 25.168%) | 4,195.94 | 3,664.02
+Exceptional items not deductible | 210.20 | -
+Tax impact of losses on which deferred tax asset is not recognised | 1,426.83 | 1,622.12
+Effect of differential rates | (31.07) | 68.37
+Adjustments in respect of reversal of tax expenses of earlier years | 130.06 | (146.26)
+Other disallowances (including consolidation adjustments) | (154.21) | 217.26
+At the effective income tax rate of 34.66% (March 31, 2025: 37.26%) | 5,777.74 | 5,425.50
+Income tax expense reported in the statement of profit and loss | 5,777.74 | 5,425.50
+
+--- PDF page 406 (printed page 403) ---
+Major components of deferred tax as at March 31, 2026 and March 31, 2025:
+Deferred tax liability (net)
+In ₹Million
+Particulars | Balance Sheet
+As at | As at
+March 31, 2026 | March 31, 2025
+Deferred tax relates to the following:
+Property, plant and equipment and intangible assets | 1,493.56 | 1,602.97
+Right-of-use Assets related | 623.31 | 689.02
+Fair valuation of cash flow hedges | - | 188.01
+Fair valuation of FVTOCI equity securities | 181.57 | 236.42
+Temporary differences in accounting treatment as required by Income tax standards | (2,083.20) | (1,518.14)
+Total deferred tax liability | 215.24 | 1,198.28
+Deferred tax asset (net)
+In ₹Million
+Particulars | Balance Sheet
+As at | As at
+March 31, 2026 | March 31, 2025
+Deferred tax relates to the following:
+Property, plant and equipment and intangible assets | 75.02 | 86.35
+Lease liabilities related | (752.67) | (790.23)
+Fair valuation of cash flow hedges | (1,117.70) | -
+Temporary differences in accounting treatment as required by Income tax standards | 760.56 | 114.21
+Unrealised profit on inventory | (1,087.20) | (1,311.76)
+Total deferred tax asset | (2,121.99) | (1,901.43)
+Major components of deferred tax for the year ended March 31, 2026 and March 31, 2025:
+Deferred tax expense/(income)
+In ₹Million
+Particulars | Statement of Profit and Loss
+Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Deferred tax relates to the following:
+Property, plant and equipment and intangible assets | 120.74 | 247.91
+Unrealised profit on inventory | 224.55 | 0.90
+Temporary differences in accounting treatment as required by Income tax standards | (206.62) | (671.85)
+Deferred tax expense/(credit) | 171.67 | (423.04)
+Reflected in the balance sheet as follows
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Deferred tax assets | (1,278.32) | (592.70)
+Deferred tax liabilities | 1,493.56 | 1,790.98
+Deferred tax liabilities (net) | 215.24 | 1,198.28
+Deferred tax assets | (1,079.31) | (1,987.78)
+Deferred tax liabilities | (1,042.68) | 86.35
+Deferred tax assets (net)* | (2,121.99) | (1,901.43)
+
+--- PDF page 407 (printed page 404) ---
+Reconciliation of deferred tax liabilities and assets
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Reconciliation of deferred tax liabilities (net)
+Opening balance | 1,198.28 | 1,690.49
+Tax (expense) during the period recognised in profit or loss | (143.07) | (195.97)
+Deferred tax liabilities on hedge | (1,338.69) | (267.78)
+Deferred tax liabilities on business combination | 56.87 | -
+Tax income during the period recognised in OCI | (26.43) | (28.46)
+Other adjustments | 468.28 | -
+Closing balance | 215.24 | 1,198.28
+Reconciliation of deferred tax assets (net)
+Opening balance | (1,901.43) | (1,651.64)
+Tax income/(expense) during the period recognised in profit or loss | 281.74 | (227.07)
+Tax (expense)/income during the period recognised in OCI | 38.16 | (12.78)
+Other adjustments | (540.46) | (9.94)
+Closing balance | (2,121.99) | (1,901.43)
+(a) The Group offsets tax assets and liabilities if and only if it has a legally enforceable right to set off current tax assets and
+current tax liabilities and the deferred tax assets and deferred tax liabilities relate to income taxes levied by the same tax
+authority.
+(b) The Group has tax losses which arose due to carried forward business losses in India ₹4,398.53 million (March 31, 2025:
+₹4,336.78 million) that are available for offsetting for eight years against future taxable profits of the Group under the
+head income from business. This loss will expire in eight years from the end of the respective year to which it pertains.
+(c) The Group has tax losses which arose due to carried forward business losses in the USA of ₹2,718.53 million (March 31,
+2025: ₹2,457.95 million) that are available for offsetting for twenty years and ₹8,000.24 million (March 31, 2025:
+₹7,622.66 million) that are available for offsetting indefinitely against future taxable profits under relevant heads of income
+of the companies in which the losses arose. These losses will expire in various years between tax years 2026 and 2037.
+(d) The Group has tax losses which arose due to carried forward business losses in Sweden of ₹353.13 million (March 31,
+2025: ₹2,715.96 million) that are available for offsetting for an indefinite period against future taxable profits under
+relevant heads of income of the subsidiary in which the losses arose. Also the Group has tax losses which arose due to
+carried forward business losses in Germany of ₹13,929.32 million (March 31, 2025: ₹9.698.51 million) that are available
+for offsetting for an indefinite period against future taxable profits under relevant heads of income of the subsidiaries in
+which the losses arose.
+(e) During the years ended March 31, 2026 and March 31, 2025, the group entities incorporated in India have not surrendered
+any transaction or disclosed as income in the tax assessments under the Income Tax Act, 1961, (such as, search or survey
+or any other relevant provisions of the Income Tax Act, 1961).
+
+=== Note 41 — CONTINGENT LIABILITIES (Consolidated) ===
+--- PDF page 451 (printed page 448) ---
+41. CONTINGENT LIABILITIES
+In ₹Million
+Particulars | As at | As at
+March 31, 2026 | March 31, 2025
+Claims against the Group not acknowledged as Debts to the extent ascertained | 1668.46 | 1415.16
+[Refer note a]
+Guarantees given by the Company's Bankers on behalf of the Company, against the | 8233.73 | 4064.52
+sanctioned guarantee limit of ₹12,860 million (March 31, 2025: ₹7,250 million) for
+contracts undertaken by the Company are secured by extension of charge by way of
+joint hypothecation of stock-in-trade, stores and spares, book debts, etc.
+Excise/Service tax demand matters under dispute* [Refer note b] | 301.51 | 295.1
+Customs demand matters under dispute* [Refer note c] | 101.54 | 48.06
+Goods and Services tax and Sales tax demand matters under dispute [Refer note d] | 13.93 | 2.17
+Income tax demand matters under dispute [Refer note e] | 148.77 | 231.75
+Pending resolution of the respective proceedings, it is not practicable for the Group to estimate the timings of cash outflows, if any, in
+respect of the above, as it is determinable only on receipt of judgements/decisions pending with various forums/authorities
+* | Includes Interest calculated till reporting date and Penalty
+(a) Includes:
+- | The Holding Company is contesting the demands raised pertaining to property tax.
+- | Includes amount pertaining to incentive received under Government schemes, etc.
+- | Includes amount pertaining to classification differences of products, etc.
+- | Includes amount pertaining to matter relating to applicability of TDS.
+- | One of the subsidiaries has ongoing arbitration proceedings relating to termination of the Share Purchase
+Agreement dated December 18, 2010, the arbitral award dated May 10, 2019 directing the Company to pay
+approximately ₹77 crores along with interest was set aside by the Hon’ble Delhi High Court vide its order dated
+May 26, 2025. The Hon’ble Court held that the appointment of the arbitrator was void ab initio and that the
+arbitral proceedings were not valid in law. The enforcement petition filed by the claimant was also dismissed.
+Subsequently, the claimant, Mr. Tarsem Jain, has challenged the aforesaid judgement by filing an appeal under
+Section 37 of the Arbitration and Conciliation Act, 1996, which is pending adjudication.Based on the legal advice
+obtained, the management believes that the Company has a strong case and the likelihood of any outflow of
+economic resources is remote. Accordingly, no provision has been made in the financial statements.
+
+--- PDF page 452 (printed page 449) ---
+- | One of the subsidiaries has received a demand notice u/s 129 of the Central Goods and Services Tax Act, 2017.
+The subsidiary has paid the demand under protest and is contesting the demands, and the management, including
+its tax/legal advisors, believes that its position will likely be upheld in the appellate process. No tax expense
+has been accrued in the financial statements for the tax demand raised and hence, the subsidiary Company has
+shown the amount paid as Other Current Asset.
+- | One of the subsidiaries has made a payment of ₹1.39 million under protest and filed an appeal before the State
+Tax Officer, Gujarat against the demands from the Goods and Services tax authorities arising on account of
+certain non-compliances with the provisions of E-way bill. The management believes that the ultimate outcome
+of this proceeding will be in favour of the Company and hence no tax expense has been accrued in the financial
+statements.
+(e) Includes the amount pertaining to matters relating to the applicability of TDS.
+- | Holding company and one of the subsidiaries are contesting the demands and the management, including its
+tax/legal advisors, believes that its position will likely be upheld in the appellate process. No tax expense has
+been accrued in the financial statements for the tax demand raised. The management based on its internal
+assessment and advice from its legal counsel believes that it is only possible/remote, but not probable, that the
+action will succeed.
+- | One of the subsidiaries has received a transfer pricing demand order where an upward adjustment was proposed,
+amounting to ₹68.80 million (March 31, 2025: 68.80 million), having a tax impact of ₹24.98 million (March 31,
+2025: 24.98 million) and accrued interest of ₹14.59 million. The company has appealed against the said order.
+The management, on the basis of the opinion of a legal consultant, believes that the ultimate outcome of the
+above proceeding will not have a material adverse effect on the company's financial position and results of
+operations.
+Note: In cases where the amounts have been accrued, it has not been included above.
+----- END OF NOTES -----
+
+Conversation so far in this analysis thread:
+
+User asked: Analyze the company's Tax related liabilities and comment on it.
+You answered: ## Summary
+- Effective tax rate fell to 34.66%
+
+| a | b |
+|---|---|
+| 1 | 2 |
+
+Now answer this follow-up question, using the statements, the notes and the conversation above. Keep the same citation style: (Note X, p.N) for notes, (Balance Sheet, p.N) etc. for statements. As always, explain how the matter affects the primary financial statements (Profit and Loss, Balance Sheet, Cash Flow, Changes in Equity), in a short "Impact on the financial statements" section if the answer involves figures. Use headings and tables only where they help; a short answer is fine for a short question.
+
+FOLLOW-UP QUESTION: Also consider Note 41 tax disputes

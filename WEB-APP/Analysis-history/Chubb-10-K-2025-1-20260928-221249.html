@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chubb Limited — Initial question — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Chubb Limited</h1>
+      <span class="prompt-badge">#1 · Initial question</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> Chubb-10-K-2025.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 28 Sep 2026, 22:12:49</div>
+      <div class="col-md-6"><strong>Statements:</strong> Consolidated</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> 204–209</div>
+      <div class="col-12"><strong>Notes analyzed:</strong> Consolidated Note 19 – Segment information (PDF p.204–209)</div>
+      
+      <div class="col-12"><strong>Report sections analyzed</strong> (management's commentary, not audited): ITEM 1. Business › Competitive Environment · Overseas General Insurance (27 percent of 2025 Consolidated NPE) · Overview (PDF 8); ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Premiums · Combined Ratio · Overseas General Insurance (PDF 58–59); ITEM 1. Business › Segment Information · North America Commercial P&amp;C Insurance (38 percent of 2025 Consolidated NPE) · Overview · Products and Distribution (PDF 5–6)</div>
+      
+      
+      <div class="col-12"><strong>Financial statements referenced:</strong> CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)</div>
+      
+    </div>
+    
+    <div class="question-label">Question</div>
+    
+    <p class="question">Give overview of Overseas General Insurance</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h2>Summary</h2>
+<ul>
+<li>Overseas General Insurance (OGI) is Chubb's international P&amp;C business outside North America. It has two divisions: <strong>Chubb International</strong>, the retail arm, which includes Huatai P&amp;C (about 87.2% owned), and <strong>Chubb Global Markets (CGM)</strong>, the London wholesale arm, which includes Lloyd's Syndicate 2488 (Item 1, p.8).</li>
+<li>OGI earned 27% of Chubb's 2025 net premiums (Item 1, p.8). The audited figures agree: $14,374m of $53,014m is 27.1% (Note 19, p.206).</li>
+<li>In 2025 net premiums earned grew 7.3%, underwriting income grew 18.7% to $2,156m and segment income grew 10.8% to $3,167m (Note 19, p.206–207).</li>
+<li>The MD&amp;A excerpt provided does <strong>not</strong> discuss OGI's 2025 results. The $223m, $179m and $214m figures on p.58 belong to the <strong>Agricultural</strong> segment, not OGI (see below).</li>
+</ul>
+<h2>What management says</h2>
+<ul>
+<li><strong>Chubb International</strong> sells commercial P&amp;C to large, middle-market and small customers, plus consumer A&amp;H and personal lines, in local markets outside the U.S., Bermuda and Canada (Item 1, p.8; MD&amp;A, p.59).</li>
+<li><strong>CGM</strong> is a London wholesale business writing international specialty and excess-and-surplus lines. Syndicate 2488 is wholly owned and has £630m of underwriting capacity for the 2026 Lloyd's account year (Item 1, p.8).</li>
+<li><strong>Combined International</strong> (supplemental A&amp;H) no longer writes new business (Item 1, p.8).</li>
+<li><strong>Expansion:</strong> in 2025 Chubb bought LMG Insurance in Thailand (Item 1, p.8). The audited note describes it as Liberty Mutual's Thai P&amp;C business, included from April 1, 2025 (Note 19, p.204).</li>
+<li><strong>Coverage mix:</strong> financial lines, marine, energy, aviation, political risk, construction, group A&amp;H and personal lines. Business comes through retail brokers and agents, and through wholesale brokers in London (Note 19, p.204).</li>
+<li>The excerpts do not say anything specific to OGI about its competitive position.</li>
+</ul>
+<h2>Performance and drivers</h2>
+<p>All figures are in $ millions, from Note 19 (p.206–208 and p.209). The ratios are my own calculations.</p>
+<ul>
+<li><strong>Premiums:</strong> net premiums written were 15,024 against 13,972 (+1,052, <strong>+7.5%</strong>). Net premiums earned were 14,374 against 13,400 (+974, <strong>+7.3%</strong>) and 12,231 in 2023 (+17.5% over two years).</li>
+<li><strong>By line of business (NPE):</strong></li>
+<li>Property &amp; short-tail: 4,689 against 4,338 (+8.1%)</li>
+<li>Casualty: 3,809 against 3,705 (+2.8%)</li>
+<li>Personal lines: 3,198 against 2,785 (<strong>+14.8%</strong>)</li>
+<li>A&amp;H: 2,678 against 2,572 (+4.1%)</li>
+<li><strong>Underwriting:</strong></li>
+<li>Combined ratio: (6,589 + 470 + 3,724 + 1,435) / 14,374 = <strong>85.0%</strong>, against 11,583 / 13,400 = 86.4% in 2024.</li>
+<li>Loss ratio (losses plus policy benefits): 49.1% against 50.9%.</li>
+<li>Expense ratio: 35.9% against 35.5%.</li>
+<li>The improvement came from losses, while expenses rose slightly.</li>
+<li><strong>Segment income:</strong> 3,167, which is 22.3% of total segment income of 14,227. Net investment income was flat (1,139 against 1,136). Other expense rose from 14 to 50.</li>
+<li><strong>Geography:</strong> Asia accounts for 20% of group NPE and Europe for 11% (Note 19, p.209). These are group-wide figures, not OGI alone.</li>
+<li><strong>What drove these changes is not explained in the material provided.</strong> The MD&amp;A analysis of OGI's results was not in the excerpts. The acquisition in Thailand added part of the growth, but its size is not disclosed.</li>
+</ul>
+<h2>Outlook and risks</h2>
+<ul>
+<li>The excerpts contain no outlook for OGI.</li>
+<li>The text points to these risks:</li>
+<li><strong>Foreign currency:</strong> the currency translation adjustment in OCI was +1,047 in 2025 against −1,177 in 2024 (P&amp;L, p.108).</li>
+<li><strong>Catastrophe exposure:</strong> property and short-tail lines are the largest line (33% of OGI's NPE).</li>
+<li><strong>Integration</strong> of the Thai acquisition.</li>
+<li><strong>China:</strong> concentration through Huatai, with its minority interest.</li>
+<li><strong>Lloyd's:</strong> capital must be provided to support Syndicate 2488's capacity.</li>
+</ul>
+<h2>How it shows in the audited numbers</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Figure (report section, page)</th>
+<th>Where in the notes or statements</th>
+<th>Ties?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OGI = 27% of 2025 consolidated NPE (Item 1, p.8)</td>
+<td>Note 19: 14,374 / 53,014 = 27.1% (p.206)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Consolidated NPE $53.0bn (Item 1, p.5)</td>
+<td>P&amp;L NPE 53,014 (p.108)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>NPW +$223m / 8.2%; NPE +$214m / 7.9% (MD&amp;A, p.58)</td>
+<td>Note 19 Agricultural: 2,926 − 2,703 = 223; 2,919 − 2,705 = 214</td>
+<td>yes, but for <strong>Agricultural</strong>, not OGI</td>
+</tr>
+<tr>
+<td>Profit-share adjustment $179m (MD&amp;A, p.58)</td>
+<td>Not in Note 19</td>
+<td>not disclosed</td>
+</tr>
+<tr>
+<td>Huatai stake 87.2%; Syndicate capacity £630m (Item 1, p.8)</td>
+<td>Not in the notes provided</td>
+<td>not disclosed</td>
+</tr>
+</tbody>
+</table></div>
+<p>The audited segment note confirms OGI's size and that its margins improved. The p.58 figures, which the app linked to this OGI question, actually describe the crop business. The audited figures cannot show OGI's split by division (Chubb International vs. CGM, or Huatai), the effect of currency, catastrophe losses, or prior-year reserve development within OGI.</p>
+<h2>Questions for management</h2>
+<ol>
+<li>How much of the 7.3% NPE growth came from the Thai acquisition and from currency, compared with organic growth?</li>
+<li>How were OGI's 2025 combined ratio and premiums split between Chubb International and CGM, and how much did Huatai contribute?</li>
+<li>What drove the fall in the loss ratio from 50.9% to 49.1%: catastrophe losses, prior-year development, or mix?</li>
+<li>Personal lines grew 14.8%. Which regions drove this, and how does its profitability compare with commercial lines?</li>
+<li>Other expense rose from 14 to 50. What caused this?</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li>Item 1, Business: Segment Information (PDF 5) and Overseas General Insurance (PDF 8)</li>
+<li>Item 7, MD&amp;A: Premiums / Combined Ratio (Agricultural) and Overseas General Insurance (PDF 58–59)</li>
+<li>Note 19, Segment information (PDF 204–209)</li>
+<li>Consolidated Statements of Operations (PDF 108)</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in Chubb-10-K-2025.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

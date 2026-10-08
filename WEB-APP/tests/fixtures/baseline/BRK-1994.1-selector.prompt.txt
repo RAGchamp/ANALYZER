@@ -1,0 +1,37 @@
+An analyst asked this question about a company's annual report:
+
+QUESTION: Analyze the company's income taxes
+
+Scope already decided: consolidated financial statements. Do not change it.
+
+Below are the notes to the financial statements in that scope. IDs starting with C are Consolidated notes and IDs starting with S are Standalone notes.
+
+C1: SIGNIFICANT ACCOUNTING POLICIES AND PRACTICES
+C2: DEXTER SHOE COMPANIES MERGER
+C3: INVESTMENTS IN SECURITIES WITH FIXED MATURITIES
+C4: INVESTMENTS IN MARKETABLE EQUITY SECURITIES
+C5: INVESTMENT IN SALOMON INC
+C6: INVESTMENT IN USAIR GROUP, INC. PREFERRED STOCK
+C7: FINANCE BUSINESSES
+C8: OTHER ASSETS
+C9: PROPERTY AND CASUALTY INSURANCE POLICYHOLDER LIABILITIES
+C10: INCOME TAXES
+C11: BORROWINGS UNDER INVESTMENT AGREEMENTS AND OTHER DEBT
+C12: SHAREHOLDERS' EQUITY ACCOUNTS
+C13: DIVIDEND RESTRICTIONS - INSURANCE SUBSIDIARIES
+C14: FAIR VALUES OF FINANCIAL INSTRUMENTS
+C15: SUPPLEMENTAL CASH FLOW INFORMATION
+C16: QUARTERLY DATA
+C17: BUSINESS SEGMENT DATA
+
+SUGGESTED BY THE FINANCIAL STATEMENTS - the statement lines your question is about are linked to these notes (a hint only; choose on the notes' content):
+- C10: Income taxes (Balance Sheet); Effect of change in income tax rate on deferred taxes (Cash Flow); Income taxes (Cash Flow); Other than effect of change in income tax rate on deferred taxes applicable to unrealized appreciation (P&L); Effect of change in income tax rate on deferred taxes applicable to unrealized appreciation (P&L); Cumulative effect of change in accounting for income taxes (P&L)
+- C16: Effect of change in income tax rate on deferred taxes (Cash Flow); Effect of change in income tax rate on deferred taxes applicable to unrealized appreciation (P&L); Cumulative effect of change in accounting for income taxes (P&L)
+
+Choose the notes whose content is needed to answer the question thoroughly.
+- Choose the primary note(s) first.
+- Also choose a closely related note if it materially adds to the answer (for example, tax disputes are often disclosed under Contingent Liabilities).
+- Choose at most 5 notes, and prefer fewer. Do not choose accounting-policy notes unless the question is about accounting policies.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["C21"], "reason": "one or two sentences explaining the choice"}

@@ -1,0 +1,36 @@
+{
+ "chars": 11620,
+ "hints": [
+  {
+   "id": "C12",
+   "lines": [
+    "Deferred tax assets (Balance Sheet)",
+    "Deferred tax liabilities (Balance Sheet)",
+    "Income tax expense (P&L)",
+    "Income tax expense related to OCI items (P&L)"
+   ]
+  }
+ ],
+ "max_chars": 150000,
+ "method": "claude",
+ "notes": [
+  {
+   "end_page": 180,
+   "id": "C12",
+   "kind": "note",
+   "label": "Consolidated Note 12 — Taxation",
+   "no": 12,
+   "parent": null,
+   "printed_pages": "F-74-F-79",
+   "section": "consolidated",
+   "section_label": "Consolidated",
+   "start_page": 175,
+   "title": "Taxation",
+   "title_is_excerpt": false
+  }
+ ],
+ "reason": "tax",
+ "scope": "consolidated",
+ "scope_label": "Consolidated",
+ "scope_reason": "Default: notes to the consolidated financial statements."
+}

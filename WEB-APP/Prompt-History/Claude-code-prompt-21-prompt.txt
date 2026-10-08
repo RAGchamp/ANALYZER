@@ -1,0 +1,222 @@
+REPORT PROFILE
+Format: Scanned report, transcribed by AI from page images (SEC Form 10-K)
+Companies in this report: Berkshire Hathaway Inc. (consolidated); National Indemnity Company; National Fire & Marine Insurance Company
+Period: December 28, 1968 (each company's statements give its own date)
+Currency: $
+Statements provided: Consolidated Statement of Earnings and Retained Earnings; Consolidated Balance Sheet
+Statement types NOT in the report for these companies: Funds statement, Statement of surplus / equity
+Source quality: AI transcription of 39 scanned pages; [?] marks unreadable characters (29 in the report)
+
+TRANSCRIPTION CHECKS (automatic)
+- p.1: figures not confirmed by the cross-check: 1934
+- p.2: 1 unreadable character(s) [?]
+- p.4: figures not confirmed by the cross-check: 1969
+- p.7: figures not confirmed by the cross-check: 16,136,069
+- p.8: 1 unreadable character(s) [?]; total 45,526,458 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 45,526,458, $372,000
+- p.11: 3 unreadable character(s) [?]
+- p.12: figures not confirmed by the cross-check: 63.825
+- p.13: 2 unreadable character(s) [?]
+- p.14: 1 unreadable character(s) [?]; total 12,754,985 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 10,468,947
+- p.18: figures not confirmed by the cross-check: 281,418
+- p.20: 2 unreadable character(s) [?]; figures not confirmed by the cross-check: 9,870, (102,642), 18,966)
+
+Annual report: BRK-1968.pdf
+Report sections provided: Berkshire Hathaway Inc. (consolidated) › Filing text (cover, items, index, letters) (PDF 1–3)
+Notes provided (to confirm figures): none
+Primary financial statements provided (for reference): Consolidated Statement of Earnings and Retained Earnings (PDF p.8); Consolidated Balance Sheet (PDF p.7)
+
+QUESTION: what percentage of shares was owned by Buffett partnership
+
+Structure your answer as:
+## Summary
+3–5 bullet points that answer the question.
+## What management says
+The business story from the report sections: products, markets, customers, competitive position.
+## Performance and drivers
+The figures the report sections give and what drove them, with your calculations shown.
+## Outlook and risks
+Management's expectations (as expectations) and the risks it names or that the text implies.
+## How it shows in the audited numbers
+One table with the columns: Figure (report section, page) | Where in the notes or statements | Ties? (yes / no / not disclosed). Then two to four sentences on what the audited figures confirm, contradict, or cannot show.
+## Questions for management
+Three to five questions an analyst should ask.
+## Sources
+The report sections, notes and statements you relied on, with PDF pages.
+
+----- REPORT SECTIONS: MANAGEMENT'S COMMENTARY AND OTHER NARRATIVE FROM THE ANNUAL REPORT (PDF page numbers; not audited) -----
+=== Berkshire Hathaway Inc. (consolidated) › Filing text (cover, items, index, letters) (PDF 1–3) ===
+--- PDF page 1 (printed page 1) ---
+
+SECURITIES AND EXCHANGE COMMISSION Washington, D. C. 20549
+
+FORM 10-K
+
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+
+For the fiscal year beginning December 31, 1967 and ended December 28, 1968 Commission file number 0-853
+
+BERKSHIRE HATHAWAY INC. (Exact name of registrant as specified in its charter)
+
+MASSACHUSETTS (State or other jurisdiction of incorporation or organization)
+
+04-225-4452 (I.R.S. Employer Identification No.)
+
+97 COVE STREET, NEW BEDFORD, MASSACHUSETTS 02741 (Address of principal executive offices) (Zip Code)
+
+Securities registered pursuant to Section 12(b) of the Act:
+
+NONE
+
+Securities registered pursuant to Section 12(g) of the Act:
+
+COMMON STOCK, $5 PAR VALUE (Title of Class)
+
+1
+
+--- PDF page 2 (printed page 1) ---
+
+BERKSHIRE HATHAWAY INC.
+
+FORM 10-K
+
+APRIL 23, 1969
+
+Item 1. Number of Equity Security Holders
+
+(A) Title of class | (B) Approximate number of record holders April 4, 1969
+Common stock, $5 par value | 1,557
+
+Item 2. Increases and [?]creases in Outstanding Equity Securities
+
+There were no changes in outstanding equity securities for the year.
+
+Item 3. Parents and Subsidiaries of Registrant
+
+(a) As of April 7, 1969 Buffett Partnership, Ltd., a limited partnership under Nebraska law, owned approximately 69.99% of Registrant's outstanding shares, excluding treasury stock. Mr. Warren E. Buffett, a director of the Registrant, is the sole general partner of the partnership.
+
+(b) The following list shows the significant subsidiaries of the Registrant. Neither of these subsidiaries is included in the Registrant's consolidated statements for the period ended December 28, 1968.
+
+-1-
+
+--- PDF page 3 (printed page -2-) ---
+
+Name | Jurisdiction of Incorporation
+National Fire & Marine Insurance Company | Nebraska
+National Indemnity Company | Nebraska
+
+Registrant owns all of the outstanding stock of National Fire & Indemnity Company and 99% of the outstanding stock of National Indemnity Company.
+----- END OF REPORT SECTIONS -----
+
+----- NOTES PROVIDED TO CONFIRM FIGURES (PDF page numbers) -----
+(No notes were chosen to confirm figures.)
+----- END OF NOTES -----
+
+----- PRIMARY FINANCIAL STATEMENTS (for reference; PDF page numbers) -----
+=== Consolidated Statement of Earnings and Retained Earnings (Berkshire Hathaway Inc.) ===
+--- PDF page 8 (printed page 9) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Statement of Earnings and Retained Earnings
+
+Year ended December 28, 1968
+
+| | |
+|---|---:|
+| **Operating income:** | |
+| Net sales of textile products | $ 46,002,417 |
+| Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII) | 1,789,402 |
+| Dividends from marketable securities | 223,024 |
+| Interest from marketable securities | 131,558 |
+| Interest - other | 34.456 |
+| | 48,180,857 |
+| **Operating costs:** | |
+| Cost of sales (note 3) | 41,321,747 |
+| Administrative and selling expenses | 3,110,628 |
+| Interest on long-term debt | 47,746 |
+| Interest on note payable - bank | 254,106 |
+| Amortization of bond discount | 3,196 |
+| Other interest | 61,035 |
+| Federal income taxes (note 6) | 728,00[?] |
+| | 45,526,458 |
+| Earnings from operations | 2,654,399 |
+| **Investment gains, net of taxes on gains (note 6):** | |
+| Gains realized by Parent Company (first-in, first-out) | 1,467,752 |
+| Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6) | 706,504 |
+| Total investment gains | 2,174,256 |
+| Earnings before extraordinary items | 4,828,655 |
+| **Extraordinary items:** | |
+| Loss on liquidation of mill properties, net of $372,000 income tax benefit | (332,319) |
+| Reduction in Federal income taxes (note 8) | 166,000 |
+| | (166,319) |
+| Net earnings | 4,662,336 |
+| Retained earnings, beginning | 27,032,370 |
+| Retained earnings, ending | $ 31,694,706 |
+| **Per share of outstanding common stock:** | |
+| Earnings from operations | 2.69 |
+| Investment gains | 2.21 |
+| Extraordinary items | (.17) |
+| Net earnings | $ 4.73 |
+
+See accompanying notes to financial statements.
+
+9
+
+=== Consolidated Balance Sheet (Berkshire Hathaway Inc.) ===
+--- PDF page 7 (printed page 7-8) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Balance Sheet
+
+December 28, 1968
+
+### Assets
+
+| | | |
+|---|---|---|
+| Current assets: | | |
+| Cash | | $ 1,605,600 |
+| Marketable securities, at cost (note 2) (Schedule I) | | 5,421,384 |
+| Accounts receivable - trade, including $1,029 due from officers, net of allowance for doubtful accounts ($281,418) (Schedule XII) | | 7,563,123 |
+| Inventories, at the lower of cost (first-in, first-out) or market (note 3) | | 12,332,943 |
+| Prepaid and deferred charges (including mortgage note of approximately $15,200 due from officer) | | 199,501 |
+| Total current assets | | 27,122,551 |
+| Properties, plants and equipment, at cost (note 4) (Schedule V): | | |
+| Land | $ 106,555 | |
+| Buildings | 3,715,838 | |
+| Machinery and equipment | 15,651,551 | |
+| Furniture and fixtures | 428,094 | |
+| Leasehold improvements | 94,232 | |
+| Motor vehicle | 2,423 | |
+| | 19,998,693 | |
+| Less accumulated depreciation and amortization (Schedule VI) | 16,136,069 | |
+| Net properties, plants and equipment | | 3,862,624 |
+| Investment in unconsolidated subsidiaries (note 5) (Schedule III) | | 12,754,985 |
+| | | $ 43,740,160 |
+
+### Liabilities and Stockholders' Equity
+
+| | | |
+|---|---|---|
+| Current liabilities: | | |
+| Note payable - bank, unsecured | | $ 2,000,000 |
+| Accounts payable and accrued expenses | | 3,717,188 |
+| Accrued payroll | | 319,260 |
+| Accrued interest | | 32,536 |
+| Accrued payroll taxes | | 187,546 |
+| Accrued Federal, State, and local taxes (note 6) | | 637,059 |
+| Total current liabilities | | 6,893,589 |
+| Long-term debt: | | |
+| 7 1/2% subordinated debentures (note 7) (Schedule IX) | | 641,300 |
+| Stockholders; equity: | | |
+| Common stock, $5 par value. Authorized 1,722,983 shares; issued 1,017,547 shares | $ 5,087,735 | |
+| Retained earnings | 31,694,706 | |
+| | 36,782,441 | |
+| Less 32,065 shares of common stock in treasury, at cost | 577,170 | |
+| Total stockholders' equity | | 36,205,271 |
+| Commitments and contingencies (notes 9, 11, 12, and 13) | | |
+| | | $ 43,740,160 |
+
+See accompanying notes to financial statements.
+
+7 8
+----- END OF PRIMARY FINANCIAL STATEMENTS -----

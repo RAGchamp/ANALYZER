@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berkshire Hathaway Inc. — Initial question — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Berkshire Hathaway Inc.</h1>
+      <span class="prompt-badge">#1 · Initial question</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> BRK-1968.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 29 Sep 2026, 06:25:53</div>
+      <div class="col-md-6"><strong>Statements:</strong> Berkshire Hathaway Inc. (consolidated)</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> </div>
+      <div class="col-12"><strong>Notes analyzed:</strong> none (report sections only)</div>
+      
+      <div class="col-12"><strong>Report sections analyzed</strong> (management's commentary, not audited): Berkshire Hathaway Inc. (consolidated) › Filing text (cover, items, index, letters) (PDF 1–3)</div>
+      
+      
+      <div class="col-12"><strong>Financial statements referenced:</strong> Consolidated Statement of Earnings and Retained Earnings (PDF p.8); Consolidated Balance Sheet (PDF p.7)</div>
+      
+    </div>
+    
+    <div class="question-label">Question</div>
+    
+    <p class="question">what percentage of shares was owned by Buffett partnership</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h2>Summary</h2>
+<ul>
+<li>As of April 7, 1969, Buffett Partnership, Ltd., a Nebraska limited partnership, owned <strong>about 69.99%</strong> of Berkshire Hathaway's outstanding shares, not counting treasury stock (Item 3(a), p.2).</li>
+<li>Warren E. Buffett, a director of Berkshire, was the sole general partner of the partnership (Item 3(a), p.2). Through the partnership he controlled Berkshire.</li>
+<li>The balance sheet shows 1,017,547 shares issued less 32,065 held in treasury, which leaves <strong>985,482 shares outstanding</strong> (Balance Sheet, p.7). 69.99% of that is about <strong>689,700 shares</strong> held by the partnership. This is my calculation; the report does not give the number of shares.</li>
+<li>The partnership's holding does not appear in the audited statements. The only source is the Form 10-K text, which is not audited.</li>
+</ul>
+<h2>What management says</h2>
+<ul>
+<li>Item 3, "Parents and Subsidiaries of Registrant," names Buffett Partnership, Ltd. as the holder of about 69.99% of Berkshire's outstanding shares as of April 7, 1969. This makes the partnership Berkshire's controlling shareholder (p.2).</li>
+<li>Berkshire in turn owns National Fire &amp; Marine Insurance Company and 99% of National Indemnity Company. Neither was consolidated in 1968 (Item 3(b), p.2–3). The page 3 transcription says "National Fire &amp; Indemnity Company" in one place, which looks like a transcription or typing slip.</li>
+<li>Berkshire had 1,557 holders of record on April 4, 1969 (Item 1, p.2). There were no changes in outstanding equity securities during the year (Item 2, p.2).</li>
+</ul>
+<h2>Performance and drivers</h2>
+<p>Here is how I worked out the partnership's shares:</p>
+<ul>
+<li>Shares outstanding = 1,017,547 issued − 32,065 treasury = <strong>985,482</strong> (Balance Sheet, p.7).</li>
+<li>Partnership shares ≈ 985,482 × 69.99% ≈ <strong>689,740</strong>, which rounds to about 689,700.</li>
+<li>Everyone else ≈ 985,482 − 689,740 ≈ <strong>295,700 shares (30.01%)</strong>, spread across the other ~1,556 record holders.</li>
+<li>Cross-check against earnings per share: net earnings of $4,662,336 ÷ 985,482 shares = <strong>$4.73</strong>, which matches the reported $4.73 (P&amp;L, p.8). So the balance sheet share count is the right base for the percentage.</li>
+<li>By the same arithmetic, the partnership's share of 1968 net earnings was about 69.99% × $4,662,336 ≈ <strong>$3.26 million</strong>.</li>
+</ul>
+<p>The sections do not say when or how the partnership built up this stake.</p>
+<h2>Outlook and risks</h2>
+<ul>
+<li>The sections give no outlook about the partnership's holding.</li>
+<li>Implied risk: one holder with about 70% controls board elections and strategy, so minority holders have little say.</li>
+<li>The holding is dated April 7, 1969, after the December 28, 1968 year end. The year-end percentage is not stated, though with no change in outstanding shares (Item 2) it was probably similar.</li>
+</ul>
+<h2>How it shows in the audited numbers</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Figure (report section, page)</th>
+<th>Where in the notes or statements</th>
+<th>Ties?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buffett Partnership owns ~69.99% (Item 3(a), p.2)</td>
+<td>Not in the statements</td>
+<td>not disclosed</td>
+</tr>
+<tr>
+<td>No change in outstanding equity securities (Item 2, p.2)</td>
+<td>1,017,547 issued; 32,065 treasury (BS, p.7)</td>
+<td>not disclosed (only year-end shown)</td>
+</tr>
+<tr>
+<td>Implied 985,482 shares outstanding</td>
+<td>EPS $4.73 = $4,662,336 ÷ 985,482 (P&amp;L, p.8)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>1,557 record holders (Item 1, p.2)</td>
+<td>Not in the statements</td>
+<td>not disclosed</td>
+</tr>
+</tbody>
+</table></div>
+<p>The audited statements back up the share count behind the percentage, because the EPS figure ties exactly. They cannot confirm the partnership's 69.99%, since ownership by individual shareholders is not an audited disclosure. No notes were provided, so I could not check any related-party disclosure.</p>
+<h2>Questions for management</h2>
+<ol>
+<li>How many shares did Buffett Partnership hold on December 28, 1968, and how has its stake changed in recent years?</li>
+<li>Does the partnership plan to keep, distribute or sell its Berkshire shares, for example if the partnership is wound up?</li>
+<li>Are there any transactions or agreements between Berkshire and the partnership or Mr. Buffett?</li>
+<li>How are minority shareholders' interests protected given one controlling holder?</li>
+<li>Why were the insurance subsidiaries left out of the consolidated statements?</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li>Form 10-K filing text, Items 1–3 (PDF p.1–3)</li>
+<li>Consolidated Balance Sheet (PDF p.7)</li>
+<li>Consolidated Statement of Earnings and Retained Earnings (PDF p.8)</li>
+<li>No notes were provided.</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in BRK-1968.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

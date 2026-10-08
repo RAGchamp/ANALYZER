@@ -1,0 +1,5995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Forge Limited — Financial Statements</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Same look as the saved analysis reports (templates/analysis_report.html) */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+  html{ scroll-behavior:smooth; }
+  section[id], article[id]{ scroll-margin-top:84px; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue); color:var(--nav-yellow);
+    padding:.9rem 1.5rem; display:flex; justify-content:space-between; align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{ font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic; }
+  @media (max-width:576px){ .topnav{ flex-direction:column; gap:.4rem; padding:.75rem 1rem; } }
+
+  .context-box{
+    background:#e7f1ff; border:1px solid #b6d4fe; border-left:6px solid var(--biz-blue);
+    border-radius:.5rem; padding:1.1rem 1.35rem;
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .toc a{ text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .toc .rotated{ font-size:.7rem; }
+
+  .section-title{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:0 0 1.25rem; color:#10233f;
+  }
+  .statement{ background:#fff; border-radius:.5rem; padding:1.25rem 1.5rem;
+              box-shadow:0 .125rem .25rem rgba(0,0,0,.075); margin-bottom:2rem; }
+  .statement h3{ font-size:1.25rem; color:var(--biz-blue-dark); margin:0; }
+  .page-caption{ font-size:.78rem; color:#6c757d; margin:1rem 0 .35rem; }
+  .page-caption .badge{ font-weight:600; }
+
+  table.fs{ width:100%; font-size:.86rem; border-collapse:collapse; margin-bottom:.5rem; }
+  table.fs td{ padding:.28rem .6rem; border-bottom:1px solid #e3e8f0; vertical-align:top; }
+  table.fs td.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  table.fs td.note{ text-align:center; color:#6c757d; white-space:nowrap; width:3.5rem; }
+  table.fs tr.data:nth-child(odd) td{ background:#eef4fc; }
+  table.fs tr.header td{ background:#ffdf7e; font-weight:700; color:#212529; border-color:#e6c257;
+                         vertical-align:bottom; }
+  table.fs tr.header td.num, table.fs tr.header td.note{ white-space:normal; min-width:4.5rem; font-size:.8rem; }
+  /* wide tables (the 12-column Statement of Changes in Equity) - compact so every column fits */
+  table.fs.wide{ font-size:.74rem; }
+  table.fs.wide td{ padding:.24rem .32rem; }
+  table.fs.wide td.label{ min-width:9rem; }
+  table.fs.wide tr.header td.num, table.fs.wide tr.header td.note{ min-width:0; font-size:.7rem; }
+  table.fs tr.group td{ background:#ffe9a8; font-weight:700; font-size:.8rem; }
+  table.fs tr.group td.grp{ text-align:center; border-left:2px solid #fff; border-right:2px solid #fff;
+                            border-bottom:2px solid #e6c257; }
+  table.fs tr.section td{ font-weight:700; color:#10233f; background:#d3e3f5; }
+  table.fs tr.text td{ color:#34495e; font-style:italic; }
+  table.fs tr.total td{ font-weight:700; border-top:2px solid #9fb3cc; background:#f6f9fd; }
+  table.fs tr.unit td{ text-align:right; color:#6c757d; font-size:.78rem; border:none; }
+  .table-scroll{ overflow-x:auto; }
+  .back-to-top{ font-size:.85rem; }
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <section id="top" class="context-box mb-4">
+    <h1 class="company mb-2">Bharat Forge Limited — Financial Statements</h1>
+    <div class="meta mb-3">
+      <strong>Annual report:</strong> Bharat-Forge-IR-2026-conv-single-page.pdf &nbsp;·&nbsp;
+      Built from the statements extracted when the report was loaded; consolidated first, then standalone.
+      Page numbers are PDF page numbers (printed page in brackets).
+    </div>
+    <div class="row toc">
+      
+      <div class="col-md-6">
+        <strong>Consolidated</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#consolidated-profit_loss">Consolidated Statement of Profit and Loss</a>
+            </li>
+          
+          <li><a href="#consolidated-balance_sheet">Consolidated Balance Sheet</a>
+            </li>
+          
+          <li><a href="#consolidated-cash_flow">Consolidated Cash Flow Statement</a>
+            </li>
+          
+          <li><a href="#consolidated-equity">Consolidated Statement of Changes in Equity</a>
+            <span class="badge text-bg-warning rotated">rotated</span></li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-6">
+        <strong>Standalone</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#standalone-profit_loss">Statement of Profit and Loss</a>
+            </li>
+          
+          <li><a href="#standalone-balance_sheet">Balance Sheet</a>
+            </li>
+          
+          <li><a href="#standalone-cash_flow">Cash Flow Statement</a>
+            </li>
+          
+          <li><a href="#standalone-equity">Statement of Changes in Equity</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section id="consolidated" class="mb-5">
+    <h2 class="section-title">Consolidated Financial Statements</h2>
+
+    
+    <article id="consolidated-profit_loss" class="statement">
+      <h3>Consolidated Statement of Profit and Loss</h3>
+      
+      <div class="page-caption">
+        PDF page 342 (printed 339)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">for the year ended March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Notes</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">INCOME</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Revenue from operations</td>
+              
+              <td class="note">24</td>
+              
+              <td class="num">168,116.53</td>
+              
+              <td class="num">151,228.03</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other income</td>
+              
+              <td class="note">25</td>
+              
+              <td class="num">1,986.83</td>
+              
+              <td class="num">2,137.64</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total income [i]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">170,103.36</td>
+              
+              <td class="num">153,365.67</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">EXPENSES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cost of raw materials and components consumed</td>
+              
+              <td class="note">26</td>
+              
+              <td class="num">77,779.31</td>
+              
+              <td class="num">64,396.23</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Purchase of stock in trade</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">788.71</td>
+              
+              <td class="num">2,318.22</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase) in inventories of finished goods, work-in-progress, stock in trade, dies and scrap</td>
+              
+              <td class="note">27</td>
+              
+              <td class="num">(2,672.21)</td>
+              
+              <td class="num">(771.05)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Employee benefits expenses</td>
+              
+              <td class="note">28</td>
+              
+              <td class="num">21,034.18</td>
+              
+              <td class="num">18,698.95</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Finance costs</td>
+              
+              <td class="note">29</td>
+              
+              <td class="num">3,233.46</td>
+              
+              <td class="num">4,174.93</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation and amortisation expenses</td>
+              
+              <td class="note">30</td>
+              
+              <td class="num">9,709.24</td>
+              
+              <td class="num">8,736.19</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other expenses</td>
+              
+              <td class="note">31</td>
+              
+              <td class="num">41,919.81</td>
+              
+              <td class="num">39,646.23</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total expenses [ii]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">151,792.50</td>
+              
+              <td class="num">137,199.70</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit before share of profit/(loss) of associates and joint ventures, exceptional items and tax [i-ii]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">18,310.86</td>
+              
+              <td class="num">16,165.97</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Share of profit/(loss) of associates and joint ventures</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(76.50)</td>
+              
+              <td class="num">(24.52)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax expense</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">18.21</td>
+              
+              <td class="num">12.55</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Share of profit/(loss) of associates and joint ventures, net of tax</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(94.71)</td>
+              
+              <td class="num">(37.07)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit before exceptional items and tax</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">18,216.15</td>
+              
+              <td class="num">16,128.90</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Exceptional items (loss)</td>
+              
+              <td class="note">32</td>
+              
+              <td class="num">(1,544.43)</td>
+              
+              <td class="num">(1,570.65)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit before tax</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">16,671.72</td>
+              
+              <td class="num">14,558.25</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax expense</td>
+              
+              <td class="note">21</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Current tax</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">5,606.07</td>
+              
+              <td class="num">5,848.54</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Deferred tax charge/(credit)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">171.67</td>
+              
+              <td class="num">(423.04)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">5,777.74</td>
+              
+              <td class="num">5,425.50</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit for the year</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">10,893.98</td>
+              
+              <td class="num">9,132.75</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">OTHER COMPREHENSIVE INCOME</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Other comprehensive income/(loss) not to be reclassified to profit and loss in subsequent periods (net of tax)</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Re-measurement gain/(loss) on defined benefit plans</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">237.27</td>
+              
+              <td class="num">(185.37)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Net (loss)on FVTOCI equity investments</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">(1,869.02)</td>
+              
+              <td class="num">(51.09)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Share of other comprehensive (loss) of associates and joint ventures</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(0.61)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(1,631.75)</td>
+              
+              <td class="num">(237.07)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax effect</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">(11.73)</td>
+              
+              <td class="num">41.24</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">[A]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(1,643.48)</td>
+              
+              <td class="num">(195.83)</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <div class="page-caption">
+        PDF page 343 (printed 340)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">for the year ended March 31, 2026 (Contd.)</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Notes</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Other comprehensive income/(loss) to be reclassified to profit and loss in subsequent periods (net of tax)</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Net movement on cash flow hedges</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">(5,312.67)</td>
+              
+              <td class="num">(1,060.36)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Exchange differences on translating financial statements of foreign operations</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">2,205.34</td>
+              
+              <td class="num">432.60</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(3,107.33)</td>
+              
+              <td class="num">(627.76)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax effect</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">1,338.69</td>
+              
+              <td class="num">267.78</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">[B]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(1,768.64)</td>
+              
+              <td class="num">(359.98)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other comprehensive (loss) for the year (net of tax) [A+B]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(3,412.12)</td>
+              
+              <td class="num">(555.81)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total comprehensive income for the year</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">7,481.86</td>
+              
+              <td class="num">8,576.94</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Of the total comprehensive income above,</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">Attributable to:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Owners of the parent company</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">7,384.49</td>
+              
+              <td class="num">8,855.72</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Non-controlling interests</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">97.37</td>
+              
+              <td class="num">(278.78)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Of the total comprehensive income above,</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Profit for the year</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">Attributable to:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Owners of the parent company</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">10,796.61</td>
+              
+              <td class="num">9,411.53</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Non-controlling interests</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">97.37</td>
+              
+              <td class="num">(278.78)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Of the total comprehensive income above,</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Other comprehensive (loss) for the year</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">Attributable to:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Equityholders of the parent company</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(3,412.12)</td>
+              
+              <td class="num">(555.81)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Non-controlling interests</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">0.00</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Earnings per equity share [nominal value per share ₹ 2/-</td>
+              
+              <td class="note">34</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(March 31, 2025: ₹ 2/-)</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Basic (in ₹ )</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">22.58</td>
+              
+              <td class="num">20.05</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Diluted (in ₹ )</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">22.58</td>
+              
+              <td class="num">20.05</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">The accompanying notes form an integral part of the consolidated financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="consolidated-balance_sheet" class="statement">
+      <h3>Consolidated Balance Sheet</h3>
+      
+      <div class="page-caption">
+        PDF page 341 (printed 338)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">as at March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Notes</td>
+              
+              <td class="num">As at March 31, 2026</td>
+              
+              <td class="num">As at March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">ASSETS</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">I. Non-current assets</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(a) Property, plant and equipment</td>
+              
+              <td class="note">3</td>
+              
+              <td class="num">72,575.52</td>
+              
+              <td class="num">58,473.77</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Capital work-in-progress</td>
+              
+              <td class="note">3</td>
+              
+              <td class="num">12,513.26</td>
+              
+              <td class="num">17,253.49</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Investment property</td>
+              
+              <td class="note">4</td>
+              
+              <td class="num">281.63</td>
+              
+              <td class="num">281.63</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(d) Goodwill</td>
+              
+              <td class="note">5</td>
+              
+              <td class="num">3,902.53</td>
+              
+              <td class="num">2,627.83</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(e) Other intangible assets</td>
+              
+              <td class="note">5</td>
+              
+              <td class="num">605.97</td>
+              
+              <td class="num">413.00</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(f) Intangible assets under development</td>
+              
+              <td class="note">5</td>
+              
+              <td class="num">470.45</td>
+              
+              <td class="num">63.70</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(g) Right-of-use asset</td>
+              
+              <td class="note">43</td>
+              
+              <td class="num">4,784.26</td>
+              
+              <td class="num">4,472.93</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(h) Investments accounted for using the equity method (i) Financial assets</td>
+              
+              <td class="note">6</td>
+              
+              <td class="num">614.14</td>
+              
+              <td class="num">905.08</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Investments</td>
+              
+              <td class="note">7</td>
+              
+              <td class="num">5,031.65</td>
+              
+              <td class="num">6,192.36</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Trade receivables</td>
+              
+              <td class="note">12</td>
+              
+              <td class="num">168.68</td>
+              
+              <td class="num">135.48</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Loans</td>
+              
+              <td class="note">8</td>
+              
+              <td class="num">37.67</td>
+              
+              <td class="num">58.54</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Derivative instruments</td>
+              
+              <td class="note">9</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">289.02</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(v) Other financial assets</td>
+              
+              <td class="note">10</td>
+              
+              <td class="num">3,040.67</td>
+              
+              <td class="num">1,616.22</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(j) Deferred tax assets (net)</td>
+              
+              <td class="note">21</td>
+              
+              <td class="num">2,121.99</td>
+              
+              <td class="num">1,901.43</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(k) Income tax assets (net)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">505.35</td>
+              
+              <td class="num">408.37</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(l) Other non-current assets</td>
+              
+              <td class="note">14</td>
+              
+              <td class="num">3,917.22</td>
+              
+              <td class="num">3,466.92</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">110,570.99</td>
+              
+              <td class="num">98,559.77</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">II. Current assets</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(a) Inventories (b) Financial assets</td>
+              
+              <td class="note">11</td>
+              
+              <td class="num">40,527.83</td>
+              
+              <td class="num">35,784.36</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Investments</td>
+              
+              <td class="note">7</td>
+              
+              <td class="num">11,739.22</td>
+              
+              <td class="num">13,529.59</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Trade receivables</td>
+              
+              <td class="note">12</td>
+              
+              <td class="num">39,097.99</td>
+              
+              <td class="num">28,996.06</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Cash and cash equivalents</td>
+              
+              <td class="note">13</td>
+              
+              <td class="num">8,478.85</td>
+              
+              <td class="num">6,210.35</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Other bank balances</td>
+              
+              <td class="note">13</td>
+              
+              <td class="num">1,420.57</td>
+              
+              <td class="num">6,703.41</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(v) Loans</td>
+              
+              <td class="note">8</td>
+              
+              <td class="num">176.32</td>
+              
+              <td class="num">166.14</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(vi) Derivative instruments</td>
+              
+              <td class="note">9</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">600.57</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(vii) Other financial assets</td>
+              
+              <td class="note">10</td>
+              
+              <td class="num">3,780.92</td>
+              
+              <td class="num">1,036.38</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Other current assets</td>
+              
+              <td class="note">14</td>
+              
+              <td class="num">6,806.86</td>
+              
+              <td class="num">9,296.58</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">112,028.56</td>
+              
+              <td class="num">102,323.44</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total assets</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">222,599.55</td>
+              
+              <td class="num">200,883.21</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">EQUITY AND LIABILITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">EQUITY</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(a) Equity share capital</td>
+              
+              <td class="note">15</td>
+              
+              <td class="num">956.27</td>
+              
+              <td class="num">956.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Other equity</td>
+              
+              <td class="note">16</td>
+              
+              <td class="num">94,842.13</td>
+              
+              <td class="num">91,577.07</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Equity attributable to owners of the parent company</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">95,798.40</td>
+              
+              <td class="num">92,533.34</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Non-controlling interests</td>
+              
+              <td class="note">37</td>
+              
+              <td class="num">(230.16)</td>
+              
+              <td class="num">(327.53)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total equity</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">95,568.24</td>
+              
+              <td class="num">92,205.81</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">LIABILITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">I. Non-current liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(a) Financial liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Borrowings</td>
+              
+              <td class="note">18</td>
+              
+              <td class="num">18,123.55</td>
+              
+              <td class="num">13,193.66</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Lease liabilities</td>
+              
+              <td class="note">43</td>
+              
+              <td class="num">3,699.19</td>
+              
+              <td class="num">3,623.98</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Derivative instruments</td>
+              
+              <td class="note">19a</td>
+              
+              <td class="num">1,582.36</td>
+              
+              <td class="num">67.45</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Other financial liabilities</td>
+              
+              <td class="note">19</td>
+              
+              <td class="num">3,357.24</td>
+              
+              <td class="num">195.38</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Provisions</td>
+              
+              <td class="note">20</td>
+              
+              <td class="num">2,906.62</td>
+              
+              <td class="num">2,192.25</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Deferred tax liabilities (net)</td>
+              
+              <td class="note">21</td>
+              
+              <td class="num">215.24</td>
+              
+              <td class="num">1,198.28</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(d) Other non-current liabilities</td>
+              
+              <td class="note">23</td>
+              
+              <td class="num">1,332.71</td>
+              
+              <td class="num">1,176.32</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">31,216.91</td>
+              
+              <td class="num">21,647.32</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">II. Current liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(a) Financial liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Borrowings</td>
+              
+              <td class="note">18</td>
+              
+              <td class="num">50,622.63</td>
+              
+              <td class="num">49,690.21</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Lease liabilities</td>
+              
+              <td class="note">43</td>
+              
+              <td class="num">640.78</td>
+              
+              <td class="num">474.74</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Trade payables</td>
+              
+              <td class="note">22</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dues to micro enterprises and small enterprises</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">839.98</td>
+              
+              <td class="num">770.13</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dues to other than micro enterprises and small enterprises</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">29,116.63</td>
+              
+              <td class="num">22,671.99</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Derivative instruments</td>
+              
+              <td class="note">19a</td>
+              
+              <td class="num">3,102.11</td>
+              
+              <td class="num">137.57</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(v) Other financial liabilities</td>
+              
+              <td class="note">19</td>
+              
+              <td class="num">2,124.13</td>
+              
+              <td class="num">1,654.03</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Other current liabilities</td>
+              
+              <td class="note">23</td>
+              
+              <td class="num">6,871.51</td>
+              
+              <td class="num">9,289.48</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Provisions</td>
+              
+              <td class="note">20</td>
+              
+              <td class="num">2,103.47</td>
+              
+              <td class="num">1,945.86</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(d) Current tax liabilities (net)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">393.16</td>
+              
+              <td class="num">396.07</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">95,814.40</td>
+              
+              <td class="num">87,030.08</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total liabilities</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">127,031.31</td>
+              
+              <td class="num">108,677.40</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total equity and liabilities</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">222,599.55</td>
+              
+              <td class="num">200,883.21</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">The accompanying notes form an integral part of the consolidated financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="consolidated-cash_flow" class="statement">
+      <h3>Consolidated Cash Flow Statement</h3>
+      
+      <div class="page-caption">
+        PDF page 346 (printed 343)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="3">for the year ended March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="3">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">OPERATING ACTIvITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Profit after exceptional items &amp; before tax</td>
+              
+              <td class="num">16,671.72</td>
+              
+              <td class="num">14,558.25</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Less): Share of (loss) of associates and joint ventures (net of tax)</td>
+              
+              <td class="num">(94.71)</td>
+              
+              <td class="num">(37.07)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">16,766.43</td>
+              
+              <td class="num">14,595.32</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">Adjustment to reconcile profit before tax to net cash flows</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation and amortisation expenses</td>
+              
+              <td class="num">9,709.24</td>
+              
+              <td class="num">8,736.19</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unrealised foreign exchange (gain)/loss MTM (net)</td>
+              
+              <td class="num">635.77</td>
+              
+              <td class="num">(363.50)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest income</td>
+              
+              <td class="num">(633.42)</td>
+              
+              <td class="num">(691.49)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Liabilities/provision no longer required written back</td>
+              
+              <td class="num">(94.82)</td>
+              
+              <td class="num">(59.44)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Provision for doubtful debts and advances written back</td>
+              
+              <td class="num">125.94</td>
+              
+              <td class="num">68.52</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Bad debts/advances written off</td>
+              
+              <td class="num">17.18</td>
+              
+              <td class="num">79.91</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Finance costs</td>
+              
+              <td class="num">3,233.46</td>
+              
+              <td class="num">4,174.93</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Gain)/loss on sale of property, plant and equipment (net)</td>
+              
+              <td class="num">(185.34)</td>
+              
+              <td class="num">14.87</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividend income from equity securities</td>
+              
+              <td class="num">(9.04)</td>
+              
+              <td class="num">(8.34)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net (gain) on sale of financial instruments</td>
+              
+              <td class="num">(595.05)</td>
+              
+              <td class="num">(1,415.32)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net loss on fair valuation of financial instruments (FVTPL)</td>
+              
+              <td class="num">174.64</td>
+              
+              <td class="num">768.55</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Non-cash exceptional items</td>
+              
+              <td class="num">404.99</td>
+              
+              <td class="num">1,570.65</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Operating profit before working capital changes</td>
+              
+              <td class="num">29,549.98</td>
+              
+              <td class="num">27,470.85</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">Working capital adjustments</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase)/Decrease in trade receivables</td>
+              
+              <td class="num">(7,090.42)</td>
+              
+              <td class="num">2,510.11</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase) in inventories</td>
+              
+              <td class="num">(3,878.56)</td>
+              
+              <td class="num">(3,837.66)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase)/decrease in other financial assets</td>
+              
+              <td class="num">(2,724.71)</td>
+              
+              <td class="num">57.40</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Decrease/(Increase) in other assets</td>
+              
+              <td class="num">1,566.07</td>
+              
+              <td class="num">(2,279.99)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in provisions</td>
+              
+              <td class="num">923.11</td>
+              
+              <td class="num">614.19</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in trade payables</td>
+              
+              <td class="num">4,419.60</td>
+              
+              <td class="num">910.48</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in other financial liabilities</td>
+              
+              <td class="num">62.18</td>
+              
+              <td class="num">153.00</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Decrease) in other liabilities</td>
+              
+              <td class="num">(2,314.58)</td>
+              
+              <td class="num">(1,584.88)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash generated from operations</td>
+              
+              <td class="num">20,512.67</td>
+              
+              <td class="num">24,013.50</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income taxes paid (net of refunds)</td>
+              
+              <td class="num">(5,646.25)</td>
+              
+              <td class="num">(6,050.07)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows from operating activities (I)</td>
+              
+              <td class="num">14,866.42</td>
+              
+              <td class="num">17,963.43</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">INvESTING ACTIvITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Purchase of property, plant and equipment, investment property and intangible assets (including capital work-in-progress, capital creditors and capital advances)</td>
+              
+              <td class="num">(11,404.96)</td>
+              
+              <td class="num">(14,504.59)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sale of property, plant and equipment and intangible assets</td>
+              
+              <td class="num">274.32</td>
+              
+              <td class="num">65.40</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investments in joint venture/associates</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(303.49)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Acquisition of a subsidiary (net of cash of ₹ 1,933.28 million)</td>
+              
+              <td class="num">(4,986.23)</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Repayment of loan given to joint venture/associates</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">42.47</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investments in mutual funds, fixed deposits and other deposits</td>
+              
+              <td class="num">(125,407.36)</td>
+              
+              <td class="num">(142,382.36)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sale of financial instruments including fixed deposits</td>
+              
+              <td class="num">130,905.57</td>
+              
+              <td class="num">136,896.77</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest received</td>
+              
+              <td class="num">279.32</td>
+              
+              <td class="num">534.13</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividend received</td>
+              
+              <td class="num">9.04</td>
+              
+              <td class="num">8.34</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows (used in) investing activities (II)</td>
+              
+              <td class="num">(10,330.30)</td>
+              
+              <td class="num">(19,643.33)</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <div class="page-caption">
+        PDF page 347 (printed 344)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="3">for the year ended March 31, 2026 (contd.)</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="3">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">FINANCING ACTIvITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividend paid on equity shares</td>
+              
+              <td class="num">(3,796.55)</td>
+              
+              <td class="num">(4,220.93)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from issue of compulsorily convertible preference shares by the subsidiary company</td>
+              
+              <td class="num">3,000.00</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest paid on lease liabilities</td>
+              
+              <td class="num">(341.87)</td>
+              
+              <td class="num">(330.76)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest paid on borrowing and other liabilities</td>
+              
+              <td class="num">(3,410.41)</td>
+              
+              <td class="num">(4,398.40)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from Issuance of Equity share capital under Qualified Institutional Placement (QIP)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">16,500.00</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Transaction cost related to Qualified Institutional Placement (QIP)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(302.67)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Payment of principal portion of lease liabilities</td>
+              
+              <td class="num">(654.56)</td>
+              
+              <td class="num">(515.71)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from borrowings including bill discounting</td>
+              
+              <td class="num">142,833.45</td>
+              
+              <td class="num">88,513.79</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Repayment of borrowings including bill discounting</td>
+              
+              <td class="num">(142,049.91)</td>
+              
+              <td class="num">(100,942.28)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows (used in) financing activities (III)</td>
+              
+              <td class="num">(4,419.85)</td>
+              
+              <td class="num">(5,696.96)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net increase/(decrease) in cash and cash equivalents (I + II + III)</td>
+              
+              <td class="num">116.27</td>
+              
+              <td class="num">(7,376.86)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net foreign exchange difference</td>
+              
+              <td class="num">(53.11)</td>
+              
+              <td class="num">1.51</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at the beginning of the year*</td>
+              
+              <td class="num">6,210.35</td>
+              
+              <td class="num">13,153.10</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at the end of the year*</td>
+              
+              <td class="num">6,273.51</td>
+              
+              <td class="num">5,777.75</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Foreign currency translation reserve movement</td>
+              
+              <td class="num">2,205.34</td>
+              
+              <td class="num">432.60</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at the end of the year*</td>
+              
+              <td class="num">8,478.85</td>
+              
+              <td class="num">6,210.35</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">* Excluding earmarked balances</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">CASH AND CASH EQUIVALENTS FOR THE PURPOSE OF CASH FLOW STATEMENT</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="3">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">BANk BALANCES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">In cash credit and current accounts</td>
+              
+              <td class="num">8,182.10</td>
+              
+              <td class="num">5,204.60</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Deposits with original maturity of less than three months</td>
+              
+              <td class="num">294.32</td>
+              
+              <td class="num">1,003.06</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">CASH ON HAND</td>
+              
+              <td class="num">2.43</td>
+              
+              <td class="num">2.69</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total</td>
+              
+              <td class="num">8,478.85</td>
+              
+              <td class="num">6,210.35</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">The accompanying notes form an integral part of the consolidated financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="consolidated-equity" class="statement">
+      <h3>Consolidated Statement of Changes in Equity</h3>
+      
+      <div class="page-caption">
+        PDF page 344 (printed 341)
+        <span class="badge text-bg-warning">printed sideways; rotated 90° clockwise before extraction</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">for the year ended March 31, 2026</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="5">A. EQUITY SHARE CAPITAL:</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="5">Equity shares of ₹ 2/- each issued, subscribed and fully paid</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">No.</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">As at March 31, 2026</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">478,088,632</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Changes in equity share capital during the year</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">-</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">As at March 31, 2025</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">478,088,632</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Changes in equity share capital during the year</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">12,500,000</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">As at April 1, 2024</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">465,588,632</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="5">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="5">(1) For the year ended March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">Balance as on April 1, 2025</td>
+              
+              <td class="num">Changes in equity share capital during the year</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">Balance as on March 31, 2026</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">956.27</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">956.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="5">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="5">(2) For the year ended March 31, 2025</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">Balance as on April 1, 2024</td>
+              
+              <td class="num">Changes in equity share capital during the current year</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">Balance as on March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">931.27</td>
+              
+              <td class="num">25.00</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">956.27</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs wide">
+          
+            
+            <tr class="section">
+              <td colspan="13">B. OTHER EQUITY</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="13">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="9" class="grp">Attributable to the owners of the parent</td>
+              
+              <td colspan="3" class=""></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="5" class="grp">Reserves and Surplus (Refer note 16)</td>
+              
+              <td colspan="4" class="grp">Items of OCI (Refer note 16)</td>
+              
+              <td colspan="3" class=""></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num">Securities premium</td>
+              
+              <td class="num">Capital reserves</td>
+              
+              <td class="num">Employee stock option outstanding</td>
+              
+              <td class="num">General reserve</td>
+              
+              <td class="num">Retained Earnings</td>
+              
+              <td class="num">Foreign currency translation reserve (FCTR)</td>
+              
+              <td class="num">Equity instruments through other comprehensive income</td>
+              
+              <td class="num">Non-controlling interest reserve</td>
+              
+              <td class="num">Cash flow hedge reserve</td>
+              
+              <td class="num">Total attributable to the owners of the Company</td>
+              
+              <td class="num">Non-controlling interests</td>
+              
+              <td class="num">Total</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at April 1, 2025</td>
+              
+              <td class="num">23,103.22</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">127.36</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">61,811.48</td>
+              
+              <td class="num">2,007.93</td>
+              
+              <td class="num">870.02</td>
+              
+              <td class="num">(148.19)</td>
+              
+              <td class="num">559.27</td>
+              
+              <td class="num">91,577.07</td>
+              
+              <td class="num">(327.53)</td>
+              
+              <td class="num">91,249.54</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Profit/(Loss) for the year</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">10,796.61</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">10,796.61</td>
+              
+              <td class="num">97.37</td>
+              
+              <td class="num">10,893.98</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Other Comprehensive Income/ (Loss)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">170.69</td>
+              
+              <td class="num">2,205.34</td>
+              
+              <td class="num">(1,814.17)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,973.98)</td>
+              
+              <td class="num">(3,412.12)</td>
+              
+              <td class="num">0.00</td>
+              
+              <td class="num">(3,412.12)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Change in fair value of gross liability on written put options</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">-</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(294.72)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(294.72)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(294.72)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">10,672.58</td>
+              
+              <td class="num">2,205.34</td>
+              
+              <td class="num">(1,814.17)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,973.98)</td>
+              
+              <td class="num">7,089.77</td>
+              
+              <td class="num">97.37</td>
+              
+              <td class="num">7,187.14</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="13">Transaction with owners in their capacity as owners</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Final equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(2,868.53)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(2,868.53)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(2,868.53)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Interim equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(956.18)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(956.18)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(956.18)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at March 31, 2026</td>
+              
+              <td class="num">23,103.22</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">127.36</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">68,659.35</td>
+              
+              <td class="num">4,213.27</td>
+              
+              <td class="num">(944.15)</td>
+              
+              <td class="num">(148.19)</td>
+              
+              <td class="num">(3,414.71)</td>
+              
+              <td class="num">94,842.13</td>
+              
+              <td class="num">(230.16)</td>
+              
+              <td class="num">94,611.97</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <div class="page-caption">
+        PDF page 345 (printed 342)
+        <span class="badge text-bg-warning">printed sideways; rotated 90° clockwise before extraction</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">for the year ended March 31, 2026 (Contd.)</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs wide">
+          
+            
+            <tr class="section">
+              <td colspan="13">B. OTHER EQUITY (CONTD.)</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="13">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="9" class="grp">Attributable to the owners of the parent</td>
+              
+              <td colspan="3" class=""></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="5" class="grp">Reserves and Surplus (Refer note 16)</td>
+              
+              <td colspan="4" class="grp">Items of OCI (Refer note 16)</td>
+              
+              <td colspan="3" class=""></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num">Securities premium</td>
+              
+              <td class="num">Capital reserves</td>
+              
+              <td class="num">Employee stock option outstanding</td>
+              
+              <td class="num">General reserve</td>
+              
+              <td class="num">Retained Earnings</td>
+              
+              <td class="num">Foreign currency translation reserve (FCTR)</td>
+              
+              <td class="num">Equity instruments through other comprehensive income</td>
+              
+              <td class="num">Non-controlling interest reserve</td>
+              
+              <td class="num">Cash flow hedge reserve</td>
+              
+              <td class="num">Total attributable to the owners of the Company</td>
+              
+              <td class="num">Non-controlling interests</td>
+              
+              <td class="num">Total</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at April 1, 2024</td>
+              
+              <td class="num">6,930.89</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">127.36</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">56,757.59</td>
+              
+              <td class="num">1,575.33</td>
+              
+              <td class="num">929.76</td>
+              
+              <td class="num">(148.19)</td>
+              
+              <td class="num">1,351.85</td>
+              
+              <td class="num">70,770.57</td>
+              
+              <td class="num">(48.75)</td>
+              
+              <td class="num">70,721.82</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Profit/(Loss) for the year</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">9,411.53</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">9,411.53</td>
+              
+              <td class="num">(278.78)</td>
+              
+              <td class="num">9,132.75</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Other Comprehensive Income/(Loss)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(136.09)</td>
+              
+              <td class="num">432.60</td>
+              
+              <td class="num">(59.74)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(792.58)</td>
+              
+              <td class="num">(555.81)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(555.81)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Premium on allotment of equity shares</td>
+              
+              <td class="num">16,475.00</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">16,475.00</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">16,475.00</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Expenses on allotment of equity shares</td>
+              
+              <td class="num">(302.67)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(302.67)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(302.67)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">16,172.33</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">9,275.44</td>
+              
+              <td class="num">432.60</td>
+              
+              <td class="num">(59.74)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(792.58)</td>
+              
+              <td class="num">25,028.05</td>
+              
+              <td class="num">(278.78)</td>
+              
+              <td class="num">24,749.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="13">Transaction with owners in their capacity as owners</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Final equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,026.33)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,026.33)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,026.33)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Interim equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(1,195.22)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(1,195.22)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(1,195.22)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at March 31, 2025</td>
+              
+              <td class="num">23,103.22</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">127.36</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">61,811.48</td>
+              
+              <td class="num">2,007.93</td>
+              
+              <td class="num">870.02</td>
+              
+              <td class="num">(148.19)</td>
+              
+              <td class="num">559.27</td>
+              
+              <td class="num">91,577.07</td>
+              
+              <td class="num">(327.53)</td>
+              
+              <td class="num">91,249.54</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="13">The accompanying notes form an integral part of the consolidated financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+  <section id="standalone" class="mb-5">
+    <h2 class="section-title">Standalone Financial Statements</h2>
+
+    
+    <article id="standalone-profit_loss" class="statement">
+      <h3>Statement of Profit and Loss</h3>
+      
+      <div class="page-caption">
+        PDF page 206 (printed 203)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">for the year ended March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Notes</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">INCOME</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Revenue from operations</td>
+              
+              <td class="note">24</td>
+              
+              <td class="num">83,956.78</td>
+              
+              <td class="num">88,437.30</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other income</td>
+              
+              <td class="note">25</td>
+              
+              <td class="num">1,444.57</td>
+              
+              <td class="num">1,588.53</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total income [i]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">85,401.35</td>
+              
+              <td class="num">90,025.83</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">EXPENSES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cost of raw materials and components consumed</td>
+              
+              <td class="note">26</td>
+              
+              <td class="num">34,933.31</td>
+              
+              <td class="num">35,911.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Changes in inventories of finished goods, work-in-progress, dies and scrap</td>
+              
+              <td class="note">27</td>
+              
+              <td class="num">(2,476.82)</td>
+              
+              <td class="num">10.39</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Employee benefits expense</td>
+              
+              <td class="note">28</td>
+              
+              <td class="num">6,760.05</td>
+              
+              <td class="num">6,366.06</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Finance costs</td>
+              
+              <td class="note">29</td>
+              
+              <td class="num">1,821.74</td>
+              
+              <td class="num">2,498.14</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation and amortisation expenses</td>
+              
+              <td class="note">30</td>
+              
+              <td class="num">4,480.49</td>
+              
+              <td class="num">4,403.69</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other expenses</td>
+              
+              <td class="note">31</td>
+              
+              <td class="num">21,674.48</td>
+              
+              <td class="num">21,115.50</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total expenses [ii]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">67,193.25</td>
+              
+              <td class="num">70,305.05</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit before exceptional items and tax [i - ii]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">18,208.10</td>
+              
+              <td class="num">19,720.78</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Exceptional items (loss)</td>
+              
+              <td class="note">32</td>
+              
+              <td class="num">(5,495.85)</td>
+              
+              <td class="num">(1,533.14)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit before tax</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">12,712.25</td>
+              
+              <td class="num">18,187.64</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">INCOME TAX EXPENSE</td>
+              
+              <td class="note">21</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Current tax</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">4,728.08</td>
+              
+              <td class="num">5,122.06</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Deferred tax (credit)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(203.24)</td>
+              
+              <td class="num">(156.93)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax expense</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">4,524.84</td>
+              
+              <td class="num">4,965.13</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit for the year</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">8,187.41</td>
+              
+              <td class="num">13,222.51</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">OTHER COMPREHENSIVE INCOME</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Other comprehensive income not to be reclassified to profit or loss in subsequent periods (net of tax)</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Remeasurement gain/(loss) on defined benefit plans</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">119.44</td>
+              
+              <td class="num">(176.54)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Net (loss) on FVTOCI equity investments</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">(383.59)</td>
+              
+              <td class="num">(316.91)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(264.15)</td>
+              
+              <td class="num">(493.45)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax effect</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">24.80</td>
+              
+              <td class="num">35.79</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">[a]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(239.35)</td>
+              
+              <td class="num">(457.66)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Other comprehensive income to be reclassified to profit or loss in subsequent periods (net of tax)</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Net movement on cash flow hedges</td>
+              
+              <td class="note">33</td>
+              
+              <td class="num">(5,189.88)</td>
+              
+              <td class="num">(1,050.03)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income tax effect</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">1,306.19</td>
+              
+              <td class="num">264.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">[b]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(3,883.69)</td>
+              
+              <td class="num">(785.76)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other comprehensive (loss) for the year (net of tax) [a+b]</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">(4,123.04)</td>
+              
+              <td class="num">(1,243.42)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total comprehensive income for the year (net of tax)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">4,064.37</td>
+              
+              <td class="num">11,979.09</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Earnings per equity share [nominal value per share ₹ 2/-</td>
+              
+              <td class="note">34</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(March 31, 2025: ₹ 2/-)]</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Basic (in ₹ )</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">17.12</td>
+              
+              <td class="num">28.16</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Diluted (in ₹ )</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">17.12</td>
+              
+              <td class="num">28.16</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">The accompanying notes form an integral part of the Standalone financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="standalone-balance_sheet" class="statement">
+      <h3>Balance Sheet</h3>
+      
+      <div class="page-caption">
+        PDF page 205 (printed 202)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">as at March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Notes</td>
+              
+              <td class="num">As at March 31, 2026</td>
+              
+              <td class="num">As at March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">ASSETS</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">I. Non-current assets</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(a) Property, plant and equipment</td>
+              
+              <td class="note">3</td>
+              
+              <td class="num">28,301.04</td>
+              
+              <td class="num">28,183.43</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Capital work-in-progress</td>
+              
+              <td class="note">3</td>
+              
+              <td class="num">7,275.20</td>
+              
+              <td class="num">8,381.31</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Investment property</td>
+              
+              <td class="note">4</td>
+              
+              <td class="num">281.63</td>
+              
+              <td class="num">281.63</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(d) Intangible assets</td>
+              
+              <td class="note">5</td>
+              
+              <td class="num">37.10</td>
+              
+              <td class="num">27.74</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(e) Right-of-use asset (f) Financial assets</td>
+              
+              <td class="note">35</td>
+              
+              <td class="num">2,538.70</td>
+              
+              <td class="num">2,800.58</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Investment in subsidiaries, joint ventures and associates</td>
+              
+              <td class="note">6</td>
+              
+              <td class="num">54,411.31</td>
+              
+              <td class="num">43,648.37</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Other investments</td>
+              
+              <td class="note">7</td>
+              
+              <td class="num">4,267.51</td>
+              
+              <td class="num">4,152.44</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Trade receivables</td>
+              
+              <td class="note">12</td>
+              
+              <td class="num">117.98</td>
+              
+              <td class="num">118.03</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Loans</td>
+              
+              <td class="note">8</td>
+              
+              <td class="num">37.67</td>
+              
+              <td class="num">58.54</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(v) Derivative instruments</td>
+              
+              <td class="note">9</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">289.02</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(vi) Other financial assets</td>
+              
+              <td class="note">10</td>
+              
+              <td class="num">1,527.60</td>
+              
+              <td class="num">1,452.31</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(g) Income tax assets (net)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">255.08</td>
+              
+              <td class="num">278.36</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(h) Deferred tax assets (net)</td>
+              
+              <td class="note">21</td>
+              
+              <td class="num">467.69</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Other non-current assets</td>
+              
+              <td class="note">14</td>
+              
+              <td class="num">1,776.88</td>
+              
+              <td class="num">1,983.25</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">101,295.39</td>
+              
+              <td class="num">91,655.01</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">II. Current assets</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(a) Inventories (b) Financial assets</td>
+              
+              <td class="note">11</td>
+              
+              <td class="num">15,700.93</td>
+              
+              <td class="num">15,401.74</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Investments</td>
+              
+              <td class="note">7</td>
+              
+              <td class="num">9,502.65</td>
+              
+              <td class="num">12,647.62</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Trade receivables</td>
+              
+              <td class="note">12</td>
+              
+              <td class="num">41,295.10</td>
+              
+              <td class="num">38,199.59</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Cash and cash equivalent</td>
+              
+              <td class="note">13</td>
+              
+              <td class="num">3,590.59</td>
+              
+              <td class="num">3,589.24</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Other bank balances</td>
+              
+              <td class="note">13</td>
+              
+              <td class="num">114.26</td>
+              
+              <td class="num">5,696.13</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(v) Loans</td>
+              
+              <td class="note">8</td>
+              
+              <td class="num">20.44</td>
+              
+              <td class="num">151.28</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(vi) Derivative instruments</td>
+              
+              <td class="note">9</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">600.57</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(vii) Other financial assets</td>
+              
+              <td class="note">10</td>
+              
+              <td class="num">1,125.82</td>
+              
+              <td class="num">724.45</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Other current assets</td>
+              
+              <td class="note">14</td>
+              
+              <td class="num">2,633.84</td>
+              
+              <td class="num">3,936.86</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">73,983.63</td>
+              
+              <td class="num">80,947.48</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total assets</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">175,279.02</td>
+              
+              <td class="num">172,602.49</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">EQUITY AND LIABILITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Equity</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(a) Equity share capital</td>
+              
+              <td class="note">15</td>
+              
+              <td class="num">956.27</td>
+              
+              <td class="num">956.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Other equity</td>
+              
+              <td class="note">16</td>
+              
+              <td class="num">108,926.08</td>
+              
+              <td class="num">108,686.42</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total equity</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">109,882.35</td>
+              
+              <td class="num">109,642.69</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">I. Non-current liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(a) Financial liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Borrowings</td>
+              
+              <td class="note">18</td>
+              
+              <td class="num">10,515.98</td>
+              
+              <td class="num">6,594.19</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Lease liabilities</td>
+              
+              <td class="note">35</td>
+              
+              <td class="num">2,756.28</td>
+              
+              <td class="num">2,951.44</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Derivative instruments 19(a)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">1,582.36</td>
+              
+              <td class="num">67.45</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Other financial liabilities</td>
+              
+              <td class="note">19</td>
+              
+              <td class="num">30.02</td>
+              
+              <td class="num">54.04</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Provisions</td>
+              
+              <td class="note">20</td>
+              
+              <td class="num">1,283.36</td>
+              
+              <td class="num">909.81</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Deferred tax liabilities (net)</td>
+              
+              <td class="note">21</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">1,066.54</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(d) Other non-current liabilities</td>
+              
+              <td class="note">23</td>
+              
+              <td class="num">585.55</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">16,753.55</td>
+              
+              <td class="num">11,643.47</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">II. Current liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(a) Financial liabilities</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(i) Borrowings</td>
+              
+              <td class="note">18</td>
+              
+              <td class="num">27,128.97</td>
+              
+              <td class="num">33,222.58</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(ii) Lease liabilities.</td>
+              
+              <td class="note">35</td>
+              
+              <td class="num">196.32</td>
+              
+              <td class="num">188.38</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iii) Trade payables</td>
+              
+              <td class="note">22</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dues to micro enterprises and small enterprises</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">324.00</td>
+              
+              <td class="num">136.25</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dues to other than micro enterprises and small enterprises</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">13,686.83</td>
+              
+              <td class="num">13,727.07</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(iv) Derivative instruments 19(a)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">2,971.06</td>
+              
+              <td class="num">135.66</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(v) Other financial liabilities</td>
+              
+              <td class="note">19</td>
+              
+              <td class="num">1,344.48</td>
+              
+              <td class="num">1,064.29</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(b) Other current liabilities</td>
+              
+              <td class="note">23</td>
+              
+              <td class="num">1,398.24</td>
+              
+              <td class="num">1,174.29</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(c) Provisions</td>
+              
+              <td class="note">20</td>
+              
+              <td class="num">1,413.28</td>
+              
+              <td class="num">1,408.36</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(d) Current tax liabilities (net)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">179.94</td>
+              
+              <td class="num">259.45</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">48,643.12</td>
+              
+              <td class="num">51,316.33</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total liabilities</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">65,396.67</td>
+              
+              <td class="num">62,959.80</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total equity and liabilities</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">175,279.02</td>
+              
+              <td class="num">172,602.49</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">The accompanying notes form an integral part of the Standalone financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="standalone-cash_flow" class="statement">
+      <h3>Cash Flow Statement</h3>
+      
+      <div class="page-caption">
+        PDF page 208 (printed 205)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="3">for the year ended March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="3">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">OPERATING ACTIVITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Profit after exceptional items and before tax</td>
+              
+              <td class="num">12,712.25</td>
+              
+              <td class="num">18,187.64</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">Adjustment to reconcile profit before tax to net cash flows</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation and amortisation expenses</td>
+              
+              <td class="num">4,480.49</td>
+              
+              <td class="num">4,403.69</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unrealised foreign exchange loss/MTM (net)</td>
+              
+              <td class="num">1,467.76</td>
+              
+              <td class="num">223.62</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest income</td>
+              
+              <td class="num">(488.47)</td>
+              
+              <td class="num">(566.24)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Liabilities/provisions no longer required written back</td>
+              
+              <td class="num">(23.62)</td>
+              
+              <td class="num">(25.14)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Provision for doubtful debts and advances (including expected credit loss) (net)</td>
+              
+              <td class="num">39.95</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Bad debts/advances written off</td>
+              
+              <td class="num">0.10</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Finance costs</td>
+              
+              <td class="num">1,821.74</td>
+              
+              <td class="num">2,498.14</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Gain)/loss on sale of property, plant and equipment (net)</td>
+              
+              <td class="num">(178.73)</td>
+              
+              <td class="num">0.99</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividend income from investments</td>
+              
+              <td class="num">(9.04)</td>
+              
+              <td class="num">(8.34)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net (gain) on sale of financial investments</td>
+              
+              <td class="num">(474.94)</td>
+              
+              <td class="num">(1,331.04)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net loss on fair valuation of financial instruments (FVTPL)</td>
+              
+              <td class="num">186.57</td>
+              
+              <td class="num">767.30</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Gain) on sale of investment in joint venture</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(135.36)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Non cash exceptional items</td>
+              
+              <td class="num">4,582.95</td>
+              
+              <td class="num">1,659.16</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Operating profit before working capital changes</td>
+              
+              <td class="num">24,117.01</td>
+              
+              <td class="num">25,674.42</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Working capital adjustments:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase) in trade receivables</td>
+              
+              <td class="num">(2,456.23)</td>
+              
+              <td class="num">(2,018.61)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase) in inventories</td>
+              
+              <td class="num">(3,637.60)</td>
+              
+              <td class="num">(2,106.89)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase)/decrease in other financial assets</td>
+              
+              <td class="num">(227.82)</td>
+              
+              <td class="num">177.42</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Decrease/(increase) in other assets</td>
+              
+              <td class="num">1,168.77</td>
+              
+              <td class="num">(738.82)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in provisions</td>
+              
+              <td class="num">503.71</td>
+              
+              <td class="num">590.07</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in trade payables</td>
+              
+              <td class="num">194.51</td>
+              
+              <td class="num">1,047.44</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase/(decrease) in other financial liabilities</td>
+              
+              <td class="num">436.00</td>
+              
+              <td class="num">(150.81)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase/(decrease) in other liabilities</td>
+              
+              <td class="num">118.91</td>
+              
+              <td class="num">(204.64)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash generated from operations</td>
+              
+              <td class="num">20,217.26</td>
+              
+              <td class="num">22,269.58</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income taxes paid (net of refunds)</td>
+              
+              <td class="num">(4,777.55)</td>
+              
+              <td class="num">(5,257.97)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows from operating activities (A)</td>
+              
+              <td class="num">15,439.71</td>
+              
+              <td class="num">17,011.61</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">INVESTING ACTIVITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Purchase of property, plant and equipment, Investment property and intangible assets (including capital work-in-progress, capital creditors and capital advances)</td>
+              
+              <td class="num">(3,233.46)</td>
+              
+              <td class="num">(6,170.90)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sale of property, plant and equipment and intangible assets</td>
+              
+              <td class="num">225.90</td>
+              
+              <td class="num">10.50</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment in subsidiaries, associates and joint ventures</td>
+              
+              <td class="num">(11,226.44)</td>
+              
+              <td class="num">(16,249.11)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sale of investment in joint ventures</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">1,054.50</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from loan given to subsidiaries and associates</td>
+              
+              <td class="num">114.05</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investments in mutual funds, fixed deposits and other deposits</td>
+              
+              <td class="num">(120,197.02)</td>
+              
+              <td class="num">(133,824.24)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sale of financial instruments including fixed deposits</td>
+              
+              <td class="num">128,466.52</td>
+              
+              <td class="num">126,374.60</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest received</td>
+              
+              <td class="num">295.17</td>
+              
+              <td class="num">389.19</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividends received</td>
+              
+              <td class="num">9.04</td>
+              
+              <td class="num">8.34</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows (used in) investing activities (B)</td>
+              
+              <td class="num">(5,546.24)</td>
+              
+              <td class="num">(28,407.12)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">FINANCING ACTIVITIES</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividend on equity shares</td>
+              
+              <td class="num">(3,796.55)</td>
+              
+              <td class="num">(4,220.93)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest on lease liabilities</td>
+              
+              <td class="num">(275.16)</td>
+              
+              <td class="num">(291.21)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest paid on borrowing and other liabilities</td>
+              
+              <td class="num">(1,495.02)</td>
+              
+              <td class="num">(2,332.83)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from Issuance of Equity share capital under Qualified Institutional Placement (QIP)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">16,500.00</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Transaction cost related to Qualified Institutional Placement (QIP)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(302.67)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Payment of principal portion of lease liabilities</td>
+              
+              <td class="num">(188.52)</td>
+              
+              <td class="num">(170.26)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from borrowings including bill discounting (net of expenses)</td>
+              
+              <td class="num">136,765.25</td>
+              
+              <td class="num">81,370.67</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Repayment of borrowings including bill discounting</td>
+              
+              <td class="num">(140,849.01)</td>
+              
+              <td class="num">(85,982.40)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows (used in)/from financing activities (C)</td>
+              
+              <td class="num">(9,839.01)</td>
+              
+              <td class="num">4,570.37</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net increase/(decrease) in cash and cash equivalents (A + B + C)</td>
+              
+              <td class="num">54.46</td>
+              
+              <td class="num">(6,825.14)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net foreign exchange difference</td>
+              
+              <td class="num">(53.11)</td>
+              
+              <td class="num">1.51</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at the beginning of the year*</td>
+              
+              <td class="num">3,589.24</td>
+              
+              <td class="num">10,412.87</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at the end of the year*</td>
+              
+              <td class="num">3,590.59</td>
+              
+              <td class="num">3,589.24</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">*Excluding earmarked balances</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <div class="page-caption">
+        PDF page 209 (printed 206)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="3">for the year ended March 31, 2026 (contd.)</td>
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">CASH AND CASH EQUIVALENTS FOR THE PURPOSE OF CASH FLOW STATEMENT</td>
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="3">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label">Particulars</td>
+              
+              <td class="num">Year ended March 31, 2026</td>
+              
+              <td class="num">Year ended March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Balances with banks (Note 13):</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">In cash credit and current accounts</td>
+              
+              <td class="num">3,590.21</td>
+              
+              <td class="num">2,805.51</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Deposits with original maturity of less than three months</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">783.20</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash on hand</td>
+              
+              <td class="num">0.38</td>
+              
+              <td class="num">0.53</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total</td>
+              
+              <td class="num">3,590.59</td>
+              
+              <td class="num">3,589.24</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">The accompanying notes form an integral part of the Standalone financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="standalone-equity" class="statement">
+      <h3>Statement of Changes in Equity</h3>
+      
+      <div class="page-caption">
+        PDF page 207 (printed 204)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">for the year ended March 31, 2026</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="4">A. EQUITY SHARE CAPITAL:</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Equity shares of ₹ 2/- each issued, subscribed and fully paid</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">No.</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">As at March 31, 2026</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">478,088,632.00</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Changes in equity share capital during the year</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">-</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">As at March 31, 2025</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">478,088,632.00</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Changes in equity share capital during the year</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">12,500,000.00</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">As at April 01, 2024</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">465,588,632.00</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(1) For the year ended March 31, 2026</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">Balance as on April 1, 2025</td>
+              
+              <td class="num">Changes in equity share capital during the current year</td>
+              
+              <td class="num">Balance as on March 31, 2026</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">956.27</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">956.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">(2) For the year ended March 31, 2025</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">Balance as on April 1, 2024</td>
+              
+              <td class="num">Changes in equity share capital during the current year</td>
+              
+              <td class="num">Balance as on March 31, 2025</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">931.27</td>
+              
+              <td class="num">25.00</td>
+              
+              <td class="num">956.27</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="unit">
+              <td colspan="4">₹ in Million</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="8">B. OTHER EQUITY</td>
+            </tr>
+            
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="4" class="grp">Reserves and Surplus [Refer note 16]</td>
+              
+              <td colspan="2" class="grp">Items of OCI [Refer note 16]</td>
+              
+              <td colspan="1" class=""></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">Securities premium</td>
+              
+              <td class="num">Capital reserves</td>
+              
+              <td class="num">General reserve</td>
+              
+              <td class="num">Retained earnings</td>
+              
+              <td class="num">Equity Instruments through Other Comprehensive Income</td>
+              
+              <td class="num">Cash flow hedge reserve</td>
+              
+              <td class="num">Total</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at April 1, 2025</td>
+              
+              <td class="num">23,103.22</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">81,771.45</td>
+              
+              <td class="num">5.33</td>
+              
+              <td class="num">560.44</td>
+              
+              <td class="num">108,686.42</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Profit for the year</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">8,187.41</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">8,187.41</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Other Comprehensive Income/(loss)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">89.38</td>
+              
+              <td class="num">(328.73)</td>
+              
+              <td class="num">(3,883.69)</td>
+              
+              <td class="num">(4,123.04)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total comprehensive income</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">8,276.79</td>
+              
+              <td class="num">(328.73)</td>
+              
+              <td class="num">(3,883.69)</td>
+              
+              <td class="num">4,064.37</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="8">Transaction with owners in their capacity as owners</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Final Equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(2,868.53)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(2,868.53)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Interim equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(956.18)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(956.18)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at March 31, 2026</td>
+              
+              <td class="num">23,103.22</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">86,223.53</td>
+              
+              <td class="num">(323.40)</td>
+              
+              <td class="num">(3,323.25)</td>
+              
+              <td class="num">108,926.08</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at April 1, 2024</td>
+              
+              <td class="num">6,930.89</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">72,902.60</td>
+              
+              <td class="num">330.88</td>
+              
+              <td class="num">1,346.20</td>
+              
+              <td class="num">84,756.55</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Profit for the year</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">13,222.51</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">13,222.51</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Other Comprehensive Income</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(132.11)</td>
+              
+              <td class="num">(325.55)</td>
+              
+              <td class="num">(785.76)</td>
+              
+              <td class="num">(1,243.42)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Premium on allotment of equity shares (Refer note 15)</td>
+              
+              <td class="num">16,475.00</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">16,475.00</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Expenses on allotment of equity shares</td>
+              
+              <td class="num">(302.67)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(302.67)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total comprehensive income</td>
+              
+              <td class="num">16,172.33</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">13,090.40</td>
+              
+              <td class="num">(325.55)</td>
+              
+              <td class="num">(785.76)</td>
+              
+              <td class="num">28,151.42</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="8">Transaction with owners in their capacity as owners</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Final Equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,026.33)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(3,026.33)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">- Interim equity dividend</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(1,195.22)</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">(1,195.22)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Balance as at March 31, 2025</td>
+              
+              <td class="num">23,103.22</td>
+              
+              <td class="num">15.50</td>
+              
+              <td class="num">3,230.48</td>
+              
+              <td class="num">81,771.45</td>
+              
+              <td class="num">5.33</td>
+              
+              <td class="num">560.44</td>
+              
+              <td class="num">108,686.42</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="8">The accompanying notes form an integral part of the Standalone financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer (RAG Champ) — financial statements as extracted from Bharat-Forge-IR-2026-conv-single-page.pdf.
+    Sideways pages were rotated before extraction. Verify figures against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

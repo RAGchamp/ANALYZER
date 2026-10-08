@@ -1,0 +1,24 @@
+{{PROFILE}}Annual report: {{REPORT}}
+Report sections provided: {{SECTIONS_LIST}}
+Notes provided (to confirm figures): {{NOTES}}
+Primary financial statements provided (for reference): {{STATEMENTS_LIST}}
+
+----- REPORT SECTIONS: MANAGEMENT'S COMMENTARY AND OTHER NARRATIVE FROM THE ANNUAL REPORT (PDF page numbers; not audited) -----
+{{SECTIONS}}
+----- END OF REPORT SECTIONS -----
+
+{{NARRATIVE}}----- NOTES PROVIDED TO CONFIRM FIGURES (PDF page numbers) -----
+{{EXTRACT}}
+----- END OF NOTES -----
+
+----- PRIMARY FINANCIAL STATEMENTS (for reference; PDF page numbers) -----
+{{STATEMENTS}}
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+Conversation so far in this analysis thread:
+
+{{CONVERSATION}}
+
+Now answer this follow-up question about the business, from the report sections first and the notes and statements only to confirm figures. Keep the same citation style: (MD&A, p.N), (Board's report, p.N), (Note X, p.N), (P&L, p.N). Use headings and a table only where they help; a short answer is fine for a short question.
+
+FOLLOW-UP QUESTION: {{QUESTION}}

@@ -1,0 +1,89 @@
+## Summary
+
+- **Berkshire's 1968 realized investment gains were $2,174,256 after tax** (Statement of Earnings, p.8). The report calls them "Investment gains"; it does not use the word "stocks" in the caption.
+  - Gains realized by the Parent Company (first-in, first-out): **$1,467,752**
+  - Gains realized by the unconsolidated insurance subsidiaries: **$706,504**
+- **Before tax, the gains were about $3,017,240.** Note 6 (pp.10–11) gives the taxes on gains: $575,000 for the parent and $267,984 for the subsidiaries. Adding them back gives the pre-tax figure (derived below).
+- **The report does not split the gains into stocks and other securities.** Note 2 (p.9) says the portfolio is "primarily marketable common stocks". At year-end it also held $1,335,160 of GMAC commercial paper (Schedule I, p.13). The gains are therefore mostly, but not provably all, from stocks.
+- **There is no prior-year figure.** The report shows only 1968. Note 10 (p.11) says the subsidiaries' gains were shown as extraordinary items in earlier years and are now part of earnings before extraordinary items. Comparisons with earlier years are not like for like.
+- **Gains were a large part of profit:** $2.21 of the $4.73 earnings per share, and 45.0% of earnings before extraordinary items.
+
+## Key figures
+
+| Item | Current year (1968) | Prior year | Change | % change | Source |
+|---|---:|---|---|---|---|
+| Parent gains, net of tax | 1,467,752 | n/a | n/a | n/a | Statement of Earnings, p.8 |
+| Tax on parent gains | 575,000 | n/a | n/a | n/a | Note 6, p.10 |
+| Parent gains, pre-tax (derived) | 2,042,752 | n/a | n/a | n/a | 1,467,752 + 575,000 |
+| Subsidiary gains, net of tax | 706,504 | n/a | n/a | n/a | Statement of Earnings, p.8 |
+| Tax on subsidiary gains | 267,984 | n/a | n/a | n/a | Note 6, p.10 |
+| Subsidiary gains, pre-tax (derived) | 974,488 | n/a | n/a | n/a | 706,504 + 267,984 |
+| **Total investment gains, net** | **2,174,256** | n/a | n/a | n/a | Statement of Earnings, p.8 |
+| Total gains, pre-tax (derived) | 3,017,240 | n/a | n/a | n/a | 2,174,256 + 842,984 |
+| Investment gains per share | $2.21 | n/a | n/a | n/a | Statement of Earnings, p.8 |
+
+The report gives no prior year, so the prior-year, change and % change columns are empty.
+
+## Detailed analysis
+
+**Tax rates on the gains** (tax ÷ pre-tax gain):
+- Parent: 575,000 ÷ 2,042,752 = **28.1%**
+- Subsidiaries: 267,984 ÷ 974,488 = **27.5%**
+
+Both rates sit close to the 25% alternative rate on long-term capital gains of that era plus the surcharge. The report does not state the rate, so this is only a reasonableness check.
+
+**How much the gains contributed:**
+- Share of earnings before extraordinary items: 2,174,256 ÷ 4,828,655 = **45.0%**
+- Share of net earnings: 2,174,256 ÷ 4,662,336 = **46.6%**
+- Per share: shares outstanding are 1,017,547 issued − 32,065 in treasury = 985,482. 2,174,256 ÷ 985,482 = **$2.206**, which agrees with the $2.21 printed on p.8.
+- The textile business earned $2,654,399 from operations. That figure includes the $1,789,402 equity in the insurers' underwriting and investment income.
+
+**Unrealized gains still in the portfolio:**
+- Parent's securities: market value $11,824,000 against cost $5,421,384, an unrealized gain of **$6,402,616**. Almost all of it is in common stocks: market $10,489,000 (derived; the transcription reads 10,48[?],000) against cost $4,086,224. The largest holdings are American Express, IDS A and Sperry & Hutchinson (Schedule I, p.13).
+- Insurance subsidiaries: a further $1,523,000 of unrealized appreciation, net of tax (Note 5, p.10).
+- None of these unrealized gains is in earnings. Under the accounting of the time, securities were carried at cost and only realized gains were recognized.
+
+**What the report does not show:** sale proceeds, the cost of the securities sold, and which securities were sold. The breakdown of the subsidiaries' gains between stocks and bonds is not provided either.
+
+## Impact on the financial statements
+
+### Consolidated Statement of Earnings and Retained Earnings
+
+- **Where the gains appear:** under "Investment gains, net of taxes on gains (note 6)", after earnings from operations: $1,467,752 (parent) + $706,504 (subsidiaries) = **$2,174,256**. The sum checks.
+- **Walk to net earnings:**
+  - Earnings from operations $2,654,399 + investment gains $2,174,256 = **$4,828,655** earnings before extraordinary items (agrees with p.8).
+  - Less net extraordinary items of $166,319 gives **net earnings of $4,662,336** (agrees with p.8).
+- **Tax presentation:** the $842,984 of tax on gains is netted against the gains. It is not part of the "Federal income taxes" line of $728,00[?].
+- **Retained earnings:** $27,032,370 + $4,662,336 = **$31,694,706** (agrees with p.8).
+- **Classification change:** under Note 10, the subsidiaries' gains of $706,504 are now inside earnings before extraordinary items. Under the earlier policy they would have been an extraordinary item.
+
+### Consolidated Balance Sheet
+
+- **Marketable securities, at cost:** $5,421,384 (p.7). This agrees with Schedule I: stocks $4,086,224 + commercial paper $1,335,160 = $5,421,384. Selling securities removed their cost from this line, and the proceeds went to cash or new investments.
+- **Investment in unconsolidated subsidiaries:** $12,754,985 (p.7). Under the equity method, this balance takes in the subsidiaries' net gains of $706,504.
+- **Accrued Federal, State and local taxes:** $637,059 (p.7). It probably includes part of the $575,000 tax on the parent's gains, but the report does not break the balance down.
+- **Retained earnings:** $31,694,706 (p.7) includes the gains.
+- **Cash movements:** there is no funds statement, and the report gives no sale proceeds. A derived funds-flow statement for the gains would not be meaningful, so none is presented.
+
+## Red flags & areas for follow-up
+
+1. **No prior-year comparatives, and the classification changed (Note 10).** Ask for 1967's gains restated on the same basis.
+2. **Earnings depend heavily on gains:** 45% of earnings before extraordinary items came from gains realized at management's discretion. Parent gains use first-in, first-out, so the choice of lots also affects the gain reported.
+3. **Unreadable figures (possible transcription errors or errors in the original):**
+   - "Federal income taxes 728,00[?]" (p.8). The column adds up only if the figure is 728,000: 45,526,458 − 44,798,458 = 728,000.
+   - Schedule I stock market-value subtotal "10,48[?],000" (p.13). The rows add to 10,489,000.
+   - Wrigley share count "1,6[?]0" (p.13).
+   - "Interest – other 34.456" (p.8) has a dot where a comma belongs.
+   - None of these affects the gains figures above.
+4. **The investment in subsidiaries does not reconcile to their equity.** The balance sheet carries $12,754,985 (p.7). Note 5 gives adjusted equity of $14,677,000 at Dec 31, 1968, and $13,154,000 after taking out the $1,523,000 of unrealized appreciation. That leaves a gap of **$399,015** that the report does not explain; it may relate to purchase cost or goodwill. This needs follow-up.
+5. **The pre-tax gains of $3.0M are derived.** They assume the Note 6 tax amounts match one-to-one with the net gains shown on p.8.
+
+## Sources
+
+- Consolidated Statement of Earnings and Retained Earnings (p.8)
+- Consolidated Balance Sheet (p.7)
+- Note 2 (p.9)
+- Note 5 (p.10)
+- Note 6 (pp.10–11)
+- Note 10 (p.11)
+- Schedule I (p.13)

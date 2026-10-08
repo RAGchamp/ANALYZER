@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reliance Textile Industries Limited — Financial Statements</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Same look as the saved analysis reports (templates/analysis_report.html) */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+  html{ scroll-behavior:smooth; }
+  section[id], article[id]{ scroll-margin-top:84px; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue); color:var(--nav-yellow);
+    padding:.9rem 1.5rem; display:flex; justify-content:space-between; align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{ font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic; }
+  @media (max-width:576px){ .topnav{ flex-direction:column; gap:.4rem; padding:.75rem 1rem; } }
+
+  .context-box{
+    background:#e7f1ff; border:1px solid #b6d4fe; border-left:6px solid var(--biz-blue);
+    border-radius:.5rem; padding:1.1rem 1.35rem;
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .toc a{ text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .toc .rotated{ font-size:.7rem; }
+
+  .section-title{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:0 0 1.25rem; color:#10233f;
+  }
+  .statement{ background:#fff; border-radius:.5rem; padding:1.25rem 1.5rem;
+              box-shadow:0 .125rem .25rem rgba(0,0,0,.075); margin-bottom:2rem; }
+  .statement h3{ font-size:1.25rem; color:var(--biz-blue-dark); margin:0; }
+  .page-caption{ font-size:.78rem; color:#6c757d; margin:1rem 0 .35rem; }
+  .page-caption .badge{ font-weight:600; }
+
+  table.fs{ width:100%; font-size:.86rem; border-collapse:collapse; margin-bottom:.5rem; }
+  table.fs td{ padding:.28rem .6rem; border-bottom:1px solid #e3e8f0; vertical-align:top; }
+  table.fs td.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  table.fs td.note{ text-align:center; color:#6c757d; white-space:nowrap; width:3.5rem; }
+  table.fs tr.data:nth-child(odd) td{ background:#eef4fc; }
+  table.fs tr.header td{ background:#ffdf7e; font-weight:700; color:#212529; border-color:#e6c257;
+                         vertical-align:bottom; }
+  table.fs tr.header td.num, table.fs tr.header td.note{ white-space:normal; min-width:4.5rem; font-size:.8rem; }
+  /* wide tables (the 12-column Statement of Changes in Equity) - compact so every column fits */
+  table.fs.wide{ font-size:.74rem; }
+  table.fs.wide td{ padding:.24rem .32rem; }
+  table.fs.wide td.label{ min-width:9rem; }
+  table.fs.wide tr.header td.num, table.fs.wide tr.header td.note{ min-width:0; font-size:.7rem; }
+  table.fs tr.group td{ background:#ffe9a8; font-weight:700; font-size:.8rem; }
+  table.fs tr.group td.grp{ text-align:center; border-left:2px solid #fff; border-right:2px solid #fff;
+                            border-bottom:2px solid #e6c257; }
+  table.fs tr.section td{ font-weight:700; color:#10233f; background:#d3e3f5; }
+  table.fs tr.text td{ color:#34495e; font-style:italic; }
+  table.fs tr.total td{ font-weight:700; border-top:2px solid #9fb3cc; background:#f6f9fd; }
+  table.fs tr.unit td{ text-align:right; color:#6c757d; font-size:.78rem; border:none; }
+  .table-scroll{ overflow-x:auto; }
+  .back-to-top{ font-size:.85rem; }
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <section id="top" class="context-box mb-4">
+    <h1 class="company mb-2">Reliance Textile Industries Limited — Financial Statements</h1>
+    <div class="meta mb-3">
+      <strong>Annual report:</strong> Reliance-1976-1977.pdf &nbsp;·&nbsp;
+      Built from the statements extracted when the report was loaded; consolidated first, then standalone.
+      Page numbers are PDF page numbers (printed page in brackets).
+    </div>
+    <div class="row toc">
+      
+      <div class="col-md-6">
+        <strong>Standalone</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#standalone-profit_loss">Profit &amp; Loss Account for the Year Ended 30th September, 1977</a>
+            </li>
+          
+          <li><a href="#standalone-balance_sheet">Balance Sheet as at 30th September, 1977</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section id="standalone" class="mb-5">
+    <h2 class="section-title">Standalone Financial Statements</h2>
+
+    
+    <article id="standalone-profit_loss" class="statement">
+      <h3>Profit &amp; Loss Account for the Year Ended 30th September, 1977</h3>
+      
+      <div class="page-caption">
+        PDF page 14 (printed 17)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Schedule</td>
+              
+              <td class="num">Rs.</td>
+              
+              <td class="num">Rs.</td>
+              
+              <td class="num">Rs.</td>
+              
+              <td class="num">Previous Year Rs.</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="6">INCOME:</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="6">Sales (Less: Returns. Rebates. Excise Duty, Sales</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Tax. etc.)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">66,93,43.861</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">62,72,87,643</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other Income</td>
+              
+              <td class="note">&#39;J&#39;</td>
+              
+              <td class="num">2,04,78,207</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">2,35,54,532</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in Stocks</td>
+              
+              <td class="note">&#39;K&#39;</td>
+              
+              <td class="num">73,43,534</td>
+              
+              <td class="num">69,71,65,602</td>
+              
+              <td class="num">3,46,11,725</td>
+              
+              <td class="num">68,54,53,900</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="6">EXPENDITURE:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Purchases</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">21,88,40,584</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">25,45,37,639</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Manufacturing and other Expenses</td>
+              
+              <td class="note">&#39;L&#39;</td>
+              
+              <td class="num">40,68,72,029</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">38,61,28,347</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest</td>
+              
+              <td class="note">&#39;M&#39;</td>
+              
+              <td class="num">2,75,05,653</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">2,69,56,768</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">1,34,50,636</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1,14,10,111</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Directors&#39; Fees</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">750</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">–</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="6">Remuneration to:</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="6">Managing Directors Rs. 96,000</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="6">Other Directors Rs. 1,08,000</td>
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">2,04,000</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">2,56,000</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Loss on sale and/or discarding of assets (Net)</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">1,41,774</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">99,705</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="6">Balance of Preliminary and Development</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Expenses Written-off</td>
+              
+              <td class="note">&#39;N&#39;</td>
+              
+              <td class="num">–</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">45,111</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Provision for Doubtful Debts</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">3,45,687</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1,18.903</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Provision for Taxation</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">5,00,000</td>
+              
+              <td class="num">66,78,61,113</td>
+              
+              <td class="num">–</td>
+              
+              <td class="num">67,95,51.584</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">PROFIT FOR THE YEAR</td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">2,93,04,489</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">59,02,316</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Add: Balance as per last Balance Sheet</td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1,986</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">–</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">2,93,06,475</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">59,02,316</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="6">APPROPRIATIONS:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proposed Dividend</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">89,26,650</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">17,86,330</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Transfer to General Reserve</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">1,28,75,000</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">41,15,000</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Transfer to Investment Allowance Reserve</td>
+              
+              <td class="note"></td>
+              
+              <td class="num">75,00,000</td>
+              
+              <td class="num">2,93,01,650</td>
+              
+              <td class="num">–</td>
+              
+              <td class="num">59,00.330</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">SURPLUS CARRIED TO BALANCE SHEET</td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">4,825</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1,986</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">NOTES</td>
+              
+              <td class="note">&#39;O&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="standalone-balance_sheet" class="statement">
+      <h3>Balance Sheet as at 30th September, 1977</h3>
+      
+      <div class="page-caption">
+        PDF page 13 (printed 16)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="6" class="grp">30th September,</td>
+              
+              <td colspan="2" class="grp">30th September</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">As at</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">As at</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1977</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1976</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="note">Schedule</td>
+              
+              <td class="num">Rs.</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">Rs.</td>
+              
+              <td class="num">Rs.</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">Rs.</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="8">FUNDS EMPLOYED:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">1. SHARE CAPITAL</td>
+              
+              <td class="note">&#39;A&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">5,95,11,000</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">6,95,11,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="8">2 SHARE APPLICATION MONIES (Refer Note No. 15 in -Notes forming part of the Accounts-)</td>
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">30,00,000</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">–</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">3. RESERVE &amp; SURPLUS</td>
+              
+              <td class="note">&#39;B&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">3,29,04,825</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">1,25,26,986</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">TOTAL SHAREHOLDERS&#39; FUND</td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">9,54,15,825</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">7,20,37,986</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">4. SECURED LOANS</td>
+              
+              <td class="note">&#39;C&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">11,00,59,917</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">11,57,05.424</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">5. UNSECURED LOANS</td>
+              
+              <td class="note">&#39;D&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">63,54,881</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">27,52,899</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">21,16,30,623</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">19,04,96,309</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="8">FUNDS APPLIED:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">6. FIXED ASSETS</td>
+              
+              <td class="note">&#39;E&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">14,51,44,752</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">11,64,80,272</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">7 INVESTMENTS</td>
+              
+              <td class="note">&#39;F&#39;</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">37,850</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">31,125</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="8">8. CURRENT ASSETS, LOANS &amp; ADVANCES:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">a) CURRENT ASSETS</td>
+              
+              <td class="note">&#39;G&#39;</td>
+              
+              <td class="num">17,48,41,677</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">15,03,50,963</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">b) LOANS&amp; ADVANCES</td>
+              
+              <td class="note">&#39;H&#39;</td>
+              
+              <td class="num">91,28,234</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">62,57,869</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num">18,39,69,911</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">15,66,08,832</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="8">Less: CURRENT LIABILITIES AND</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">PROVISIONS</td>
+              
+              <td class="note">&#39;I&#39;</td>
+              
+              <td class="num">11,73,21,890</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">6,66,48,021</td>
+              
+              <td class="num">8,26,23,920</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">7,39,84,912</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="note"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">21,18,30,623</td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">19,04,96,309</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="8">NOTES &amp; CONTINGENT LIABILITIES</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer (RAG Champ) — financial statements as extracted from Reliance-1976-1977.pdf.
+    Sideways pages were rotated before extraction. Verify figures against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+Asked at: 2026-09-28 02:09:04
+Kind: analysis
+Report: BRK-1968.pdf
+Scope: Berkshire Hathaway Inc. (consolidated)
+Notes: Note 10 — Treatment of Realized Gains of Insurance Company Subsidiaries (PDF p.11), Note 5 — Unconsolidated Subsidiaries (PDF p.10), Note 6 — Taxes on Income (PDF p.10–11), Note 2 — Marketable Securities (PDF p.9), Schedule I — Marketable Securities (PDF p.13)
+PDF pages: 11, 10, 10, 11, 9, 13
+Financial statements: Consolidated Statement of Earnings and Retained Earnings (PDF p.8); Consolidated Balance Sheet (PDF p.7)
+Thread: 9a469bd5aa684a2cb36a2f268acfb588
+Saved HTML: BRK-1968-1-20260928-020904.html
+
+what was berkshire's realized gains from stocks

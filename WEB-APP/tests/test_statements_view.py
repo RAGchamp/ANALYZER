@@ -3,7 +3,7 @@
 import pytest
 
 import app as app_module
-import statements_view
+from analyzer import statements_page
 
 REPORT = "Bharat-Forge-IR-2026-conv-single-page.pdf"
 
@@ -17,8 +17,8 @@ CONSOLIDATED_EQUITY_HEADINGS = [
 
 
 @pytest.fixture(scope="module")
-def view(index):
-    return statements_view.report_view(index)
+def view(package):
+    return statements_page.report_view(package)
 
 
 def _statement(view, section, kind):

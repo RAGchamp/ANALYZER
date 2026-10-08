@@ -1,0 +1,78 @@
+An analyst asked this question about an old company annual report (year ended 30 September 1977):
+
+QUESTION: Analyze fixed assets
+
+The report has standalone accounts only. Its primary statements (Profit and Loss Account, Balance Sheet) are always provided with the answer, so don't choose them. Choose from these other parts:
+- SCH-x: schedules forming part of the Balance Sheet or the Profit and Loss Account
+- Nn: numbered notes to the accounts. Many have no title; the text after the dash is their first words.
+- DIR / AUD / SUM / CHR: the Directors' Report, Auditors' Report, Financial Summary and Chairman's Statement
+
+SCHEDULES:
+SCH-A: Share Capital (part of the Balance Sheet)  [sub-headings: Authorised; Issued & Subscribed]
+SCH-B: Reserves & Surplus (part of the Balance Sheet)
+SCH-C: Secured Loans (part of the Balance Sheet)  [sub-headings: From Banks; From Others]
+SCH-D: Unsecured Loans (part of the Balance Sheet)
+SCH-E: Fixed Assets (part of the Balance Sheet)  [sub-headings: Notes: 1. The figure of Additions to Plant & Machinery includes Rs. 4,57,359/- being machinery-await]
+SCH-F: Investments (at Cost) (Unquoted) (part of the Balance Sheet)  [sub-headings: Government Securities; Shares]
+SCH-G: Current Assets (part of the Balance Sheet)
+SCH-H: Loans & Advances (part of the Balance Sheet)
+SCH-I: Current Liabilities & Provisions (part of the Balance Sheet)
+SCH-J: Other Income (part of the Profit and Loss Account)  [sub-headings: Income from Investments]
+SCH-K: Variation in Stocks (part of the Profit and Loss Account)  [sub-headings: Stock-in-trade: (at close); Stock-in-trade (at commencement)]
+SCH-L: Manufacturing & Other Expenses (part of the Profit and Loss Account)  [sub-headings: Raw Materials Consumed; Cost of Export Incentives on Amalgamation – 1,69,16,327; Manufacturing Expenses; Payments to and Provision for Employees; Establishment Expenses]
+SCH-M: Interest Paid (part of the Profit and Loss Account)
+SCH-N: Miscellaneous Expenditure (part of the Profit and Loss Account)
+SCH-O: Notes and Contingent Liabilities (part of the Accounts)  [sub-headings: and Spare Parts consumed; (Net) (Net)]
+
+NUMBERED NOTES:
+N1: — Reliance Textile Industries Limited, Bombay, was amalgamated with effect from 1st July 1975 with the Company pursuant to approval of scheme of amalgamation by High Courts of Judicature at Karnataka and Bombay on 13th Jan
+N2: — The figures of the previous year in the Profit and Loss Account represent the result of the working of the amalgamating Company for the period from 1st July, 1975 to 30th September, 1976, viz. for the period of 15 months
+N3: — The figures in the Balance Sheet and Profit & Loss Account of the previous year are regrouped and/ or re-arranged wherever necessary.
+N4: — The form of Balance Sheet is in accordance with the approval of the Company Law Board granted vide its letter No. 3/104-77-CL. VI of 29th June, 1977 under section 211(1) of the Companies Act, 1956.
+N5: — Depreciation is provided in accounts in accordance with the provisions of section 205(2)(b) of the Companies Act, 1956.
+N6: — Liability for retiring gratuity payable to employees of the Company upto 30th September. 1977 has been determined by actuarial valuation at Rs. 9,83,000/- and necessary provision has been made in the accounts of the Comp
+N7: — Provision has been made for Bonus payable for the year amounting to Rs. 14,04,183/- unlike in the past years. when the Company used to account for payment of Bonus on cash basis.
+N8: — The Company follows the practice of accounting interest on Investments on cash basis and to write off the cost of loose tools in the year of purchase.
+N9: — Sales Tax assessment of the Company has been completed upto accounting year 1973-74. The Company does not expect any further liability for pending assessments.
+N10: — The Income Tax assessment of the Company is completed upto the assessment year 1975-76. The assessments for the earlier years of the amalgamating Company have been re-opened by the Income Tax Department for some of the y
+N11: — in the opinion of the Board, the current assets, loans and advances are approximately of the value stated if realised in the ordinary course of business. The provision for depreciation and for all known liabilities is ad
+N12: — The Company has obtained the following Bridging Loans from financial institutions against uncon-ditional and irrevocable Guarantees of a Bank to be adjusted against disbursement of term loans already sanctioned to financ
+N13: — Conveyance and/or lease deeds in respect of various plots of land acquired by the Company from the Gujarat Industrial Development Corporation have been executed and in respect of others, sale deeds have been executed. So
+N14: — The Company has received by way of advance deposit (carrying interest at the rate of 15% per annum) a sum of Rs. 35.00 lakhs from Unit Trust of India towards debentures to be privately placed, carrying interest at the ra
+N15: — The Company has obtained an aggregate amount of Rs. 30.00 lakhs from the General Insurance Corporation and its subsidiaries, viz. Oriental Fire and General Insurance Co. Ltd., United India Fire and General Insurance Co. 
+N16: — The figure of "SundryCreditors" includes:- a) Rs. 42,74,848/- on account of outstanding payments due for purchase of Capital Assets. b) Rs. 2,75,70,227/- payable in instalments on account of machinery purchased on Deferr
+N17: — In the Profit & Loss Account, expenditure amounting to Rs. 9,99,332/- pertaining to the previous year has been debited under relevant heads. Similarly, income amounting to Rs. 1,00,500/- pertaining to previous year has b
+N18: — The figure of 'Sales' has been arrived at after adjusting:- 1976-77 1976-76 Rs. Rs. 1. Excise Duty paid 1,14,99,339 1,04,59,100 2. Sales Tax 64,15,785 21,17,583
+N19: — The Company follows the practice of accounting for Export Incentives on cash basis.
+N20: — The figure of -Additions to Buildings- and Investments include Rs. 6,91,000/- paid towards purchase of a residential flat and garages on ownership basis and Rs. 11,000/- as shares of New Usha Kiran Co- operative Housing 
+N21: — Unclaimed deferred dividend amounting to Rs. 15,111/- which was not deposited in a separate Bank account, has since been deposited in a separate Bank account.
+N22: — Sundry Deposits received includes Rs. 3,800/- received as security deposit from staff (which was not deposited in a separate Bank account has since been deposited in a separate account with a scheduled Bank) and Rs. 1,95
+N23: — The Cornpany has entered into transactions of purchase and sale with firms in which some of the Directors are interested. The Company has made the necessary application under Section 297 of the Companies Act, 1956, to th
+N24: — The Company has been advised that the computation of Net Profit (for the purpose of calculation of Directors' remuneration under Section 349 of the Companies Act, 1956) need not be enumerated, since no commission has bee
+N25: Contingent Liabilities — CONTINGENT LIABILITIES: 1976-77 1975-76 a) Estimated capital expenditure commitment not provided for (Advance against the same Rs. 9,66,590/-, previous year Rs. 7,50,261/-) 4,91,76,000 4,91,25,000 b) Counter guarantee gi
+N26: — Details regarding licensed and installed- capacity to manufacture art silk fabrics etc.: a) Licensed Capacity: Looms 450 450 Knitting Machines (As per Textile Commissioner's Permit) 22 22 Crimping Machines (spindles) 246
+N27: — Quantitative information in respect of Opening Stock. Closing Stock, Purchases, Sales and Con- sumption of Raw Materials:- 1976-77 1975-76 Unit. Quantity Amount Rs. Quantity Amount Rs. a) OPENING STOCK: Yarn Kgs 2,90,551
+N28: Production — PRODUCTION: Unit 1976-77 1975-76 Crimped yarn (including twisted yarn) Kgs 17,62,983 14,66,571 Fabrics Mtrs 1,33,80,699 1,47,68,980
+N29: — Value of Imports on c.i.f. basis in respect of:- i) Yarn (including Rs. 32,27,775/- through STC - previous year Rs. 1,31,46,124/-) 3,50,05,689 4,20,08,067 ii) Dyes Et Chemicals and spare parts and stores 15,99,228 18,50,
+N30: — Expenditure in foreign currency on account of:- Interest (paid to ICICI) on account of foreign exchange loans 29,06,489 42,98,822 Other matters (including commitment charges Rs. 35,706/- to ICICI - previous year Rs. 993)
+N31: — Value of Raw Materials consumed:- 1976-77 1975-76 % of total % of total Rupees consumption Rupees consumption Imported 14,80,02,485 52.51 11,25,57,308 44.52 Indigenous 13,38,45,749 47.49 14,02,48,467 65.48 28,18,48,234 1
+N32: — Value of Dyes and Chemicals, Stores and Spare Parts consumed:- 1976-77 1975-76 % of total % of total Rupees consumption Rupees consumption Imported 36,60,301 11.19 38,66,690 12.78 Indigenous 2,90,36,036 88.81 2,63,88,833
+N33: — Earning in foreign exchange:- Rs. Rs. Export of goods on f.o.b. basis 6,21,41,217 6,81,79,818 (Net) (Net)
+N34: — a) Break-up of expenditure incurred on employees who are employed throughout the period and were in receipt of remuneration for the year which in aggregate was not less than Rs. 36,000/- per annum:- Number of employees 2
+
+REPORT SECTIONS:
+SUM: Financial Summary  [sub-headings: 1. What the Company Owned; 1. Fixed Assets; 2. What the Company Owed; 3. Net Worth of the Company; Note: Figures pertaining to Accounting Years ending till 30th June, 1975 relate to those of the amal]
+DIR: Directors' Report  [sub-headings: Financial Results; Note: The figures of Profit of the current year are not comparable with those of the previous year s; Dividend; Registered Office; Distribution of Equity Shares; Offer for Sale: 225 to 1,000 1,647; Participation in Rural Development; Expansion Project]
+AUD: Auditors' Report
+
+SUGGESTED BY THE FINANCIAL STATEMENTS - the statement lines your question is about are linked to these notes (a hint only; choose on the notes' content):
+- SCH-E: 6. FIXED ASSETS (Balance Sheet)
+
+Choose the parts whose content is needed to answer the question thoroughly.
+- Choose the primary schedule(s) and note(s) first.
+- Add the Directors' Report or the Auditors' Report when they are likely to discuss the matter (for example tax disputes, expansion plans, borrowings, audit qualifications), and the Financial Summary for multi-year trends.
+- Choose a whole notes schedule only when the question needs most of its notes; otherwise choose individual notes.
+- Choose at most 6 items, and prefer fewer.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["SCH-E", "N25"], "reason": "one or two sentences explaining the choice"}

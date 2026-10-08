@@ -1,6 +1,6 @@
 from datetime import datetime
 
-import report_html
+from analyzer import report_html
 
 
 def test_report_filename():
@@ -24,7 +24,7 @@ def test_unit_after_parenthesis_is_numeric():
 
 
 def test_list_directly_after_paragraph_renders_as_list():
-    import app
-    html = app.render_markdown("**Ties out:**\n- FY26: 1\n- FY25: 2\n\nText\n1. one\n2. two")
+    from webcommon import render_markdown
+    html = render_markdown("**Ties out:**\n- FY26: 1\n- FY25: 2\n\nText\n1. one\n2. two")
     assert html.count("<li>") == 4
     assert "<ul>" in html and "<ol>" in html

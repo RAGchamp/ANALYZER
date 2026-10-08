@@ -1,0 +1,648 @@
+Annual report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Report sections provided: Management Discussion & Analysis › Company Review of the Domestic Auto Market Commercial Vehicles · Passenger Vehicles · Industrial Business (PDF 78); Management Discussion & Analysis › Outlook · COMPANY REVIEW OF THE EXPORTS AUTO MARKET Commercial Vehicles (CV) (PDF 76); Board’s Report › Domestic Business (PDF 88); Management Discussion & Analysis › Outlook (PDF 77–78)
+Notes provided (to confirm figures): Consolidated Note 49 – SEGMENT INFORMATION (PDF p.472–475), Consolidated Note 24 – REVENUE FROM OPERATIONS (PDF p.410–411)
+Primary financial statements provided (for reference): Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+
+QUESTION: Analyze company's Commercial Vehicles business
+
+Structure your answer as:
+## Summary
+3–5 bullet points that answer the question.
+## What management says
+The business story from the report sections: products, markets, customers, competitive position.
+## Performance and drivers
+The figures the report sections give and what drove them, with your calculations shown.
+## Outlook and risks
+Management's expectations (as expectations) and the risks it names or that the text implies.
+## How it shows in the audited numbers
+One table with the columns: Figure (report section, page) | Where in the notes or statements | Ties? (yes / no / not disclosed). Then two to four sentences on what the audited figures confirm, contradict, or cannot show.
+## Questions for management
+Three to five questions an analyst should ask.
+## Sources
+The report sections, notes and statements you relied on, with PDF pages.
+
+----- REPORT SECTIONS: MANAGEMENT'S COMMENTARY AND OTHER NARRATIVE FROM THE ANNUAL REPORT (PDF page numbers; not audited) -----
+=== Statutory Reports › Management Discussion & Analysis › Company Review of the Domestic Auto Market Commercial Vehicles · Passenger Vehicles · Industrial Business (PDF 78) ===
+--- PDF page 78 (printed page 75) ---
+
+#### Company Review of the Domestic Auto Market Commercial Vehicles
+
+Our Domestic CV business had positive year driven by the GST rate rationalization. FY2026 revenue for the Domestic CV business was ₹1,036 crore up 8% YoY. With the Total cost of ownership (TCO) seeing a tangible reduction, the savings were ploughed back by the fleet operators into buying new trucks. General improvement in Indian road infrastructure, good growth in the manufacturing sector and demand side factors have positively impacted Commercial truck volumes. In addition to volumes, average truck sizes have increased with Tractor Trailers and Tippers gaining market driven by higher construction activity and goods transport needs. As a result, the total tonnage carried by the trucking industry has seen an exponential jump since FY2022. These trends are an encouraging sign for suppliers like us as OEMs invest in building more bigger and sophisticated platforms.
+
+#### Passenger Vehicles
+
+The Domestic Passenger vehicles business recorded another strong year registering revenue of ₹397 crore up 10% YoY. As vehicle ownership costs saw meaningful reduction post the GST cuts consumers flocked to purchase new vehicles. UVs continued to dominate the market, SUVs now constituted almost 2/3rd of the Passenger car market. Driven by higher disposable incomes and premium riding experience consumer preference has gravitated to bigger and more safer cars. This trend has benefited suppliers like us as consumers prioritize safety.
+
+#### Industrial Business
+
+The government’s continued emphasis on strengthening physical and digital infrastructure presents significant opportunities for the industrial sector. With an increased capital outlay of ₹12.2 lakh crore in FY2027, infrastructure development is expected to sustain momentum, acting as a catalyst for economic activity. Growth in the construction sector is driven by accelerated project execution, urbanization, and investments across housing, transportation, and core industries. The sector is expected to grow at 8–10% in FY2027, supported by a robust order pipeline and favorable policy reforms. Continued progress in logistics, railways, and road infrastructure further enhances demand visibility for industrial segments, reinforcing the sector’s contribution to India’s economic growth.
+
+(Source: ICRA)
+
+=== Statutory Reports › Management Discussion & Analysis › Outlook · COMPANY REVIEW OF THE EXPORTS AUTO MARKET Commercial Vehicles (CV) (PDF 76) ===
+--- PDF page 76 (printed page 73) ---
+
+#### Outlook
+
+The global automotive industry is expected to witness stable demand in CY2026, with light vehicle sales projected at around 91.8 million units. This reflects a mix of market drivers, including ongoing tariff impacts, supply chain uncertainties, high interest rates, and uneven adoption of electric vehicles across regions. Geopolitical tensions and instability in West Asia may impact the industry by disrupting supply chains, increasing shipping costs, and reducing the availability of key inputs such as petrochemicals and aluminum scrap. Elevated energy prices, including oil and liquefied natural gas (LNG), could increase manufacturing costs, thereby affecting production and vehicle affordability. However, the transition to electrification remains strong, with electrified vehicles, including battery electric vehicles (BEVs), plug-in hybrids, and range-extended EVs, projected to account for nearly 30% of global vehicle sales by CY2026.
+
+(Source: S&P Global)
+
+#### COMPANY REVIEW OF THE EXPORTS AUTO MARKET Commercial Vehicles (CV)
+
+The Commercial vehicle export business was impacted by the de-stocking in the North American truck market. For the Full Year revenue at ₹1,324 crore was lower 34% YoY. This performance should be viewed in light of a 50% YoY drop in North American CV revenue. Traditionally CV exports segment has focused on Class 7 & 8 trucks in US and the HCV segment in Europe. Our CV exports story was always about increasing market share as OEMs prioritized reliable suppliers. Our portfolio prioritizes safety critical components across Engines, Driveline and Transmission systems. The ability to deliver the goods with desired quality at the first instance and focus on high value components has made us a critical supplier to most of our OEM customers.
+
+These moats have ensured long-lasting engagements with all major players in the markets we operate in. As a result the current tariff regime in the US has resulted in no business disruptions as well as no impact on market share for Bharat Forge.
+
+=== Statutory Reports › Board’s Report › Domestic Business (PDF 88) ===
+--- PDF page 88 (printed page 85) ---
+
+#### Domestic Business
+
+Automotive Market: The domestic economy gained momentum in the second half of the year, driven by GST rate cuts. As upfront costs declined, PVs across all segments witnessed healthy growth, with SUVs once again outpacing overall industry growth. In addition to domestic demand, exports grew at a healthy pace as Indian cars gained acceptance in Overseas markets. Our Passenger vehicles (PV) business recorded sales of ₹ 3,974 million, registering growth of 9.7% YoY. The premiumisation trend continues unabated as consumers increasingly prefer vehicles with higher safety ratings.
+
+The domestic CV industry saw stupendous growth as GST rate cuts significantly lowered the total cost of ownership (TCO). In addition to M&HCVs, the Buses segment clocked strong performance as State Transport Undertakings placed more orders. Exports also gained as markets like the Middle East and Southeast Asia saw acceptance of Indian products. The CV OEMs have seen record EBITDA margins for two consecutive years, driven by efficiency gains and operating leverage. The expanding share of heavy trucks like tractor-trailers and tippers in the overall mix has meant that your Company has participated in the market growth in a major way. Our CV business recorded revenue of ₹ 10,364 million, representing a 7.7% YoY growth.
+
+Industrial: The Industrial business registered growth of 8.4% to reach ₹ 25,228 million during the financial year 2025-26. A large part of the growth was due to new business in the supply of machine tools, strong demand from Steel, Power, Construction & Mining, Cement, Renewables and Agriculture. Our company is a major supplier of transmission/Driveline and Engine components to these sectors. As private capex in sectors like AI/Data Centres grows, demand for standby power will create opportunities for component supply for companies like us. The Defence business saw a slight decline this year as component supply to KSSL was lower YoY. However, this temporary blip will reverse in FY27 as execution for the ATAGS and Carbine orders commences. Our Defence product portfolio is program-agnostic and incorporates IP ownership at its core. This strategy has helped us maximise exports and temper any potential cyclicality within the Defence business.
+
+Our Ferrous Casting business under JS Auto Cast (“JSA”) had revenue of ₹ 7,571 million, registering 8.6% growth while EBITDA grew 2% to ₹ 1,058 million in FY2025-26. Since the acquisition, JSA has diversified beyond wind energy into Hydraulics, Agriculture and Automobiles. Its total liquid metal capacity stands at 1,30,000 MTPA. With extensive focus on making complex components, new product development is a major focus area for JSA. During the year, JSA undertook numerous de-bottlenecking projects and streamlined operations to optimise costs. To increase value-add, JSA has optimised its Machining capacity in the year gone by.
+
+Our recent acquisition – K Drive Mobility Solutions Private Limited saw revenue of ₹ 9,578 million and EBITDA of ₹ 416 million for the 9 months from July 2025 – March 2026. The Company is making a conscious effort to develop its Axles portfolio beyond M&HCVs to tap bigger opportunities. This journey of reorienting its target market will produce meaningful results in 2-3 years as new programmes enter production.
+
+=== Statutory Reports › Management Discussion & Analysis › Outlook (PDF 77–78) ===
+--- PDF page 77 (printed page 74) ---
+
+#### Outlook
+
+The Indian automotive industry is expected to witness moderate growth of 3–6% in FY2027, reflecting a normalization in demand across segments. Growth will be supported by steady traction in passenger vehicles, recovery in two-wheelers, and stable demand in commercial vehicles, driven by overall economic activity, industrial expansion, and infrastructure-led development. However, a sharp rise in diesel price might adversely impact the CV growth outlook.
+
+The shift towards alternative fuel vehicles, including CNG, hybrids, and electric vehicles, is expected to continue, supported by regulatory measures and evolving consumer preferences. Premiumization trends are likely to sustain momentum, while entry-level segments may remain subdued. Electrification will continue to gain traction, particularly in two- and three-wheelers, with gradual adoption in passenger vehicles.
+
+The government’s continued focus on infrastructure development, manufacturing, and policy support is expected to remain a key growth enabler. Increased allocation of ₹12.2 lakh crore in the Union Budget 2026–27, particularly towards roads, logistics, transportation, and improving rural conditions, is anticipated to support demand and strengthen the industry outlook.
+
+Aligned with the ‘Viksit Bharat’ vision and building on ongoing reforms, the Union Budget 2026–27 outlines measures to propel India’s automotive sector. The government has allocated ₹5,939.87 crore under the PLI scheme for automobiles and auto components, supporting localization and the development of advanced technologies. The budget also emphasizes decarbonization by promoting domestic manufacturing of EV components and expanding green mobility infrastructure.
+
+(Source: ICRA, Union Budget 2026-27)
+
+### The Indian automotive industry is expected to witness moderate growth of 3–6% in FY2027, reflecting a
+
+normalization in demand across segments.
+
+[Figure]
+
+--- PDF page 78 (printed page 75) ---
+
+[Figure]
+----- END OF REPORT SECTIONS -----
+
+----- NARRATIVE FIGURES (money amounts in the report sections provided, converted to the statements' unit, INR million; matched automatically - verify) -----
+- ₹1,036 crore (Management Discussion & Analysis, p.78) = 10,360 million -> no statement line or figure in the notes provided matches
+- ₹397 crore (Management Discussion & Analysis, p.78) = 3,970 million -> no statement line or figure in the notes provided matches
+- ₹12.2 lakh crore (Management Discussion & Analysis, p.78) = 12,200,000 million -> no statement line or figure in the notes provided matches
+- ₹1,324 crore (Management Discussion & Analysis, p.76) = 13,240 million -> no statement line or figure in the notes provided matches
+- ₹ 3,974 million (Board’s Report, p.88) = 3,974 million -> ties to Consolidated Statement of Changes in Equity "- Other Comprehensive Income/ (Loss)" (3,973.98)  (p.344)
+- ₹ 10,364 million (Board’s Report, p.88) = 10,364 million -> no statement line or figure in the notes provided matches
+- ₹ 25,228 million (Board’s Report, p.88) = 25,228 million -> no statement line or figure in the notes provided matches
+- ₹ 7,571 million (Board’s Report, p.88) = 7,571 million -> no statement line or figure in the notes provided matches
+- ₹ 1,058 million (Board’s Report, p.88) = 1,058 million -> no statement line or figure in the notes provided matches
+- ₹ 9,578 million (Board’s Report, p.88) = 9,578 million -> no statement line or figure in the notes provided matches
+- ₹ 416 million (Board’s Report, p.88) = 416 million -> no statement line or figure in the notes provided matches
+- ₹5,939.87 crore (Management Discussion & Analysis, p.77) = 59,398.7 million -> no statement line or figure in the notes provided matches
+----- END OF NARRATIVE FIGURES -----
+
+----- NOTES PROVIDED TO CONFIRM FIGURES (PDF page numbers) -----
+=== Note 49 — SEGMENT INFORMATION (Consolidated) ===
+--- PDF page 472 (printed page 469) ---
+49. SEGMENT INFORMATION
+In accordance with paragraph 22 of the notified Indian Accounting Standard 108 Operating Segments (Ind AS 108), the Group
+has disclosed segment information only on the basis of the consolidated financial statements which are presented together
+with the standalone financial statements. The Group's operating businesses are organised and managed separately according to
+the nature of the products and services provided, with each segment representing a strategic business unit that offers different
+products and serves different markets.
+The Group's business is divided into three reporting segments comprising "Forgings", "Defence" and "Others" which represent
+the Group's businesses not covered in the Forgings and Defence segments.
+The "Forgings" segment produces and sells forged products comprising forgings and machined components for automotive
+and industrial sectors and the Defence segment produces and sells products which have an application in defence-related
+activities. Forged components used in defence-related activities and products are included as a part of the Forgings segment.
+"Others" primarily includes various initiatives which the Group is carrying out other than forging and defence-related activities.
+
+--- PDF page 473 (printed page 470) ---
+The Chief Operating Decision Maker monitors the operating results of the business units separately for the purpose of making
+decisions about resource allocation and performance assessment based on an analysis of various performance indicators.
+With the increased focus of the group on defence-related activities, the group now has defence as a separate segment and the
+information with respect to the same is provided to and reviewed by the CODM.
+No operating segments have been aggregated to form the above reportable operating segments.
+In ₹Million
+Sr. | March 31, 2026 | March 31, 2025
+No.
+1 | Segment revenue
+Revenue from external customers
+a Forgings | 139,285.82 | 129,612.33
+b Defence | 17,571.72 | 17,719.86
+c Others | 21,698.12 | 9,519.96
+Total | 178,555.66 | 156,852.15
+Less-Intersegment revenue | 10,439.13 | 5,624.11
+Revenue from operations | 168,116.53 | 151,228.04
+2 | Segment results
+a Forgings | 19,560.91 | 18,561.18
+b Defence | 814.97 | 1,864.23
+c Others | 1,540.33 | 393.08
+Total segment profits before interest, tax and exceptional items from each | 21,916.21 | 20,818.49
+reportable segment
+Less: Finance cost | 3,233.46 | 4,174.93
+Less: Other unallocable expenditure net off unallocable income | 466.59 | 514.66
+18,216.16 | 16,128.90
+Add: Exceptional items gain/(loss)
+a Forgings | (1,073.54) | -
+b Defence | (43.77) | (53.00)
+c Others | (427.12) | (1,517.65)
+Total Exceptional items gain/(loss) | (1,544.43) | (1,570.65)
+Profit/(Loss) before tax | 16,671.73 | 14,558.25
+3 | Segment income/(expense)
+3.1 Segment Depreciation and amortisation expenses
+a Forgings | 8,285.96 | 7,987.40
+b Defence | 242.45 | 80.07
+c Others | 1,167.36 | 655.25
+d Unallocable | 13.47 | 13.47
+Depreciation and amortisation expenses | 9,709.24 | 8,736.19
+
+--- PDF page 474 (printed page 471) ---
+In ₹Million
+Sr. | March 31, 2026 | March 31, 2025
+No.
+3.2 Segment Income tax expense/(income)
+a Forgings | 5,093.53 | 5,018.46
+b Defence | 442.98 | 289.78
+c Others | 241.23 | 117.26
+Income tax expense (excluding the impact of deferred tax in OCI) | 5,777.74 | 5,425.50
+3.3 Share of profit/(loss) of associates and joint ventures***
+a Forgings | - | -
+b Defence | 14.68 | 28.40
+c Others | (91.18) | (52.92)
+Total share of profit/(loss) of associates and joint ventures | (76.50) | (24.52)
+4 | Segment assets
+a Forgings | 147,642.44 | 132,272.20
+b Defence | 18,896.14 | 17,218.40
+c Others | 24,842.83 | 12,588.42
+d Unallocable assets including unutilised fund | 35,889.35 | 42,209.49
+Total | 227,270.76 | 204,288.51
+Less-Intersegment assets | 4,671.21 | 3,405.30
+Total assets | 222,599.55 | 200,883.21
+5 | Segment liabilities
+a Forgings | 34,064.62 | 28,754.18
+b Defence | 11,677.80 | 9,250.24
+c Others | 5,684.24 | 2,949.79
+d Unallocable | 2,504.23 | 3,941.33
+Total | 53,930.89 | 44,895.54
+Less-Intersegment liabilities | 4,671.21 | 3,405.30
+Total liabilities | 49,259.68 | 41,490.24
+Net Capital employed | 173,339.87 | 159,392.97
+6 | Other disclosures
+6.1 Investments in associates and joint ventures****
+a Forgings | - | -
+b Defence | 377.40 | 378.37
+c Others | 236.74 | 526.71
+Investments in associates and joint ventures | 614.14 | 905.08
+
+--- PDF page 475 (printed page 472) ---
+In ₹Million
+Sr. | March 31, 2026 | March 31, 2025
+No.
+6.2 Increase in non-current non-financial asset for the year
+a Forgings | 18,879.40 | 14,895.59
+b Defence | 2,755.64 | 1,610.55
+c Others | 7,971.69 | 601.23
+Increase in non-current non-financial asset for the year | 29,606.73 | 17,107.37
+7 | Information in respect of geographical areas
+7.1 Segment revenue from external customers**
+a Within India | 51,692.92 | 36,091.80
+b Outside India
+Europe | 60,402.82 | 50,759.64
+USA | 38,094.34 | 36,841.92
+Others | 17,926.45 | 27,534.67
+Subtotal | 116,423.61 | 115,136.23
+Total | 168,116.53 | 151,228.03
+7.2 Segment non-current assets
+a Within India | 56,882.76 | 51,938.29
+b Outside India | 39,553.71 | 33,936.10
+Total | 96,436.47 | 85,874.39
+* | Ind AS 108 requires disclosure of reconciliations between segment information and respective line items in Consolidated Financial
+Statements. Adjustments and eliminations include the elimination of assets and liabilities of joint ventures and associates which have
+been accounted under the equity method. Further, inter-segment transactions are eliminated upon consolidation. There are no other
+reconciling items; hence, no separate reconciliation has been presented.
+** The revenue information above is based on the location of the customers. No single external customer contributed more than 10% of
+Group’s total revenue for the year ended March 31, 2026 and March 31, 2025.
+*** Excluding effects of share of OCI of associates and joint ventures amounting to Nil (March 31, 2025 ₹0.61 million)
+**** Excluding loan to associate representing long-term interest of the Group in the associate. (Refer note 39)
+
+=== Note 24 — REVENUE FROM OPERATIONS (Consolidated) ===
+--- PDF page 410 (printed page 407) ---
+24. REVENUE FROM OPERATIONS
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Sale of products
+- Sale of goods | 158,841.55 | 142,983.44
+- Tooling income | 1,148.86 | 903.64
+Total sale of products | 159,990.41 | 143,887.08
+Sale of services
+-Job work charges | 2,243.81 | 1,387.36
+-Service type warranty | 3.84 | 24.61
+Other operating revenues
+- Manufacturing scrap | 4,588.73 | 4,663.15
+- Government grants-export incentives [Refer note 10] | 1,255.22 | 1,233.82
+-Sale of electricity/REC -Windmills | 34.52 | 32.01
+5,878.47 | 5,928.98
+Total Revenue from operations | 168,116.53 | 151,228.03
+Set out below is the amount of revenue recognised from
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Amounts included in contract liabilities at the beginning of the year | 844.85 | 1,324.70
+Performance obligations satisfied (or partially satisfied) in previous year | 192.85 | 297.74
+For balances in respect of contract liabilities, refer note 23 and trade receivables refer note 12
+
+--- PDF page 411 (printed page 408) ---
+Reconciling the amount of revenue recognised in the statement of profit and loss with the contracted price
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Sale of products | 159,990.41 | 143,887.08
+Sale of services | 2,247.65 | 1,411.97
+Manufacturing scrap | 4,588.73 | 4,663.15
+Subtotal: | 166,826.79 | 149,962.20
+Add/(less): Adjustments (sales returns, discounts, hedging etc.) | 920.35 | (1,633.53)
+Revenue as per contracted price | 167,747.14 | 148,328.68
+----- END OF NOTES -----
+
+----- PRIMARY FINANCIAL STATEMENTS (for reference; PDF page numbers) -----
+=== Consolidated Statement of Profit and Loss (Consolidated) ===
+--- PDF page 342 (printed page 339) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+INCOME
+Revenue from operations | 24 | 168,116.53 | 151,228.03
+Other income | 25 | 1,986.83 | 2,137.64
+Total income [i] | 170,103.36 | 153,365.67
+EXPENSES
+Cost of raw materials and components consumed | 26 | 77,779.31 | 64,396.23
+Purchase of stock in trade | 788.71 | 2,318.22
+(Increase) in inventories of finished goods, work-in-progress, stock in trade, dies | 27 | (2,672.21) | (771.05)
+and scrap
+Employee benefits expenses | 28 | 21,034.18 | 18,698.95
+Finance costs | 29 | 3,233.46 | 4,174.93
+Depreciation and amortisation expenses | 30 | 9,709.24 | 8,736.19
+Other expenses | 31 | 41,919.81 | 39,646.23
+Total expenses [ii] | 151,792.50 | 137,199.70
+Profit before share of profit/(loss) of associates and joint ventures, exceptional | 18,310.86 | 16,165.97
+items and tax [i-ii]
+Share of profit/(loss) of associates and joint ventures | (76.50) | (24.52)
+Income tax expense | 18.21 | 12.55
+Share of profit/(loss) of associates and joint ventures, net of tax | (94.71) | (37.07)
+Profit before exceptional items and tax | 18,216.15 | 16,128.90
+Exceptional items (loss) | 32 | (1,544.43) | (1,570.65)
+Profit before tax | 16,671.72 | 14,558.25
+Income tax expense | 21
+Current tax | 5,606.07 | 5,848.54
+Deferred tax charge/(credit) | 171.67 | (423.04)
+5,777.74 | 5,425.50
+Profit for the year | 10,893.98 | 9,132.75
+OTHER COMPREHENSIVE INCOME
+Other comprehensive income/(loss) not to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Re-measurement gain/(loss) on defined benefit plans | 33 | 237.27 | (185.37)
+- Net (loss)on FVTOCI equity investments | 33 | (1,869.02) | (51.09)
+- Share of other comprehensive (loss) of associates and joint ventures | 33 | - | (0.61)
+(1,631.75) | (237.07)
+Income tax effect | 33 | (11.73) | 41.24
+[A] | (1,643.48) | (195.83)
+
+--- PDF page 343 (printed page 340) ---
+Consolidated Statement of Profit and Loss
+for the year ended March 31, 2026 (Contd.)
+In ₹Million
+Notes | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+Other comprehensive income/(loss) to be reclassified to profit and loss in
+subsequent periods (net of tax)
+- Net movement on cash flow hedges | 33 | (5,312.67) | (1,060.36)
+- Exchange differences on translating financial statements of foreign operations | 33 | 2,205.34 | 432.60
+(3,107.33) | (627.76)
+Income tax effect | 33 | 1,338.69 | 267.78
+[B] | (1,768.64) | (359.98)
+Other comprehensive (loss) for the year (net of tax) [A+B] | (3,412.12) | (555.81)
+Total comprehensive income for the year | 7,481.86 | 8,576.94
+Of the total comprehensive income above,
+Attributable to:
+Owners of the parent company | 7,384.49 | 8,855.72
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Profit for the year
+Attributable to:
+Owners of the parent company | 10,796.61 | 9,411.53
+Non-controlling interests | 97.37 | (278.78)
+Of the total comprehensive income above,
+Other comprehensive (loss) for the year
+Attributable to:
+Equityholders of the parent company | (3,412.12) | (555.81)
+Non-controlling interests | 0.00 | -
+Earnings per equity share [nominal value per share ₹2/- | 34
+(March 31, 2025: ₹2/-)
+Basic (in ₹) | 22.58 | 20.05
+Diluted (in ₹) | 22.58 | 20.05
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Balance Sheet (Consolidated) ===
+--- PDF page 341 (printed page 338) ---
+Consolidated Balance Sheet
+as at March 31, 2026
+In ₹Million
+Notes | As at | As at
+March 31, 2026 | March 31, 2025
+ASSETS
+I. | Non-current assets
+(a) Property, plant and equipment | 3 | 72,575.52 | 58,473.77
+(b) Capital work-in-progress | 3 | 12,513.26 | 17,253.49
+(c) Investment property | 4 | 281.63 | 281.63
+(d) Goodwill | 5 | 3,902.53 | 2,627.83
+(e) Other intangible assets | 5 | 605.97 | 413.00
+(f) Intangible assets under development | 5 | 470.45 | 63.70
+(g) Right-of-use asset | 43 | 4,784.26 | 4,472.93
+(h) Investments accounted for using the equity method | 6 | 614.14 | 905.08
+(i) Financial assets
+(i) Investments | 7 | 5,031.65 | 6,192.36
+(ii) Trade receivables | 12 | 168.68 | 135.48
+(iii) Loans | 8 | 37.67 | 58.54
+(iv) Derivative instruments | 9 | - | 289.02
+(v) Other financial assets | 10 | 3,040.67 | 1,616.22
+(j) Deferred tax assets (net) | 21 | 2,121.99 | 1,901.43
+(k) Income tax assets (net) | 505.35 | 408.37
+(l) Other non-current assets | 14 | 3,917.22 | 3,466.92
+110,570.99 | 98,559.77
+II. | Current assets
+(a) Inventories | 11 | 40,527.83 | 35,784.36
+(b) Financial assets
+(i) Investments | 7 | 11,739.22 | 13,529.59
+(ii) Trade receivables | 12 | 39,097.99 | 28,996.06
+(iii) Cash and cash equivalents | 13 | 8,478.85 | 6,210.35
+(iv) Other bank balances | 13 | 1,420.57 | 6,703.41
+(v) Loans | 8 | 176.32 | 166.14
+(vi) Derivative instruments | 9 | - | 600.57
+(vii) Other financial assets | 10 | 3,780.92 | 1,036.38
+(c) Other current assets | 14 | 6,806.86 | 9,296.58
+112,028.56 | 102,323.44
+Total assets | 222,599.55 | 200,883.21
+EQUITY AND LIABILITIES
+EQUITY
+(a) Equity share capital | 15 | 956.27 | 956.27
+(b) Other equity | 16 | 94,842.13 | 91,577.07
+Equity attributable to owners of the parent company | 95,798.40 | 92,533.34
+Non-controlling interests | 37 | (230.16) | (327.53)
+Total equity | 95,568.24 | 92,205.81
+LIABILITIES
+I. | Non-current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 18,123.55 | 13,193.66
+(ii) Lease liabilities | 43 | 3,699.19 | 3,623.98
+(iii) Derivative instruments | 19a | 1,582.36 | 67.45
+(iv) Other financial liabilities | 19 | 3,357.24 | 195.38
+(b) Provisions | 20 | 2,906.62 | 2,192.25
+(c) Deferred tax liabilities (net) | 21 | 215.24 | 1,198.28
+(d) Other non-current liabilities | 23 | 1,332.71 | 1,176.32
+31,216.91 | 21,647.32
+II. | Current liabilities
+(a) Financial liabilities
+(i) Borrowings | 18 | 50,622.63 | 49,690.21
+(ii) Lease liabilities | 43 | 640.78 | 474.74
+(iii) Trade payables | 22
+Dues to micro enterprises and small enterprises | 839.98 | 770.13
+Dues to other than micro enterprises and small enterprises | 29,116.63 | 22,671.99
+(iv) Derivative instruments | 19a | 3,102.11 | 137.57
+(v) Other financial liabilities | 19 | 2,124.13 | 1,654.03
+(b) Other current liabilities | 23 | 6,871.51 | 9,289.48
+(c) Provisions | 20 | 2,103.47 | 1,945.86
+(d) Current tax liabilities (net) | 393.16 | 396.07
+95,814.40 | 87,030.08
+Total liabilities | 127,031.31 | 108,677.40
+Total equity and liabilities | 222,599.55 | 200,883.21
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Cash Flow Statement (Consolidated) ===
+--- PDF page 346 (printed page 343) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+OPERATING ACTIvITIES
+Profit after exceptional items & before tax | 16,671.72 | 14,558.25
+(Less): Share of (loss) of associates and joint ventures (net of tax) | (94.71) | (37.07)
+16,766.43 | 14,595.32
+Adjustment to reconcile profit before tax to net cash flows
+Depreciation and amortisation expenses | 9,709.24 | 8,736.19
+Unrealised foreign exchange (gain)/loss MTM (net) | 635.77 | (363.50)
+Interest income | (633.42) | (691.49)
+Liabilities/provision no longer required written back | (94.82) | (59.44)
+Provision for doubtful debts and advances written back | 125.94 | 68.52
+Bad debts/advances written off | 17.18 | 79.91
+Finance costs | 3,233.46 | 4,174.93
+(Gain)/loss on sale of property, plant and equipment (net) | (185.34) | 14.87
+Dividend income from equity securities | (9.04) | (8.34)
+Net (gain) on sale of financial instruments | (595.05) | (1,415.32)
+Net loss on fair valuation of financial instruments (FVTPL) | 174.64 | 768.55
+Non-cash exceptional items | 404.99 | 1,570.65
+Operating profit before working capital changes | 29,549.98 | 27,470.85
+Working capital adjustments
+(Increase)/Decrease in trade receivables | (7,090.42) | 2,510.11
+(Increase) in inventories | (3,878.56) | (3,837.66)
+(Increase)/decrease in other financial assets | (2,724.71) | 57.40
+Decrease/(Increase) in other assets | 1,566.07 | (2,279.99)
+Increase in provisions | 923.11 | 614.19
+Increase in trade payables | 4,419.60 | 910.48
+Increase in other financial liabilities | 62.18 | 153.00
+(Decrease) in other liabilities | (2,314.58) | (1,584.88)
+Cash generated from operations | 20,512.67 | 24,013.50
+Income taxes paid (net of refunds) | (5,646.25) | (6,050.07)
+Net cash flows from operating activities (I) | 14,866.42 | 17,963.43
+INvESTING ACTIvITIES
+Purchase of property, plant and equipment, investment property and intangible assets | (11,404.96) | (14,504.59)
+(including capital work-in-progress, capital creditors and capital advances)
+Proceeds from sale of property, plant and equipment and intangible assets | 274.32 | 65.40
+Investments in joint venture/associates | - | (303.49)
+Acquisition of a subsidiary (net of cash of ₹1,933.28 million) | (4,986.23) | -
+Repayment of loan given to joint venture/associates | - | 42.47
+Investments in mutual funds, fixed deposits and other deposits | (125,407.36) | (142,382.36)
+Proceeds from sale of financial instruments including fixed deposits | 130,905.57 | 136,896.77
+Interest received | 279.32 | 534.13
+Dividend received | 9.04 | 8.34
+Net cash flows (used in) investing activities (II) | (10,330.30) | (19,643.33)
+
+--- PDF page 347 (printed page 344) ---
+Consolidated Cash Flow Statement
+for the year ended March 31, 2026 (contd.)
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+FINANCING ACTIvITIES
+Dividend paid on equity shares | (3,796.55) | (4,220.93)
+Proceeds from issue of compulsorily convertible preference shares by the subsidiary | 3,000.00 | -
+company
+Interest paid on lease liabilities | (341.87) | (330.76)
+Interest paid on borrowing and other liabilities | (3,410.41) | (4,398.40)
+Proceeds from Issuance of Equity share capital under Qualified Institutional Placement (QIP) | - | 16,500.00
+Transaction cost related to Qualified Institutional Placement (QIP) | - | (302.67)
+Payment of principal portion of lease liabilities | (654.56) | (515.71)
+Proceeds from borrowings including bill discounting | 142,833.45 | 88,513.79
+Repayment of borrowings including bill discounting | (142,049.91) | (100,942.28)
+Net cash flows (used in) financing activities (III) | (4,419.85) | (5,696.96)
+Net increase/(decrease) in cash and cash equivalents (I + II + III) | 116.27 | (7,376.86)
+Net foreign exchange difference | (53.11) | 1.51
+Cash and cash equivalents at the beginning of the year* | 6,210.35 | 13,153.10
+Cash and cash equivalents at the end of the year* | 6,273.51 | 5,777.75
+Foreign currency translation reserve movement | 2,205.34 | 432.60
+Cash and cash equivalents at the end of the year* | 8,478.85 | 6,210.35
+* Excluding earmarked balances
+CASH AND CASH EQUIVALENTS FOR THE PURPOSE OF CASH FLOW STATEMENT
+In ₹Million
+Particulars | Year ended | Year ended
+March 31, 2026 | March 31, 2025
+BANk BALANCES
+In cash credit and current accounts | 8,182.10 | 5,204.60
+Deposits with original maturity of less than three months | 294.32 | 1,003.06
+CASH ON HAND | 2.43 | 2.69
+Total | 8,478.85 | 6,210.35
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+
+=== Consolidated Statement of Changes in Equity (Consolidated) ===
+--- PDF page 344 (printed page 341) (printed sideways; rotated 90° clockwise before extraction) ---
+[Column groups, left to right: Attributable to the owners of the parent (columns spanned: 9)]
+[Column groups, left to right: Reserves and Surplus (Refer note 16) (columns spanned: 5); Items of OCI (Refer note 16) (columns spanned: 4)]
+[Column headings, left to right: 1) Securities premium | 2) Capital reserves | 3) Employee stock option outstanding | 4) General reserve | 5) Retained Earnings | 6) Foreign currency translation reserve (FCTR) | 7) Equity instruments through other comprehensive income | 8) Non-controlling interest reserve | 9) Cash flow hedge reserve | 10) Total attributable to the owners of the Company | 11) Non-controlling interests | 12) Total]
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026
+A. EQUITY SHARE CAPITAL:
+Equity shares of ₹2/- each issued, subscribed and fully paid
+Particulars | No.
+As at March 31, 2026 | 478,088,632
+Changes in equity share capital during the year | -
+As at March 31, 2025 | 478,088,632
+Changes in equity share capital during the year | 12,500,000
+As at April 1, 2024 | 465,588,632
+(1) For the year ended March 31, 2026 | In ₹Million
+Balance as on April 1, 2025 | Changes in equity share capital Balance as on March 31, 2026
+during the year
+956.27 | - | 956.27
+(2) For the year ended March 31, 2025 | In ₹Million
+Balance as on April 1, 2024 | Changes in equity share capital Balance as on March 31, 2025
+during the current year
+931.27 | 25.00 | 956.27
+B. OTHER EQUITY
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2025 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+- Profit/(Loss) for the year | - | - | - | - | 10,796.61 | - | - | - | - | 10,796.61 | 97.37 | 10,893.98
+- Other Comprehensive Income/ | - | - | - | - | 170.69 | 2,205.34 | (1,814.17) | - | (3,973.98) | (3,412.12) | 0.00 | (3,412.12)
+(Loss)
+- Change in fair value of gross | - | - | (294.72) | - | - | - | - | (294.72) | - | (294.72)
+liability on written put options
+- | - | - | - | 10,672.58 | 2,205.34 | (1,814.17) | - | (3,973.98) | 7,089.77 | 97.37 | 7,187.14
+Transaction with owners in their
+capacity as owners
+- Final equity dividend | - | - | - | - | (2,868.53) | - | - | - | - | (2,868.53) | - | (2,868.53)
+- Interim equity dividend | - | - | - | - | (956.18) | - | - | - | - | (956.18) | - | (956.18)
+Balance as at March 31, 2026 | 23,103.22 | 15.50 | 127.36 | 3,230.48 | 68,659.35 | 4,213.27 | (944.15) | (148.19) | (3,414.71) | 94,842.13 | (230.16) | 94,611.97
+
+--- PDF page 345 (printed page 342) (printed sideways; rotated 90° clockwise before extraction) ---
+[Column groups, left to right: Attributable to the owners of the parent (columns spanned: 9)]
+[Column groups, left to right: Reserves and Surplus (Refer note 16) (columns spanned: 5); Items of OCI (Refer note 16) (columns spanned: 4)]
+[Column headings, left to right: 1) Securities premium | 2) Capital reserves | 3) Employee stock option outstanding | 4) General reserve | 5) Retained Earnings | 6) Foreign currency translation reserve (FCTR) | 7) Equity instruments through other comprehensive income | 8) Non-controlling interest reserve | 9) Cash flow hedge reserve | 10) Total attributable to the owners of the Company | 11) Non-controlling interests | 12) Total]
+Consolidated Statement of Changes in Equity
+for the year ended March 31, 2026 (Contd.)
+B. OTHER EQUITY (CONTD.)
+In ₹Million
+Attributable to the owners of the parent
+Reserves and Surplus (Refer note 16) | Items of OCI (Refer note 16) | Total
+Securities | Capital | Employee General | Retained | Foreign | Equity | Non- Cash flow attributable
+Non-
+Particulars | premium | reserves stock option | reserve | Earnings | currency | instruments controlling | hedge | to the
+controlling | Total
+outstanding | translation through other | interest reserve | owners
+interests
+reserve comprehensive | reserve | of the
+(FCTR) | income | Company
+Balance as at April 1, 2024 | 6,930.89 | 15.50 | 127.36 | 3,230.48 | 56,757.59 | 1,575.33 | 929.76 | (148.19) | 1,351.85 | 70,770.57 | (48.75) | 70,721.82
+- Profit/(Loss) for the year | - | - | - | - | 9,411.53 | - | - | - | 9,411.53 | (278.78) | 9,132.75
+- Other Comprehensive | - | - | - | - | (136.09) | 432.60 | (59.74) | - | (792.58) | (555.81) | - | (555.81)
+Income/(Loss)
+- Premium on allotment of | 16,475.00 | - | - | - | - | - | - | - | - | 16,475.00 | - | 16,475.00
+equity shares
+- Expenses on allotment of equity | (302.67) | - | - | - | - | - | - | - | - | (302.67) | - | (302.67)
+shares
+16,172.33 | - | - | - | 9,275.44 | 432.60 | (59.74) | - | (792.58) | 25,028.05 | (278.78) | 24,749.27
+Transaction with owners in
+their capacity as owners
+- Final equity dividend | - | - | - | - | (3,026.33) | - | - | - | - | (3,026.33) | - | (3,026.33)
+- Interim equity dividend | - | - | - | - | (1,195.22) | - | - | - | - | (1,195.22) | - | (1,195.22)
+Balance as at March 31, 2025 23,103.22 | 15.50 | 127.36 | 3,230.48 | 61,811.48 | 2,007.93 | 870.02 | (148.19) | 559.27 | 91,577.07 | (327.53) | 91,249.54
+The accompanying notes form an integral part of the consolidated financial statements.
+As per our report of even date
+For B S R & Co. LLP | For and on behalf of the Board of Directors of Bharat Forge Limited
+Chartered Accountants
+Firm Registration Number: 101248W/W-100022
+Shiraz Vastani | B. N. Kalyani | Amit Kalyani
+Partner | Chairman and Managing Director | Vice-Chairman and Joint Managing Director
+Membership Number: 103334 | DIN: 00089380 | DIN: 00089430
+Kedar Dixit | Tejaswini Chaudhari
+Senior Vice President and CFO | Company Secretary
+Membership Number: 18907
+Place: Pune | Place: Pune
+Date: May 07, 2026 | Date: May 07, 2026
+----- END OF PRIMARY FINANCIAL STATEMENTS -----

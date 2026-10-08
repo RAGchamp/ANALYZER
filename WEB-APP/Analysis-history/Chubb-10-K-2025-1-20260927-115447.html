@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chubb Limited — Initial question — Annual Report Analyzer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Palette and components from ANALYSIS-REPORTS/BHARATFORGE-ANN-REPORT-ANALYSIS-2025-26.html */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  /* light-blue context box: company, report, question */
+  .context-box{
+    background:#e7f1ff;
+    border:1px solid #b6d4fe;
+    border-left:6px solid var(--biz-blue);
+    border-radius:.5rem;
+    padding:1.1rem 1.35rem;
+    box-shadow:0 .15rem .5rem rgba(13,110,253,.08);
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .context-box .meta strong{ color:#1c2b3a; }
+  .context-box .question-label{
+    font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--biz-blue-dark);
+  }
+  .context-box .question{ font-size:1.12rem; font-weight:600; color:#10233f; margin:0; white-space:pre-wrap; }
+  .context-box .original{ font-size:.9rem; color:#34495e; white-space:pre-wrap; }
+  .prompt-badge{
+    display:inline-block; background:var(--nav-blue); color:var(--nav-yellow);
+    font-weight:700; font-size:.78rem; border-radius:999px; padding:.2rem .7rem;
+  }
+
+  /* analysis content */
+  .analysis{ background:#fff; border-radius:.5rem; padding:1.5rem 1.75rem;
+             box-shadow:0 .125rem .25rem rgba(0,0,0,.075); line-height:1.6; }
+  .analysis h1, .analysis h2{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.6rem 0 1rem; font-size:1.4rem; color:#10233f;
+  }
+  .analysis > h1:first-child, .analysis > h2:first-child{ margin-top:0; }
+  .analysis h3{ font-size:1.1rem; margin:1.3rem 0 .6rem; color:var(--biz-blue-dark); }
+  .analysis h4{ font-size:1rem; margin:1.1rem 0 .5rem; }
+  .analysis table.table{ font-size:.9rem; margin-bottom:1.25rem; }
+  .analysis table.table thead th{ background:#ffdf7e !important; color:#212529; border-color:#e6c257; }
+  .analysis table.table tbody tr:nth-child(odd) > *{ background:#d3e3f5 !important; }
+  .analysis table.table tbody tr:nth-child(even) > *{ background:#eef4fc !important; }
+  .analysis td.num{ text-align:right; white-space:nowrap; }
+  .analysis blockquote{
+    border-left:4px solid var(--biz-gold); background:#fff8e6;
+    padding:.75rem 1rem; margin:.75rem 0; font-style:italic;
+  }
+  .analysis pre{ background:#0a1128; color:#f2b400; padding:1rem; border-radius:.5rem; overflow-x:auto; }
+  .analysis code{ color:#b02a37; }
+  .analysis pre code{ color:inherit; }
+
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <!-- CONTEXT: company, annual report, question -->
+  <section class="context-box mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+      <h1 class="company">Chubb Limited</h1>
+      <span class="prompt-badge">#1 · Initial question</span>
+    </div>
+    <div class="row g-2 meta mb-3">
+      <div class="col-md-6"><strong>Annual report:</strong> Chubb-10-K-2025.pdf</div>
+      <div class="col-md-6"><strong>Prompt sent:</strong> 27 Sep 2026, 11:54:47</div>
+      <div class="col-md-6"><strong>Statements:</strong> Consolidated</div>
+      <div class="col-md-6"><strong>PDF pages analyzed:</strong> 175–180, 183–189</div>
+      <div class="col-12"><strong>Notes analyzed:</strong> Consolidated Note 12 – Taxation (PDF p.175–180), Consolidated Note 14 – Commitments, contingencies, and guarantees (PDF p.183–189)</div>
+      
+      <div class="col-12"><strong>Financial statements referenced:</strong> CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)</div>
+      
+    </div>
+    
+    <div class="question-label">Question</div>
+    
+    <p class="question">Analyze the company&#39;s tax position and comment on it.</p>
+  </section>
+
+  <!-- ANALYSIS -->
+  <article class="analysis">
+    <h1>Chubb Limited: tax position analysis, FY2025 (Note 12)</h1>
+<h2>Summary</h2>
+<ul>
+<li><strong>Tax expense rose faster than profit.</strong> Tax expense was $2,422m in FY2025, up 33.4%, while pre-tax income rose 13.9% to $13,044m. The effective tax rate went from <strong>15.8% to 18.6%</strong>. The main driver is Bermuda's new 15% corporate income tax, which took effect on 1 January 2025 (Note 12, p.175, p.177).</li>
+<li><strong>Earlier years were flattered by one-off Bermuda benefits.</strong> FY2023's rate of 5.4% and FY2024's 15.8% include benefits from the Bermuda law being enacted ($1,135m and $55m). Without them the rates were about 17.3% and 16.3%, so FY2025's 18.6% is the first "clean" rate under the new regime.</li>
+<li><strong>The deferred tax position moved from a small net asset to a net liability.</strong> It went from a net asset of $19m to a net liability of $(429)m. Deferred tax liabilities (DTLs) grew by $801m, mainly on deferred policy acquisition costs. This was partly offset by a $444m fall in the valuation allowance (Note 12, p.178).</li>
+<li><strong>Cash taxes are higher than current tax.</strong> Taxes paid were $2,211m against current tax of $2,085m (106%), and the company moved to a net current tax receivable. Uncertain tax positions are small and falling ($79m gross).</li>
+<li><strong>The main reconciliation issue</strong> is that deferred tax in the cash flow statement ($330m) differs from the note's deferred tax expense ($337m). The gap is small but unexplained, and it is larger in FY2023 ($40m).</li>
+</ul>
+<h2>Key figures</h2>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th>Item</th>
+<th>FY2025</th>
+<th>FY2024</th>
+<th>Change</th>
+<th>% change</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-tax income</td>
+<td class="num">13,044</td>
+<td class="num">11,455</td>
+<td class="num">+1,589</td>
+<td class="num">+13.9%</td>
+<td>Note 12, p.176; P&amp;L p.108</td>
+</tr>
+<tr>
+<td>Current tax expense</td>
+<td class="num">2,085</td>
+<td class="num">1,729</td>
+<td class="num">+356</td>
+<td class="num">+20.6%</td>
+<td>Note 12, p.176</td>
+</tr>
+<tr>
+<td>Deferred tax expense</td>
+<td class="num">337</td>
+<td class="num">86</td>
+<td class="num">+251</td>
+<td class="num">+291.9%</td>
+<td>Note 12, p.176</td>
+</tr>
+<tr>
+<td>Provision for income taxes</td>
+<td class="num">2,422</td>
+<td class="num">1,815</td>
+<td class="num">+607</td>
+<td class="num">+33.4%</td>
+<td>Note 12, p.176; P&amp;L p.108</td>
+</tr>
+<tr>
+<td>Effective tax rate</td>
+<td class="num">18.6%</td>
+<td class="num">15.8%</td>
+<td class="num">+2.7pp</td>
+<td>n/a</td>
+<td>Calculated</td>
+</tr>
+<tr>
+<td>Income taxes paid (net of refunds)</td>
+<td class="num">2,211</td>
+<td class="num">1,662</td>
+<td class="num">+549</td>
+<td class="num">+33.0%</td>
+<td>Note 12, p.178</td>
+</tr>
+<tr>
+<td>Gross deferred tax assets (DTAs)</td>
+<td class="num">3,554</td>
+<td class="num">3,645</td>
+<td class="num">(91)</td>
+<td class="num">−2.5%</td>
+<td>Note 12, p.178</td>
+</tr>
+<tr>
+<td>Valuation allowance</td>
+<td class="num">637</td>
+<td class="num">1,081</td>
+<td class="num">(444)</td>
+<td class="num">−41.1%</td>
+<td>Note 12, p.178</td>
+</tr>
+<tr>
+<td>Total DTLs</td>
+<td class="num">3,346</td>
+<td class="num">2,545</td>
+<td class="num">+801</td>
+<td class="num">+31.5%</td>
+<td>Note 12, p.178</td>
+</tr>
+<tr>
+<td>Net DTA / (DTL)</td>
+<td class="num">(429)</td>
+<td class="num">19</td>
+<td class="num">(448)</td>
+<td>n/a</td>
+<td>Note 12, p.178</td>
+</tr>
+<tr>
+<td>Gross unrecognized tax benefits</td>
+<td class="num">79</td>
+<td class="num">130</td>
+<td class="num">(51)</td>
+<td class="num">−39.2%</td>
+<td>Note 12, p.179</td>
+</tr>
+<tr>
+<td>Current tax receivable / payable</td>
+<td>419 / 377</td>
+<td>246 / 376</td>
+<td>+173 / +1</td>
+<td>+70.3% / +0.3%</td>
+<td>Note 12, p.178</td>
+</tr>
+<tr>
+<td>Tax on OCI items</td>
+<td class="num">149</td>
+<td class="num">117</td>
+<td class="num">+32</td>
+<td class="num">+27.4%</td>
+<td>P&amp;L p.108</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Detailed analysis</h2>
+<h3>Effective tax rate trend</h3>
+<div class="table-responsive"><table class="table table-sm table-bordered align-middle">
+<thead>
+<tr>
+<th></th>
+<th>FY2025</th>
+<th>FY2024</th>
+<th>FY2023</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effective tax rate</td>
+<td>2,422/13,044 = <strong>18.6%</strong></td>
+<td>1,815/11,455 = <strong>15.8%</strong></td>
+<td>511/9,526 = <strong>5.4%</strong></td>
+</tr>
+<tr>
+<td>Excluding the Bermuda enactment benefit</td>
+<td class="num">18.6%</td>
+<td>(1,815+55)/11,455 = 16.3%</td>
+<td>(511+1,135)/9,526 = 17.3%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>FY2023:</strong> a $1,135m benefit when the Bermuda law was enacted cut the rate sharply. This matches the foreign deferred benefit of $(1,021)m. It most likely reflects deferred tax assets recognised on the transition, but the note does not say so explicitly (p.176–177).</li>
+<li><strong>FY2025:</strong> 2025 is the first year Bermuda profits are taxed. The reconciliation shows Bermuda adding <strong>$327m (2.5pp)</strong> as a rate difference against Switzerland (p.177).</li>
+<li><strong>Geographic mix:</strong> 98.6% of pre-tax income is foreign ($12,859m of $13,044m). Swiss domestic income is only $185m (p.176).</li>
+</ul>
+<h3>Rate reconciliation (FY2025, p.177)</h3>
+<ul>
+<li><strong>Summed amounts:</strong> 1,021 + 327 − 157 − 196 + 5 + 9 + 553 + 5 + 796 + 59 = <strong>2,422</strong>, which agrees with the provision.</li>
+<li><strong>Summed percentages:</strong> they add up to 18.6%, which also agrees.</li>
+<li><strong>Baseline change:</strong> the Swiss "expected" rate fell from about 19.7% to 7.8%.</li>
+<li>FY2024: 2,251/11,455 = 19.65%.</li>
+<li>FY2025: 1,021/13,044 = 7.8%.</li>
+<li>Footnote (1) says 2025 uses only the federal rate (8.5% on profit after tax), while 2024 and 2023 used the combined federal and cantonal rate.</li>
+<li>The 2025 table also uses a new, more detailed layout.</li>
+<li>As a result, <strong>the reconciling lines are not comparable year to year</strong>. This is a presentation change, not an economic one.</li>
+<li><strong>Largest reconciling items:</strong></li>
+<li>US rate difference: $553m (4.2pp).</li>
+<li>"Other foreign jurisdictions": $796m (6.1pp). This is a large aggregate with no breakdown.</li>
+<li><strong>Prior-year checks:</strong></li>
+<li>FY2024: 2,251 − 510 − 55 + 145 − 16 = 1,815.</li>
+<li>FY2023: 1,872 − 389 − 1,135 + 15 + 148 = 511.</li>
+</ul>
+<h3>Deferred taxes (p.178–179)</h3>
+<ul>
+<li><strong>Deferred policy acquisition costs (DAC):</strong> the DTL on DAC rose from $1,005m to $1,650m (+64%). This is much faster than the balance sheet DAC asset, which rose from $8,358m to $10,008m (+19.7%). The difference probably reflects Bermuda business coming into the tax net, but this is not disclosed.</li>
+<li><strong>Investments:</strong> they swung from a $512m DTA to a $127m DTL. The DTA on unrealized depreciation fell from $787m to $234m as unrealized losses narrowed (OCI unrealized appreciation +$2,655m, p.108).</li>
+<li><strong>Valuation allowance:</strong> it fell by $444m, even though a <em>new</em> $179m allowance was booked against unrealized capital losses. That implies roughly $623m of releases or other movements that are not explained. The FY2025 reconciliation has no separate valuation allowance line.</li>
+<li><strong>Loss reserve discount:</strong> the DTA rose from $1,746m to $2,073m (+18.7%), in line with growth in reserves.</li>
+<li><strong>Carry-forwards:</strong> net operating losses of $579m (expiring from 2026) and US capital losses of $52m (expiring from 2028).</li>
+<li><strong>Un-remitted foreign earnings:</strong> a DTL of $303m (up from $251m). The withholding tax that has <em>not</em> been provided is described as "material" but not practicable to compute (p.176).</li>
+</ul>
+<h3>Cash taxes and uncertain positions</h3>
+<ul>
+<li><strong>Cash taxes paid:</strong></li>
+<li>Cash taxes were 106% of current tax in FY2025 and 96% in FY2024.</li>
+<li>Four jurisdictions each exceed 5% of taxes paid: the US ($614m), the UK ($289m), Korea ($257m) and Bermuda ($250m). Together they account for 63.8%.</li>
+<li>Jurisdiction figures for FY2024 and FY2023 are not given.</li>
+<li><strong>Uncertain tax positions:</strong></li>
+<li>Unrecognized tax benefits: 130 + 5 + 20 − 26 − 50 = 79, which agrees.</li>
+<li>$50m was settled with tax authorities.</li>
+<li>$74m would reduce the effective tax rate if recognised.</li>
+<li>Tax interest and penalties were a <strong>net income of $(23)m</strong>, compared with expenses of $6m and $7m before.</li>
+<li><strong>Audit exposure:</strong></li>
+<li>The IRS is finalising its review of 2014–2017 with no material adjustments proposed. 2018 is still under examination.</li>
+<li>The IRS began examining 2019–2023 in January 2026.</li>
+<li>Many years remain open elsewhere, e.g. Spain from 2012 and the UK from 2015 (p.180).</li>
+</ul>
+<h3>Note 14</h3>
+<p>Note 14 does not directly address tax. Its only indirect links are:</p>
+<ul>
+<li>Hedge gains and losses recorded in OCI, which are taxed within "Income tax expense related to OCI items".</li>
+<li>Legal proceedings that are not expected to be material.</li>
+</ul>
+<p>No tax contingencies are disclosed in it.</p>
+<h2>Impact on the financial statements</h2>
+<h3>Income Statement (Statement of Operations)</h3>
+<ul>
+<li><strong>Income tax expense:</strong></li>
+<li>$2,422m in FY2025, $1,815m in FY2024 and $511m in FY2023 (P&amp;L, p.108).</li>
+<li>These equal the note's provision of current plus deferred tax: 2,085 + 337, 1,729 + 86 and 1,595 − 1,084.</li>
+<li><strong>Income before income tax:</strong></li>
+<li>$13,044m and $11,455m, matching the note's pre-tax income.</li>
+<li>Net income: 13,044 − 2,422 = <strong>10,622</strong>, which agrees (p.108).</li>
+<li><strong>Effect of the tax increase:</strong></li>
+<li>The +$607m of extra tax absorbed 38% of the $1,589m pre-tax growth.</li>
+<li>As a result, net income grew only 10.2%.</li>
+<li><strong>OCI tax:</strong></li>
+<li>"Income tax expense related to OCI items" was $(149)m on pre-tax OCI of $3,978m, an effective rate of 3.7%. The low rate is consistent with much of the gain being foreign currency translation, which is generally untaxed.</li>
+<li>FY2024 shows a <em>tax expense</em> of $117m on a pre-tax OCI <em>loss</em> of $(1,865)m, which is unusual (see Red flags).</li>
+</ul>
+<h3>Balance Sheet</h3>
+<ul>
+<li><strong>Deferred tax assets:</strong> $1,312m and $1,603m. <strong>Deferred tax liabilities:</strong> $1,741m and $1,584m (Balance Sheet, p.107).</li>
+<li><strong>Net position:</strong> 1,312 − 1,741 = <strong>(429)</strong> and 1,603 − 1,584 = <strong>19</strong>. Both agree with the note's net DTA / (DTL) (p.178). The note's gross figures (3,554 / 3,346) are netted by jurisdiction into these lines.</li>
+<li><strong>Current tax balances:</strong></li>
+<li>The $419m receivable sits in Other assets ($9,222m).</li>
+<li>The $377m payable sits in Accounts payable, accrued expenses and other liabilities ($10,108m).</li>
+<li>Neither is shown separately on the face of the balance sheet.</li>
+<li><strong>Other tax items:</strong> tax interest and penalty liabilities ($24m) and unrecognized tax benefits are also embedded in other liabilities. The line holding the unrecognized tax benefits is not stated.</li>
+<li><strong>Equity:</strong> the tax effect on unrealized depreciation (DTA of $234m) supports AOCI of $(4,975)m.</li>
+</ul>
+<h3>Cash Flow Statement</h3>
+<ul>
+<li><strong>Deferred income taxes:</strong> an add-back of $330m, $96m and $(1,124)m (Cash Flow, p.110).</li>
+<li>The note shows 337, 86 and (1,084), so the differences are <strong>$7m, $(10)m and $40m</strong>. Possible causes include foreign exchange, acquisitions or classification, but none is explained.</li>
+<li><strong>Income taxes (working capital change):</strong> $(160)m.</li>
+<li>This is broadly consistent with the change in net current tax balances. It moved from a net payable of $130m (376 − 246) to a net receivable of $42m (419 − 377), a swing of $172m.</li>
+<li>It is also consistent with cash paid exceeding current tax: 2,085 − 2,211 = (126).</li>
+<li><strong>Taxes paid:</strong> $2,211m is disclosed only in the note. The cash flow's supplemental section shows interest paid but not taxes paid.</li>
+<li><strong>Net effect:</strong> the higher tax charge and cash tax are absorbed within operating cash flow of $12,816m (FY2024: $16,182m). The tax lines contributed −$160m versus +$69m in FY2024.</li>
+</ul>
+<h3>Statement of Shareholders' Equity</h3>
+<ul>
+<li><strong>Retained earnings:</strong> they take net income attributable to Chubb <em>after</em> tax: $10,310m and $9,272m (Equity, p.109).</li>
+<li><strong>AOCI:</strong> it moves by OCI net of tax of $3,669m. This is the $3,829m total less $160m attributable to non-controlling interests: 3,669 + 160 = 3,829, which agrees with p.108.</li>
+<li><strong>Possible future effect:</strong> the unprovided withholding tax on un-remitted earnings could reduce equity if management's reinvestment assertion changes.</li>
+</ul>
+<h2>Red flags &amp; areas for follow-up</h2>
+<ol>
+<li><strong>Deferred tax in the cash flow does not match the note.</strong> The cash flow shows $330m, $96m and $(1,124)m against the note's $337m, $86m and $(1,084)m. Management should explain the $40m difference in FY2023.</li>
+<li><strong>The change in net deferred tax is not explained.</strong> The net position swung by $448m, but deferred expense was only $337m. The DTA on unrealized depreciation fell by $553m, which should have gone through OCI tax, yet OCI tax is only $149m. A roll-forward of the deferred tax balances is needed.</li>
+<li><strong>Valuation allowance releases are not disclosed.</strong> The allowance fell by $444m despite a new $179m allowance. The releases and their effect on the tax rate or OCI should be disclosed.</li>
+<li><strong>FY2024 OCI tax has the wrong sign.</strong> It shows a tax expense on a pre-tax loss. Ask for the tax split by OCI component.</li>
+<li><strong>"Other foreign jurisdictions" is large and unexplained.</strong> It adds $796m (6.1pp) with no breakdown.</li>
+<li><strong>Prior-year reconciliations are not comparable.</strong> The Swiss rate baseline changed from about 19.7% to 7.8%, and 2024 and 2023 are not restated in the new format.</li>
+<li><strong>Taxes paid by jurisdiction are missing for prior years.</strong> The FY2024 and FY2023 columns are blank (p.178). It is not clear whether this is an extraction gap or a transition exemption.</li>
+<li><strong>Unprovided withholding tax is material but unquantified</strong> (p.176).</li>
+<li><strong>Many tax years remain open.</strong> The US is open from 2014 and Spain from 2012, and a new IRS examination of 2019–2023 began in January 2026.</li>
+<li><strong>The swing to net tax interest income of $(23)m</strong> looks linked to the settlements and should be confirmed as non-recurring.</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li><strong>Note 12, Taxation</strong>, PDF p.175–180 (printed F-74 to F-79): pre-tax income and provision (p.176), rate reconciliation (p.177), taxes paid, current tax balances and deferred tax components (p.178), valuation allowance, carry-forwards, unrecognized tax benefits and audits (p.179), open tax years (p.180).</li>
+<li><strong>Note 14, Commitments, contingencies and guarantees</strong>, PDF p.183–189: hedge accounting in OCI (p.184–185) and legal proceedings (p.188). It has no direct tax content.</li>
+<li><strong>Consolidated Statements of Operations and Comprehensive Income</strong>, p.108; <strong>Balance Sheets</strong>, p.107; <strong>Cash Flows</strong>, p.110; <strong>Shareholders' Equity</strong>, p.109.</li>
+<li><strong>LINKED FIGURES:</strong> the app's links to Note 12 are correct. The Note 14 links (securities lending, repurchase agreements) are correct but not relevant to tax.</li>
+</ul>
+  </article>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Generated by the Annual Report Foot Notes Analyzer (RAG Champ) using Claude Code, from the notes to the financial statements in Chubb-10-K-2025.pdf.
+    Research aid only, not investment advice. Verify every number against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

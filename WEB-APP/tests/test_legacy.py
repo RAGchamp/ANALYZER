@@ -13,12 +13,11 @@ import pytest
 
 import app as app_module
 import config
-import extractor
-import legacy_index
-import note_selector
-import notes_index
-import report_format
-from pdf_utils import open_pdf
+from analyzer import context, note_selector
+from analyzer import jobs as analyzer_jobs
+from ingest import clip as extractor
+from ingest import legacy_index, notes_index, report_format
+from ingest.pdf_utils import open_pdf
 
 FIXTURE = Path(__file__).parent / "fixtures" / "Reliance-1976-1977.pdf"
 OLD = "Reliance-1976-1977.pdf"
@@ -180,7 +179,7 @@ def client(tmp_path, monkeypatch):
         calls.append((prompt, system))
         return "## Summary\n- Net block Rs. 1,451.45 lakhs (Schedule 'E', p.18)"
 
-    monkeypatch.setattr(app_module, "run_claude", fake)
+    monkeypatch.setattr(analyzer_jobs, "run_claude", fake)
     client = app_module.app.test_client()
     client.calls = calls
     return client
@@ -201,10 +200,14 @@ def test_index_route_reports_format_and_override(client):
     assert "34 notes" in data["summary"] and "15 schedules" in data["summary"]
     assert data["sections"]["standalone"]["missing_statements"] == [
         "Cash Flow Statement", "Statement of Changes in Equity"]
+    assert data["model"].startswith("TYPE-2 INDIA Ann rpt 1977 Reliance (model document; checks passed")
+    # A forced format only chooses which model documents to try; they must pass their
+    # checks (INFO/MODEL-DOCS-FUNCTIONALITY-PLAN.md §5.2). The modern models' rules fail here.
     forced = client.post("/api/index", json={"report": OLD, "format": "modern"}).get_json()
-    assert (forced["format"], forced["format_source"]) == ("modern", "manual")
-    kept = client.post("/api/index", json={"report": OLD}).get_json()         # choice is remembered
-    assert kept["format"] == "modern"
+    assert forced["new_model"] and "TYPE-1 INDIA" in forced["new_model"]["message"]
+    assert forced["gap_report_url"] == f"/gap-report?report={OLD}"
+    kept = client.post("/api/index", json={"report": OLD}).get_json()         # its package is kept
+    assert kept["format"] == "legacy"
     auto = client.post("/api/index", json={"report": OLD, "format": "auto"}).get_json()
     assert (auto["format"], auto["format_source"]) == ("legacy", "detected")
     assert client.post("/api/index", json={"report": OLD, "format": "weird"}).status_code == 400
@@ -235,7 +238,7 @@ def test_legacy_analysis_and_followup_prompts(client):
     assert "(Profit and Loss Account, Balance Sheet)" in prompt
 
 
-def test_modern_prompt_has_no_profile(index, monkeypatch, tmp_path):
-    assert app_module.report_profile(index) == ""
-    assert app_module.statement_sections_text(index) == app_module.MODERN_STATEMENT_SECTIONS
-    assert "OLD-FORMAT" not in app_module.analysis_system(index)
+def test_modern_prompt_has_no_profile(index, package):
+    assert context.report_profile(package) == ""
+    assert context.statement_sections_text(index) == context.MODERN_STATEMENT_SECTIONS
+    assert "OLD-FORMAT" not in context.analysis_system(index)

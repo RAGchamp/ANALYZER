@@ -1,0 +1,46 @@
+## Summary
+- The 10-K states that **as of April 7, 1969, Buffett Partnership, Ltd. owned approximately 69.99%** of Berkshire Hathaway's outstanding shares, excluding treasury stock (Item 3(a), p.2).
+- Buffett Partnership was a Nebraska limited partnership. **Warren E. Buffett, a director of Berkshire, was its sole general partner** (Item 3(a), p.2). That made him the controlling party.
+- Applying 69.99% to the 985,482 shares outstanding at year-end gives **about 689,700 shares** (calculated below). The 10-K does not state the share count itself.
+- Berkshire reported no change in its outstanding equity securities during the year (Item 2, p.2). So the year-end share base is a fair base for the April 1969 percentage.
+
+## What management says
+- The disclosure is under Item 3, "Parents and Subsidiaries of Registrant." The heading itself treats Buffett Partnership as Berkshire's **parent** (p.2).
+- Berkshire in turn owned all of National Fire & Marine Insurance Company and 99% of National Indemnity Company, both Nebraska insurers. Neither is consolidated in the 1968 statements (Item 3(b), p.2–3). Note that p.3 names the first company "National Fire & Indemnity Company", which looks like a slip in the original or the transcription.
+- The stock was widely held outside the partnership: there were **1,557 record holders** of the $5 par common stock on April 4, 1969 (Item 1, p.2).
+
+## Performance and drivers
+- Outstanding shares = 1,017,547 issued − 32,065 in treasury = **985,482** (Balance Sheet, p.7).
+- Shares held by Buffett Partnership ≈ 985,482 × 69.99% ≈ **689,700**. This assumes no change between December 28, 1968 and April 7, 1969, which Item 2 supports.
+- Check on the share base: net earnings of $4,662,336 ÷ 985,482 = **$4.73 per share**, which matches the reported $4.73 (P&L, p.8). So 985,482 is the correct denominator.
+- The partnership's share of book equity ≈ 69.99% × $36,205,271 ≈ **$25.34 million** (Balance Sheet, p.7).
+- Everyone else held about 30.01%, roughly 295,800 shares.
+
+## Outlook and risks
+- The filing says nothing about the partnership's plans for the stake.
+- The text implies a **control concentration**: at nearly 70%, one partnership run by one general partner, who also sits on the board, controls the company. Minority holders have little say.
+- The figure is a point-in-time holding (April 7, 1969), so it is not an audited year-end balance.
+
+## How it shows in the audited numbers
+
+| Figure (report section, page) | Where in the notes or statements | Ties? |
+|---|---|---|
+| 69.99% owned by Buffett Partnership (Item 3(a), p.2) | Not shown in the statements | not disclosed |
+| No change in outstanding equity securities (Item 2, p.2) | Balance Sheet: 1,017,547 issued, 32,065 treasury (p.7) | yes (consistent: only one year-end balance, no share movements shown) |
+| Shares outstanding 985,482 (calculated) | Net EPS $4.73 (P&L, p.8) | yes |
+| 1,557 record holders (Item 1, p.2) | Not in the statements | not disclosed |
+
+The audited statements confirm the share base behind the percentage: the share count checks against EPS. They cannot confirm who owns the shares, because ownership is not a line item in the statements. The notes, which might include related-party disclosures, were not provided for this answer.
+
+## Questions for management
+1. How many shares exactly did Buffett Partnership hold on December 28, 1968, and did it buy any between then and April 7, 1969?
+2. Does the partnership plan to keep, distribute or sell its Berkshire stake?
+3. Were there any transactions between Berkshire and the partnership or Mr. Buffett during 1968? The balance sheet shows amounts due from officers (p.7).
+4. How is the board's independence protected, given near-70% control by a director's partnership?
+5. Why are the two insurance subsidiaries not consolidated, and how does that affect how the controlling holder views the group?
+
+## Sources
+- Filing text, Items 1–3: PDF pp.1–3
+- Consolidated Balance Sheet: PDF p.7
+- Consolidated Statement of Earnings and Retained Earnings: PDF p.8
+- No notes were provided.

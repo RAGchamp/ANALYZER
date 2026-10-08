@@ -16,11 +16,10 @@ import pytest
 
 import app as app_module
 import config
-import extractor
-import note_selector
-import notes_index
-import ocr_quality
-import ocr_transcribe
+from analyzer import jobs as analyzer_jobs
+from analyzer import note_selector, statements_page
+from ingest import clip as extractor
+from ingest import notes_index, ocr_quality, ocr_transcribe, pipeline
 
 FIXTURE_OCR = Path(__file__).parent / "fixtures" / "brk1968.ocr"
 BRK = "BRK-1968.pdf"
@@ -164,7 +163,7 @@ def test_prompt_version_change_resets(scanned_pdf, monkeypatch):
 
 def test_untranscribed_scan_needs_transcription(scanned_pdf):
     with pytest.raises(notes_index.NeedsTranscription) as info:
-        notes_index.load_or_build(scanned_pdf)
+        pipeline.load_index(scanned_pdf)
     assert info.value.page_count == 6
 
 
@@ -193,7 +192,7 @@ def brk(tmp_path, monkeypatch):
 
 
 def test_brk_index(brk):
-    idx = notes_index.load_or_build(brk)
+    idx = pipeline.load_index(brk)
     assert idx["format"] == "transcribed" and idx["document_type"] == "SEC Form 10-K"
     assert idx["company"] == "Berkshire Hathaway Inc." and idx["currency"] == "$"
     assert idx["fiscal_year_end_label"] == "December 28, 1968"
@@ -222,7 +221,7 @@ def test_brk_index(brk):
 
 
 def test_brk_extract_and_scope(brk):
-    idx = notes_index.load_or_build(brk)
+    idx = pipeline.load_index(brk)
     e = extractor.extract_note(idx, "berkshire-hathaway", "BH-N5")
     assert e["text"].startswith("=== Berkshire Hathaway Inc. — Note 5 — Unconsolidated Subsidiaries ===")
     assert "--- PDF page 10 (printed page 11) ---" in e["text"] and "(6) Taxes" not in e["text"]
@@ -255,7 +254,7 @@ def test_brk_analysis_prompt(brk, monkeypatch):
             return '{"notes": ["BH-N2", "BH-SCH-I"], "reason": "securities"}'
         return "## Summary\n- ok"
 
-    monkeypatch.setattr(app_module, "run_claude", fake)
+    monkeypatch.setattr(analyzer_jobs, "run_claude", fake)
     monkeypatch.setattr(note_selector, "run_claude", fake)
     client = app_module.app.test_client()
     data = client.post("/api/index", json={"report": BRK}).get_json()
@@ -308,10 +307,7 @@ def test_needs_transcription_route_and_ocr_job(scanned_pdf, tmp_path, monkeypatc
 def test_transcribed_statements_use_the_statement_table_layout(brk):
     """The "View the financial statements" page styles scanned statements like
     the others: header / section / data / total rows, no repeated title block."""
-    import statements_view
-
-    idx = notes_index.load_or_build(brk)
-    views = statements_view.report_view(idx)
+    views = statements_page.report_view(pipeline.open_report(brk))
     earnings = views[0]["statements"][0]
     rows = [r for t in earnings["pages"][0]["tables"] for r in t["rows"]]
     labels = [r["label"] for r in rows]

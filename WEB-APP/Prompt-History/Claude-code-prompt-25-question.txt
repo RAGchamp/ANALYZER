@@ -1,0 +1,11 @@
+Asked at: 2026-10-06 22:02:08
+Kind: analysis
+Report: Bharat-Forge-IR-2026-conv-single-page.pdf
+Scope: Consolidated
+Notes: Consolidated Note 49 – SEGMENT INFORMATION (PDF p.472–475), Consolidated Note 24 – REVENUE FROM OPERATIONS (PDF p.410–411), Consolidated Note 37 – MATERIAL PARTLY OWNED SUBSIDIARIES (PDF p.423–427), Consolidated Note 6 – INVESTMENTS ACCOUNTED FOR USING THE EQUITY METHOD (PDF p.383–384), Consolidated Note 46 – BUSINESS COMBINATIONS AND ACQUISITION OF NON-CONTROLLING INTERESTS (PDF p.456–457)
+PDF pages: 472, 473, 474, 475, 410, 411, 423, 424, 425, 426, 427, 383, 384, 456, 457
+Financial statements: Consolidated Statement of Profit and Loss (PDF p.342–343); Consolidated Balance Sheet (PDF p.341); Consolidated Cash Flow Statement (PDF p.346–347); Consolidated Statement of Changes in Equity (PDF p.344–345)
+Thread: f58caf031a65430caa3f5dc12683b1b2
+Saved HTML: Bharat-Forge-IR-2026-conv-single-page-1-20261006-220208.html
+
+analyze company's aerospace business

@@ -1,0 +1,103 @@
+## Summary
+
+- **The notes do not report an aerospace business.** Note 49 has three reportable segments: Forgings, Defence and Others (Note 49, p.472). The word "aerospace" does not appear in any note or statement provided. No aerospace revenue, profit, assets or order book can be taken from this material. The nearest disclosed figures are the **Defence segment** and some **aero/defence entities** (Aeron Systems, Edgelab, Kalyani Rafael Advanced Systems, BF Elbit, and Zorya Mashproekt, which works on gas-turbine engines). The answer below uses these as proxies. They are **not** an aerospace figure.
+- **Defence revenue was flat but its profit fell sharply.** Revenue was ₹17,571.72m against ₹17,719.86m (−0.8%). Segment result fell 56.3%, from ₹1,864.23m to ₹814.97m, so the margin dropped from 10.5% to 4.6% (Note 49, p.473).
+- **Defence is putting in money ahead of revenue.** Additions to non-current assets were ₹2,755.64m (+71.1%), depreciation roughly tripled to ₹242.45m, and segment liabilities rose 26.2% (Note 49, pp.473–475).
+- **Some segment figures look odd.** Defence tax expense is ₹442.98m on a pre-tax segment result of about ₹771m. Segment liabilities of ₹49,259.68m do not reconcile to Balance Sheet total liabilities of ₹127,031.31m, even though the note says there are no other reconciling items.
+- Group growth came from **Forgings (+7.5%)** and **Others (+127.9%)**. The growth in Others is probably linked to the K Drive acquisition, but the note does not say which segment K Drive sits in.
+
+## Key figures
+
+All figures in ₹ million.
+
+| Item | FY2026 | FY2025 | Change | % change | Source |
+|---|---|---|---|---|---|
+| Defence revenue | 17,571.72 | 17,719.86 | (148.14) | (0.8%) | Note 49, p.473 |
+| Defence segment result | 814.97 | 1,864.23 | (1,049.26) | (56.3%) | Note 49, p.473 |
+| Defence margin (result ÷ revenue) | 4.6% | 10.5% | (5.9) pp | — | calc. |
+| Defence exceptional items | (43.77) | (53.00) | 9.23 | (17.4%) | Note 49, p.473 |
+| Defence D&A | 242.45 | 80.07 | 162.38 | 202.8% | Note 49, p.473 |
+| Defence income tax | 442.98 | 289.78 | 153.20 | 52.9% | Note 49, p.474 |
+| Defence share of associates/JVs | 14.68 | 28.40 | (13.72) | (48.3%) | Note 49, p.474 |
+| Defence segment assets | 18,896.14 | 17,218.40 | 1,677.74 | 9.7% | Note 49, p.474 |
+| Defence segment liabilities | 11,677.80 | 9,250.24 | 2,427.56 | 26.2% | Note 49, p.474 |
+| Defence net segment assets | 7,218.34 | 7,968.16 | (749.82) | (9.4%) | calc. |
+| Defence additions to non-current non-financial assets | 2,755.64 | 1,610.55 | 1,145.09 | 71.1% | Note 49, p.475 |
+| Defence equity-accounted investments | 377.40 | 378.37 | (0.97) | (0.3%) | Note 49, p.474 |
+| Kalyani Rafael (KRAS) revenue | 3,354.98 | 3,180.88 | 174.10 | 5.5% | Note 37, pp.424–425 |
+| KRAS profit after tax | 215.51 | 140.46 | 75.05 | 53.4% | Note 37, pp.424–425 |
+| Forgings revenue | 139,285.82 | 129,612.33 | 9,673.49 | 7.5% | Note 49, p.473 |
+| Others revenue | 21,698.12 | 9,519.96 | 12,178.16 | 127.9% | Note 49, p.473 |
+
+## Detailed analysis
+
+### 1. What the material does and does not show
+- The segments are Forgings, Defence and Others. Forged parts used in defence are counted in **Forgings**, not Defence (Note 49, p.472). The Defence segment therefore understates the group's real defence and aero exposure.
+- Any aerospace forgings (for example, components sold to aircraft-engine makers) would fall under "industrial" sales in Forgings. They are not disclosed separately. Note 24 has no split of revenue by end-market.
+
+### 2. Defence segment performance
+- **Margin squeeze.** Revenue was flat while the result fell by ₹1,049m. Part of the fall is extra depreciation of ₹162m from new capacity. The remaining ≈₹887m points to a weaker product mix, higher costs or provisions. The notes do not give the reason.
+- **Return on net segment assets** (result ÷ (assets − liabilities)):
+  - FY2026: 814.97 ÷ 7,218.34 = **11.3%**
+  - FY2025: 1,864.23 ÷ 7,968.16 = **23.4%**
+- **Asset build-up.** Capex of ₹2,755.64m is 15.7% of segment revenue. A year earlier it was 9.1% (1,610.55 ÷ 17,719.86).
+- **Liabilities rose faster than assets** (+26.2% against +9.7%). This could mean more customer advances or payables, but the notes do not break it down.
+
+### 3. Aero and defence entities
+- **Equity-accounted investments in Defence:** ₹377.40m. This equals Aeron Systems (₹160.83m) plus Edgelab S.p.A. (₹216.57m), so these two associates sit in Defence (Note 6, p.383; Note 49, p.474). Aeron's carrying value rose ₹16.47m. Edgelab's fell ₹17.44m. The notes do not describe what either company does.
+- **Kalyani Rafael Advanced Systems (50% NCI):** revenue grew 5.5% and profit after tax rose 53.4%. Its revenue equals 19.1% of Defence segment revenue, but the note does not confirm which segment it belongs to. Operating cash flow was ₹556.23m and investing outflow ₹771.77m, with non-current assets up sharply from ₹99.12m to ₹1,414.18m (Note 37, pp.426–427).
+- **BF Elbit Advanced Systems:** made a loss of ₹(24.31)m and has negative equity of ₹(214.92)m.
+- **Zorya Mashproekt India:** builds, repairs and overhauls gas-turbine engines. It recorded no activity in FY2026 (revenue nil, against ₹5.90m in FY2025), although the group bought it for nil consideration in January 2024 (Note 46, p.456; Note 37, p.424).
+
+### 4. Checks on the segment arithmetic
+| Check | Result |
+|---|---|
+| 139,285.82 + 17,571.72 + 21,698.12 = 178,555.66; less inter-segment 10,439.13 = 168,116.53 | Agrees with the P&L ✓ |
+| FY2025: 156,852.15 − 5,624.11 = 151,228.04 | P&L shows 151,228.03 (₹0.01 rounding) |
+| Segment results 21,916.21 − 3,233.46 − 466.59 = 18,216.16 | P&L shows 18,216.15 (₹0.01) |
+| Segment tax 5,093.53 + 442.98 + 241.23 = 5,777.74 | Agrees with P&L tax ✓ |
+| Defence associates 160.83 + 216.57 = 377.40 | Agrees with Note 6 ✓ |
+
+## Impact on the financial statements
+
+### Statement of Profit and Loss
+- **Revenue from operations:** ₹168,116.53m (FY2025: ₹151,228.03m) (P&L, p.342). This agrees with Note 24 (p.410) and Note 49. Defence contributes 17,571.72 before inter-segment eliminations, about 10.5% of reported revenue.
+- **Profit before exceptional items and tax:** ₹18,216.15m (FY2025: ₹16,128.90m). Defence's fall of ₹1,049m held back group growth of ₹2,087m.
+- **Exceptional items:** ₹(1,544.43)m, of which Defence ₹(43.77)m (P&L, p.342; Note 49, p.473).
+- **Share of profit/(loss) of associates and JVs:** ₹(76.50)m. Defence associates contributed +₹14.68m.
+- **Income tax:** ₹5,777.74m, of which Defence ₹442.98m.
+- **Profit attributable to NCI:** ₹97.37m (P&L, p.343). This reconciles to Note 37: 107.76 − 11.91 + 2.00 − 0.47 = 97.38, which is mainly KRAS.
+
+### Balance Sheet
+- **Total assets:** ₹222,599.55m (BS, p.341). This agrees with Note 49 after inter-segment eliminations. Defence holds ₹18,896.14m of this.
+- **Investments accounted for using the equity method:** ₹614.14m (FY2025: ₹905.08m). This agrees with Note 6, and ₹377.40m of it is Defence.
+- **Non-controlling interests:** ₹(230.16)m. The material-NCI balances in Note 37 add up to (229.15), a gap of ₹1.01m, presumably immaterial subsidiaries. The app's "warn" is correct that the BS figure itself is not printed in Note 37.
+- **Total liabilities:** ₹127,031.31m on the Balance Sheet against ₹49,259.68m of segment liabilities in Note 49. This does not reconcile (see Red flags).
+
+### Cash Flow Statement
+- No segment cash flows are disclosed. Defence capex of ₹2,755.64m is part of PPE purchases of ₹(11,404.96)m (CF, p.346), but the two are measured differently: one counts asset additions, the other cash paid.
+- **D&A add-back:** ₹9,709.24m, which agrees with the Note 49 total. Defence's share is ₹242.45m.
+- **Proceeds from compulsorily convertible preference shares issued by a subsidiary:** ₹3,000.00m (CF, p.347). The subsidiary is not named.
+
+### Statement of Changes in Equity
+- **Profit attributable to NCI:** ₹97.37m, which moves NCI from ₹(327.53)m to ₹(230.16)m (SOCE, p.344). This is mainly KRAS.
+- **Change in fair value of gross liability on written put options:** ₹(294.72)m through other equity. The notes provided do not say which subsidiary this relates to.
+- Defence results otherwise reach equity only through retained earnings (profit of ₹10,796.61m attributable to owners).
+
+## Red flags & areas for follow-up
+1. **No aerospace disclosure.** Ask management for aerospace revenue, margin, order book and capex. Aerospace may sit inside Forgings (industrial) or Defence.
+2. **The Defence margin halved** from 10.5% to 4.6% on flat revenue. Ask for the causes: contract losses, provisions, or the cost of ramping up capacity.
+3. **Defence tax rate looks too high.** Tax of ₹442.98m on a pre-tax result of ₹771.20m (814.97 − 43.77) is **57.4%**. The FY2025 equivalent was 289.78 ÷ 1,811.23 = 16.0%. Ask how tax is allocated to segments.
+4. **Segment liabilities do not reconcile.** Note 49 shows ₹49,259.68m, but total liabilities are ₹127,031.31m. Borrowings of ₹68,746.18m are probably left out. This contradicts footnote * ("no other reconciling items"). The "Net capital employed" figure of ₹173,339.87m is simply total assets minus segment liabilities.
+5. **Label problem.** Segment revenue is headed "from external customers", yet it includes ₹10,439.13m of inter-segment revenue.
+6. **Rounding differences of ₹0.01** in segment revenue for FY2025 (151,228.04 against 151,228.03), the pre-exceptional profit subtotal (18,216.16 against 18,216.15) and PBT (16,671.73 against 16,671.72).
+7. **Zorya (gas turbines) is dormant.** It had nil revenue in FY2026 and BF Elbit has negative equity. Ask about plans for both.
+8. **K Drive (Note 46, p.457):** the cash outflow on acquisition is ₹4,986.23m in the Cash Flow Statement but ₹5,540.88m in the note, a gap of ₹554.65m (possibly deferred consideration). The note also has a typo: "₹1,2582.09 million".
+
+## Sources
+- Note 49 Segment information, PDF pp.472–475
+- Note 24 Revenue from operations, pp.410–411
+- Note 37 Material partly owned subsidiaries, pp.423–427
+- Note 6 Equity-method investments, pp.383–384
+- Note 46 Business combinations, pp.456–457
+- Consolidated P&L pp.342–343; Balance Sheet p.341; Cash Flow pp.346–347; Changes in Equity pp.344–345

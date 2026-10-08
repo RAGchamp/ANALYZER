@@ -1,0 +1,113 @@
+## Summary
+- **The audited statements do not report Commercial Vehicles (CV) as a segment.** Note 49 has three reporting segments: Forgings, Defence and Others (Note 49, p.472). CV sits inside **Forgings**, together with passenger vehicles and industrial products. Every CV revenue figure below comes from management's unaudited commentary and cannot be tied to the statements.
+- **Management's CV revenue fell about 20% overall.** Export CV revenue was ₹1,324 crore, down 34% (MD&A, p.76), because of de-stocking in the North American truck market. Domestic CV revenue was ₹1,036 crore, up 8% (MD&A, p.78) or 7.7% (Board's report, p.88), helped by the cut in GST rates.
+- **CV's share of group revenue shrank.** Implied CV revenue is about ₹23,604m, roughly **14.0%** of consolidated revenue of ₹168,116.53m (P&L, p.342). Last year it was about **19.6%**.
+- **Forgings, which carries CV, still grew.** Its revenue rose 7.5% to ₹139,285.82m, but its margin eased from 14.3% to 14.0%. It also took a new exceptional loss of ₹1,073.54m (Note 49, p.473).
+- **By geography, "Others" outside India fell 34.9% and the USA grew only 3.4%. India grew 43.2%.** This fits the story of weaker exports and stronger domestic demand, but it does not isolate CV.
+
+## Key figures
+Amounts are in ₹ million.
+
+| Item | Current year | Prior year | Change | % change | Source |
+|---|---|---|---|---|---|
+| Domestic CV revenue (management) | 10,360 (₹1,036 cr) / 10,364 | ~9,623* | ~+741 | +7.7% / +8% | MD&A p.78; Board's report p.88 |
+| Export CV revenue (management) | 13,240 (₹1,324 cr) | ~20,061* | ~−6,821 | −34% | MD&A p.76 |
+| Total CV (implied) | ~23,604 | ~29,684 | ~−6,080 | ~−20.5% | derived |
+| Revenue from operations | 168,116.53 | 151,228.03 | +16,888.50 | +11.2% | P&L p.342; Note 24 p.410 |
+| Forgings revenue (before inter-segment elimination) | 139,285.82 | 129,612.33 | +9,673.49 | +7.5% | Note 49 p.473 |
+| Forgings segment result | 19,560.91 | 18,561.18 | +999.73 | +5.4% | Note 49 p.473 |
+| Forgings exceptional loss | (1,073.54) | – | new | – | Note 49 p.473 |
+| Forgings segment assets | 147,642.44 | 132,272.20 | +15,370.24 | +11.6% | Note 49 p.474 |
+| Revenue from customers in the USA | 38,094.34 | 36,841.92 | +1,252.42 | +3.4% | Note 49 p.475 |
+| Revenue from customers in other non-India, non-Europe markets | 17,926.45 | 27,534.67 | −9,608.22 | −34.9% | Note 49 p.475 |
+| Revenue from customers within India | 51,692.92 | 36,091.80 | +15,601.12 | +43.2% | Note 49 p.475 |
+
+\*Prior-year figures are backed out from the growth rates management gives: 10,364 ÷ 1.077 and 13,240 ÷ 0.66.
+
+## Detailed analysis
+**CV's share of revenue**
+- Current year: 23,604 ÷ 168,116.53 = **14.0%** of group revenue.
+- Prior year: 29,684 ÷ 151,228.03 = **19.6%**.
+- Measured against Forgings revenue, CV is about 23,604 ÷ 139,285.82 = **16.9%**, down from about 22.9%.
+- **Scope caveat:** the MD&A figures probably describe the parent company only, not the group. The report does not say so, and the standalone statements were not provided.
+
+**Forgings margin (segment result ÷ segment revenue)**
+- Current year: 19,560.91 ÷ 139,285.82 = **14.04%**.
+- Prior year: 18,561.18 ÷ 129,612.33 = **14.32%**.
+- Forgings kept growing even though CV exports fell 34%. That points to other parts of Forgings (industrial, passenger vehicles) making up the gap. Management reports industrial revenue up 8.4% to ₹25,228m (Board's report, p.88).
+
+**Geography (Note 49, p.475)**
+- Revenue from customers in the "Others" non-India markets fell ₹9,608m and the USA grew only 3.4%. Management describes a 50% drop in North American CV revenue (MD&A, p.76). US revenue in the note covers all segments, so the two cannot be reconciled.
+- India grew ₹15,601m. That rise is larger than domestic CV (+₹741m) can explain. It likely includes the K Drive acquisition (₹9,578m revenue over 9 months, Board's report, p.88). K Drive makes axles for medium and heavy CVs. My assumption is that it is reported in "Others", whose revenue rose ₹12,178m. The note does not confirm this.
+
+**Arithmetic checks on Note 49**
+- The segment revenues add up: 139,285.82 + 17,571.72 + 21,698.12 = 178,555.66.
+- After removing inter-segment revenue: 178,555.66 − 10,439.13 = 168,116.53, which agrees with the P&L.
+- The segment results add up: 19,560.91 + 814.97 + 1,540.33 = 21,916.21.
+- Profit before exceptional items: 21,916.21 − 3,233.46 − 466.59 = 18,216.16, against 18,216.15 in the P&L. The ₹0.01m difference is rounding.
+
+## Business context
+**Exports** (MD&A, p.76)
+- According to management, North American de-stocking cut export CV revenue by 34%, and North American CV revenue fell 50%.
+- Management says US tariffs caused "no business disruptions" and "no impact on market share". Nothing in the statements can verify this.
+- The business focuses on Class 7 & 8 trucks in the US and heavy commercial vehicles (HCV) in Europe, with safety-critical engine, driveline and transmission parts.
+
+**Domestic** (MD&A, p.78; Board's report, p.88)
+- Management states that the GST cut lowered the total cost of ownership for fleet operators, who spent the savings on new trucks.
+- A shift toward heavier tractor-trailers and tippers favours the company's content per vehicle.
+- CV makers are said to have posted record EBITDA margins for two years.
+
+**Outlook** (MD&A, p.77)
+- These are management's expectations, not results.
+- Demand for CVs in India is expected to be "stable" in FY2027 and domestic auto growth 3–6%, with a warning that a sharp rise in diesel prices could hurt CV growth.
+- The ₹12.2 lakh crore infrastructure budget is expected to support demand.
+- Globally, West Asia tensions and energy costs are named as risks (p.76).
+
+**Link to the figures:** none of the CV amounts appear in Notes 24 or 49. Note 24 splits revenue by type (goods, tooling, scrap and so on), not by end-market.
+
+## Impact on the financial statements
+### Statement of Profit and Loss
+- CV revenue is part of Revenue from operations: ₹168,116.53m against ₹151,228.03m (P&L, p.342). This agrees with Note 24 (p.410) and Note 49 (p.473).
+- Losing about ₹6,080m of CV revenue held growth to 11.2%. It also contributed to the drop in the Forgings margin and hence to Profit before exceptional items and tax: ₹18,216.15m against ₹16,128.90m.
+- The Forgings exceptional loss of ₹1,073.54m is part of the P&L's exceptional items of ₹(1,544.43)m. The note does not explain what caused it.
+
+### Balance Sheet
+- Current trade receivables rose 34.8%, from ₹28,996.06m to ₹39,097.99m (BS, p.341), much faster than revenue (+11.2%).
+- Debtor days rose from 70.0 (28,996.06 ÷ 151,228.03 × 365) to 84.9 (39,097.99 ÷ 168,116.53 × 365).
+- Inventories rose 13.3%, from ₹35,784.36m to ₹40,527.83m.
+- Forgings segment assets rose ₹15,370m (Note 49, p.474).
+- The segment data does not split any of these by CV.
+
+### Cash Flow Statement
+- Operating cash flow fell from ₹17,963.43m to ₹14,866.42m.
+- The main cause is the working-capital line for receivables: an increase of ₹7,090.42m this year against a decrease of ₹2,510.11m last year (CF, p.346).
+- Additions to Forgings non-current non-financial assets were ₹18,879.40m (Note 49, p.475). Group capital expenditure paid was ₹11,404.96m. Acquiring a subsidiary cost ₹4,986.23m net of cash, probably K Drive; the statement does not name it.
+
+### Statement of Changes in Equity
+- CV affects equity only through profit, which goes to retained earnings (₹10,796.61m attributable to owners, SOCE p.344).
+- The cash flow hedge reserve fell ₹3,973.98m. This relates to hedging of export revenue, probably. The notes do not split it by business.
+
+## Red flags & areas for follow-up
+1. **Figures that don't match:** domestic CV revenue is ₹1,036 crore, +8% in the MD&A (p.78), but ₹10,364m, +7.7% in the Board's report (p.88). The small difference suggests rounding, but the scope (standalone or consolidated) is not stated. Ask management for CV revenue on a consolidated basis.
+2. **Wrong automatic link:** the app matched the passenger-vehicle revenue of ₹397 crore / ₹3,974m to the cash flow hedge OCI of 3,973.98 (SOCE, p.344). The numbers are close by coincidence; the two are unrelated. Ignore that match.
+3. **Mislabelled heading in Note 49:** the heading says "Revenue from external customers", yet the lines include ₹10,439.13m of inter-segment revenue that is removed afterwards.
+4. **Rounding differences in Note 49:** FY2025 revenue is 151,228.04 against 151,228.03 in the P&L; profit before tax is 16,671.73 against 16,671.72.
+5. **Liabilities reconciliation:** segment liabilities total ₹49,259.68m, while the Balance Sheet shows ₹127,031.31m (borrowings are apparently not allocated). The footnote nevertheless says "no other reconciling items".
+6. **Receivables:** receivables grew three times faster than revenue. Ask whether export CV customers are paying later, or whether the rise comes from the acquisition.
+7. **Open questions for management:**
+   - What caused the ₹1,073.54m Forgings exceptional loss?
+   - Is K Drive, an axle maker serving the CV market, reported in "Others"?
+   - How much Forgings capacity is sitting idle after the export CV slump?
+
+## Sources
+- **Statements:**
+  - Consolidated P&L, pp.342–343
+  - Balance Sheet, p.341
+  - Cash Flow Statement, pp.346–347
+  - Statement of Changes in Equity, pp.344–345
+- **Notes:**
+  - Note 24, Revenue from operations, pp.410–411
+  - Note 49, Segment information, pp.472–475
+- **Report sections (unaudited):**
+  - MD&A, pp.76, 77, 78
+  - Board's report, p.88

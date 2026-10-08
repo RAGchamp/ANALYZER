@@ -108,6 +108,9 @@
       <div class="col-md-6"><strong>Statements:</strong> {{ scope }}</div>
       <div class="col-md-6"><strong>PDF pages analyzed:</strong> {{ pages_text }}</div>
       <div class="col-12"><strong>Notes analyzed:</strong> {{ notes_text }}</div>
+      {% if sections_text %}
+      <div class="col-12"><strong>Report sections analyzed</strong> (management's commentary, not audited): {{ sections_text }}</div>
+      {% endif %}
       {% if statements_text %}
       <div class="col-12"><strong>Financial statements referenced:</strong> {{ statements_text }}</div>
       {% endif %}

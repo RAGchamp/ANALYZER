@@ -10,6 +10,8 @@
   <nav class="navbar">
     <button type="button" id="history-toggle" class="ghost" title="Show/hide history">☰ History</button>
     <h1>Annual Report Foot Notes Analyzer</h1>
+    <a class="ghost nav-link" href="/ingest" title="Ingest reports, see what was found and checked, review scans, export or import packages">Ingest screen ↗</a>
+    <a class="ghost nav-link" href="/model-testing" title="Test what the app extracts from any page of a model document, and report wrong extractions">Model testing</a>
   </nav>
 
   <div class="layout">
@@ -36,9 +38,10 @@
           <span id="format-text"></span>
           <a id="format-review" class="hidden" href="#" target="_blank" rel="noopener">Review transcription ↗</a>
           <label id="format-choice" class="muted small-text">Report format:
-            <select id="format-select" title="Change only if the format was detected wrongly">
+            <select id="format-select" title="Try the model documents of another format (they must still pass their checks)">
               <option value="auto">Detect automatically</option>
               <option value="modern">Modern (notes to financial statements)</option>
+              <option value="us-10k">US Form 10-K (US GAAP)</option>
               <option value="legacy">Old (schedules, Companies Act 1956)</option>
             </select>
           </label>
@@ -54,6 +57,10 @@
           <div class="muted small-text"><span id="ocr-note"></span>
             <a id="ocr-review" href="#" target="_blank" rel="noopener">Review pages ↗</a></div>
         </div>
+        <!-- a report that matches no model document: blocked until its model is added -->
+        <div id="model-panel" class="model-panel hidden"></div>
+        <!-- what the ingester found and checked -->
+        <ul id="quality-panel" class="quality-panel hidden"></ul>
         <div id="statements-panel" class="statements-panel hidden"></div>
         <div id="view-statements-row" class="view-statements-row hidden">
           <a id="view-statements-link" href="#" target="_blank" rel="noopener">View the financial statements ↗</a>
@@ -67,20 +74,40 @@
           placeholder="e.g. Analyze the company's tax related liabilities and comment on it."></textarea>
         <div class="row end">
           <button type="button" id="mic-btn" title="Ask by voice">🎤</button>
-          <button type="button" id="identify-btn" disabled>Identify notes</button>
+          <button type="button" id="identify-btn" disabled
+            title="Financial-statement analysis from the notes to the accounts and the primary statements">Identify notes</button>
+          <button type="button" id="business-btn" class="secondary" disabled
+            title="Business analysis from the report's own sections (MD&amp;A, Board's report, risk factors …), with one or two notes to confirm the figures">Analyze non notes</button>
         </div>
         <div id="scope-hint" class="muted small-text">Uses the notes to the <b>consolidated</b> financial statements unless your question asks for standalone.</div>
       </section>
 
       <!-- STEP 3 -->
       <section class="card hidden" id="step-confirm">
-        <h2><span class="step">3</span> Confirm the notes to analyze</h2>
+        <h2><span class="step">3</span> <span id="confirm-title">Confirm the notes to analyze</span></h2>
         <div id="scope-line" class="scope-line"></div>
         <div id="note-chips" class="chips"></div>
         <div id="select-reason" class="muted"></div>
+        <!-- notes behind the statement lines the question is about -->
+        <div id="hint-line" class="hint-line hidden"></div>
         <div class="row">
           <select id="add-note-select"></select>
           <button type="button" id="add-note-btn" class="ghost">+ Add note</button>
+        </div>
+        <!-- passages from the report's own sections: MD&A, Board's report, risk factors ...
+             (INFO/ANALYZE-NON-FIN-DATA-PLAN.md §5) -->
+        <div id="passage-box" class="passage-box hidden">
+          <div class="passage-head">
+            <b>Report passages</b>
+            <span class="muted small-text">from the report's own sections (MD&amp;A, Board's report, risk factors …): management's commentary, not audited</span>
+          </div>
+          <div id="passage-list" class="passage-list"></div>
+          <div id="passage-suggest" class="hint-line hidden"></div>
+          <div class="row">
+            <input type="text" id="passage-search" placeholder="Add passage… search the report's sections (e.g. aerospace, tariffs, outlook)" />
+            <button type="button" id="passage-search-btn" class="ghost">Search</button>
+          </div>
+          <div id="passage-results" class="passage-results"></div>
         </div>
         <details class="manual-pages">
           <summary>Or analyze specific PDF pages instead</summary>
@@ -126,7 +153,7 @@
         </details>
         <div id="followup-box" class="followup">
           <textarea id="followup-input" rows="2"
-            placeholder="Ask a follow-up about these notes… (mention “Note 41” to add a note)"></textarea>
+            placeholder="Ask a follow-up… the whole report is searched again for it (mention “Note 41” to add a note)"></textarea>
           <div class="row end">
             <button type="button" id="followup-btn">Ask follow-up</button>
           </div>

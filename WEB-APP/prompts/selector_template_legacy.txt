@@ -8,7 +8,7 @@ The report has standalone accounts only. Its primary statements ({{STATEMENTS}})
 - DIR / AUD / SUM / CHR: the Directors' Report, Auditors' Report, Financial Summary and Chairman's Statement
 
 {{NOTES_LIST}}
-
+{{HINTS}}
 Choose the parts whose content is needed to answer the question thoroughly.
 - Choose the primary schedule(s) and note(s) first.
 - Add the Directors' Report or the Auditors' Report when they are likely to discuss the matter (for example tax disputes, expansion plans, borrowings, audit qualifications), and the Financial Summary for multi-year trends.

@@ -1,0 +1,41 @@
+An analyst asked this question about a company's annual report:
+
+QUESTION: Analyze the company's tax position and comment on it.
+
+Scope already decided: consolidated financial statements. Do not change it.
+
+Below are the notes to the financial statements in that scope. IDs starting with C are Consolidated notes and IDs starting with S are Standalone notes.
+
+C1: Summary of significant accounting policies  [sub-headings: a) Basis of presentation; c) Deferred policy acquisition costs (DAC); Short-duration contracts; Long-duration contracts; d) Value of business acquired (VOBA); Fixed maturities, equity securities, and short-term investments; Valuation allowance for fixed income securities; Private debt held-for-investment]
+C2: Acquisitions  [sub-headings: Liberty Mutual's P&C Insurance Businesses in Thailand and Vietnam; Healthy Paws; Huatai Group; Pro forma: For the Year Ended December 31]
+C3: Investments  [sub-headings: a) Fixed maturities; Amortized Valuation Gross Unrealized Gross Unrealized; b) Gross unrealized loss; Gross Gross Gross; c) Net realized gains (losses); d) Other investments; e) Private equities; Expected Liquidation Maximum Maximum]
+C4: Fair value measurements  [sub-headings: a) Fair value hierarchy; Fixed maturities; Equity securities; Short-term investments; Private equities; Other investments; Securities lending collateral; Investment derivatives]
+C5: Reinsurance  [sub-headings: a) Consolidated Reinsurance; b) Reinsurance Recoverable on Ceded Reinsurance; December 31, 2025 December 31, 2024; Net Reinsurance Net Reinsurance; Recoverable on Losses Uncollectible % of Gross Reinsurance; Largest Reinsurers; Categories of Chubb's reinsurers Comprises:]
+C6: Deferred policy acquisition costs
+C7: Goodwill, Value of business acquired, and Other intangible assets  [sub-headings: Value of business acquired (VOBA); Other intangible assets]
+C8: Unpaid losses and loss expenses  [sub-headings: Reconciliation of Reserve Balances to Liability for Unpaid Loss and Loss Expenses; Business excluded from the loss development tables; a) Description of Reserving Methodologies; b) Standard actuarial reserving methods; Short-tail business; Long-tail business; c) Loss Development Tables; Cumulative Number of Reported Claims]
+C9: Future policy benefits  [sub-headings: Present Value of Expected Net Premiums For the Year Ended December 31, 2025; Present Value of Expected Future Policy Benefits For the Year Ended December 31, 2025; Liability for Future Policy Benefits, Life Insurance Segment December 31, 2025; Present Value of Expected Net Premiums For the Year Ended December 31, 2024; Present Value of Expected Future Policy Benefits For the Year Ended December 31, 2024; Liability for Future Policy Benefits, Life Insurance Segment December 31, 2024; December 31 December 31; Term Life]
+C10: Policyholders' account balances, Separate accounts, and Unearned revenue liabilities  [sub-headings: Policyholders' account balances; Universal Life; At Guaranteed 1 Basis Point - 50 51 Basis Points - 150 Greater Than 150; Guaranteed minimum crediting rates; Other policyholders' account balances; Separate accounts; Unearned revenue liabilities]
+C11: Market risk benefits  [sub-headings: December 31, 2025 December 31, 2024; Annuitization rate 0% – 100% 5.0% 0% – 100% 4.5%]
+C12: Taxation
+C13: Debt  [sub-headings: December 31 December 31; Short-term debt; Long-term debt; Hybrid debt; a) Short-term debt; b) Long-term debt; (i) Chubb INA senior notes and debentures; (ii) Chubb INA Chinese yuan renminbi bonds and term loans]
+C14: Commitments, contingencies, and guarantees  [sub-headings: a) Derivative instruments; December 31, 2025 December 31, 2024; Fair Value Notional Fair Value Notional; Consolidated Amount/ Amount/; b) Hedge accounting; (i) Fair value hedges; Cross-currency swaps; (ii) Net investment hedges]
+C15: Shareholders’ equity  [sub-headings: a) Common Shares; Dividend approval; Dividend distributions; CHF USD CHF USD CHF USD; b) Shares issued, outstanding, authorized, and conditional; Capital band for share capital increases and reductions; Conditional share capital for bonds and similar debt instruments; Conditional share capital for employee benefit plans]
+C16: Share-based compensation  [sub-headings: Stock options; Restricted stock and restricted stock units]
+C17: Postretirement benefits  [sub-headings: Defined contribution plans (including 401(k)); Defined benefit pension plans; Other postretirement benefit plans; Amendments to U.S. qualified and excess pension plans and U.S. retiree healthcare plan; Obligations and funded status; Plan Assets]
+C18: Other income and expense
+C19: Segment information
+C20: Earnings per share
+C21: Related party transactions  [sub-headings: Consolidated statements of operations; Consolidated balance sheets; Aquiline Capital Partners LLC; Starr Indemnity & Liability Company and its affiliates (collectively, Starr); Consolidated statement of operations]
+C22: Statutory financial information
+
+SUGGESTED BY THE FINANCIAL STATEMENTS - the statement lines your question is about are linked to these notes (a hint only; choose on the notes' content):
+- C12: Deferred tax assets (Balance Sheet); Deferred tax liabilities (Balance Sheet); Income tax expense (P&L); Income tax expense related to OCI items (P&L)
+
+Choose the notes whose content is needed to answer the question thoroughly.
+- Choose the primary note(s) first.
+- Also choose a closely related note if it materially adds to the answer (for example, tax disputes are often disclosed under Contingent Liabilities).
+- Choose at most 5 notes, and prefer fewer. Do not choose accounting-policy notes unless the question is about accounting policies.
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["C21"], "reason": "one or two sentences explaining the choice"}

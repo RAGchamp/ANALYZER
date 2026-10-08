@@ -1,0 +1,11 @@
+Asked at: 2026-09-27 11:54:47
+Kind: analysis
+Report: Chubb-10-K-2025.pdf
+Scope: Consolidated
+Notes: Consolidated Note 12 – Taxation (PDF p.175–180), Consolidated Note 14 – Commitments, contingencies, and guarantees (PDF p.183–189)
+PDF pages: 175, 176, 177, 178, 179, 180, 183, 184, 185, 186, 187, 188, 189
+Financial statements: CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)
+Thread: 1bb4997d11bb44159d25a98f40108420
+Saved HTML: Chubb-10-K-2025-1-20260927-115447.html
+
+Analyze the company's tax position and comment on it.

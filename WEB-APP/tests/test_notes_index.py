@@ -1,6 +1,6 @@
 """Milestone 2 acceptance tests on the Bharat Forge FY2026 report."""
 
-import notes_index
+from ingest import notes_index
 
 
 def test_golden_note_21_consolidated(index):
@@ -46,3 +46,9 @@ def test_standalone_tax_note(index):
     note = notes_index.find_note(index, "standalone", 21)
     assert note["title"] == "INCOME AND DEFERRED TAXES"
     assert (note["start_page"], note["end_page"]) == (259, 260)
+
+
+def test_long_headings_wrap_onto_second_line(index):
+    """A heading line that runs to the right margin continues on the next line."""
+    note = notes_index.find_note(index, "consolidated", 27)
+    assert "WORK-IN-PROGRESS" in note["title"]

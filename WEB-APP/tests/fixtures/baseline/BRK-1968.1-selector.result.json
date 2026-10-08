@@ -1,0 +1,53 @@
+{
+ "chars": 1670,
+ "hints": [
+  {
+   "id": "BH-N2",
+   "lines": [
+    "Marketable securities, at cost (note 2) (Schedule I) (Balance Sheet)"
+   ]
+  },
+  {
+   "id": "BH-SCH-I",
+   "lines": [
+    "Marketable securities, at cost (note 2) (Schedule I) (Balance Sheet)"
+   ]
+  }
+ ],
+ "max_chars": 150000,
+ "method": "claude",
+ "notes": [
+  {
+   "end_page": 9,
+   "id": "BH-N2",
+   "kind": "note",
+   "label": "Note 2 — Marketable Securities",
+   "no": "BH-N2",
+   "parent": null,
+   "printed_pages": "10",
+   "section": "berkshire-hathaway",
+   "section_label": "Berkshire Hathaway Inc. (consolidated)",
+   "start_page": 9,
+   "title": "Marketable Securities",
+   "title_is_excerpt": false
+  },
+  {
+   "end_page": 13,
+   "id": "BH-SCH-I",
+   "kind": "schedule",
+   "label": "Schedule I — Marketable Securities",
+   "no": "BH-SCH-I",
+   "parent": null,
+   "printed_pages": "14",
+   "section": "berkshire-hathaway",
+   "section_label": "Berkshire Hathaway Inc. (consolidated)",
+   "start_page": 13,
+   "title": "Marketable Securities",
+   "title_is_excerpt": false
+  }
+ ],
+ "reason": "securities",
+ "scope": "entities",
+ "scope_label": "Berkshire Hathaway Inc. (consolidated)",
+ "scope_reason": "Default: Berkshire Hathaway Inc. (consolidated) (the registrant)."
+}

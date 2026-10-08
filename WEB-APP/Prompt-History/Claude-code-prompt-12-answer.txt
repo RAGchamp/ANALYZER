@@ -1,0 +1,141 @@
+# Chubb Limited: tax position analysis, FY2025 (Note 12)
+
+## Summary
+- **Tax expense rose faster than profit.** Tax expense was $2,422m in FY2025, up 33.4%, while pre-tax income rose 13.9% to $13,044m. The effective tax rate went from **15.8% to 18.6%**. The main driver is Bermuda's new 15% corporate income tax, which took effect on 1 January 2025 (Note 12, p.175, p.177).
+- **Earlier years were flattered by one-off Bermuda benefits.** FY2023's rate of 5.4% and FY2024's 15.8% include benefits from the Bermuda law being enacted ($1,135m and $55m). Without them the rates were about 17.3% and 16.3%, so FY2025's 18.6% is the first "clean" rate under the new regime.
+- **The deferred tax position moved from a small net asset to a net liability.** It went from a net asset of $19m to a net liability of $(429)m. Deferred tax liabilities (DTLs) grew by $801m, mainly on deferred policy acquisition costs. This was partly offset by a $444m fall in the valuation allowance (Note 12, p.178).
+- **Cash taxes are higher than current tax.** Taxes paid were $2,211m against current tax of $2,085m (106%), and the company moved to a net current tax receivable. Uncertain tax positions are small and falling ($79m gross).
+- **The main reconciliation issue** is that deferred tax in the cash flow statement ($330m) differs from the note's deferred tax expense ($337m). The gap is small but unexplained, and it is larger in FY2023 ($40m).
+
+## Key figures
+| Item | FY2025 | FY2024 | Change | % change | Source |
+|---|---|---|---|---|---|
+| Pre-tax income | 13,044 | 11,455 | +1,589 | +13.9% | Note 12, p.176; P&L p.108 |
+| Current tax expense | 2,085 | 1,729 | +356 | +20.6% | Note 12, p.176 |
+| Deferred tax expense | 337 | 86 | +251 | +291.9% | Note 12, p.176 |
+| Provision for income taxes | 2,422 | 1,815 | +607 | +33.4% | Note 12, p.176; P&L p.108 |
+| Effective tax rate | 18.6% | 15.8% | +2.7pp | n/a | Calculated |
+| Income taxes paid (net of refunds) | 2,211 | 1,662 | +549 | +33.0% | Note 12, p.178 |
+| Gross deferred tax assets (DTAs) | 3,554 | 3,645 | (91) | −2.5% | Note 12, p.178 |
+| Valuation allowance | 637 | 1,081 | (444) | −41.1% | Note 12, p.178 |
+| Total DTLs | 3,346 | 2,545 | +801 | +31.5% | Note 12, p.178 |
+| Net DTA / (DTL) | (429) | 19 | (448) | n/a | Note 12, p.178 |
+| Gross unrecognized tax benefits | 79 | 130 | (51) | −39.2% | Note 12, p.179 |
+| Current tax receivable / payable | 419 / 377 | 246 / 376 | +173 / +1 | +70.3% / +0.3% | Note 12, p.178 |
+| Tax on OCI items | 149 | 117 | +32 | +27.4% | P&L p.108 |
+
+## Detailed analysis
+
+### Effective tax rate trend
+| | FY2025 | FY2024 | FY2023 |
+|---|---|---|---|
+| Effective tax rate | 2,422/13,044 = **18.6%** | 1,815/11,455 = **15.8%** | 511/9,526 = **5.4%** |
+| Excluding the Bermuda enactment benefit | 18.6% | (1,815+55)/11,455 = 16.3% | (511+1,135)/9,526 = 17.3% |
+
+- **FY2023:** a $1,135m benefit when the Bermuda law was enacted cut the rate sharply. This matches the foreign deferred benefit of $(1,021)m. It most likely reflects deferred tax assets recognised on the transition, but the note does not say so explicitly (p.176–177).
+- **FY2025:** 2025 is the first year Bermuda profits are taxed. The reconciliation shows Bermuda adding **$327m (2.5pp)** as a rate difference against Switzerland (p.177).
+- **Geographic mix:** 98.6% of pre-tax income is foreign ($12,859m of $13,044m). Swiss domestic income is only $185m (p.176).
+
+### Rate reconciliation (FY2025, p.177)
+- **Summed amounts:** 1,021 + 327 − 157 − 196 + 5 + 9 + 553 + 5 + 796 + 59 = **2,422**, which agrees with the provision.
+- **Summed percentages:** they add up to 18.6%, which also agrees.
+- **Baseline change:** the Swiss "expected" rate fell from about 19.7% to 7.8%.
+  - FY2024: 2,251/11,455 = 19.65%.
+  - FY2025: 1,021/13,044 = 7.8%.
+  - Footnote (1) says 2025 uses only the federal rate (8.5% on profit after tax), while 2024 and 2023 used the combined federal and cantonal rate.
+  - The 2025 table also uses a new, more detailed layout.
+  - As a result, **the reconciling lines are not comparable year to year**. This is a presentation change, not an economic one.
+- **Largest reconciling items:**
+  - US rate difference: $553m (4.2pp).
+  - "Other foreign jurisdictions": $796m (6.1pp). This is a large aggregate with no breakdown.
+- **Prior-year checks:**
+  - FY2024: 2,251 − 510 − 55 + 145 − 16 = 1,815.
+  - FY2023: 1,872 − 389 − 1,135 + 15 + 148 = 511.
+
+### Deferred taxes (p.178–179)
+- **Deferred policy acquisition costs (DAC):** the DTL on DAC rose from $1,005m to $1,650m (+64%). This is much faster than the balance sheet DAC asset, which rose from $8,358m to $10,008m (+19.7%). The difference probably reflects Bermuda business coming into the tax net, but this is not disclosed.
+- **Investments:** they swung from a $512m DTA to a $127m DTL. The DTA on unrealized depreciation fell from $787m to $234m as unrealized losses narrowed (OCI unrealized appreciation +$2,655m, p.108).
+- **Valuation allowance:** it fell by $444m, even though a *new* $179m allowance was booked against unrealized capital losses. That implies roughly $623m of releases or other movements that are not explained. The FY2025 reconciliation has no separate valuation allowance line.
+- **Loss reserve discount:** the DTA rose from $1,746m to $2,073m (+18.7%), in line with growth in reserves.
+- **Carry-forwards:** net operating losses of $579m (expiring from 2026) and US capital losses of $52m (expiring from 2028).
+- **Un-remitted foreign earnings:** a DTL of $303m (up from $251m). The withholding tax that has *not* been provided is described as "material" but not practicable to compute (p.176).
+
+### Cash taxes and uncertain positions
+- **Cash taxes paid:**
+  - Cash taxes were 106% of current tax in FY2025 and 96% in FY2024.
+  - Four jurisdictions each exceed 5% of taxes paid: the US ($614m), the UK ($289m), Korea ($257m) and Bermuda ($250m). Together they account for 63.8%.
+  - Jurisdiction figures for FY2024 and FY2023 are not given.
+- **Uncertain tax positions:**
+  - Unrecognized tax benefits: 130 + 5 + 20 − 26 − 50 = 79, which agrees.
+  - $50m was settled with tax authorities.
+  - $74m would reduce the effective tax rate if recognised.
+  - Tax interest and penalties were a **net income of $(23)m**, compared with expenses of $6m and $7m before.
+- **Audit exposure:**
+  - The IRS is finalising its review of 2014–2017 with no material adjustments proposed. 2018 is still under examination.
+  - The IRS began examining 2019–2023 in January 2026.
+  - Many years remain open elsewhere, e.g. Spain from 2012 and the UK from 2015 (p.180).
+
+### Note 14
+Note 14 does not directly address tax. Its only indirect links are:
+- Hedge gains and losses recorded in OCI, which are taxed within "Income tax expense related to OCI items".
+- Legal proceedings that are not expected to be material.
+
+No tax contingencies are disclosed in it.
+
+## Impact on the financial statements
+
+### Income Statement (Statement of Operations)
+- **Income tax expense:**
+  - $2,422m in FY2025, $1,815m in FY2024 and $511m in FY2023 (P&L, p.108).
+  - These equal the note's provision of current plus deferred tax: 2,085 + 337, 1,729 + 86 and 1,595 − 1,084.
+- **Income before income tax:**
+  - $13,044m and $11,455m, matching the note's pre-tax income.
+  - Net income: 13,044 − 2,422 = **10,622**, which agrees (p.108).
+- **Effect of the tax increase:**
+  - The +$607m of extra tax absorbed 38% of the $1,589m pre-tax growth.
+  - As a result, net income grew only 10.2%.
+- **OCI tax:**
+  - "Income tax expense related to OCI items" was $(149)m on pre-tax OCI of $3,978m, an effective rate of 3.7%. The low rate is consistent with much of the gain being foreign currency translation, which is generally untaxed.
+  - FY2024 shows a *tax expense* of $117m on a pre-tax OCI *loss* of $(1,865)m, which is unusual (see Red flags).
+
+### Balance Sheet
+- **Deferred tax assets:** $1,312m and $1,603m. **Deferred tax liabilities:** $1,741m and $1,584m (Balance Sheet, p.107).
+- **Net position:** 1,312 − 1,741 = **(429)** and 1,603 − 1,584 = **19**. Both agree with the note's net DTA / (DTL) (p.178). The note's gross figures (3,554 / 3,346) are netted by jurisdiction into these lines.
+- **Current tax balances:**
+  - The $419m receivable sits in Other assets ($9,222m).
+  - The $377m payable sits in Accounts payable, accrued expenses and other liabilities ($10,108m).
+  - Neither is shown separately on the face of the balance sheet.
+- **Other tax items:** tax interest and penalty liabilities ($24m) and unrecognized tax benefits are also embedded in other liabilities. The line holding the unrecognized tax benefits is not stated.
+- **Equity:** the tax effect on unrealized depreciation (DTA of $234m) supports AOCI of $(4,975)m.
+
+### Cash Flow Statement
+- **Deferred income taxes:** an add-back of $330m, $96m and $(1,124)m (Cash Flow, p.110).
+  - The note shows 337, 86 and (1,084), so the differences are **$7m, $(10)m and $40m**. Possible causes include foreign exchange, acquisitions or classification, but none is explained.
+- **Income taxes (working capital change):** $(160)m.
+  - This is broadly consistent with the change in net current tax balances. It moved from a net payable of $130m (376 − 246) to a net receivable of $42m (419 − 377), a swing of $172m.
+  - It is also consistent with cash paid exceeding current tax: 2,085 − 2,211 = (126).
+- **Taxes paid:** $2,211m is disclosed only in the note. The cash flow's supplemental section shows interest paid but not taxes paid.
+- **Net effect:** the higher tax charge and cash tax are absorbed within operating cash flow of $12,816m (FY2024: $16,182m). The tax lines contributed −$160m versus +$69m in FY2024.
+
+### Statement of Shareholders' Equity
+- **Retained earnings:** they take net income attributable to Chubb *after* tax: $10,310m and $9,272m (Equity, p.109).
+- **AOCI:** it moves by OCI net of tax of $3,669m. This is the $3,829m total less $160m attributable to non-controlling interests: 3,669 + 160 = 3,829, which agrees with p.108.
+- **Possible future effect:** the unprovided withholding tax on un-remitted earnings could reduce equity if management's reinvestment assertion changes.
+
+## Red flags & areas for follow-up
+1. **Deferred tax in the cash flow does not match the note.** The cash flow shows $330m, $96m and $(1,124)m against the note's $337m, $86m and $(1,084)m. Management should explain the $40m difference in FY2023.
+2. **The change in net deferred tax is not explained.** The net position swung by $448m, but deferred expense was only $337m. The DTA on unrealized depreciation fell by $553m, which should have gone through OCI tax, yet OCI tax is only $149m. A roll-forward of the deferred tax balances is needed.
+3. **Valuation allowance releases are not disclosed.** The allowance fell by $444m despite a new $179m allowance. The releases and their effect on the tax rate or OCI should be disclosed.
+4. **FY2024 OCI tax has the wrong sign.** It shows a tax expense on a pre-tax loss. Ask for the tax split by OCI component.
+5. **"Other foreign jurisdictions" is large and unexplained.** It adds $796m (6.1pp) with no breakdown.
+6. **Prior-year reconciliations are not comparable.** The Swiss rate baseline changed from about 19.7% to 7.8%, and 2024 and 2023 are not restated in the new format.
+7. **Taxes paid by jurisdiction are missing for prior years.** The FY2024 and FY2023 columns are blank (p.178). It is not clear whether this is an extraction gap or a transition exemption.
+8. **Unprovided withholding tax is material but unquantified** (p.176).
+9. **Many tax years remain open.** The US is open from 2014 and Spain from 2012, and a new IRS examination of 2019–2023 began in January 2026.
+10. **The swing to net tax interest income of $(23)m** looks linked to the settlements and should be confirmed as non-recurring.
+
+## Sources
+- **Note 12, Taxation**, PDF p.175–180 (printed F-74 to F-79): pre-tax income and provision (p.176), rate reconciliation (p.177), taxes paid, current tax balances and deferred tax components (p.178), valuation allowance, carry-forwards, unrecognized tax benefits and audits (p.179), open tax years (p.180).
+- **Note 14, Commitments, contingencies and guarantees**, PDF p.183–189: hedge accounting in OCI (p.184–185) and legal proceedings (p.188). It has no direct tax content.
+- **Consolidated Statements of Operations and Comprehensive Income**, p.108; **Balance Sheets**, p.107; **Cash Flows**, p.110; **Shareholders' Equity**, p.109.
+- **LINKED FIGURES:** the app's links to Note 12 are correct. The Note 14 links (securities lending, repurchase agreements) are correct but not relevant to tax.

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Model testing — Annual Report Foot Notes Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <nav class="navbar">
+    <a class="ghost nav-link" href="/">← Analyze screen</a>
+    <h1>Annual Report Foot Notes Analyzer</h1>
+    <a class="ghost nav-link" href="/ingest" title="Ingest reports, see what was found and checked, review scans, export or import packages">Ingest screen ↗</a>
+    <a class="ghost nav-link active" href="/model-testing" aria-current="page">Model testing</a>
+  </nav>
+
+  <main class="ingest-main">
+    <section class="card">
+      <h2>Model testing</h2>
+      <p class="muted small-text">
+        Check what the app extracts from any page of a model document in <code>{{ model_docs_dir }}</code>.
+        The extracted data comes from the same report package the Analyze screen sends to Claude.
+        If it is wrong, tick <b>Need correction</b> and describe the problem: it is saved in
+        <code>Model-Feedback\</code> for a Claude Code session to fix.
+      </p>
+
+      <div class="mt-field">
+        <label for="doc-select">Model document</label>
+        <select id="doc-select"><option value="">Loading…</option></select>
+      </div>
+      <div class="muted small-text mt-facts">
+        <span id="doc-facts"></span>
+        <a id="formatted-link" class="hidden" href="#" target="_blank" rel="noopener"
+           title="The whole report as the app extracted it, as one readable document">View formatted document ↗</a>
+      </div>
+
+      <div class="mt-field">
+        <label for="page-input">Page#</label>
+        <input type="text" id="page-input" class="page-number" inputmode="numeric" autocomplete="off"
+               placeholder="e.g. 405" />
+        <span id="page-range" class="muted small-text"></span>
+      </div>
+      <div id="page-message" class="field-error small-text hidden" role="alert"></div>
+
+      <div class="row">
+        <button type="button" id="test-btn" disabled>Test extraction</button>
+        <span id="test-status" class="muted small-text"></span>
+      </div>
+    </section>
+
+    <div id="error-box" class="card error hidden"></div>
+
+    <section id="result" class="card hidden">
+      <div class="result-head">
+        <h2 id="result-title">PDF page</h2>
+        <span class="small-text">
+          <a id="image-link" href="#" target="_blank" rel="noopener">Open full size ↗</a> ·
+          <a id="formatted-page-link" href="#" target="_blank" rel="noopener">View this page in the formatted document ↗</a>
+        </span>
+      </div>
+      <div id="notices"></div>
+      <div class="page-frame"><img id="page-image" alt="The PDF page" /></div>
+
+      <div class="result-head mt-subhead">
+        <h3>Extracted data</h3>
+        <button type="button" id="copy-btn" class="ghost small">Copy</button>
+      </div>
+      <pre id="extracted" class="extracted-box"></pre>
+
+      <label class="mt-check"><input type="checkbox" id="need-correction" /> Need correction</label>
+      <div id="feedback-form" class="feedback-form hidden">
+        <label for="comment" class="small-text">What is wrong? (max {{ max_chars }} characters)</label>
+        <textarea id="comment" rows="4" maxlength="{{ max_chars }}"
+                  placeholder="e.g. Note 21's heading was not found; the FY25 column is merged into the label."></textarea>
+        <div class="row">
+          <button type="button" id="submit-btn" disabled>Submit feedback</button>
+          <span id="char-count" class="muted small-text">0/{{ max_chars }}</span>
+          <span id="submit-status" class="small-text"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <details id="feedback-list-panel">
+        <summary><b>Feedback so far</b> <span id="feedback-count" class="muted small-text"></span></summary>
+        <div id="feedback-list" class="small-text"></div>
+      </details>
+    </section>
+  </main>
+
+  <script>window.FEEDBACK_MAX_CHARS = {{ max_chars }};</script>
+  <script src="{{ url_for('static', filename='model_testing.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+## Summary
+- **The two CV businesses moved in opposite directions.** Management reports Domestic CV revenue of ₹1,036 crore, up 8% YoY (MD&A, p.78). CV exports fell 34% to ₹1,324 crore (MD&A, p.76).
+- **Combined CV revenue fell by about 20%**, from roughly ₹29,684 million to ₹23,600 million (calculated below). The fall was driven by a 50% drop in North American CV revenue, which management attributes to de-stocking in the North American truck market (MD&A, p.76).
+- **CV is a smaller part of the group.** It is about 14% of consolidated revenue, down from about 20%.
+- **The audited statements do not show CV separately.** It sits inside the "Forgings" segment (Note 49, p.472). None of the CV figures can be tied directly to the audited numbers.
+
+## What management says
+- **Domestic CV:**
+  - Management says GST rate cuts lowered the total cost of ownership, and fleet operators spent the savings on new trucks. Better roads and manufacturing growth also helped (MD&A, p.78).
+  - The mix is moving to heavier trucks (tractor-trailers and tippers). Management says this favours suppliers like Bharat Forge as OEMs build "bigger and more sophisticated platforms" (MD&A, p.78; Board's report, p.88).
+  - The Board's report adds that bus orders from state transport undertakings were strong and that CV OEMs had record EBITDA margins (p.88).
+- **Export CV:**
+  - The business focuses on Class 7 and 8 trucks in the US and heavy trucks (HCV) in Europe.
+  - It supplies safety-critical engine, driveline and transmission components.
+  - Management describes itself as a "critical supplier" whose strategy is to gain market share. It states that US tariffs caused "no business disruptions" and "no impact on market share" (MD&A, p.76). This is management's claim; the report gives no market-share data to support it.
+- **K Drive (acquired July 2025):** it is building an axles portfolio "beyond M&HCVs". Management expects results in 2–3 years (Board's report, p.88).
+
+## Performance and drivers
+
+| Business | FY26 as stated | FY26 (₹ mn) | Growth | Implied FY25 (₹ mn) |
+|---|---|---|---|---|
+| Domestic CV | ₹1,036 cr (MD&A) / ₹10,364 mn (Board's report) | 10,364 | +7.7% | 10,364 ÷ 1.077 ≈ 9,623 |
+| Export CV | ₹1,324 cr (MD&A, p.76) | 13,240 | −34% | 13,240 ÷ 0.66 ≈ 20,061 |
+| **Total CV** | | **23,604** | **−20.5%** | **29,684** |
+
+- **Share of consolidated revenue:** 23,604 ÷ 168,116.53 = 14.0% in FY26, against 29,684 ÷ 151,228.03 = 19.6% in FY25 (P&L, p.342).
+- **Do the two reports agree?** Yes. ₹1,036 crore = ₹10,360 million, which is consistent with the Board's ₹10,364 million (the difference is rounding). The 8% growth is the 7.7% rounded.
+- **Which entity these figures cover is not stated.** The report does not say whether the business figures are standalone or consolidated.
+- **CV profitability is not disclosed.**
+
+## Outlook and risks
+- **Expectations:**
+  - ICRA, cited by management, expects the Indian auto industry to grow 3–6% in FY2027 with "stable demand in commercial vehicles".
+  - The ₹12.2 lakh crore infrastructure outlay is expected to support demand (MD&A, p.77).
+- **Risks management names:**
+  - A sharp rise in diesel prices "might adversely impact the CV growth outlook" (MD&A, p.77).
+  - West Asia tensions, shipping costs and energy prices (MD&A, p.76).
+- **Risks the text implies:**
+  - No timeline is given for North American de-stocking to end.
+  - The domestic boost from the GST cut may not repeat.
+  - Exports depend on a few large OEMs in cyclical Class 8 markets.
+
+## How it shows in the audited numbers
+
+| Figure (report section, page) | Where in the notes or statements | Ties? |
+|---|---|---|
+| Domestic CV ₹10,364 mn / ₹1,036 cr (Board's report p.88; MD&A p.78) | Within Forgings segment revenue ₹139,285.82 mn (Note 49, p.473) | not disclosed |
+| Export CV ₹1,324 cr, −34% (MD&A p.76) | Within Forgings; USA revenue ₹38,094.34 mn vs ₹36,841.92 mn (Note 49, p.475) | not disclosed |
+| North American CV −50% (MD&A p.76) | USA geography, +3.4% (Note 49, p.475) | not disclosed |
+| PV ₹3,974 mn (Board's report p.88) | Auto-matched to the OCI line on p.344 | no. The match is a coincidence: that figure is cash-flow hedge OCI of (3,973.98), not revenue |
+
+**What the audited figures show:**
+- **Forgings segment:** revenue grew (139,285.82 − 129,612.33) ÷ 129,612.33 = +7.5%. Its result rose to ₹19,560.91 million from ₹18,561.18 million, but the margin slipped from 14.3% to 14.0% (Note 49, p.473). A 20% fall in CV was therefore absorbed by other forgings businesses.
+- **US revenue:** it grew 3.4% even though management reports a 50% fall in North American CV. Non-CV US businesses must have offset the drop, but the report does not say which.
+- **India revenue:** it rose 43% (₹36,091.80 million to ₹51,692.92 million; Note 49, p.475). This probably includes the K Drive acquisition, but that is not confirmed in the notes provided.
+
+## Questions for management
+1. What is the CV EBIT margin, and how much did operating deleverage from the export fall cost the Forgings segment?
+2. What is the prior-year base for Export CV, and when do you expect North American de-stocking to end?
+3. Which US businesses offset the 50% CV decline, given that US revenue grew 3.4%?
+4. What evidence supports "no impact on market share" under US tariffs?
+5. How much of K Drive's ₹9,578 million revenue is M&HCV axles, and is it included in the Domestic CV figure?
+
+## Sources
+- MD&A: Export CV (PDF 76); Outlook (PDF 77–78); Domestic CV (PDF 78)
+- Board's report, Domestic Business (PDF 88)
+- Note 49, Segment information (PDF 472–475); Note 24, Revenue from operations (PDF 410–411)
+- Consolidated P&L (PDF 342); Statement of Changes in Equity (PDF 344)

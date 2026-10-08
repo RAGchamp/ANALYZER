@@ -1,0 +1,209 @@
+REPORT PROFILE
+Format: Scanned report, transcribed by AI from page images (SEC Form 10-K)
+Companies in this report: Berkshire Hathaway Inc. (consolidated); National Indemnity Company; National Fire & Marine Insurance Company
+Period: December 28, 1968 (each company's statements give its own date)
+Currency: $
+Statements provided: Consolidated Statement of Earnings and Retained Earnings; Consolidated Balance Sheet
+Statement types NOT in the report for these companies: Funds statement, Statement of surplus / equity
+Source quality: AI transcription of 39 scanned pages; [?] marks unreadable characters (29 in the report)
+
+TRANSCRIPTION CHECKS (automatic)
+- p.1: figures not confirmed by the cross-check: 1934
+- p.2: 1 unreadable character(s) [?]
+- p.4: figures not confirmed by the cross-check: 1969
+- p.7: figures not confirmed by the cross-check: 16,136,069
+- p.8: 1 unreadable character(s) [?]; total 45,526,458 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 45,526,458, $372,000
+- p.11: 3 unreadable character(s) [?]
+- p.12: figures not confirmed by the cross-check: 63.825
+- p.13: 2 unreadable character(s) [?]
+- p.14: 1 unreadable character(s) [?]; total 12,754,985 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 10,468,947
+- p.18: figures not confirmed by the cross-check: 281,418
+- p.20: 2 unreadable character(s) [?]; figures not confirmed by the cross-check: 9,870, (102,642), 18,966)
+
+Annual report: BRK-1968.pdf
+Statements: Manually selected pages
+Notes provided: PDF pages 23
+Primary financial statements provided: Consolidated Statement of Earnings and Retained Earnings (PDF p.8); Consolidated Balance Sheet (PDF p.7)
+
+QUESTION: What is on these pages?
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Impact on the financial statements
+How the matters in the notes flow into and affect each primary statement. Use one sub-heading per statement:
+### Consolidated Statement of Earnings and Retained Earnings
+### Consolidated Balance Sheet
+(This report has no funds or cash flow statement. If cash movements matter to the question, add a short derived funds-flow statement, clearly labelled as derived by the analyst and not published.)
+For each one, name the line items affected, give their figures (current and prior year, citing statement and page), show how the note reconciles to them, and explain the effect. For example, how the tax expense in the note drives profit after tax, how deferred tax balances appear on the Balance Sheet, how taxes paid appear in operating cash flow, or how OCI items move reserves in equity.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about, including any note figure that does not agree with the statements.
+## Sources
+The notes, statements and PDF pages you relied on.
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Consolidated Statement of Earnings and Retained Earnings (Berkshire Hathaway Inc.) ===
+--- PDF page 8 (printed page 9) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Statement of Earnings and Retained Earnings
+
+Year ended December 28, 1968
+
+| | |
+|---|---:|
+| **Operating income:** | |
+| Net sales of textile products | $ 46,002,417 |
+| Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII) | 1,789,402 |
+| Dividends from marketable securities | 223,024 |
+| Interest from marketable securities | 131,558 |
+| Interest - other | 34.456 |
+| | 48,180,857 |
+| **Operating costs:** | |
+| Cost of sales (note 3) | 41,321,747 |
+| Administrative and selling expenses | 3,110,628 |
+| Interest on long-term debt | 47,746 |
+| Interest on note payable - bank | 254,106 |
+| Amortization of bond discount | 3,196 |
+| Other interest | 61,035 |
+| Federal income taxes (note 6) | 728,00[?] |
+| | 45,526,458 |
+| Earnings from operations | 2,654,399 |
+| **Investment gains, net of taxes on gains (note 6):** | |
+| Gains realized by Parent Company (first-in, first-out) | 1,467,752 |
+| Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6) | 706,504 |
+| Total investment gains | 2,174,256 |
+| Earnings before extraordinary items | 4,828,655 |
+| **Extraordinary items:** | |
+| Loss on liquidation of mill properties, net of $372,000 income tax benefit | (332,319) |
+| Reduction in Federal income taxes (note 8) | 166,000 |
+| | (166,319) |
+| Net earnings | 4,662,336 |
+| Retained earnings, beginning | 27,032,370 |
+| Retained earnings, ending | $ 31,694,706 |
+| **Per share of outstanding common stock:** | |
+| Earnings from operations | 2.69 |
+| Investment gains | 2.21 |
+| Extraordinary items | (.17) |
+| Net earnings | $ 4.73 |
+
+See accompanying notes to financial statements.
+
+9
+
+=== Consolidated Balance Sheet (Berkshire Hathaway Inc.) ===
+--- PDF page 7 (printed page 7-8) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Balance Sheet
+
+December 28, 1968
+
+### Assets
+
+| | | |
+|---|---|---|
+| Current assets: | | |
+| Cash | | $ 1,605,600 |
+| Marketable securities, at cost (note 2) (Schedule I) | | 5,421,384 |
+| Accounts receivable - trade, including $1,029 due from officers, net of allowance for doubtful accounts ($281,418) (Schedule XII) | | 7,563,123 |
+| Inventories, at the lower of cost (first-in, first-out) or market (note 3) | | 12,332,943 |
+| Prepaid and deferred charges (including mortgage note of approximately $15,200 due from officer) | | 199,501 |
+| Total current assets | | 27,122,551 |
+| Properties, plants and equipment, at cost (note 4) (Schedule V): | | |
+| Land | $ 106,555 | |
+| Buildings | 3,715,838 | |
+| Machinery and equipment | 15,651,551 | |
+| Furniture and fixtures | 428,094 | |
+| Leasehold improvements | 94,232 | |
+| Motor vehicle | 2,423 | |
+| | 19,998,693 | |
+| Less accumulated depreciation and amortization (Schedule VI) | 16,136,069 | |
+| Net properties, plants and equipment | | 3,862,624 |
+| Investment in unconsolidated subsidiaries (note 5) (Schedule III) | | 12,754,985 |
+| | | $ 43,740,160 |
+
+### Liabilities and Stockholders' Equity
+
+| | | |
+|---|---|---|
+| Current liabilities: | | |
+| Note payable - bank, unsecured | | $ 2,000,000 |
+| Accounts payable and accrued expenses | | 3,717,188 |
+| Accrued payroll | | 319,260 |
+| Accrued interest | | 32,536 |
+| Accrued payroll taxes | | 187,546 |
+| Accrued Federal, State, and local taxes (note 6) | | 637,059 |
+| Total current liabilities | | 6,893,589 |
+| Long-term debt: | | |
+| 7 1/2% subordinated debentures (note 7) (Schedule IX) | | 641,300 |
+| Stockholders; equity: | | |
+| Common stock, $5 par value. Authorized 1,722,983 shares; issued 1,017,547 shares | $ 5,087,735 | |
+| Retained earnings | 31,694,706 | |
+| | 36,782,441 | |
+| Less 32,065 shares of common stock in treasury, at cost | 577,170 | |
+| Total stockholders' equity | | 36,205,271 |
+| Commitments and contingencies (notes 9, 11, 12, and 13) | | |
+| | | $ 43,740,160 |
+
+See accompanying notes to financial statements.
+
+7 8
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Manually selected pages ===
+--- PDF page 23 (printed page 26) ---
+NATIONAL INDEMNITY COMPANY
+
+### Statement of Assets and Liabilities
+
+December 31, 1968
+with comparative figures for 1967
+
+| Assets | 1968 | 1967 |
+|---|---|---|
+| Bonds, at admitted value (note 3) | $ 27,208,728 | 21,837,869 |
+| Stocks, at market value (note 3): | | |
+| Preferred (cost, 1968 $26,963; 1967 $68,491) | 19,490 | 53,493 |
+| Common (cost, 1968 $6,302,724; 1967 $6,167,017) | 8,067,196 | 6,340,674 |
+| | 8,086,686 | 6,394,167 |
+| Real estate, at cost less allowance for depreciation of $194,539 (1967, $160,300) (note 4) | 1,026,105 | 1,058,212 |
+| Cash and bank deposits | 509,778 | 464,539 |
+| Agents' balances and premiums in course of collection, less ceded reinsurance balances payable of $128,904 (1967, $721,372) | 2,205,360 | 1,407,001 |
+| Reinsurance recoverable on loss payments | 292,549 | 769,442 |
+| Investment income due and accrued | 431,820 | 330,801 |
+| Amounts due from sales of securities | 3,170 | 325,996 |
+| Other | 33,356 | 72,531 |
+| | $ 39,797,552 | 32,660,558 |
+
+| Liabilities and Capital Stock | 1968 | 1967 |
+|---|---|---|
+| Mortgage and contract payable on rental property | $ 37,351 | 46,520 |
+| Unearned premiums (note 5) | 6,817,002 | 7,159,140 |
+| Losses and loss adjustment expenses (note 6) | 17,324,317 | 13,165,162 |
+| Funds held under reinsurance treaties | 734,010 | 672,013 |
+| Contingent commissions | 510,300 | 886,500 |
+| Other expenses | 81,208 | 72,130 |
+| Taxes, licenses and fees | 525,786 | 475,318 |
+| Federal income taxes (note 7) | 231,500 | 88,000 |
+| Agents' and policyholders' deposits | 405,531 | 387,951 |
+| Statutory reserve for bodily injury and compensation losses | 344,078 | 487,395 |
+| Amounts due for purchases of securities | 1,231,012 | 1,604,794 |
+| Other liabilities | 46,487 | 57,771 |
+| | 28,288,632 | 25,102,694 |
+| Capital stock and surplus: | | |
+| Common stock of $10 par value per share. Authorized 250,000 shares; issued 200,000 shares (140,000 in 1967) (note 8) | 2,000,000 | 1,400,000 |
+| Paid-in surplus | 301,250 | 301,250 |
+| Unassigned surplus | 9,207,670 | 5,856,614 |
+| | 11,508,920 | 7,557,864 |
+| | $ 39,797,552 | 32,660,558 |
+
+See accompanying notes to financial statements.
+
+26
+----- END OF NOTES -----

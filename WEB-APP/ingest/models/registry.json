@@ -1,0 +1,458 @@
+{
+ "version": 12,
+ "fingerprint_version": 1,
+ "models": [
+  {
+   "id": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge",
+   "file": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf",
+   "sha256": "fbe10a171fc5ab27be7a62b05e15f51f8e85135db86a88eae6167cb9e1879cc8",
+   "profile": "in-indas-2020s",
+   "description": "Indian annual report under Ind AS (integrated report, landscape pages): consolidated and standalone notes with running headers",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 0.99,
+     "page_shape": "landscape",
+     "pages": 508,
+     "pages_band": "300+",
+     "producer": "online-converter"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.0,
+     "sans": 1.0,
+     "bold": 0.18,
+     "big_title_pages": 0.77,
+     "body_size": 9
+    },
+    "document": {
+     "form": null,
+     "frameworks": [
+      "companies-act-2013",
+      "ind-as"
+     ],
+     "currencies": [
+      "eur",
+      "gbp",
+      "inr",
+      "usd"
+     ],
+     "units": [
+      "crores",
+      "lakhs"
+     ]
+    },
+    "era": {
+     "decade": 2020
+    },
+    "structure": {
+     "notes_header_pages": 54.4,
+     "note_headings": {
+      "number-dot": 69.4,
+      "number-caps": 1.0,
+      "paren-caps": 0.0,
+      "note-word": 1.4,
+      "section-numbered": 12.7
+     },
+     "statement_title_pages": 10,
+     "numbered_statement_titles": 0,
+     "schedules": 7,
+     "item_8": false,
+     "item_18": false
+    }
+   }
+  },
+  {
+   "id": "TYPE-2-INDIA-Ann-rpt-1977-Reliance",
+   "file": "TYPE-2-INDIA-Ann-rpt-1977-Reliance.pdf",
+   "sha256": "8d24dcbfb4176c12cc7ebbdb5f35ccb2d133b3b211c08f67e7b1c927fe16c84f",
+   "profile": "in-schedule-vi-1970s",
+   "description": "Indian annual report under the Companies Act 1956 (old Schedule VI): lettered schedules, a notes schedule",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 1.0,
+     "page_shape": "letter",
+     "pages": 33,
+     "pages_band": "<60",
+     "producer": "distiller"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.0,
+     "sans": 1.0,
+     "bold": 0.15,
+     "big_title_pages": 0.04,
+     "body_size": 9
+    },
+    "document": {
+     "form": null,
+     "frameworks": [
+      "companies-act-1956"
+     ],
+     "currencies": [
+      "inr"
+     ],
+     "units": [
+      "crores",
+      "lakhs"
+     ]
+    },
+    "era": {
+     "decade": 1970
+    },
+    "structure": {
+     "notes_header_pages": 0.0,
+     "note_headings": {
+      "number-dot": 63.6,
+      "number-caps": 0.0,
+      "paren-caps": 0.0,
+      "note-word": 0.0,
+      "section-numbered": 0.0
+     },
+     "statement_title_pages": 2,
+     "numbered_statement_titles": 0,
+     "schedules": 18,
+     "item_8": false,
+     "item_18": false
+    }
+   }
+  },
+  {
+   "id": "TYPE-3-USA-10-K-2025-Chubb",
+   "file": "TYPE-3-USA-10-K-2025-Chubb.pdf",
+   "sha256": "cab23950d9c1d099c45b7bee9b648a899b1d8b9e30dde2639eb3efe19cca7671",
+   "profile": "us-10k-edgar",
+   "description": "US Form 10-K, typeset by an EDGAR filing agent",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 1.0,
+     "page_shape": "letter",
+     "pages": 460,
+     "pages_band": "300+",
+     "producer": "edgar-agent"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.36,
+     "sans": 0.64,
+     "bold": 0.06,
+     "big_title_pages": 0.0,
+     "body_size": 7
+    },
+    "document": {
+     "form": "10-K",
+     "frameworks": [
+      "ifrs",
+      "schedule-vi",
+      "us-gaap"
+     ],
+     "currencies": [
+      "cad",
+      "eur",
+      "usd"
+     ],
+     "units": [
+      "millions",
+      "thousands"
+     ]
+    },
+    "era": {
+     "decade": 2020
+    },
+    "structure": {
+     "notes_header_pages": 22.2,
+     "note_headings": {
+      "number-dot": 11.5,
+      "number-caps": 0.0,
+      "paren-caps": 0.0,
+      "note-word": 5.0,
+      "section-numbered": 5.0
+     },
+     "statement_title_pages": 9,
+     "numbered_statement_titles": 0,
+     "schedules": 25,
+     "item_8": true,
+     "item_18": false
+    }
+   }
+  },
+  {
+   "id": "TYPE-4-USA-Ann-rpt-1994-Berkshire",
+   "file": "TYPE-4-USA-Ann-rpt-1994-Berkshire.pdf",
+   "sha256": "7ddcd14dce17697c582ba71e8a0e1ef9ca49ca9826922429ae566e54cdb0868c",
+   "profile": "us-10k-typewriter",
+   "description": "US Form 10-K from 1990s EDGAR text, typewriter font",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 1.0,
+     "page_shape": "letter",
+     "pages": 56,
+     "pages_band": "<60",
+     "producer": "thomson-reuters"
+    },
+    "typography": {
+     "mono": 0.99,
+     "serif": 0.01,
+     "sans": 0.0,
+     "bold": 0.0,
+     "big_title_pages": 0.0,
+     "body_size": 6
+    },
+    "document": {
+     "form": "10-K",
+     "frameworks": [],
+     "currencies": [
+      "usd"
+     ],
+     "units": [
+      "millions",
+      "thousands"
+     ]
+    },
+    "era": {
+     "decade": 1990
+    },
+    "structure": {
+     "notes_header_pages": 25.0,
+     "note_headings": {
+      "number-dot": 0.0,
+      "number-caps": 0.0,
+      "paren-caps": 30.4,
+      "note-word": 0.0,
+      "section-numbered": 12.5
+     },
+     "statement_title_pages": 3,
+     "numbered_statement_titles": 0,
+     "schedules": 5,
+     "item_8": true,
+     "item_18": false
+    }
+   }
+  },
+  {
+   "id": "TYPE-5-USA-Ann-rpt-1968-Berkshire",
+   "file": "TYPE-5-USA-Ann-rpt-1968-Berkshire.pdf",
+   "sha256": "e979dbb922b3f16b86615207721129d8044abceda1164e8f405513b748360ea6",
+   "profile": "scanned-ocr",
+   "description": "Scanned US Form 10-K (1968 microfilm), transcribed by Claude",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 0.0,
+     "page_shape": "other",
+     "pages": 39,
+     "pages_band": "<60",
+     "producer": "acrobat-scan"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.0,
+     "sans": 0.0,
+     "bold": 0.0,
+     "big_title_pages": 0.0,
+     "body_size": null
+    },
+    "document": {
+     "form": null,
+     "frameworks": [],
+     "currencies": [],
+     "units": []
+    },
+    "era": {
+     "decade": null
+    },
+    "structure": {
+     "notes_header_pages": 0.0,
+     "note_headings": {
+      "number-dot": 0.0,
+      "number-caps": 0.0,
+      "paren-caps": 0.0,
+      "note-word": 0.0,
+      "section-numbered": 0.0
+     },
+     "statement_title_pages": 0,
+     "numbered_statement_titles": 0,
+     "schedules": 0,
+     "item_8": false,
+     "item_18": false
+    }
+   }
+  },
+  {
+   "id": "TYPE-6-CANADA-40-F-2025-Magna",
+   "file": "TYPE-6-CANADA-40-F-2025-Magna.pdf",
+   "sha256": "025c58c8a20b5002071877c12153ad9b564d8a45fc6584aea459f1debc1a4a28",
+   "profile": "ca-40f-usgaap",
+   "description": "Canadian Form 40-F, Exhibit 99.3: consolidated financial statements (US GAAP, US dollars), printed from SEC EDGAR in a browser; Times New Roman, 'NOTES TO CONSOLIDATED FINANCIAL STATEMENTS' running header, numbered notes",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 1.0,
+     "page_shape": "letter",
+     "pages": 46,
+     "pages_band": "<60",
+     "producer": "browser"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.95,
+     "sans": 0.05,
+     "bold": 0.1,
+     "big_title_pages": 0.0,
+     "body_size": 9
+    },
+    "document": {
+     "form": null,
+     "frameworks": [],
+     "currencies": [
+      "eur",
+      "usd"
+     ],
+     "units": [
+      "millions"
+     ]
+    },
+    "era": {
+     "decade": 2020
+    },
+    "structure": {
+     "notes_header_pages": 80.4,
+     "note_headings": {
+      "number-dot": 54.3,
+      "number-caps": 0.0,
+      "paren-caps": 0.0,
+      "note-word": 0.0,
+      "section-numbered": 0.0
+     },
+     "statement_title_pages": 5,
+     "numbered_statement_titles": 0,
+     "schedules": 0,
+     "item_8": false,
+     "item_18": false
+    }
+   }
+  },
+  {
+   "id": "TYPE-7-INDIA-20-F-2025-Infosys",
+   "file": "TYPE-7-INDIA-20-F-2025-Infosys.pdf",
+   "sha256": "217c9e3b3d2627b6bb734bea9d4965e224fea0710a161dd4360870d3431f491a",
+   "profile": "in-20f-ifrs",
+   "description": "Indian company's Form 20-F (IFRS): notes without running headers",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 1.0,
+     "page_shape": "letter",
+     "pages": 256,
+     "pages_band": "150-300",
+     "producer": "browser"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.97,
+     "sans": 0.03,
+     "bold": 0.06,
+     "big_title_pages": 0.0,
+     "body_size": 8
+    },
+    "document": {
+     "form": "20-F",
+     "frameworks": [
+      "companies-act-2013",
+      "ifrs",
+      "us-gaap"
+     ],
+     "currencies": [
+      "aud",
+      "inr",
+      "usd"
+     ],
+     "units": [
+      "crores",
+      "lakhs",
+      "millions"
+     ]
+    },
+    "era": {
+     "decade": 2020
+    },
+    "structure": {
+     "notes_header_pages": 0.4,
+     "note_headings": {
+      "number-dot": 2.0,
+      "number-caps": 0.0,
+      "paren-caps": 0.0,
+      "note-word": 0.0,
+      "section-numbered": 15.6
+     },
+     "statement_title_pages": 6,
+     "numbered_statement_titles": 0,
+     "schedules": 0,
+     "item_8": true,
+     "item_18": true
+    }
+   }
+  },
+  {
+   "id": "TYPE-8-AUSTRALIA-20-F-2025-BHP",
+   "file": "TYPE-8-AUSTRALIA-20-F-2025-BHP.pdf",
+   "sha256": "482e5f04fada06e471b7126933dc8280ee9a48c089603d843ef11002cc94f212",
+   "profile": "au-20f-ifrs",
+   "description": "Australian company's Form 20-F (IFRS): section-numbered statements, 30 June year-end",
+   "fingerprint": {
+    "version": 1,
+    "physical": {
+     "text_share": 1.0,
+     "page_shape": "letter",
+     "pages": 363,
+     "pages_band": "300+",
+     "producer": "browser"
+    },
+    "typography": {
+     "mono": 0.0,
+     "serif": 0.96,
+     "sans": 0.04,
+     "bold": 0.09,
+     "big_title_pages": 0.0,
+     "body_size": 7
+    },
+    "document": {
+     "form": null,
+     "frameworks": [
+      "ifrs",
+      "us-gaap"
+     ],
+     "currencies": [
+      "aud",
+      "eur",
+      "usd"
+     ],
+     "units": [
+      "millions"
+     ]
+    },
+    "era": {
+     "decade": 2020
+    },
+    "structure": {
+     "notes_header_pages": 0.3,
+     "note_headings": {
+      "number-dot": 5.5,
+      "number-caps": 0.6,
+      "paren-caps": 0.0,
+      "note-word": 2.5,
+      "section-numbered": 28.7
+     },
+     "statement_title_pages": 7,
+     "numbered_statement_titles": 6,
+     "schedules": 1,
+     "item_8": false,
+     "item_18": true
+    }
+   }
+  }
+ ]
+}

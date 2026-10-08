@@ -1,0 +1,48 @@
+## Summary
+- As of April 7, 1969, Buffett Partnership, Ltd., a Nebraska limited partnership, owned **about 69.99%** of Berkshire Hathaway's outstanding shares, not counting treasury stock (Item 3(a), p.2).
+- Warren E. Buffett, a director of Berkshire, was the sole general partner of the partnership (Item 3(a), p.2). Through the partnership he controlled Berkshire.
+- The balance sheet shows 1,017,547 shares issued less 32,065 held in treasury, which leaves **985,482 shares outstanding** (Balance Sheet, p.7). 69.99% of that is about **689,700 shares** held by the partnership. This is my calculation; the report does not give the number of shares.
+- The partnership's holding does not appear in the audited statements. The only source is the Form 10-K text, which is not audited.
+
+## What management says
+- Item 3, "Parents and Subsidiaries of Registrant," names Buffett Partnership, Ltd. as the holder of about 69.99% of Berkshire's outstanding shares as of April 7, 1969. This makes the partnership Berkshire's controlling shareholder (p.2).
+- Berkshire in turn owns National Fire & Marine Insurance Company and 99% of National Indemnity Company. Neither was consolidated in 1968 (Item 3(b), p.2–3). The page 3 transcription says "National Fire & Indemnity Company" in one place, which looks like a transcription or typing slip.
+- Berkshire had 1,557 holders of record on April 4, 1969 (Item 1, p.2). There were no changes in outstanding equity securities during the year (Item 2, p.2).
+
+## Performance and drivers
+Here is how I worked out the partnership's shares:
+- Shares outstanding = 1,017,547 issued − 32,065 treasury = **985,482** (Balance Sheet, p.7).
+- Partnership shares ≈ 985,482 × 69.99% ≈ **689,740**, which rounds to about 689,700.
+- Everyone else ≈ 985,482 − 689,740 ≈ **295,700 shares (30.01%)**, spread across the other ~1,556 record holders.
+- Cross-check against earnings per share: net earnings of $4,662,336 ÷ 985,482 shares = **$4.73**, which matches the reported $4.73 (P&L, p.8). So the balance sheet share count is the right base for the percentage.
+- By the same arithmetic, the partnership's share of 1968 net earnings was about 69.99% × $4,662,336 ≈ **$3.26 million**.
+
+The sections do not say when or how the partnership built up this stake.
+
+## Outlook and risks
+- The sections give no outlook about the partnership's holding.
+- Implied risk: one holder with about 70% controls board elections and strategy, so minority holders have little say.
+- The holding is dated April 7, 1969, after the December 28, 1968 year end. The year-end percentage is not stated, though with no change in outstanding shares (Item 2) it was probably similar.
+
+## How it shows in the audited numbers
+| Figure (report section, page) | Where in the notes or statements | Ties? |
+|---|---|---|
+| Buffett Partnership owns ~69.99% (Item 3(a), p.2) | Not in the statements | not disclosed |
+| No change in outstanding equity securities (Item 2, p.2) | 1,017,547 issued; 32,065 treasury (BS, p.7) | not disclosed (only year-end shown) |
+| Implied 985,482 shares outstanding | EPS $4.73 = $4,662,336 ÷ 985,482 (P&L, p.8) | yes |
+| 1,557 record holders (Item 1, p.2) | Not in the statements | not disclosed |
+
+The audited statements back up the share count behind the percentage, because the EPS figure ties exactly. They cannot confirm the partnership's 69.99%, since ownership by individual shareholders is not an audited disclosure. No notes were provided, so I could not check any related-party disclosure.
+
+## Questions for management
+1. How many shares did Buffett Partnership hold on December 28, 1968, and how has its stake changed in recent years?
+2. Does the partnership plan to keep, distribute or sell its Berkshire shares, for example if the partnership is wound up?
+3. Are there any transactions or agreements between Berkshire and the partnership or Mr. Buffett?
+4. How are minority shareholders' interests protected given one controlling holder?
+5. Why were the insurance subsidiaries left out of the consolidated statements?
+
+## Sources
+- Form 10-K filing text, Items 1–3 (PDF p.1–3)
+- Consolidated Balance Sheet (PDF p.7)
+- Consolidated Statement of Earnings and Retained Earnings (PDF p.8)
+- No notes were provided.

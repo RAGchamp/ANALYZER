@@ -1,0 +1,147 @@
+REPORT PROFILE
+Format: Old Indian GAAP (Companies Act 1956, old Schedule VI) - standalone accounts only
+Year ended: 30 September 1977 (check the notes for the length of the previous period)
+Currency/units: Rs. with Indian digit grouping (1,00,000 = 1 lakh; 1,00,00,000 = 1 crore)
+Statements in this report: Profit and Loss Account, Balance Sheet
+Statements NOT in this report: Cash Flow Statement, Statement of Changes in Equity (not required at the time)
+Source quality: may be re-typed from the printed report; figures may contain transcription errors
+
+Annual report: Reliance-1976-1977.pdf
+Statements: Manually selected pages
+Notes provided: PDF pages 13
+Primary financial statements provided: Profit & Loss Account for the Year Ended 30th September, 1977 (PDF p.14); Balance Sheet as at 30th September, 1977 (PDF p.13)
+
+QUESTION: What is on these pages?
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Impact on the financial statements
+How the matters in the notes flow into and affect each primary statement. Use one sub-heading per statement:
+### Profit and Loss Account
+### Balance Sheet
+(This report has no Cash Flow Statement. If cash movements matter to the question, add a short derived funds-flow statement, clearly labelled as derived by the analyst and not published.)
+For each one, name the line items affected, give their figures (current and prior year, citing statement and page), show how the note reconciles to them, and explain the effect. For example, how the tax expense in the note drives profit after tax, how deferred tax balances appear on the Balance Sheet, how taxes paid appear in operating cash flow, or how OCI items move reserves in equity.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about, including any note figure that does not agree with the statements.
+## Sources
+The notes, statements and PDF pages you relied on.
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Profit & Loss Account for the Year Ended 30th September, 1977 (Standalone) ===
+--- PDF page 14 (printed page 17) ---
+PROFIT & LOSS ACCOUNT FOR THE YEAR ENDED 30TH SEPTEMBER, 1977
+Previous Year
+Schedule | Rs. | Rs. | Rs. | Rs.
+INCOME:
+Sales (Less: Returns. Rebates. Excise Duty, Sales
+Tax. etc.) | 66,93,43.861 | 62,72,87,643
+Other Income | 'J' | 2,04,78,207 | 2,35,54,532
+Increase in Stocks | 'K' | 73,43,534 | 69,71,65,602 | 3,46,11,725 | 68,54,53,900
+EXPENDITURE:
+Purchases | 21,88,40,584 | 25,45,37,639
+Manufacturing and other Expenses | 'L' | 40,68,72,029 | 38,61,28,347
+Interest | 'M' | 2,75,05,653 | 2,69,56,768
+Depreciation | 1,34,50,636 | 1,14,10,111
+Directors' Fees | 750 | –
+Remuneration to:
+Managing Directors | Rs. 96,000
+Other Directors | Rs. 1,08,000
+2,04,000 | 2,56,000
+Loss on sale and/or discarding of assets (Net) | 1,41,774 | 99,705
+Balance of Preliminary and Development
+Expenses Written-off | 'N' | – | 45,111
+Provision for Doubtful Debts | 3,45,687 | 1,18.903
+Provision for Taxation | 5,00,000 | 66,78,61,113 | – | 67,95,51.584
+PROFIT FOR THE YEAR | 2,93,04,489 | 59,02,316
+Add: Balance as per last Balance Sheet | 1,986 | –
+2,93,06,475 | 59,02,316
+APPROPRIATIONS:
+Proposed Dividend | 89,26,650 | 17,86,330
+Transfer to General Reserve | 1,28,75,000 | 41,15,000
+Transfer to Investment Allowance Reserve | 75,00,000 | 2,93,01,650 | – | 59,00.330
+SURPLUS CARRIED TO BALANCE SHEET | 4,825 | 1,986
+NOTES | 'O'
+
+=== Balance Sheet as at 30th September, 1977 (Standalone) ===
+--- PDF page 13 (printed page 16) ---
+[Column groups, left to right: 30th September, (columns spanned: 6); 30th September (columns spanned: 2)]
+[Column headings, left to right: 1) Schedule | 2) Rs. | 3) ? | 4) Rs. | 5) Rs. | 6) ? | 7) Rs.]
+BALANCE SHEET AS AT 30TH SEPTEMBER, 1977
+As at | As at
+30th September, | 30th September
+1977 | 1976
+Schedule | Rs. | Rs. | Rs. | Rs.
+FUNDS EMPLOYED:
+1. SHARE CAPITAL | 'A' | 5,95,11,000 | 6,95,11,000
+2 | SHARE APPLICATION MONIES
+(Refer Note No. 15 in -Notes forming part of
+the Accounts-)
+30,00,000 | –
+3. RESERVE & SURPLUS | 'B' | 3,29,04,825 | 1,25,26,986
+TOTAL SHAREHOLDERS' FUND | 9,54,15,825 | 7,20,37,986
+4. SECURED LOANS | 'C' | 11,00,59,917 | 11,57,05.424
+5. UNSECURED LOANS | 'D' | 63,54,881 | 27,52,899
+21,16,30,623 | 19,04,96,309
+FUNDS APPLIED:
+6. FIXED ASSETS | 'E' | 14,51,44,752 | 11,64,80,272
+7 | INVESTMENTS | 'F' | 37,850 | 31,125
+8. CURRENT ASSETS, LOANS & ADVANCES:
+a) CURRENT ASSETS | 'G' | 17,48,41,677 | 15,03,50,963
+b) LOANS& ADVANCES | 'H' | 91,28,234 | 62,57,869
+18,39,69,911 | 15,66,08,832
+Less: | CURRENT LIABILITIES AND
+PROVISIONS | 'I' | 11,73,21,890 | 6,66,48,021 | 8,26,23,920 | 7,39,84,912
+21,18,30,623 | 19,04,96,309
+NOTES & CONTINGENT LIABILITIES
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Manually selected pages ===
+--- PDF page 13 (printed page 16) ---
+BALANCE SHEET AS AT 30TH SEPTEMBER, 1977
+As at | As at
+30th September, | 30th September
+1977 | 1976
+Schedule | Rs. | Rs. | Rs. | Rs.
+FUNDS EMPLOYED:
+1. SHARE CAPITAL | 'A' | 5,95,11,000 | 6,95,11,000
+2 | SHARE APPLICATION MONIES
+(Refer Note No. 15 in -Notes forming part of
+the Accounts-)
+30,00,000 | –
+3. RESERVE & SURPLUS | 'B' | 3,29,04,825 | 1,25,26,986
+TOTAL SHAREHOLDERS' FUND | 9,54,15,825 | 7,20,37,986
+4. SECURED LOANS | 'C' | 11,00,59,917 | 11,57,05.424
+5. UNSECURED LOANS | 'D' | 63,54,881 | 27,52,899
+21,16,30,623 | 19,04,96,309
+FUNDS APPLIED:
+6. FIXED ASSETS | 'E' | 14,51,44,752 | 11,64,80,272
+7 | INVESTMENTS | 'F' | 37,850 | 31,125
+8. CURRENT ASSETS, LOANS & ADVANCES:
+a) CURRENT ASSETS | 'G' | 17,48,41,677 | 15,03,50,963
+b) LOANS& ADVANCES | 'H' | 91,28,234 | 62,57,869
+18,39,69,911 | 15,66,08,832
+Less: | CURRENT LIABILITIES AND
+PROVISIONS | 'I' | 11,73,21,890 | 6,66,48,021 | 8,26,23,920 | 7,39,84,912
+21,18,30,623 | 19,04,96,309
+NOTES & CONTINGENT LIABILITIES
+As per our Report of even date | D. H. AMBANI
+Chairman & Managing Director
+For RAJENDRA & CO. | For CHATURVEDI & SHAH, | V. M. AMBANI
+Chartered Accountants, | Chartered Accountants. | Secretary | R. H. AMBANI
+Joint Managing Director
+R. J. SHAH | D. CHATURVEDI
+Proprietor | Partner | K. GOPAL RAO
+J. R. SHAH
+M. L BHAKTA
+N. H. AMBANI | Directors
+R. C. PATEL
+R. L MESWANI
+BOMBAY | BOMBAY
+Dated: 25th January, 1918 | Dated: 23rd January, 1978
+----- END OF NOTES -----

@@ -1,0 +1,65 @@
+## Summary
+- Overseas General Insurance (OGI) is Chubb's international P&C business outside North America. It has two divisions: **Chubb International**, the retail arm, which includes Huatai P&C (about 87.2% owned), and **Chubb Global Markets (CGM)**, the London wholesale arm, which includes Lloyd's Syndicate 2488 (Item 1, p.8).
+- OGI earned 27% of Chubb's 2025 net premiums (Item 1, p.8). The audited figures agree: $14,374m of $53,014m is 27.1% (Note 19, p.206).
+- In 2025 net premiums earned grew 7.3%, underwriting income grew 18.7% to $2,156m and segment income grew 10.8% to $3,167m (Note 19, p.206–207).
+- The MD&A excerpt provided does **not** discuss OGI's 2025 results. The $223m, $179m and $214m figures on p.58 belong to the **Agricultural** segment, not OGI (see below).
+
+## What management says
+- **Chubb International** sells commercial P&C to large, middle-market and small customers, plus consumer A&H and personal lines, in local markets outside the U.S., Bermuda and Canada (Item 1, p.8; MD&A, p.59).
+- **CGM** is a London wholesale business writing international specialty and excess-and-surplus lines. Syndicate 2488 is wholly owned and has £630m of underwriting capacity for the 2026 Lloyd's account year (Item 1, p.8).
+- **Combined International** (supplemental A&H) no longer writes new business (Item 1, p.8).
+- **Expansion:** in 2025 Chubb bought LMG Insurance in Thailand (Item 1, p.8). The audited note describes it as Liberty Mutual's Thai P&C business, included from April 1, 2025 (Note 19, p.204).
+- **Coverage mix:** financial lines, marine, energy, aviation, political risk, construction, group A&H and personal lines. Business comes through retail brokers and agents, and through wholesale brokers in London (Note 19, p.204).
+- The excerpts do not say anything specific to OGI about its competitive position.
+
+## Performance and drivers
+All figures are in $ millions, from Note 19 (p.206–208 and p.209). The ratios are my own calculations.
+
+- **Premiums:** net premiums written were 15,024 against 13,972 (+1,052, **+7.5%**). Net premiums earned were 14,374 against 13,400 (+974, **+7.3%**) and 12,231 in 2023 (+17.5% over two years).
+- **By line of business (NPE):**
+  - Property & short-tail: 4,689 against 4,338 (+8.1%)
+  - Casualty: 3,809 against 3,705 (+2.8%)
+  - Personal lines: 3,198 against 2,785 (**+14.8%**)
+  - A&H: 2,678 against 2,572 (+4.1%)
+- **Underwriting:**
+  - Combined ratio: (6,589 + 470 + 3,724 + 1,435) / 14,374 = **85.0%**, against 11,583 / 13,400 = 86.4% in 2024.
+  - Loss ratio (losses plus policy benefits): 49.1% against 50.9%.
+  - Expense ratio: 35.9% against 35.5%.
+  - The improvement came from losses, while expenses rose slightly.
+- **Segment income:** 3,167, which is 22.3% of total segment income of 14,227. Net investment income was flat (1,139 against 1,136). Other expense rose from 14 to 50.
+- **Geography:** Asia accounts for 20% of group NPE and Europe for 11% (Note 19, p.209). These are group-wide figures, not OGI alone.
+- **What drove these changes is not explained in the material provided.** The MD&A analysis of OGI's results was not in the excerpts. The acquisition in Thailand added part of the growth, but its size is not disclosed.
+
+## Outlook and risks
+- The excerpts contain no outlook for OGI.
+- The text points to these risks:
+  - **Foreign currency:** the currency translation adjustment in OCI was +1,047 in 2025 against −1,177 in 2024 (P&L, p.108).
+  - **Catastrophe exposure:** property and short-tail lines are the largest line (33% of OGI's NPE).
+  - **Integration** of the Thai acquisition.
+  - **China:** concentration through Huatai, with its minority interest.
+  - **Lloyd's:** capital must be provided to support Syndicate 2488's capacity.
+
+## How it shows in the audited numbers
+
+| Figure (report section, page) | Where in the notes or statements | Ties? |
+|---|---|---|
+| OGI = 27% of 2025 consolidated NPE (Item 1, p.8) | Note 19: 14,374 / 53,014 = 27.1% (p.206) | yes |
+| Consolidated NPE $53.0bn (Item 1, p.5) | P&L NPE 53,014 (p.108) | yes |
+| NPW +$223m / 8.2%; NPE +$214m / 7.9% (MD&A, p.58) | Note 19 Agricultural: 2,926 − 2,703 = 223; 2,919 − 2,705 = 214 | yes, but for **Agricultural**, not OGI |
+| Profit-share adjustment $179m (MD&A, p.58) | Not in Note 19 | not disclosed |
+| Huatai stake 87.2%; Syndicate capacity £630m (Item 1, p.8) | Not in the notes provided | not disclosed |
+
+The audited segment note confirms OGI's size and that its margins improved. The p.58 figures, which the app linked to this OGI question, actually describe the crop business. The audited figures cannot show OGI's split by division (Chubb International vs. CGM, or Huatai), the effect of currency, catastrophe losses, or prior-year reserve development within OGI.
+
+## Questions for management
+1. How much of the 7.3% NPE growth came from the Thai acquisition and from currency, compared with organic growth?
+2. How were OGI's 2025 combined ratio and premiums split between Chubb International and CGM, and how much did Huatai contribute?
+3. What drove the fall in the loss ratio from 50.9% to 49.1%: catastrophe losses, prior-year development, or mix?
+4. Personal lines grew 14.8%. Which regions drove this, and how does its profitability compare with commercial lines?
+5. Other expense rose from 14 to 50. What caused this?
+
+## Sources
+- Item 1, Business: Segment Information (PDF 5) and Overseas General Insurance (PDF 8)
+- Item 7, MD&A: Premiums / Combined Ratio (Agricultural) and Overseas General Insurance (PDF 58–59)
+- Note 19, Segment information (PDF 204–209)
+- Consolidated Statements of Operations (PDF 108)

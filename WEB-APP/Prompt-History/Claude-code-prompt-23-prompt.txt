@@ -1,0 +1,294 @@
+REPORT PROFILE
+Format: Scanned report, transcribed by AI from page images (SEC Form 10-K)
+Companies in this report: Berkshire Hathaway Inc. (consolidated); National Indemnity Company; National Fire & Marine Insurance Company
+Period: December 28, 1968 (each company's statements give its own date)
+Currency: $
+Statements provided: Consolidated Statement of Earnings and Retained Earnings; Consolidated Balance Sheet
+Statement types NOT in the report for these companies: Funds statement, Statement of surplus / equity
+Source quality: AI transcription of 39 scanned pages; [?] marks unreadable characters (29 in the report)
+
+TRANSCRIPTION CHECKS (automatic)
+- p.1: figures not confirmed by the cross-check: 1934
+- p.2: 1 unreadable character(s) [?]
+- p.4: figures not confirmed by the cross-check: 1969
+- p.7: figures not confirmed by the cross-check: 16,136,069
+- p.8: 1 unreadable character(s) [?]; total 45,526,458 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 45,526,458, $372,000
+- p.11: 3 unreadable character(s) [?]
+- p.12: figures not confirmed by the cross-check: 63.825
+- p.13: 2 unreadable character(s) [?]
+- p.14: 1 unreadable character(s) [?]; total 12,754,985 can't be checked (a figure above it is unreadable); figures not confirmed by the cross-check: 10,468,947
+- p.18: figures not confirmed by the cross-check: 281,418
+- p.20: 2 unreadable character(s) [?]; figures not confirmed by the cross-check: 9,870, (102,642), 18,966)
+
+Annual report: BRK-1968.pdf
+Report sections provided: Berkshire Hathaway Inc. (consolidated) › Filing text (cover, items, index, letters) (PDF 1–3); National Indemnity Company › Accountants' / auditors' report (PDF 22); EXHIBIT 1 NATIONAL INDEMNITY COMPANY (PDF 21)
+Notes provided (to confirm figures): Note 1 — Basis of Presentation (PDF p.28)
+Primary financial statements provided (for reference): Consolidated Statement of Earnings and Retained Earnings (PDF p.8); Consolidated Balance Sheet (PDF p.7)
+
+----- REPORT SECTIONS: MANAGEMENT'S COMMENTARY AND OTHER NARRATIVE FROM THE ANNUAL REPORT (PDF page numbers; not audited) -----
+=== Berkshire Hathaway Inc. (consolidated) › Filing text (cover, items, index, letters) (PDF 1–3) ===
+--- PDF page 1 (printed page 1) ---
+
+SECURITIES AND EXCHANGE COMMISSION Washington, D. C. 20549
+
+FORM 10-K
+
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+
+For the fiscal year beginning December 31, 1967 and ended December 28, 1968 Commission file number 0-853
+
+BERKSHIRE HATHAWAY INC. (Exact name of registrant as specified in its charter)
+
+MASSACHUSETTS (State or other jurisdiction of incorporation or organization)
+
+04-225-4452 (I.R.S. Employer Identification No.)
+
+97 COVE STREET, NEW BEDFORD, MASSACHUSETTS 02741 (Address of principal executive offices) (Zip Code)
+
+Securities registered pursuant to Section 12(b) of the Act:
+
+NONE
+
+Securities registered pursuant to Section 12(g) of the Act:
+
+COMMON STOCK, $5 PAR VALUE (Title of Class)
+
+1
+
+--- PDF page 2 (printed page 1) ---
+
+BERKSHIRE HATHAWAY INC.
+
+FORM 10-K
+
+APRIL 23, 1969
+
+Item 1. Number of Equity Security Holders
+
+(A) Title of class | (B) Approximate number of record holders April 4, 1969
+Common stock, $5 par value | 1,557
+
+Item 2. Increases and [?]creases in Outstanding Equity Securities
+
+There were no changes in outstanding equity securities for the year.
+
+Item 3. Parents and Subsidiaries of Registrant
+
+(a) As of April 7, 1969 Buffett Partnership, Ltd., a limited partnership under Nebraska law, owned approximately 69.99% of Registrant's outstanding shares, excluding treasury stock. Mr. Warren E. Buffett, a director of the Registrant, is the sole general partner of the partnership.
+
+(b) The following list shows the significant subsidiaries of the Registrant. Neither of these subsidiaries is included in the Registrant's consolidated statements for the period ended December 28, 1968.
+
+-1-
+
+--- PDF page 3 (printed page -2-) ---
+
+Name | Jurisdiction of Incorporation
+National Fire & Marine Insurance Company | Nebraska
+National Indemnity Company | Nebraska
+
+Registrant owns all of the outstanding stock of National Fire & Indemnity Company and 99% of the outstanding stock of National Indemnity Company.
+
+=== National Indemnity Company › Accountants' / auditors' report (PDF 22) ===
+--- PDF page 22 (printed page 25) ---
+
+PEAT, MARWICK, MITCHELL & CO. CERTIFIED PUBLIC ACCOUNTANTS KIEWIT PLAZA OMAHA, NEBRASKA 68131
+
+The Board of Directors National Indemnity Company:
+
+We have examined the statutory statement of assets and liabilities of National Indemnity Company as of December 31, 1968 and the related statements of income and paid-in and unassigned surplus for the year then ended. We have also examined the supplemental statements of adjusted income and stockholders' equity. Our examination was made in accordance with generally accepted auditing standards, and accordingly included such tests of the accounting records and such other auditing procedures as we considered necessary in the circumstances.
+
+In our opinion, such financial statements present fairly the statutory financial position of National Indemnity Company at December 31, 1968 and the income and changes in paid-in and unassigned surplus for the year then ended, in conformity with insurance accounting principles prescribed or permitted under statutory authority applied on a basis consistent with that of the preceding year. These principles vary in some respects from generally accepted accounting principles, as explained in note 1 to the financial statements. Also, in our opinion, the supplemental statements of adjusted income and stockholders' equity present fairly net income for the year ended December 31, 1968 and the stockholders' equity at that date in conformity with generally accepted accounting principles applied on a basis consistent with that of the preceding year.
+
+February 17, 1969
+
+[signature]
+
+25
+
+=== EXHIBIT 1 NATIONAL INDEMNITY COMPANY (PDF 21) ===
+--- PDF page 21 (printed page 24) ---
+
+### EXHIBIT 1
+
+### NATIONAL INDEMNITY COMPANY
+
+Accountants' Report
+
+Financial Statements - December 31, 1968
+
+24
+----- END OF REPORT SECTIONS -----
+
+----- NOTES PROVIDED TO CONFIRM FIGURES (PDF page numbers) -----
+=== National Indemnity Company — Note 1 — Basis of Presentation ===
+--- PDF page 28 (printed page 31) ---
+### (1) Basis of Presentation:
+
+The accompanying financial statements have been prepared, except as to form, on the basis of the requirements for reporting in the annual statements filed with the Insurance Departments of the respective domiciliary states.
+
+The financial statements have been prepared in conformity with insurance accounting principles prescribed or permitted under statutory authority which differ in some respects from generally accepted accounting principles followed by other business enterprises in determining financial position and results of operations. Pursuant to such practices (a) investment securities are carried in accordance with valuations established by the National Association of Insurance Commissioners, i.e. eligible bonds are carried at cost adjusted, where appropriate, for amortization of premium or discount, and other bonds and stocks are carried at market values with no provision for income taxes relative to unrealized appreciation in such investments; (b) premium income is taken into earnings on a pro rata basis over the periods covered by the policies, whereas related acquisition and commission costs are charged off when incurred; (c) statutory loss reserves are required on certain lines of insurance in excess of losses computed on a case basis; (d) assets are included in the statement of assets and liabilities at "admitted asset value" and "nonadmitted assets" are excluded (see note 2); and (e) a provision is made for unearned premiums and losses recoverable, in excess of funds held, on business reinsured with companies not qualified by license. The effects of such differences is shown in the accompanying supplemental statements of adjusted stockholders' equity and adjusted net income.
+----- END OF NOTES -----
+
+----- PRIMARY FINANCIAL STATEMENTS (for reference; PDF page numbers) -----
+=== Consolidated Statement of Earnings and Retained Earnings (Berkshire Hathaway Inc.) ===
+--- PDF page 8 (printed page 9) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Statement of Earnings and Retained Earnings
+
+Year ended December 28, 1968
+
+| | |
+|---|---:|
+| **Operating income:** | |
+| Net sales of textile products | $ 46,002,417 |
+| Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII) | 1,789,402 |
+| Dividends from marketable securities | 223,024 |
+| Interest from marketable securities | 131,558 |
+| Interest - other | 34.456 |
+| | 48,180,857 |
+| **Operating costs:** | |
+| Cost of sales (note 3) | 41,321,747 |
+| Administrative and selling expenses | 3,110,628 |
+| Interest on long-term debt | 47,746 |
+| Interest on note payable - bank | 254,106 |
+| Amortization of bond discount | 3,196 |
+| Other interest | 61,035 |
+| Federal income taxes (note 6) | 728,00[?] |
+| | 45,526,458 |
+| Earnings from operations | 2,654,399 |
+| **Investment gains, net of taxes on gains (note 6):** | |
+| Gains realized by Parent Company (first-in, first-out) | 1,467,752 |
+| Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6) | 706,504 |
+| Total investment gains | 2,174,256 |
+| Earnings before extraordinary items | 4,828,655 |
+| **Extraordinary items:** | |
+| Loss on liquidation of mill properties, net of $372,000 income tax benefit | (332,319) |
+| Reduction in Federal income taxes (note 8) | 166,000 |
+| | (166,319) |
+| Net earnings | 4,662,336 |
+| Retained earnings, beginning | 27,032,370 |
+| Retained earnings, ending | $ 31,694,706 |
+| **Per share of outstanding common stock:** | |
+| Earnings from operations | 2.69 |
+| Investment gains | 2.21 |
+| Extraordinary items | (.17) |
+| Net earnings | $ 4.73 |
+
+See accompanying notes to financial statements.
+
+9
+
+=== Consolidated Balance Sheet (Berkshire Hathaway Inc.) ===
+--- PDF page 7 (printed page 7-8) ---
+BERKSHIRE HATHAWAY INC.
+
+### Consolidated Balance Sheet
+
+December 28, 1968
+
+### Assets
+
+| | | |
+|---|---|---|
+| Current assets: | | |
+| Cash | | $ 1,605,600 |
+| Marketable securities, at cost (note 2) (Schedule I) | | 5,421,384 |
+| Accounts receivable - trade, including $1,029 due from officers, net of allowance for doubtful accounts ($281,418) (Schedule XII) | | 7,563,123 |
+| Inventories, at the lower of cost (first-in, first-out) or market (note 3) | | 12,332,943 |
+| Prepaid and deferred charges (including mortgage note of approximately $15,200 due from officer) | | 199,501 |
+| Total current assets | | 27,122,551 |
+| Properties, plants and equipment, at cost (note 4) (Schedule V): | | |
+| Land | $ 106,555 | |
+| Buildings | 3,715,838 | |
+| Machinery and equipment | 15,651,551 | |
+| Furniture and fixtures | 428,094 | |
+| Leasehold improvements | 94,232 | |
+| Motor vehicle | 2,423 | |
+| | 19,998,693 | |
+| Less accumulated depreciation and amortization (Schedule VI) | 16,136,069 | |
+| Net properties, plants and equipment | | 3,862,624 |
+| Investment in unconsolidated subsidiaries (note 5) (Schedule III) | | 12,754,985 |
+| | | $ 43,740,160 |
+
+### Liabilities and Stockholders' Equity
+
+| | | |
+|---|---|---|
+| Current liabilities: | | |
+| Note payable - bank, unsecured | | $ 2,000,000 |
+| Accounts payable and accrued expenses | | 3,717,188 |
+| Accrued payroll | | 319,260 |
+| Accrued interest | | 32,536 |
+| Accrued payroll taxes | | 187,546 |
+| Accrued Federal, State, and local taxes (note 6) | | 637,059 |
+| Total current liabilities | | 6,893,589 |
+| Long-term debt: | | |
+| 7 1/2% subordinated debentures (note 7) (Schedule IX) | | 641,300 |
+| Stockholders; equity: | | |
+| Common stock, $5 par value. Authorized 1,722,983 shares; issued 1,017,547 shares | $ 5,087,735 | |
+| Retained earnings | 31,694,706 | |
+| | 36,782,441 | |
+| Less 32,065 shares of common stock in treasury, at cost | 577,170 | |
+| Total stockholders' equity | | 36,205,271 |
+| Commitments and contingencies (notes 9, 11, 12, and 13) | | |
+| | | $ 43,740,160 |
+
+See accompanying notes to financial statements.
+
+7 8
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+Conversation so far in this analysis thread:
+
+User asked: what percentage of shares was owned by Buffett partnership
+You answered: ## Summary
+- The 10-K states that **as of April 7, 1969, Buffett Partnership, Ltd. owned approximately 69.99%** of Berkshire Hathaway's outstanding shares, excluding treasury stock (Item 3(a), p.2).
+- Buffett Partnership was a Nebraska limited partnership. **Warren E. Buffett, a director of Berkshire, was its sole general partner** (Item 3(a), p.2). That made him the controlling party.
+- Applying 69.99% to the 985,482 shares outstanding at year-end gives **about 689,700 shares** (calculated below). The 10-K does not state the share count itself.
+- Berkshire reported no change in its outstanding equity securities during the year (Item 2, p.2). So the year-end share base is a fair base for the April 1969 percentage.
+
+## What management says
+- The disclosure is under Item 3, "Parents and Subsidiaries of Registrant." The heading itself treats Buffett Partnership as Berkshire's **parent** (p.2).
+- Berkshire in turn owned all of National Fire & Marine Insurance Company and 99% of National Indemnity Company, both Nebraska insurers. Neither is consolidated in the 1968 statements (Item 3(b), p.2–3). Note that p.3 names the first company "National Fire & Indemnity Company", which looks like a slip in the original or the transcription.
+- The stock was widely held outside the partnership: there were **1,557 record holders** of the $5 par common stock on April 4, 1969 (Item 1, p.2).
+
+## Performance and drivers
+- Outstanding shares = 1,017,547 issued − 32,065 in treasury = **985,482** (Balance Sheet, p.7).
+- Shares held by Buffett Partnership ≈ 985,482 × 69.99% ≈ **689,700**. This assumes no change between December 28, 1968 and April 7, 1969, which Item 2 supports.
+- Check on the share base: net earnings of $4,662,336 ÷ 985,482 = **$4.73 per share**, which matches the reported $4.73 (P&L, p.8). So 985,482 is the correct denominator.
+- The partnership's share of book equity ≈ 69.99% × $36,205,271 ≈ **$25.34 million** (Balance Sheet, p.7).
+- Everyone else held about 30.01%, roughly 295,800 shares.
+
+## Outlook and risks
+- The filing says nothing about the partnership's plans for the stake.
+- The text implies a **control concentration**: at nearly 70%, one partnership run by one general partner, who also sits on the board, controls the company. Minority holders have little say.
+- The figure is a point-in-time holding (April 7, 1969), so it is not an audited year-end balance.
+
+## How it shows in the audited numbers
+
+| Figure (report section, page) | Where in the notes or statements | Ties? |
+|---|---|---|
+| 69.99% owned by Buffett Partnership (Item 3(a), p.2) | Not shown in the statements | not disclosed |
+| No change in outstanding equity securities (Item 2, p.2) | Balance Sheet: 1,017,547 issued, 32,065 treasury (p.7) | yes (consistent: only one year-end balance, no share movements shown) |
+| Shares outstanding 985,482 (calculated) | Net EPS $4.73 (P&L, p.8) | yes |
+| 1,557 record holders (Item 1, p.2) | Not in the statements | not disclosed |
+
+The audited statements confirm the share base behind the percentage: the share count checks against EPS. They cannot confirm who owns the shares, because ownership is not a line item in the statements. The notes, which might include related-party disclosures, were not provided for this answer.
+
+## Questions for management
+1. How many shares exactly did Buffett Partnership hold on December 28, 1968, and did it buy any between then and April 7, 1969?
+2. Does the partnership plan to keep, distribute or sell its Berkshire stake?
+3. Were there any transactions between Berkshire and the partnership or Mr. Buffett during 1968? The balance sheet shows amounts due from officers (p.7).
+4. How is the board's independence protected, given near-70% control by a director's partnership?
+5. Why are the two insurance subsidiaries not consolidated, and how does that affect how the controlling holder views the group?
+
+## Sources
+- Filing text, Items 1–3: PDF pp.1–3
+- Consolidated Balance Sheet: PDF p.7
+- Consolidated Statement of Earnings and Retained Earnings: PDF p.8
+- No notes were provided.
+
+Now answer this follow-up question about the business, from the report sections first and the notes and statements only to confirm figures. Keep the same citation style: (MD&A, p.N), (Board's report, p.N), (Note X, p.N), (P&L, p.N). Use headings and a table only where they help; a short answer is fine for a short question.
+
+FOLLOW-UP QUESTION: What did the accountants say about the National Indemnity Company statements?

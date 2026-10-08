@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingest reports — Annual Report Foot Notes Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <nav class="navbar">
+    <a class="ghost nav-link" href="/">← Analyze screen</a>
+    <h1>Ingest reports</h1>
+    <button type="button" id="refresh" class="ghost" title="Reload the list">↻</button>
+    <a class="ghost nav-link" href="/model-testing" title="Test what the app extracts from any page of a model document, and report wrong extractions">Model testing</a>
+  </nav>
+
+  <main class="ingest-main">
+    <section class="card">
+      <h2>Reports</h2>
+      <p class="muted small-text">
+        Every PDF in <code>{{ reports_dir }}</code> is ingested once into a <b>report package</b>: its format,
+        notes and statements, the text of every page, the statement figures, links to the notes and automatic
+        checks. The Analyze screen ingests a report automatically when you select it; here you can see what
+        was found and checked, re-ingest a report, and move packages between PCs.
+      </p>
+      <div id="report-list" class="report-list"><div class="muted">Loading…</div></div>
+    </section>
+
+    <div id="error-box" class="card error hidden"></div>
+
+    <section class="card">
+      <h2>Model documents</h2>
+      <p class="muted small-text">
+        Every report is first matched to one of these (its layout, then a trial extraction that must pass
+        the model's checks). A report that matches none is a <b>new model document</b>: it can't be analyzed
+        until its extraction rules are added. See <code>MODEL-DOCS\README.md</code>.
+      </p>
+      <div id="model-list" class="small-text"><div class="muted">Loading…</div></div>
+    </section>
+
+    <section class="card">
+      <h2>View a page</h2>
+      <div class="row">
+        <select id="page-report"></select>
+        <input type="number" id="page-number" min="1" value="1" class="page-number" />
+        <button type="button" id="page-view" class="ghost">View page ↗</button>
+      </div>
+      <div class="muted small-text">PDF page numbers, not the printed ones. Opens the page as an image in a new tab.</div>
+    </section>
+
+    <section class="card">
+      <h2>Import a package</h2>
+      <div class="row">
+        <input type="file" id="import-file" accept=".db" />
+        <button type="button" id="import-btn" class="ghost">Import</button>
+      </div>
+      <div class="muted small-text">
+        A package exported on another PC (<b>Export package</b> above). It is used for the PDF with the same
+        content, whatever its file name; the PDF must still be in the reports folder. Useful for a scanned
+        report, so its transcription isn't paid for twice.
+      </div>
+      <div id="import-result" class="small-text"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='ingest.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ doc.company }} — Formatted extraction</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Same look as the statements page and the saved analysis reports */
+  :root{
+    --biz-blue:#0d6efd; --biz-blue-dark:#084298; --biz-gold:#b8860b;
+    --nav-blue:#0a1128; --nav-yellow:#f2b400; --nav-h:74px;
+  }
+  body{ background:#f7f8fa; margin:0; }
+  html{ scroll-behavior:smooth; }
+  [id]{ scroll-margin-top:calc(var(--nav-h) + 12px); }
+
+  .topnav{ position:sticky; top:0; z-index:1030; background:var(--nav-blue); color:var(--nav-yellow);
+    padding:.9rem 1.5rem; display:flex; justify-content:space-between; align-items:center; gap:1rem;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25); }
+  .topnav .brand{ display:inline-flex; align-items:center; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{ font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic; }
+  .topnav .btn-contents{ color:var(--nav-yellow); border-color:var(--nav-yellow); }
+  @media (max-width:576px){
+    .topnav{ padding:.6rem 1rem; }
+    .topnav .brand svg{ height:32px; }
+    .topnav .tagline{ font-size:.8rem; letter-spacing:.08em; word-spacing:.3em; }
+  }
+
+  /* contents panel */
+  .toc-inner{ font-size:.86rem; }
+  @media (min-width:992px){
+    /* the sticky list needs containers as tall as the document, or it scrolls away with them */
+    #toc-col .offcanvas-lg, #toc-col .offcanvas-lg .offcanvas-body{ height:100%; }
+    #toc-col .offcanvas-lg .offcanvas-body{ display:block; }
+    .toc-inner{ position:sticky; top:calc(var(--nav-h) + 1rem); max-height:calc(100vh - var(--nav-h) - 2rem);
+      overflow-y:auto; padding-right:.25rem; }
+  }
+  #toc-nav .nav-link{ padding:.15rem .5rem; color:#10233f; border-left:2px solid transparent; border-radius:0; }
+  #toc-nav .nav-link.active{ color:var(--biz-blue-dark); font-weight:600; border-left-color:var(--biz-gold);
+    background:#e7f1ff; }
+  #toc-nav .toc-top > .nav-link{ font-weight:600; margin-top:.35rem; }
+  #toc-nav .toc-child .nav-link{ padding-left:1.1rem; font-size:.82rem; white-space:nowrap; overflow:hidden;
+    text-overflow:ellipsis; }
+  #toc-nav .toc-child .pg{ color:#6c757d; font-size:.72rem; }
+  .toc-hidden{ display:none !important; }
+
+  .context-box{ background:#e7f1ff; border:1px solid #b6d4fe; border-left:6px solid var(--biz-blue);
+    border-radius:.5rem; padding:1.1rem 1.35rem; }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.86rem; color:#34495e; }
+  .context-box dl{ display:grid; grid-template-columns:max-content 1fr; gap:.1rem .9rem; margin:0; }
+  .context-box dt{ font-weight:600; }
+  .context-box dd{ margin:0; word-break:break-all; }
+  .quality{ font-size:.8rem; }
+
+  .section-title{ display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:1.5rem 0 1.25rem; color:#10233f; font-size:1.5rem; }
+  .doc-card{ background:#fff; border-radius:.5rem; padding:1.1rem 1.35rem; box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    margin-bottom:1.5rem; }
+  .doc-card > header h3{ font-size:1.2rem; color:var(--biz-blue-dark); margin:.25rem 0 .15rem; }
+  .doc-card > header .sub{ font-size:.78rem; color:#6c757d; }
+  .doc-card .uid{ font-family:SFMono-Regular,Consolas,monospace; font-size:.75rem; }
+  .linked-from{ font-size:.8rem; background:#f6f9fd; border:1px solid #e3e8f0; border-radius:.35rem;
+    padding:.4rem .6rem; margin:.6rem 0; }
+  .linked-from ul{ margin:0; padding-left:1.1rem; }
+  .doc-body{ font-size:.95rem; }
+  .doc-body p{ margin:0 0 .6rem; }
+  .doc-body h4{ font-size:1rem; font-weight:700; color:#10233f; margin:1rem 0 .4rem; }
+  .doc-body .unit-caption{ text-align:right; color:#6c757d; font-size:.78rem; margin:.4rem 0 .1rem; }
+
+  .page-marker{ display:flex; align-items:center; gap:.5rem; margin:1rem 0 .6rem; font-size:.75rem; color:#6c757d; }
+  .page-marker::before, .page-marker::after{ content:""; flex:1; border-top:1px dashed #c9d3e0; }
+  .page-marker .badge{ font-weight:600; }
+  .page-marker a{ text-decoration:none; white-space:nowrap; }
+  .page-anchor{ display:block; height:0; }
+
+  /* note tables */
+  table.fmt{ font-size:.86rem; margin-bottom:.75rem; }
+  table.fmt td, table.fmt th{ padding:.28rem .6rem; vertical-align:top; }
+  table.fmt thead th{ background:#ffdf7e; font-weight:700; color:#212529; border-color:#e6c257; vertical-align:bottom; }
+  table.fmt td.num, table.fmt th.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  table.fmt thead th.num{ white-space:normal; }
+  table.fmt tbody tr.data:nth-child(odd) td{ background:#eef4fc; }
+  table.fmt tr.section td{ font-weight:700; color:#10233f; background:#d3e3f5; }
+  table.fmt tr.subhead td{ font-weight:700; background:#fff3cd; }
+  table.fmt tr.total td{ font-weight:700; border-top:2px solid #9fb3cc; background:#f6f9fd; }
+
+  /* statement tables (as on the statements page) */
+  .page-caption{ font-size:.78rem; color:#6c757d; margin:1rem 0 .35rem; }
+  table.fs{ width:100%; font-size:.86rem; border-collapse:collapse; margin-bottom:.5rem; }
+  table.fs td{ padding:.28rem .6rem; border-bottom:1px solid #e3e8f0; vertical-align:top; }
+  table.fs td.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  table.fs td.note{ text-align:center; color:#6c757d; white-space:nowrap; width:3.5rem; }
+  table.fs tr.data:nth-child(odd) td{ background:#eef4fc; }
+  table.fs tr.header td{ background:#ffdf7e; font-weight:700; color:#212529; border-color:#e6c257; vertical-align:bottom; }
+  table.fs tr.header td.num, table.fs tr.header td.note{ white-space:normal; min-width:4.5rem; font-size:.8rem; }
+  table.fs.wide{ font-size:.74rem; }
+  table.fs.wide td{ padding:.24rem .32rem; }
+  table.fs.wide td.label{ min-width:9rem; }
+  table.fs.wide tr.header td.num, table.fs.wide tr.header td.note{ min-width:0; font-size:.7rem; }
+  table.fs tr.group td{ background:#ffe9a8; font-weight:700; font-size:.8rem; }
+  table.fs tr.group td.grp{ text-align:center; border-left:2px solid #fff; border-right:2px solid #fff;
+    border-bottom:2px solid #e6c257; }
+  table.fs tr.section td{ font-weight:700; color:#10233f; background:#d3e3f5; }
+  table.fs tr.text td{ color:#34495e; font-style:italic; }
+  table.fs tr.total td{ font-weight:700; border-top:2px solid #9fb3cc; background:#f6f9fd; }
+  table.fs tr.unit td{ text-align:right; color:#6c757d; font-size:.78rem; border:none; }
+  table.fs tr:target td, table.fmt tr:target td{ background:#fff3a0 !important; }
+
+  .pages-run > details > summary{ cursor:pointer; font-weight:600; color:#10233f; list-style:revert; }
+  .pages-run .page-block{ border-top:1px solid #eef1f5; padding-top:.25rem; }
+  .raw-text, .stored-text pre{ white-space:pre-wrap; font-size:.8rem; background:#f8f9fa; border:1px solid #e3e8f0;
+    border-radius:.35rem; padding:.6rem .75rem; margin:0 0 .6rem; }
+  .stored-text .note-head{ font-size:.75rem; color:#6c757d; }
+  .checks-table{ font-size:.8rem; }
+
+  /* report sections read into blocks (narrative pages) */
+  #toc-nav .toc-narrative > .nav-link{ font-weight:500; margin-top:.1rem; font-size:.82rem; }
+  .doc-card.narrative > header .crumb{ font-size:.78rem; color:#6c757d; margin-left:.35rem; }
+  .doc-body h4.nb-h{ margin:1rem 0 .4rem; color:#10233f; }
+  .doc-body h4.nb-h1{ font-size:1.2rem; }
+  .doc-body h4.nb-h2{ font-size:1.05rem; }
+  .doc-body h4.nb-h3{ font-size:.95rem; }
+  .nb-list{ margin:0 0 .7rem; padding-left:1.2rem; }
+  .nb-list li{ margin-bottom:.2rem; }
+  .nb-panel{ background:#f6f1e7; border:1px solid #e6dcc6; border-radius:.5rem; padding:.75rem 1rem; margin:0 0 .8rem; }
+  .nb-panel .nb-list:last-child, .nb-panel p:last-child{ margin-bottom:0; }
+  .kpi{ display:inline-block; min-width:12rem; background:#fff; border:1px solid #d7e3f4; border-left:5px solid var(--biz-gold);
+    border-radius:.5rem; padding:.55rem .9rem; margin:0 .6rem .8rem 0; vertical-align:top; }
+  .kpi-value{ font-size:1.6rem; font-weight:700; color:var(--biz-blue-dark); line-height:1.15; font-variant-numeric:tabular-nums; }
+  .kpi-label{ font-size:.8rem; color:#34495e; }
+  .nb-graphic{ border:1px dashed #c9d3e0; border-radius:.5rem; padding:.6rem; margin:0 0 .8rem; background:#fbfcfe; }
+  .nb-graphic img{ display:block; max-width:100%; max-height:360px; height:auto; margin:0 auto .4rem; }
+  .nb-graphic figcaption{ font-size:.8rem; }
+  .nb-passage{ font-size:.68rem; color:#8a6d1f; font-family:SFMono-Regular,Consolas,monospace; margin:.6rem 0 -.2rem;
+    border-top:1px dotted #e6c257; padding-top:.15rem; }
+  .nb-thumb{ max-width:220px; height:auto; border:1px solid #dee2e6; border-radius:.25rem; margin-bottom:.6rem; }
+  .back-to-top{ font-size:.85rem; }
+  footer{ background:var(--nav-blue); }
+
+  @media (max-width:576px){
+    .doc-card{ padding:.9rem .85rem; }
+    .doc-body{ font-size:1rem; }
+    .section-title{ font-size:1.25rem; }
+  }
+  @media print{
+    .topnav, #toc-col, .no-print, .page-marker a, .stored-text{ display:none !important; }
+    #doc{ width:100% !important; flex:0 0 100%; max-width:100%; }
+    body{ background:#fff; }
+    .doc-card{ box-shadow:none; border:1px solid #dee2e6; }
+    .section-title{ break-before:page; }
+    article.statement{ break-before:page; }
+    tr{ break-inside:avoid; }
+    .table-responsive{ overflow:visible !important; }
+  }
+</style>
+</head>
+{%- macro marker(b) -%}
+<div class="page-marker"{% if b.anchor %} id="page-{{ b.page if b.page is defined else b.pdf_page }}"{% endif %}>
+  <span class="badge text-bg-light border">PDF {{ b.page if b.page is defined else b.pdf_page }}{% if b.printed %} · printed {{ b.printed }}{% endif %}</span>
+  {% if b.ocr %}<span class="badge text-bg-info">OCR transcription</span>{% endif %}
+  <a href="{{ b.test_url }}" target="_blank" rel="noopener" title="Open this page on the Model testing screen">Test this page ↗</a>
+</div>
+{%- endmacro %}
+{%- macro render_blocks(blocks) -%}
+{% for b in blocks %}
+  {% if b.t == "marker" %}{{ marker(b) }}
+  {% elif b.t == "h" %}<h4>{{ b.text }}</h4>
+  {% elif b.t == "p" %}<p>{{ b.text }}</p>
+  {% elif b.t == "caption" %}<div class="unit-caption">{{ b.text }}</div>
+  {% elif b.t == "table" %}
+  <div class="table-responsive">
+    <table class="table table-sm table-hover fmt">
+      {% if b.head %}<thead>
+        {% for row in b.head %}<tr>{% for c in row %}<th scope="col" class="{{ 'num' if loop.index0 > 0 else '' }}">{{ c.text }}</th>{% endfor %}</tr>{% endfor %}
+      </thead>{% endif %}
+      <tbody>
+        {% for row in b.body %}
+        <tr class="{{ row.kind }}">
+          {% if row.span > 1 %}<td colspan="{{ row.span }}">{{ row.cells[0].text }}</td>
+          {% else %}{% for c in row.cells %}<td class="{{ 'num' if c.num else '' }}">{{ c.text }}</td>{% endfor %}{% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+{% endfor %}
+{%- endmacro %}
+{%- macro render_nblocks(blocks) -%}
+{% for b in blocks %}
+  {% if b.passage %}<div class="nb-passage" title="{{ b.passage.path }}">passage {{ b.passage.id }}</div>{% endif %}
+  {% if b.kind == "heading" %}<h4 class="nb-h nb-h{{ b.level }}">{{ b.text }}</h4>
+  {% elif b.kind == "paragraph" %}<p>{{ b.text }}</p>
+  {% elif b.kind == "list" %}<ul class="nb-list">{% for item in b["items"] %}<li>{{ item }}</li>{% endfor %}</ul>
+  {% elif b.kind == "table" %}
+  <div class="table-responsive">
+    <table class="table table-sm table-hover fmt">
+      {% if b.head %}<thead>{% for row in b.head %}<tr>{% for c in row %}<th scope="col">{{ c }}</th>{% endfor %}</tr>{% endfor %}</thead>{% endif %}
+      <tbody>{% for row in b.rows %}<tr class="data">{% for c in row %}<td class="{{ 'num' if c and is_figure(c) else '' }}">{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  {% elif b.kind == "metric" %}
+  <div class="kpi"><div class="kpi-value">{{ b.value }}</div>{% if b.label %}<div class="kpi-label">{{ b.label }}</div>{% endif %}</div>
+  {% elif b.kind == "panel" %}
+  <div class="nb-panel">{{ render_nblocks(b.children) }}</div>
+  {% elif b.kind in ("diagram", "chart", "figure") %}
+  <figure class="nb-graphic">
+    {% if b.image_url %}<img loading="lazy" src="{{ b.image_url }}" alt="{{ b.kind }} on the PDF page">{% endif %}
+    <figcaption><span class="badge text-bg-secondary">{{ b.kind }}</span>
+      {% if b.labels %}{{ b.labels | join(" · ") }}{% else %}graphic — see image{% endif %}
+      {% if b.kind != "figure" %}<span class="text-muted">(labels only; values are not read from graphics)</span>{% endif %}
+    </figcaption>
+  </figure>
+  {% elif b.kind == "rotated" %}<p class="small text-muted">[sideways text] {{ b.text }}</p>
+  {% elif b.kind == "flat" %}<div class="alert alert-light border small py-1 px-2 mb-2">This page could not be read into blocks without losing text; it is shown as stored.</div><pre class="raw-text">{{ b.text }}</pre>
+  {% endif %}
+{% endfor %}
+{%- endmacro %}
+<body{% if doc.toc %} data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-root-margin="0px 0px -70%" tabindex="0"{% endif %}>
+<a class="visually-hidden-focusable" href="#doc">Skip to document</a>
+
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ">{{ logo_svg | safe }}</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+  {% if doc.toc %}
+  <button class="btn btn-sm btn-outline-warning btn-contents d-lg-none" type="button"
+          data-bs-toggle="offcanvas" data-bs-target="#toc" aria-controls="toc">☰ Contents</button>
+  {% endif %}
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    {% if doc.toc %}
+    <aside id="toc-col" class="col-lg-3 pt-lg-3">
+      <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="toc" aria-labelledby="toc-label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="toc-label">Contents</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#toc" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="toc-inner w-100">
+            <input type="search" id="toc-filter" class="form-control form-control-sm mb-2"
+                   placeholder="Filter notes…" aria-label="Filter the contents">
+            <div class="d-flex gap-2 mb-2 no-print">
+              <button type="button" class="btn btn-sm btn-outline-secondary" id="expand-all">Expand all</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" id="collapse-all">Collapse all</button>
+            </div>
+            <nav id="toc-nav" class="nav flex-column" aria-label="Contents">
+              <div class="toc-top"><a class="nav-link" href="#about">About this extraction</a></div>
+              {% for entry in doc.toc %}
+              <div class="toc-top{{ ' toc-narrative' if entry.narrative else '' }}"{% if entry.narrative %} data-filter="{{ entry.label | lower }}"{% endif %}>
+                <a class="nav-link" href="#{{ entry.anchor }}"{% if entry.title_attr %} title="{{ entry.title_attr }} ({{ entry.pages }})"{% endif %}>{{ entry.label }}</a>
+                {% for child in entry.children %}
+                <div class="toc-child" data-filter="{{ child.label | lower }}">
+                  <a class="nav-link" href="#{{ child.anchor }}" title="{{ child.label }} ({{ child.pages }})">{{ child.label }}
+                    <span class="pg">{{ child.pages }}</span></a>
+                </div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+              {% if doc.checks %}<div class="toc-top"><a class="nav-link" href="#checks">Checks</a></div>{% endif %}
+            </nav>
+          </div>
+        </div>
+      </div>
+    </aside>
+    {% endif %}
+
+    <main id="doc" class="{{ 'col-lg-9' if doc.toc else 'col-12' }} py-3">
+
+      <section id="about" class="context-box mb-4">
+        <h1 class="company mb-2">{{ doc.company }} — Formatted extraction</h1>
+        <div class="meta mb-2"><strong>Model document:</strong> {{ doc.doc_name }}</div>
+        {% if doc.facts %}
+        <dl class="meta mb-2">
+          {% for label, value in doc.facts %}<dt>{{ label }}</dt><dd>{{ value }}</dd>{% endfor %}
+        </dl>
+        {% endif %}
+        {% if doc.counts or doc.check_counts %}
+        <div class="mb-2">
+          {% for text, kind in doc.counts %}<span class="badge text-bg-primary me-1">{{ text }}</span>{% endfor %}
+          {% for status, n in doc.check_counts %}
+          <span class="badge me-1 {{ {'ok':'text-bg-success','unverified':'text-bg-secondary','warn':'text-bg-warning','fail':'text-bg-danger'}[status] }}">checks: {{ n }} {{ status }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% for n in doc.notices %}<div class="alert alert-warning py-2 px-3 mb-2 small" role="alert">{{ n }}</div>{% endfor %}
+        {% for label in doc.empty_sections %}<div class="alert alert-warning py-2 px-3 mb-2 small">{{ label }}: no notes or statements found.</div>{% endfor %}
+        {% if doc.narrative_quality %}
+        <div class="meta mb-2">{% for ln in doc.narrative_quality %}<div>{{ ln }}</div>{% endfor %}</div>
+        {% endif %}
+        {% if doc.quality %}
+        <details class="quality mb-2"><summary>Quality report</summary>
+          <pre class="raw-text mt-2">{% for ln in doc.quality %}{{ ln }}
+{% endfor %}</pre></details>
+        {% endif %}
+        <div class="meta mb-2">
+          This is what the app extracted from the PDF — {{ 'its raw text, not the app\'s extraction' if doc.raw else 'the report package the Analyze screen sends to Claude' }}.
+          Page numbers are PDF page numbers (printed page alongside). Verify against the filed report.
+        </div>
+        <div class="d-flex flex-wrap gap-2 no-print">
+          <button type="button" class="btn btn-sm btn-primary" id="print-btn">Print</button>
+          <a class="btn btn-sm btn-outline-primary" href="?{{ download_query }}">Download HTML</a>
+        </div>
+      </section>
+
+      {% for part in doc.parts %}
+        {% if part.type == "section" %}
+        <h2 class="section-title" id="{{ part.anchor }}">{{ part.title }}</h2>
+
+        {% elif part.type == "statement" %}
+        <article class="doc-card statement" id="{{ part.anchor }}" data-section="{{ part.section }}" data-unit="{{ part.id }}">
+          <header>
+            <span class="badge text-bg-dark">Statement</span>
+            {% if part.rotated %}<span class="badge text-bg-warning">rotated</span>{% endif %}
+            <h3>{{ part.title }}</h3>
+            <div class="sub">{{ part.pages }}{% if part.printed %} (printed {{ part.printed }}){% endif %} · <span class="uid">{{ part.id }}</span></div>
+          </header>
+          {% for p in part.extra_anchors %}<span class="page-anchor" id="page-{{ p }}"></span>{% endfor %}
+          {% if part.view_pages %}
+            {% for page in part.view_pages %}
+            {{ marker(page) }}
+            {% if page.note %}<div class="page-caption"><span class="badge text-bg-warning">{{ page.note }}</span></div>{% endif %}
+            {% for t in page.tables %}
+            <div class="table-responsive">
+              <table class="fs{{ ' wide' if t.width >= 8 else '' }}">
+                {% for row in t.rows %}
+                  {% if row.kind in ("data", "total", "header") %}
+                  <tr class="{{ row.kind }}"{% if row.anchor %} id="{{ row.anchor }}"{% endif %}>
+                    <td class="label">{{ row.label }}</td>
+                    {% for cell in row.cells %}
+                      {% if loop.index0 == t.notes_col %}
+                      <td class="note">{% if row.note_link and cell %}<a href="{{ row.note_link }}">{{ cell }}</a>{% else %}{{ cell }}{% endif %}</td>
+                      {% else %}<td class="num">{{ cell }}</td>{% endif %}
+                    {% endfor %}
+                  </tr>
+                  {% elif row.kind == "group" %}
+                  <tr class="group">
+                    <td class="label">{{ row.label }}</td>
+                    {% for seg in row.segments %}<td colspan="{{ seg.span }}" class="{{ 'grp' if seg.text else '' }}">{{ seg.text }}</td>{% endfor %}
+                  </tr>
+                  {% else %}
+                  <tr class="{{ row.kind }}"><td colspan="{{ 1 + t.width }}">{{ row.label }}</td></tr>
+                  {% endif %}
+                {% endfor %}
+              </table>
+            </div>
+            {% endfor %}
+            {% endfor %}
+          {% else %}
+            <div class="doc-body">{{ render_blocks(part.blocks) }}</div>
+          {% endif %}
+          <div class="stored-text d-none mt-2"><div class="note-head">Stored text (exactly as in the package):</div><pre></pre></div>
+          <div class="d-flex justify-content-between mt-2 no-print">
+            <button type="button" class="btn btn-link btn-sm p-0 show-stored">Show as stored text</button>
+            <a class="back-to-top" href="#about">↑ Top</a>
+          </div>
+        </article>
+
+        {% elif part.type == "unit" %}
+        <article class="doc-card unit" id="{{ part.anchor }}" data-section="{{ part.section }}" data-unit="{{ part.id }}">
+          <header>
+            <span class="badge text-bg-primary">{{ part.kind_label }}</span>
+            <h3>{% if part.kind == "note" and part.number and not part.number.startswith(("SCH-", "BH-", "NI-", "NF")) %}Note {{ part.number }} — {% endif %}{{ part.title }}</h3>
+            <div class="sub">{{ part.pages }}{% if part.printed %} (printed {{ part.printed }}){% endif %} · <span class="uid">{{ part.id }}</span></div>
+          </header>
+          {% for p in part.extra_anchors %}<span class="page-anchor" id="page-{{ p }}"></span>{% endfor %}
+          {% if part.linked_from %}
+          <div class="linked-from"><strong>Linked from</strong> (statement lines that cite or tie to this {{ part.kind_label | lower }}):
+            <ul>{% for l in part.linked_from %}<li><a href="#{{ l.anchor }}">{{ l.label }}</a> <span class="text-muted">· {{ l.line_id }} · {{ l.kind }} ({{ l.confidence }})</span></li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+          <div class="doc-body">{{ render_blocks(part.blocks) }}</div>
+          <div class="stored-text d-none mt-2"><div class="note-head">Stored text (exactly as in the package):</div><pre></pre></div>
+          <div class="d-flex justify-content-between mt-2 no-print">
+            <button type="button" class="btn btn-link btn-sm p-0 show-stored">Show as stored text</button>
+            <a class="back-to-top" href="#about">↑ Top</a>
+          </div>
+        </article>
+
+        {% elif part.type == "pages" %}
+        <section class="doc-card pages-run" id="{{ part.anchor }}">
+          <details{% if part.open %} open{% endif %}>
+            <summary>{{ part.label }} <span class="text-muted small">({{ part.count }} page{{ 's' if part.count != 1 else '' }}{{ ', not part of any note or statement' if not doc.raw else '' }})</span></summary>
+            {% for page in part.pages %}
+            <div class="page-block">
+              {{ marker(page) }}
+              {% if page.empty %}<p class="text-muted small">(no text on this page)</p>
+              {% elif page.raw_text is defined %}<pre class="raw-text">{{ page.raw_text }}</pre>
+              {% else %}<div class="doc-body">{{ render_blocks(page.blocks) }}</div>{% endif %}
+            </div>
+            {% endfor %}
+          </details>
+        </section>
+
+        {% elif part.type == "narrative" %}
+        <article class="doc-card narrative" id="{{ part.anchor }}" data-pages="{{ part.first }}-{{ part.last }}">
+          <header>
+            <span class="badge text-bg-info">{{ part.kind_label }}</span>
+            {% if part.parent %}<span class="crumb">{{ part.parent }} ›</span>{% endif %}
+            <h3>{{ part.title }}</h3>
+            <div class="sub">{{ part.pages_label }} · report section (not a note or statement)</div>
+          </header>
+          {% for page in part.pages %}
+            {{ marker(page) }}
+            {% if page.layout_kind == "image" %}
+              <p class="small text-muted mb-1">Image page — no text on it.</p>
+              <img class="nb-thumb" loading="lazy" src="{{ page.thumb_url }}" alt="PDF page {{ page.pdf_page }}">
+            {% else %}
+              <div class="doc-body">{{ render_nblocks(page.nblocks) }}</div>
+            {% endif %}
+          {% endfor %}
+          <div class="stored-text d-none mt-2"><div class="note-head">Stored page text (as before the blocks):</div><pre></pre></div>
+          <div class="d-flex justify-content-between mt-2 no-print">
+            <button type="button" class="btn btn-link btn-sm p-0 show-stored">Show as stored text</button>
+            <a class="back-to-top" href="#about">↑ Top</a>
+          </div>
+        </article>
+
+        {% elif part.type == "anchor-only" %}
+        <span class="page-anchor" id="page-{{ part.page }}"></span>
+        {% endif %}
+      {% endfor %}
+
+      {% if doc.checks %}
+      <section class="doc-card" id="checks">
+        <details>
+          <summary class="fw-semibold">Checks ({{ doc.checks | length }}) — problems first</summary>
+          <div class="table-responsive mt-2">
+            <table class="table table-sm checks-table">
+              <thead><tr><th scope="col">Status</th><th scope="col">Kind</th><th scope="col">Subject</th>
+                <th scope="col" class="text-end">Expected</th><th scope="col" class="text-end">Actual</th><th scope="col">Message</th></tr></thead>
+              <tbody>
+                {% for c in doc.checks %}
+                <tr>
+                  <td><span class="badge {{ {'ok':'text-bg-success','unverified':'text-bg-secondary','warn':'text-bg-warning','fail':'text-bg-danger'}.get(c.status, 'text-bg-light') }}">{{ c.status }}</span></td>
+                  <td>{{ c.kind }}</td>
+                  <td>{% if c.link %}<a href="{{ c.link }}">{{ c.subject }}</a>{% else %}{{ c.subject }}{% endif %}</td>
+                  <td class="text-end">{{ c.expected if c.expected is not none else '' }}</td>
+                  <td class="text-end">{{ c.actual if c.actual is not none else '' }}</td>
+                  <td>{{ c.message }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+      {% endif %}
+    </main>
+  </div>
+</div>
+
+<footer class="text-white py-4 mt-4">
+  <div class="container text-center small">
+    Annual Report Analyzer (RAG Champ) — the app's extraction of {{ doc.doc_name }}.
+    Verify figures against the filed annual report.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>window.FORMATTED_DOC = {{ doc.doc_name | tojson }};</script>
+<script src="{{ url_for('static', filename='formatted_report.js') }}"></script>
+</body>
+</html>

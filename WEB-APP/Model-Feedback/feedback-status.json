@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "feedback_file": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge-20260928-105411.json",
+      "pdf_file": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf",
+      "page": 22,
+      "date_reported": "2026-09-28T10:54:11-04:00",
+      "status": "Fixed by Claude code",
+      "date_fixed": "2026-09-28T13:04:16-04:00",
+      "history": [
+        {
+          "status": "Reported",
+          "at": "2026-09-28T10:54:11-04:00"
+        },
+        {
+          "status": "Fixed by Claude code",
+          "at": "2026-09-28T13:04:16-04:00",
+          "summary": "New narrative stage (INFO/ANNUAL-REPORT-NON-FIN-STMTS-NOTES-EXTRACTION-PLAN.md): pages outside notes/statements are read into report sections and blocks in reading order (XY-cut, panels, lists, diagrams, KPI figures). Page 22 now reads Strategy S1-S6, Sources utilized list, Principal Activities diagram, segments, 238,355 tons - Total tonnage, under 'Value Creation Model'. in-indas-2020s v2, INDEX_VERSION 29.",
+          "changed": [
+            "ingest/narrative/__init__.py",
+            "ingest/narrative/geometry.py",
+            "ingest/narrative/layout.py",
+            "ingest/narrative/sections.py",
+            "ingest/narrative/kinds.py",
+            "ingest/narrative/render.py",
+            "ingest/profiles/__init__.py",
+            "ingest/pipeline.py",
+            "ingest/quality.py",
+            "rptpkg/schema.sql",
+            "rptpkg/writer.py",
+            "rptpkg/reader.py",
+            "ingest/formatted_report.py",
+            "ingest/model_testing.py"
+          ],
+          "test": "tests/test_feedback_regressions.py::test_type1_20260928_105411_p22"
+        }
+      ]
+    }
+  ]
+}

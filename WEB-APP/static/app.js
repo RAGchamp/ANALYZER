@@ -22,12 +22,17 @@ const els = {
   formatText: $("format-text"),
   formatSelect: $("format-select"),
   scopeHint: $("scope-hint"),
+  qualityPanel: $("quality-panel"),
+  modelPanel: $("model-panel"),
+  hintLine: $("hint-line"),
   statementsPanel: $("statements-panel"),
   viewStatementsRow: $("view-statements-row"),
   viewStatementsLink: $("view-statements-link"),
   question: $("question"),
   micBtn: $("mic-btn"),
   identifyBtn: $("identify-btn"),
+  businessBtn: $("business-btn"),
+  confirmTitle: $("confirm-title"),
   stepConfirm: $("step-confirm"),
   scopeLine: $("scope-line"),
   chips: $("note-chips"),
@@ -56,6 +61,12 @@ const els = {
   historyPanel: $("history-panel"),
   historyList: $("history-list"),
   historyRefresh: $("history-refresh"),
+  passageBox: $("passage-box"),
+  passageList: $("passage-list"),
+  passageSuggest: $("passage-suggest"),
+  passageSearch: $("passage-search"),
+  passageSearchBtn: $("passage-search-btn"),
+  passageResults: $("passage-results"),
 };
 
 const state = {
@@ -65,6 +76,11 @@ const state = {
   format: "modern",   // "legacy" for old reports (Companies Act 1956 schedules), "transcribed" for scans
   jobId: null,        // the running background job (for Cancel)
   selected: [],       // note choice objects chosen for analysis
+  hints: [],          // notes suggested by the financial statements: [{id, lines}]
+  mode: "notes",      // "notes" (Identify notes) or "business" (Analyze non notes: report passages first)
+  passages: [],       // report passages shown in step 3: [{id, path, pages, chars, lead, on}]
+  passageSuggestions: [],
+  noteChars: 0,       // the notes' extract size from step 3's estimate
   question: "",
   threadId: null,
   busy: false,
@@ -99,7 +115,9 @@ function setBusy(busy, text) {
 
 function refreshButtons() {
   els.identifyBtn.disabled = state.busy || !state.indexed || !els.question.value.trim();
-  els.analyzeBtn.disabled = state.busy || (!state.selected.length && !els.pagesInput.value.trim());
+  els.businessBtn.disabled = els.identifyBtn.disabled;
+  const passagesOn = state.mode === "business" && state.passages.some((p) => p.on);
+  els.analyzeBtn.disabled = state.busy || (!state.selected.length && !passagesOn && !els.pagesInput.value.trim());
   els.followupBtn.disabled = state.busy || !state.threadId || !els.followupInput.value.trim();
   els.reportSelect.disabled = state.busy;
   els.ocrStart.disabled = state.busy;
@@ -118,6 +136,7 @@ function noteLabel(n) {
 
 const SCOPE_HINTS = {
   modern: "Uses the notes to the <b>consolidated</b> financial statements unless your question asks for standalone.",
+  "us-10k": "US Form 10-K: uses the notes to the <b>consolidated</b> financial statements.",
   legacy: "Old-format report: uses its <b>schedules, notes and report sections</b> (standalone accounts only).",
   transcribed: "Scanned report: uses the notes and schedules of the <b>company your question names</b> (default: the registrant).",
 };
@@ -136,6 +155,7 @@ function showFormat(data) {
   } else {
     els.formatText.textContent = `Format: ${data.format_label} (${how})`;
   }
+  if (data.model) els.formatText.textContent += ` · Model: ${data.model}`;
   show(els.formatReview, scanned);
   show(els.formatChoice, !scanned);
   els.formatSelect.value = data.format_source === "manual" ? data.format : "auto";
@@ -245,6 +265,8 @@ async function selectReport(name, format = null) {
     "Reading the report, indexing its notes and loading the financial statements (first time can take ~15s)…";
   show(els.statementsPanel, false);
   show(els.viewStatementsRow, false);
+  show(els.qualityPanel, false);
+  show(els.modelPanel, false);
   try {
     const body = format ? { report: name, format } : { report: name };
     const data = await api("/api/index", body);
@@ -254,10 +276,16 @@ async function selectReport(name, format = null) {
       refreshButtons();
       return;
     }
+    if (data.new_model) {
+      showNewModel(data);       // blocked: state.indexed stays false
+      refreshButtons();
+      return;
+    }
     state.allNotes = data.notes;
     state.indexed = true;
     els.indexStatus.textContent = `${data.page_count} pages · ${data.summary}`;
     showFormat(data);
+    renderQuality(data.quality || []);
     fillAddNoteSelect();
     renderStatements(data.sections);
   } catch (err) {
@@ -265,6 +293,45 @@ async function selectReport(name, format = null) {
     showError(err.message);
   }
   refreshButtons();
+}
+
+// What the ingester found and checked: figures, links to notes, automatic
+// checks and warnings (from the report package).
+function renderQuality(lines) {
+  els.qualityPanel.innerHTML = "";
+  for (const line of lines) {
+    const li = document.createElement("li");
+    li.textContent = line;
+    if (line.startsWith("Warning:")) li.className = "warning";
+    els.qualityPanel.appendChild(li);
+  }
+  show(els.qualityPanel, lines.length > 0);
+}
+
+// A report that matches no model document can't be analyzed until its model is
+// added (INFO/MODEL-DOCS-FUNCTIONALITY-PLAN.md §5.2): say why, and offer the gap report.
+function showNewModel(data) {
+  const nm = data.new_model;
+  els.indexStatus.textContent = "";
+  els.modelPanel.innerHTML = "";
+  els.modelPanel.appendChild(Object.assign(document.createElement("div"),
+    { className: "model-title", textContent: "New model document" }));
+  els.modelPanel.appendChild(Object.assign(document.createElement("div"), { textContent: nm.message }));
+  const list = document.createElement("ul");
+  for (const n of nm.nearest.slice(0, 4)) {
+    const why = n.pending ? "its rules are not written yet" : n.trial ? n.trial.summary : (n.conflict || "too different");
+    list.appendChild(Object.assign(document.createElement("li"),
+      { textContent: `${n.short} — similarity ${n.score.toFixed(2)}: ${why}` }));
+  }
+  els.modelPanel.appendChild(list);
+  const link = Object.assign(document.createElement("a"),
+    { href: data.gap_report_url, target: "_blank", rel: "noopener", textContent: "View gap report ↗" });
+  const ingest = Object.assign(document.createElement("a"),
+    { href: "/ingest", textContent: "Ingest screen (propose it as a model document) ↗" });
+  const row = Object.assign(document.createElement("div"), { className: "row" });
+  row.append(link, ingest);
+  els.modelPanel.appendChild(row);
+  show(els.modelPanel, true);
 }
 
 // A scanned report must be transcribed (once) before it can be analyzed.
@@ -369,15 +436,18 @@ function fillAddNoteSelect() {
 
 // ------------------------------------------------------------ STEPS 2-3
 
-async function identify() {
+// "Identify notes" analyzes the notes and statements; "Analyze non notes" the report's own
+// sections (MD&A, Board's report …) with one or two notes to confirm figures. Both pause in step 3.
+async function identify(mode = "notes") {
   const question = els.question.value.trim();
   if (!question || !state.indexed) return;
   showError("");
   state.question = question;
+  state.mode = mode;
   show(els.stepConfirm, false);
   try {
-    const sel = await runJob("/api/identify", { report: state.report, question },
-      "Identifying the relevant notes…");
+    const sel = await runJob("/api/identify", { report: state.report, question, mode },
+      mode === "business" ? "Finding the report passages about your question…" : "Identifying the relevant notes…");
     showConfirm(sel);
   } catch (err) {
     showError(err.message);
@@ -394,17 +464,28 @@ function showConfirm(sel) {
   els.scopeLine.append(badge, ` ${sel.scope_reason}`);
 
   const how = sel.method === "claude" ? "Chosen by Claude" : "Chosen by keyword match";
-  els.selectReason.textContent = sel.notes.length
+  const chosenPassages = sel.passages || [];
+  const business = state.mode === "business";
+  els.confirmTitle.textContent = business
+    ? "Confirm the report passages (and the notes that confirm their figures)"
+    : "Confirm the notes to analyze";
+  els.selectReason.textContent = sel.notes.length || chosenPassages.length
     ? `${how}: ${sel.reason}`
-    : "No matching notes were found. Add a note below or enter PDF pages.";
-  els.sizeLine.textContent = sel.chars
-    ? `Estimated extract: ${sel.chars.toLocaleString()} characters (limit ${sel.max_chars.toLocaleString()}).`
-    : "";
+    : business ? "No matching report passages were found. Search for one below."
+    : "No matching notes were found. Add a note below, or enter PDF pages.";
+  state.maxChars = sel.max_chars;
+  state.noteChars = sel.chars - chosenPassages.reduce((sum, p) => sum + p.chars, 0);
+  state.passages = chosenPassages.map((p) => ({ ...p, on: true }));
+  state.passageSuggestions = sel.passage_suggestions || [];
+  els.passageResults.innerHTML = "";
+  els.passageSearch.value = "";
+  renderPassages();
   els.pagesInput.value = "";
   // Pre-select the add-note dropdown on the scope's section.
   const first = state.allNotes.find((n) => sel.scope === "standalone" ? n.section === "standalone" : n.section === "consolidated")
     || state.allNotes[0];
   if (first) els.addNoteSelect.value = first.id;
+  state.hints = sel.hints || [];
   renderChips();
   show(els.stepConfirm, true);
   els.stepConfirm.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -445,7 +526,185 @@ function renderChips() {
     chip.append(label, remove);
     els.chips.appendChild(chip);
   }
+  renderHints();
   refreshButtons();
+}
+
+// Notes behind the statement lines the question is about, found through the
+// report package's links. A hint only: click one to add it.
+function renderHints() {
+  els.hintLine.innerHTML = "";
+  const hints = (state.hints || []).filter((h) => state.allNotes.some((n) => n.id === h.id));
+  if (!hints.length) {
+    show(els.hintLine, false);
+    return;
+  }
+  els.hintLine.append("Suggested by the financial statements: ");
+  for (const h of hints) {
+    const note = state.allNotes.find((n) => n.id === h.id);
+    const chosen = state.selected.some((s) => s.id === h.id);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "ghost small hint" + (chosen ? " chosen" : "");
+    btn.textContent = `${chosen ? "✓" : "+"} ${note.kind === "note" && Number.isInteger(note.no) ? `Note ${note.no}` : note.id}`;
+    btn.title = `${noteLabel(note)}\nLinked to: ${h.lines.join("; ")}`;
+    btn.disabled = chosen;
+    btn.addEventListener("click", () => {
+      if (!state.selected.some((s) => s.id === h.id)) {
+        state.selected.push(note);
+        renderChips();
+      }
+    });
+    els.hintLine.appendChild(btn);
+  }
+  show(els.hintLine, true);
+}
+
+// ------------------------------------------------------------ report passages (step 3)
+
+function updateSizeLine() {
+  const passageChars = state.passages.filter((p) => p.on).reduce((sum, p) => sum + p.chars, 0);
+  const total = (state.noteChars || 0) + passageChars;
+  els.sizeLine.textContent = total && state.maxChars
+    ? `Estimated extract: ${total.toLocaleString()} characters`
+      + (passageChars ? ` (report passages ${passageChars.toLocaleString()})` : "")
+      + ` (limit ${state.maxChars.toLocaleString()}).`
+    : "";
+}
+
+// text with the question's words in <mark> (DOM nodes, never innerHTML: the text is the report's)
+function appendHighlighted(el, text, words) {
+  const wanted = (words || []).filter(Boolean).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  if (!wanted.length) {
+    el.append(text);
+    return;
+  }
+  const re = new RegExp(`\\b(${wanted.join("|")})\\b`, "gi");
+  let last = 0;
+  for (const m of text.matchAll(re)) {
+    el.append(text.slice(last, m.index));
+    const mark = document.createElement("mark");
+    mark.textContent = m[0];
+    el.appendChild(mark);
+    last = m.index + m[0].length;
+  }
+  el.append(text.slice(last));
+}
+
+function passageRow(p, { chosen }) {
+  const row = document.createElement("div");
+  row.className = "passage-row";
+  const label = document.createElement("label");
+  if (chosen) {
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.checked = p.on;
+    box.addEventListener("change", () => {
+      p.on = box.checked;
+      updateSizeLine();
+      refreshButtons();
+    });
+    label.appendChild(box);
+  }
+  const path = document.createElement("span");
+  path.className = "passage-path";
+  path.textContent = ` ${p.path}`;
+  const meta = document.createElement("span");
+  meta.className = "chip-pages";
+  meta.textContent = ` · PDF ${p.pages} · ${(p.chars / 1000).toFixed(1)} K`;
+  label.append(path, meta);
+  row.appendChild(label);
+  if (!chosen) {
+    const add = document.createElement("button");
+    add.type = "button";
+    add.className = "ghost small";
+    add.textContent = "+ Add";
+    add.addEventListener("click", () => addPassage(p));
+    row.appendChild(add);
+  }
+  const showBtn = document.createElement("button");
+  showBtn.type = "button";
+  showBtn.className = "link-btn small-text";
+  showBtn.textContent = "Show";
+  const pre = document.createElement("pre");
+  pre.className = "passage-text hidden";
+  showBtn.addEventListener("click", async () => {
+    if (pre.classList.contains("hidden") && !pre.textContent) {
+      try {
+        const data = await api(`/api/passages/${encodeURIComponent(p.id)}?report=${encodeURIComponent(state.report)}`);
+        appendHighlighted(pre, data.text, p.matched);
+        const first = pre.querySelector("mark");
+        if (first) requestAnimationFrame(() => { pre.scrollTop = first.offsetTop - pre.offsetTop - 40; });
+      } catch (err) {
+        pre.textContent = err.message;
+      }
+    }
+    pre.classList.toggle("hidden");
+    showBtn.textContent = pre.classList.contains("hidden") ? "Show" : "Hide";
+  });
+  row.append(showBtn);
+  if (p.snippet) {
+    // the sentence that holds the question's words: why this passage was found
+    const snip = document.createElement("div");
+    snip.className = "passage-snippet";
+    appendHighlighted(snip, `“${p.snippet}”`, p.matched);
+    row.appendChild(snip);
+  }
+  row.appendChild(pre);
+  if (p.lead) row.title = p.lead;
+  return row;
+}
+
+function renderPassages() {
+  els.passageList.innerHTML = "";
+  for (const p of state.passages) els.passageList.appendChild(passageRow(p, { chosen: true }));
+  if (!state.passages.length) {
+    const empty = document.createElement("span");
+    empty.className = "muted small-text";
+    empty.textContent = "No report passages chosen. Add one from the suggestions or search below.";
+    els.passageList.appendChild(empty);
+  }
+  const suggestions = state.passageSuggestions.filter((s) => !state.passages.some((p) => p.id === s.id));
+  els.passageSuggest.innerHTML = "";
+  if (suggestions.length) {
+    els.passageSuggest.append("Also related: ");
+    for (const s of suggestions.slice(0, 4)) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "ghost small hint";
+      const parts = s.path.split(" › ");
+      btn.textContent = `+ ${parts[parts.length - 1].slice(0, 48)} (p.${s.pages})`;
+      btn.title = `${s.path}\n${s.lead}`;
+      btn.addEventListener("click", () => addPassage(s));
+      els.passageSuggest.appendChild(btn);
+    }
+  }
+  show(els.passageSuggest, suggestions.length > 0);
+  // passages belong to "Analyze non notes" only
+  show(els.passageBox, state.mode === "business");
+  updateSizeLine();
+  refreshButtons();
+}
+
+function addPassage(p) {
+  if (!state.passages.some((x) => x.id === p.id)) state.passages.push({ ...p, on: true });
+  renderPassages();
+}
+
+async function searchPassages() {
+  const words = els.passageSearch.value.trim();
+  if (!words) return;
+  els.passageResults.innerHTML = "";
+  try {
+    const data = await api(`/api/passages/search?report=${encodeURIComponent(state.report)}&q=${encodeURIComponent(words)}`);
+    if (!data.passages.length) {
+      els.passageResults.textContent = "No passage matches those words.";
+      return;
+    }
+    for (const p of data.passages) els.passageResults.appendChild(passageRow(p, { chosen: false }));
+  } catch (err) {
+    els.passageResults.textContent = err.message;
+  }
 }
 
 function addNote() {
@@ -467,8 +726,12 @@ async function analyze() {
       report: state.report,
       question: state.question,
       notes: state.selected.map((n) => n.id),
+      passages: state.mode === "business" ? state.passages.filter((p) => p.on).map((p) => p.id) : [],
       pages,
-    }, "Extracting the notes and asking Claude for an in-depth analysis… (this can take a few minutes)");
+      mode: state.mode,
+    }, state.mode === "business"
+      ? "Sending the report passages to Claude for a business analysis… (this can take a few minutes)"
+      : "Extracting the notes and asking Claude for an in-depth analysis… (this can take a few minutes)");
     show(els.stepConfirm, false);
     startThread(result);
   } catch (err) {
@@ -480,7 +743,11 @@ function startThread(result) {
   state.threadId = result.thread_id;
   els.turns.innerHTML = "";
   addTurn(result);
-  updateThreadInfo(result.notes, result.pages, result.extract, result.statements, result.statements_list);
+  updateThreadInfo(result.notes, result.pages, result.extract, result.statements, result.statements_list,
+    result.passages);
+  if (result.dropped_passages && result.dropped_passages.length) {
+    showError(`Left out to stay within the size limit: ${result.dropped_passages.length} report passage(s) (the lowest-ranked).`);
+  }
   show(els.result, true);
   show(els.followupBox, true);
   els.result.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -488,12 +755,18 @@ function startThread(result) {
   refreshButtons();
 }
 
-function updateThreadInfo(notes, pages, extract, statementsText, statementsList) {
+function updateThreadInfo(notes, pages, extract, statementsText, statementsList, passages) {
   const parts = [state.report];
   if (notes && notes.length) {
     parts.push(notes.map((n) => `${noteLabel(n)} (${pageRange(n)})`).join("; "));
   } else if (pages) {
     parts.push(`PDF pages ${pages}`);
+  }
+  if (passages && passages.length) {
+    parts.push("report passages: " + passages.map((p) => {
+      const bits = p.path.split(" › ");
+      return `${bits[bits.length - 1]} (p.${p.pages})`;
+    }).join("; "));
   }
   if (statementsList) parts.push(`with ${statementsList}`);
   els.resultMeta.textContent = parts.join(" · ");
@@ -578,16 +851,28 @@ async function followup() {
   els.followupInput.readOnly = true; // keep the question visible while it runs
   try {
     const result = await runJob("/api/followup", { thread_id: state.threadId, question },
-      "Claude is analyzing your follow-up question…", els.followupBox);
+      "Searching the report again for your follow-up and asking Claude…", els.followupBox);
     els.followupInput.value = "";
     const node = addTurn(result);
     if (result.added_notes && result.added_notes.length) {
       const note = document.createElement("div");
       note.className = "muted small-text";
-      note.textContent = "Added to this thread: " + result.added_notes.map(noteLabel).join(", ");
+      note.textContent = "Found in the report for this follow-up, added to the thread: " + result.added_notes.map(noteLabel).join(", ");
       node.insertBefore(note, node.children[1]);
     }
-    updateThreadInfo(result.notes, null, result.extract, result.statements, result.statements_list);
+    if (result.added_passages && result.added_passages.length) {
+      const note = document.createElement("div");
+      note.className = "muted small-text";
+      note.textContent = "Report passages found for this follow-up, added to the thread: " + result.added_passages.map((p) => p.path).join("; ");
+      node.insertBefore(note, node.children[1]);
+    }
+    if (result.rescanned && !(result.added_notes || []).length && !(result.added_passages || []).length) {
+      const note = document.createElement("div");
+      note.className = "muted small-text";
+      note.textContent = "Searched the report again: nothing new was needed, so this answer uses the thread's notes and passages.";
+      node.insertBefore(note, node.children[1]);
+    }
+    updateThreadInfo(result.notes, null, result.extract, result.statements, result.statements_list, result.passages);
     node.scrollIntoView({ behavior: "smooth", block: "start" });
     loadHistory();
   } catch (err) {
@@ -649,7 +934,9 @@ async function openHistory(sno) {
       state.threadId = thread.id;
       els.turns.innerHTML = "";
       for (const t of thread.turns) addTurn(t);
-      updateThreadInfo(thread.notes, thread.page_spec, thread.extract, thread.statements, thread.statements_list);
+      updateThreadInfo(thread.notes, thread.page_spec,
+        [thread.sections_text, thread.extract].filter(Boolean).join("\n\n"),
+        thread.statements, thread.statements_list, thread.passages);
       show(els.followupBox, true);
     } else {
       state.threadId = null;
@@ -715,10 +1002,18 @@ els.reportSelect.addEventListener("change", () => selectReport(els.reportSelect.
 els.reportRefresh.addEventListener("click", loadReports);
 els.question.addEventListener("input", refreshButtons);
 els.question.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) identify();
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) identify("notes");
 });
-els.identifyBtn.addEventListener("click", identify);
+els.identifyBtn.addEventListener("click", () => identify("notes"));
+els.businessBtn.addEventListener("click", () => identify("business"));
 els.addNoteBtn.addEventListener("click", addNote);
+els.passageSearchBtn.addEventListener("click", searchPassages);
+els.passageSearch.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchPassages();
+  }
+});
 els.pagesInput.addEventListener("input", refreshButtons);
 els.cancelBtn.addEventListener("click", () => show(els.stepConfirm, false));
 els.analyzeBtn.addEventListener("click", analyze);

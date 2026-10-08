@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "feedback_file": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge-20260928-105411.json",
+  "pdf_file": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf",
+  "page": 22,
+  "printed_page": "19",
+  "reported_at": "2026-09-28T10:54:11-04:00",
+  "user_feedback": "Plain text extraction reads this page in a jumbled order: it takes the strategy boxes first, then \"238,355 tons\", then the activities, and puts the page heading last. That is because the page is an infographic laid out in columns and a circle.The page isn't part of any note or statement. This certainly is not in scope of current design and needs to be reviewed later as part of a borader work.",
+  "extracted_data": {
+    "source": "package",
+    "section": null,
+    "section_label": null,
+    "page_type": "other",
+    "text_source": "pdf",
+    "units_on_page": [],
+    "page_text": "CORPORATE OVERVIEW\nValue Creation Model\nStrategy\nS1 Focusing on the Indian | S3 Adding layer of products to | S5 Financial prudence and\nmarket | the core forging business | operational focus\nS2 Scaling high-growth | S4 Scaling the Indian | Digitalization and\nS6\nverticals | subsidiaries | organizational capability\nRead more\nPg. 28\nValue created through\nSources utilized | Engineering-driven\nRich culture of research and | product development | Manufacturing\nengineering and product\ndifferentiation\nDeep and nurtured relationships\nPrincipal\nTechnical know-how of people\nActivities\nRobust forging competence\nsupported by Industry 4.0 excellence\nVertically integrated model with\nR&D, technology | Customer\nend-to-end capabilities\nand innovation | relationships\nKey Segments and Products\nAutomotive | Industrial\nCommercial | Passenger | Power and Oil & Gas | Wind | Rail | Marine |\nAerospace | Construction and Mining | Defense |\nAgriculture | Capital Goods | Semiconductors\nOutput generated\n238,355 tons\nTotal tonnage",
+    "statement_lines": []
+  },
+  "notices": [],
+  "context": {
+    "pdf_sha256": "fbe10a171fc5ab27be7a62b05e15f51f8e85135db86a88eae6167cb9e1879cc8",
+    "model_id": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge",
+    "profile": "in-indas-2020s",
+    "profile_version": 1,
+    "index_version": 28,
+    "registry_version": 12,
+    "format": "modern",
+    "package": "TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge-fbe10a171fc5ab27.rptpkg.db",
+    "page_image": "Model-Testing/TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge-20260928-105411-p22.png"
+  }
+}

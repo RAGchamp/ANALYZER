@@ -2,7 +2,7 @@
 
 import pytest
 
-import note_selector
+from analyzer import note_selector
 from claude_client import ClaudeError
 
 

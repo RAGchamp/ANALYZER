@@ -1,0 +1,95 @@
+# Bharat Forge FY2026: commercial vehicle export performance
+
+## Summary
+- **Management says commercial vehicle (CV) exports fell sharply.** Full-year revenue was ₹1,324 crore (₹13,240 million), down 34% year on year. North American CV revenue fell 50% as truck makers there ran down their stock (MD&A, p.76; Board's report, p.89).
+- **The audited figures do not show CV exports separately.** Note 49 reports only three segments: Forgings, Defence and Others. CV sits inside Forgings, together with passenger vehicles and industrial products. The geographic split is by customer location, not by product. None of the narrative's export figures match anything in the statements or notes.
+- **The fall is hidden in the consolidated numbers.** Forgings revenue still grew 7.5%, and consolidated revenue grew 11.2%. Revenue from outside India was almost flat (+1.1%), while revenue within India grew 43.2%.
+- **Forgings margins slipped only a little**, from 14.32% to 14.04%. Forgings also took a new exceptional loss of ₹1,073.54 million, which was nil last year.
+- **The US figure seems to contradict the narrative.** Revenue from US customers rose 3.4% even though North American CV revenue reportedly halved. The narrative figures appear to be for the parent company alone (Board's report: "The Company"), not the group. This should be confirmed.
+
+## Key figures
+All figures are in ₹ million.
+
+| Item | Current year | Prior year | Change | % change | Source |
+|---|---|---|---|---|---|
+| CV export revenue (narrative) | 13,240 | ≈20,061* | ≈(6,821) | (34%) | MD&A, p.76 |
+| PV export revenue (narrative) | 11,455 | ≈11,121* | ≈334 | 3% | Board's report, p.89 |
+| Industrial export revenue (narrative) | 15,415 | ≈15,892* | ≈(477) | (3%) | Board's report, p.89 |
+| Revenue from operations | 168,116.53 | 151,228.03 | 16,888.50 | 11.2% | P&L, p.342; Note 24, p.410 |
+| Forgings revenue from external customers | 139,285.82 | 129,612.33 | 9,673.49 | 7.5% | Note 49, p.473 |
+| Forgings segment result | 19,560.91 | 18,561.18 | 999.73 | 5.4% | Note 49, p.473 |
+| Forgings exceptional items | (1,073.54) | – | (1,073.54) | n/a | Note 49, p.473 |
+| Revenue: USA | 38,094.34 | 36,841.92 | 1,252.42 | 3.4% | Note 49, p.475 |
+| Revenue: Europe | 60,402.82 | 50,759.64 | 9,643.18 | 19.0% | Note 49, p.475 |
+| Revenue: other countries | 17,926.45 | 27,534.67 | (9,608.22) | (34.9%) | Note 49, p.475 |
+| Revenue: outside India, total | 116,423.61 | 115,136.23 | 1,287.38 | 1.1% | Note 49, p.475 |
+| Revenue: within India | 51,692.92 | 36,091.80 | 15,601.12 | 43.2% | Note 49, p.475 |
+| Current trade receivables | 39,097.99 | 28,996.06 | 10,101.93 | 34.8% | Balance Sheet, p.341 |
+
+\*The prior-year narrative figures are my own back-calculation (for example, 13,240 ÷ 0.66). The report does not print them.
+
+## Detailed analysis
+**Narrative export figures, added up.** CV + PV + Industrial = 13,240 + 11,455 + 15,415 = 40,110 this year. The implied prior year is about 47,074, so these exports fell by about 14.8%. The 40,110 is only 34% of the group's revenue from outside India (116,423.61). So the narrative figures are almost certainly for the parent company only, and **cannot be reconciled to Note 49**.
+
+**Forgings segment (which includes CV):**
+- Margin this year: 19,560.91 ÷ 139,285.82 = **14.04%**.
+- Margin last year: 18,561.18 ÷ 129,612.33 = **14.32%**.
+- The segment absorbed the CV decline with only 28 basis points of margin loss. Its growth came from other parts of the segment, which Note 49 does not break down.
+
+**Geography:**
+- The "other countries" line fell 34.9%, almost exactly matching the 34% CV decline. This may be a coincidence, and the notes cannot confirm any link.
+- The USA line grew. This could reflect Bharat Forge's US manufacturing subsidiaries, industrial or aerospace sales, or how billing is routed (for example through BF International in the UK, which had revenue of ₹27,984.74 million per the Board's report, p.95). None of this can be verified from the material provided.
+- Growth came mainly from India (+43.2%) and from the Others segment: 21,698.12 vs 9,519.96, up 127.9% (Note 49, p.473).
+
+**Working capital:**
+- Days sales outstanding, using current plus non-current receivables:
+  - This year: (39,097.99 + 168.68) ÷ 168,116.53 × 365 ≈ **85 days**.
+  - Last year: (28,996.06 + 135.48) ÷ 151,228.03 × 365 ≈ **70 days**.
+- Receivables grew three times as fast as revenue (34.8% vs 11.2%). Weaker export volumes did not free up any working capital.
+
+## Business context
+- **Cause:** management blames cyclical de-stocking at Class 8 truck makers in North America, plus weak European demand (MD&A, p.76; Board's report, p.89).
+- **Market share:** management states there was no loss of market share and no disruption from the US Section 232 tariffs. This cannot be verified from the audited material.
+- **Outlook:** management says "the worst of the cyclical correction is behind us" and expects FY27 to be a year of growth (Board's report, p.89). This is an expectation, not a result.
+- **Europe:** Bharat Forge CDP GmbH makes components for commercial vehicles, passenger vehicles and industrial uses (revenue ₹15,952.67 million, Board's report, p.95). It is being restructured and may be wound down, with completion targeted by the end of calendar 2027 (CMD's letter, p.30). This is a plausible but unconfirmed driver of the ₹1,073.54 million Forgings exceptional loss.
+- **What this implies for the statements:** lower CV revenue within Forgings, lower export-incentive income, and more restructuring charges.
+
+## Impact on the financial statements
+
+### Statement of Profit and Loss
+- **Revenue from operations** was 168,116.53 vs 151,228.03 (P&L, p.342).
+  - It agrees with Note 24 (p.410).
+  - Note 49 shows 168,116.53 vs 151,228.04. The prior year differs by 0.01 (rounding).
+- **Export incentives**, a revenue item tied to exports, were 1,255.22 vs 1,233.82, up 1.7% (Note 24, p.410). They held up despite lower CV exports.
+- **Profit before exceptional items and tax** was 18,216.15 (P&L). Note 49 builds it up as segment results of 21,916.21, less finance costs of 3,233.46, less unallocable costs of 466.59, giving 18,216.16 (0.01 rounding difference).
+- **Exceptional items** were (1,544.43), of which Forgings was (1,073.54).
+- **Profit before tax** was 16,671.72 per the P&L and 16,671.73 per Note 49.
+
+### Balance Sheet
+- **Trade receivables** rose 34.8% (above). Inventories rose from 35,784.36 to 40,527.83, up 13.3% (p.341).
+- **Forgings segment assets** rose from 132,272.20 to 147,642.44, up 11.6% (Note 49, p.474).
+- **Total assets** of 222,599.55 agree with the Balance Sheet.
+- **Segment liabilities** total 49,259.68, against 127,031.31 on the Balance Sheet. The difference is mainly borrowings, which are not allocated to segments. The note's claim of "no other reconciling items" (p.475) needs care here.
+
+### Cash Flow Statement
+- The increase in trade receivables was (7,090.42) this year against a decrease of 2,510.11 last year. This is the main reason operating cash flow fell from 17,963.43 to 14,866.42, down 17.2% (p.346).
+- The cash-flow receivables movement (7,090.42) is smaller than the Balance Sheet change (about 10,135). The gap is likely due to the acquisition and exchange rates, but this is not explained.
+- Forgings capital expenditure (increase in non-current non-financial assets) was 18,879.40 (Note 49, p.475).
+
+### Statement of Changes in Equity
+- No direct effect. The CV business affects equity only through profit for the year of 10,893.98, which flows into retained earnings (p.344).
+
+## Red flags & areas for follow-up
+- **Unverifiable headline:** there is no audited disclosure of CV export revenue. Ask management for the basis of the ₹1,324 crore (parent company only or group) and for a reconciliation to Note 49.
+- **Conflicting direction for the US:** revenue from US customers rose 3.4% while North American CV revenue reportedly fell 50%.
+- **Unexplained exceptional loss:** the nature of the Forgings exceptional loss of 1,073.54 is not given in the notes provided (see Note 32). Is it the CDP restructuring?
+- **Rounding differences** between Note 49 and the statements: 0.01 in prior-year revenue, profit before exceptional items and tax, and profit before tax.
+- **Cash flow presentation:** the Cash Flow Statement adds the *whole* translation-reserve movement (2,205.34) to closing cash: 6,273.51 + 2,205.34 = 8,478.85 (p.347). This is unusual and needs an explanation.
+- **Dividends:** dividends paid of 3,796.55 (Cash Flow Statement) vs dividends declared of 3,824.71 in the Statement of Changes in Equity (2,868.53 + 956.18). The difference is 28.16.
+- **Receivables quality:** days sales outstanding rose about 15 days, and the provision for doubtful debts rose to 125.94 from 68.52.
+
+## Sources
+- Note 49 Segment information (PDF p.472–475)
+- Note 24 Revenue from operations (PDF p.410–411)
+- Consolidated P&L (p.342–343), Balance Sheet (p.341), Cash Flow Statement (p.346–347), Statement of Changes in Equity (p.344–345)
+- MD&A (p.76), Board's report (p.89, p.95), CMD's letter (p.30)

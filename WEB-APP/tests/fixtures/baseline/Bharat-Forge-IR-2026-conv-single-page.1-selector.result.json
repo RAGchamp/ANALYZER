@@ -1,0 +1,64 @@
+{
+ "chars": 11888,
+ "hints": [
+  {
+   "id": "C21",
+   "lines": [
+    "(j) Deferred tax assets (net) (Balance Sheet)",
+    "(k) Income tax assets (net) (Balance Sheet)",
+    "(c) Deferred tax liabilities (net) (Balance Sheet)",
+    "(d) Current tax liabilities (net) (Balance Sheet)",
+    "Income tax expense (P&L)",
+    "Current tax (P&L)"
+   ]
+  },
+  {
+   "id": "C33",
+   "lines": [
+    "Income tax effect (P&L)"
+   ]
+  },
+  {
+   "id": "C49",
+   "lines": [
+    "Profit before exceptional items and tax (P&L)"
+   ]
+  }
+ ],
+ "max_chars": 150000,
+ "method": "claude",
+ "notes": [
+  {
+   "end_page": 407,
+   "id": "C21",
+   "kind": "note",
+   "label": "Consolidated Note 21 — INCOME AND DEFERRED TAXES",
+   "no": 21,
+   "parent": null,
+   "printed_pages": "402-404",
+   "section": "consolidated",
+   "section_label": "Consolidated",
+   "start_page": 405,
+   "title": "INCOME AND DEFERRED TAXES",
+   "title_is_excerpt": false
+  },
+  {
+   "end_page": 452,
+   "id": "C41",
+   "kind": "note",
+   "label": "Consolidated Note 41 — CONTINGENT LIABILITIES",
+   "no": 41,
+   "parent": null,
+   "printed_pages": "448-449",
+   "section": "consolidated",
+   "section_label": "Consolidated",
+   "start_page": 451,
+   "title": "CONTINGENT LIABILITIES",
+   "title_is_excerpt": false
+  }
+ ],
+ "reason": "tax",
+ "scope": "consolidated",
+ "scope_label": "Consolidated",
+ "scope_reason": "Default: notes to the consolidated financial statements."
+}

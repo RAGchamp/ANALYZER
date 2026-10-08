@@ -1,0 +1,3428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berkshire Hathaway Inc. — Financial Statements</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Same look as the saved analysis reports (templates/analysis_report.html) */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+  html{ scroll-behavior:smooth; }
+  section[id], article[id]{ scroll-margin-top:84px; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue); color:var(--nav-yellow);
+    padding:.9rem 1.5rem; display:flex; justify-content:space-between; align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{ font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic; }
+  @media (max-width:576px){ .topnav{ flex-direction:column; gap:.4rem; padding:.75rem 1rem; } }
+
+  .context-box{
+    background:#e7f1ff; border:1px solid #b6d4fe; border-left:6px solid var(--biz-blue);
+    border-radius:.5rem; padding:1.1rem 1.35rem;
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .toc a{ text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .toc .rotated{ font-size:.7rem; }
+
+  .section-title{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:0 0 1.25rem; color:#10233f;
+  }
+  .statement{ background:#fff; border-radius:.5rem; padding:1.25rem 1.5rem;
+              box-shadow:0 .125rem .25rem rgba(0,0,0,.075); margin-bottom:2rem; }
+  .statement h3{ font-size:1.25rem; color:var(--biz-blue-dark); margin:0; }
+  .page-caption{ font-size:.78rem; color:#6c757d; margin:1rem 0 .35rem; }
+  .page-caption .badge{ font-weight:600; }
+
+  table.fs{ width:100%; font-size:.86rem; border-collapse:collapse; margin-bottom:.5rem; }
+  table.fs td{ padding:.28rem .6rem; border-bottom:1px solid #e3e8f0; vertical-align:top; }
+  table.fs td.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  table.fs td.note{ text-align:center; color:#6c757d; white-space:nowrap; width:3.5rem; }
+  table.fs tr.data:nth-child(odd) td{ background:#eef4fc; }
+  table.fs tr.header td{ background:#ffdf7e; font-weight:700; color:#212529; border-color:#e6c257;
+                         vertical-align:bottom; }
+  table.fs tr.header td.num, table.fs tr.header td.note{ white-space:normal; min-width:4.5rem; font-size:.8rem; }
+  /* wide tables (the 12-column Statement of Changes in Equity) - compact so every column fits */
+  table.fs.wide{ font-size:.74rem; }
+  table.fs.wide td{ padding:.24rem .32rem; }
+  table.fs.wide td.label{ min-width:9rem; }
+  table.fs.wide tr.header td.num, table.fs.wide tr.header td.note{ min-width:0; font-size:.7rem; }
+  table.fs tr.group td{ background:#ffe9a8; font-weight:700; font-size:.8rem; }
+  table.fs tr.group td.grp{ text-align:center; border-left:2px solid #fff; border-right:2px solid #fff;
+                            border-bottom:2px solid #e6c257; }
+  table.fs tr.section td{ font-weight:700; color:#10233f; background:#d3e3f5; }
+  table.fs tr.text td{ color:#34495e; font-style:italic; }
+  table.fs tr.total td{ font-weight:700; border-top:2px solid #9fb3cc; background:#f6f9fd; }
+  table.fs tr.unit td{ text-align:right; color:#6c757d; font-size:.78rem; border:none; }
+  .table-scroll{ overflow-x:auto; }
+  .back-to-top{ font-size:.85rem; }
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <section id="top" class="context-box mb-4">
+    <h1 class="company mb-2">Berkshire Hathaway Inc. — Financial Statements</h1>
+    <div class="meta mb-3">
+      <strong>Annual report:</strong> BRK-1968.pdf &nbsp;·&nbsp;
+      Built from the statements extracted when the report was loaded; consolidated first, then standalone.
+      Page numbers are PDF page numbers (printed page in brackets).
+    </div>
+    <div class="row toc">
+      
+      <div class="col-md-6">
+        <strong>Berkshire Hathaway Inc. (consolidated)</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#berkshire-hathaway-profit_loss-0">Consolidated Statement of Earnings and Retained Earnings</a>
+            </li>
+          
+          <li><a href="#berkshire-hathaway-balance_sheet-1">Consolidated Balance Sheet</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-6">
+        <strong>National Indemnity Company</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#national-indemnity-profit_loss-0">Statement of Income</a>
+            </li>
+          
+          <li><a href="#national-indemnity-profit_loss-1">Statement of Adjusted Income</a>
+            </li>
+          
+          <li><a href="#national-indemnity-balance_sheet-2">Statement of Assets and Liabilities</a>
+            </li>
+          
+          <li><a href="#national-indemnity-equity-3">Statements of Paid-In and Unassigned Surplus</a>
+            </li>
+          
+          <li><a href="#national-indemnity-equity-4">Statement of Adjusted Stockholders&#39; Equity</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-6">
+        <strong>National Fire &amp; Marine Insurance Company</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#national-fire-marine-profit_loss-0">Statement of Income</a>
+            </li>
+          
+          <li><a href="#national-fire-marine-profit_loss-1">Statement of Adjusted Income</a>
+            </li>
+          
+          <li><a href="#national-fire-marine-balance_sheet-2">Statement of Assets and Liabilities</a>
+            </li>
+          
+          <li><a href="#national-fire-marine-equity-3">Statements of Paid-In and Unassigned Surplus</a>
+            </li>
+          
+          <li><a href="#national-fire-marine-equity-4">Statement of Adjusted Stockholders&#39; Equity</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section id="berkshire-hathaway" class="mb-5">
+    <h2 class="section-title">Berkshire Hathaway Inc. (consolidated) Financial Statements</h2>
+
+    
+    <article id="berkshire-hathaway-profit_loss-0" class="statement">
+      <h3>Consolidated Statement of Earnings and Retained Earnings</h3>
+      
+      <div class="page-caption">
+        PDF page 8 (printed 9)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="2">Operating income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net sales of textile products</td>
+              
+              <td class="num">$ 46,002,417</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Equity in earnings of unconsolidated subsidiary insurance companies (notes 5 and 6) (Schedule XVII)</td>
+              
+              <td class="num">1,789,402</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividends from marketable securities</td>
+              
+              <td class="num">223,024</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest from marketable securities</td>
+              
+              <td class="num">131,558</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest - other</td>
+              
+              <td class="num">34.456</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">48,180,857</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="2">Operating costs:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cost of sales (note 3)</td>
+              
+              <td class="num">41,321,747</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Administrative and selling expenses</td>
+              
+              <td class="num">3,110,628</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest on long-term debt</td>
+              
+              <td class="num">47,746</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest on note payable - bank</td>
+              
+              <td class="num">254,106</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Amortization of bond discount</td>
+              
+              <td class="num">3,196</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other interest</td>
+              
+              <td class="num">61,035</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes (note 6)</td>
+              
+              <td class="num">728,00[?]</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">45,526,458</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Earnings from operations</td>
+              
+              <td class="num">2,654,399</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="2">Investment gains, net of taxes on gains (note 6):</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Gains realized by Parent Company (first-in, first-out)</td>
+              
+              <td class="num">1,467,752</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Gains realized by unconsolidated insurance subsidiaries (notes 5 and 6)</td>
+              
+              <td class="num">706,504</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total investment gains</td>
+              
+              <td class="num">2,174,256</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Earnings before extraordinary items</td>
+              
+              <td class="num">4,828,655</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="2">Extraordinary items:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Loss on liquidation of mill properties, net of $372,000 income tax benefit</td>
+              
+              <td class="num">(332,319)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Reduction in Federal income taxes (note 8)</td>
+              
+              <td class="num">166,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">(166,319)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net earnings</td>
+              
+              <td class="num">4,662,336</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Retained earnings, beginning</td>
+              
+              <td class="num">27,032,370</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Retained earnings, ending</td>
+              
+              <td class="num">$ 31,694,706</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="2">Per share of outstanding common stock:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Earnings from operations</td>
+              
+              <td class="num">2.69</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment gains</td>
+              
+              <td class="num">2.21</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Extraordinary items</td>
+              
+              <td class="num">(.17)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net earnings</td>
+              
+              <td class="num">$ 4.73</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="berkshire-hathaway-balance_sheet-1" class="statement">
+      <h3>Consolidated Balance Sheet</h3>
+      
+      <div class="page-caption">
+        PDF page 7 (printed 7-8)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="3">Current assets:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">$ 1,605,600</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Marketable securities, at cost (note 2) (Schedule I)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">5,421,384</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accounts receivable - trade, including $1,029 due from officers, net of allowance for doubtful accounts ($281,418) (Schedule XII)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">7,563,123</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Inventories, at the lower of cost (first-in, first-out) or market (note 3)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">12,332,943</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Prepaid and deferred charges (including mortgage note of approximately $15,200 due from officer)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">199,501</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total current assets</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">27,122,551</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Properties, plants and equipment, at cost (note 4) (Schedule V):</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Land</td>
+              
+              <td class="num">$ 106,555</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Buildings</td>
+              
+              <td class="num">3,715,838</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Machinery and equipment</td>
+              
+              <td class="num">15,651,551</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Furniture and fixtures</td>
+              
+              <td class="num">428,094</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Leasehold improvements</td>
+              
+              <td class="num">94,232</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Motor vehicle</td>
+              
+              <td class="num">2,423</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">19,998,693</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less accumulated depreciation and amortization (Schedule VI)</td>
+              
+              <td class="num">16,136,069</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net properties, plants and equipment</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">3,862,624</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment in unconsolidated subsidiaries (note 5) (Schedule III)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">12,754,985</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">$ 43,740,160</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="2">Liabilities and Stockholders&#39; Equity</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="section">
+              <td colspan="3">Current liabilities:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Note payable - bank, unsecured</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">$ 2,000,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accounts payable and accrued expenses</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">3,717,188</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accrued payroll</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">319,260</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accrued interest</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">32,536</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accrued payroll taxes</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">187,546</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accrued Federal, State, and local taxes (note 6)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">637,059</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total current liabilities</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">6,893,589</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Long-term debt:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">7 1/2% subordinated debentures (note 7) (Schedule IX)</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">641,300</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Stockholders; equity:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Common stock, $5 par value. Authorized 1,722,983 shares; issued 1,017,547 shares</td>
+              
+              <td class="num">$ 5,087,735</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Retained earnings</td>
+              
+              <td class="num">31,694,706</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">36,782,441</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less 32,065 shares of common stock in treasury, at cost</td>
+              
+              <td class="num">577,170</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total stockholders&#39; equity</td>
+              
+              <td class="num"></td>
+              
+              <td class="num">36,205,271</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">Commitments and contingencies (notes 9, 11, 12, and 13)</td>
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">$ 43,740,160</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="2">7 8</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+  <section id="national-indemnity" class="mb-5">
+    <h2 class="section-title">National Indemnity Company Financial Statements</h2>
+
+    
+    <article id="national-indemnity-profit_loss-0" class="statement">
+      <h3>Statement of Income</h3>
+      
+      <div class="page-caption">
+        PDF page 24 (printed 27)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Underwriting income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net premiums written</td>
+              
+              <td class="num">$ 19,999,000</td>
+              
+              <td class="num">18,122,958</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase) decrease in unearned premiums</td>
+              
+              <td class="num">342,137</td>
+              
+              <td class="num">(1,295,184)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Premiums earned</td>
+              
+              <td class="num">20,341,137</td>
+              
+              <td class="num">16,827,774</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Losses and loss expenses incurred</td>
+              
+              <td class="num">13,343,028</td>
+              
+              <td class="num">11,057,523</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">6,998,109</td>
+              
+              <td class="num">5,770,251</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Underwriting expenses:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Commissions and brokerage</td>
+              
+              <td class="num">4,540,886</td>
+              
+              <td class="num">3,763,414</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Salaries and other compensation</td>
+              
+              <td class="num">699,168</td>
+              
+              <td class="num">575,306</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Taxes, licenses and fees</td>
+              
+              <td class="num">571,711</td>
+              
+              <td class="num">548,837</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other underwriting expenses</td>
+              
+              <td class="num">615,233</td>
+              
+              <td class="num">572,352</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">6,426,998</td>
+              
+              <td class="num">5,459,909</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net underwriting gain</td>
+              
+              <td class="num">571,111</td>
+              
+              <td class="num">310,342</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Investment income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest on bonds</td>
+              
+              <td class="num">1,130,307</td>
+              
+              <td class="num">890,958</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividends on stock</td>
+              
+              <td class="num">304,153</td>
+              
+              <td class="num">257,474</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Real estate income</td>
+              
+              <td class="num">168,969</td>
+              
+              <td class="num">117,198</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other investment income</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">14,485</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1,603,429</td>
+              
+              <td class="num">1,280,115</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment expenses</td>
+              
+              <td class="num">167,843</td>
+              
+              <td class="num">124,674</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1,435,586</td>
+              
+              <td class="num">1,155,441</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit from underwriting and investments</td>
+              
+              <td class="num">2,006,697</td>
+              
+              <td class="num">1,465,783</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other income</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">68</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">2,006,697</td>
+              
+              <td class="num">1,465,851</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other expense</td>
+              
+              <td class="num">6,049</td>
+              
+              <td class="num">44,539</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Income before Federal income taxes and realized gains on investments</td>
+              
+              <td class="num">2,000,648</td>
+              
+              <td class="num">1,421,312</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes</td>
+              
+              <td class="num">378,053</td>
+              
+              <td class="num">236,885</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net income before realized gains on investments</td>
+              
+              <td class="num">1,622,595</td>
+              
+              <td class="num">1,184,427</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Realized gains on investments</td>
+              
+              <td class="num">796,242</td>
+              
+              <td class="num">657,785</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less Federal income taxes on gains</td>
+              
+              <td class="num">218,967</td>
+              
+              <td class="num">164,446</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">577,275</td>
+              
+              <td class="num">493,339</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net income</td>
+              
+              <td class="num">$ 2,199,870</td>
+              
+              <td class="num">1,677,766</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation</td>
+              
+              <td class="num">$ 59,913</td>
+              
+              <td class="num">24,231</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-indemnity-profit_loss-1" class="statement">
+      <h3>Statement of Adjusted Income</h3>
+      
+      <div class="page-caption">
+        PDF page 26 (printed 29)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net income as shown in the accompanying statement of income - statutory basis</td>
+              
+              <td class="num">$ [?],199,870</td>
+              
+              <td class="num">1,677,766</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Adjustments to net income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net realized gain on investments (to segregate from adjusted net earnings)</td>
+              
+              <td class="num">(796,242)</td>
+              
+              <td class="num">(657,785)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes applicable to net realized gains</td>
+              
+              <td class="num">218,967</td>
+              
+              <td class="num">164,446</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase (decrease) in estimated equity in unearned premiums</td>
+              
+              <td class="num">(102,642)</td>
+              
+              <td class="num">388,555</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">(Increase) decrease in future income taxes applicable to change in estimated equity in unearned premiums</td>
+              
+              <td class="num">54,194</td>
+              
+              <td class="num">(194,278)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">(625,723)</td>
+              
+              <td class="num">(299,062)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net earnings, as adjusted (excluding investment gains)</td>
+              
+              <td class="num">$ 1,574,147</td>
+              
+              <td class="num">1,378,704</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Investment gains:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net realized gains</td>
+              
+              <td class="num">796,242</td>
+              
+              <td class="num">657,785</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less applicable income taxes</td>
+              
+              <td class="num">218,966</td>
+              
+              <td class="num">164,446</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">577,276</td>
+              
+              <td class="num">493,339</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in net unrealized gains</td>
+              
+              <td class="num">1,737,273</td>
+              
+              <td class="num">184,241</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less allowance for future income taxes</td>
+              
+              <td class="num">477,740</td>
+              
+              <td class="num">46,060</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1,259,533</td>
+              
+              <td class="num">138,181</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net investment gain</td>
+              
+              <td class="num">$ 1,836,809</td>
+              
+              <td class="num">631,520</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-indemnity-balance_sheet-2" class="statement">
+      <h3>Statement of Assets and Liabilities</h3>
+      
+      <div class="page-caption">
+        PDF page 23 (printed 26)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Assets</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Bonds, at admitted value (note 3)</td>
+              
+              <td class="num">$ 27,208,728</td>
+              
+              <td class="num">21,837,869</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Stocks, at market value (note 3):</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Preferred (cost, 1968 $26,963; 1967 $68,491)</td>
+              
+              <td class="num">19,490</td>
+              
+              <td class="num">53,493</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Common (cost, 1968 $6,302,724; 1967 $6,167,017)</td>
+              
+              <td class="num">8,067,196</td>
+              
+              <td class="num">6,340,674</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">8,086,686</td>
+              
+              <td class="num">6,394,167</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Real estate, at cost less allowance for depreciation of $194,539 (1967, $160,300) (note 4)</td>
+              
+              <td class="num">1,026,105</td>
+              
+              <td class="num">1,058,212</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash and bank deposits</td>
+              
+              <td class="num">509,778</td>
+              
+              <td class="num">464,539</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Agents&#39; balances and premiums in course of collection, less ceded reinsurance balances payable of $128,904 (1967, $721,372)</td>
+              
+              <td class="num">2,205,360</td>
+              
+              <td class="num">1,407,001</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Reinsurance recoverable on loss payments</td>
+              
+              <td class="num">292,549</td>
+              
+              <td class="num">769,442</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment income due and accrued</td>
+              
+              <td class="num">431,820</td>
+              
+              <td class="num">330,801</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Amounts due from sales of securities</td>
+              
+              <td class="num">3,170</td>
+              
+              <td class="num">325,996</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other</td>
+              
+              <td class="num">33,356</td>
+              
+              <td class="num">72,531</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">$ 39,797,552</td>
+              
+              <td class="num">32,660,558</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Liabilities and Capital Stock</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Mortgage and contract payable on rental property</td>
+              
+              <td class="num">$ 37,351</td>
+              
+              <td class="num">46,520</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unearned premiums (note 5)</td>
+              
+              <td class="num">6,817,002</td>
+              
+              <td class="num">7,159,140</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Losses and loss adjustment expenses (note 6)</td>
+              
+              <td class="num">17,324,317</td>
+              
+              <td class="num">13,165,162</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Funds held under reinsurance treaties</td>
+              
+              <td class="num">734,010</td>
+              
+              <td class="num">672,013</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Contingent commissions</td>
+              
+              <td class="num">510,300</td>
+              
+              <td class="num">886,500</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other expenses</td>
+              
+              <td class="num">81,208</td>
+              
+              <td class="num">72,130</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Taxes, licenses and fees</td>
+              
+              <td class="num">525,786</td>
+              
+              <td class="num">475,318</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes (note 7)</td>
+              
+              <td class="num">231,500</td>
+              
+              <td class="num">88,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Agents&#39; and policyholders&#39; deposits</td>
+              
+              <td class="num">405,531</td>
+              
+              <td class="num">387,951</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Statutory reserve for bodily injury and compensation losses</td>
+              
+              <td class="num">344,078</td>
+              
+              <td class="num">487,395</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Amounts due for purchases of securities</td>
+              
+              <td class="num">1,231,012</td>
+              
+              <td class="num">1,604,794</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other liabilities</td>
+              
+              <td class="num">46,487</td>
+              
+              <td class="num">57,771</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">28,288,632</td>
+              
+              <td class="num">25,102,694</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Capital stock and surplus:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Common stock of $10 par value per share. Authorized 250,000 shares; issued 200,000 shares (140,000 in 1967) (note 8)</td>
+              
+              <td class="num">2,000,000</td>
+              
+              <td class="num">1,400,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Paid-in surplus</td>
+              
+              <td class="num">301,250</td>
+              
+              <td class="num">301,250</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unassigned surplus</td>
+              
+              <td class="num">9,207,670</td>
+              
+              <td class="num">5,856,614</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">11,508,920</td>
+              
+              <td class="num">7,557,864</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">$ 39,797,552</td>
+              
+              <td class="num">32,660,558</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-indemnity-equity-3" class="statement">
+      <h3>Statements of Paid-In and Unassigned Surplus</h3>
+      
+      <div class="page-caption">
+        PDF page 25 (printed 28)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Paid-In Surplus</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Beginning and end of year</td>
+              
+              <td class="num">$ 301,250</td>
+              
+              <td class="num">301,250</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Unassigned Surplus</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Beginning of year</td>
+              
+              <td class="num">$ 5,856,614</td>
+              
+              <td class="num">3,907,531</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net income</td>
+              
+              <td class="num">2,199,870</td>
+              
+              <td class="num">1,677,766</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in net unrealized appreciation of investments</td>
+              
+              <td class="num">1,608,414</td>
+              
+              <td class="num">184,241</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Decrease in liability for unauthorized reinsurance</td>
+              
+              <td class="num">12,670</td>
+              
+              <td class="num">116,407</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in excess of bodily injury liability and compensation statutory and voluntary reserves over case basis and loss expense reserves (Schedule &#34;P&#34; reserve)</td>
+              
+              <td class="num">143,318</td>
+              
+              <td class="num">82,146</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in nonadmitted assets</td>
+              
+              <td class="num">(13,216)</td>
+              
+              <td class="num">(111,477)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Stock dividend (note 8)</td>
+              
+              <td class="num">(600,000)</td>
+              
+              <td class="num">-</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">End of year</td>
+              
+              <td class="num">$ 9,207,670</td>
+              
+              <td class="num">5,856,614</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-indemnity-equity-4" class="statement">
+      <h3>Statement of Adjusted Stockholders&#39; Equity</h3>
+      
+      <div class="page-caption">
+        PDF page 27 (printed 30)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Capital shares and surplus as shown in the accompanying statement of assets and liabilities - statutory basis</td>
+              
+              <td class="num">$ 11,503,920</td>
+              
+              <td class="num">7,557,864</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Adjustments to capital shares and surplus:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Equity in unearned premium reserve, estimated at 30% of reserve</td>
+              
+              <td class="num">2,045,100</td>
+              
+              <td class="num">2,147,742</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Statement value of bonds over market value</td>
+              
+              <td class="num">(83,924)</td>
+              
+              <td class="num">(212,783)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Reserve for reinsurance with unauthorized companies</td>
+              
+              <td class="num">44,823</td>
+              
+              <td class="num">57,493</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Excess bodily injury liability and compensation statutory reserves over case basis</td>
+              
+              <td class="num">344,077</td>
+              
+              <td class="num">487,395</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Nonadmitted assets (note 2)</td>
+              
+              <td class="num">165,562</td>
+              
+              <td class="num">152,346</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">2,515,638</td>
+              
+              <td class="num">2,632,193</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Adjusted equity before income taxes applicable to equity in unearned premiums and unrealized appreciation on investements</td>
+              
+              <td class="num">14,024,558</td>
+              
+              <td class="num">10,190,057</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less Federal income taxes applicable to estimated equity in unearned premiums and unrealized appreciation on investments</td>
+              
+              <td class="num">1,475,186</td>
+              
+              <td class="num">1,051,641</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Adjusted stockholders&#39; equity</td>
+              
+              <td class="num">$ 12,549,372</td>
+              
+              <td class="num">9,138,416</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+  <section id="national-fire-marine" class="mb-5">
+    <h2 class="section-title">National Fire &amp; Marine Insurance Company Financial Statements</h2>
+
+    
+    <article id="national-fire-marine-profit_loss-0" class="statement">
+      <h3>Statement of Income</h3>
+      
+      <div class="page-caption">
+        PDF page 33 (printed 36)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Underwriting income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net premiums written</td>
+              
+              <td class="num">$ 2,620,727</td>
+              
+              <td class="num">3,926,501</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less increase in unearned premiums</td>
+              
+              <td class="num">345,072</td>
+              
+              <td class="num">280,490</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Premiums earned</td>
+              
+              <td class="num">2,275,655</td>
+              
+              <td class="num">3,646,011</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Losses and loss expenses incurred</td>
+              
+              <td class="num">1,455,326</td>
+              
+              <td class="num">2,208,529</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">820,329</td>
+              
+              <td class="num">1,437,482</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Underwriting expenses:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Commissions and brokerage</td>
+              
+              <td class="num">755,722</td>
+              
+              <td class="num">1,291,122</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Salaries and other compensation</td>
+              
+              <td class="num">43,899</td>
+              
+              <td class="num">25,537</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Taxes, licenses and fees</td>
+              
+              <td class="num">6,753</td>
+              
+              <td class="num">7,509</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other underwriting expenses</td>
+              
+              <td class="num">17,240</td>
+              
+              <td class="num">20,877</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">823,614</td>
+              
+              <td class="num">1,345,045</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net underwriting gain (loss)</td>
+              
+              <td class="num">(3,285)</td>
+              
+              <td class="num">92,437</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Investment income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest on bonds</td>
+              
+              <td class="num">134,895</td>
+              
+              <td class="num">85,822</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Dividends on stocks</td>
+              
+              <td class="num">47,350</td>
+              
+              <td class="num">45,682</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">182,245</td>
+              
+              <td class="num">131,504</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment expenses</td>
+              
+              <td class="num">5,772</td>
+              
+              <td class="num">7,581</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">176,473</td>
+              
+              <td class="num">123,923</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Profit from underwriting and investments</td>
+              
+              <td class="num">173,188</td>
+              
+              <td class="num">216,360</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other expense</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">72</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Income before Federal income taxes and realized gains on investments</td>
+              
+              <td class="num">173,188</td>
+              
+              <td class="num">216,288</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes</td>
+              
+              <td class="num">5,913</td>
+              
+              <td class="num">52,089</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net income before realized gains on investments</td>
+              
+              <td class="num">167,275</td>
+              
+              <td class="num">164,199</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Realized gains on investments</td>
+              
+              <td class="num">178,694</td>
+              
+              <td class="num">264,796</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less Federal income taxes on gains</td>
+              
+              <td class="num">49,140</td>
+              
+              <td class="num">66,199</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">129,554</td>
+              
+              <td class="num">198,597</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net income</td>
+              
+              <td class="num">$ 296,829</td>
+              
+              <td class="num">362,796</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-fire-marine-profit_loss-1" class="statement">
+      <h3>Statement of Adjusted Income</h3>
+      
+      <div class="page-caption">
+        PDF page 35 (printed 38)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net income as shown in the accompanying statement of income - statutory basis</td>
+              
+              <td class="num">$ 296,829</td>
+              
+              <td class="num">362,796</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Adjustments to net income:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net realized gain on investments (to segregate from adjusted net earnings)</td>
+              
+              <td class="num">(178,694)</td>
+              
+              <td class="num">(264,[?]96)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes applicable to net realized gains</td>
+              
+              <td class="num">49,140</td>
+              
+              <td class="num">66,199</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase in estimated equity in unearned premiums</td>
+              
+              <td class="num">103,521</td>
+              
+              <td class="num">84,147</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Future income taxes applicable to increase in estimated equity in unearned premiums</td>
+              
+              <td class="num">(54,659)</td>
+              
+              <td class="num">([?]2,074)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">(80,692)</td>
+              
+              <td class="num">(156,524)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net earnings, as adjusted (excluding investment gains)</td>
+              
+              <td class="num">$ 216,137</td>
+              
+              <td class="num">206,272</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Investment gains:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net realized gains</td>
+              
+              <td class="num">$ 178,694</td>
+              
+              <td class="num">264,796</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less applicable income taxes</td>
+              
+              <td class="num">49,140</td>
+              
+              <td class="num">66,199</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">129,554</td>
+              
+              <td class="num">198,597</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase (decrease) in net unrealized gains</td>
+              
+              <td class="num">222,889</td>
+              
+              <td class="num">(65,941)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less allowance for future income taxes</td>
+              
+              <td class="num">(61,162)</td>
+              
+              <td class="num">16,485</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">161,727</td>
+              
+              <td class="num">(49,456)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net investment gain</td>
+              
+              <td class="num">$ 291,281</td>
+              
+              <td class="num">149,141</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-fire-marine-balance_sheet-2" class="statement">
+      <h3>Statement of Assets and Liabilities</h3>
+      
+      <div class="page-caption">
+        PDF page 32 (printed 35)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Assets</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Bonds, at [?][?][?][?][?]ted value (note 2)</td>
+              
+              <td class="num">$ 2,992,253</td>
+              
+              <td class="num">2,943,073</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Stocks, at market value (note 2):</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Preferred (cost, 1968 $18,900; 1967 $28,500)</td>
+              
+              <td class="num">13,200</td>
+              
+              <td class="num">21,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Common (cost, 1968 $804,554; 1967 $872,089)</td>
+              
+              <td class="num">1,083,704</td>
+              
+              <td class="num">928,487</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1,096,904</td>
+              
+              <td class="num">949,487</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash and bank deposits</td>
+              
+              <td class="num">87,889</td>
+              
+              <td class="num">48,921</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Agents&#39; balances and premiums in course of collection, less ceded reinsurance balances payable of $81,512, 1968; $69,856, 1967</td>
+              
+              <td class="num">612,758</td>
+              
+              <td class="num">815,774</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Reinsurance recoverable on loss payments</td>
+              
+              <td class="num">50,374</td>
+              
+              <td class="num">21,932</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Investment income due and accrued</td>
+              
+              <td class="num">52,546</td>
+              
+              <td class="num">45,546</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Amounts due from sales of securities</td>
+              
+              <td class="num">-</td>
+              
+              <td class="num">120,223</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other</td>
+              
+              <td class="num">1,939</td>
+              
+              <td class="num">499</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">$ 4,894,663</td>
+              
+              <td class="num">4,945,455</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Liabilities and Capital Stock</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unearned premiums (note 3)</td>
+              
+              <td class="num">$ 1,234,103</td>
+              
+              <td class="num">889,032</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Losses and loss adjustment expenses (note 4)</td>
+              
+              <td class="num">1,225,918</td>
+              
+              <td class="num">2,029,378</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Funds held under reinsurance treaties</td>
+              
+              <td class="num">309,055</td>
+              
+              <td class="num">85,638</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other expenses</td>
+              
+              <td class="num">4,061</td>
+              
+              <td class="num">4,290</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Taxes, licenses and fees</td>
+              
+              <td class="num">8,455</td>
+              
+              <td class="num">9,882</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Federal income taxes (note 5)</td>
+              
+              <td class="num">7,021</td>
+              
+              <td class="num">119,045</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Statutory reserve for bodily injury and compensation losses</td>
+              
+              <td class="num">84,733</td>
+              
+              <td class="num">141,016</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Amounts due [?]or purchases [?][?] securities</td>
+              
+              <td class="num">66,280</td>
+              
+              <td class="num">276,129</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other liabilities</td>
+              
+              <td class="num">10,898</td>
+              
+              <td class="num">25,049</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">2,950,524</td>
+              
+              <td class="num">3,579,459</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Capital stock and surplus:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Common stock at $100 par value per share. Authorized and issued 5,000 shares</td>
+              
+              <td class="num">500,000</td>
+              
+              <td class="num">500,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Paid-in surplus</td>
+              
+              <td class="num">50,000</td>
+              
+              <td class="num">50,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unassigned surplus</td>
+              
+              <td class="num">1,394,139</td>
+              
+              <td class="num">815,996</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1,944,139</td>
+              
+              <td class="num">1,365,996</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">$ 4,894,663</td>
+              
+              <td class="num">4,945,455</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-fire-marine-equity-3" class="statement">
+      <h3>Statements of Paid-In and Unassigned Surplus</h3>
+      
+      <div class="page-caption">
+        PDF page 34 (printed 37)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Paid-In Surplus</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Beginning and end of year</td>
+              
+              <td class="num">$ 50,000</td>
+              
+              <td class="num">50,000</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label">Unassigned Surplus</td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Beginning of year</td>
+              
+              <td class="num">$ 815,996</td>
+              
+              <td class="num">578,602</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net income</td>
+              
+              <td class="num">296,829</td>
+              
+              <td class="num">362,796</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase (decrease) in net unrealized appreciation of investments</td>
+              
+              <td class="num">225,031</td>
+              
+              <td class="num">(65,941)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Decrease (increase) in excess of bodily injury liability and compensation statutory and voluntary reserves over case basis and loss expense reserves (Schedule &#34;P&#34; reserve)</td>
+              
+              <td class="num">56,283</td>
+              
+              <td class="num">(59,461)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">End of year</td>
+              
+              <td class="num">$ 1,394,139</td>
+              
+              <td class="num">815,996</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="national-fire-marine-equity-4" class="statement">
+      <h3>Statement of Adjusted Stockholders&#39; Equity</h3>
+      
+      <div class="page-caption">
+        PDF page 36 (printed 39)
+        <span class="badge text-bg-warning">transcribed from the page image</span>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num">1968</td>
+              
+              <td class="num">1967</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Capital shares and surplus as shown in the accompanying statement of assets and liabilities - statutory basis</td>
+              
+              <td class="num">$ 1,944,139</td>
+              
+              <td class="num">1,365,996</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Adjustments to capital shares and surplus:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Equity in unearned premium reserve, estimated at 30% of reserve</td>
+              
+              <td class="num">370,231</td>
+              
+              <td class="num">266,710</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Statement value of bonds over market value</td>
+              
+              <td class="num">(3,577)</td>
+              
+              <td class="num">(1,435)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Excess bodily injury liability and compensation statutory reserves over case basis</td>
+              
+              <td class="num">84,733</td>
+              
+              <td class="num">141,016</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">451,387</td>
+              
+              <td class="num">406,291</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Adjusted equity before income taxes applicable to equity in unearned premiums and unrealized appreciation on investments</td>
+              
+              <td class="num">2,395,526</td>
+              
+              <td class="num">1,772,287</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less Federal income taxes applicable to estimated equity in unearned premiums and unrealized appreciation on investments</td>
+              
+              <td class="num">261,041</td>
+              
+              <td class="num">145,220</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Adjusted stockholders&#39; equity</td>
+              
+              <td class="num">$ 2,134,485</td>
+              
+              <td class="num">1,627,067</td>
+              
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="2">See accompanying notes to financial statements.</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer (RAG Champ) — financial statements as extracted from BRK-1968.pdf.
+    Sideways pages were rotated before extraction. Verify figures against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

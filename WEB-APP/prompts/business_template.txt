@@ -1,0 +1,34 @@
+{{PROFILE}}Annual report: {{REPORT}}
+Report sections provided: {{SECTIONS_LIST}}
+Notes provided (to confirm figures): {{NOTES}}
+Primary financial statements provided (for reference): {{STATEMENTS_LIST}}
+
+QUESTION: {{QUESTION}}
+
+Structure your answer as:
+## Summary
+3–5 bullet points that answer the question.
+## What management says
+The business story from the report sections: products, markets, customers, competitive position.
+## Performance and drivers
+The figures the report sections give and what drove them, with your calculations shown.
+## Outlook and risks
+Management's expectations (as expectations) and the risks it names or that the text implies.
+## How it shows in the audited numbers
+One table with the columns: Figure (report section, page) | Where in the notes or statements | Ties? (yes / no / not disclosed). Then two to four sentences on what the audited figures confirm, contradict, or cannot show.
+## Questions for management
+Three to five questions an analyst should ask.
+## Sources
+The report sections, notes and statements you relied on, with PDF pages.
+
+----- REPORT SECTIONS: MANAGEMENT'S COMMENTARY AND OTHER NARRATIVE FROM THE ANNUAL REPORT (PDF page numbers; not audited) -----
+{{SECTIONS}}
+----- END OF REPORT SECTIONS -----
+
+{{NARRATIVE}}----- NOTES PROVIDED TO CONFIRM FIGURES (PDF page numbers) -----
+{{EXTRACT}}
+----- END OF NOTES -----
+
+----- PRIMARY FINANCIAL STATEMENTS (for reference; PDF page numbers) -----
+{{STATEMENTS}}
+----- END OF PRIMARY FINANCIAL STATEMENTS -----

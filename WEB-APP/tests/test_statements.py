@@ -2,8 +2,9 @@
 
 import pytest
 
-import extractor
-import statements
+from analyzer import statement_info
+from ingest import clip as extractor
+from ingest import statements
 
 
 def _by_type(index, section):
@@ -75,12 +76,12 @@ def test_profit_and_loss_and_cash_flow_content(index):
 
 
 def test_sections_text_and_label(index):
-    text = statements.sections_text(index, ["consolidated"])
+    text = statement_info.sections_text(index, ["consolidated"])
     for title in ("Consolidated Statement of Profit and Loss", "Consolidated Balance Sheet",
                   "Consolidated Cash Flow Statement", "Consolidated Statement of Changes in Equity"):
         assert f"=== {title} (Consolidated) ===" in text
     assert "Balance Sheet (Standalone)" not in text
-    label = statements.label(index, ["consolidated"])
+    label = statement_info.label(index, ["consolidated"])
     assert "Consolidated Balance Sheet (PDF p.341)" in label
     assert "Consolidated Statement of Changes in Equity (PDF p.344–345)" in label
 

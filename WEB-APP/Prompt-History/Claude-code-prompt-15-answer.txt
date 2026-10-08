@@ -1,0 +1,122 @@
+# Bharat Forge (Consolidated FY2025-26): what the material says about the commercial vehicles business
+
+## Summary
+- **No commercial vehicle (CV) figures are in the material I was given.** The question asks for management's discussion, but no MD&A or other report passages were sent. The notes and statements never mention "commercial vehicles", CV volumes, or a split between CV and passenger vehicles. I cannot give CV revenue, margins or market commentary without inventing them.
+- **The closest stand-in is the Forgings segment.** It covers forgings and machined parts for the **automotive and industrial sectors** (Note 49, p.472), so CV is somewhere inside it. External revenue rose **7.5%** to ₹139,285.82m. The segment result rose **5.4%** to ₹19,560.91m, so the margin slipped from 14.3% to 14.0% (Note 49, p.473).
+- **Forgings grew more slowly than the Group** (Group revenue +11.2%). Its share of gross segment revenue fell from 82.6% to 78.0% as "Others" more than doubled.
+- **Forgings took its first exceptional loss** (₹1,073.54m against nil the year before). It also raised capital spending 26.7% to ₹18,879.40m, and its pre-tax return on capital employed fell slightly, from 17.9% to 17.2%.
+- **Revenue by region shifted towards India (+43.2%) and Europe (+19.0%). The US was nearly flat (+3.4%) and "Other" regions fell 34.9%** (Note 49, p.475). These figures are for the whole Group, not for CV.
+
+## Key figures
+(₹ million)
+
+| Item | Current year | Prior year | Change | % change | Source |
+|---|---|---|---|---|---|
+| Forgings external revenue | 139,285.82 | 129,612.33 | 9,673.49 | 7.46% | Note 49, p.473 |
+| Defence external revenue | 17,571.72 | 17,719.86 | (148.14) | (0.84%) | Note 49, p.473 |
+| Others external revenue | 21,698.12 | 9,519.96 | 12,178.16 | 127.92% | Note 49, p.473 |
+| Inter-segment revenue | 10,439.13 | 5,624.11 | 4,815.02 | 85.61% | Note 49, p.473 |
+| Revenue from operations | 168,116.53 | 151,228.03 | 16,888.50 | 11.17% | P&L p.342; Note 24, p.410 |
+| Forgings segment result | 19,560.91 | 18,561.18 | 999.73 | 5.39% | Note 49, p.473 |
+| Forgings margin (result ÷ revenue) | 14.04% | 14.32% | (0.28) pp | – | calculated |
+| Forgings exceptional items | (1,073.54) | – | (1,073.54) | n/a | Note 49, p.473 |
+| Forgings depreciation and amortisation | 8,285.96 | 7,987.40 | 298.56 | 3.74% | Note 49, p.473 |
+| Forgings tax | 5,093.53 | 5,018.46 | 75.07 | 1.50% | Note 49, p.474 |
+| Forgings assets | 147,642.44 | 132,272.20 | 15,370.24 | 11.62% | Note 49, p.474 |
+| Forgings liabilities | 34,064.62 | 28,754.18 | 5,310.44 | 18.47% | Note 49, p.474 |
+| Forgings increase in non-current non-financial assets (a capex proxy) | 18,879.40 | 14,895.59 | 3,983.81 | 26.74% | Note 49, p.475 |
+| Revenue, India | 51,692.92 | 36,091.80 | 15,601.12 | 43.23% | Note 49, p.475 |
+| Revenue, Europe | 60,402.82 | 50,759.64 | 9,643.18 | 19.00% | Note 49, p.475 |
+| Revenue, USA | 38,094.34 | 36,841.92 | 1,252.42 | 3.40% | Note 49, p.475 |
+| Revenue, other regions | 17,926.45 | 27,534.67 | (9,608.22) | (34.90%) | Note 49, p.475 |
+
+## Detailed analysis
+
+### 1. Where the CV business sits
+- Note 1 (p.348) says the Group makes forged and machined components, including aluminium castings, "for the auto and industrial sectors", plus electric-vehicle components and defence products.
+- Note 49 (p.472) puts all automotive and industrial forgings in **Forgings**. CV is therefore inside Forgings, together with passenger vehicles and industrial customers.
+- The electric-vehicle and other new initiatives are probably in **Others**, but the note does not say so explicitly.
+- No product-line revenue is disclosed. Note 24 only splits revenue by type (goods, tooling, job work, scrap, export incentives), not by end market.
+
+### 2. Forgings performance (the proxy)
+- **Growth:** external revenue grew 7.46%, compared with 11.17% for the Group. Forgings' share of gross segment revenue:
+  - FY26: 139,285.82 ÷ 178,555.66 = **78.0%**
+  - FY25: 129,612.33 ÷ 156,852.15 = **82.6%**
+- **Margin:** 14.04% against 14.32%. Profit grew more slowly than revenue (+5.4% vs +7.5%).
+  - At Group level, raw materials rose from 42.6% of revenue (64,396.23 ÷ 151,228.03) to 46.3% (77,779.31 ÷ 168,116.53) (P&L p.342).
+  - That fits with margin pressure, but it is not broken down by segment.
+- **Capital employed and return (segment assets less segment liabilities):**
+  - FY26: 147,642.44 − 34,064.62 = 113,577.82, so return = 19,560.91 ÷ 113,577.82 = **17.2%**
+  - FY25: 132,272.20 − 28,754.18 = 103,518.02, so return = 18,561.18 ÷ 103,518.02 = **17.9%**
+- **Investment:** additions of ₹18,879.40m are 2.3 times Forgings depreciation of ₹8,285.96m. The segment is investing for growth, but returns have not yet caught up.
+- **Exceptional loss:** ₹1,073.54m in Forgings. Note 32 was not provided, so its nature is unknown.
+
+### 3. Other segments, for context
+| Segment | FY26 margin | FY25 margin |
+|---|---|---|
+| Defence | 814.97 ÷ 17,571.72 = **4.6%** | 10.5% |
+| Others | 1,540.33 ÷ 21,698.12 = **7.1%** | 4.1% |
+
+- Inter-segment revenue rose 85.6%, meaning much more is being traded between segments.
+- The acquisition of a subsidiary (Cash Flow ₹4,986.23m, p.346) and the jump in Others' assets (from 12,588.42 to 24,842.83) suggest the acquisition went into "Others".
+
+### 4. Arithmetic checks on Note 49
+All of these add up:
+- Segment revenue and results
+- Depreciation and amortisation (sums to 9,709.24)
+- Tax (sums to 5,777.74)
+- Exceptional items (sums to 1,544.43)
+- Segment assets (227,270.76 before, 222,599.55 after eliminations)
+- Regions (outside India 116,423.61; total 168,116.53)
+
+## Impact on the financial statements
+
+### Statement of Profit and Loss
+| Line (P&L p.342) | FY26 | FY25 | How the notes reconcile |
+|---|---|---|---|
+| Revenue from operations | 168,116.53 | 151,228.03 | Equals Note 24's total and Note 49's figure after inter-segment eliminations. Note 49 prints FY25 as 151,228.04 (a rounding difference). |
+| Depreciation and amortisation | 9,709.24 | 8,736.19 | Equals the Note 49 segment total (3.1) |
+| Finance costs | 3,233.46 | 4,174.93 | Deducted as unallocated in Note 49 |
+| Profit before exceptional items and tax | 18,216.15 | 16,128.90 | Note 49 shows 18,216.16 (rounding) |
+| Exceptional items | (1,544.43) | (1,570.65) | Equals the Note 49 segment split |
+| Profit before tax | 16,671.72 | 14,558.25 | Note 49 shows 16,671.73 (rounding) |
+| Income tax | 5,777.74 | 5,425.50 | Equals the Note 49 total (3.2) |
+| Share of associates and joint ventures | (76.50) | (24.52) | Equals Note 49 (3.3) |
+
+Forgings produces 89% of the segment profits (19,560.91 ÷ 21,916.21), so it drives profit for the year of ₹10,893.98m (against ₹9,132.75m).
+
+### Balance Sheet
+- Total assets of ₹222,599.55m (BS p.341) equal Note 49's figure after inter-segment eliminations. Forgings accounts for 66% of that total.
+- Equity-accounted investments of ₹614.14m equal Note 49 (6.1).
+- Working capital that probably relates to Forgings grew: trade receivables rose from 28,996.06 to 39,097.99 (+34.8%) and inventories from 35,784.36 to 40,527.83 (+13.3%). Both grew faster than revenue.
+- **Segment "Total liabilities" of ₹49,259.68m does not agree with the Balance Sheet's ₹127,031.31m.** Borrowings, lease and tax balances appear to be left out (see red flags).
+
+### Cash Flow Statement
+- Profit before tax (16,671.72), depreciation (9,709.24) and finance costs (3,233.46) link to Note 49 (p.346).
+- Operating cash flow fell 17.2% to ₹14,866.42m (from 17,963.43), mainly because receivables rose by ₹7,090.42m.
+- Capital expenditure paid was ₹11,404.96m. That is well below the segment asset additions of ₹29,606.73m, which include capital work-in-progress transfers, right-of-use assets and the acquisition.
+
+### Statement of Changes in Equity
+- Nothing specific to segments or CV.
+- Profit of ₹10,796.61m goes to retained earnings (p.344).
+- The cash-flow hedge reserve lost ₹3,973.98m (net movement on hedges ₹(5,312.67)m, P&L p.343). That is relevant to export-heavy forgings but not split by segment.
+
+## Red flags & areas for follow-up
+1. **The MD&A is missing.** CV volumes, the India vs North America vs Europe CV cycle, customers and outlook cannot be analysed. Re-run the question with the MD&A or Board's report passages selected.
+2. **Segment liabilities do not reconcile.** Note 49 shows ₹49,259.68m against ₹127,031.31m on the Balance Sheet. Its "Net capital employed" (222,599.55 − 49,259.68 = 173,339.87) is therefore not a true equity-plus-debt measure. Yet footnote * says "no other reconciling items". That statement contradicts the figures.
+3. **Note 24's reconciliation to contracted price does not reach reported revenue.**
+   - FY26: 167,747.14 against 168,116.53 (a gap of 369.39).
+   - FY25: 148,328.68 against 151,228.03 (a gap of 2,899.35).
+   - The positive "sales returns, discounts, hedging" adjustment of +920.35 is unusual. Ask what it contains.
+4. **Forgings exceptional loss of ₹1,073.54m:** what it is, and whether it relates to CV or automotive plants. Note 32 is needed.
+5. **"Other" regions revenue fell 34.9% and the US was flat.** Ask which end markets caused this.
+6. **Receivables grew 34.8% against 11.2% revenue growth.** Ask about collections and customer mix.
+7. **Rounding differences between Note 49 and the P&L** (0.01): revenue in FY25, profit before exceptional items and profit before tax.
+8. **Dates:** Note 1 says the statements were authorised on **May 08, 2026**, but the statements are signed **May 07, 2026**.
+9. **Cash flow statement:** the foreign currency translation reserve movement (2,205.34) is added to cash in a way that looks unusual. The prior-year closing cash (5,777.75) is also rebuilt to 6,210.35 the same way. Check the presentation.
+
+## Sources
+- Note 49, Segment Information (PDF p.472–475)
+- Note 24, Revenue from Operations (PDF p.410–411)
+- Note 1, Corporate Information (PDF p.348)
+- Consolidated P&L (p.342–343), Balance Sheet (p.341), Cash Flow (p.346–347), Changes in Equity (p.344–345)

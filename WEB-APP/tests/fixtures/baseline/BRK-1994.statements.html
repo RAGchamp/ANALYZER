@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berkshire Hathaway Inc — Financial Statements</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Same look as the saved analysis reports (templates/analysis_report.html) */
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-dark:#084298;
+    --biz-gold:#b8860b;
+    --nav-blue:#0a1128;
+    --nav-yellow:#f2b400;
+  }
+  body{ background:#f7f8fa; margin:0; }
+  html{ scroll-behavior:smooth; }
+  section[id], article[id]{ scroll-margin-top:84px; }
+
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue); color:var(--nav-yellow);
+    padding:.9rem 1.5rem; display:flex; justify-content:space-between; align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; }
+  .topnav .brand svg{ height:42px; width:auto; display:block; }
+  .topnav .tagline{ font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic; }
+  @media (max-width:576px){ .topnav{ flex-direction:column; gap:.4rem; padding:.75rem 1rem; } }
+
+  .context-box{
+    background:#e7f1ff; border:1px solid #b6d4fe; border-left:6px solid var(--biz-blue);
+    border-radius:.5rem; padding:1.1rem 1.35rem;
+  }
+  .context-box .company{ color:var(--biz-blue-dark); font-weight:700; font-size:1.5rem; margin:0; }
+  .context-box .meta{ font-size:.88rem; color:#34495e; }
+  .toc a{ text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .toc .rotated{ font-size:.7rem; }
+
+  .section-title{
+    display:inline-block; padding-bottom:.4rem; border-bottom:3px solid var(--biz-gold);
+    margin:0 0 1.25rem; color:#10233f;
+  }
+  .statement{ background:#fff; border-radius:.5rem; padding:1.25rem 1.5rem;
+              box-shadow:0 .125rem .25rem rgba(0,0,0,.075); margin-bottom:2rem; }
+  .statement h3{ font-size:1.25rem; color:var(--biz-blue-dark); margin:0; }
+  .page-caption{ font-size:.78rem; color:#6c757d; margin:1rem 0 .35rem; }
+  .page-caption .badge{ font-weight:600; }
+
+  table.fs{ width:100%; font-size:.86rem; border-collapse:collapse; margin-bottom:.5rem; }
+  table.fs td{ padding:.28rem .6rem; border-bottom:1px solid #e3e8f0; vertical-align:top; }
+  table.fs td.num{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  table.fs td.note{ text-align:center; color:#6c757d; white-space:nowrap; width:3.5rem; }
+  table.fs tr.data:nth-child(odd) td{ background:#eef4fc; }
+  table.fs tr.header td{ background:#ffdf7e; font-weight:700; color:#212529; border-color:#e6c257;
+                         vertical-align:bottom; }
+  table.fs tr.header td.num, table.fs tr.header td.note{ white-space:normal; min-width:4.5rem; font-size:.8rem; }
+  /* wide tables (the 12-column Statement of Changes in Equity) - compact so every column fits */
+  table.fs.wide{ font-size:.74rem; }
+  table.fs.wide td{ padding:.24rem .32rem; }
+  table.fs.wide td.label{ min-width:9rem; }
+  table.fs.wide tr.header td.num, table.fs.wide tr.header td.note{ min-width:0; font-size:.7rem; }
+  table.fs tr.group td{ background:#ffe9a8; font-weight:700; font-size:.8rem; }
+  table.fs tr.group td.grp{ text-align:center; border-left:2px solid #fff; border-right:2px solid #fff;
+                            border-bottom:2px solid #e6c257; }
+  table.fs tr.section td{ font-weight:700; color:#10233f; background:#d3e3f5; }
+  table.fs tr.text td{ color:#34495e; font-style:italic; }
+  table.fs tr.total td{ font-weight:700; border-top:2px solid #9fb3cc; background:#f6f9fd; }
+  table.fs tr.unit td{ text-align:right; color:#6c757d; font-size:.78rem; border:none; }
+  .table-scroll{ overflow-x:auto; }
+  .back-to-top{ font-size:.85rem; }
+  footer{ background:var(--nav-blue); }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <span class="brand" aria-label="RAG Champ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="RAG Champ logo">
+  <!-- interlocking two-tone mark, flat fill, two colors only -->
+  <circle cx="24" cy="24" r="19" fill="#5BF527"/>
+  <path d="M24,5 A19,19 0 0,0 24,43 A9.5,9.5 0 0,0 24,24 A9.5,9.5 0 0,1 24,5 Z" fill="#FA0C00"/>
+
+  <text x="58" y="33" font-family="'Segoe UI', Verdana, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="0.3" fill="#ffd60a">RAG Champ</text>
+</svg>
+</span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<main class="container my-4">
+
+  <section id="top" class="context-box mb-4">
+    <h1 class="company mb-2">Berkshire Hathaway Inc — Financial Statements</h1>
+    <div class="meta mb-3">
+      <strong>Annual report:</strong> BRK-1994.pdf &nbsp;·&nbsp;
+      Built from the statements extracted when the report was loaded; consolidated first, then standalone.
+      Page numbers are PDF page numbers (printed page in brackets).
+    </div>
+    <div class="row toc">
+      
+      <div class="col-md-6">
+        <strong>Consolidated</strong>
+        <ul class="mb-2">
+          
+          <li><a href="#consolidated-profit_loss">CONSOLIDATED STATEMENTS OF EARNINGS</a>
+            </li>
+          
+          <li><a href="#consolidated-balance_sheet">CONSOLIDATED BALANCE SHEETS</a>
+            </li>
+          
+          <li><a href="#consolidated-cash_flow">CONSOLIDATED STATEMENTS OF CASH FLOWS</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section id="consolidated" class="mb-5">
+    <h2 class="section-title">Consolidated Financial Statements</h2>
+
+    
+    <article id="consolidated-profit_loss" class="statement">
+      <h3>CONSOLIDATED STATEMENTS OF EARNINGS</h3>
+      
+      <div class="page-caption">
+        PDF page 24 (printed 21)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">(dollars in thousands except per share amounts)</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">YEAR ENDED DECEMBER 31,</td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1994</td>
+              
+              <td class="num">1993</td>
+              
+              <td class="num">1992</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">REVENUES:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Sales and service revenues</td>
+              
+              <td class="num">$2,351,918</td>
+              
+              <td class="num">$1,962,862</td>
+              
+              <td class="num">$1,774,436</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Insurance premiums earned</td>
+              
+              <td class="num">923,180</td>
+              
+              <td class="num">650,726</td>
+              
+              <td class="num">664,293</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest and dividend income</td>
+              
+              <td class="num">426,094</td>
+              
+              <td class="num">354,028</td>
+              
+              <td class="num">364,895</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income from investment in Salomon Inc</td>
+              
+              <td class="num">30,058</td>
+              
+              <td class="num">63,000</td>
+              
+              <td class="num">63,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income from finance businesses</td>
+              
+              <td class="num">24,885</td>
+              
+              <td class="num">22,226</td>
+              
+              <td class="num">20,696</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Realized investment gain</td>
+              
+              <td class="num">91,332</td>
+              
+              <td class="num">546,422</td>
+              
+              <td class="num">89,937</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">3,847,467</td>
+              
+              <td class="num">3,599,264</td>
+              
+              <td class="num">2,977,257</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">COST AND EXPENSES:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cost of products and services sold</td>
+              
+              <td class="num">1,449,999</td>
+              
+              <td class="num">1,180,642</td>
+              
+              <td class="num">1,049,721</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Insurance losses and loss adjustment expenses</td>
+              
+              <td class="num">565,257</td>
+              
+              <td class="num">450,659</td>
+              
+              <td class="num">687,625</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Insurance underwriting expenses</td>
+              
+              <td class="num">227,997</td>
+              
+              <td class="num">169,082</td>
+              
+              <td class="num">85,628</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Selling, general and administrative expenses</td>
+              
+              <td class="num">613,406</td>
+              
+              <td class="num">552,618</td>
+              
+              <td class="num">505,023</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Interest expense</td>
+              
+              <td class="num">60,111</td>
+              
+              <td class="num">56,545</td>
+              
+              <td class="num">98,643</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other than temporary decline in value of investment in USAir Group, Inc. Preferred Stock</td>
+              
+              <td class="num">268,500</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">3,185,270</td>
+              
+              <td class="num">2,409,546</td>
+              
+              <td class="num">2,426,640</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">EARNINGS BEFORE INCOME TAXES, MINORITY INTEREST AND CUMULATIVE EFFECT OF ACCOUNTING CHANGE</td>
+              
+              <td class="num">662,197</td>
+              
+              <td class="num">1,189,718</td>
+              
+              <td class="num">550,617</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Income taxes -</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other than effect of change in income tax rate on deferred taxes applicable to unrealized appreciation</td>
+              
+              <td class="num">158,666</td>
+              
+              <td class="num">345,302</td>
+              
+              <td class="num">138,089</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Effect of change in income tax rate on deferred taxes applicable to unrealized appreciation</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">75,348</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Minority interest</td>
+              
+              <td class="num">8,733</td>
+              
+              <td class="num">9,963</td>
+              
+              <td class="num">5,243</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">EARNINGS BEFORE CUMULATIVE EFFECT OF ACCOUNTING CHANGE</td>
+              
+              <td class="num">494,798</td>
+              
+              <td class="num">759,105</td>
+              
+              <td class="num">407,285</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cumulative effect of change in accounting for income taxes</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">(70,984)</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">NET EARNINGS</td>
+              
+              <td class="num">494,798</td>
+              
+              <td class="num">688,121</td>
+              
+              <td class="num">407,285</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Average shares outstanding</td>
+              
+              <td class="num">1,177,750</td>
+              
+              <td class="num">1,156,243</td>
+              
+              <td class="num">1,146,492</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">EARNINGS PER SHARE:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Before cumulative effect of accounting change</td>
+              
+              <td class="num">$420</td>
+              
+              <td class="num">$656</td>
+              
+              <td class="num">$355</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cumulative effect of change in accounting for income taxes</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">(61)</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net earnings</td>
+              
+              <td class="num">$420</td>
+              
+              <td class="num">$595</td>
+              
+              <td class="num">$355</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">See accompanying Notes to Consolidated Financial Statements</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="consolidated-balance_sheet" class="statement">
+      <h3>CONSOLIDATED BALANCE SHEETS</h3>
+      
+      <div class="page-caption">
+        PDF page 23 (printed 20)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="3">(dollars in thousands except per share amounts)</td>
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num">DECEMBER 31,</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1994</td>
+              
+              <td class="num">1993</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">ASSETS</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cash and cash equivalents</td>
+              
+              <td class="num">273,881</td>
+              
+              <td class="num">$ 1,817,558</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Investments:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Securities with fixed maturities</td>
+              
+              <td class="num">1,820,733</td>
+              
+              <td class="num">1,397,812</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Marketable equity securities</td>
+              
+              <td class="num">15,236,494</td>
+              
+              <td class="num">12,516,613</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Salomon Inc</td>
+              
+              <td class="num">1,023,418</td>
+              
+              <td class="num">723,584</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Receivables</td>
+              
+              <td class="num">580,600</td>
+              
+              <td class="num">524,963</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Inventories</td>
+              
+              <td class="num">425,431</td>
+              
+              <td class="num">378,386</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Properties and equipment</td>
+              
+              <td class="num">275,667</td>
+              
+              <td class="num">259,736</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Assets of finance businesses</td>
+              
+              <td class="num">717,082</td>
+              
+              <td class="num">872,401</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other assets</td>
+              
+              <td class="num">984,876</td>
+              
+              <td class="num">1,029,416</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">$21,338,182</td>
+              
+              <td class="num">$19,520,469</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">LIABILITIES AND SHAREHOLDERS&#39; EQUITY</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Property and casualty insurance policyholder liabilities</td>
+              
+              <td class="num">$ 4,200,813</td>
+              
+              <td class="num">$ 3,807,188</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accounts payable, accruals and other liabilities</td>
+              
+              <td class="num">397,384</td>
+              
+              <td class="num">370,684</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income taxes</td>
+              
+              <td class="num">3,292,602</td>
+              
+              <td class="num">3,030,189</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Borrowings under investment agreements and other debt</td>
+              
+              <td class="num">810,719</td>
+              
+              <td class="num">972,389</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Liabilities of finance businesses</td>
+              
+              <td class="num">562,443</td>
+              
+              <td class="num">729,366</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">9,263,961</td>
+              
+              <td class="num">8,909,816</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Minority shareholders&#39; interests</td>
+              
+              <td class="num">199,339</td>
+              
+              <td class="num">182,279</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="3">Shareholders&#39; equity:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Common stock of $5 par value. Authorized 1,500,000 shares; Issued 1,381,308 shares</td>
+              
+              <td class="num">6,907</td>
+              
+              <td class="num">6,907</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Capital in excess of par value</td>
+              
+              <td class="num">656,074</td>
+              
+              <td class="num">656,074</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unrealized appreciation of investments, net</td>
+              
+              <td class="num">6,364,362</td>
+              
+              <td class="num">5,412,652</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Retained earnings</td>
+              
+              <td class="num">4,885,173</td>
+              
+              <td class="num">4,390,375</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">11,912,516</td>
+              
+              <td class="num">10,466,008</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Less common stock in treasury, at cost (203,558 shares)</td>
+              
+              <td class="num">37,634</td>
+              
+              <td class="num">37,634</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Total shareholders&#39; equity</td>
+              
+              <td class="num">11,874,882</td>
+              
+              <td class="num">10,428,374</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">$21,338,182</td>
+              
+              <td class="num">$19,520,469</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="3">See accompanying Notes to Consolidated Financial Statements</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+    <article id="consolidated-cash_flow" class="statement">
+      <h3>CONSOLIDATED STATEMENTS OF CASH FLOWS</h3>
+      
+      <div class="page-caption">
+        PDF page 25 (printed 22)
+        
+      </div>
+      
+      <div class="table-scroll">
+        <table class="fs">
+          
+            
+            <tr class="text">
+              <td colspan="4">(dollars in thousands)</td>
+            </tr>
+            
+          
+            
+            <tr class="group">
+              <td class="label"></td>
+              
+              <td colspan="3" class="grp">YEAR ENDED DECEMBER 31,</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="header">
+              <td class="label"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+              <td class="num"></td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">1994</td>
+              
+              <td class="num">1993</td>
+              
+              <td class="num">1992</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">Cash flows from operating activities:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Net income</td>
+              
+              <td class="num">494,798</td>
+              
+              <td class="num">688,121</td>
+              
+              <td class="num">407,285</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Adjustments to reconcile net income to cash flows from operating activities:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Realized investment gain</td>
+              
+              <td class="num">(91,332)</td>
+              
+              <td class="num">(546,422)</td>
+              
+              <td class="num">(89,937)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other than temporary decline in value of investment in USAir Group, Inc. Preferred Stock</td>
+              
+              <td class="num">268,500</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Depreciation and amortization</td>
+              
+              <td class="num">62,547</td>
+              
+              <td class="num">50,180</td>
+              
+              <td class="num">41,074</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Effect of change in income tax rate on deferred taxes</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">75,348</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Cumulative effect of accounting change</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">70,984</td>
+              
+              <td class="num">--</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">Changes in assets and liabilities before effects from business acquisitions:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Losses and loss adjustment expenses</td>
+              
+              <td class="num">274,123</td>
+              
+              <td class="num">(22,798)</td>
+              
+              <td class="num">102,789</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Deferred charges re reinsurance assumed</td>
+              
+              <td class="num">25,349</td>
+              
+              <td class="num">16,171</td>
+              
+              <td class="num">46,931</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Unearned premiums</td>
+              
+              <td class="num">(8,518)</td>
+              
+              <td class="num">83,937</td>
+              
+              <td class="num">75,274</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Receivables</td>
+              
+              <td class="num">(49,829)</td>
+              
+              <td class="num">134,077</td>
+              
+              <td class="num">239,428</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Accounts payable, accruals and other liabilities</td>
+              
+              <td class="num">210,495</td>
+              
+              <td class="num">34,996</td>
+              
+              <td class="num">150,615</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Income taxes</td>
+              
+              <td class="num">(257,102)</td>
+              
+              <td class="num">107,931</td>
+              
+              <td class="num">29,004</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other</td>
+              
+              <td class="num">77</td>
+              
+              <td class="num">33,644</td>
+              
+              <td class="num">(5,278)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows from operating activities</td>
+              
+              <td class="num">929,108</td>
+              
+              <td class="num">726,169</td>
+              
+              <td class="num">997,185</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">Cash flows from investing activities:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Purchases of fixed maturity investments</td>
+              
+              <td class="num">(2,485,768)</td>
+              
+              <td class="num">(272,249)</td>
+              
+              <td class="num">(258,617)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Purchases of marketable equity securities</td>
+              
+              <td class="num">(3,050,025)</td>
+              
+              <td class="num">(858,879)</td>
+              
+              <td class="num">(913,037)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sales of fixed maturity investments</td>
+              
+              <td class="num">1,772,050</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">284,301</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from redemptions and maturities of fixed maturity investments</td>
+              
+              <td class="num">85,881</td>
+              
+              <td class="num">318,881</td>
+              
+              <td class="num">371,514</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from sales of marketable equity securities</td>
+              
+              <td class="num">1,466,775</td>
+              
+              <td class="num">1,188,510</td>
+              
+              <td class="num">100,270</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Acquisition of businesses</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">--</td>
+              
+              <td class="num">(119,948)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Loans and investments originated in finance businesses</td>
+              
+              <td class="num">(246,797)</td>
+              
+              <td class="num">(866,843)</td>
+              
+              <td class="num">(160,261)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Principal collection on loans and investments originated in finance businesses</td>
+              
+              <td class="num">332,398</td>
+              
+              <td class="num">269,345</td>
+              
+              <td class="num">127,913</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other</td>
+              
+              <td class="num">(23,160)</td>
+              
+              <td class="num">19,578</td>
+              
+              <td class="num">(5,294)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows from investing activities</td>
+              
+              <td class="num">(2,148,646)</td>
+              
+              <td class="num">(201,657)</td>
+              
+              <td class="num">(573,159)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="section">
+              <td colspan="4">Cash flows from financing activities:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from borrowings of finance businesses</td>
+              
+              <td class="num">208,561</td>
+              
+              <td class="num">591,853</td>
+              
+              <td class="num">38,862</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Proceeds from other borrowings</td>
+              
+              <td class="num">1,225,301</td>
+              
+              <td class="num">1,264,972</td>
+              
+              <td class="num">961,565</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Repayments of borrowings of finance businesses</td>
+              
+              <td class="num">(390,506)</td>
+              
+              <td class="num">(316,318)</td>
+              
+              <td class="num">(84,792)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Repayments of other borrowings</td>
+              
+              <td class="num">(1,387,674)</td>
+              
+              <td class="num">(1,399,901)</td>
+              
+              <td class="num">(906,964)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other</td>
+              
+              <td class="num">(908)</td>
+              
+              <td class="num">(2,860)</td>
+              
+              <td class="num">(2,334)</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Net cash flows from financing activities</td>
+              
+              <td class="num">(345,226)</td>
+              
+              <td class="num">137,746</td>
+              
+              <td class="num">6,337</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Increase (decrease) in cash and cash equivalents</td>
+              
+              <td class="num">(1,564,764)</td>
+              
+              <td class="num">662,258</td>
+              
+              <td class="num">430,363</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at beginning of year</td>
+              
+              <td class="num">1,854,621</td>
+              
+              <td class="num">1,192,363</td>
+              
+              <td class="num">762,000</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label">Cash and cash equivalents at end of year *</td>
+              
+              <td class="num">289,857</td>
+              
+              <td class="num">$1,854,621</td>
+              
+              <td class="num">$1,192,363</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">* Cash and cash equivalents at end of year are comprised of the following:</td>
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Finance businesses</td>
+              
+              <td class="num">15,976</td>
+              
+              <td class="num">37,063</td>
+              
+              <td class="num">64,367</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="data">
+              <td class="label">Other</td>
+              
+              <td class="num">273,881</td>
+              
+              <td class="num">1,817,558</td>
+              
+              <td class="num">1,127,996</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="total">
+              <td class="label"></td>
+              
+              <td class="num">289,857</td>
+              
+              <td class="num">$1,854,621</td>
+              
+              <td class="num">$1,192,363</td>
+              
+            </tr>
+            
+          
+            
+            <tr class="text">
+              <td colspan="4">See accompanying Notes to Consolidated Financial Statements</td>
+            </tr>
+            
+          
+        </table>
+      </div>
+      
+      
+      <p class="back-to-top mt-2 mb-0"><a href="#top">↑ Back to top</a></p>
+    </article>
+    
+  </section>
+  
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer (RAG Champ) — financial statements as extracted from BRK-1994.pdf.
+    Sideways pages were rotated before extraction. Verify figures against the filed annual report.
+  </div>
+</footer>
+
+</body>
+</html>

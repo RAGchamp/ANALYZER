@@ -1,0 +1,550 @@
+REPORT PROFILE
+Format: US annual report on Form 10-K (US GAAP)
+Periods in the statements: FY2025, FY2024, FY2023 (years ended December 31)
+Units: (in millions of U.S. dollars, except per share data)
+The statements have no Notes column; LINKED FIGURES shows how the app linked statement lines to the notes.
+
+Annual report: Chubb-10-K-2025.pdf
+Report sections provided: ITEM 1. Business › Competitive Environment · North America Agricultural Insurance (5 percent of 2025 Consolidated NPE) · Overview · Products and Distribution (PDF 7–8); ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Crop Insurance (PDF 78–79); ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Net Catastrophe Losses and Prior Period Development · 2025 1,721 403 · 2024 622 305 · Premiums · Combined Ratio · North America Agricultural Insurance (PDF 57); ITEM 1. Business › Competitive Environment · Overseas General Insurance (27 percent of 2025 Consolidated NPE) · Overview (PDF 8)
+Notes provided (to confirm figures): Consolidated Note 19 – Segment information (PDF p.204–209)
+Primary financial statements provided (for reference): CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (PDF p.108); CONSOLIDATED BALANCE SHEETS (PDF p.107); CONSOLIDATED STATEMENTS OF CASH FLOWS (PDF p.110); CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (PDF p.109)
+
+QUESTION: analyze the agriculture insurance business
+
+Structure your answer as:
+## Summary
+3–5 bullet points that answer the question.
+## What management says
+The business story from the report sections: products, markets, customers, competitive position.
+## Performance and drivers
+The figures the report sections give and what drove them, with your calculations shown.
+## Outlook and risks
+Management's expectations (as expectations) and the risks it names or that the text implies.
+## How it shows in the audited numbers
+One table with the columns: Figure (report section, page) | Where in the notes or statements | Ties? (yes / no / not disclosed). Then two to four sentences on what the audited figures confirm, contradict, or cannot show.
+## Questions for management
+Three to five questions an analyst should ask.
+## Sources
+The report sections, notes and statements you relied on, with PDF pages.
+
+----- REPORT SECTIONS: MANAGEMENT'S COMMENTARY AND OTHER NARRATIVE FROM THE ANNUAL REPORT (PDF page numbers; not audited) -----
+=== PART I › ITEM 1. Business › Competitive Environment · North America Agricultural Insurance (5 percent of 2025 Consolidated NPE) · Overview · Products and Distribution (PDF 7–8) ===
+--- PDF page 7 (printed page 5) ---
+
+#### Competitive Environment
+
+Chubb PRS competes against insurance companies of varying sizes that sell personal lines products through various distribution channels, including retail agents as well as online distribution channels. We achieve a competitive advantage through our ability to address the specific needs of high-net-worth families and individuals, to provide superior service to our customers, and to develop and deploy digital production and processes.
+
+#### North America Agricultural Insurance (5 percent of 2025 Consolidated NPE)
+
+#### Overview
+
+The North America Agricultural Insurance segment comprises our U.S. and Canadian based businesses that provide a variety of coverages including crop insurance, primarily Multiple Peril Crop Insurance (MPCI) and crop-hail insurance through Rain and Hail Insurance Service, Inc. (Rain and Hail), as well as farm and ranch and specialty P&C commercial insurance products and services through our Chubb Agribusiness unit.
+
+#### Products and Distribution
+
+Rain and Hail provides comprehensive MPCI and crop-hail insurance coverages.
+
+- MPCI is federally subsidized crop protection from numerous causes of loss, including drought, excessive moisture, freeze, disease and more. The MPCI program is offered in conjunction with the U.S. Department of Agriculture. MPCI products include revenue protection (defined as providing both commodity price and yield coverages), yield protection, margin protection, prevented planting coverage, and replant coverage. For additional information on our MPCI program, refer to “Crop Insurance” under Item 7.
+- Crop-Hail coverage provides crop protection from damage caused by hail or fire, with options in some markets for other perils such as wind or theft. Coverage is provided on an acre-by-acre basis and is available in the U.S. and in some parts of Canada. Crop-Hail can be used in conjunction with MPCI or other comprehensive coverages to offset the deductible and provide protection up to the actual cash value of the crop.
+
+--- PDF page 8 (printed page 6) ---
+
+Chubb Agribusiness comprises Commercial Agribusiness and Farm and Ranch Agribusiness.
+
+- Commercial Agribusiness offers specialty P&C coverages for commercial companies that manufacture, process, and distribute agricultural products. Commercial products and services include property, general liability for premises/operations and product liability, commercial automobile, workers' compensation, employment practices liability coverage, built-in coverage for premises pollution, cyber and information security, and product withdrawal.
+- Farm and Ranch Agribusiness offers an extensive line of coverages for farming operations from Hobby/Gentleman farms to complex corporate farms and equine services including personal use, boarding, and training. Coverages include farm and ranch structures, automobile and other vehicle coverages, and machinery and other equipment coverages.
+
+=== PART II › ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Crop Insurance (PDF 78–79) ===
+--- PDF page 78 (printed page 76) ---
+
+#### Crop Insurance
+
+We are, and have been since the 1980s, one of the leading writers of crop insurance in the U.S. and have conducted that business through a managing general agent subsidiary of Rain and Hail. We provide protection throughout the U.S. on a variety of crops and are therefore geographically diversified, which reduces the risk of exposure to a single event or a heavy accumulation of losses in any one region. Given its concentration of risk exposed to temperature, moisture, drought, hail, and the more frequent and severe storms associated with climate change, crop insurance is a business with catastrophe-like features. Our crop insurance business comprises two components - Multiple Peril Crop Insurance (MPCI) and crop-hail insurance.
+
+The MPCI program, offered in conjunction with the U.S. Department of Agriculture’s Risk Management Agency (RMA), is a federal subsidized insurance program that covers revenue shortfalls or production losses due to natural causes such as drought, excessive moisture, hail, wind, freeze, insects, and disease. These revenue products are defined as providing both commodity price and yield coverages. Policies are available for various crops in different areas of the U.S. and generally have deductibles ranging from 10 percent to 50 percent of the insured's risk. The USDA's Risk Management Agency (RMA) sets the policy terms and conditions, rates and forms, and is also responsible for setting compliance standards. As a participant in the MPCI program, we report all details of policies to the RMA and are party to a Standard Reinsurance Agreement (SRA). The SRA sets out the relationship between private insurance companies and the Federal Crop Insurance Corporation (FCIC) concerning the terms and conditions regarding the risks each will bear including the pro-rata and state stop-loss provisions, which allows companies to limit the exposure of any one state or group of states on their underwriting results. In addition to the pro-rata and excess of loss reinsurance protections inherent in the SRA, we purchase third-party proportional and stop-loss reinsurance for our MPCI business to reduce our exposure. We may also enter into crop derivative contracts to further manage our risk exposure.
+
+Each year the RMA issues a final SRA for the subsequent reinsurance year (i.e., the 2026 SRA covers the 2026 reinsurance year from July 1, 2025, through June 30, 2026). There were no significant changes in the terms and conditions from the 2025 SRA and, therefore, the new SRA does not impact Chubb's outlook on the crop program relative to 2026.
+
+--- PDF page 79 (printed page 77) ---
+
+We recognize net premiums written as soon as estimable on our MPCI business, which is generally when we receive acreage reports from the policyholders on the various crops throughout the U.S. This allows us to best determine the premium associated with the liability that is being planted. The MPCI program has specific timeframes as to when producers must report acreage to us, and in certain cases the reporting occurs after the close of the respective reinsurance year. Once the net premium written has been recorded, the premium is then earned over the growing season for the crops. A majority of the crops that are covered in the program are typically subject to the SRA in effect at the beginning of the year. Given the major crops covered in the program, we typically see a substantial written and earned premium impact in the second and third quarters.
+
+The pricing of MPCI premium is determined using a number of factors including commodity prices and related volatility (i.e., both impact the amount of premium we can charge to the policyholder). For example, in most states, the pricing for the MPCI revenue product for corn (i.e., insurance coverage for lower than expected crop revenue in a given season) includes a factor based on the average commodity price in February. If corn commodity prices are higher in February, compared to the February price in the prior year, and all other factors are the same, the increase in price will increase the corn premium year-over-year. Pricing is also impacted by volatility factors, which measure the likelihood commodity prices will fluctuate over the crop year. For example, if volatility is set at a higher rate compared to the prior year, and all other factors are the same, the premium charged to the policyholder will be higher year-over-year for the same level of coverage.
+
+Losses incurred on the MPCI business are determined using both commodity price and crop yield. With respect to commodity price, there are two important periods on a large portion of the business: the month of February when the initial premium base is set, and the month of October when the final harvest price is set. If the price declines from February to October, with yield remaining at normal levels, the policyholder may be eligible to recover on the policy. However, in most cases there are deductibles on these policies, therefore, the impact of a decline in price would have to exceed the deductible before a policyholder would be eligible to recover.
+
+We evaluate our MPCI business at an aggregate level and the combination of all of our insured crops (both winter and summer) go into our underwriting gain or loss estimate in any given year. Typically, we do not have enough information on the harvest prices or crop yield outputs to quantify the preliminary estimated impact to our underwriting results until the fourth quarter.
+
+Our crop-hail program is a private offering. Premium is earned on the crop-hail program over the coverage period of the policy. Given the very short nature of the growing season, most crop-hail business is typically written in the second and third quarters and the recognition of earned premium is also more heavily concentrated during this timeframe. We use industry data to develop our own rates and forms for the coverage offered. The policy primarily protects farmers against yield reduction caused by hail and/or fire, and related costs such as transit to storage. We offer various deductibles to allow the grower to partially self-insure for a reduced premium cost. We limit our crop-hail exposures through the use of township liability limits and third-party reinsurance on our net retained hail business.
+
+=== PART II › ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations › Net Catastrophe Losses and Prior Period Development · 2025 1,721 403 · 2024 622 305 · Premiums · Combined Ratio · North America Agricultural Insurance (PDF 57) ===
+--- PDF page 57 (printed page 55) ---
+
+#### Net Catastrophe Losses and Prior Period Development
+
+(in millions of U.S. dollars)
+
+Net catastrophe losses Favorable prior period development
+
+$ $
+
+#### 2025 1,721 403
+
+- $
+- $
+
+#### 2024 622 305
+
+- $
+- $
+
+2023 669 134
+
+Refer to Note 8 to the Consolidated Financial Statements for detail on prior period development.
+
+#### Premiums
+
+Net premiums written increased $492 million, or 7.5 percent, in 2025, driven by strong new business and retention, including positive rate and exposure increases across most lines. The growth in premiums for the year ended 2025 was partially offset by $50 million of ceded reinstatement premiums related to the California wildfires.
+
+Net premiums earned increased $575 million, or 9.3 percent, in 2025, reflecting the growth in net premiums written described above.
+
+#### Combined Ratio
+
+The combined ratio increased in 2025, reflecting the California wildfire catastrophe losses, including the unfavorable impact of the ceded reinstatement premiums on the expense ratio, which are fully earned and carry no expenses.
+
+The CAY combined ratio excluding catastrophe losses decreased in 2025, primarily due to an improvement in homeowners and auto from higher rates and lower underlying losses, and a lower administrative expense ratio resulting from the impact of higher net premiums earned and expense management.
+
+#### North America Agricultural Insurance
+
+The North America Agricultural Insurance segment comprises our North American based businesses that provide a variety of coverages in the U.S. and Canada including crop insurance, primarily Multiple Peril Crop Insurance (MPCI) and crop-hail through Rain and Hail Insurance Service, Inc. (Rain and Hail), as well as farm and ranch and specialty P&C commercial insurance products and services through our Agriculture P&C business.
+
+=== PART I › ITEM 1. Business › Competitive Environment · Overseas General Insurance (27 percent of 2025 Consolidated NPE) · Overview (PDF 8) ===
+--- PDF page 8 (printed page 6) ---
+
+#### Competitive Environment
+
+Rain and Hail primarily operates in a federally regulated program where all approved providers offer the same product forms and rates through independent or captive agents. We seek a competitive advantage through our ability to provide superior service to our customers, including the development of digital solutions. Chubb Agribusiness competes against both national and regional competitors offering specialty P&C insurance coverages to companies that manufacture, process, and distribute agricultural products.
+
+#### Overseas General Insurance (27 percent of 2025 Consolidated NPE)
+
+#### Overview
+
+The Overseas General Insurance segment comprises our retail division Chubb International, which includes Huatai Property & Casualty Insurance Co., Ltd. (Huatai P&C), our wholesale division Chubb Global Markets (CGM), and the international supplemental A&H business of Combined International Insurance, which is no longer writing new business. Chubb International comprises our international retail commercial P&C and traditional and specialty lines serving large corporations, middle market and small customers; consumer A&H and traditional and specialty personal lines business serving local territories outside the U.S., Bermuda, and Canada. In 2025, Chubb International expanded its operations through the acquisition of LMG Insurance in Thailand, offering a range of consumer and commercial P&C products. CGM, our London-based international specialty and excess and surplus lines wholesale business, includes Lloyd's of London (Lloyd's) Syndicate 2488, a wholly-owned Chubb syndicate supported by funds at Lloyd’s provided by Chubb Corporate Members. Syndicate 2488 has an underwriting capacity of £630 million for the Lloyd’s 2026 account year. The syndicate is managed by Chubb’s Lloyd’s managing agency, Chubb Underwriting Agencies Limited. At December 31, 2025, our ownership interest in Huatai P&C was approximately 87.2 percent.
+----- END OF REPORT SECTIONS -----
+
+----- NARRATIVE FIGURES (money amounts in the report sections provided, converted to the statements' unit, USD million; matched automatically - verify) -----
+- $492 million (ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations, p.57) = 492 million -> no statement line or figure in the notes provided matches
+- $50 million (ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations, p.57) = 50 million -> no statement line or figure in the notes provided matches
+- $575 million (ITEM 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations, p.57) = 575 million -> no statement line or figure in the notes provided matches
+----- END OF NARRATIVE FIGURES -----
+
+----- NOTES PROVIDED TO CONFIRM FIGURES (PDF page numbers) -----
+=== Note 19 — Segment information (Consolidated) ===
+--- PDF page 204 (printed page F-103) ---
+19. Segment information
+Chubb operates through six business segments: North America Commercial P&C Insurance, North America Personal P&C Insurance, North America Agricultural Insurance,
+Overseas General Insurance, Global Reinsurance, and Life Insurance. These segments distribute their products through various forms of brokers, agencies, and direct
+marketing programs. All business segments have established relationships with reinsurance intermediaries. Effective July 1, 2023, the results of Huatai’s life and asset
+management businesses, included within the Life Insurance segment, and the results of Huatai’s P&C insurance business, included within Overseas General Insurance, are
+presented gross within Underwriting income (loss), Net investment income (loss), and Other income (expense) as required under consolidation accounting. Huatai’s results
+prior to July 1, 2023, were included net within Other (income) expense based on our ownership interest as required under equity method accounting. Effective April 1, 2025,
+the Overseas General Insurance segment includes the results of Liberty Mutual's P&C insurance business in Thailand.
+• The North America Commercial P&C Insurance segment comprises operations that provide P&C and A&H insurance and services to large, middle market, and small
+commercial businesses in the U.S., Canada, and Bermuda. This segment includes our retail divisions: Major Accounts; Commercial Insurance, including Small & Lower
+Midmarket; Chubb Bermuda, our high excess business; and Westchester, our wholesale and specialty division. These divisions write a variety of coverages, including
+property, casualty, workers’ compensation, package policies, risk management, financial lines, marine, construction, environmental, medical risk, cyber risk, surety, excess
+casualty, and A&H insurance.
+• The North America Personal P&C Insurance segment comprises the business written by Chubb Personal Risk Services division, which includes high net worth personal
+lines business, with operations in the U.S. and Canada. This segment provides affluent and high net worth individuals and families with homeowners, high value
+automobile and collector cars, valuable articles (including fine arts), personal and excess liability, travel insurance, and recreational marine insurance and services.
+• The North America Agricultural Insurance segment includes the business written by Rain and Hail Insurance Service, Inc. in the U.S. and Canada, which provides
+comprehensive multiple peril crop insurance (MPCI) and crop-hail insurance, and Chubb Agribusiness, which offers farm and ranch property as well as specialty P&C
+coverages, including commercial agriculture products.
+• The Overseas General Insurance segment includes the business written by two Chubb divisions that provides both commercial and consumer P&C insurance and services
+in the countries and territories outside of North America where the company operates. Chubb International, our retail division, provides commercial P&C, A&H and
+traditional and specialty personal lines for large corporations, middle markets and small customers through retail brokers, agents and other channels locally around the
+world. CGM provides commercial P&C excess and surplus lines wholesale business primarily through wholesale brokers in the London market and through Lloyd’s. These
+divisions write a variety of coverages, including traditional commercial P&C, specialty categories such as financial lines, marine, energy, aviation, political risk and
+construction, as well as group A&H and traditional and specialty personal lines.
+• The Global Reinsurance segment includes the assumed reinsurance business written by Chubb Tempest Re, comprising Chubb Tempest Re Bermuda, Chubb Tempest Re
+USA, Chubb Tempest Re International, and Chubb Tempest Re Canada. Chubb Tempest Re provides a broad range of traditional and specialty reinsurance coverages to a
+diverse array of primary P&C companies, including small, mid-sized, and multinational ceding companies.
+• The Life Insurance segment includes our international life operations (Chubb Life), which includes individual life and group benefit insurance primarily in Asia and Latin
+America. The Life Insurance segment also includes Chubb Tempest Life Re (Chubb Life Re), and Chubb Benefits.
+Corporate primarily includes the results of all run-off A&E exposures, run-off Brandywine business, Westchester specialty operations for 1996 and prior years, and certain other
+run-off exposures, including molestation claims and is shown in the tables below as reconciling items. In addition, Corporate includes the results of our non-insurance
+companies including Chubb
+
+--- PDF page 205 (printed page F-104) ---
+Limited, Chubb Group Management and Holdings Ltd., and Chubb INA Holdings LLC. Effective July 1, 2023, the results of Huatai Group’s non-insurance operations,
+comprising real estate and holding company activity, are included in Corporate. Our exposure to A&E and molestation claims principally arises out of liabilities acquired when
+we purchased Westchester Specialty in 1998, CIGNA’s P&C business in 1999, and Chubb Corp in 2016.
+Segment performance is reviewed by the Chief Executive Officer of Chubb Ltd, our Chief Operating Decision Maker (CODM). The CODM is ultimately responsible for
+evaluating the performance of our six business segments, making strategic operating decisions, and allocating resources. The financial results of our operations are reported in
+a manner consistent with results reviewed by the CODM in reviewing and assessing the performance of our six business segments. Excluding our Life Insurance segment, the
+CODM uses Underwriting income (loss) as a basis for segment performance. Chubb calculates Underwriting income (loss) by subtracting Losses and loss expenses, Policy
+benefits, Policy acquisition costs, and Administrative expenses from Net premiums earned. For both our P&C and Life Insurance segments, another measure of segment
+performance is Segment income (loss). Segment income (loss) includes Underwriting income (loss), Net investment income (loss), amortization of purchased intangibles
+acquired by the segment, and other operating income and expense items such as each segment's share of the operating income (loss) related to partially-owned entities, and
+miscellaneous income and expense items for which the segments are held accountable. We determined that this definition of Segment income (loss) is appropriate and aligns
+with how the business is managed. We continue to evaluate our segments as our business continues to evolve and may further refine our segments and Segment income
+(loss) measures.
+Revenue and expenses managed at the corporate level, including Net realized gains (losses), Market risk benefits gains (losses), Interest expense, Integration expenses and
+severance, Income tax expense, and Net income (loss) attributable to noncontrolling interests are reported within Corporate. Integration expenses and severance are one-time
+costs that are directly attributable to third-party consulting fees, employee-related retention costs, and other professional and legal fees, as well as severance expenses
+incurred as part of transformation initiatives to enhance operational efficiency. These items are not allocated to the segment level as they are one-time in nature and are not
+related to the ongoing business activities of the segment. The CODM does not manage segment results or allocate resources to segments when considering these costs, and
+therefore integration expenses and severance are excluded from our definition of Segment income (loss).
+Certain items are presented in a different manner for segment reporting purposes than in the Consolidated Financial Statements, including:
+• Losses and loss expenses include realized gains and losses on crop derivatives. These derivatives were purchased to provide economic benefit, in a manner similar to
+reinsurance protection, in the event that a significant decline in commodity pricing impacts underwriting results. We view gains and losses on these derivatives as part of the
+results of our underwriting operations, and therefore, realized gains (losses) from these derivatives are reclassified to losses and loss expenses.
+• Policy benefits include fair value changes on separate accounts that do not qualify for separate accounting under U.S. GAAP. These gains and losses have been reclassified
+from Other (income) expense to Policy benefits. Policy benefits also include the impact of realized gains and losses on investment portfolios supporting certain participating
+policies. These realized gains and losses have been reclassified from net realized gains (losses) to policy benefits. This presentation better reflects the gains and losses
+from fair value changes in separate account assets and liabilities, and the economics of the participating policies by connecting the investment performance that is shared
+with policyholders to the liability.
+• Net investment income includes investment income reclassified from Other (income) expense related to partially-owned investment companies (private equity partnerships)
+where our ownership interest is in excess of three percent. We view investment income from these equity-method private equity partnerships as Net investment income for
+segment reporting purposes.
+
+--- PDF page 206 (printed page F-105) ---
+December 31, 2025 | Commercial P&C Personal P&C | Agricultural | General | Global
+(in millions of U.S. dollars) | Insurance | Insurance | Insurance | Insurance | Reinsurance Life Insurance | Total
+Net premiums written | $21,280 | $7,024 | $2,926 | $15,024 | $1,309 | $7,279 | $54,842
+Net premiums earned | 20,381 | 6,763 | 2,919 | 14,374 | 1,353 | 7,224 | 53,014
+Losses and loss expenses | 12,313 | 4,517 | 2,239 | 6,589 | 640 | 109
+Policy benefits | — | — | — | 470 | — | 4,961
+Policy acquisition costs | 2,891 | 1,337 | 169 | 3,724 | 396 | 1,330
+Administrative expenses | 1,394 | 336 | (6) | 1,435 | 37 | 836
+Underwriting income | 3,783 | 573 | 517 | 2,156 | 280 | NM
+Net investment income | 3,840 | 486 | 86 | 1,139 | 354 | 1,127
+Other (income) expense | 59 | 3 | 2 | 50 | — | (165)
+Amortization of purchased intangibles | 5 | 8 | 24 | 78 | — | 38
+Segment income | $7,559 | $1,048 | $577 | $3,167 | $634 | $1,242 | $14,227
+Net realized gains (losses) | 211
+Market risk benefits gains (losses) | (288)
+Interest expense | 764
+Integration expenses and severance | 79
+Corporate underwriting loss | (781)
+Corporate net investment loss | (93)
+Corporate other (income) expense | (676)
+Corporate amortization of purchased intangibles | 148
+Other reclassification | 83
+Income before income tax | $13,044
+NM – not meaningful. Underwriting income is not used as a basis for segment performance for the Life Insurance segment.
+
+--- PDF page 207 (printed page F-106) ---
+December 31, 2024 | Commercial P&C Personal P&C | Agricultural | General | Global
+(in millions of U.S. dollars) | Insurance | Insurance | Insurance | Insurance | Reinsurance Life Insurance | Total
+Net premiums written | $20,589 | $6,532 | $2,703 | $13,972 | $1,346 | $6,326 | $51,468
+Net premiums earned | 20,008 | 6,188 | 2,705 | 13,400 | 1,272 | 6,273 | 49,846
+Losses and loss expenses | 12,737 | 3,584 | 2,170 | 6,414 | 711 | 112
+Policy benefits | — | — | — | 408 | — | 4,101
+Policy acquisition costs | 2,718 | 1,239 | 191 | 3,410 | 342 | 1,202
+Administrative expenses | 1,337 | 351 | (10) | 1,351 | 39 | 880
+Underwriting income | 3,216 | 1,014 | 354 | 1,817 | 180 | NM
+Net investment income | 3,556 | 433 | 84 | 1,136 | 253 | 1,003
+Other (income) expense | 32 | 1 | 1 | 14 | — | (159)
+Amortization of purchased intangibles | 3 | 9 | 25 | 81 | — | 42
+Segment income | $6,737 | $1,437 | $412 | $2,858 | $433 | $1,098 | $12,975
+Net realized gains (losses) | 117
+Market risk benefits gains (losses) | (140)
+Interest expense | 741
+Integration expenses and severance | 39
+Corporate underwriting loss | (731)
+Corporate net investment loss | (105)
+Corporate other (income) expense | (490)
+Corporate amortization of purchased intangibles | 163
+Other reclassification | (208)
+Income before income tax | $11,455
+NM – not meaningful. Underwriting income is not used as a basis for segment performance for the Life Insurance segment.
+
+--- PDF page 208 (printed page F-107) ---
+December 31, 2023 | Commercial P&C Personal P&C | Agricultural | General | Global
+(in millions of U.S. dollars) | Insurance | Insurance | Insurance | Insurance | Reinsurance Life Insurance | Total
+Net premiums written | $19,237 | $5,878 | $3,188 | $12,575 | $1,018 | $5,465 | $47,361
+Net premiums earned | 18,416 | 5,536 | 3,169 | 12,231 | 962 | 5,398 | 45,712
+Losses and loss expenses | 11,256 | 3,511 | 2,874 | 5,643 | 426 | 114
+Policy benefits | — | — | — | 457 | — | 3,216
+Policy acquisition costs | 2,515 | 1,128 | 150 | 3,113 | 264 | 1,089
+Administrative expenses | 1,250 | 329 | (1) | 1,219 | 37 | 771
+Underwriting income | 3,395 | 568 | 146 | 1,799 | 235 | NM
+Net investment income | 3,017 | 358 | 63 | 895 | 208 | 756
+Other (income) expense | 22 | 3 | 1 | (25) | (2) | (115)
+Amortization of purchased intangibles | — | 9 | 25 | 70 | — | 30
+Segment income | $6,390 | $914 | $183 | $2,649 | $445 | $1,049 | $11,630
+Net realized gains (losses) | (607)
+Market risk benefits gains (losses) | (307)
+Interest expense | 672
+Integration expenses and severance | 69
+Corporate underwriting loss | (683)
+Corporate net investment income | 25
+Corporate other (income) expense | (380)
+Corporate amortization of purchased intangibles | 176
+Other reclassification | 5
+Income before income tax | $9,526
+NM – not meaningful. Underwriting income is not used as a basis for segment performance for the Life Insurance segment.
+Underwriting assets are reviewed in total by management for purposes of decision-making. Other than certain insurance related balances, Goodwill and Other intangible
+assets, Chubb does not allocate assets to its segments.
+
+--- PDF page 209 (printed page F-108) ---
+The following table presents net premiums earned for each segment by line of business:
+For the Year Ended December 31
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+North America Commercial P&C Insurance
+Property & other short-tail lines | $4,917 | $4,756 | $3,985
+Casualty & all other | 14,919 | 14,560 | 13,764
+A&H | 545 | 692 | 667
+Total North America Commercial P&C Insurance | 20,381 | 20,008 | 18,416
+North America Personal P&C Insurance
+Personal automobile | 1,089 | 968 | 859
+Personal homeowners | 4,648 | 4,293 | 3,833
+Personal other | 1,026 | 927 | 844
+Total North America Personal P&C Insurance | 6,763 | 6,188 | 5,536
+North America Agricultural Insurance | 2,919 | 2,705 | 3,169
+Overseas General Insurance
+Property & other short-tail lines | 4,689 | 4,338 | 3,831
+Casualty & all other | 3,809 | 3,705 | 3,526
+Personal lines | 3,198 | 2,785 | 2,405
+A&H | 2,678 | 2,572 | 2,469
+Total Overseas General Insurance | 14,374 | 13,400 | 12,231
+Global Reinsurance
+Property | 525 | 490 | 331
+Property catastrophe | 258 | 232 | 159
+Casualty & all other | 570 | 550 | 472
+Total Global Reinsurance | 1,353 | 1,272 | 962
+Life Insurance
+Life | 3,845 | 3,049 | 2,301
+A&H | 3,379 | 3,224 | 3,097
+Total Life Insurance | 7,224 | 6,273 | 5,398
+Total net premiums earned | $53,014 | $49,846 | $45,712
+The following table presents net premiums earned by geographic region. Allocations have been made on the basis of location of risk:
+North America | Europe (1) | Asia (2) | Latin America
+2025 | 63 % | 11 % | 20 % | 6 %
+2024 | 64 % | 11 % | 19 % | 6 %
+2023 | 65 % | 11 % | 18 % | 6 %
+(1) Europe includes Middle East and Africa regions.
+(2) Includes the consolidated results of Huatai Group effective July 1, 2023.
+----- END OF NOTES -----
+
+----- PRIMARY FINANCIAL STATEMENTS (for reference; PDF page numbers) -----
+=== CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME (Consolidated) ===
+--- PDF page 108 (printed page F-7) ---
+CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars, except per share data) | 2025 | 2024 | 2023
+Revenues
+Net premiums written | $54,842 | $51,468 | $47,361
+Increase in unearned premiums | (1,828) | (1,622) | (1,649)
+Net premiums earned | 53,014 | 49,846 | 45,712
+Net investment income | 6,465 | 5,930 | 4,937
+Net realized gains (losses) | 211 | 117 | (607)
+Market risk benefits gains (losses) | (288) | (140) | (307)
+Total revenues | 59,402 | 55,753 | 49,735
+Expenses
+Losses and loss expenses | 26,700 | 26,022 | 24,100
+Policy benefits (includes remeasurement gains (losses) of $59, $(2), and $19) | 5,460 | 4,714 | 3,628
+Policy acquisition costs | 9,847 | 9,102 | 8,259
+Administrative expenses | 4,504 | 4,380 | 4,007
+Interest expense | 764 | 741 | 672
+Other (income) expense | (1,297) | (1,023) | (836)
+Amortization of purchased intangibles | 301 | 323 | 310
+Integration expenses and severance | 79 | 39 | 69
+Total expenses | 46,358 | 44,298 | 40,209
+Income before income tax | 13,044 | 11,455 | 9,526
+Income tax expense | 2,422 | 1,815 | 511
+Net income | $10,622 | $9,640 | $9,015
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Net income attributable to Chubb | $10,310 | $9,272 | $9,028
+Other comprehensive income (loss)
+Change in:
+Unrealized appreciation (depreciation) | $2,655 | $(251) | $3,448
+Current discount rate on future policy benefits | 235 | (701) | 84
+Instrument-specific credit risk on market risk benefits | (8) | 7 | 2
+Cumulative foreign currency translation adjustment | 1,047 | (1,177) | (13)
+Other, including postretirement benefit liability adjustment | 49 | 257 | 157
+Other comprehensive income (loss), before income tax | 3,978 | (1,865) | 3,678
+Income tax expense related to OCI items | (149) | (117) | (317)
+Other comprehensive income (loss) | 3,829 | (1,982) | 3,361
+Comprehensive income | 14,451 | 7,658 | 12,376
+Comprehensive income (loss) attributable to noncontrolling interests | 472 | 221 | (28)
+Comprehensive income attributable to Chubb | $13,979 | $7,437 | $12,404
+Earnings per share
+Basic earnings per share attributable to Chubb | $25.93 | $22.94 | $21.97
+Diluted earnings per share attributable to Chubb | $25.68 | $22.70 | $21.80
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED BALANCE SHEETS (Consolidated) ===
+--- PDF page 107 (printed page F-6) ---
+CONSOLIDATED BALANCE SHEETS
+Chubb Limited and Subsidiaries
+(in millions of U.S. dollars, except share and per share data) | December 31, 2025 | December 31, 2024
+Assets
+Investments
+Short-term investments, at fair value (amortized cost – $4,840 and $5,143) (includes variable interest entities (VIE) balances of $105 and $57) | $4,840 | $5,142
+Fixed maturities available-for-sale, at fair value, net of valuation allowance – $52 and $70 (amortized cost – $124,726 and $115,083) | 122,680 | 110,363
+Private debt held-for-investment, at amortized cost, net of valuation allowance – $3 and $4 | 2,411 | 2,628
+Equity securities, at fair value (includes VIE balances of $2,275 and $1,289) | 10,801 | 9,151
+Private equities (includes VIE balances of $22 and $22) | 17,239 | 14,769
+Other investments (includes VIE balances of $5,818 and $4,538) | 10,749 | 8,597
+Total investments | 168,720 | 150,650
+Cash, including restricted cash $198 and $261 (includes VIE balances of $168 and $114) | 2,470 | 2,549
+Securities lending collateral | 2,500 | 1,445
+Accrued investment income | 1,305 | 1,160
+Insurance and reinsurance balances receivable, net of valuation allowance – $62 and $59 | 15,944 | 14,426
+Reinsurance recoverable on losses and loss expenses, net of valuation allowance – $320 and $310 | 20,338 | 19,777
+Reinsurance recoverable on policy benefits | 286 | 289
+Deferred policy acquisition costs | 10,008 | 8,358
+Value of business acquired | 2,975 | 3,223
+Goodwill | 20,207 | 19,579
+Other intangible assets | 6,241 | 6,377
+Deferred tax assets | 1,312 | 1,603
+Prepaid reinsurance premiums | 3,874 | 3,378
+Separate account assets | 6,925 | 6,231
+Other assets (includes VIE balances of $58 and $26) | 9,222 | 7,503
+Total assets | $272,327 | $246,548
+Liabilities
+Unpaid losses and loss expenses | $88,018 | $84,004
+Unearned premiums | 26,279 | 23,504
+Future policy benefits | 18,420 | 16,121
+Market risk benefits | 659 | 607
+Policyholders' account balances | 8,576 | 8,016
+Separate account liabilities | 6,925 | 6,231
+Insurance and reinsurance balances payable | 8,349 | 8,121
+Repurchase agreements (includes VIE balances of $956 and $815) | 3,324 | 2,731
+Securities lending payable | 2,500 | 1,445
+Accounts payable, accrued expenses, and other liabilities (includes VIE balances of $159 and $183) | 10,108 | 10,192
+Deferred tax liabilities | 1,741 | 1,584
+Short-term debt | 1,499 | 800
+Long-term debt | 15,728 | 14,379
+Hybrid debt | 422 | 419
+Total liabilities | 192,548 | 178,154
+Commitments and contingencies (refer to Note 14)
+Shareholders’ equity
+Common Shares (CHF 0.50 par value; 412,107,421 and 419,625,986 shares issued; 391,101,227 and 400,703,663 shares outstanding) | 231 | 235
+Common Shares in treasury (21,006,194 and 18,922,323 shares) | (4,699) | (3,524)
+Additional paid-in capital | 13,250 | 14,393
+Retained earnings | 69,950 | 61,561
+Accumulated other comprehensive income (loss) (AOCI) | (4,975) | (8,644)
+Total Chubb shareholders' equity | 73,757 | 64,021
+Noncontrolling interests (includes VIE balances of $5,133 and $3,459) | 6,022 | 4,373
+Total shareholders’ equity | 79,779 | 68,394
+Total liabilities and shareholders’ equity | $272,327 | $246,548
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED STATEMENTS OF CASH FLOWS (Consolidated) ===
+--- PDF page 110 (printed page F-9) ---
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Cash flows from operating activities
+Net income | $10,622 | $9,640 | $9,015
+Adjustments to reconcile net income to net cash flows from operating activities
+Net realized (gains) losses | (211) | (117) | 607
+Market risk benefits (gains) losses | 288 | 140 | 307
+Amortization of premiums (discounts) on fixed maturities | (409) | (367) | (148)
+Amortization of purchased intangibles | 301 | 323 | 310
+Equity in net income of partially-owned entities | (1,143) | (967) | (867)
+Deferred income taxes | 330 | 96 | (1,124)
+Unpaid losses and loss expenses | 2,706 | 4,567 | 3,470
+Unearned premiums | 2,098 | 1,805 | 1,377
+Future policy benefits | 2,186 | 1,841 | 848
+Insurance and reinsurance balances payable | 131 | (105) | (155)
+Accounts payable, accrued expenses, and other liabilities | 53 | 342 | (735)
+Income taxes | (160) | 69 | 128
+Insurance and reinsurance balances receivable | (1,167) | (1,278) | (1,072)
+Reinsurance recoverable | (169) | (30) | (498)
+Deferred policy acquisition costs | (1,566) | (1,429) | (1,100)
+Net sales (purchases) of investments by consolidated investment products | (1,090) | 278 | 450
+Other | 16 | 1,374 | 1,819
+Net cash flows from operating activities | 12,816 | 16,182 | 12,632
+Cash flows from investing activities
+Purchases of fixed maturities available-for-sale | (34,157) | (33,759) | (28,672)
+Purchases of fixed maturities held-to-maturity | — | — | (208)
+Purchases of equity securities | (2,799) | (4,333) | (1,395)
+Sales of fixed maturities available-for-sale | 12,231 | 12,815 | 14,593
+Sales of equity securities | 2,807 | 2,996 | 1,084
+Maturities and redemptions of fixed maturities available-for-sale | 12,675 | 10,810 | 7,026
+Maturities and redemptions of fixed maturities held-to-maturity | — | — | 708
+Net change in short-term investments | 462 | (763) | 1,169
+Net derivative instruments settlements | (185) | (93) | (153)
+Private equity contributions | (3,014) | (1,070) | (2,024)
+Private equity distributions | 1,721 | 1,397 | 1,164
+Acquisition of subsidiaries (net of cash acquired of $32, nil, and $560) | (289) | (538) | (34)
+Net consolidations (deconsolidations) of consolidated investment products | — | 27 | (17)
+Other | (712) | (1,412) | (889)
+Net cash flows used for investing activities | (11,260) | (13,923) | (7,648)
+Cash flows from financing activities
+Dividends paid on Common Shares | (1,505) | (1,436) | (1,394)
+Common Shares repurchased | (3,694) | (1,801) | (2,411)
+Proceeds from issuance of long-term debt | 2,424 | 2,408 | —
+Repayment of long-term debt | (800) | (1,437) | (475)
+Proceeds from share-based compensation plans | 327 | 356 | 212
+Policyholder contract deposits | 853 | 1,024 | 645
+Policyholder contract withdrawals | (594) | (709) | (458)
+Third-party capital invested into consolidated investment products | 2,556 | 1,614 | 126
+Third-party capital distributed by consolidated investment products | (1,753) | (1,621) | (745)
+Proceeds from issuance of repurchase agreements | 6,297 | 4,505 | 4,984
+Repayment of repurchase agreements | (5,693) | (4,822) | (4,728)
+Other | (268) | (262) | (245)
+Net cash flows used for financing activities | (1,850) | (2,181) | (4,489)
+Effect of foreign currency rate changes on cash and restricted cash | 215 | (150) | (1)
+Net increase (decrease) in cash and restricted cash | (79) | (72) | 494
+Cash and restricted cash – beginning of year | 2,549 | 2,621 | 2,127
+Cash and restricted cash – end of year | $2,470 | $2,549 | $2,621
+Supplemental cash flow information
+Interest paid | $650 | $599 | $553
+See accompanying notes to the Consolidated Financial Statements
+
+=== CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Consolidated) ===
+--- PDF page 109 (printed page F-8) ---
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY
+Chubb Limited and Subsidiaries
+For the years ended December 31, 2025, 2024, and 2023
+(in millions of U.S. dollars) | 2025 | 2024 | 2023
+Common Shares
+Balance – beginning of year | $235 | $241 | $10,346
+Par value reduction | — | — | (9,759)
+Cancellation of treasury shares | (4) | (6) | (346)
+Balance – end of year | 231 | 235 | 241
+Common Shares in treasury
+Balance – beginning of year | (3,524) | (4,400) | (5,113)
+Common Shares repurchased | (3,387) | (2,024) | (2,478)
+Cancellation of treasury shares | 1,923 | 2,527 | 2,869
+Net shares issued under employee share-based compensation plans | 289 | 373 | 322
+Balance – end of year | (4,699) | (3,524) | (4,400)
+Additional paid-in capital
+Balance – beginning of year | 14,393 | 15,665 | 7,166
+Net shares issued under employee share-based compensation plans | (92) | (124) | (192)
+Exercise of stock options | — | (23) | (20)
+Share-based compensation expense | 400 | 361 | 322
+Par value reduction | — | — | 9,759
+Net increase (decrease) due to acquisitions | 69 | (31) | 31
+Funding of dividends declared to Retained earnings | (1,520) | (1,455) | (1,401)
+Balance – end of year | 13,250 | 14,393 | 15,665
+Retained earnings
+Balance – beginning of year | 61,561 | 54,810 | 48,305
+Net income attributable to Chubb | 10,310 | 9,272 | 9,028
+Cancellation of treasury shares and other | (1,921) | (2,521) | (2,523)
+Funding of dividends declared from Additional paid-in capital | 1,520 | 1,455 | 1,401
+Dividends declared on Common Shares | (1,520) | (1,455) | (1,401)
+Balance – end of year | 69,950 | 61,561 | 54,810
+Accumulated other comprehensive income (loss) (AOCI)
+Balance – beginning of year | (8,644) | (6,809) | (10,185)
+Other comprehensive income (loss) | 3,669 | (1,835) | 3,376
+Balance – end of year | (4,975) | (8,644) | (6,809)
+Total Chubb shareholders’ equity | $73,757 | $64,021 | $59,507
+Noncontrolling interests
+Balance – beginning of year | $4,373 | $4,184 | $—
+Net increase (decrease) due to consolidation, deconsolidation, and other transactions | 1,177 | (26) | 4,212
+Net income (loss) attributable to noncontrolling interests | 312 | 368 | (13)
+Other comprehensive income (loss) attributable to noncontrolling interests | 160 | (147) | (15)
+Other | — | (6) | —
+Balance – end of year | $6,022 | $4,373 | $4,184
+Total shareholders' equity | $79,779 | $68,394 | $63,691
+See accompanying notes to the Consolidated Financial Statements
+----- END OF PRIMARY FINANCIAL STATEMENTS -----

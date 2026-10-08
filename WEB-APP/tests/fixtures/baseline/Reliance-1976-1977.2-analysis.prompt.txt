@@ -1,0 +1,380 @@
+REPORT PROFILE
+Format: Old Indian GAAP (Companies Act 1956, old Schedule VI) - standalone accounts only
+Year ended: 30 September 1977 (check the notes for the length of the previous period)
+Currency/units: Rs. with Indian digit grouping (1,00,000 = 1 lakh; 1,00,00,000 = 1 crore)
+Statements in this report: Profit and Loss Account, Balance Sheet
+Statements NOT in this report: Cash Flow Statement, Statement of Changes in Equity (not required at the time)
+Source quality: may be re-typed from the printed report; figures may contain transcription errors
+
+Annual report: Reliance-1976-1977.pdf
+Statements: Standalone
+Notes provided: Schedule 'E' — Fixed Assets (PDF p.18), Schedule 'O' — Notes and Contingent Liabilities (PDF p.27–32)
+Primary financial statements provided: Profit & Loss Account for the Year Ended 30th September, 1977 (PDF p.14); Balance Sheet as at 30th September, 1977 (PDF p.13)
+
+QUESTION: Analyze fixed assets
+
+Structure your answer as:
+## Summary
+3–5 bullet points with the key conclusions.
+## Key figures
+A table with columns: Item | Current year | Prior year | Change | % change | Source.
+## Detailed analysis
+Trends, drivers, ratios and interpretation relevant to the question.
+## Impact on the financial statements
+How the matters in the notes flow into and affect each primary statement. Use one sub-heading per statement:
+### Profit and Loss Account
+### Balance Sheet
+(This report has no Cash Flow Statement. If cash movements matter to the question, add a short derived funds-flow statement, clearly labelled as derived by the analyst and not published.)
+For each one, name the line items affected, give their figures (current and prior year, citing statement and page), show how the note reconciles to them, and explain the effect. For example, how the tax expense in the note drives profit after tax, how deferred tax balances appear on the Balance Sheet, how taxes paid appear in operating cash flow, or how OCI items move reserves in equity.
+## Red flags & areas for follow-up
+Anything unusual, inconsistent, or worth asking management about, including any note figure that does not agree with the statements.
+## Sources
+The notes, statements and PDF pages you relied on.
+
+----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----
+=== Profit & Loss Account for the Year Ended 30th September, 1977 (Standalone) ===
+--- PDF page 14 (printed page 17) ---
+PROFIT & LOSS ACCOUNT FOR THE YEAR ENDED 30TH SEPTEMBER, 1977
+Previous Year
+Schedule | Rs. | Rs. | Rs. | Rs.
+INCOME:
+Sales (Less: Returns. Rebates. Excise Duty, Sales
+Tax. etc.) | 66,93,43.861 | 62,72,87,643
+Other Income | 'J' | 2,04,78,207 | 2,35,54,532
+Increase in Stocks | 'K' | 73,43,534 | 69,71,65,602 | 3,46,11,725 | 68,54,53,900
+EXPENDITURE:
+Purchases | 21,88,40,584 | 25,45,37,639
+Manufacturing and other Expenses | 'L' | 40,68,72,029 | 38,61,28,347
+Interest | 'M' | 2,75,05,653 | 2,69,56,768
+Depreciation | 1,34,50,636 | 1,14,10,111
+Directors' Fees | 750 | –
+Remuneration to:
+Managing Directors | Rs. 96,000
+Other Directors | Rs. 1,08,000
+2,04,000 | 2,56,000
+Loss on sale and/or discarding of assets (Net) | 1,41,774 | 99,705
+Balance of Preliminary and Development
+Expenses Written-off | 'N' | – | 45,111
+Provision for Doubtful Debts | 3,45,687 | 1,18.903
+Provision for Taxation | 5,00,000 | 66,78,61,113 | – | 67,95,51.584
+PROFIT FOR THE YEAR | 2,93,04,489 | 59,02,316
+Add: Balance as per last Balance Sheet | 1,986 | –
+2,93,06,475 | 59,02,316
+APPROPRIATIONS:
+Proposed Dividend | 89,26,650 | 17,86,330
+Transfer to General Reserve | 1,28,75,000 | 41,15,000
+Transfer to Investment Allowance Reserve | 75,00,000 | 2,93,01,650 | – | 59,00.330
+SURPLUS CARRIED TO BALANCE SHEET | 4,825 | 1,986
+NOTES | 'O'
+
+=== Balance Sheet as at 30th September, 1977 (Standalone) ===
+--- PDF page 13 (printed page 16) ---
+[Column groups, left to right: 30th September, (columns spanned: 6); 30th September (columns spanned: 2)]
+[Column headings, left to right: 1) Schedule | 2) Rs. | 3) ? | 4) Rs. | 5) Rs. | 6) ? | 7) Rs.]
+BALANCE SHEET AS AT 30TH SEPTEMBER, 1977
+As at | As at
+30th September, | 30th September
+1977 | 1976
+Schedule | Rs. | Rs. | Rs. | Rs.
+FUNDS EMPLOYED:
+1. SHARE CAPITAL | 'A' | 5,95,11,000 | 6,95,11,000
+2 | SHARE APPLICATION MONIES
+(Refer Note No. 15 in -Notes forming part of
+the Accounts-)
+30,00,000 | –
+3. RESERVE & SURPLUS | 'B' | 3,29,04,825 | 1,25,26,986
+TOTAL SHAREHOLDERS' FUND | 9,54,15,825 | 7,20,37,986
+4. SECURED LOANS | 'C' | 11,00,59,917 | 11,57,05.424
+5. UNSECURED LOANS | 'D' | 63,54,881 | 27,52,899
+21,16,30,623 | 19,04,96,309
+FUNDS APPLIED:
+6. FIXED ASSETS | 'E' | 14,51,44,752 | 11,64,80,272
+7 | INVESTMENTS | 'F' | 37,850 | 31,125
+8. CURRENT ASSETS, LOANS & ADVANCES:
+a) CURRENT ASSETS | 'G' | 17,48,41,677 | 15,03,50,963
+b) LOANS& ADVANCES | 'H' | 91,28,234 | 62,57,869
+18,39,69,911 | 15,66,08,832
+Less: | CURRENT LIABILITIES AND
+PROVISIONS | 'I' | 11,73,21,890 | 6,66,48,021 | 8,26,23,920 | 7,39,84,912
+21,18,30,623 | 19,04,96,309
+NOTES & CONTINGENT LIABILITIES
+----- END OF PRIMARY FINANCIAL STATEMENTS -----
+
+----- LINKED FIGURES (statement lines the app linked to the notes provided; found automatically - check them against the statements and notes) -----
+- 6. FIXED ASSETS (Balance Sheet as at 30th September, 1977, PDF p.13) | Rs. 14,51,44,752 | Rs. 11,64,80,272 -> Schedule 'E' — Fixed Assets (cited in the Notes column, same figure in the note)
+- Depreciation (Profit & Loss Account for the Year Ended 30th September, 1977, PDF p.14) | Rs. 1,34,50,636 | Rs. 1,14,10,111 -> Schedule 'O' — Notes and Contingent Liabilities (title match); Schedule 'E' — Fixed Assets (same figure in the note)
+- Provision for Taxation (Profit & Loss Account for the Year Ended 30th September, 1977, PDF p.14) | Rs. 5,00,000 | Rs. 66,78,61,113 | Rs. – | previous year 67,95,51.584 -> Schedule 'O' — Notes and Contingent Liabilities (title match)
+----- END OF LINKED FIGURES -----
+
+----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----
+=== Schedule 'E' — Fixed Assets (forming part of the Balance Sheet) ===
+--- PDF page 18 (printed page 21) ---
+SCHEDULE 'E'
+GROSS BLOCK (AT COST) | DEPRECIATION | NET BLOCK
+Sr. Nature of the | Cost as at | Balance as on | To | For the | As at | As at
+No. Fixed Assets | 30-9-1976 , | Additions | Deductions | 30-9-1977 | 30-9-1976 | Deductions | Year | Total | 30-9-1977 | 30-9-1976.
+Rs. | Rs. | Rs. | Rs. | Rs. | Rs. | Rs. | Rs. | Rs. | Rs.
+1 | Goodwill | 1,28,24,281 | – | – | 1,26,24,281 | – | – | – | – | 1,26,24,281 | 1,26,24,281
+2. Leasehold Land | 28,77,233 | 2,05,210 | – | 30,82,443 | – | – | – | – | 30,82,443 | 28,77,233
+3. Freehold Land | 3,35,530 | – | – | 3,35,630 | – | – | – | – | 3,35,530 | 3,35,530
+4. Buildings | 2,31,75,738 | 89,87,101 | 1,83,268 | 2,99,79,689 | 4,81,018 | 7,285 | 5,22,957 | 9,96,690 | 2,89,82,879 | 2,26,94,718
+5. Plant & Machinery | 7,88,31,512 | 3,10,09,739 | – | 10,96,41,251 | 1,04,01,105 | – | 1,23,48,698 | 2,27,49,803 | 8,68,91,448 | 6,82,30,407
+6. Electric
+Installation | 43,11,913 | 9,20,342 | 41,299 | 51,90,956 | 1,71,399 | 1,642 | 1,65,074 | 3,34,831 | 48,56,125 | 41,40,514
+7. Furniture &
+Fixtures | 36,27,713 | 26,61,133 | 560 | 62,88,286 | 1,78,574 | 24 | 2,47,581 | 4,26,131 | 58,62,165 | 34,49,139
+8. Factory Equipment | 9,08,225 | 3,84,932 | – | 12,93,157 | 38,101 | – | 41,122 | 77,223 | 12,15,934 | 8,72,124
+9. Vehicles | 13,98,240 | 2,08,007 | 49,529 | 15,56,718 | 1,41,914 | 4,357 | 1,25,204 | 2,62,761 | 12,93,957 | 12,56,326
+TOTAL | 12,78,90,383 | 4,23,78,464 | 2,74,656 | 16,99,92,191 | 1,14,10,111 | 13,308 | 1,34,50.636 | 2,48,47,439 | 14,51,44,752 | 11,64,80,272
+NOTES: 1. The figure of Additions to Plant & Machinery includes Rs. 4,57,359/- being machinery-awaiting-installation.
+2. The figures of Buildings as at 30th September 1977 includes Rs. 10,94,051/- being cost of ownership premises in co-operative societies.
+
+=== Schedule 'O' — Notes and Contingent Liabilities (forming part of the Accounts) ===
+--- PDF page 27 (printed page 30) ---
+SCHEDULE 'O'
+Notes and Contingent Liabilities Forming Part of the Accounts for the year ended 30th September, 1977.
+1. | Reliance Textile Industries Limited, Bombay, was amalgamated with effect from 1st July 1975 with the
+Company pursuant to approval of scheme of amalgamation by High Courts of Judicature at Karnataka
+and Bombay on 13th January 1977 and 24th November. 1976 respectively. Shareholders of the
+amalgamating Company were allotted 59,50,000 Equity Shares on 9th May, 1977, pursuant to consent
+letter of 23rd April, 1977 received from the Controller of Capital Issues, New Delhi. In terms of the
+special resolution passed by the members and in accordance with the approval of the Central
+Government, the name of the Company was changed from Mynylon Limited to Reliance Textile
+Industries Limited. Since the name of the Company was changed to that of the amalgamating Company,
+the Investments and other Assets continued to remain in the same name. Pursuant to the special
+resolution passed by the members and pursuant to the order of the Company Law Board, the Company
+has transferred its registered office from the State of Karnataka to the State of Maharashtra and a
+certified copy of the order has been registered with the Registrar of Companies, Maharashtra, Bombay,
+as per hisCertificate dated 4th August, 1977.
+2. | The figures of the previous year in the Profit and Loss Account represent the result of the working of
+the amalgamating Company for the period from 1st July, 1975 to 30th September, 1976, viz. for the
+period of 15 months, pursuant to the scheme of amalgamation of Reliance Textile Industries Limited,
+Bombay, with the Company, whereas figures of the current year represent the working result of 12
+months of the Company. To this extent, figures of the previous year are not comparable with those of
+the current year.
+3. | The figures in the Balance Sheet and Profit & Loss Account of the previous year are regrouped and/
+or re-arranged wherever necessary.
+4. | The form of Balance Sheet is in accordance with the approval of the Company Law Board granted
+vide its letter No. 3/104-77-CL. VI of 29th June, 1977 under section 211(1) of the Companies Act,
+1956.
+5. | Depreciation is provided in accounts in accordance with the provisions of section 205(2)(b) of the
+Companies Act, 1956.
+6. | Liability for retiring gratuity payable to employees of the Company upto 30th September. 1977 has
+been determined by actuarial valuation at Rs. 9,83,000/- and necessary provision has been made in
+the accounts of the Company. The Gratuity Scheme of the Company has been approved by the Income
+Tax Department.
+7. | Provision has been made for Bonus payable for the year amounting to Rs. 14,04,183/- unlike in the
+past years. when the Company used to account for payment of Bonus on cash basis.
+8. | The Company follows the practice of accounting interest on Investments on cash basis and to write
+off the cost of loose tools in the year of purchase.
+9. | Sales Tax assessment of the Company has been completed upto accounting year 1973-74. The
+Company does not expect any further liability for pending assessments.
+10. The Income Tax assessment of the Company is completed upto the assessment year 1975-76. The
+assessments for the earlier years of the amalgamating Company have been re-opened by the Income
+Tax Department for some of the years. The Company does not expect any further liability in this
+respect.
+
+--- PDF page 28 (printed page 31) ---
+11. in the opinion of the Board, the current assets, loans and advances are approximately of the value stated
+if realised in the ordinary course of business. The provision for depreciation and for all known liabilities is
+adequate and neither in excess of nor in short of the amount reasonably necessary.
+12. The Company has obtained the following Bridging Loans from financial institutions against uncon-ditional
+and irrevocable Guarantees of a Bank to be adjusted against disbursement of term loans already sanctioned
+to finance the Company's expansion programme:-
+1. Industrial Finance Corporation of India | Rs. 50.00 lakhs
+2. Industrial Development Bank of India | Rs. 110.00 lakhs
+Out of the total loan of Rs. 110.00 lakhs availed from the Industrial Development Bank of India, a sum of
+Rs. 43.03 lakhs is being adjusted against the amount payable in instalments on account of machinery
+purchased on deferred payment guarantee.
+13. Conveyance and/or lease deeds in respect of various plots of land acquired by the Company from the
+Gujarat Industrial Development Corporation have been executed and in respect of others, sale deeds
+have been executed. Some of the said deeds have been lodged for registration which normally takes a
+long time.
+14. The Company has received by way of advance deposit (carrying interest at the rate of 15% per annum) a
+sum of Rs. 35.00 lakhs from Unit Trust of India towards debentures to be privately placed, carrying interest
+at the rate of 11 % per annum. The same will be issued on execution of the Debenture Deed.
+15. The Company has obtained an aggregate amount of Rs. 30.00 lakhs from the General Insurance
+Corporation and its subsidiaries, viz. Oriental Fire and General Insurance Co. Ltd., United India Fire and
+General Insurance Co. Ltd., National Insurance Company Ltd., and New India Assurance Co. Ltd., as
+application money in full towards issue of 30,000 11% Cumulative Redeemable Preference Shares of Rs.
+1100/- each, which are redeemable before 15 years from the date of allotment but not earlier than 12
+years from the date of allotment. The shares will be allotted after receiving consent from the Controller of
+Capital Issues, New Delhi. Necessary application in this respect has been made.
+16. The figure of "SundryCreditors" includes:-
+a) Rs. 42,74,848/- on account of outstanding payments due for purchase of Capital Assets.
+b) Rs. 2,75,70,227/- payable in instalments on account of machinery purchased on Deferred Payment
+basis. Out of the above, a sum of Rs. 4,3,03,000/- is being adjusted from the bridging loan of Rs.
+1,10,00,000/- availed from Industrial Development Bank of India.
+c) Rs. 1,26,91,830/- due to firms and a proprietary concern in which some of the Directors of the Company
+are interested as Partners or Proprietors, and to Companies in which some of the Directors of the
+Company are interested as Directors.
+17. In the Profit & Loss Account, expenditure amounting to Rs. 9,99,332/- pertaining to the previous year has
+been debited under relevant heads. Similarly, income amounting to Rs. 1,00,500/- pertaining to previous
+year has been credited under respective heads.
+18. The figure of 'Sales' has been arrived at after adjusting:-
+1976-77 | 1976-76
+Rs. | Rs.
+1. Excise Duty paid | 1,14,99,339 | 1,04,59,100
+2. Sales Tax | 64,15,785 | 21,17,583
+
+--- PDF page 29 (printed page 32) ---
+19. | The Company follows the practice of accounting for Export Incentives on cash basis.
+20. | The figure of -Additions to Buildings- and Investments include Rs. 6,91,000/- paid towards purchase
+of a residential flat and garages on ownership basis and Rs. 11,000/- as shares of New Usha Kiran Co-
+operative Housing Society, which stands in the name of a Director. Necessary approval of the Registrar
+of Co-operative Societies for transfer in the name of Director is awaited. The said Director has signed the
+necessary agreement reciting and ratifying that he holds the said flat, garages and shares in the said
+Society for and on behalf of the Company.
+21. | Unclaimed deferred dividend amounting to Rs. 15,111/- which was not deposited in a separate Bank
+account, has since been deposited in a separate Bank account.
+22. | Sundry Deposits received includes Rs. 3,800/- received as security deposit from staff (which was not
+deposited in a separate Bank account has since been deposited in a separate account with a scheduled
+Bank) and Rs. 1,95,421/- received from some members of the Staff towards "OwnYour Car Scheme".
+23. | The Cornpany has entered into transactions of purchase and sale with firms in which some of the
+Directors are interested. The Company has made the necessary application under Section 297 of the
+Companies Act, 1956, to the Central Government for its approval.
+24. | The Company has been advised that the computation of Net Profit (for the purpose of calculation of
+Directors' remuneration under Section 349 of the Companies Act, 1956) need not be enumerated, since
+no commission has been paid to the Directors and also since only minimum remuneration has been paid
+to them, as per approval of the Central Government received under Section 198 and 309 of the Companies
+Act, 1956.
+The details regarding managerial remuneration paid and/or provided to the Managing Directors and
+Executive Directors is as under:-
+1976-77 | 1975-76
+Rs. | Rs.
+A) Managing & Joint Managing Directors:
+1. Salaries | 96,000 | 1,20,000
+2. Contribution to Provident Fund and Superannuation
+Fund | 24,000 | 19,800
+3. Medical benefits | 3,028 | 7,493
+4. Provision for Gratuity (as per acturial valuation) | 3,800 | 5,151
+5. Perquisites | 23,133 | 27,394
+B) Executive Directors:
+1. Salaries | 1,08,000 | 1,35,000
+2. Contribution to Provident Fund and
+Superannuation Fund | 27,000 | 33,750
+3. Medical benefits | 1,143 | 4,924
+4. Provision for Gratuity (as per acturial valuation) | 3,780 | 11,095
+6. Perquisites | 18,000 | 27,000
+
+--- PDF page 30 (printed page 33) ---
+25. CONTINGENT LIABILITIES:
+1976-77 | 1975-76
+a) Estimated capital expenditure commitment not provided
+for (Advance against the same Rs. 9,66,590/-, previous
+year Rs. 7,50,261/-) | 4,91,76,000 | 4,91,25,000
+b) Counter guarantee given to the Bankers in respect of
+guarantee furnished by the Bank | 8,82,71,675 | 3,22,22,634
+c) Bond executed in favour of Excise or Custom
+Authorities | 18,65,70,000 | 11,08,04,000
+d) Bills discounted with the Banks and outstanding | 5,16,85,59 9 | 4,88,34,891
+e) Uncalled liability on shares partly paid | 29,250 | 12,375
+26. Details regarding licensed and installed- capacity to manufacture art
+silk fabrics etc.:
+a) Licensed Capacity:
+Looms | 450 | 450
+Knitting Machines (As per Textile Commissioner's Permit) | 22 | 22
+Crimping Machines (spindles) | 2464 | 2464
+Twisting Machines | 20 | 20
+b) Installed Capacity
+(As certified by the Management)
+Looms 450 246
+Knitting Machines | 22 | 22
+Crimping Machines (spindles) | 2464 | 2464
+Twisting Machines | 20 | 20
+27. Quantitative information in respect of Opening Stock. Closing Stock, Purchases, Sales and Con-
+sumption of Raw Materials:-
+1976-77 | 1975-76
+Unit. | Quantity | Amount Rs. | Quantity Amount Rs.
+a) OPENING STOCK:
+Yarn | Kgs | 2,90,551 | 2,42,01,141 | 1,66,021 | 1,11,17,641
+Fabrics | Mtrs | 18,36,854 | 2,95,30,004 | 14,28,613 | 2,40,28,289
+Viscose staple | Kgs | 2,373 | 17,899 | – | –
+Stock-in-process | Mtrs | 25,28,652 | 2,77,13,334 | 7,93,110 | 1,17,04,822
+b) CLOSING STOCK:
+Yarn | Kgs | 2,36,230 | 1,24,92,833 | 2,90,551 | 2,42,01,141
+Fabrics | Mtrs | 24,59,303 | 4,68,45,200 | 18,36,854 | 2,95,30,004
+Viscose staple | Kgs | – | – | 2,373 | 17,899
+Stock-in-process | Mtrs | 26,66,587 | 2,94,67,877 | 26,28,652 | 2,77,13,334
+c) PURCHASES:
+Yarn | Kgs | 10,94,003 | 13,05,40,237 | 11,97,154 | 14,37,68,646
+Fabrics | Mtrs | 79,93,373 | 7,22,55,884 | 84,63,188 | 10,49,81,043
+Dyes & Chemicals | Kgs | 10,000 | 30,38,000 | 10,760 | 22,40,000
+Cotton/pieces garments | Pcs | 54,902 | 10,66,909 | 1,10,183 | 12,82,636
+Viscose staple | Kgs | 3,383 | 21,795 | 19,778 | 1,62,385
+Necklaces | Nos. | – | – | 3,700 | 58,640
+See foods | Lbs | 4,11,950 | 1,19,17,759 | 1,08,466 | 18,83,944
+Handicrafts | Pcs. | – | – | 6,140 | 1,09,900
+Carpets | Sq. mtrs | – | – | 213 | 50,445
+
+--- PDF page 31 (printed page 34) ---
+1976-77 | 1975-76
+Unit. | Quantity | Amount Rs. | Quantity Amount Rs.
+d) SALES:
+Yarn | Kgs | 22,63,987 | 31,56,08,779 | 16,81,521 | 27,42,02,642
+Fabrics | Mtrs | 2.07,51,623 33,81,82,721 | 2,26,56,534 | 34,65,77,940
+Dyes & Chemicals | Kgs | 10,000 | 28,00,000 | 10,750 | 22,40,000
+Cotton garments | Pcs | 54,902 | 10,81,046 | 1,10,183 | 19,38,139
+Viscose staple | Kgs | 5,756 | 86,908 | 17,405 | 2,00,158
+Necklaces | Nos. | – | – | 3,700 | 72,000
+Sea foods | Lbs | 4,11,950 | 1,15,84,407 | 1,08,466 | 18,83,944
+Handicrafts | Pcs | – | – | 6,140 | 1,31,620
+Carpets | Sq. mtrs. | – | – | 213 | 41,000
+e) RAW MATERIALS
+CONSUMED:
+Yarn | Kgs | 22,54,486 | 18,66,58,363 | 19,92,525 | 16,18,99,995
+Fabrics (Grey) | Mtrs | 60,89,677 | 9,51,89,871 | 86,48,496 | 9,09,05,780
+28. PRODUCTION:
+Unit | 1976-77 | 1975-76
+Crimped yarn (including twisted yarn) | Kgs | 17,62,983 | 14,66,571
+Fabrics | Mtrs | 1,33,80,699 | 1,47,68,980
+29. Value of Imports on c.i.f. basis in respect of:-
+i) | Yarn (including Rs. 32,27,775/- through
+STC - previous year Rs. 1,31,46,124/-) | 3,50,05,689 | 4,20,08,067
+ii) Dyes Et Chemicals and spare parts and
+stores | 15,99,228 | 18,50,688
+iii) Capital goods | 1,54,18,523 | 84,72,016
+30. Expenditure in foreign currency on account of:-
+Interest (paid to ICICI) on account of foreign
+exchange loans | 29,06,489 | 42,98,822
+Other matters (including commitment charges
+Rs. 35,706/- to ICICI - previous year Rs. 993). | 4,03,098 | 1,67,237
+31. Value of Raw Materials consumed:-
+1976-77 | 1975-76
+% of total | % of total
+Rupees | consumption | Rupees | consumption
+Imported | 14,80,02,485 | 52.51 | 11,25,57,308 | 44.52
+Indigenous | 13,38,45,749 | 47.49 | 14,02,48,467 | 65.48
+28,18,48,234 | 100.00 | 25,28,05,775 | 100.00
+
+--- PDF page 32 (printed page 35) ---
+32. Value of Dyes and Chemicals, Stores
+and Spare Parts consumed:-
+1976-77 | 1975-76
+% of total | % of total
+Rupees | consumption | Rupees | consumption
+Imported | 36,60,301 | 11.19 | 38,66,690 | 12.78
+Indigenous | 2,90,36,036 | 88.81 | 2,63,88,833 | 87.22
+3,26,96,337 | 100.00 | 3,02,55,523 | 100.00
+1976-77 | 1975-76
+33. Earning in foreign exchange:- | Rs. | Rs.
+Export of goods on f.o.b. basis | 6,21,41,217 | 6,81,79,818
+(Net) | (Net)
+34. a) Break-up of expenditure incurred on employees who are
+employed throughout the period and were in receipt of
+remuneration for the year which in aggregate was not
+less than Rs. 36,000/- per annum:-
+Number of employees | 29 | 25
+Salaries Et Bonus | 11,97,182 | 11,09,163
+Contribution to Provident Fund & Superannuation Fund | 2,79,704 | 2,50,893
+Other perquisites | 2,12,290 | 1,81,320
+b) Break-up of expenditure incurred on employees who were
+employed for a part of the period and were in receipt of
+remuneration for any part of the period at a rate which in
+aggregate was not less than Rs. 3,000/- per month:-
+Number of employees | 14 | 13
+Salaries & Bonus | 2,52,454 | 2,35,349
+Contribution to Provident Fund and Superannuation Fund | 36,706 | 39,932
+Other perquisites | 73,908 | 32,709
+Signature to Schedules 'A' to 'O'
+----- END OF NOTES -----
