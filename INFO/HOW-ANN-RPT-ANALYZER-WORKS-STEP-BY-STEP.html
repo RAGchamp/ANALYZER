@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Annual Report Analyzer Works: Step by Step</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/vs2015.min.css">
+<style>
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-light:#6ea8fe;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-red:#dc3545;
+    --biz-green:#198754;
+    --nav-blue:#04264d;
+    --nav-yellow:#ffd60a;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  /* Sticky top nav */
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand-logo{ height:44px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  section[id]{ scroll-margin-top:84px; }
+  html{ scroll-behavior:smooth; }
+
+  .hero{
+    background:linear-gradient(120deg, var(--biz-blue-dark) 0%, var(--biz-blue) 55%, #3d8bfd 100%);
+    color:#fff;
+  }
+  .accent-blue{ border-left:5px solid var(--biz-blue); }
+  .accent-green{ border-left:5px solid var(--biz-green); }
+  .accent-red{ border-left:5px solid var(--biz-red); }
+  .accent-yellow{ border-left:5px solid var(--biz-yellow); }
+
+  .section-title{
+    display:inline-flex; align-items:center; gap:.6rem;
+    padding-bottom:.4rem; border-bottom:3px solid var(--biz-blue);
+    margin-bottom:1.25rem;
+  }
+  .toc-num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:1.8rem; height:1.8rem; border-radius:50%;
+    background:var(--biz-yellow); color:#2b2b2b; font-weight:700; font-size:.85rem;
+    margin-right:.5rem; flex:none;
+  }
+  .toc-list a{ text-decoration:none; color:#212529; }
+  .toc-list a:hover{ color:var(--biz-blue); text-decoration:underline; }
+  .toc-item{ display:flex; align-items:center; padding:.4rem 0; }
+  .back-to-top{ font-size:.85rem; }
+  .color-key-dot{ width:.9rem; height:.9rem; border-radius:50%; display:inline-block; margin-right:.4rem; }
+  table thead th{ background:#eef3fb; }
+  .glossary-table thead th{ background:#04264d; color:#fff; }
+
+  /* VS Code style dark code windows */
+  .code-window{ background:#084298; border-radius:.5rem; overflow:hidden; margin:1rem 0 1.5rem; box-shadow:0 .25rem .75rem rgba(0,0,0,.3); }
+  .code-window .code-titlebar{
+    background:#323233; color:#cccccc; padding:.45rem .9rem; font-size:.8rem;
+    display:flex; align-items:center; gap:.4rem; font-family:'Segoe UI',Roboto,sans-serif;
+  }
+  .code-window .dot{ width:.7rem; height:.7rem; border-radius:50%; display:inline-block; }
+  .dot-red{ background:#ff5f56; } .dot-yellow{ background:#ffbd2e; } .dot-green{ background:#27c93f; }
+  .code-window .code-filename{ margin-left:.5rem; opacity:.85; }
+  .code-window pre{ margin:0 !important; padding:1rem 1.25rem !important; background:#084298 !important; overflow-x:auto; }
+  .code-window code, .code-window code *{ font-family:'Fira Code',Consolas,Monaco,monospace; font-size:.85rem; background:transparent !important; color:#ffffff !important; font-weight:700 !important; text-shadow:none; }
+
+  .badge-tool{ background:#04264d; color:var(--nav-yellow); }
+
+  /* Step-by-step walkthrough boxes */
+  .step-box{
+    background:#e9ecef;
+    border-radius:.5rem;
+    overflow:hidden;
+    margin:0 0 1.25rem;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.12);
+  }
+  .step-box .step-bar{
+    background:var(--nav-blue);
+    color:#5BF527;
+    font-weight:700;
+    padding:.5rem 1.1rem;
+    font-size:.95rem;
+    letter-spacing:.02em;
+  }
+  .step-box .step-bar .step-title{
+    font-weight:700;
+  }
+  .step-box .step-body{ padding:1rem 1.25rem; }
+  .step-box .step-body p:last-child{ margin-bottom:0; }
+  .step-box .step-file{
+    font-family:'Fira Code',Consolas,Monaco,monospace;
+    font-size:.8rem;
+    margin-bottom:.7rem;
+  }
+  .step-box .step-file mark{
+    background:var(--biz-yellow);
+    color:#2b2b2b;
+    padding:.15rem .5rem;
+    border-radius:.25rem;
+    font-weight:600;
+  }
+  .step-box .step-file .arrow{ color:#6c757d; margin:0 .3rem; font-family:'Segoe UI',Roboto,sans-serif; }
+
+  footer{ background:var(--nav-blue); }
+  footer a{ color:#fff; }
+
+  /* Step-by-step document additions */
+  .screen-shot{ border:1px solid #ced4da; border-radius:.5rem; box-shadow:0 .2rem .6rem rgba(0,0,0,.15); max-width:100%; height:auto; background:#fff; }
+  .screen-shot.small-shot{ max-width:420px; }
+  .shot-caption{ font-size:.85rem; color:#6c757d; margin-top:.4rem; }
+  .flow{ display:flex; flex-wrap:wrap; gap:.5rem; align-items:stretch; }
+  .flow .flow-box{ flex:1 1 150px; background:#fff; border:2px solid var(--biz-blue); border-radius:.5rem; padding:.6rem .7rem; font-size:.85rem; }
+  .flow .flow-box b{ display:block; color:var(--biz-blue-dark); margin-bottom:.2rem; }
+  .flow .flow-box.claude{ border-color:var(--biz-green); }
+  .flow .flow-box.claude b{ color:var(--biz-green); }
+  .flow .flow-box.user{ border-color:var(--biz-yellow); }
+  .flow .flow-arrow{ align-self:center; color:#6c757d; font-weight:700; }
+  .num-cell{ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .kbd-like{ font-family:'Fira Code',Consolas,Monaco,monospace; font-size:.82rem; background:#eef3fb; padding:.05rem .35rem; border-radius:.25rem; }
+  @media (max-width:576px){ .flow .flow-arrow{ display:none; } }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand"><img class="brand-logo" src="logo.svg" alt="RAG Champ"></span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<!-- HERO -->
+<header class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9">
+        <span class="badge rounded-pill bg-warning text-dark mb-3">Annual Report Analyzer · Step by step · one real run</span>
+        <h1 class="display-6 fw-bold">How the Annual Report Analyzer Works: Step by Step</h1>
+        <p class="lead mb-0">This page follows one real question through the app, screen by screen: <em>"analyze company's aerospace business"</em>, asked about the Bharat Forge FY2025-26 annual report on 2026-10-06. For each screen it shows what you see, what the browser sends, which Python code runs, what Claude Code receives and returns, and what is saved. All the figures here (timings, prompt sizes, note sizes, file names) come from that run's log, its saved prompt (<code>Prompt-History\Claude-code-prompt-25-*</code>) and the report package.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container my-5">
+
+  <!-- COLOR KEY -->
+  <div class="mb-5">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-3">
+        <div class="row g-2 small text-center text-md-start">
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-blue);"></span>Blue: what the app does</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-red);"></span>Red: a limit or caution</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-green);"></span>Green: Claude's part / the takeaway</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-yellow);"></span>Yellow: what you do / definitions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <section id="toc" class="mb-5">
+    <h2 class="section-title">Table of Contents</h2>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="row toc-list">
+          <div class="col-md-6">
+            <div class="toc-item"><span class="toc-num">1</span><a href="#glance">The Run at a Glance</a></div>
+            <div class="toc-item"><span class="toc-num">2</span><a href="#before">Before You Start: Ingestion (Done Once)</a></div>
+            <div class="toc-item"><span class="toc-num">3</span><a href="#screen1">Screen 1: The First Screen Opens</a></div>
+            <div class="toc-item"><span class="toc-num">4</span><a href="#screen2">Screen 2: Selecting the Report</a></div>
+            <div class="toc-item"><span class="toc-num">5</span><a href="#screen3">Screen 3: What Step 1 Shows</a></div>
+            <div class="toc-item"><span class="toc-num">6</span><a href="#screen4">Screen 4: Asking the Question</a></div>
+            <div class="toc-item"><span class="toc-num">7</span><a href="#identify">Identifying the Notes (Claude Call #1)</a></div>
+          </div>
+          <div class="col-md-6">
+            <div class="toc-item"><span class="toc-num">8</span><a href="#screen5">Screen 5: Confirming the Notes</a></div>
+            <div class="toc-item"><span class="toc-num">9</span><a href="#screen6">Screen 6: Analyze (Building the Prompt)</a></div>
+            <div class="toc-item"><span class="toc-num">10</span><a href="#claude2">Claude Call #2: The Analysis</a></div>
+            <div class="toc-item"><span class="toc-num">11</span><a href="#answer">Reading the Answer: Where Each Part Came From</a></div>
+            <div class="toc-item"><span class="toc-num">12</span><a href="#saved">What Was Saved</a></div>
+            <div class="toc-item"><span class="toc-num">13</span><a href="#notice">Things Worth Noticing in This Run</a></div>
+            <div class="toc-item"><span class="toc-num">14</span><a href="#files">Files Involved, Step by Step</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. AT A GLANCE -->
+  <section id="glance" class="mb-5">
+    <h2 class="section-title">1. The Run at a Glance</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>The app works on one principle: <strong>Python decides what Claude sees, and Claude only analyzes it.</strong> Claude never gets the 508-page PDF. It gets about 50,000 characters chosen by the app: the five notes you confirmed, the four consolidated financial statements, and a short list of figures the app linked between them. Claude has no tools, so it cannot read anything else.</p>
+        <p class="mb-0">Your run made <strong>two Claude calls</strong>: a small one (16,554 characters, 10 seconds) to <em>choose</em> the notes from their titles, and a big one (50,258 characters, 60 seconds) to <em>analyze</em> them. Between the two, the app stopped and waited for you to confirm the notes.</p>
+      </div>
+    </div>
+
+    <div class="flow mb-4">
+      <div class="flow-box user"><b>You</b>select the report</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box"><b>App</b>opens the report package (already built)</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box user"><b>You</b>type the question, click <em>Identify notes</em></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box claude"><b>Claude #1</b>picks notes from 59 titles</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box user"><b>You</b>confirm 5 notes, click <em>Analyze</em></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box"><b>App</b>takes notes + statements + links from the package</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box claude"><b>Claude #2</b>writes the analysis</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box"><b>App</b>shows it, saves history + HTML</div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Timeline from <code>WEB-APP\logs\app.log</code></h5>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th>Time (2026-10-06)</th><th>What happened</th><th>Request</th><th class="num-cell">Took</th></tr></thead>
+            <tbody>
+              <tr><td>21:54:52</td><td>First screen opened; report list and History loaded</td><td><code>GET /</code>, <code>/api/reports</code>, <code>/api/history</code></td><td class="num-cell">&lt; 1 s</td></tr>
+              <tr><td>21:58:45</td><td>Bharat Forge report selected; its package opened and summarised</td><td><code>POST /api/index</code></td><td class="num-cell">~0.1 s</td></tr>
+              <tr><td>22:00:32</td><td><em>Identify notes</em> clicked; identify job started</td><td><code>POST /api/identify</code></td><td></td></tr>
+              <tr><td>22:00:43</td><td>Claude call #1 finished (prompt 16,554 chars); notes C49, C24, C37, C6, C46</td><td>job</td><td class="num-cell">10.4 s</td></tr>
+              <tr><td>22:00:43 – 22:02:08</td><td><strong>You</strong> read and confirmed the notes (the app waits)</td><td>—</td><td class="num-cell">—</td></tr>
+              <tr><td>22:02:08</td><td><em>Analyze</em> clicked; analyze job started</td><td><code>POST /api/analyze</code></td><td></td></tr>
+              <tr><td>22:03:09</td><td>Claude call #2 finished (prompt 50,258 chars, answer 10,207 chars); saved as history #25</td><td>job</td><td class="num-cell">60.6 s</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 2. BEFORE -->
+  <section id="before" class="mb-5">
+    <h2 class="section-title">2. Before You Start: Ingestion (Done Once)</h2>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <p>Every PDF fact the app uses was worked out <strong>before</strong> you asked anything. The first time a report is selected, the <strong>Ingester</strong> (<code>WEB-APP\ingest\</code>) reads the whole PDF once and writes a <strong>report package</strong>: one SQLite file holding everything the Analyzer needs. The <strong>Analyzer</strong> (<code>WEB-APP\analyzer\</code>), which handled your question, never opens a PDF. It only reads this package.</p>
+        <p class="mb-0">For Bharat Forge the package was built on <strong>2026-09-29 at 05:57:59 in 27.6 seconds</strong> and saved as <code>WEB-APP\cache\packages\Bharat-Forge-IR-2026-conv-single-page-fbe10a171fc5ab27.rptpkg.db</code>. The <code>fbe10a171fc5ab27</code> part is the start of the PDF's SHA-256 fingerprint, so a changed PDF gets a new package.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">INGEST 1 <span class="step-title">— Match the PDF to a model document</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>ingest/models/match.py</mark><span class="arrow">→</span><mark>ingest/models/registry.json</mark></div>
+        <p class="mb-0">The app only reads report formats it has been taught. Each format has a <em>model document</em> in <code>MODEL-DOCS\</code>. This PDF's SHA-256 is the same as the registered model <code>TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge</code>, so it matched as <em>"model document"</em> straight away, with profile <code>in-indas-2020s</code> (the rules for modern Indian Ind AS reports). A report that matches no model is blocked: it cannot be analyzed until its model is added.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">INGEST 2 <span class="step-title">— Build the Notes Index</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>ingest/notes_index.py</mark><span class="arrow">→</span><mark>ingest/pdf_utils.py</mark></div>
+        <p class="mb-0">Notes pages are found by their running header ("Notes to Consolidated Financial Statements") at the top of the page. Note headings are bold rows at the left margin that start with a number, in sequence. Each note runs from its heading to just before the next one. For example, Note 49 <em>SEGMENT INFORMATION</em> starts at y = 578 on PDF page 472 and ends on page 475 (printed pages 469–472). Result: 59 consolidated notes (PDF 348–503) and 56 standalone notes (PDF 210–327). Each note's sub-headings are kept too. They matter later, because the note picker sees them.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">INGEST 3 <span class="step-title">— Find and read the four primary statements</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>ingest/statements.py</mark><span class="arrow">→</span><mark>ingest/tables.py</mark></div>
+        <p class="mb-0">In the 15 pages before each notes section, the app looks for pages whose title starts with a statement name. Consolidated: Balance Sheet p.341, Profit and Loss p.342–343, Changes in Equity p.344–345, Cash Flow p.346–347. The equity pages are printed sideways, so they are redrawn upright (<code>show_pdf_page(rotate=-90)</code>) before their text is read. That is the <em>rotated</em> tag you saw in step 1. Tables are rebuilt row by row from text positions as <code>label | note | FY2026 | FY2025</code>.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">INGEST 4 <span class="step-title">— Clip every note and page, parse figures, link lines to notes, run checks</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>ingest/clip.py</mark><span class="arrow">→</span><mark>ingest/figures.py</mark><span class="arrow">→</span><mark>ingest/links.py</mark><span class="arrow">→</span><mark>ingest/quality.py</mark></div>
+        <p>The clipped text of all 115 notes is stored, cut to each note's exact extent with headers and footers removed. So are the text of every page and the report's other sections, cut into passages. Then:</p>
+        <ul class="mb-0">
+          <li><strong>Figures:</strong> 331 statement lines with 903 figures, the periods (FY2026, FY2025) and the unit (<em>In ₹Million</em>).</li>
+          <li><strong>Links</strong> from each statement line to a note: the note number in the statement's <em>Notes</em> column ("references"); a 5+ digit figure printed in both the line and the note ("ties_to"); or a title match ("mentions"). 254 of 331 lines were linked.</li>
+          <li><strong>Checks:</strong> subtotals, assets = equity + liabilities, figures carried between statements, and notes whose cited figure cannot be found. 125 of 152 passed, with 5 warnings.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 3. SCREEN 1 -->
+  <section id="screen1" class="mb-5">
+    <h2 class="section-title">3. Screen 1: The First Screen Opens</h2>
+    <div class="row g-4 align-items-start mb-3">
+      <div class="col-lg-7">
+        <img class="screen-shot" src="STEP-BY-STEP-IMG/1-first-screen.png" alt="The first screen: History sidebar, step 1 Select annual report, step 2 Ask your question">
+        <div class="shot-caption">What you saw at <code>http://127.0.0.1:5000</code>.</div>
+      </div>
+      <div class="col-lg-5">
+        <div class="step-box">
+          <div class="step-bar">STEP 1 <span class="step-title">— Page, report list, History</span></div>
+          <div class="step-body">
+            <div class="step-file"><mark>app.py</mark><span class="arrow">→</span><mark>templates/index.html</mark><span class="arrow">→</span><mark>static/app.js</mark></div>
+            <p><code>GET /</code> returns <code>index.html</code>, which loads <code>style.css</code> and <code>app.js</code>. Then <code>app.js</code> makes two calls:</p>
+            <ul>
+              <li><code>loadReports()</code> → <code>GET /api/reports</code>. This lists every <code>*.pdf</code> in <code>Annual-reports\</code> with its size, and fills the dropdown. There are several PDFs, so it shows "— choose a report —". With only one PDF it would select it automatically.</li>
+              <li><code>loadHistory()</code> → <code>GET /api/history</code>. This reads <code>Prompt-History\Claude-code-prompt-N-question.txt</code> files, newest first, to fill the <strong>History</strong> sidebar (#24 Chubb, #23 BRK-1968 …). Clicking an entry reopens that answer and its thread.</li>
+            </ul>
+            <p class="mb-0">The buttons <em>Identify notes</em> and <em>Analyze non notes</em> stay disabled (greyed) until a report is loaded and a question is typed. The green 🎤 button types the question by voice (the browser's speech recognition).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 4. SCREEN 2 -->
+  <section id="screen2" class="mb-5">
+    <h2 class="section-title">4. Screen 2: Selecting the Report</h2>
+    <img class="screen-shot mb-2" src="STEP-BY-STEP-IMG/2-select-report.png" alt="The report dropdown with Bharat-Forge-IR-2026-conv-single-page.pdf (17.8 MB) highlighted">
+    <div class="shot-caption mb-4">Choosing <em>Bharat-Forge-IR-2026-conv-single-page.pdf (17.8 MB)</em>.</div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 2a <span class="step-title">— The browser asks the server to load the report</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>static/app.js</mark> <code>selectReport()</code><span class="arrow">→</span><mark>app.py</mark> <code>api_index()</code></div>
+        <p class="mb-0">The browser shows "Reading the report, indexing its notes and loading the financial statements…" and sends <code>POST /api/index {"report": "Bharat-Forge-IR-2026-conv-single-page.pdf"}</code>. The server first checks that the name is one of the listed PDFs (<code>resolve_report</code>), so a crafted name cannot reach other files.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 2b <span class="step-title">— Is there an up-to-date package? Yes, so it is opened, not rebuilt</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>ingest/pipeline.py</mark> <code>open_report()</code> → <code>ensure_package()</code><span class="arrow">→</span><mark>rptpkg/store.py</mark></div>
+        <p>The package is found by the PDF's SHA-256. <code>_usable()</code> then checks that it was built by the current ingester (<code>INDEX_VERSION</code> 34), with the same profile version (<code>in-indas-2020s</code> v2), and against the current model registry. All three matched, so the package was simply opened in about 0.1 s. No PDF page was read, and the log shows no "Ingested …" line for this run.</p>
+        <p class="mb-0">If any check had failed (for example after a code change that bumped <code>INDEX_VERSION</code>), the whole ingestion of section 2 would have run again first, about 28 s for this report.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 2c <span class="step-title">— The package is summarised for step 1</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/routes.py</mark> <code>report_summary()</code></div>
+        <p class="mb-0">The reply holds the page count and notes summary, the format and model, the quality lines (only those starting <code>Figures:</code>, <code>Links:</code>, <code>Checks:</code> or <code>Warning:</code>), each section's statements with their pages, a rotated flag and their text, and the list of all 115 notes (for the "add a note" dropdown in step 3).</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 5. SCREEN 3 -->
+  <section id="screen3" class="mb-5">
+    <h2 class="section-title">5. Screen 3: What Step 1 Shows</h2>
+    <img class="screen-shot mb-2" src="STEP-BY-STEP-IMG/3-report-loaded.png" alt="Step 1 after loading: pages, notes ranges, format, model, quality lines and the loaded statements">
+    <div class="shot-caption mb-4">Drawn by <code>app.js</code>: <code>showFormat()</code>, <code>renderQuality()</code>, <code>renderStatements()</code>.</div>
+
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <h5 class="card-title">Each line, explained</h5>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th style="width:38%">On screen</th><th>What it means and where it comes from</th></tr></thead>
+            <tbody>
+              <tr><td>508 pages · Consolidated notes: 59 (PDF p.348–503) · Standalone notes: 56 (PDF p.210–327)</td><td>The Notes Index (section 2, INGEST 2). Page numbers are always <strong>PDF</strong> page numbers. The printed page is 3 lower in this report.</td></tr>
+              <tr><td>Format: Modern (notes to financial statements) (detected)</td><td>The report's format, found automatically. The <em>Report format</em> dropdown below it lets you force another format. That rebuilds the package.</td></tr>
+              <tr><td>Model: TYPE-1 INDIA Ann rpt 2026 Bharat-Forge (model document; checks passed)</td><td>The model match (INGEST 1). "Model document" means this PDF <em>is</em> the model, matched by fingerprint. "Checks passed" means its acceptance checks (notes found, statements found, the expected wording) all succeeded.</td></tr>
+              <tr><td>Figures: 331 statement lines, 903 figures; periods FY2026, FY2025, 2025-04-01, 2024-04-01; units In ₹Million</td><td><code>ingest/figures.py</code>: every number in the statements, tied to its line and period. The two dates are the opening balances in the equity statement.</td></tr>
+              <tr><td>Links: 254 of 331 statement lines linked to a note (77%) — 216 by figure match, 1 by label, 103 by notes column, 68 by title match</td><td><code>ingest/links.py</code>. A line can be linked in more than one way, so the parts add up to more than 254. These links are used twice later: as hints for choosing notes, and as LINKED FIGURES in the prompt.</td></tr>
+              <tr><td>Checks: 125 of 152 ok · 5 warnings</td><td>Automatic arithmetic checks. Lines that are not simple sums are reported as "unverified", not as failures.</td></tr>
+              <tr><td>The two green boxes, each line with ✓</td><td>The four primary statements per section, found and loaded. Click ▶ to see the exact text that will be sent to Claude. The <em>rotated</em> tag marks the sideways equity pages that were turned upright.</td></tr>
+              <tr><td><em>View the financial statements ↗</em></td><td>Opens <code>/statements?report=…</code> in a new tab: the same statements rebuilt as tables from the package.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 6. SCREEN 4 -->
+  <section id="screen4" class="mb-5">
+    <h2 class="section-title">6. Screen 4: Asking the Question</h2>
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-4">
+        <img class="screen-shot small-shot" src="STEP-BY-STEP-IMG/4-question.png" alt="Question box: analyze company's aerospace business">
+        <div class="shot-caption">Your question.</div>
+      </div>
+      <div class="col-lg-8">
+        <div class="step-box">
+          <div class="step-bar">STEP 3 <span class="step-title">— You choose one of two flows</span></div>
+          <div class="step-body">
+            <div class="step-file"><mark>static/app.js</mark> <code>identify("notes")</code></div>
+            <ul>
+              <li><strong>Identify notes</strong> (what you clicked): <code>mode = "notes"</code>. It analyzes the <em>notes to the financial statements</em> and the primary statements, and gives an accounting-focused answer with an <em>Impact on the financial statements</em> section.</li>
+              <li><strong>Analyze non notes</strong>: <code>mode = "business"</code>. It analyzes passages from the report's own narrative sections (MD&amp;A, Board's report, CMD's message …), with at most two notes to confirm the figures, and gives a shorter business answer.</li>
+            </ul>
+            <p class="mb-0">The browser sends <code>POST /api/identify {"report": "…", "question": "analyze company's aerospace business", "mode": "notes"}</code>. The server starts <code>identify_job</code> in a background thread and immediately returns a <code>job_id</code>. The browser then shows the spinner, "Identifying the relevant notes…", and polls <code>GET /api/jobs/&lt;id&gt;</code> every second. Jobs run in the background because Claude calls can take minutes, longer than a browser request should wait.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 7. IDENTIFY -->
+  <section id="identify" class="mb-5">
+    <h2 class="section-title">7. Identifying the Notes (Claude Call #1)</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p class="mb-0"><code>analyzer/jobs.py</code> <code>identify_job()</code> runs four things in order: statement hints, scope, the Claude selector call, and a size estimate. Only the third uses Claude. The rest is plain Python reading the package.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 4 <span class="step-title">— Statement hints: which statement lines is the question about? (none here)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/linked.py</mark> <code>question_words()</code> → <code>statement_hints()</code></div>
+        <p>The question is reduced to its content words. Common words like <em>analyze</em> and <em>company's</em> are dropped (<code>STOPWORDS</code>), and synonyms are added (e.g. "tax" brings in "deferred tax"). For your question that leaves <code>{"aerospace", "business"}</code>.</p>
+        <p>The app then looks for statement lines whose label contains one of those words, and follows each line's links to notes. For a tax question this finds "Current tax (P&amp;L)" → Note 21. <strong>No line in the Bharat Forge statements contains "aerospace" or "business"</strong>, so the hint list was empty.</p>
+        <p class="mb-0">That is why your step 3 had no "Suggested by the financial statements: + Note …" row, and why the selector prompt below has no SUGGESTED block. The statements simply do not show an aerospace line.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5 <span class="step-title">— Scope: consolidated or standalone? (rules, not Claude)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/note_selector.py</mark> <code>detect_scope()</code></div>
+        <p class="mb-0">Regular expressions look for "standalone", "parent company only", "not consolidated", "both" and similar words. Your question has none, so the scope is <strong>consolidated</strong>, with the reason <em>"Default: notes to the consolidated financial statements."</em> This is the badge and sentence at the top of step 3.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 6 <span class="step-title">— The selector prompt: 59 note titles and sub-headings, never their content</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/note_selector.py</mark> <code>_selector_prompt()</code><span class="arrow">→</span><mark>prompts/selector_template.txt</mark> + <mark>prompts/selector_system.txt</mark></div>
+        <p>One line is written per consolidated note: its id (<code>C</code> + number), its title, and up to 8 sub-headings. These are filled into the template's <code>{{NOTES_LIST}}</code>, <code>{{QUESTION}}</code>, <code>{{SCOPE}}</code> and <code>{{MAX_NOTES}}</code> (5). The result is 16,554 characters on 75 lines. These are the real lines for the five notes that were later chosen (sub-headings cut short here):</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">selector prompt (excerpt)</span></div>
+<pre><code class="language-plaintext">An analyst asked this question about a company's annual report:
+
+QUESTION: analyze company's aerospace business
+
+Scope already decided: consolidated financial statements. Do not change it.
+...
+C6: INVESTMENTS ACCOUNTED FOR USING THE EQUITY METHOD  [sub-headings: Unquoted equity instruments
+    (fully paid); - Investment in associates; - Investments in joint ventures; c. During the previous
+    year, the Group acquired through Kalyani Strategic Systems Limited (wholly owned subsidiary of th]
+C24: REVENUE FROM OPERATIONS  [sub-headings: Sale of products; Sale of services; Other operating revenues; ...]
+C37: MATERIAL PARTLY OWNED SUBSIDIARIES  [sub-headings: Proportion of equity interest held by
+    non-controlling interests:; ...; Zorya Sagar Manas Eternus; Mashproekt Technologies Advanced ...]
+C46: BUSINESS COMBINATIONS AND ACQUISITION OF NON-CONTROLLING INTERESTS  [sub-headings: Acquisition
+    of Zorya Mashproekt India Private Limited; ...; Acquisition of k Drive Mobility Solutions ...]
+C49: SEGMENT INFORMATION  [sub-headings: ...; Segment revenue; Revenue from external customers; ...]
+...
+Choose the notes whose content is needed to answer the question thoroughly.
+- Choose the primary note(s) first.
+- Also choose a closely related note if it materially adds to the answer ...
+- Choose at most 5 notes, and prefer fewer. ...
+
+Reply with ONLY this JSON (no markdown fences, no other text):
+{"notes": ["C21"], "reason": "one or two sentences explaining the choice"}</code></pre>
+        </div>
+        <p class="mb-0">The sub-headings are what let Claude connect "aerospace" to notes whose titles never mention it: <em>Kalyani Strategic Systems</em> (the defence subsidiary) appears under C6, and <em>Zorya Mashproekt</em> (gas-turbine engines) appears under C37 and C46.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 7 <span class="step-title">— Claude call #1 (10.2 s) returns note ids as JSON</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>claude_client.py</mark> <code>run_claude()</code><span class="arrow">→</span><mark>claude.exe -p</mark></div>
+        <p>A fresh, stateless Claude Code process is started for each call. The prompt goes in on <strong>stdin</strong>, because Windows limits a command line to about 32,000 characters:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">the command (simplified)</span></div>
+<pre><code class="language-bash">claude.exe -p --system-prompt "&lt;prompts/selector_system.txt&gt;" --tools "" --no-session-persistence  &lt; selector prompt</code></pre>
+        </div>
+        <ul>
+          <li><code>--tools ""</code>: Claude can use <strong>no tools</strong>. It cannot open the PDF, search or browse. It answers only from the text it was given.</li>
+          <li><code>--no-session-persistence</code>: nothing is remembered between calls.</li>
+          <li>No <code>--model</code>: the Claude Code CLI's default model is used. No <code>--effort</code> for this small call, so the log says "effort default".</li>
+        </ul>
+        <p>Claude replied with JSON whose reason is the sentence you saw under the chips:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">selector reply</span></div>
+<pre><code class="language-json">{"notes": ["C49", "C24", "C37", "C6", "C46"],
+ "reason": "Segment Information (C49) is the main source for aerospace and defence revenue and results, and Revenue from Operations (C24) breaks revenue down further. The aerospace and defence businesses sit in subsidiaries and joint ventures, so C37 (...), C6 (...) and C46 (...) show their financial position and the acquisitions."}</code></pre>
+        </div>
+        <p class="mb-0"><code>_parse_selector_reply()</code> pulls the JSON object out of the reply, keeps only ids that really exist in the consolidated scope, and caps them at 5. If the call had failed (timeout, bad JSON, no valid id), the app would have fallen back to <code>keyword_select()</code>, which scores titles against the question words, and the screen would say "Chosen by keyword match". Notes named in the question ("Note 41") are always added first.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 8 <span class="step-title">— Size estimate, then the job finishes</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/extract.py</mark> <code>extract_selection()</code></div>
+        <p>The five notes' stored text is looked up in the package and measured: 25,237 characters, well below the 150,000-character limit (<code>MAX_CONTEXT_CHARS</code>). The log line records it all:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">logs/app.log</span></div>
+<pre><code class="language-plaintext">22:00:43,300 INFO claude_client: claude -p finished in 10.2s (prompt 16554 chars, effort default, exit 0)
+22:00:43,322 INFO app: Identify (Bharat-Forge-IR-2026-conv-single-page.pdf, 10.4s): scope=consolidated method=claude notes=['C49', 'C24', 'C37', 'C6', 'C46'] chars=25237</code></pre>
+        </div>
+        <p class="mb-0">The job's result (scope, reason, method, the five notes with pages, hints, size) is picked up by the browser's next poll.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 8. SCREEN 5 -->
+  <section id="screen5" class="mb-5">
+    <h2 class="section-title">8. Screen 5: Confirming the Notes</h2>
+    <img class="screen-shot mb-2" src="STEP-BY-STEP-IMG/5-confirm-notes.png" alt="Step 3 Confirm the notes to analyze: Consolidated badge, five note chips and the reason">
+    <div class="shot-caption mb-4">Drawn by <code>app.js</code> <code>showConfirm()</code> and <code>renderChips()</code>.</div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 9 <span class="step-title">— The app always stops here for you</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>static/app.js</mark></div>
+        <ul>
+          <li><strong>Consolidated</strong> badge + the scope reason (STEP 5).</li>
+          <li>One <strong>chip per note</strong>: <em>Consolidated Note 49 — SEGMENT INFORMATION · PDF p.472–475 (printed 469–472)</em>. The page ranges come from the Notes Index. Click <strong>×</strong> to drop a note.</li>
+          <li><strong>"Chosen by Claude: …"</strong>: the selector's reason. If the fallback had been used, it would say "Chosen by keyword match".</li>
+          <li>Below (scroll down in the card): an <em>add a note</em> dropdown of all 115 notes, an <em>Or analyze specific PDF pages</em> box (e.g. <code>80-82</code>), which replaces the notes with whole pages, and the estimated extract size.</li>
+        </ul>
+        <p class="mb-0">This pause is a deliberate design decision: you can check Claude's choice before paying for the long call. You kept all five notes.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 9. SCREEN 6 -->
+  <section id="screen6" class="mb-5">
+    <h2 class="section-title">9. Screen 6: Analyze (Building the Prompt)</h2>
+    <div class="row g-4 align-items-start mb-3">
+      <div class="col-md-2"><img class="screen-shot" src="STEP-BY-STEP-IMG/6-analyze-button.png" alt="The Analyze button"></div>
+      <div class="col-md-10">
+        <p class="mb-0">Clicking <strong>Analyze</strong> sends <code>POST /api/analyze {"report": "…", "question": "…", "notes": ["C49","C24","C37","C6","C46"], "passages": [], "pages": "", "mode": "notes"}</code>. The server starts <code>analyze_job</code>. The spinner reads "Extracting the notes and asking Claude for an in-depth analysis…".</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 10 <span class="step-title">— Take the five notes from the package</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/extract.py</mark> <code>extract_note()</code><span class="arrow">→</span><mark>rptpkg/reader.py</mark> <code>unit_text()</code></div>
+        <p>No PDF is read. Each note's text was clipped at ingestion (from its heading to the next note's heading, tables as <code>label | FY2026 | FY2025</code>, page markers kept) and is now looked up by unit id:</p>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle">
+            <thead><tr><th>Unit</th><th>Note</th><th>PDF pages (printed)</th><th class="num-cell">Characters</th></tr></thead>
+            <tbody>
+              <tr><td><code>C49</code></td><td>Segment information</td><td>472–475 (469–472)</td><td class="num-cell">6,212</td></tr>
+              <tr><td><code>C24</code></td><td>Revenue from operations</td><td>410–411 (407–408)</td><td class="num-cell">1,674</td></tr>
+              <tr><td><code>C37</code></td><td>Material partly owned subsidiaries</td><td>423–427 (420–424)</td><td class="num-cell">11,138</td></tr>
+              <tr><td><code>C6</code></td><td>Investments accounted for using the equity method</td><td>383–384 (380–381)</td><td class="num-cell">2,583</td></tr>
+              <tr><td><code>C46</code></td><td>Business combinations and acquisition of NCI</td><td>456–457 (453–454)</td><td class="num-cell">3,622</td></tr>
+              <tr class="fw-bold"><td colspan="3">Notes block</td><td class="num-cell">25,237</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mb-0">A few lines of what Claude actually read for Note 49:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">notes block (excerpt)</span></div>
+<pre><code class="language-plaintext">=== Note 49 — SEGMENT INFORMATION (Consolidated) ===
+--- PDF page 472 (printed page 469) ---
+49. SEGMENT INFORMATION
+...
+The Group's business is divided into three reporting segments comprising "Forgings", "Defence" and "Others" ...
+--- PDF page 474 (printed page 471) ---
+3.2 Segment Income tax expense/(income)
+a Forgings | 5,093.53 | 5,018.46
+b Defence | 442.98 | 289.78
+c Others | 241.23 | 117.26</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 11 <span class="step-title">— Add the four consolidated statements (19,367 characters)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/context.py</mark> <code>statement_sections()</code><span class="arrow">→</span><mark>analyzer/statement_info.py</mark> <code>sections_text()</code></div>
+        <p class="mb-0">All five notes are consolidated notes, so the <strong>consolidated</strong> P&amp;L (p.342–343), Balance Sheet (p.341), Cash Flow (p.346–347) and Changes in Equity (p.344–345, rotated) are added from the package. They go with <em>every</em> question, so Claude can trace each note into the statements. This is what produces the <em>Impact on the financial statements</em> section.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 12 <span class="step-title">— Add LINKED FIGURES and CHECKS (3,509 characters)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/linked.py</mark> <code>linked_block()</code></div>
+        <p>From the links built at ingestion, the app lists every statement line linked to one of the five notes (up to 30), with its figures and <em>how</em> the link was found, plus the automatic checks on those lines. Real lines from your prompt:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">LINKED FIGURES (excerpt)</span></div>
+<pre><code class="language-plaintext">- Revenue from operations (Consolidated Statement of Profit and Loss, PDF p.342) | FY2026 168,116.53 | FY2025 151,228.03
+    -> Note 24 (cited in the Notes column, same figure in the note); Note 49 (same figure in the note)
+- (h) Investments accounted for using the equity method ... (Consolidated Balance Sheet, PDF p.341) | FY2026 614.14 | FY2025 905.08
+    -> Note 49 (same figure in the note); Note 6 (cited in the Notes column, same figure in the note)
+- Non-controlling interests (Consolidated Balance Sheet, PDF p.341) | FY2026 (230.16) | FY2025 (327.53) -> Note 37 (cited in the Notes column)
+CHECKS (automatic)
+- ok: Total assets 222,599.55 vs 'Total equity and liabilities' 222,599.55 (FY2026)
+- ok: Total assets 200,883.21 vs 'Total equity and liabilities' 200,883.21 (FY2025)
+- warn: 'Non-controlling interests' cites C37, but none of its figures ((230.16), (327.53)) is printed there</code></pre>
+        </div>
+        <p class="mb-0">This block is a map for Claude, not the evidence. The system prompt tells Claude to verify each link against the statements and notes. In your answer Claude did exactly that with the warning: it added up Note 37's NCI balances to (229.15) and wrote <em>"The app's 'warn' is correct that the BS figure itself is not printed in Note 37."</em></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 13 <span class="step-title">— Size check and prompt assembly (50,258 characters)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/context.py</mark> <code>check_size()</code><span class="arrow">→</span><mark>claude_client.py</mark> <code>fill_prompt()</code><span class="arrow">→</span><mark>prompts/analysis_template.txt</mark></div>
+        <p>Statements plus notes come to 44,604 characters, under the 150,000 limit. <code>fill_prompt()</code> replaces the template's <code>{{KEY}}</code> placeholders in one pass. The finished prompt has this order (line numbers from <code>Prompt-History\Claude-code-prompt-25-prompt.txt</code>):</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">Claude-code-prompt-25-prompt.txt (outline)</span></div>
+<pre><code class="language-plaintext">  1  Annual report / Statements / Notes provided / Primary financial statements provided
+  6  QUESTION: analyze company's aerospace business
+  8  Structure your answer as:  ## Summary · ## Key figures · ## Detailed analysis ·
+        ## Impact on the financial statements (### P&L, ### Balance Sheet, ### Cash Flow, ### Changes in Equity) ·
+        ## Red flags & areas for follow-up · ## Sources
+ 27  ----- PRIMARY FINANCIAL STATEMENTS (PDF page numbers) -----        19,367 chars
+397  ----- END OF PRIMARY FINANCIAL STATEMENTS -----
+399  ----- LINKED FIGURES ... -----                                      3,509 chars
+423  ----- END OF LINKED FIGURES -----
+425  ----- NOTES EXTRACTED FROM THE ANNUAL REPORT (PDF page numbers) -----  25,237 chars
+914  ----- END OF NOTES -----</code></pre>
+        </div>
+        <p class="mb-0">The <strong>system prompt</strong> (<code>prompts/analysis_system.txt</code>) sets Claude's role ("senior financial analyst and forensic accountant") and its rules: use only the material given, cite the note or statement and PDF page for every figure, connect the notes to all four statements, show calculations, flag anything inconsistent, and say plainly when information is missing. A modern Ind AS report gets no extra REPORT PROFILE block. Old, scanned and US 10-K reports do.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 10. CLAUDE 2 -->
+  <section id="claude2" class="mb-5">
+    <h2 class="section-title">10. Claude Call #2: The Analysis</h2>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 14 <span class="step-title">— The prompt is sent and the answer streams back (60.3 s)</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/jobs.py</mark> <code>call_claude()</code><span class="arrow">→</span><mark>claude_client.py</mark> <code>_run_streaming()</code><span class="arrow">→</span><mark>claude.exe -p</mark></div>
+        <ul>
+          <li>The prompt is first written to <code>WEB-APP\claude-prompt-input.txt</code> (the last prompt sent, for inspection), and the time sent is recorded.</li>
+          <li>Same <code>claude -p</code> pattern as call #1 (stdin, no tools, no session), plus <code>--effort low</code> (<code>config.CLAUDE_EFFORT</code>; set <code>ANN_RPT_CLAUDE_EFFORT=default</code> to change it) and <code>--output-format stream-json</code>.</li>
+          <li>Streaming: as Claude writes, each piece of text is put into the running job. The browser's poll gets it rendered (<code>partial_html</code>), so the spinner changes from "Claude is thinking about your question…" to "Claude is writing the answer — you can start reading below…", and the answer appears while it is being written.</li>
+          <li>The finished reply (10,207 characters) is written to <code>WEB-APP\Claude-prompt-output.txt</code>.</li>
+        </ul>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">logs/app.log</span></div>
+<pre><code class="language-plaintext">22:03:08,955 INFO claude_client: claude -p finished in 60.3s (prompt 50258 chars, effort low, exit 0)
+22:03:09,066 INFO app: Analyze (Bharat-Forge-IR-2026-conv-single-page.pdf, 60.6s): notes=['C49', 'C24', 'C37', 'C6', 'C46'] extract=25237 chars statements=19367 chars answer=10207 chars sno=25</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 15 <span class="step-title">— The browser shows the answer</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>webcommon.py</mark> <code>render_markdown()</code><span class="arrow">→</span><mark>static/app.js</mark> <code>startThread()</code> / <code>addTurn()</code></div>
+        <p class="mb-0">Claude's Markdown is HTML-escaped first, then rendered to HTML, so text from the report can never run as code in the page. <code>addTurn()</code> shows your question as a bubble, the rendered answer, and the buttons <em>Copy</em>, <em>.md</em>, <em>.html</em> and <em>Open saved report ↗</em>. The <em>Source sent to Claude (financial statements + notes)</em> panel shows exactly what was sent, and the line above the answer lists the report, the notes and the statements. The follow-up box appears below, and the History sidebar refreshes with #25 at the top.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 11. ANSWER -->
+  <section id="answer" class="mb-5">
+    <h2 class="section-title">11. Reading the Answer: Where Each Part Came From</h2>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <p class="mb-0">Every number in your answer had to come from the ~50,000 characters above, because Claude had no other source and no tools. The table shows which input each part of the answer was built from.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th style="width:24%">Part of the answer</th><th style="width:38%">What it says (example)</th><th>Where it came from</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Summary</strong>: "The notes do not report an aerospace business"</td><td>Three segments only: Forgings, Defence, Others. "The word 'aerospace' does not appear in any note or statement provided."</td><td>Note 49's opening text (p.472). Saying so plainly instead of guessing follows the system-prompt rule <em>"If information needed to answer is not in the material, say so plainly"</em>.</td></tr>
+              <tr><td><strong>Key figures</strong> table</td><td>Defence revenue 17,571.72 vs 17,719.86; result 814.97 vs 1,864.23; D&amp;A 242.45 vs 80.07 …</td><td>Note 49's segment tables (p.473–475) for the Defence rows. Note 37 (p.424–425) for Kalyani Rafael (KRAS). Changes, % changes and margins were calculated by Claude, marked <em>calc.</em></td></tr>
+              <tr><td><strong>Detailed analysis</strong>: aero and defence entities</td><td>Defence equity-accounted investments 377.40 = Aeron 160.83 + Edgelab 216.57; Zorya: gas-turbine engines, nil revenue</td><td>Note 6 (p.383) cross-added with Note 49 (p.474). Note 46 (p.456) and Note 37 for Zorya. These are the notes Claude #1 chose because of their sub-headings.</td></tr>
+              <tr><td><strong>Checks on the segment arithmetic</strong></td><td>Segment revenue less inter-segment = 168,116.53 ✓; segment tax 5,777.74 ✓</td><td>Note 49 against the P&amp;L in PRIMARY FINANCIAL STATEMENTS. The LINKED FIGURES had already pointed out that Revenue from operations and the tax total appear in both.</td></tr>
+              <tr><td><strong>Impact on the financial statements</strong> (4 sub-sections)</td><td>Revenue 168,116.53 (P&amp;L p.342); equity-method investments 614.14 (BS p.341); D&amp;A add-back 9,709.24 (CF p.346); NCI moves (327.53) → (230.16) (SOCE p.344)</td><td>The four statements, required by the analysis template's structure. NCI is checked against the CHECKS <em>warn</em> line.</td></tr>
+              <tr><td><strong>Red flags</strong></td><td>Defence tax rate 57.4%; segment liabilities 49,259.68 vs total liabilities 127,031.31; K Drive cash outflow 4,986.23 (CF) vs 5,540.88 (note); typo "₹1,2582.09 million"</td><td>Claude comparing notes with statements, as the system prompt asks: <em>"Flag anything unusual, inconsistent … and typos in the source."</em></td></tr>
+              <tr><td><strong>Sources</strong></td><td>Notes 49, 24, 37, 6, 46 with PDF pages; the four statements with pages</td><td>The page markers (<code>--- PDF page 472 (printed page 469) ---</code>) in the prompt. That is why citations use PDF page numbers.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red">
+      <div class="card-body">
+        <h5 class="card-title">What the app checks, and what it does not</h5>
+        <p class="mb-0">The app guarantees the <strong>input</strong>: the right notes, verbatim, with the right pages, plus the statements and the automatic CHECKS. It does <strong>not</strong> re-check Claude's own arithmetic or conclusions (the 57.4% tax rate, the 11.3% return on net segment assets, "probably linked to the K Drive acquisition"). Every figure is cited to a note and page so that you can check it quickly. Treat the red flags as questions to verify, not findings.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 12. SAVED -->
+  <section id="saved" class="mb-5">
+    <h2 class="section-title">12. What Was Saved</h2>
+    <div class="step-box">
+      <div class="step-bar">STEP 16 <span class="step-title">— Styled HTML report, history files, thread</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/report_html.py</mark><span class="arrow">→</span><mark>analyzer/history.py</mark><span class="arrow">→</span><mark>analyzer/jobs.py</mark> <code>save_thread()</code></div>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th>File (under <code>WEB-APP\</code>)</th><th>What it holds</th></tr></thead>
+            <tbody>
+              <tr><td><code>Analysis-history\Bharat-Forge-IR-2026-conv-single-page-1-20261006-220208.html</code></td><td>The styled report: RAG Champ nav bar, light-blue context box (report, scope, notes, pages, statements), the answer. The <code>-1-</code> means prompt 1 of the thread (follow-ups are 2, 3 …). <code>20261006-220208</code> is the time the prompt was sent. This is the <em>Open saved report ↗</em> link. If saving fails, the failure is logged but the analysis still succeeds.</td></tr>
+              <tr><td><code>Prompt-History\Claude-code-prompt-25-question.txt</code></td><td>A metadata header (Asked at 2026-10-06 22:02:08, Kind analysis, Report, Scope, the five notes with PDF pages, every PDF page sent, the four statements, Thread id, Saved HTML), then the question. History #25 is the next free number.</td></tr>
+              <tr><td><code>Prompt-History\Claude-code-prompt-25-prompt.txt</code></td><td>The full 50,258-character prompt, so the run can be reproduced or audited exactly.</td></tr>
+              <tr><td><code>Prompt-History\Claude-code-prompt-25-answer.txt</code></td><td>Claude's reply as Markdown.</td></tr>
+              <tr><td><code>cache\threads\f58caf031a65430caa3f5dc12683b1b2.json</code></td><td>The conversation thread: notes, extract, statements, the first turn, and the package's SHA-256 and schema version. A follow-up continues from here, even after a restart or when reopened from History.</td></tr>
+              <tr><td><code>claude-prompt-input.txt</code>, <code>Claude-prompt-output.txt</code></td><td>The last prompt and reply (overwritten each time).</td></tr>
+              <tr><td><code>logs\app.log</code></td><td>Timings, chosen notes and sizes (the lines quoted above).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="step-box">
+      <div class="step-bar">NEXT <span class="step-title">— If you ask a follow-up</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>analyzer/jobs.py</mark> <code>followup_job()</code><span class="arrow">→</span><mark>prompts/followup_template.txt</mark></div>
+        <p class="mb-0">A follow-up first <strong>searches the whole report again</strong>: the selector runs on the follow-up question plus the first question, and up to 3 new notes are <em>added</em> to the thread. The five you already have stay, and there is no pause this time. Then a new <code>claude -p</code> call gets the thread's notes, statements, LINKED FIGURES, the conversation so far and the new question. The answer says what was added, and it is saved as <code>…-2-&lt;time&gt;.html</code> and history #26. Writing "Note 41" in a follow-up adds that note directly.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 13. NOTICE -->
+  <section id="notice" class="mb-5">
+    <h2 class="section-title">13. Things Worth Noticing in This Run</h2>
+    <div class="card shadow-sm accent-yellow mb-3">
+      <div class="card-body">
+        <h5 class="card-title">"Aerospace" is in the report, just not in the notes</h5>
+        <p>The answer is right that no note or statement uses the word "aerospace". The notes report segments (Forgings, Defence, Others), not end markets. The rest of the annual report does discuss aerospace: in the package, <strong>20 of the report's 188 passages</strong> contain the word. Ranked for your question, the best passages are:</p>
+        <ul>
+          <li><em>Statutory Reports › Management Discussion &amp; Analysis › <strong>Aerospace Business</strong></em> (PDF 80)</li>
+          <li><em>Corporate Overview › Manufactured Capital</em> (PDF 46–48)</li>
+          <li><em>Corporate Overview › About Bharat Forge</em> (PDF 15–18)</li>
+          <li><em>Corporate Overview › From the CMD's Desk</em> (PDF 25–30)</li>
+          <li><em>Statutory Reports › Board's Report › International Business</em> (PDF 89)</li>
+        </ul>
+        <p class="mb-0"><strong>Tip:</strong> for a business question like this one, <strong>Analyze non notes</strong> would send those passages (with up to two notes, e.g. Note 49, to confirm figures). That gives management's own description of the aerospace business. <em>Identify notes</em> is the better button for accounting questions (tax, debt, leases, related parties …). You can also run both and compare.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue mb-3">
+      <div class="card-body">
+        <h5 class="card-title">No statement hints, so Claude chose from titles and sub-headings alone</h5>
+        <p class="mb-0">For a tax question, statement lines such as "Current tax" point straight at Note 21, and the step-3 card shows "Suggested by the financial statements". Here nothing in the statements says "aerospace", so the hint list was empty, and Claude #1 relied on the note sub-headings that name the defence and gas-turbine subsidiaries. The step-3 pause is where you can correct such a choice, for example by adding Note 3 (property, plant and equipment) for capex.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red">
+      <div class="card-body">
+        <h5 class="card-title">A small cosmetic item in LINKED FIGURES</h5>
+        <p class="mb-0">The P&amp;L's "Non-controlling interests" line on p.343 appears three times in the block (its attributions of profit, total comprehensive income and OCI: 97.37, 97.37 and 0.00), all linked to Note 46 by title match. This does no harm, because Claude reads the statements themselves, but it is a known duplicate-label case in <code>linked_block()</code>.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 14. FILES -->
+  <section id="files" class="mb-5">
+    <h2 class="section-title">14. Files Involved, Step by Step</h2>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-sm table-striped align-middle mb-0 glossary-table">
+            <thead><tr><th>Screen / step</th><th>Browser</th><th>Server (Python)</th><th>Prompt files</th></tr></thead>
+            <tbody>
+              <tr><td>Ingestion (once)</td><td><code>ingest.js</code> (Ingest screen) or step 1</td><td><code>ingest/pipeline.py</code>, <code>models/match.py</code>, <code>notes_index.py</code>, <code>statements.py</code>, <code>clip.py</code>, <code>tables.py</code>, <code>figures.py</code>, <code>links.py</code>, <code>quality.py</code>, <code>narrative/</code>, <code>rptpkg/writer.py</code></td><td>—</td></tr>
+              <tr><td>1. First screen</td><td><code>index.html</code>, <code>app.js</code> <code>loadReports()</code>, <code>loadHistory()</code></td><td><code>app.py</code> <code>/</code>, <code>/api/reports</code>; <code>analyzer/routes.py</code> <code>/api/history</code>, <code>history.py</code></td><td>—</td></tr>
+              <tr><td>2–3. Select report</td><td><code>selectReport()</code>, <code>showFormat()</code>, <code>renderQuality()</code>, <code>renderStatements()</code></td><td><code>app.py</code> <code>/api/index</code> → <code>ingest/pipeline.open_report()</code> → <code>analyzer/routes.report_summary()</code></td><td>—</td></tr>
+              <tr><td>4. Question → Identify notes</td><td><code>identify()</code>, <code>runJob()</code></td><td><code>analyzer/routes.py</code> <code>/api/identify</code>, <code>webcommon.start_job()</code></td><td>—</td></tr>
+              <tr><td>Identify job</td><td>polls <code>/api/jobs/&lt;id&gt;</code></td><td><code>analyzer/jobs.identify_job()</code>, <code>linked.statement_hints()</code>, <code>note_selector.select_notes()</code>, <code>claude_client.run_claude()</code>, <code>extract.extract_selection()</code></td><td><code>selector_system.txt</code>, <code>selector_template.txt</code></td></tr>
+              <tr><td>5. Confirm notes</td><td><code>showConfirm()</code>, <code>renderChips()</code>, <code>renderHints()</code></td><td>— (the app waits)</td><td>—</td></tr>
+              <tr><td>6. Analyze</td><td><code>analyze()</code>, <code>runJob()</code></td><td><code>analyzer/jobs.analyze_job()</code>, <code>extract.py</code>, <code>context.py</code>, <code>statement_info.py</code>, <code>linked.linked_block()</code>, <code>claude_client.py</code></td><td><code>analysis_system.txt</code>, <code>analysis_template.txt</code></td></tr>
+              <tr><td>Answer + saving</td><td><code>startThread()</code>, <code>addTurn()</code></td><td><code>webcommon.render_markdown()</code>, <code>report_html.py</code> + <code>templates/analysis_report.html</code>, <code>history.py</code>, thread JSON</td><td>—</td></tr>
+              <tr><td>Follow-up</td><td><code>followup()</code></td><td><code>analyzer/jobs.followup_job()</code></td><td><code>followup_template.txt</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="mt-3 small text-muted">For each mechanism in more depth (Notes Index rules, rotation, links and checks, model documents, scanned and old reports), see <a href="HOW-ANN-RPT-FOOT-NOTE-ANALYZER-WORKS.html">How the Annual Report Foot Note Analyzer Works</a>.</p>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer — a step-by-step walk through one real question (<em>"analyze company's aerospace business"</em>, Bharat Forge FY2025-26, history #25) in the Foot Notes Analyzer web app (<code class="text-white">ANN-RPT-ANALYZER\WEB-APP</code>).
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

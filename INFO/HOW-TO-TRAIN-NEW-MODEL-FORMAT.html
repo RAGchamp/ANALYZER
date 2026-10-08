@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Train a New Model Format</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/vs2015.min.css">
+<style>
+  :root{
+    --biz-blue:#0d6efd;
+    --biz-blue-light:#6ea8fe;
+    --biz-blue-dark:#084298;
+    --biz-yellow:#ffc107;
+    --biz-red:#dc3545;
+    --biz-green:#198754;
+    --nav-blue:#04264d;
+    --nav-yellow:#ffd60a;
+  }
+  body{ background:#f7f8fa; margin:0; }
+
+  /* Sticky top nav */
+  .topnav{
+    position:sticky; top:0; z-index:1030;
+    background:var(--nav-blue);
+    color:var(--nav-yellow);
+    padding:.9rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.25);
+  }
+  .topnav .brand{ display:inline-flex; align-items:center; text-decoration:none; }
+  .topnav .brand-logo{ height:44px; width:auto; display:block; }
+  .topnav .tagline{
+    font-weight:600; font-size:1.05rem; color:var(--nav-yellow);
+    letter-spacing:.15em; word-spacing:.6em; font-style:italic;
+  }
+  @media (max-width:576px){
+    .topnav{ flex-direction:column; text-align:center; gap:.4rem; padding:.75rem 1rem; }
+  }
+
+  section[id]{ scroll-margin-top:84px; }
+  html{ scroll-behavior:smooth; }
+
+  .hero{
+    background:linear-gradient(120deg, var(--biz-blue-dark) 0%, var(--biz-blue) 55%, #3d8bfd 100%);
+    color:#fff;
+  }
+  .accent-blue{ border-left:5px solid var(--biz-blue); }
+  .accent-green{ border-left:5px solid var(--biz-green); }
+  .accent-red{ border-left:5px solid var(--biz-red); }
+  .accent-yellow{ border-left:5px solid var(--biz-yellow); }
+
+  .section-title{
+    display:inline-flex; align-items:center; gap:.6rem;
+    padding-bottom:.4rem; border-bottom:3px solid var(--biz-blue);
+    margin-bottom:1.25rem;
+  }
+  .toc-num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:1.8rem; height:1.8rem; border-radius:50%;
+    background:var(--biz-yellow); color:#2b2b2b; font-weight:700; font-size:.85rem;
+    margin-right:.5rem; flex:none;
+  }
+  .toc-list a{ text-decoration:none; color:#212529; }
+  .toc-list a:hover{ color:var(--biz-blue); text-decoration:underline; }
+  .toc-item{ display:flex; align-items:center; padding:.4rem 0; }
+  .back-to-top{ font-size:.85rem; }
+  .color-key-dot{ width:.9rem; height:.9rem; border-radius:50%; display:inline-block; margin-right:.4rem; }
+  table thead th{ background:#eef3fb; }
+  .glossary-table thead th{ background:#04264d; color:#fff; }
+
+  /* VS Code style dark code windows */
+  .code-window{ background:#084298; border-radius:.5rem; overflow:hidden; margin:1rem 0 1.5rem; box-shadow:0 .25rem .75rem rgba(0,0,0,.3); }
+  .code-window .code-titlebar{
+    background:#323233; color:#cccccc; padding:.45rem .9rem; font-size:.8rem;
+    display:flex; align-items:center; gap:.4rem; font-family:'Segoe UI',Roboto,sans-serif;
+  }
+  .code-window .dot{ width:.7rem; height:.7rem; border-radius:50%; display:inline-block; }
+  .dot-red{ background:#ff5f56; } .dot-yellow{ background:#ffbd2e; } .dot-green{ background:#27c93f; }
+  .code-window .code-filename{ margin-left:.5rem; opacity:.85; }
+  .code-window pre{ margin:0 !important; padding:1rem 1.25rem !important; background:#084298 !important; overflow-x:auto; }
+  .code-window code, .code-window code *{ font-family:'Fira Code',Consolas,Monaco,monospace; font-size:.85rem; background:transparent !important; color:#ffffff !important; font-weight:700 !important; text-shadow:none; }
+  .code-window .copy-btn{ margin-left:auto; font-size:.75rem; padding:.1rem .6rem; }
+
+  .badge-tool{ background:#04264d; color:var(--nav-yellow); }
+
+  /* Step-by-step walkthrough boxes */
+  .step-box{
+    background:#e9ecef;
+    border-radius:.5rem;
+    overflow:hidden;
+    margin:0 0 1.25rem;
+    box-shadow:0 .15rem .5rem rgba(0,0,0,.12);
+  }
+  .step-box .step-bar{
+    background:var(--nav-blue);
+    color:#5BF527;
+    font-weight:700;
+    padding:.5rem 1.1rem;
+    font-size:.95rem;
+    letter-spacing:.02em;
+  }
+  .step-box .step-bar .step-title{
+    font-weight:700;
+  }
+  .step-box .step-body{ padding:1rem 1.25rem; }
+  .step-box .step-body p:last-child{ margin-bottom:0; }
+  .step-box .step-file{
+    font-family:'Fira Code',Consolas,Monaco,monospace;
+    font-size:.8rem;
+    margin-bottom:.7rem;
+  }
+  .step-box .step-file mark{
+    background:var(--biz-yellow);
+    color:#2b2b2b;
+    padding:.15rem .5rem;
+    border-radius:.25rem;
+    font-weight:600;
+  }
+  .step-box .step-file .arrow{ color:#6c757d; margin:0 .3rem; font-family:'Segoe UI',Roboto,sans-serif; }
+
+  .name-part{ font-family:'Fira Code',Consolas,Monaco,monospace; font-weight:700; padding:.1rem .4rem; border-radius:.25rem; }
+  .np-1{ background:#fff3cd; } .np-2{ background:#d1e7dd; } .np-3{ background:#cfe2ff; } .np-4{ background:#f8d7da; } .np-5{ background:#e2d9f3; }
+
+  footer{ background:var(--nav-blue); }
+  footer a{ color:#fff; }
+</style>
+</head>
+<body>
+
+<!-- STICKY TOP NAV -->
+<div class="topnav">
+  <span class="brand"><img class="brand-logo" src="logo.svg" alt="RAG Champ"></span>
+  <div class="tagline">ANNUAL REPORT ANALYZER</div>
+</div>
+
+<!-- HERO -->
+<header class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9">
+        <span class="badge rounded-pill bg-warning text-dark mb-3">Annual Report Analyzer · Model Documents · Claude Code</span>
+        <h1 class="display-6 fw-bold">How to Train a New Model Format</h1>
+        <p class="lead mb-0">The analyzer only reads report formats it has <strong>extraction rules</strong> for. Each format is represented by one <strong>model document</strong> in <code class="text-white">MODEL-DOCS\</code>, and a report that matches none of them is refused as a <em>new model document</em>. This guide shows how to add a new format: where to put the PDF and how to name it, the <strong>exact prompt</strong> to give Claude Code, how to check what it did, and a worked example of how the rules for three real formats (Magna's 40-F, Infosys's and BHP's 20-F) were written, with the critical decisions taken along the way.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container my-5">
+
+  <!-- COLOR KEY -->
+  <div class="mb-5">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-3">
+        <div class="row g-2 small text-center text-md-start">
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-blue);"></span>Blue — what to do / how it works</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-red);"></span>Red — a problem hit / what to avoid</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-green);"></span>Green — the fix / what good looks like</div>
+          <div class="col-6 col-md-3"><span class="color-key-dot" style="background:var(--biz-yellow);"></span>Yellow — prerequisites &amp; definitions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <section id="toc" class="mb-5">
+    <h2 class="section-title">Table of Contents</h2>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="row toc-list">
+          <div class="col-md-6">
+            <div class="toc-item"><span class="toc-num">1</span><a href="#overview">The Big Picture</a></div>
+            <div class="toc-item"><span class="toc-num">2</span><a href="#before">Before You Start</a></div>
+            <div class="toc-item"><span class="toc-num">3</span><a href="#place">Step 1: Place and Name the Model File</a></div>
+            <div class="toc-item"><span class="toc-num">4</span><a href="#look">Step 2: See What the App Says Today (optional)</a></div>
+            <div class="toc-item"><span class="toc-num">5</span><a href="#prompt">Step 3: The Prompt to Give Claude Code</a></div>
+            <div class="toc-item"><span class="toc-num">6</span><a href="#review">Step 4: Review What Claude Code Did</a></div>
+          </div>
+          <div class="col-md-6">
+            <div class="toc-item"><span class="toc-num">7</span><a href="#test">Step 5: Test It in the App, then Rebuild</a></div>
+            <div class="toc-item"><span class="toc-num">8</span><a href="#example">Worked Example: BHP's Form 20-F</a></div>
+            <div class="toc-item"><span class="toc-num">9</span><a href="#others">Two More Examples: Magna and Infosys</a></div>
+            <div class="toc-item"><span class="toc-num">10</span><a href="#decisions">The Critical Decisions</a></div>
+            <div class="toc-item"><span class="toc-num">11</span><a href="#trouble">Troubleshooting</a></div>
+            <div class="toc-item"><span class="toc-num">12</span><a href="#reference">Quick Reference</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. OVERVIEW -->
+  <section id="overview" class="mb-5">
+    <h2 class="section-title">1. The Big Picture</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>Every report the user selects is first <strong>matched</strong> to a model document. A match means the report is read with that model's extraction rules (its <em>profile</em>). No match means it is blocked, and the app writes a <em>gap report</em> saying what differs. Training a new format means giving the app a new model document and the rules to read it:</p>
+        <pre><code class="language-plaintext">You                                   Claude Code (in this project)                 You
+─────────────────────────────         ─────────────────────────────────────────     ─────────────────────────
+1. copy the PDF into MODEL-DOCS\  ─►  3. study the layout, write the rules          5. test pages on the
+   with the TYPE-n-… name              (a profile + switches), register the           Model testing screen,
+2. (optional) look at the gap          model, check the extraction against the        ask a question,
+   report on the Ingest screen         PDF, add a test, run verify + all tests  ─►    rebuild the exe
+                                   4. report back what it did and found</code></pre>
+        <p class="mb-0">The work in step 3 is deliberately done in a <strong>Claude Code session you can watch</strong>, not by a button in the app. Writing rules takes judgment (Section 10), and every change is checked against all the other formats before it is kept.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-yellow">
+      <div class="card-body">
+        <h5>Words used in this guide</h5>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0 glossary-table">
+            <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Model document</strong></td><td>One PDF in <code>MODEL-DOCS\</code> that stands for one report format. Each document is its own model; its id is its file name.</td></tr>
+              <tr><td><strong>Profile</strong></td><td>The extraction rules for a format, in <code>WEB-APP\ingest\profiles\__init__.py</code>: which indexer reads it, which optional rules are switched on, and what a correct extraction must contain (acceptance checks).</td></tr>
+              <tr><td><strong>Switch</strong></td><td>An optional rule that only the profiles that need it turn on, e.g. <code>decimal_notes</code> for notes numbered 2.1, 2.2. A new format never changes another format's code path.</td></tr>
+              <tr><td><strong>Registry</strong></td><td><code>WEB-APP\ingest\models\registry.json</code>: each model's checksum, profile, description and fingerprint. Changed only with <code>python -m ingest.models</code>.</td></tr>
+              <tr><td><strong>Pending</strong></td><td>A model registered without rules yet. Its reports are refused, but its pages can already be viewed on the Model testing screen.</td></tr>
+              <tr><td><strong>Prompt baseline</strong></td><td>Frozen copies of every prompt the five sample reports produce (<code>tests\fixtures\baseline\</code>). If a change alters any of them, the tests fail. This is how "no other format changed" is proved.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 2. BEFORE -->
+  <section id="before" class="mb-5">
+    <h2 class="section-title">2. Before You Start</h2>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <ul class="mb-0">
+          <li><strong>Claude Code</strong> is installed and logged in, and you can open it in <code>C:\Daya\RAGchamp\ANN-RPT-ANALYZER</code> (the folder that holds <code>.claude\CLAUDE.md</code>, so Claude Code reads the project guide).</li>
+          <li><strong>The app's tests pass</strong> before you start: in <code>WEB-APP</code>, <code>python -m pytest -q</code> (about 5 minutes, no Claude usage). Then any failure afterwards is caused by the new rules.</li>
+          <li><strong>Time and usage:</strong> a new format takes Claude Code roughly 20–60 minutes and a fair amount of Claude usage, more if the layout is unusual. Stay with the session: it may ask you a question.</li>
+          <li><strong>One format at a time.</strong> Train, test and rebuild before starting the next one.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red">
+      <div class="card-body">
+        <h5>Make sure the PDF is the right document</h5>
+        <p class="mb-0">The PDF must contain the <strong>primary financial statements and their notes</strong>. The first Magna PDF was its <em>Annual Information Form</em>: 132 pages with no statements and no notes at all, so no rules could ever make it analyzable. A Form 40-F files the statements as a separate exhibit (Exhibit 99.3), and that exhibit was the right model document. If you are unsure, open the PDF and look for "Consolidated Balance Sheet" and "Notes to … Financial Statements".</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 3. PLACE -->
+  <section id="place" class="mb-5">
+    <h2 class="section-title">3. Step 1: Place and Name the Model File</h2>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 1a <span class="step-title">— Copy the PDF into MODEL-DOCS</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>C:\Daya\RAGchamp\ANN-RPT-ANALYZER\MODEL-DOCS\</mark></div>
+        <p>Put the PDF directly in this folder, not in a sub-folder (<code>_candidates\</code> is for reports the app proposed). The folder is not in git and is not shipped in the exe; the registry keeps each PDF's checksum instead.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 1b <span class="step-title">— Name it with the convention</span></div>
+      <div class="step-body">
+        <p class="mb-2"><span class="name-part np-1">TYPE-9</span>-<span class="name-part np-2">CANADA</span>-<span class="name-part np-3">40-F</span>-<span class="name-part np-4">2025</span>-<span class="name-part np-5">Company</span>.pdf</p>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle bg-white">
+            <thead><tr><th>Part</th><th>Rule</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td><span class="name-part np-1">TYPE-n</span></td><td>The next free number. Today TYPE-1 … TYPE-8 are taken, so the next one is <strong>TYPE-9</strong>.</td><td><code>TYPE-9</code>, <code>TYPE-10</code></td></tr>
+              <tr><td><span class="name-part np-2">COUNTRY</span></td><td>The company's country, in capital letters, one word.</td><td><code>INDIA</code>, <code>USA</code>, <code>CANADA</code>, <code>AUSTRALIA</code>, <code>UK</code></td></tr>
+              <tr><td><span class="name-part np-3">FORM</span></td><td>The kind of filing. Use <code>Ann-rpt</code> for an annual report, else the SEC form.</td><td><code>Ann-rpt</code>, <code>10-K</code>, <code>20-F</code>, <code>40-F</code></td></tr>
+              <tr><td><span class="name-part np-4">YEAR</span></td><td>The fiscal year, four digits (19xx or 20xx).</td><td><code>2025</code>, <code>1977</code></td></tr>
+              <tr><td><span class="name-part np-5">Company</span></td><td>The company, words joined with hyphens, no spaces.</td><td><code>Bharat-Forge</code>, <code>BHP</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mb-0">The registry refuses any other name (<em>"Name it TYPE-&lt;n&gt;-&lt;COUNTRY&gt;-&lt;FORM&gt;-&lt;YEAR&gt;-&lt;Company&gt;.pdf"</em>). The file name, without <code>.pdf</code>, becomes the model's id.</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-green">
+      <div class="card-body">
+        <h5>The model documents today</h5>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th>File</th><th>Format</th><th>Profile (rules)</th></tr></thead>
+            <tbody>
+              <tr><td><code>TYPE-1-INDIA-Ann-rpt-2026-Bharat-Forge.pdf</code></td><td>Indian annual report, Ind AS</td><td><code>in-indas-2020s</code></td></tr>
+              <tr><td><code>TYPE-2-INDIA-Ann-rpt-1977-Reliance.pdf</code></td><td>Indian annual report, Companies Act 1956 (schedules)</td><td><code>in-schedule-vi-1970s</code></td></tr>
+              <tr><td><code>TYPE-3-USA-10-K-2025-Chubb.pdf</code></td><td>US Form 10-K, EDGAR typesetting</td><td><code>us-10k-edgar</code></td></tr>
+              <tr><td><code>TYPE-4-USA-Ann-rpt-1994-Berkshire.pdf</code></td><td>US 10-K, 1990s typewriter-font text</td><td><code>us-10k-typewriter</code></td></tr>
+              <tr><td><code>TYPE-5-USA-Ann-rpt-1968-Berkshire.pdf</code></td><td>Scanned report (transcribed by Claude)</td><td><code>scanned-ocr</code></td></tr>
+              <tr><td><code>TYPE-6-CANADA-40-F-2025-Magna.pdf</code></td><td>Canadian 40-F financial statements exhibit (US GAAP)</td><td><code>ca-40f-usgaap</code></td></tr>
+              <tr><td><code>TYPE-7-INDIA-20-F-2025-Infosys.pdf</code></td><td>Indian company's 20-F (IFRS), notes numbered 2.1, 2.2 …</td><td><code>in-20f-ifrs</code></td></tr>
+              <tr><td><code>TYPE-8-AUSTRALIA-20-F-2025-BHP.pdf</code></td><td>Australian company's 20-F (IFRS, US$M)</td><td><code>au-20f-ifrs</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 4. LOOK -->
+  <section id="look" class="mb-5">
+    <h2 class="section-title">4. Step 2: See What the App Says Today (optional)</h2>
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <p>This step isn't required, since Claude Code runs the same check in Step 3, but it shows you what "new model document" means for your file. In <code>WEB-APP</code>:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">PowerShell — C:\Daya\RAGchamp\ANN-RPT-ANALYZER\WEB-APP</span></div>
+          <pre><code class="language-powershell">python -m ingest.models match "..\MODEL-DOCS\TYPE-9-CANADA-40-F-2025-Company.pdf"</code></pre>
+        </div>
+        <p>It prints either a match (the format is already covered, and no training is needed) or <em>NEW MODEL DOCUMENT</em> with the nearest models and the path of a <strong>gap report</strong> (<code>WEB-APP\cache\gap-reports\…md</code>). The gap report compares the fingerprint with the nearest models and lists what each model's rules found, for example:</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">Gap report — the new Magna exhibit before its rules existed</span></div>
+          <pre><code class="language-plaintext">TYPE-1 INDIA Ann rpt 2026 Bharat-Forge — similarity 0.66; profile in-indas-2020s: failed
+  ok: notes — 26 notes found (need 5)
+  ok: statements — 4 of 4 statements found (BS, CF, Equity, P&amp;L) (need 3)
+  ok: figures readable — 264 of 264 statement figures read as numbers
+  failed: wording — doesn't mention Ind AS or ₹</code></pre>
+        </div>
+        <p class="mb-0">You can also open the <strong>Model testing</strong> screen (<code>/model-testing</code>): a model document that isn't registered yet shows its pages and raw PDF text.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 5. PROMPT -->
+  <section id="prompt" class="mb-5">
+    <h2 class="section-title">5. Step 3: The Prompt to Give Claude Code</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>Open Claude Code in <code>C:\Daya\RAGchamp\ANN-RPT-ANALYZER</code>, then paste this prompt. Change only the file name on the second line.</p>
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">Prompt for Claude Code — train a new model format</span><button type="button" class="btn btn-sm btn-light copy-btn" data-copy="train-prompt">Copy</button></div>
+          <pre><code class="language-plaintext" id="train-prompt">Train a new model format for the Annual Report Analyzer.
+The new model document is MODEL-DOCS\TYPE-9-CANADA-40-F-2025-Company.pdf
+
+1. Read .claude\CLAUDE.md (sections 7 and 9) and MODEL-DOCS\README.md. Run
+   python -m ingest.models match on the new PDF, and trial every existing profile on it,
+   to see what the current rules already find.
+2. Study the PDF's layout: where the four primary statements are and how they are titled,
+   how the notes are headed and numbered, where the notes end, and how the statements
+   cite the notes.
+3. Write its extraction rules as a new profile in WEB-APP\ingest\profiles\__init__.py.
+   Reuse an existing profile with derive() where its rules already work. Put every new rule
+   behind a new profile switch so that no other format changes. Choose wording checks that
+   no other model document contains.
+4. Register it: python -m ingest.models register "..\MODEL-DOCS\&lt;file&gt;.pdf"
+   --profile &lt;id&gt; --description "..."
+5. Check the extraction against the PDF itself: every note's number, title and pages; the
+   four statements and their pages; a few figures with their periods and units; and one
+   statement line's link to its note.
+6. Add a golden test like WEB-APP\tests\test_20f.py. Run python -m ingest.models verify
+   and python -m pytest -q. The other reports' prompt baseline must stay byte-identical;
+   don't re-freeze it.
+7. Update WEB-APP\README.md, INFO\HOW-ANN-RPT-FOOT-NOTE-ANALYZER-WORKS.html,
+   MODEL-DOCS\README.md and .claude\CLAUDE.md. Don't commit.
+8. Report back: the rules you wrote and why, what the extraction found, the test and
+   verify results, and anything it still gets wrong.</code></pre>
+        </div>
+        <p class="mb-0">Claude Code asks for permission before running commands or editing files, unless you have allowed them. Say yes to the steps above; say no to anything that would commit, delete a model document or re-freeze the prompt baseline.</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <h5>Why each line of the prompt is there</h5>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th>Prompt step</th><th>What it prevents</th></tr></thead>
+            <tbody>
+              <tr><td>1 · Match and trial every profile first</td><td>Writing new rules for a format an existing profile nearly reads already. Magna needed only new wording checks.</td></tr>
+              <tr><td>3 · New rules behind a switch</td><td>A fix for the new format changing how Bharat Forge, Chubb or Berkshire are read.</td></tr>
+              <tr><td>3 · Wording no other model has</td><td>Two formats both accepting the same report. The matcher then can't decide, and the report is refused as a new model.</td></tr>
+              <tr><td>5 · Check against the PDF itself</td><td>"Checks passed" on a wrong result. The acceptance checks only count notes and statements; they don't read titles.</td></tr>
+              <tr><td>6 · Baseline must stay identical</td><td>A shared-code change quietly altering another report's prompts. This happened once and was caught (Section 8, step 6).</td></tr>
+              <tr><td>7 · Don't commit</td><td>Changes you haven't reviewed and tested going into git.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <h5>A short version</h5>
+        <p>The full routine is also written in <code>.claude\CLAUDE.md</code> and <code>MODEL-DOCS\README.md</code>, so this shorter prompt works too. The long one is better because it names every check.</p>
+        <div class="code-window mb-0">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">Short prompt</span><button type="button" class="btn btn-sm btn-light copy-btn" data-copy="short-prompt">Copy</button></div>
+          <pre><code class="language-plaintext" id="short-prompt">Write the extraction rules for the new model document
+MODEL-DOCS\TYPE-9-CANADA-40-F-2025-Company.pdf, following the "Adding a format" routine in
+MODEL-DOCS\README.md. Check the result against the PDF, keep every other format unchanged,
+and don't commit.</code></pre>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 6. REVIEW -->
+  <section id="review" class="mb-5">
+    <h2 class="section-title">6. Step 4: Review What Claude Code Did</h2>
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <p>A good report back looks like this one, for BHP:</p>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle bg-white">
+            <thead><tr><th>Item</th><th>Example (TYPE-8 BHP)</th><th>What to look for</th></tr></thead>
+            <tbody>
+              <tr><td>Rules</td><td>Profile <code>au-20f-ifrs</code>: switches <code>notes_run_on</code>, <code>numbered_statement_titles</code>, <code>extra_notes_headers</code>; wording "Form 20-F" + "Corporations Act 2001"</td><td>Every new switch explained, with the page it was needed for</td></tr>
+              <tr><td>Notes</td><td>37 notes, 1–37, PDF 288–358</td><td>The count and range match the PDF's last note</td></tr>
+              <tr><td>Statements</td><td>P&amp;L 279–280, BS 281, CF 282, Equity 283</td><td>All four, on the right pages</td></tr>
+              <tr><td>Figures</td><td>Total taxation expense (9,388) FY2026 → Note 6; units US$M</td><td>Periods (FY…) and units present; a line linked to the right note</td></tr>
+              <tr><td>Tests</td><td><code>verify: OK</code>; 312 passed</td><td>Both, with no failures and no re-frozen baseline</td></tr>
+              <tr><td>Limits</td><td>e.g. "Infosys prints '(Dollars in millions)' without 'U.S.', so no units line"</td><td>Honest known gaps, small enough to accept</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mb-0">To see the code changes, run <code>git diff</code> (or <code>git status</code>) in the project folder. They should be limited to the new profile and switches, the registry, a new test file, and the docs. Any change to shared code (such as <code>figures.py</code>) should come with an explanation of why the other reports stay the same.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-red">
+      <div class="card-body">
+        <h5>Push back if you see…</h5>
+        <ul class="mb-0">
+          <li><strong>A re-frozen prompt baseline</strong> (<code>tests\fixtures\baseline\</code> changed): unless the change was meant to alter the other reports' prompts, a rule has leaked into another format.</li>
+          <li><strong>An <code>if</code> for the new format in shared code</strong> instead of a profile switch.</li>
+          <li><strong>"Checks passed" with no note list:</strong> ask Claude Code to list every note number, title and page range next to the headings in the PDF.</li>
+          <li><strong>A changed or deleted existing model document or test</strong>, other than tests that assumed the old list of formats.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 7. TEST -->
+  <section id="test" class="mb-5">
+    <h2 class="section-title">7. Step 5: Test It in the App, then Rebuild</h2>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5a <span class="step-title">— Restart the app</span></div>
+      <div class="step-body">
+        <p class="mb-0">Python changes need a restart. Stop the server and run <code>python app.py</code> in <code>WEB-APP</code>. If port 5000 is still taken, see <em>Stale servers</em> in <code>.claude\CLAUDE.md</code> §9. The first report opened after the change is re-ingested once, because packages rebuild when the rules change.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5b <span class="step-title">— Test pages on the Model testing screen</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>http://127.0.0.1:5000/model-testing</mark></div>
+        <p>Choose the new model document, then test a <strong>statement page</strong>, the <strong>first notes page</strong>, a note that <strong>spans several pages</strong>, and the <strong>last notes page</strong>. Each result shows the page image beside the notes and statements found on it, the page text and the statement lines. If something is wrong, tick <em>Need correction</em>, describe it and submit. The fix follows the feedback routine (<code>.claude\CLAUDE.md</code> §7a).</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5c <span class="step-title">— Ask a real question</span></div>
+      <div class="step-body">
+        <p class="mb-0">Copy the model PDF into <code>Annual-reports\</code>, select it on the Analyze screen and ask, for example, <em>"Analyze the company's tax related liabilities and comment on it."</em> Check that the suggested notes are right and that the answer's <em>Impact on the financial statements</em> quotes figures from the statements.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5d <span class="step-title">— Commit and rebuild the exe</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>C:\Daya\RAGchamp\PYTHON-EXEC-BUILDER\INPUT\PROJ-2\ANN-RPT-ANALYZER\WEB-APP</mark></div>
+        <p class="mb-0">When you are happy, ask Claude Code to commit, or commit yourself. Then refresh the builder's copy of <code>WEB-APP</code> and rebuild the exe as described in <code>.claude\CLAUDE.md</code> §3. The registry and rules ship in the exe; the model PDFs don't.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 8. WORKED EXAMPLE -->
+  <section id="example" class="mb-5">
+    <h2 class="section-title">8. Worked Example: BHP's Form 20-F</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p class="mb-0"><code>TYPE-8-AUSTRALIA-20-F-2025-BHP.pdf</code> is a 363-page 20-F printed from the SEC website in a browser: the financial statements start at PDF page 279, and the notes run from 288 to 358. This is how its rules were written on 2026-09-28, step by step.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 1 <span class="step-title">— What the existing rules find: nothing</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>match.trial(pdf, profile)</mark><span class="arrow">→</span><mark>every existing profile</mark></div>
+        <p class="mb-0">All three candidate profiles (<code>in-indas-2020s</code>, <code>us-10k-edgar</code>, <code>ca-40f-usgaap</code>) found <strong>0 notes and 0 of 4 statements</strong>. Unlike Magna, BHP needed new rules, not just new wording.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 2 <span class="step-title">— Study the layout: fonts, positions, headings</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>PyMuPDF page.get_text("dict")</mark><span class="arrow">→</span><mark>ingest.pdf_utils.page_rows</mark></div>
+        <p>Printing each line's position, size and font on the statement and notes pages showed four things:</p>
+        <ul class="mb-0">
+          <li>Statement titles are <strong>numbered</strong>: <code>1.1 Consolidated Income Statement for the year ended 30 June 2026</code>. The title test wants the text to <em>start</em> with a statement name.</li>
+          <li>The notes heading, <code>1.6 Notes to the Financial Statements</code>, is printed <strong>once</strong> (p.288), not at the top of every page. The app only knew the wordings "Notes to (the) Consolidated / Standalone Financial Statements".</li>
+          <li>Note headings (<code>1. Segment reporting</code>, <code>24.3 Financial assets and liabilities</code>) are ordinary bold numbered rows, which the existing heading logic already reads.</li>
+          <li>Each page carries the browser's <strong>print chrome</strong>: a date line (<code>9/27/26, 1:05 PM 20-F</code>), a "Table of Contents" link, and the page's URL at the bottom.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 3 <span class="step-title">— Write the rules as switches</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>ingest/profiles/__init__.py</mark><span class="arrow">→</span><mark>ingest/notes_index.py</mark><span class="arrow">→</span><mark>ingest/statements.py</mark></div>
+        <div class="code-window mb-2">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">WEB-APP/ingest/profiles/__init__.py</span></div>
+          <pre><code class="language-python">AU_20F = derive(
+    IN_INDAS, id="au-20f-ifrs", version=1,
+    switches=Switches(notes_run_on=True, numbered_statement_titles=True,
+                      extra_notes_headers=(("consolidated", "Notes to the Financial Statements"),)),
+    acceptance=Acceptance(must_contain=(
+        ("Form 20-F", r"\bForm\s+20-F\b"),
+        ("an Australian company (Corporations Act 2001)", r"Corporations Act 2001"),
+    )),
+)</code></pre>
+        </div>
+        <p class="mb-0"><code>numbered_statement_titles</code> ignores a leading "1.1" when testing a title. <code>extra_notes_headers</code> adds the wording for this profile only. <code>notes_run_on</code> keeps the pages after the heading in the notes until a page that starts the next part ("Item 19.", "SIGNATURES", the auditor's report). All three are off for every other profile.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 4 <span class="step-title">— First trial: statements found, still 0 notes (a bug)</span></div>
+      <div class="step-body">
+        <p>The statements were now found, but the notes section stopped at p.294 with no notes in it. Two causes:</p>
+        <ul>
+          <li><strong>The URL footer</strong> (<code>https://www.sec.gov/…</code>, at x=24) counted as body text, so the page's left margin became 24pt. A heading must start within 25pt of that margin, so every heading at x=130 was rejected. Fix: the print chrome, <em>including the URL footer</em>, is cut from the page layout on these pages.</li>
+          <li><strong>p.295</strong>, inside note 4 (Samarco), holds a small table titled <em>"Cash flow statement"</em>. It was detected as a statement page, which ended the notes. Fix: statements come <em>before</em> the notes, so a statement-like page after the notes start no longer ends them.</li>
+        </ul>
+        <p class="mb-0">Second trial: <strong>37 notes, PDF 288–358, all four statements, checks passed.</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 5 <span class="step-title">— Check against the PDF, not just the checks</span></div>
+      <div class="step-body">
+        <p>Every note number, title and page range was listed and compared with the headings in the PDF (1 Segment reporting … 37 New and amended accounting standards). Then a figure: <em>Total taxation expense</em> had the right values and was linked to Note 6, but its <strong>period was missing</strong>. The column headings were <code>US$M</code> instead of 2026 / 2025 / 2024.</p>
+        <p class="mb-0">The cause: the unit row (<code>Notes | US$M | US$M | US$M</code>) sits under the years and replaced them. Fix, in shared code: a heading row that only names a unit keeps the years above it; <code>US$M</code> was added as a unit. Result: <em>(9,388) FY2026, (7,210) FY2025, (6,447) FY2024</em>, units US$M.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 6 <span class="step-title">— Prove nothing else changed</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>python -m ingest.models verify</mark><span class="arrow">→</span><mark>python -m pytest -q</mark></div>
+        <p><code>verify</code> checks that each of the eight models matches itself and that no other format's rules accept it. The test suite re-ingests the five sample reports and compares every prompt with the frozen baseline. Both passed: <strong>verify: OK, 312 passed.</strong></p>
+        <p class="mb-0">This check has earned its place. While writing Magna's rules, a first version of a units fix also gave the 1994 Berkshire report a new "units" line, which changed its prompts. The baseline test failed, and the fix was narrowed to "U.S. or Canadian dollars in millions".</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-bar">STEP 7 <span class="step-title">— Register, test, document</span></div>
+      <div class="step-body">
+        <div class="step-file"><mark>python -m ingest.models register</mark><span class="arrow">→</span><mark>tests/test_20f.py</mark><span class="arrow">→</span><mark>README, HOW doc, CLAUDE.md</mark></div>
+        <p class="mb-0">The model was registered with its profile (the registry version went up, so existing packages are re-matched automatically). A golden test now pins down the facts: 37 notes; Note 6 on PDF 303–305; the notes ending at 358 and not at the "Cash flow statement" table; the statement pages; the tax line's figures and link. Last, the docs were updated.</p>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 9. OTHERS -->
+  <section id="others" class="mb-5">
+    <h2 class="section-title">9. Two More Examples: Magna and Infosys</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card shadow-sm accent-green h-100">
+          <div class="card-body">
+            <h5>TYPE-6 Magna (40-F exhibit): new wording only</h5>
+            <ul class="mb-0">
+              <li><strong>Found:</strong> the Indian (Bharat Forge) rules already read all 26 notes, 4 statements and 264 figures. Only the Ind AS / ₹ wording check failed.</li>
+              <li><strong>Rules:</strong> <code>ca-40f-usgaap</code> = the Ind AS profile with two new wording checks. The auditor signs as <em>"Chartered Professional Accountants"</em>, the Canadian designation, which no other model contains; amounts are in U.S. or Canadian dollars.</li>
+              <li><strong>Bug found:</strong> units read as <em>"rs in millions"</em>. The rupee pattern matched the "rs" at the end of "dolla<strong>rs</strong>". It now needs a word boundary.</li>
+              <li><strong>Accepted limit:</strong> the balance-sheet totals are unlabelled rows, so no balance check runs yet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card shadow-sm accent-green h-100">
+          <div class="card-body">
+            <h5>TYPE-7 Infosys (20-F): notes numbered 2.1, 2.2 …</h5>
+            <ul class="mb-0">
+              <li><strong>Found:</strong> the statements were read, but only 1 note. The heading <em>"Overview and Notes to the Consolidated Financial Statements"</em> is printed once, and the notes are <code>1.1 … 1.6</code>, then <code>2.1 … 2.21</code>. The statements cite them as <em>2.1</em>, <em>2.18</em>.</li>
+              <li><strong>Rules:</strong> <code>in-20f-ifrs</code> with <code>notes_run_on</code>, <code>decimal_notes</code> (the <code>N.M</code> headings are the notes, id <code>C2.18</code>) and <code>untitled_statement_pages</code> (p.172 continues the Changes in Equity with no title).</li>
+              <li><strong>Bugs found:</strong> the Note column wasn't recognised. Its "Note" heading shares a row with the years, and "2.18" looks like a figure. The note-text header also crashed on a note numbered "2.1".</li>
+              <li><strong>Accepted limits:</strong> no units line ("Dollars in millions" without "U.S."); 15 of 919 figures are multi-line equity column headings.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 10. DECISIONS -->
+  <section id="decisions" class="mb-5">
+    <h2 class="section-title">10. The Critical Decisions</h2>
+    <div class="card shadow-sm accent-yellow mb-4">
+      <div class="card-body">
+        <p class="mb-0">These are the judgment calls that made the three formats work. A new format will usually meet some of them. They are also the reason training happens in a Claude Code session you watch, rather than from a button in the app.</p>
+      </div>
+    </div>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th style="width:20%">Decision</th><th style="width:30%">Options</th><th style="width:20%">Chosen</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td><strong>New rules or reuse?</strong></td><td>Write a new indexer · extend an existing profile with <code>derive()</code></td><td>Extend (all three derive from the Ind AS profile)</td><td>The trial runs showed the layout logic already worked (Magna) or nearly worked (the 20-Fs). Less new code means less risk.</td></tr>
+              <tr><td><strong>Where a new rule goes</strong></td><td>An <code>if</code> in shared code · a profile switch</td><td>A switch, off for everyone else</td><td>Other formats cannot change, and the switch names what the format needs (<code>decimal_notes</code>, <code>notes_run_on</code>).</td></tr>
+              <tr><td><strong>When shared code must change</strong></td><td>Hide every fix behind a switch · fix a genuine bug for all</td><td>Fix for all, and prove it with the baseline</td><td>"Rs" matching inside "dollars", and a unit row hiding the years, are bugs for any report. The prompt baseline showed no other report changed, after one narrowing.</td></tr>
+              <tr><td><strong>Wording checks</strong></td><td>Generic (IFRS, US GAAP) · distinctive phrases</td><td>Phrases no other model has</td><td>Every document was searched: "Chartered Professional Accountants" (Magna only), "Form 20-F" + Ind AS (Infosys), "Form 20-F" + "Corporations Act 2001" (BHP). Generic words would let two formats accept the same report.</td></tr>
+              <tr><td><strong>What counts as a note</strong> (Infosys)</td><td>Notes 1 and 2 (one 80-page note) · the <code>2.1</code> sub-notes</td><td>The <code>N.M</code> headings</td><td>The statements cite 2.1, 2.18, and a question about taxes should get the 7-page Income taxes note, not all 80 pages.</td></tr>
+              <tr><td><strong>Where the notes end</strong></td><td>A fixed page count · stop phrases · next statement page</td><td>Stop phrases ("Item 19.", "SIGNATURES", auditor's report)</td><td>A statement-like table inside a note (BHP p.295) must not end the notes; the next part of the filing must.</td></tr>
+              <tr><td><strong>Browser print chrome</strong></td><td>Ignore it · cut it from the layout</td><td>Cut the date line, "Table of Contents" and URL footer</td><td>Left as body text, the URL footer moved the page margin, and every note heading was rejected.</td></tr>
+              <tr><td><strong>Report format label</strong></td><td>A new analyzer format (US GAAP statement names) · the generic "modern" format</td><td>"modern"</td><td>No analyzer or prompt changes were needed. Statement names in prompts stay generic; a new format would be a separate decision.</td></tr>
+              <tr><td><strong>Which version to bump</strong></td><td>The profile's <code>version</code> · <code>INDEX_VERSION</code></td><td><code>INDEX_VERSION</code> for shared code (now 28), the profile version for rule changes</td><td>Packages rebuild only when needed. Otherwise the tests and the app silently use old packages.</td></tr>
+              <tr><td><strong>What to accept as a limit</strong></td><td>Fix everything · document small gaps</td><td>Document them</td><td>Infosys's missing units line and 15 heading cells don't affect answers (the statement text still says "Dollars in millions"); chasing them would add risky rules.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 11. TROUBLE -->
+  <section id="trouble" class="mb-5">
+    <h2 class="section-title">11. Troubleshooting</h2>
+    <div class="card shadow-sm accent-red">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th>You see</th><th>What it means / what to do</th></tr></thead>
+            <tbody>
+              <tr><td><code>match</code> says it already matches a model</td><td>The format is covered. No training is needed; test a few pages on the Model testing screen.</td></tr>
+              <tr><td>"This report is scanned"</td><td>No text layer. Scanned reports use the <code>scanned-ocr</code> profile and must be transcribed on the Ingest screen first (this costs Claude usage).</td></tr>
+              <tr><td>You replaced a model PDF with another version</td><td>The registry still has the old checksum. Ask Claude Code to re-register it and check its rules again, as was done when Magna's Annual Information Form was replaced by its financial statements exhibit.</td></tr>
+              <tr><td>Two models "equally close" → new model document</td><td>Two profiles accept the report. Their wording checks are not distinctive enough; ask Claude Code to tighten them and run <code>verify</code>.</td></tr>
+              <tr><td>The tests fail in <code>test_prompt_identity.py</code></td><td>A change altered another report's prompts. Don't re-freeze the baseline: ask Claude Code to move the change behind a switch or narrow it.</td></tr>
+              <tr><td>A page is extracted wrongly after training</td><td>Report it on the Model testing screen (<em>Need correction</em>). Then give Claude Code the feedback file name; the fix routine is in <code>.claude\CLAUDE.md</code> §7a.</td></tr>
+              <tr><td>The Analyze screen still refuses the report</td><td>Restart the app (Python changes need a restart). Make sure the report in <code>Annual-reports\</code> is the same file as the model document, or one with the same layout.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+  <!-- 12. REFERENCE -->
+  <section id="reference" class="mb-5">
+    <h2 class="section-title">12. Quick Reference</h2>
+    <div class="card shadow-sm accent-blue">
+      <div class="card-body">
+        <div class="code-window">
+          <div class="code-titlebar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="code-filename">PowerShell — C:\Daya\RAGchamp\ANN-RPT-ANALYZER\WEB-APP</span></div>
+          <pre><code class="language-powershell">python -m ingest.models list                                  # the models and their rules
+python -m ingest.models match "..\MODEL-DOCS\TYPE-9-….pdf"     # does any model match it?
+python -m ingest.models register "..\MODEL-DOCS\TYPE-9-….pdf" --profile &lt;id&gt; --description "…"
+python -m ingest.models register "..\MODEL-DOCS\TYPE-9-….pdf" --pending --description "…"
+python -m ingest.models verify                                # each model matches itself and no other
+python -m ingest "..\MODEL-DOCS\TYPE-9-….pdf" --force           # ingest it, print its quality report
+python -m pytest -q                                           # all tests (about 5 minutes)
+python app.py                                                 # the app: /model-testing, /ingest</code></pre>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead><tr><th>File</th><th>Role in training</th></tr></thead>
+            <tbody>
+              <tr><td><code>MODEL-DOCS\</code>, <code>MODEL-DOCS\README.md</code></td><td>The model PDFs and the "Adding a format" routine</td></tr>
+              <tr><td><code>WEB-APP\ingest\profiles\__init__.py</code></td><td>Profiles, switches and acceptance checks</td></tr>
+              <tr><td><code>WEB-APP\ingest\notes_index.py</code>, <code>statements.py</code>, <code>tables.py</code>, <code>figures.py</code>, <code>links.py</code></td><td>Where switches take effect: notes, statements, tables, figures, links</td></tr>
+              <tr><td><code>WEB-APP\ingest\models\registry.json</code></td><td>The registered models (changed only with <code>python -m ingest.models</code>)</td></tr>
+              <tr><td><code>WEB-APP\tests\test_20f.py</code>, <code>test_ca_40f.py</code></td><td>Golden tests to copy for a new format</td></tr>
+              <tr><td><code>INFO\MODEL-DOCS-FUNCTIONALITY-PLAN.md</code></td><td>How matching works (fingerprint, trials, acceptance checks)</td></tr>
+              <tr><td><code>INFO\MODEL-FEEDBACK-FUNCTIONALITY-PLAN.md</code></td><td>The Model testing screen and the feedback / fix routine</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+</main>
+
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center small">
+    Annual Report Analyzer — how to add a new report format (<code class="text-white">MODEL-DOCS\</code> + extraction rules) to the Foot Notes Analyzer with Claude Code.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/build/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+  document.querySelectorAll(".copy-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = document.getElementById(btn.dataset.copy).innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -183,11 +183,13 @@
             <div class="toc-item"><span class="toc-num">11</span><a href="#viewer">The "View the Financial Statements" Page</a></div>
             <div class="toc-item"><span class="toc-num">12</span><a href="#old-reports">Old Annual Reports (Companies Act 1956)</a></div>
             <div class="toc-item"><span class="toc-num">13</span><a href="#scanned">Scanned Reports (OCR)</a></div>
-            <div class="toc-item"><span class="toc-num">14</span><a href="#walkthrough">Step-by-Step: "Analyze the Tax Liabilities"</a></div>
-            <div class="toc-item"><span class="toc-num">15</span><a href="#testing">Testing &amp; Verification</a></div>
-            <div class="toc-item"><span class="toc-num">16</span><a href="#limitations">Known Limitations</a></div>
-            <div class="toc-item"><span class="toc-num">17</span><a href="#glossary">Glossary</a></div>
-            <div class="toc-item"><span class="toc-num">18</span><a href="#file-map">File Map</a></div>
+            <div class="toc-item"><span class="toc-num">14</span><a href="#packages">Ingester, Analyzer &amp; Report Packages</a></div>
+            <div class="toc-item"><span class="toc-num">15</span><a href="#models">Model Documents</a></div>
+            <div class="toc-item"><span class="toc-num">16</span><a href="#walkthrough">Step-by-Step: "Analyze the Tax Liabilities"</a></div>
+            <div class="toc-item"><span class="toc-num">17</span><a href="#testing">Testing &amp; Verification</a></div>
+            <div class="toc-item"><span class="toc-num">18</span><a href="#limitations">Known Limitations</a></div>
+            <div class="toc-item"><span class="toc-num">19</span><a href="#glossary">Glossary</a></div>
+            <div class="toc-item"><span class="toc-num">20</span><a href="#file-map">File Map</a></div>
           </div>
         </div>
       </div>
@@ -204,11 +206,12 @@
           <li><strong>Select</strong> an annual report PDF from <code>ANN-RPT-ANALYZER\Annual-reports\</code>. The app indexes its notes and <strong>loads its primary financial statements</strong> (consolidated and standalone), rotating any sideways pages first. A <strong>View the financial statements</strong> link opens them all as tables in a new tab.</li>
           <li><strong>Ask</strong> a question, e.g. <em>"Analyze the company's Tax related liabilities and comment on it."</em></li>
           <li><strong>Identify</strong> the relevant notes. The app uses the <em>consolidated</em> notes by default, unless the question asks for standalone. It then <strong>always pauses</strong> so the user can confirm or edit the choice.</li>
-          <li><strong>Extract</strong> exactly those notes from the PDF.</li>
+          <li><strong>Extract</strong> exactly those notes (clipped from the PDF once, when the report is ingested).</li>
           <li><strong>Send</strong> the question, the note extract and the matching primary statements to Claude Code (<code>claude -p</code>).</li>
           <li><strong>Present</strong> the analysis, including an <strong>Impact on the financial statements</strong> section. The user can then ask follow-up questions on the same notes.</li>
         </ol>
         <p class="mb-0">The expensive, non-deterministic part (the LLM) only sees a few tens of thousands of characters of exactly the right content: the selected notes plus the four statements they belong to. Everything before it (finding notes, page ranges and tables) is deterministic Python that gives the same answer every run.</p>
+        <p class="mt-3 mb-0"><strong>Since 2026-09-27</strong> the PDF work (Stages 1–4) runs once per report in the <strong>Ingester</strong>, which saves it as a <strong>report package</strong> together with the statement figures, links between statement lines and notes, and automatic checks. Questions are answered from that package by the <strong>Analyzer</strong>, which never opens the PDF. See Section 14.</p>
       </div>
     </div>
     <div class="card shadow-sm accent-yellow mb-4">
@@ -948,9 +951,143 @@ click an item
     <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
   </section>
 
+<!-- 14. INGESTER, ANALYZER AND REPORT PACKAGES -->
+  <section id="packages" class="mb-5">
+    <h2 class="section-title">14. Ingester, Analyzer &amp; Report Packages</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>Since 2026-09-27 the app has <strong>two parts in one program</strong> (<code>INFO/SPLIT-FUNCTIONALITY-PLAN.md</code>). Stages 1–4 above now run once per report, in the <strong>Ingester</strong>. Their result is saved as a <strong>report package</strong>, and every question is answered from that package by the <strong>Analyzer</strong>, which never opens the PDF.</p>
+        <pre><code class="language-plaintext">PDF ──► ingest/pipeline.py ─────────────────────────────► cache/packages/&lt;pdf&gt;-&lt;sha256&gt;.rptpkg.db (SQLite)
+          1 fingerprint (SHA-256)          5 statement tables (tables.py)                      │
+          2 format: modern | us-10k |      6 lines, figures, periods (figures.py)              │ read only
+            legacy | scanned (OCR)         7 links and checks (links.py)                       ▼
+          3 index (notes, statements)      8 quality report (quality.py)          analyzer/  ──► claude -p
+          4 clipped text of every note, statement and page (clip.py)                (never reads the PDF)</code></pre>
+        <ul class="mb-0">
+          <li><strong><code>ingest/</code></strong>: the indexers from Stages 1–4 (<code>notes_index</code>, <code>statements</code>, <code>legacy_index</code>, <code>transcribed_index</code>, OCR), plus <code>clip.py</code> (was <code>extractor.py</code>) and <code>tables.py</code> (was <code>statements_view.py</code>).</li>
+          <li><strong><code>analyzer/</code></strong>: note picking, prompts, jobs, threads, history and HTML reports. It may import only <code>rptpkg</code>, <code>claude_client</code>, <code>config</code> and <code>webcommon</code>; <code>tests/test_boundary.py</code> enforces this.</li>
+          <li><strong><code>rptpkg/</code></strong>: the package format (<code>schema.sql</code>), writer, reader and location (<code>store.py</code>).</li>
+          <li><strong><code>app.py</code></strong> joins them: it gives the analyzer a loader that ingests a report when it has no up-to-date package.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-green mb-4">
+      <div class="card-body">
+        <h5>What a package holds</h5>
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle small mb-0">
+            <thead><tr><th style="width:18%">Table</th><th>Contents</th></tr></thead>
+            <tbody>
+              <tr><td><code>meta</code></td><td>Schema and ingester versions, the PDF's SHA-256 and name, format and label, summary, units ("In ₹Million"), fiscal year-end, the quality report, and the report-level facts of the index.</td></tr>
+              <tr><td><code>sections</code>, <code>units</code></td><td>Sections, and every note, schedule, report section and statement with its extent, its data as indexed, and the <strong>clipped text Claude receives</strong>. Statements also store their parsed tables (the statements page). Ids: <code>C21</code>, <code>SCH-E</code>, <code>BH-N5</code>; statements <code>C-PL</code>, <code>C-BS</code>, <code>C-CF</code>, <code>C-EQ</code>.</td></tr>
+              <tr><td><code>pages</code></td><td>Every PDF page: printed number, cleaned text (for "Or analyze specific PDF pages"), layout, and for scanned pages the transcription checks.</td></tr>
+              <tr><td><code>lines</code>, <code>values</code></td><td>Every statement line with figures (<code>C-PL-L019</code> "Current tax", note 21) and one value per column: as printed (<code>(1,828)</code>), as a number, the heading, and the period (<code>FY2026</code>, 2026-03-31). An impossible grouping such as the retyping error <code>11,57,05.424</code> gets no number.</td></tr>
+              <tr><td><code>edges</code></td><td>Links with their method, confidence and evidence: <em>references</em> (the Notes / Schedule column, or "(note 3)" in the label), <em>ties_to</em> (the same distinctive figure printed in the note), <em>mentions</em> (title match on strong words), <em>carries</em> (net income in the P&amp;L and the cash flow statement).</td></tr>
+              <tr><td><code>checks</code></td><td>Subtotals (ok, or <em>unverified</em> when a total isn't a simple sum), the balance sheet balances, carried figures, and whether a cited note prints the line's figure.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 mb-0">The reader rebuilds the index exactly as it was built, so note picking and prompts work on it unchanged. That was proven by <code>tests/test_prompt_identity.py</code>: every prompt of the four sample reports stayed byte-identical through the split.</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <h5>What the Analyzer does with the links</h5>
+        <ul>
+          <li><strong>Suggested notes</strong> (<code>analyzer/linked.py</code>): the question's words (plus synonyms) find statement lines. Their linked notes go to the note picker as <em>SUGGESTED BY THE FINANCIAL STATEMENTS</em>, and appear in step 3 as buttons. For "Analyze the tax liabilities", the lines Current tax, Deferred tax liabilities (net)… point to <strong>Note 21</strong>. Claude still chooses, and the user still confirms.</li>
+          <li><strong>LINKED FIGURES</strong>: the analysis and follow-up prompts list the statement lines linked to the chosen notes, with their figures by period, how each link was found, and the related checks:
+            <pre class="mt-2 mb-2"><code class="language-plaintext">- (c) Deferred tax liabilities (net) (Consolidated Balance Sheet, PDF p.341) | FY2026 215.24 | FY2025 1,198.28
+    -&gt; Note 21 (cited in the Notes column, same figure in the note)
+CHECKS (automatic)
+- ok: Total assets 222,599.55 vs 'Total equity and liabilities' 222,599.55 (FY2026)</code></pre>
+            The full notes and statements are still sent; a system-prompt rule says they are authoritative.</li>
+          <li class="mb-0"><strong>US Form 10-K</strong> reports (format <code>us-10k</code>, "FORM 10-K" on the cover) get a REPORT PROFILE, US statement names and <code>analysis_system_us10k.txt</code>. Their statements have no Notes column, so links come from figures and titles.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card shadow-sm accent-yellow">
+      <div class="card-body">
+        <h5>The Ingest screen and the CLI</h5>
+        <ul class="mb-0">
+          <li><strong><code>/ingest</code></strong> ("Ingest screen ↗" on the main page) lists each report as <em>up to date</em>, <em>stale</em> or <em>not ingested</em>, with its quality report. You can <strong>Ingest / Re-ingest</strong> one report at a time (keeping, detecting or forcing its format), <strong>Transcribe</strong> a scanned report, <strong>View statements</strong>, <strong>Review scan</strong>, <strong>View a page</strong>, and <strong>Export / Import</strong> a package.</li>
+          <li><strong>Packages move between PCs:</strong> an imported package is used for the PDF with the same content, whatever its name. An imported scanned report is kept without its OCR cache, so its transcription isn't paid for twice.</li>
+          <li><strong>Rebuilt automatically</strong> when the PDF changes, when <code>INDEX_VERSION</code> changes (bump it whenever package content changes), when another format is chosen, or when a scanned page is re-transcribed.</li>
+          <li><strong><code>python -m ingest &lt;pdf&gt; [--format …] [--force]</code></strong> ingests one report and prints its quality report, e.g. <em>"Links: 254 of 331 statement lines linked to a note (77%) … Checks: 125 of 152 ok"</em> for Bharat Forge.</li>
+          <li><strong>Time:</strong> a first ingestion of the 508-page Bharat Forge report takes about 16s (12s before the split: every page's text is now stored). Opening an existing package is instant.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+<!-- 15. MODEL DOCUMENTS -->
+  <section id="models" class="mb-5">
+    <h2 class="section-title">15. Model Documents: Matching Every Report to a Known Format</h2>
+    <div class="card shadow-sm accent-blue mb-4">
+      <div class="card-body">
+        <p>Every new kind of annual report used to mean going back into the extraction code, and the app could not tell when a report was of a kind it had never seen: the old format detector always guessed (a Canadian 40-F became "old Indian", an Australian 20-F "modern" with no evidence at all). Now <code>MODEL-DOCS\</code> holds one PDF per format the app can read, and every report is <strong>matched</strong> to one of them before it is ingested (<code>INFO/MODEL-DOCS-FUNCTIONALITY-PLAN.md</code>).</p>
+        <pre><code class="language-plaintext">PDF ─► same SHA-256 as a model document? ── yes ─► that model's profile
+          │ no
+          ▼
+       fingerprint (fonts, bold, cover form, framework, currency, notes / statement headings…)
+          ▼
+       hard constraints (scanned? typewriter? Form 10-K vs 20-F?) ─► weighted similarity
+          ▼
+       trial extraction with the 3 closest models that have rules ─► acceptance checks
+          ├─ one passes ─────────► package (meta: model, profile, score, checks)
+          └─ none (or two, equally close) ─► NEW MODEL DOCUMENT: blocked + gap report</code></pre>
+        <ul class="mb-0">
+          <li><strong>Profiles</strong> (<code>ingest/profiles/</code>): the extraction rules per format: <code>in-indas-2020s</code>, <code>in-schedule-vi-1970s</code>, <code>us-10k-edgar</code>, <code>us-10k-typewriter</code>, <code>scanned-ocr</code>, <code>ca-40f-usgaap</code> (Magna's 40-F exhibit: the Ind AS layout rules with Canadian wording checks), <code>in-20f-ifrs</code> (Infosys: notes numbered 2.1, 2.2 …, the notes heading printed once) and <code>au-20f-ifrs</code> (BHP: numbered statement titles, the notes heading printed once). Rules that only one format needs are <em>switches</em> (the BRK-1994 typewriter rules are on for <code>us-10k-typewriter</code> only), so a new format never adds an <code>if</code> to another format's path. The prompts of all five samples stayed byte-identical through this refactor.</li>
+          <li><strong>Acceptance checks</strong>: enough notes numbered from about 1, enough statements, ≥ 90% of statement figures readable, a balance sheet that balances, and the format's wording ("Form 10-K", "Item 8", "Ind AS or ₹", "schedules").</li>
+          <li><strong>The registry</strong> (<code>ingest/models/registry.json</code>) ships with the app; the model PDFs don't. Every model document has rules; a model can still be registered as <em>pending</em> (no rules yet).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-yellow">
+      <div class="card-body">
+        <h5>A new model document</h5>
+        <ul class="mb-0">
+          <li><strong>Blocked completely</strong>: no analysis, not even of chosen pages, until its format is added. Step 1 and the Ingest screen show the nearest models and what their rules found (e.g. "TYPE-2 INDIA 1977 Reliance, similarity 0.64: 1 notes found (need 5); 0 of 4 statements found").</li>
+          <li><strong>Gap report</strong> (<code>/gap-report</code>): the fingerprint beside the nearest models' (differences marked ≠), each model's checks, the evidence pages (first lines and heading fonts), and the routine. <em>Propose as a model document</em> copies it with the PDF to <code>MODEL-DOCS\_candidates\</code>; <em>Describe with Claude</em> (optional, uses the plan) adds a layout description from a few page images.</li>
+          <li><strong>Adding the format</strong> (<code>MODEL-DOCS\README.md</code>): write its profile, <code>python -m ingest.models register … --profile &lt;id&gt;</code>, a golden test, then <code>python -m ingest.models verify</code> (each model matches itself and no other) and the full test suite.</li>
+          <li><strong>Found on the way:</strong> Magna's first PDF was its Annual Information Form, with no financial statements or notes at all; it was replaced by the 40-F's financial statements exhibit (Exhibit 99.3), now read with <code>ca-40f-usgaap</code>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card shadow-sm accent-blue mt-4">
+      <div class="card-body">
+        <h5>Model testing and feedback (<code>/model-testing</code>)</h5>
+        <p>A screen to check the extraction of any page of a model document, and to report a wrong one (<code>INFO/MODEL-FEEDBACK-FUNCTIONALITY-PLAN.md</code>).</p>
+        <pre><code class="language-plaintext">model document + Page# (validated: 1 … page count)
+   ▼  Test extraction (a job: the first test of a document may ingest it)
+page image (PyMuPDF, 150 dpi, as in the PDF)  +  extracted data from the report package:
+   units on the page · page text (label | FY26 | FY25) · statement lines, figures, links
+   ▼  Need correction → comment (≤ 400 characters) → Submit feedback
+Model-Feedback/&lt;pdf&gt;-&lt;YYYYMMDD-HHMMSS&gt;.json   (never edited: the evidence)
+Model-Testing/&lt;same&gt;-p&lt;page&gt;.png                (what the user saw)
+Model-Feedback/feedback-status.json            Reported ─► Fixed by Claude code (+ history)</code></pre>
+        <ul class="mb-0">
+          <li><strong>Same data as the Analyzer</strong>: the extraction is read from the report package, not re-done for the test. The server extracts the page again when feedback is submitted, so the file never holds data sent back by the browser.</li>
+          <li><strong>Pending models</strong> (none today) have no package: the raw PDF text is shown and labelled, and feedback is still accepted, since it is exactly what writing their rules needs.</li>
+          <li><strong>Fixing stays manual</strong>: the user gives a feedback file to a Claude Code session, which reproduces it (<code>python -m ingest.feedback show</code>), fixes the profile's rules, adds a regression test, runs the suite and records the fix with <code>python -m ingest.feedback fixed</code>. Status writes are atomic, and an unreadable status file is never replaced.</li>
+          <li><strong>View formatted document</strong> (<code>/model-testing/formatted?doc=…</code>, <code>INFO/MODEL-FORMATTED-REPORTS-PLAN.md</code>): the whole package as one responsive Bootstrap page, in PDF page order. <code>ingest/formatted_report.py</code> turns each unit's stored text into blocks (page markers, headings, paragraphs, tables: leading rows without figures are the heading, short rows keep their figures on the right, Markdown tables of transcribed reports too) without changing a word; statements use their stored tables. Every PDF page gets exactly one <code>#page-N</code> anchor and a "Test this page" link back to Model testing; statement Notes cells link to notes and notes list the lines "linked from" them (<code>edges</code>); pages outside any unit are collapsed runs; the checks close the page. The rendered HTML is cached in memory (4 documents) by package build time and <code>FORMATTER_VERSION</code>; TYPE-1 renders in about 1 s (3 MB).</li>
+          <li><strong>Pages outside notes and statements</strong> (<code>ingest/narrative/</code>, <code>INFO/ANNUAL-REPORT-NON-FIN-STMTS-NOTES-EXTRACTION-PLAN.md</code>): for every model format (each profile's <code>narrative_sections</code> switch names the section sources that fit it), ingestion also builds a <em>section map</em> (PDF bookmarks, a contents page over one or more pages → PDF pages via the footers' page numbers, running headers, <code>Item N.</code> headings, or large page headings as a last resort; scanned reports from their Markdown transcription) and reads each page into <em>blocks in reading order</em>: page geometry (segments, drawings, images) → tables (ruled grids, row-ruled text tables, aligned figure columns) → bullets and badges → panels and graphics → text boxes → a recursive XY-cut (columns first; bands whose gutters line up stay columns) → typed blocks. A coverage check compares the characters of the blocks with the page's; a page that fails keeps its flat text. Stored in <code>doc_sections</code>, <code>narrative_pages</code>, <code>page_blocks</code> (schema 1.1); <code>pages.text</code> and every prompt are unchanged. The formatted document renders these sections (KPI tiles, panels, graphics with a page-image crop) and Model testing lists the blocks.</li>
+          <li><strong>Questions use the report's sections</strong> (<code>INFO/ANALYZE-NON-FIN-DATA-PLAN.md</code>): at ingest each section is cut into <em>passages</em> (1.5–8 K characters, heading path, money figures; table <code>doc_passages</code>). For a question, <code>analyzer/passages.py</code> ranks them (BM25 over path and text, synonyms such as CV ↔ commercial vehicle, section-kind boosts) and the existing selector call picks up to 4 with the notes. Analyses and follow-ups then carry a REPORT SECTIONS block (management's unaudited commentary), NARRATIVE FIGURES (money amounts converted to the statements' unit and matched to statement lines or note figures within half their last printed digit), a "Business context" answer section and a system-prompt addition. When no passage is chosen these parts are empty, so the prompt is byte-identical to before.</li>
+          <li><strong>Two flows</strong> (plan §16): <em>Identify notes</em> is the original notes-only flow with the original prompts; <em>Analyze non notes</em> (<code>mode: "business"</code>) picks up to 4 passages and at most 2 confirming notes (<code>select_for_business</code>) and sends <code>prompts/business_*.txt</code>: REPORT SECTIONS first, NARRATIVE FIGURES, the notes, the statements for reference, and a business answer with a short <em>How it shows in the audited numbers</em> table. An approximate figure tie needs a word shared by the line label and the figure's context; an exact one (within 0.5 units) stands alone. Both flows pause in step 3; threads keep their mode.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="back-to-top mt-2"><a href="#toc">↑ Back to Table of Contents</a></p>
+  </section>
+
+
+
 <!-- 12. WALKTHROUGH -->
   <section id="walkthrough" class="mb-5">
-    <h2 class="section-title">14. Step-by-Step: "Analyze the Tax Liabilities"</h2>
+    <h2 class="section-title">16. Step-by-Step: "Analyze the Tax Liabilities"</h2>
     <div class="card shadow-sm accent-blue mb-4">
       <div class="card-body">
         <p class="mb-0">Sections 3–11 explain each mechanism separately. This section follows them in the order they actually run, for the real question used to verify the app: <em>"Analyze the company's Tax related liablities and comment on it."</em> on the Bharat Forge FY2025-26 report.</p>
@@ -1080,10 +1217,10 @@ click an item
 
   <!-- 13. TESTING -->
   <section id="testing" class="mb-5">
-    <h2 class="section-title">15. Testing &amp; Verification</h2>
+    <h2 class="section-title">17. Testing &amp; Verification</h2>
     <div class="card shadow-sm accent-blue mb-4">
       <div class="card-body">
-        <p><code>python -m pytest -q</code> in <code>WEB-APP</code> runs <strong>72 tests</strong> against the real Bharat Forge PDF. Claude is mocked, so the tests make no Claude calls.</p>
+        <p><code>python -m pytest -q</code> in <code>WEB-APP</code> runs <strong>263 tests</strong> against the real sample reports (Bharat Forge, Chubb, Reliance, BRK-1968, BRK-1994) and the model documents (<code>-m "not slow"</code> skips the large ones: 251 tests). Claude is mocked, so the tests make no Claude calls. The main ones:</p>
         <div class="table-responsive">
           <table class="table table-bordered align-middle small mb-0">
             <thead><tr><th style="width:26%">Test file</th><th>What it proves</th></tr></thead>
@@ -1094,6 +1231,10 @@ click an item
               <tr><td><code>test_app.py</code></td><td>The full flow through the Flask routes: reports, index, identify, analyze, a follow-up that adds Note 41, and history. Saved reports are named <code>…-1-YYYYMMDD-HHMMSS.html</code> and <code>…-2-…</code>. Also checks that the prompt carries the consolidated statements (and the standalone ones for standalone notes) and asks for <em>Impact on the financial statements</em>, and that the statements are recorded in history and the saved report. Plus the manual-pages route, blocked path traversal, bad input returning 400, and that Claude's HTML is escaped.</td></tr>
               <tr><td><code>test_statements.py</code></td><td>All eight statements are found on the right pages and listed in order. Pages 344–345 are rotated −90° with printed pages 341–342, their rows read left-to-right with every number in its own column, and no running header gets mixed in. Balance Sheet rows link to Note 21, the P&amp;L tax lines match Note 21 (5,606.07), and the Cash Flow shows "Income taxes paid (5,646.25)". Also covers title matching for 10 wordings and the adjacent-number column split.</td></tr>
               <tr><td><code>test_statements_view.py</code></td><td>The viewer page: consolidated before standalone, a heading row on every statement page, the 12 rebuilt equity column headings and their group headings (9 / 5 + 4 columns), figures under the right headings, the Notes column, note-only rows, joined wrapped labels, header and total rows, dropped signatures, equity parts A and B as separate tables (3 and 12 columns), the closing equity balances, the route (and its 400 for unknown reports), and the home-page link opening in a new tab.</td></tr>
+              <tr><td><code>test_prompt_identity.py</code></td><td>Runs the four sample reports through the app (load, identify, analyze, follow-up, manual pages) and checks that every prompt, system prompt, report-load answer and statements page is <strong>byte-identical</strong> to <code>tests/fixtures/baseline/</code>. Re-freeze with <code>python tests/prompt_baseline.py --freeze</code> only when a prompt is meant to change.</td></tr>
+              <tr><td><code>test_package.py</code>, <code>test_boundary.py</code></td><td>The package gives back the index exactly and is reproducible; renamed, copied and changed PDFs; stale packages rebuilt; a whole analysis with PDF reading switched off; the analyzer never imports the ingester or PyMuPDF.</td></tr>
+              <tr><td><code>test_models.py</code></td><td>The registry; fingerprints (deterministic, renamed copies); hard constraints; acceptance checks on doctored indexes; profile switches isolated; a model document matches itself; an unseen copy matches by fingerprint; doubt means "new model"; a registry change re-matches without rebuilding; a model without rules refused with a gap report; no model document accepted by another format's rules; the app blocks a new model document completely; propose; Describe with Claude (mocked); the CLI exit code.</td></tr>
+              <tr><td><code>test_figures_links.py</code>, <code>test_linked.py</code>, <code>test_ingest_screen.py</code>, <code>test_ten_k.py</code></td><td>Figures and periods (Current tax 5,606.07 FY2026; Chubb income tax 2,422 FY2025), links (every Notes-column reference resolves; Chubb tax lines → Note 12; no coincidental or weak-word links), checks (balance sheets balance), suggested notes, LINKED FIGURES, the us-10k format, the Ingest screen and package export / import.</td></tr>
               <tr><td><code>test_report_html.py</code></td><td>The file name format, table classes, right-aligned numbers such as <code>(2.60) pp</code>, and lists directly after a paragraph rendering as lists.</td></tr>
             </tbody>
           </table>
@@ -1111,14 +1252,15 @@ click an item
 
   <!-- 14. LIMITATIONS -->
   <section id="limitations" class="mb-5">
-    <h2 class="section-title">16. Known Limitations</h2>
+    <h2 class="section-title">18. Known Limitations</h2>
     <div class="card shadow-sm accent-yellow">
       <div class="card-body">
         <ul class="mb-0">
           <li><strong>Old reports</strong> (§12) have been verified on one sample only, the re-typeset Reliance 1976-77 report. Other old layouts, such as numbered schedules or a separate "Notes on Accounts" section, are handled by the same patterns but not yet tested.</li>
           <li><strong>Scanned PDFs</strong> (§13) need a one-time transcription: about $0.14 and 9 s per page, with 4 pages in parallel. Figures can be misread, so check the flagged ones on the Review page.</li>
           <li><strong>Other companies' layouts:</strong> heading detection is font-based and generic, but it has only been verified on the Bharat Forge report. Other running-header wordings can be added to <code>NOTES_HEADERS</code> in <code>config.py</code>. If no notes are found, the user can still type PDF pages manually.</li>
-          <li><strong>Finding the statements:</strong> they are expected within the 15 pages before each notes section, with a large title (14pt or more) naming the statement. Verified only on the Bharat Forge report.</li>
+          <li><strong>Finding the statements:</strong> they are expected within the 15 pages before each notes section, with a large title (14pt or more), or a bold title near the top, naming the statement. Verified on Bharat Forge (Ind AS) and Chubb (US 10-K).</li>
+          <li><strong>Links are heuristic</strong> (§14): a title match can be loose on a generic title, and old reports' "Rs." columns get no period. Every link says how it was found, and Claude is told to verify links against the text.</li>
           <li><strong>Longer analyses:</strong> sending the statements adds about 18,000 characters to every prompt. The sample tax analysis went from 79s to 127s.</li>
           <li><strong>Jobs are in memory:</strong> restarting the server during an analysis loses that job. Threads, history and saved reports are on disk and survive a restart.</li>
           <li><strong>Local tool:</strong> it binds to <code>127.0.0.1</code> only, the same as basic-chatbot. There is no authentication.</li>
@@ -1130,7 +1272,7 @@ click an item
 
   <!-- 15. GLOSSARY -->
   <section id="glossary" class="mb-5">
-    <h2 class="section-title">17. Glossary</h2>
+    <h2 class="section-title">19. Glossary</h2>
     <div class="card shadow-sm">
       <div class="card-body p-0">
         <div class="table-responsive">
@@ -1164,29 +1306,45 @@ click an item
 
   <!-- 16. FILE MAP -->
   <section id="file-map" class="mb-5">
-    <h2 class="section-title">18. File Map</h2>
+    <h2 class="section-title">20. File Map</h2>
     <div class="card shadow-sm">
       <div class="card-body p-0">
         <div class="table-responsive">
           <table class="table table-bordered align-middle mb-0">
             <thead><tr><th style="width:32%">File</th><th>Role</th></tr></thead>
             <tbody>
-              <tr><td><code>app.py</code></td><td>Flask routes, background jobs, threads, Markdown rendering, history and report saving.</td></tr>
+              <tr><td><code>app.py</code></td><td>Creates the Flask app, registers the Analyze and Ingest blueprints, gives the analyzer its package loader, and serves the routes that join the two parts: <code>/</code>, <code>/api/reports</code>, <code>/api/index</code> (ingest if needed, then summarise the package), <code>/api/jobs/…</code>.</td></tr>
               <tr><td><code>config.py</code></td><td>Paths, Claude CLI settings (<code>CLAUDE_EXE</code>, flags, timeouts), limits, notes header strings.</td></tr>
-              <tr><td><code>pdf_utils.py</code></td><td>PyMuPDF helpers: opening PDFs, rows from spans, running header and footer detection, text clean-up.</td></tr>
-              <tr><td><code>notes_index.py</code></td><td>Builds and caches the Notes Index. Also detects the company name and, via <code>statements.py</code>, loads the primary statements.</td></tr>
-              <tr><td><code>statements.py</code></td><td>Finds the four primary statements per section, detects and rotates sideways pages, extracts and caches their text, and builds the statements block and list for prompts.</td></tr>
-              <tr><td><code>statements_view.py</code> + <code>templates/statements_view.html</code></td><td>The <em>View the financial statements</em> page (<code>/statements?report=…</code>, new tab): cached rows → tables, consolidated first.</td></tr>
-              <tr><td><code>note_selector.py</code></td><td>Scope rules, the Claude selector call, the keyword fallback and explicit note references.</td></tr>
-              <tr><td><code>extractor.py</code></td><td>Clips each note to its extent and rebuilds table rows as <code>a | b | c</code>. Also handles manual page ranges.</td></tr>
-              <tr><td><code>claude_client.py</code></td><td><code>run_claude()</code> (stdin, no tools), the PowerShell fallback, and <code>fill_prompt()</code> / <code>system_prompt()</code>.</td></tr>
-              <tr><td><code>history.py</code></td><td><code>Prompt-History\</code> numbering, saving and reading back (reused from basic-chatbot).</td></tr>
-              <tr><td><code>report_html.py</code> + <code>templates/analysis_report.html</code></td><td>The styled per-prompt HTML reports in <code>Analysis-history\</code>.</td></tr>
-              <tr><td><code>prompts/*.txt</code></td><td>Selector, analysis and follow-up system prompts and templates. They can be edited without code changes.</td></tr>
-              <tr><td><code>templates/index.html</code>, <code>static/app.js</code>, <code>static/style.css</code>, <code>static/logo.svg</code></td><td>The single-page UI: report picker with the loaded statements and <em>View the financial statements</em> link, question, note confirmation, result thread and History sidebar.</td></tr>
-              <tr><td><code>cache/</code></td><td>Notes indexes (<code>*.notes-index.json</code>) and follow-up threads (<code>threads/*.json</code>).</td></tr>
+              <tr><td><code>claude_client.py</code></td><td><code>run_claude()</code> (stdin, no tools, streaming), the PowerShell fallback, <code>fill_prompt()</code> / <code>system_prompt()</code>, and the image call used for OCR.</td></tr>
+              <tr><td><code>webcommon.py</code></td><td>Shared by both parts: user errors, the background job runner, Markdown rendering, the report list and page-range parsing.</td></tr>
+              <tr><td><code>rptpkg/</code> (<code>schema.sql</code>, <code>writer.py</code>, <code>reader.py</code>, <code>store.py</code>, <code>model.py</code>)</td><td>The report package: SQLite schema, writing (ingester), reading (both), where packages live (keyed by the PDF's SHA-256), unit ids.</td></tr>
+              <tr><td><code>ingest/pipeline.py</code></td><td>The ingester's entry point: build, store, re-use, status and import of packages; <code>python -m ingest</code> (<code>ingest/__main__.py</code>).</td></tr>
+              <tr><td><code>ingest/pdf_utils.py</code></td><td>PyMuPDF helpers: opening PDFs, rows from spans, running header and footer detection, text clean-up, page-extraction reuse.</td></tr>
+              <tr><td><code>ingest/report_format.py</code></td><td>Detects the format: modern, US Form 10-K, or old (Companies Act 1956).</td></tr>
+              <tr><td><code>ingest/notes_index.py</code></td><td>Builds the Notes Index, detects the company name and, via <code>statements.py</code>, loads the primary statements. Holds <code>INDEX_VERSION</code>.</td></tr>
+              <tr><td><code>ingest/statements.py</code></td><td>Finds the four primary statements per section, detects and rotates sideways pages, and extracts their text.</td></tr>
+              <tr><td><code>ingest/legacy_index.py</code>, <code>ingest/transcribed_index.py</code>, <code>ingest/ocr_transcribe.py</code>, <code>ingest/ocr_quality.py</code></td><td>Old reports (§12) and scanned reports (§13).</td></tr>
+              <tr><td><code>ingest/clip.py</code></td><td>Clips each note and page to its extent and rebuilds table rows as <code>a | b | c</code> (was <code>extractor.py</code>).</td></tr>
+              <tr><td><code>ingest/tables.py</code></td><td>Rebuilds statement tables and multi-line column headings by position (was <code>statements_view.py</code>).</td></tr>
+              <tr><td><code>ingest/profiles/</code></td><td>Format profiles: indexer, switches, acceptance checks, version (§15).</td></tr>
+              <tr><td><code>ingest/models/</code> (<code>registry.json</code>, <code>fingerprint.py</code>, <code>match.py</code>, <code>acceptance.py</code>, <code>gap_report.py</code>)</td><td>Model documents: the registry, fingerprints, matching, acceptance checks, gap reports; <code>python -m ingest.models</code> (§15).</td></tr>
+              <tr><td><code>ingest/figures.py</code>, <code>ingest/links.py</code>, <code>ingest/quality.py</code></td><td>Statement lines, figures, periods and units; links and checks; the quality report (§14).</td></tr>
+              <tr><td><code>ingest/routes.py</code> + <code>templates/ingest.html</code>, <code>static/ingest.js</code></td><td>The Ingest screen, package export and import, page images, and the scanned-report routes (<code>/api/ocr/…</code>, <code>/ocr-review</code>, <code>/ocr-image</code>).</td></tr>
+              <tr><td><code>ingest/model_testing.py</code>, <code>ingest/feedback.py</code>, <code>ingest/model_test_routes.py</code> + <code>templates/model_testing.html</code>, <code>static/model_testing.js</code></td><td>The Model testing screen: one page of a model document with its extraction, feedback files, <code>feedback-status.json</code> and <code>python -m ingest.feedback</code>.</td></tr>
+              <tr><td><code>ingest/narrative/</code> (<code>geometry</code>, <code>layout</code>, <code>sections</code>, <code>kinds</code>, <code>render</code>)</td><td>Pages outside notes and statements: the report's sections and each page's blocks in reading order, with a coverage check.</td></tr>
+              <tr><td><code>ingest/formatted_report.py</code> + <code>templates/formatted_report.html</code>, <code>formatted_preparing.html</code>, <code>static/formatted_report.js</code></td><td>The formatted document: a model document's whole extraction as one Bootstrap page.</td></tr>
+              <tr><td><code>analyzer/routes.py</code>, <code>analyzer/jobs.py</code></td><td>The Analyze screen's routes and its identify, analyze and follow-up jobs, threads and saved reports.</td></tr>
+              <tr><td><code>analyzer/note_selector.py</code></td><td>Scope rules, the Claude selector call (with the statements' suggestions), the keyword fallback and explicit note references.</td></tr>
+              <tr><td><code>analyzer/linked.py</code></td><td>Suggested notes (question → statement lines → notes) and the LINKED FIGURES block.</td></tr>
+              <tr><td><code>analyzer/context.py</code></td><td>The REPORT PROFILE (old, scanned, US 10-K reports), the statements to cover, labels, and the system prompt.</td></tr>
+              <tr><td><code>analyzer/source.py</code>, <code>extract.py</code>, <code>statement_info.py</code>, <code>statements_page.py</code></td><td>Where packages come from; the notes, pages and statements for Claude and for the statements page, all from the package.</td></tr>
+              <tr><td><code>analyzer/history.py</code>, <code>analyzer/report_html.py</code> + <code>templates/analysis_report.html</code></td><td><code>Prompt-History\</code> numbering, saving and reading back; the styled per-prompt HTML reports in <code>Analysis-history\</code>.</td></tr>
+              <tr><td><code>templates/statements_view.html</code>, <code>templates/ocr_review.html</code></td><td>The statements page and the Review transcription page.</td></tr>
+              <tr><td><code>prompts/*.txt</code></td><td>Selector, analysis and follow-up system prompts and templates (plus the old-report, scanned-report and US 10-K additions). They can be edited without code changes.</td></tr>
+              <tr><td><code>templates/index.html</code>, <code>static/app.js</code>, <code>static/style.css</code>, <code>static/logo.svg</code></td><td>The Analyze screen: report picker with the quality report and loaded statements, question, note confirmation with suggested notes, result thread and History sidebar.</td></tr>
+              <tr><td><code>cache/</code></td><td>Report packages (<code>packages/*.rptpkg.db</code>), scanned-page transcriptions (<code>&lt;report&gt;.ocr/</code>) and follow-up threads (<code>threads/*.json</code>).</td></tr>
               <tr><td><code>Prompt-History/</code>, <code>Analysis-history/</code>, <code>logs/app.log</code></td><td>Text history, HTML reports, and timings, selected notes and prompt sizes.</td></tr>
-              <tr><td><code>tests/</code></td><td>72 pytest tests (Claude mocked) against the real sample report.</td></tr>
+              <tr><td><code>tests/</code></td><td>312 pytest tests (Claude mocked) against the real sample reports and the model documents, including the frozen prompt baseline in <code>tests/fixtures/baseline/</code>.</td></tr>
             </tbody>
           </table>
         </div>
